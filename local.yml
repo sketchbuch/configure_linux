@@ -18,11 +18,11 @@
       group: stephen
         
   - name: set wallpaper
-    dconf:
+    community.general.dconf:
       key: "/org/gnome/desktop/bakground/picture-uri"
       value: "'file:///~/Pictures/ansible-gnome3.jpg'"
         
   - name: set wallpaper position
-    dconf:
+    community.general.dconf:
       key: "/org/gnome/desktop/bakground/picture-options"
       value: "'zoom'"
