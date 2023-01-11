@@ -3,6 +3,9 @@
   become: true
   
   tasks:
-  - name: install htop
+  - name: install cmd line packages
     package: 
-      name: htop
+      name: 
+        - htop
+        - tmux
+        - neofetch
