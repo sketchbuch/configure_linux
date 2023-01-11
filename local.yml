@@ -9,3 +9,20 @@
         - htop
         - tmux
         - neofetch
+        
+  - name: copy wallpaper file
+    copy:
+      src: "Gnome3 Blue.jpg"
+      dest: ~/Pictures/ansible-gnome3.jpg
+      owner: stephen
+      group: stephen
+        
+  - name: set wallpaper
+    dconf:
+      key: "/org/gnome/desktop/bakground/picture-uri"
+      value: "'file:///~/Pictures/ansible-gnome3.jpg'"
+        
+  - name: set wallpaper position
+    dconf:
+      key: "/org/gnome/desktop/bakground/picture-options"
+      value: "'zoom'"
