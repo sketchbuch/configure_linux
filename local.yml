@@ -13,14 +13,14 @@
   - name: copy wallpaper file
     copy:
       src: "Gnome3 Blue.jpg"
-      dest: ~/Pictures/ansible-gnome3.jpg
+      dest: /home/stephen/Pictures/ansible-gnome3.jpg
       owner: stephen
       group: stephen
         
   - name: set wallpaper
     community.general.dconf:
       key: "/org/gnome/desktop/bakground/picture-uri"
-      value: "'file:///~/Pictures/ansible-gnome3.jpg'"
+      value: "'file:///home/stephen/Pictures/ansible-gnome3.jpg'"
         
   - name: set wallpaper position
     community.general.dconf:
