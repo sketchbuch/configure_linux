@@ -3,24 +3,24 @@
   become: true
   
   tasks:
-  - name: install system tools
-    package: 
-      name: 
-        - gnome-epub-thumbnailer
-        - htop
-        - neofetch
-        - plocate
-        - powertop
+  # - name: install system tools
+  #   package: 
+  #     name: 
+  #       - gnome-epub-thumbnailer
+  #       - htop
+  #       - neofetch
+  #       - plocate
+  #       - powertop
 
   - name: install fonts
     package: 
       name: 
         - fonts-cantarell
 
-  - name: install dev tools
-    package: 
-      name: 
-        - create-next-app
-        - create-react-app
-        - ovsx
-        - vsce
+  # - name: install dev tools
+  #   package: 
+  #     name: 
+  #       - create-next-app
+  #       - create-react-app
+  #       - ovsx
+  #       - vsce
