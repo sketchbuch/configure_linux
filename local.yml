@@ -19,6 +19,5 @@
   - name: install dev tools
     package: 
       name: 
-        - create-react-app
         - ovsx
         - vsce
