@@ -15,9 +15,3 @@
     package: 
       name: 
         - fonts-cantarell
-
-  - name: install dev tools
-    package: 
-      name: 
-        - ovsx
-        - vsce
