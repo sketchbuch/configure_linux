@@ -11,6 +11,13 @@
   #       - neofetch
   #       - plocate
   #       - powertop
+  - name: install system tools
+    package: 
+      name: 
+        - htop
+        - neofetch
+        - plocate
+        - powertop
 
   - name: install fonts
     package: 
