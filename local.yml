@@ -3,26 +3,24 @@
   become: true
   
   tasks:
-  - name: install cmd line packages
+  - name: install system tools
     package: 
       name: 
+        - gnome-epub-thumbnailer
         - htop
-        - tmux
         - neofetch
-        
-  - name: copy wallpaper file
-    copy:
-      src: "Gnome3 Blue.jpg"
-      dest: /home/stephen/Pictures/ansible-gnome3.jpg
-      owner: stephen
-      group: stephen
-        
-  - name: set wallpaper
-    community.general.dconf:
-      key: "/org/gnome/desktop/bakground/picture-uri"
-      value: "'file:///home/stephen/Pictures/ansible-gnome3.jpg'"
-        
-  - name: set wallpaper position
-    community.general.dconf:
-      key: "/org/gnome/desktop/bakground/picture-options"
-      value: "'zoom'"
+        - plocate
+        - powertop
+
+  - name: install fonts
+    package: 
+      name: 
+        - fonts-cantarell
+
+  - name: install dev tools
+    package: 
+      name: 
+        - create-next-app
+        - create-react-app
+        - ovsx
+        - vsce
