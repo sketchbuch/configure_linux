@@ -19,7 +19,6 @@
   - name: install dev tools
     package: 
       name: 
-        - create-next-app
         - create-react-app
         - ovsx
         - vsce
