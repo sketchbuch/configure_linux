@@ -4,14 +4,14 @@
   
   tasks:
   - name: install system tools
-    package: 
-      name: 
+    package:
+      name:
         - htop
         - neofetch
         - plocate
         - powertop
 
-  - name: install fonts
-    package: 
-      name: 
-        - fonts-cantarell
+ # - name: install fonts
+ #   package:
+ #     name:
+ #       - fonts-cantarell
