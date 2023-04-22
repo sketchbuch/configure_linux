@@ -1,6 +1,6 @@
 - hosts: localhost
   connection: local
-  become: false
+  become: true
   
   tasks:
   - name: install system tools
