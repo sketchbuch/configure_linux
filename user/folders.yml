@@ -1,0 +1,4 @@
+- name: 'Create KeePassXC Folder'
+  file:
+    path: "{{home}}/KeePassXC"
+    state: directory
