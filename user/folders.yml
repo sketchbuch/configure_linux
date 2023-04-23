@@ -1,24 +1,34 @@
 - name: 'Create Folder: "Apps"'
+  become: true
+  become_user: ansible_user_id
   file:
     path: "/home/{{ansible_user_id}}/Apps"
     state: directory
 
 - name: 'Create Folder: "Archive"'
+  become: true
+  become_user: ansible_user_id
   file:
     path: "/home/{{ansible_user_id}}/Archive"
     state: directory
 
 - name: 'Create Folder: "Dev"'
+  become: true
+  become_user: ansible_user_id
   file:
     path: "/home/{{ansible_user_id}}/Dev"
     state: directory
 
 - name: 'Create Folder: "KeePassXC"'
+  become: true
+  become_user: ansible_user_id
   file:
     path: "/home/{{ansible_user_id}}/KeePassXC"
     state: directory
 
 - name: 'Create Folder: "Projects"'
+  become: true
+  become_user: ansible_user_id
   file:
     path: "/home/{{ansible_user_id}}/Projects"
     state: directory
