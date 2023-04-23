@@ -3,30 +3,11 @@
   become: true
   
   tasks:
-  
-#  - name: Print all available facts
-#    ansible.builtin.debug:
-#      var: ansible_facts
+  - name: Install File System Software
+    import_tasks: ./software/file_system.yml
 
-  - name: Install system monitoring tools
-    package:
-      name:
-        - htop
-        - powertop
-
-  - name: Install system information tools
-    package:
-      name:
-        - neofetch
-
-  - name: Install search tools
-    package:
-      name:
-        - plocate
-
-  - import_tasks: ./software/games.yml
-
- # - name: install fonts
- #   package:
- #     name:
- #       - fonts-cantarell
+  - name: Install Games
+    import_tasks: ./software/games.yml
+    
+  - name: Install System Software
+    import_tasks: ./software/system.yml
