@@ -21,6 +21,11 @@
       name:
         - gnome-sudoku
 
+  - name: Install Gnome Circle Apps
+    package:
+      name:
+        - apostrophe
+
 
  # - name: install fonts
  #   package:
