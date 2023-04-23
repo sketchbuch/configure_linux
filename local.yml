@@ -24,11 +24,7 @@
       name:
         - plocate
 
-  - name: Install Games
-    package:
-      name:
-        - gnome-sudoku
-
+  - import_tasks: ./software/games.yml
 
  # - name: install fonts
  #   package:
