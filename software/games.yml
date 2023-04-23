@@ -1,4 +1,3 @@
-  tasks:
   - name: Install Sudoku
     package:
       name:
