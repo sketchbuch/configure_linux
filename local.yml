@@ -1,8 +1,14 @@
 - hosts: localhost
   connection: local
   become: true
+  vars_prompt:
+    - name: username
+      prompt: Which username to use?
+      private: false
   
   tasks:
+  - import_tasks: user/setup.yml
+  - import_tasks: user/folders.yml
   # - import_tasks: software/file_system.yml
   # - import_tasks: software/games.yml
   # - import_tasks: software/graphics.yml
@@ -10,4 +16,3 @@
   # - import_tasks: software/system.yml
   # - import_tasks: misc/fonts.yml
   # - import_tasks: software/dev.yml
-  - import_tasks: user/folders.yml
