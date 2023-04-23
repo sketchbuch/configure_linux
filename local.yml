@@ -7,4 +7,5 @@
   # - import_tasks: software/games.yml
   # - import_tasks: software/graphics.yml
   # - import_tasks: software/system.yml
-  - import_tasks: misc/fonts.yml
+  # - import_tasks: misc/fonts.yml
+   - import_tasks: software/dev.yml
