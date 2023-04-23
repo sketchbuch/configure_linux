@@ -1,32 +1,32 @@
-- name: 'Create Folder: "Apps"'
+- name: 'Create Home Folder: "Apps"'
   become: true
   become_user: 'stephen'
   file:
     path: "~/Apps"
     state: directory
 
-- name: 'Create Folder: "Archive"'
+- name: 'Create Home Folder: "Archive"'
   become: true
   become_user: 'stephen'
   file:
     path: "~/Archive"
     state: directory
 
-- name: 'Create Folder: "Dev"'
+- name: 'Create Home Folder: "Dev"'
   become: true
   become_user: 'stephen'
   file:
     path: "~/Dev"
     state: directory
 
-- name: 'Create Folder: "KeePassXC"'
+- name: 'Create Home Folder: "KeePassXC"'
   become: true
   become_user: 'stephen'
   file:
     path: "~/KeePassXC"
     state: directory
 
-- name: 'Create Folder: "Projects"'
+- name: 'Create Home Folder: "Projects"'
   become: true
   become_user: 'stephen'
   file:
