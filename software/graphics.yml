@@ -1,0 +1,9 @@
+- name: Install painting software
+  package:
+    name:
+      - gimp
+
+- name: Install drawing software
+  package:
+    name:
+      - inkscape
