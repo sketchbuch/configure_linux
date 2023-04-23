@@ -1,6 +1,6 @@
 - name: 'Install NVM'
   shell: >
-    curl https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.shh | sh
+    curl https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | sh
     creates=/home/{{ ansible_user_id }}/.nvm/nvm.sh
 
 - name: 'Install Node and set version'
