@@ -1,9 +1,9 @@
-- name: Install GIMP
+- name: 'Install GIMP'
   package:
     name:
       - gimp
 
-- name: Install Inkscape
+- name: 'Install Inkscape'
   package:
     name:
       - inkscape

@@ -1,4 +1,4 @@
-  - name: Install Font: Cantarell
+  - name: 'Install Font: Cantarell'
     package: 
       name: 
         - fonts-cantarell

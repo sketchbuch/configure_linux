@@ -1,4 +1,4 @@
-- name: Install Plocate
+- name: 'Install Plocate'
   package:
     name:
       - plocate

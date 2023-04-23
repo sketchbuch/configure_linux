@@ -1,4 +1,4 @@
-  - name: Install Sudoku
+  - name: 'Install Sudoku'
     package:
       name:
         - gnome-sudoku

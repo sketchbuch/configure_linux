@@ -1,14 +1,14 @@
-- name: Install Htop
+- name: 'Install Htop'
   package:
     name:
       - htop
 
-- name: Install Powertop
+- name: 'Install Powertop'
   package:
     name:
       - powertop
 
-- name: Install Neofetch
+- name: 'Install Neofetch'
   package:
     name:
       - neofetch
