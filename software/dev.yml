@@ -1,7 +1,7 @@
 - name: 'Install NVM'
   become: false
   ansible.builtin.shell:
-    cmd: curl https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh
+    cmd: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 
 # - name: 'Install Node and set version'
 #   become: false
