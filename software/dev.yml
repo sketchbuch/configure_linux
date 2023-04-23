@@ -1,9 +1,10 @@
 - name: 'Install NVM'
-  shell: >
-    curl https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | sh
-    creates=/home/{{ ansible_user_id }}/.nvm/nvm.sh
+  become: false
+  ansible.builtin.shell:
+    cmd: curl https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh
 
-- name: 'Install Node and set version'
-  shell: >
-    /bin/bash -c "source ~/.nvm/nvm.sh && nvm install 18.4.0 && nvm install 16.15.1 && nvm install 16.13.0 && nvm alias default 16.13.0"
-    creates=/home/{{ ansible_user_id }}/.nvm/alias
+# - name: 'Install Node and set version'
+#   become: false
+#   shell: >
+#     /bin/bash -c "source ~/.nvm/nvm.sh && nvm install 18.4.0 && nvm install 16.15.1 && nvm install 16.13.0 && nvm alias default 16.13.0"
+#     creates=/home/{{ ansible_user_id }}/.nvm/alias
