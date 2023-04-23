@@ -7,10 +7,7 @@
   #  ansible.builtin.debug:
   #    var: ansible_facts
 
-  - name: Set username
-    set_fact:
-        real_username: '{{ansible_facts["env"]["USERNAME"]}}'
-
+  - import_tasks: ansible/setup.yml
   - import_tasks: user/folders.yml
   # - import_tasks: software/file_system.yml
   # - import_tasks: software/games.yml
