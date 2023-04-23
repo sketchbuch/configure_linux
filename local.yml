@@ -8,13 +8,21 @@
 #    ansible.builtin.debug:
 #      var: ansible_facts
 
-  - name: Install system tools
+  - name: Install system monitoring tools
     package:
       name:
         - htop
-        - neofetch
-        - plocate
         - powertop
+
+  - name: Install system information tools
+    package:
+      name:
+        - neofetch
+
+  - name: Install search tools
+    package:
+      name:
+        - plocate
 
   - name: Install Games
     package:
