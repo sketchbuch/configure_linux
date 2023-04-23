@@ -4,9 +4,10 @@
   
   tasks:
   
-  - name: Print all available facts
-    ansible.builtin.debug:
-      var: ansible_facts
+#  - name: Print all available facts
+#    ansible.builtin.debug:
+#      var: ansible_facts
+
   - name: Install system tools
     package:
       name:
@@ -14,6 +15,12 @@
         - neofetch
         - plocate
         - powertop
+
+  - name: Install Games
+    package:
+      name:
+        - gnome-sudoku
+
 
  # - name: install fonts
  #   package:
