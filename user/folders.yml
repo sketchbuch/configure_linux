@@ -1,24 +1,24 @@
 - name: 'Create Folder: "Apps"'
   file:
-    path: "/home/{{username}}/Apps"
+    path: "/home/{{ansible_user_id}}/Apps"
     state: directory
 
 - name: 'Create Folder: "Archive"'
   file:
-    path: "/home/{{username}}/Archive"
+    path: "/home/{{ansible_user_id}}/Archive"
     state: directory
 
 - name: 'Create Folder: "Dev"'
   file:
-    path: "/home/{{username}}/Dev"
+    path: "/home/{{ansible_user_id}}/Dev"
     state: directory
 
 - name: 'Create Folder: "KeePassXC"'
   file:
-    path: "/home/{{username}}/KeePassXC"
+    path: "/home/{{ansible_user_id}}/KeePassXC"
     state: directory
 
 - name: 'Create Folder: "Projects"'
   file:
-    path: "/home/{{username}}/Projects"
+    path: "/home/{{ansible_user_id}}/Projects"
     state: directory
