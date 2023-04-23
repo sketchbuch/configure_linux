@@ -1,3 +1,7 @@
+#- name: Print all available facts
+#  ansible.builtin.debug:
+#    var: ansible_facts
+
 - name: 'Set username'
   set_fact:
       real_username: '{{ansible_facts["env"]["USERNAME"]}}'
