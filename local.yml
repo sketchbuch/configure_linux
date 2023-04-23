@@ -3,7 +3,11 @@
   become: true
   
   tasks:
-  - name: install system tools
+  
+  - name: Print all available facts
+    ansible.builtin.debug:
+    var: ansible_facts
+  - name: Install system tools
     package:
       name:
         - htop
