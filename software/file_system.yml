@@ -1,4 +1,4 @@
-- name: Install search tools
+- name: Install Plocate
   package:
     name:
       - plocate

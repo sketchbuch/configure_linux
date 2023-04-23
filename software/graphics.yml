@@ -1,9 +1,9 @@
-- name: Install imaging software
+- name: Install GIMP
   package:
     name:
       - gimp
 
-- name: Install vector software
+- name: Install Inkscape
   package:
     name:
       - inkscape

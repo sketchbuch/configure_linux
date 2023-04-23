@@ -1,10 +1,14 @@
-- name: Install system monitoring tools
+- name: Install Htop
   package:
     name:
       - htop
+
+- name: Install Powertop
+  package:
+    name:
       - powertop
 
-- name: Install system information tools
+- name: Install Neofetch
   package:
     name:
       - neofetch
