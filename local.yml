@@ -3,11 +3,11 @@
   become: true
   
   tasks:
-  - name: Print all available facts
-    ansible.builtin.debug:
-      var: ansible_facts
+  #- name: Print all available facts
+  #  ansible.builtin.debug:
+  #    var: ansible_facts
 
-  # - import_tasks: user/folders.yml
+  - import_tasks: user/folders.yml
   # - import_tasks: software/file_system.yml
   # - import_tasks: software/games.yml
   # - import_tasks: software/graphics.yml
