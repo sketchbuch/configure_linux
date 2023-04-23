@@ -3,6 +3,11 @@
   become: true
   
   tasks:
-  - import_tasks: software/file_system.yml
-  - import_tasks: software/games.yml
-  - import_tasks: software/system.yml
+  - name: Install File System Software
+    import_tasks: software/file_system.yml
+
+  - name: Install Games
+    import_tasks: software/games.yml
+    
+  - name: Install System Software
+    import_tasks: software/system.yml
