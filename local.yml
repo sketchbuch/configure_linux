@@ -4,7 +4,16 @@
   
   tasks:
   - import_tasks: ansible/setup.yml
+
+  - name: 'Tasks by distro'
+    include_tasks: "{{ item }}"
+    with_first_found:
+      - "distro/{{ ansible_distribution|lower }}-{{ ansible_distribution_major_version}}.yml"
+      - "distro/{{ ansible_distribution|lower }}.yml"
+    tags: vars
+
   - import_tasks: user/home_folder.yml
+  
   - import_tasks: software/audio.yml
   - import_tasks: software/circle_apps.yml
   - import_tasks: software/file_system.yml
@@ -13,10 +22,3 @@
   - import_tasks: software/security.yml
   - import_tasks: software/system.yml
   - import_tasks: software/dev.yml
-
-  - name: 'Tasks by distro'
-    include_tasks: "{{ item }}"
-    with_first_found:
-      - "distro/{{ ansible_distribution|lower }}-{{ ansible_distribution_major_version}}.yml"
-      - "distro/{{ ansible_distribution|lower }}.yml"
-    tags: vars
