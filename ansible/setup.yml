@@ -12,12 +12,19 @@
 #  ansible.builtin.debug:
 #    var: ansible_facts.packages
 
-- name: 'Checking required packages'
+- name: 'Checking required package: Flatpak'
   ansible.builtin.assert:
     that:
       - ansible_facts.packages['flatpak'] is defined
     fail_msg: 'flatpak must be installed since a restart is required'
-    success_msg: 'Flatpak is installed, continuing...'
+    success_msg: 'Flatpak is installed'
+
+- name: 'Checking required package: psutil'
+  ansible.builtin.assert:
+    that:
+      - ansible_facts.packages['flatpak'] is defined
+    fail_msg: 'psutil must be installed'
+    success_msg: 'psutil is installed'
 
 - name: 'Set real_username'
   set_fact:

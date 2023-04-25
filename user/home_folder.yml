@@ -14,6 +14,7 @@
     - "~/Projects"
     - "~/Temp"
     - "~/VirtualBox VMs"
+  when: not is_virtual
 
 - name: 'Creating .hidden file'
   become: true
