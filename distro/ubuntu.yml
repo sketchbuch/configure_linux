@@ -2,5 +2,6 @@
 - import_tasks: ../de/gnome/dconf/desktop.yml
 - import_tasks: ../de/gnome/dconf/mouse_trackpad.yml
 - import_tasks: ../de/gnome/dconf/screensaver.yml
+- import_tasks: ../software/circle_apps.yml
 - import_tasks: ubuntu/flatpak.yml
 - import_tasks: ubuntu/fonts.yml
