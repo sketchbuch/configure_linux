@@ -14,7 +14,7 @@ An Ansible setup to configure linux distros and install apps etc.
   -  See official guide, e.g. https://flatpak.org/setup/Ubuntu
 
 - **Install psutil**
-`sudo apt-get install -y python3-psutil`
+  -  `sudo apt-get install -y python3-psutil`
 
 ## Run
 
