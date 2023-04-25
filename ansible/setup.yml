@@ -22,7 +22,7 @@
 - name: 'Checking required package: psutil'
   ansible.builtin.assert:
     that:
-      - ansible_facts.packages['flatpak'] is defined
+      - ansible_facts.packages['psutil'] is defined
     fail_msg: 'psutil must be installed'
     success_msg: 'psutil is installed'
 
