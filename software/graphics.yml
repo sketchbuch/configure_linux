@@ -1,9 +1,17 @@
+- name: 'Install Converter'
+  community.general.flatpak:
+    name: io.gitlab.adhami3310.Converter
+    state: present
+    method: system
+
 - name: 'Install GIMP'
-  package:
-    name:
-      - gimp
+  community.general.flatpak:
+    name: org.gimp.GIMP
+    state: present
+    method: system
 
 - name: 'Install Inkscape'
-  package:
-    name:
-      - inkscape
+  community.general.flatpak:
+    name: org.inkscape.Inkscape
+    state: present
+    method: system

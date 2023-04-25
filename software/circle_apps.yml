@@ -9,4 +9,15 @@
     name: dev.geopjr.Collision
     state: present
     method: system
-    
+
+- name: 'Install Curtail'
+  community.general.flatpak:
+    name: com.github.huluti.Curtail
+    state: present
+    method: system
+
+- name: 'Install FontDownloader'
+  community.general.flatpak:
+    name: org.gustavoperedo.FontDownloader
+    state: present
+    method: system

@@ -1,4 +1,10 @@
-  - name: 'Install KeePass XC'
-    package:
-      name:
-        - keepassxc
+- name: 'Install Flatseal'
+  community.general.flatpak:
+    name: com.github.tchx84.Flatseal
+    state: present
+    method: system
+
+- name: 'Install KeePass XC'
+  package:
+    name:
+      - keepassxc
