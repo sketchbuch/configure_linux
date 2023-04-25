@@ -1,10 +1,14 @@
-- name: Print all available facts
-  ansible.builtin.debug:
-    var: ansible_facts
-
 # TODO: Add user to vboxsf
 # TODO: Turn of screen saver etc in vbox
 
 - name: 'Set username'
   set_fact:
       real_username: '{{ansible_facts["env"]["SUDO_USER"]}}'
+
+- name: 'Set DE: Gnome'
+  set_fact:
+      is_gnome: when:  {{ ansible_facts["env"]["SUDO_USER"] | lower }} | search('gnome')
+
+- name: 'Print all available facts'
+  ansible.builtin.debug:
+    var: ansible_facts

@@ -15,14 +15,14 @@
     - "~/Temp"
     - "~/VirtualBox VMs"
 
-- name: "Creating .hidden file"
+- name: 'Creating .hidden file'
   become: true
   become_user: '{{real_username}}'
   ansible.builtin.file:
     path: "~/.hidden"
     state: touch
 
-- name: "Add content to .hidden file"
+- name: 'Add content to .hidden file'
   become: true
   become_user: '{{real_username}}'
   copy:
