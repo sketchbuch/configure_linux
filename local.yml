@@ -4,6 +4,7 @@
   
   tasks:
   - import_tasks: ansible/setup.yml
+  # - import_tasks: user/dconf.yml
   - import_tasks: user/home_folder.yml
   # - import_tasks: software/file_system.yml
   # - import_tasks: software/games.yml

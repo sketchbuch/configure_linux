@@ -28,5 +28,5 @@
   copy:
     dest: "~/.hidden"
     content: |
-      snap
       FiraxisLive
+      snap
