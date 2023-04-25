@@ -3,3 +3,10 @@
     name: org.gnome.gitlab.somas.Apostrophe
     state: present
     method: system
+
+- name: 'Install Collision'
+  community.general.flatpak:
+    name: dev.geopjr.Collision
+    state: present
+    method: system
+    
