@@ -1,3 +1,1 @@
-- name: 'Print all available facts Ubutu'
-  ansible.builtin.debug:
-    var: ansible_facts
+- import_tasks: ../de/gnome/dconf.yml
