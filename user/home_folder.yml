@@ -15,12 +15,16 @@
     - "~/Temp"
     - "~/VirtualBox VMs"
 
-- name: Creating .hidden file
+- name: "Creating .hidden file"
   become: true
   become_user: '{{real_username}}'
   ansible.builtin.file:
     path: "~/.hidden"
     state: touch
-  with_items:
-  - snap
-  - FiraxisLive
+
+- name: "Add content to .hidden file"
+  copy:
+    dest: "~/.hidden"
+    content: |
+      snap
+      FiraxisLive
