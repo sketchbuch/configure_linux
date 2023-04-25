@@ -2,3 +2,4 @@
   community.general.flatpak:
     name: org.gnome.gitlab.somas.Apostrophe
     state: present
+    method: system
