@@ -1,0 +1,12 @@
+- name: 'Install Flatpak'
+  package:
+    name:
+      - flatpak
+      - gnome-software-plugin-flatpak
+
+- name: 'Add the flathub flatpak repository'
+  flatpak_remote:
+    flatpakrepo_url: 'https://flathub.org/repo/flathub.flatpakrepo'
+    method: system
+    name: flathub
+    state: present
