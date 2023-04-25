@@ -1,11 +1,11 @@
-- name: 'Install Audacity'
+- name: 'Install Gnome Calendar'
   community.general.flatpak:
-    name: org.audacityteam.Audacity
+    name: org.gnome.Calendar
     state: present
     method: system
 
-- name: 'Install EarTag'
+- name: 'Install Gnome Contacts'
   community.general.flatpak:
-    name: app.drey.EarTag
+    name: org.gnome.Contacts
     state: present
     method: system

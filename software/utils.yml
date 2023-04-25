@@ -1,29 +1,29 @@
-- name: 'Install 0AD'
+- name: 'Install Font Manager'
   community.general.flatpak:
-    name: com.play0ad.zeroad
+    name: org.gnome.FontManager
     state: present
     method: system
 
-- name: 'Install Augustus'
+- name: 'Install Gnome Clocks'
   community.general.flatpak:
-    name: com.github.keriew.augustus
-    state: present
-    method: system
-    
-- name: 'Install Gnome Chess'
-  community.general.flatpak:
-    name: org.gnome.Chess
-    state: present
-    method: system
-    
-- name: 'Install Gnome Sudoku'
-  community.general.flatpak:
-    name: org.gnome.Sudoku
+    name: org.gnome.clocks
     state: present
     method: system
 
-- name: 'Install Julius'
+- name: 'Install Gnome Maps'
   community.general.flatpak:
-    name: com.github.bvschaik.julius
+    name: org.gnome.Maps
+    state: present
+    method: system
+
+- name: 'Install Gnome Weather'
+  community.general.flatpak:
+    name: org.gnome.Weather
+    state: present
+    method: system
+
+- name: 'Install Wike'
+  community.general.flatpak:
+    name: com.github.hugolabe.Wike
     state: present
     method: system

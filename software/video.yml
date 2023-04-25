@@ -1,11 +1,11 @@
-- name: 'Install Audacity'
+- name: 'Install LosslessCut'
   community.general.flatpak:
-    name: org.audacityteam.Audacity
+    name: no.mifi.losslesscut
     state: present
     method: system
 
-- name: 'Install EarTag'
+- name: 'Install Peek'
   community.general.flatpak:
-    name: app.drey.EarTag
+    name: com.uploadedlobster.peek
     state: present
     method: system

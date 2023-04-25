@@ -15,3 +15,9 @@
     name: org.inkscape.Inkscape
     state: present
     method: system
+
+- name: 'Install Gnome Loupe'
+  community.general.flatpak:
+    name: org.gnome.Loupe
+    state: present
+    method: system

@@ -16,9 +16,15 @@
   
   - import_tasks: software/audio.yml
   - import_tasks: software/circle_apps.yml
+  #- import_tasks: software/dev.yml
+  - import_tasks: software/documents.yml
+  - import_tasks: software/editors.yml
   - import_tasks: software/file_system.yml
   - import_tasks: software/games.yml
   - import_tasks: software/graphics.yml
+  - import_tasks: software/productivity.yml
   - import_tasks: software/security.yml
   - import_tasks: software/system.yml
-  - import_tasks: software/dev.yml
+  - import_tasks: software/utils.yml
+  - import_tasks: software/video.yml
+  - import_tasks: software/virtualisation.yml

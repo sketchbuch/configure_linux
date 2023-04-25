@@ -1,0 +1,5 @@
+- name: 'Install Gnome TextEditor'
+  community.general.flatpak:
+    name: org.gnome.TextEditor
+    state: present
+    method: system

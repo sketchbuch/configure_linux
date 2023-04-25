@@ -1,0 +1,10 @@
+- name: 'Install Gnome Boxes'
+  community.general.flatpak:
+    name: org.gnome.Boxes
+    state: present
+    method: system
+
+- name: 'Install Virtualbox'
+  package:
+    name:
+      - virtualbox

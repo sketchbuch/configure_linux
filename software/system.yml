@@ -1,3 +1,21 @@
+- name: 'Install Dconf Editor'
+  community.general.flatpak:
+    name: ca.desrt.dconf-editor
+    state: present
+    method: system
+
+- name: 'Install Extension Manager'
+  community.general.flatpak:
+    name: com.mattjakeman.ExtensionManager
+    state: present
+    method: system
+
+- name: 'Install Gnome Extensions'
+  community.general.flatpak:
+    name: org.gnome.Extensions
+    state: present
+    method: system
+
 - name: 'Install Htop'
   package:
     name:

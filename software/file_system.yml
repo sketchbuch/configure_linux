@@ -1,3 +1,21 @@
+- name: 'Install Celeste'
+  community.general.flatpak:
+    name: com.hunterwittenborn.Celeste
+    state: present
+    method: system
+
+- name: 'Install FreeFileSync'
+  community.general.flatpak:
+    name: org.freefilesync.FreeFileSync
+    state: present
+    method: system
+
+- name: 'Install FSearch'
+  community.general.flatpak:
+    name: io.github.cboxdoerfer.FSearch
+    state: present
+    method: system
+
 - name: 'Install Plocate'
   package:
     name:

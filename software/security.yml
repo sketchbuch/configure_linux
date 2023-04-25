@@ -1,3 +1,9 @@
+- name: 'Install Authy'
+  community.general.flatpak:
+    name: com.authy.Authy
+    state: present
+    method: system
+
 - name: 'Install Flatseal'
   community.general.flatpak:
     name: com.github.tchx84.Flatseal
@@ -5,6 +11,7 @@
     method: system
 
 - name: 'Install KeePass XC'
-  package:
-    name:
-      - keepassxc
+  community.general.flatpak:
+    name: org.keepassxc.KeePassXC
+    state: present
+    method: system
