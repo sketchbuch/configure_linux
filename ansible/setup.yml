@@ -2,6 +2,8 @@
 #  ansible.builtin.debug:
 #    var: ansible_facts
 
+# TODO: Add user to vboxsf
+
 - name: 'Set username'
   set_fact:
       real_username: '{{ansible_facts["env"]["USERNAME"]}}'
