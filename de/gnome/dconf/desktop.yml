@@ -1,4 +1,4 @@
-- name: "Desktop: Enable hot corner"
+- name: "Desktop: Enable hot corners in real environments"
   become: true
   become_user: '{{real_username}}'
   dconf:
@@ -6,3 +6,12 @@
     state: present
     value: "true"
   when: not is_virtual
+
+- name: "Desktop: Disable hot corners in virtual environments"
+  become: true
+  become_user: '{{real_username}}'
+  dconf:
+    key: "/org/gnome/desktop/interface/enable-hot-corners"
+    state: present
+    value: "false"
+  when: is_virtual
