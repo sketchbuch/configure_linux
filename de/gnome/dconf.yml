@@ -2,7 +2,7 @@
   dconf:
     key: "/org/gnome/desktop/screensaver/lock-enabled"
     state: present
-    value: "'no'"
+    value: false
   when: ansible_virtualization_role == 'guest'
 
 - name: 'Disable blank screen timeout'
