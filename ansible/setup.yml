@@ -4,6 +4,6 @@
 
 # TODO: Add user to vboxsf
 
-#- name: 'Set username'
-#  set_fact:
-#      real_username: '{{ansible_facts["env"]["USERNAME"]}}'
+- name: 'Set username'
+  set_fact:
+      real_username: '{{ansible_facts["env"]["SUDO_USER"]}}'
