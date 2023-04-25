@@ -1,12 +1,16 @@
-- name: 'Install Flatpak'
-  package:
-    name:
-      - flatpak
-      - gnome-software-plugin-flatpak
+# Flatpak can be installed via Ansible, but before you install apps
+# a resart is required. I decided to manually install flatpak if needed before running
+# the playbook. This is kept for future reference.
 
-- name: 'Add the flathub flatpak repository'
-  flatpak_remote:
-    flatpakrepo_url: 'https://flathub.org/repo/flathub.flatpakrepo'
-    method: system
-    name: flathub
-    state: present
+#- name: 'Install Flatpak'
+#  package:
+#    name:
+#      - flatpak
+#      - gnome-software-plugin-flatpak
+#
+#- name: 'Add the flathub flatpak repository'
+#  flatpak_remote:
+#    flatpakrepo_url: 'https://flathub.org/repo/flathub.flatpakrepo'
+#    method: system
+#    name: flathub
+#    state: present

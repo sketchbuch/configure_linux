@@ -4,6 +4,17 @@
 #  ansible.builtin.debug:
 #    var: ansible_facts
 
+- name: 'Gather package facts'
+  ansible.builtin.package_facts:
+    manager: auto
+
+- name: 'Checking required packages'
+  ansible.builtin.assert:
+    that:
+      - {{ ansible_facts.packages['flatpak'] | length }}
+    fail_msg: 'flatpak must be installed since a restart is required'
+    success_msg: 'Flatpak is installed, continuing...'
+
 - name: 'Set real_username'
   set_fact:
       real_username: '{{ansible_facts["env"]["SUDO_USER"]}}'
