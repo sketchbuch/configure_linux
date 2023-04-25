@@ -1,5 +1,4 @@
-- name: 'Install the gedit package from flathub for current user'
+- name: 'Install Apostrophe'
   community.general.flatpak:
     name: org.gnome.gitlab.somas.Apostrophe
     state: present
-    method: user
