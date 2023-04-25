@@ -3,6 +3,7 @@
 #    var: ansible_facts
 
 # TODO: Add user to vboxsf
+# TODO: Turn of screen saver etc in vbox
 
 - name: 'Set username'
   set_fact:

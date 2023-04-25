@@ -19,6 +19,3 @@
   ansible.builtin.file:
     path: "~/.hidden"
     state: touch
-  with_items:
-  - snap
-  - FiraxisLive
