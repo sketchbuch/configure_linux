@@ -11,18 +11,3 @@
 - name: 'Set virtual'
   set_fact:
       is_virtual: ansible_virtualization_role == 'guest'
-
-- name: Report username
-  debug:
-    msg: "{{real_username}}"
-  when: real_username | bool
-
-- name: Report system is virtual
-  debug:
-    msg: this is virtual
-  when: is_virtual
-
-- name: Report system is real
-  debug:
-    msg: this is virtual
-  when: not is_virtual

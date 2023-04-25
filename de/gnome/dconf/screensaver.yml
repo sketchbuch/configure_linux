@@ -7,7 +7,7 @@
     key: "/org/gnome/desktop/screensaver/lock-enabled"
     state: present
     value: "false"
-  when: ansible_virtualization_role == 'guest'
+  when: is_virtual
 
 - name: 'Disable screensaver idle activation'
   become: true
@@ -16,7 +16,7 @@
     key: "/org/gnome/desktop/screensaver/idle-activation-enabled"
     state: present
     value: "false"
-  when: ansible_virtualization_role == 'guest'
+  when: is_virtual
 
 - name: 'Disable lock screen timeout'
   become: true
@@ -25,7 +25,7 @@
     key: '/org/gnome/desktop/session/lock-delay'
     state: present
     value: "uint32 0"
-  when: ansible_virtualization_role == 'guest'
+  when: is_virtual
 
 - name: 'Disable idle timeout'
   become: true
@@ -34,4 +34,4 @@
     key: '/org/gnome/desktop/session/idle-delay'
     state: present
     value: "uint32 0"
-  when: ansible_virtualization_role == 'guest'
+  when: is_virtual

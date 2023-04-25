@@ -5,3 +5,4 @@
     key: "/org/gnome/desktop/interface/enable-hot-corners"
     state: present
     value: "true"
+  when: not is_virtual
