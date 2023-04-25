@@ -9,3 +9,7 @@
     key: '/org.gnome.desktop.session'
     value: "['idle-delay', '0']"
   when: ansible_virtualization_role == 'guest'
+
+- debug:
+    msg: 'TEST!!!!!'
+  when: ansible_virtualization_role == 'guest'
