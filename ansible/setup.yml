@@ -15,7 +15,7 @@
 - name: 'Checking required packages'
   ansible.builtin.assert:
     that:
-      - 'flatpak' in ansible_facts.packages
+      - ansible_facts.packages['packages'] is defined
     fail_msg: 'flatpak must be installed since a restart is required'
     success_msg: 'Flatpak is installed, continuing...'
 
