@@ -4,7 +4,7 @@
   dconf:
     key: "/org/gnome/desktop/screensaver/lock-enabled"
     state: present
-    value: "'false'"
+    value: "'no'"
   when: ansible_virtualization_role == 'guest'
 
 - name: 'Disable Screensaver Idle Activation'
@@ -13,7 +13,7 @@
   dconf:
     key: "/org/gnome/desktop/screensaver/idle-activation-enabled"
     state: present
-    value: "'false'"
+    value: "'no'"
   when: ansible_virtualization_role == 'guest'
 
 - name: 'Disable blank screen timeout'
