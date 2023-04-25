@@ -14,3 +14,11 @@
     - "~/Projects"
     - "~/Temp"
     - "~/VirtualBox VMs"
+
+- name: Creating .hidden file
+  ansible.builtin.file:
+    path: "~/.hidden"
+    state: touch
+  with_items:
+  - snap
+  - FiraxisLive
