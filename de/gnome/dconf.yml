@@ -1,5 +1,5 @@
 - name: 'Disable Screensaver'
   dconf:
-    key: 'org.gnome.desktop.screensaver'
+    key: '/org.gnome.desktop.screensaver'
     value: '["lock-enabled", "false"]'
   when: ansible_virtualization_role == 'guest'
