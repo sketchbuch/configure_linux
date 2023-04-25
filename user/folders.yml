@@ -1,34 +1,16 @@
-- name: 'Create Home Folder: "Apps"'
+- name: 'Create Home Folders"'
   become: true
   become_user: '{{real_username}}'
   file:
-    path: "~/Apps"
+    path: "{{ item }}"
     state: directory
-
-- name: 'Create Home Folder: "Archive"'
-  become: true
-  become_user: '{{real_username}}'
-  file:
-    path: "~/Archive"
-    state: directory
-
-- name: 'Create Home Folder: "Dev"'
-  become: true
-  become_user: '{{real_username}}'
-  file:
-    path: "~/Dev"
-    state: directory
-
-- name: 'Create Home Folder: "KeePassXC"'
-  become: true
-  become_user: '{{real_username}}'
-  file:
-    path: "~/KeePassXC"
-    state: directory
-
-- name: 'Create Home Folder: "Projects"'
-  become: true
-  become_user: '{{real_username}}'
-  file:
-    path: "~/Projects"
-    state: directory
+  loop:
+    - "~/Apps"
+    - "~/Archive"
+    - "~/Dev"
+    - "~/Games"
+    - "~/KeePassXC"
+    - "~/Notes"
+    - "~/Projects"
+    - "~/Temp"
+    - "~/VirtualBox VMs"
