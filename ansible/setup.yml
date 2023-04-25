@@ -5,11 +5,6 @@
   set_fact:
       real_username: '{{ansible_facts["env"]["SUDO_USER"]}}'
 
-- name: 'Set DE: Gnome'
-  set_fact:
-      is_gnome: true
-  when:  '{{ansible_facts["env"]["XDG_CURRENT_DESKTOP"]}}' | lower | search('gnome')
-
-- name: 'Print all available facts'
-  ansible.builtin.debug:
-    var: ansible_facts
+#- name: 'Print all available facts'
+#  ansible.builtin.debug:
+#    var: ansible_facts

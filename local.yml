@@ -13,3 +13,14 @@
   # - import_tasks: software/system.yml
   # - import_tasks: gnome/misc/fonts.yml
   # - import_tasks: software/dev.yml
+
+- name: 'Print all available facts'
+  ansible.builtin.debug:
+    var: ansible_facts
+
+#  - name: gather os specific variables
+#  include_vars: "{{ item }}"
+#  with_first_found:
+#    - "{{ ansible_distribution }}-{{ ansible_distribution_major_version}}.yml"
+#    - "{{ ansible_distribution }}.yml"
+#  tags: vars
