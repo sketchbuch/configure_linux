@@ -1,6 +1,6 @@
 # Configure Gnome Topbar Time/Date Display
 
-- name: "Topbar Clock: Format"
+- name: "Topbar Clock: Format 24h"
   become: true
   become_user: '{{real_username}}'
   dconf:
