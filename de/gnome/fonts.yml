@@ -2,4 +2,3 @@
     package: 
       name: 
         - fonts-cantarell
-    when: ansible_distribution == 'Ubuntu'

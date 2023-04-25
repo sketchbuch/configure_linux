@@ -1,1 +1,2 @@
 - import_tasks: ../de/gnome/dconf.yml
+- import_tasks: ../de/gnome/fonts.yml
