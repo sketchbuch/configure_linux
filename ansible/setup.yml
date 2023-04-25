@@ -15,7 +15,7 @@
 - name: Report username
   debug:
     msg: {{real_username}}
-  when: real_username
+  when: real_username | bool
 
 - name: Report system is virtual
   debug:
@@ -25,4 +25,4 @@
 - name: Report system is real
   debug:
     msg: this is virtual
-  when: !is_virtual
+  when: not is_virtual
