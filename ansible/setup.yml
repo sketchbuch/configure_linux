@@ -7,7 +7,8 @@
 
 - name: 'Set DE: Gnome'
   set_fact:
-      is_gnome: when:  {{ ansible_facts["env"]["SUDO_USER"] | lower }} | search('gnome')
+      is_gnome: true
+  when:  {{ ansible_facts["env"]["SUDO_USER"] | lower }} | search('gnome')
 
 - name: 'Print all available facts'
   ansible.builtin.debug:
