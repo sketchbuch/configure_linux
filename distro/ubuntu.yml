@@ -1,2 +1,3 @@
+- import_tasks: ../de/gnome/dconf/datetime.yml
 - import_tasks: ../de/gnome/dconf/screensaver.yml
 - import_tasks: ubuntu/fonts.yml
