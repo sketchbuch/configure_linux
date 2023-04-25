@@ -1,0 +1,7 @@
+- name: "Desktop: Enable hot corner"
+  become: true
+  become_user: '{{real_username}}'
+  dconf:
+    key: "/org/gnome/desktop/interface/enable-hot-corners"
+    state: present
+    value: "true"

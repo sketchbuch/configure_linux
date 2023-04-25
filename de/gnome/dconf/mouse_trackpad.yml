@@ -1,0 +1,7 @@
+- name: "Touchpad: Disable natural scrolling"
+  become: true
+  become_user: '{{real_username}}'
+  dconf:
+    key: "/org/gnome/desktop/peripherals/touchpad/natural-scroll"
+    state: present
+    value: "false"

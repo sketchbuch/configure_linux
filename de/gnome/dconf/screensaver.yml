@@ -9,7 +9,7 @@
     value: "false"
   when: ansible_virtualization_role == 'guest'
 
-- name: 'Disable Screensaver idle activation'
+- name: 'Disable screensaver idle activation'
   become: true
   become_user: '{{real_username}}'
   dconf:
