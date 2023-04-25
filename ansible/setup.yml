@@ -14,7 +14,7 @@
 
 - name: Report username
   debug:
-    msg: {{real_username}}
+    msg: "{{real_username}}"
   when: real_username | bool
 
 - name: Report system is virtual
