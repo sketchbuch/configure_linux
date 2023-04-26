@@ -1,0 +1,6 @@
+- name: 'Software > Utils > Install Gnome Maps'
+  community.general.flatpak:
+    name: org.gnome.Maps
+    state: present
+    method: system
+  tags: ['utils', 'gnome-maps', 'flatpak']

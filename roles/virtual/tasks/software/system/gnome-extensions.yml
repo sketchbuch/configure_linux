@@ -1,0 +1,6 @@
+- name: 'Software > System > Install Gnome Extensions'
+  community.general.flatpak:
+    name: org.gnome.Extensions
+    state: present
+    method: system
+  tags: ['system', 'gnome-extensions', 'flatpak']

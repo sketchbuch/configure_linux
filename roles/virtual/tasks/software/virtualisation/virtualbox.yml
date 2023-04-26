@@ -1,0 +1,5 @@
+- name: 'Software > Virtualisation > Install VirtualBox'
+  package:
+    name:
+      - virtualbox
+  tags: ['virtualisation', 'virtualbox', 'package']

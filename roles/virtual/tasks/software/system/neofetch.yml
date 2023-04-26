@@ -1,0 +1,5 @@
+- name: 'Software > System > Install Neofetch'
+  package:
+    name:
+      - neofetch
+  tags: ['system', 'neofetch', 'package']

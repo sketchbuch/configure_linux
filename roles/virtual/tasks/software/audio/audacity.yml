@@ -1,0 +1,6 @@
+- name: 'Software > Audio > Install Audacity'
+  community.general.flatpak:
+    name: org.audacityteam.Audacity
+    state: present
+    method: system
+  tags: ['audio', 'audacity', 'flatpak']

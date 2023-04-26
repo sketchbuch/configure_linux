@@ -1,0 +1,6 @@
+- name: 'Software > Utils > Install Font Manager'
+  community.general.flatpak:
+    name: org.gnome.FontManager
+    state: present
+    method: system
+  tags: ['utils', 'font-manager', 'flatpak']

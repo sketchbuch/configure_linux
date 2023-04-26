@@ -1,0 +1,6 @@
+- name: 'Software > File Mgmt > Install Celeste'
+  community.general.flatpak:
+    name: com.hunterwittenborn.Celeste
+    state: present
+    method: system
+  tags: ['file-management', 'celeste', 'flatpak']

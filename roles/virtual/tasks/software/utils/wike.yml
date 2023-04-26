@@ -1,0 +1,6 @@
+- name: 'Software > Utils > Install Wike'
+  community.general.flatpak:
+    name: com.github.hugolabe.Wike
+    state: present
+    method: system
+  tags: ['utils', 'wike', 'flatpak']

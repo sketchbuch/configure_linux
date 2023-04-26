@@ -1,0 +1,5 @@
+- name: 'Software > File Mgmt > Install Plocate'
+  package:
+    name:
+      - plocate
+  tags: ['file-management', 'plocate', 'package']

@@ -1,0 +1,5 @@
+- name: 'Software > System > Install Htop'
+  package:
+    name:
+      - htop
+  tags: ['system', 'htop', 'package']

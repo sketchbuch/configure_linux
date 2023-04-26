@@ -1,6 +1,6 @@
-- name: 'Software > Documents > Install Foliate'
+- name: 'Software > Books > Install Foliate'
   community.general.flatpak:
     name: com.github.johnfactotum.Foliate
     state: present
     method: system
-  tags: ['documents', 'foliate', 'flatpak']
+  tags: ['books', 'foliate', 'flatpak']

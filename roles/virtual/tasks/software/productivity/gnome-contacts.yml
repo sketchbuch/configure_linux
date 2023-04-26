@@ -1,0 +1,6 @@
+- name: 'Software > Productivity > Install Gnome Contacts'
+  community.general.flatpak:
+    name: org.gnome.Contacts
+    state: present
+    method: system
+  tags: ['productivity', 'gnome-contacts', 'flatpak']

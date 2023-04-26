@@ -1,0 +1,6 @@
+- name: 'Software > Circle Apps > Install FontDownloader'
+  community.general.flatpak:
+    name: org.gustavoperedo.FontDownloader
+    state: present
+    method: system
+  tags: ['circle', 'fontdownloader', 'flatpak']

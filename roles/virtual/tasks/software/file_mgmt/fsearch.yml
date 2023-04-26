@@ -1,0 +1,6 @@
+- name: 'Software > File Mgmt > Install FSearch'
+  community.general.flatpak:
+    name: io.github.cboxdoerfer.FSearch
+    state: present
+    method: system
+  tags: ['file-management', 'fsearch', 'flatpak']

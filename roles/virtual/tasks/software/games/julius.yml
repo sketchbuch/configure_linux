@@ -1,0 +1,6 @@
+- name: 'Software > Games > Install Julius'
+  community.general.flatpak:
+    name: com.github.bvschaik.julius
+    state: present
+    method: system
+  tags: ['games', 'julius', 'flatpak']

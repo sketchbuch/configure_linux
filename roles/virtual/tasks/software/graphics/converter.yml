@@ -1,0 +1,6 @@
+- name: 'Software > Graphics > Install Converter'
+  community.general.flatpak:
+    name: io.gitlab.adhami3310.Converter
+    state: present
+    method: system
+  tags: ['graphics', 'converter', 'flatpak']

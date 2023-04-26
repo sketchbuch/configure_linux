@@ -1,0 +1,6 @@
+- name: 'Software > Security > Install Authy'
+  community.general.flatpak:
+    name: com.authy.Authy
+    state: present
+    method: system
+  tags: ['security', 'authy', 'flatpak']

@@ -61,22 +61,96 @@ virtual | Virtual computers
 
 ### Facts and Dependencies
 
+Tag       | Description
+--------- | ----------------------------------------------------
+pkg_facts | To do with collecting package facts
+dep_check | Checking if some dependency is installed
+set_fact  | Storing something to a variable to be accessed later
+debug     | Debug tasks
+
+### Tasks
+
 Tag          | Description
------------- | ----------------------------------------------------
+------------ | --------------------------------------------------
 always       | Tasks that always need to be done
 clock        | Clock changes
 dconf        | Any tasks to do with dconf config
-dep_check    | Checking if some dependency is installed
 desktop      | Desktop effects and appearance
 distro_tasks | Tasks targeting a specific distro like Ubuntu
 files        | To do with creating/editing files
 folders      | To do with creating/editing folders
 gnome        | Gnome related tasks
+gnome        | Gnome tasks
+kde          | KDE Tasks
 mouse        | Anything to do with mice
-pkg_facts    | To do with collecting package facts
 screensaver  | Screensaver settings
-set_fact     | Storing something to a variable to be accessed later
 setup        | Some kind of setup, like creating folders or files
 touchpad     | Anything to do with touchpads
 user         | Related to the use profile
 vars         | Tasks including vars
+
+### Software Tasks
+
+Tag             | Description
+--------------- | -----------------------------
+audio           | Audio software tasks
+books           | Book software tasks
+circle          | Circle App software tasks
+editors         | Editor software tasks
+file-management | File Mgmt. software tasks
+flatpak         | All Flatpak tasks
+games           | Game software tasks
+graphics        | Graphic software tasks
+package         | All Package tasks
+productivity    | Productivity software tasks
+security        | Security software tasks
+software        | Software tasks
+system          | System software tasks
+utils           | Utility software tasks
+video           | Video software tasks
+virtualisation  | Virtualisation software tasks
+
+### Software Package Tasks
+
+Tag               | Description
+----------------- | -----------------------
+0ad               | 0AD tasks
+apostrophe        | Apostrophe tasks
+audacity          | Audacity tasks
+augustus          | Augustus tasks
+authy             | Authy tasks
+celeste           | Celeste tasks
+collision         | Collision tasks
+converter         | Converter tasks
+curtail           | Curtail tasks
+dconf-editor      | Dconf Editor tasks
+eartag            | EarTag tasks
+extension-manager | Extension Manager tasks
+flatseal          | Flatseal tasks
+foliate           | Foliate tasks
+font-manager      | Font Manager tasks
+fontdownloader    | FontDownloader tasks
+freefilesync      | FreeFileSync tasks
+fsearch           | FSearch tasks
+gimp              | GIMP tasks
+gnome-boxes       | Gnome Boxes tasks
+gnome-calendar    | Gnome Calendar tasks
+gnome-clocks      | Gnome Clocks tasks
+gnome-contacts    | Gnome Contacts tasks
+gnome-extensions  | Gnome Extensions tasks
+gnome-loupe       | Gnome Loupe tasks
+gnome-maps        | Gnome Maps tasks
+gnome-sudoku      | Gnome Sudoku tasks
+gnome-texteditor  | Gnome TextEditor tasks
+gnome-weather     | Gnome Weather tasks
+htop              | Htop tasks
+inkscape          | Inkscape tasks
+julius            | Julius tasks
+keepassxc         | KeePass XC tasks
+losslesscut       | LosslessCut tasks
+neofetch          | Neofetch tasks
+peek              | Peek tasks
+plocate           | Plocate tasks
+powertop          | Powertop tasks
+virtualbox        | VirtualBox tasks
+wike              | Wike tasks

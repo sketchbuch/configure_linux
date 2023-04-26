@@ -1,0 +1,6 @@
+- name: 'Software > File Mgmt > Install FreeFileSync'
+  community.general.flatpak:
+    name: org.freefilesync.FreeFileSync
+    state: present
+    method: system
+  tags: ['file-management', 'freefilesync', 'flatpak']

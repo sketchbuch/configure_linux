@@ -1,0 +1,5 @@
+- name: 'Software > System > Install Powertop'
+  package:
+    name:
+      - powertop
+  tags: ['system', 'powertop', 'package']

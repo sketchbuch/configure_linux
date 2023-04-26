@@ -1,0 +1,6 @@
+- name: 'Software > Security > Install Flatseal'
+  community.general.flatpak:
+    name: com.github.tchx84.Flatseal
+    state: present
+    method: system
+  tags: ['security', 'flatseal', 'flatpak']
