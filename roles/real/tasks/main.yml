@@ -1,5 +1,4 @@
 # Loads vars from the vars folder for this role
+
 - include_vars: "{{ ansible_distribution }}.yml"
   tags: ['always']
-
-- block:

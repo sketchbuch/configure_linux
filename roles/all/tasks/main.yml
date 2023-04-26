@@ -11,8 +11,8 @@
   - name: 'Tasks by distro'
     include_tasks: "{{ item }}"
     with_first_found:
-      - 'desktop/{{ ansible_distribution|lower }}-{{ ansible_distribution_major_version}}.yml'
-      - 'desktop/{{ ansible_distribution|lower }}.yml'
+      - 'distro/{{ ansible_distribution|lower }}-{{ ansible_distribution_major_version}}.yml'
+      - 'distro/{{ ansible_distribution|lower }}.yml'
     tags: ['distro_tasks']
   
   rescue:

@@ -6,8 +6,6 @@
     state: present
     value: "false"
   tags: ['dconf', 'gnome', 'mouse']
-  when: is_gnome
-  
 
 - name: "Gnome > Dconf > Touchpad: Disable natural scrolling"
   become: true
