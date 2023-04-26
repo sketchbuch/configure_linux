@@ -1,6 +1,6 @@
 # Configure Linux
 
-An Ansible setup to configure linux distros and install apps etc.
+Ansible setup to configure a my linux distro and install apps etc. in real and virtual environments.
 
 ## Prerequisites
 
