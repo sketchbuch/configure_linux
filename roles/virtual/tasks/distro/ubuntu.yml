@@ -36,7 +36,7 @@
     - import_tasks: ../software/games/julius.yml
 
     # Graphics
-    - import_tasks: ../software/graphics/convertor.yml
+    - import_tasks: ../software/graphics/converter.yml
     - import_tasks: ../software/graphics/gimp.yml
     - import_tasks: ../software/graphics/gnome-loupe.yml
     - import_tasks: ../software/graphics/inkscape.yml
