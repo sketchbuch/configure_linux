@@ -12,7 +12,7 @@
   tags: setup,folders
 
 # Loads vars from the vars folder for this role
-  - include_vars: "all.yml"
+- include_vars: "all.yml"
   tags: always
 
 - block:
