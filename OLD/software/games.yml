@@ -10,12 +10,6 @@
     state: present
     method: system
     
-- name: 'Install Gnome Chess'
-  community.general.flatpak:
-    name: org.gnome.Chess
-    state: present
-    method: system
-    
 - name: 'Install Gnome Sudoku'
   community.general.flatpak:
     name: org.gnome.Sudoku
