@@ -1,6 +1,6 @@
 # Disable screen locking in VMs
 
-- name: 'Gnome > Dconf > Disable Screensaver'
+- name: 'Gnome > Dconf > Screensaver: Disable'
   become: true
   become_user: '{{real_username}}'
   community.general.dconf:
@@ -9,7 +9,7 @@
     value: "false"
   tags: ['dconf', 'gnome', 'screensaver']
 
-- name: 'Gnome > Dconf > Disable screensaver idle activation'
+- name: 'Gnome > Dconf > Screensaver: Disable idle activation'
   become: true
   become_user: '{{real_username}}'
   community.general.dconf:

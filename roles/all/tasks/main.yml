@@ -1,6 +1,6 @@
 # Loads vars from the vars folder for this role
 
-- name: 'Include all vars'
+- name: 'Include vars'
   include_vars: 'all.yml'
   tags: ['always', 'vars']
 
