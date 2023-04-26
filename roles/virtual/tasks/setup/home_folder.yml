@@ -1,0 +1,36 @@
+- name: 'Setup > Home Folder > Create Home Folders"'
+  become: true
+  become_user: '{{real_username}}'
+  file:
+    path: "{{ item }}"
+    state: directory
+  loop:
+    - "~/Apps"
+    - "~/Archive"
+    - "~/Dev"
+    - "~/Games"
+    - "~/KeePassXC"
+    - "~/Notes"
+    - "~/Projects"
+    - "~/Temp"
+    - "~/VirtualBox VMs"
+  when: not is_virtual
+  tags: setup,folders
+
+- name: 'Setup > Home Folder > Create .hidden file'
+  become: true
+  become_user: '{{real_username}}'
+  ansible.builtin.file:
+    path: "~/.hidden"
+    state: touch
+  tags: setup,files
+
+- name: 'Setup > Home Folder > Add content to .hidden file'
+  become: true
+  become_user: '{{real_username}}'
+  copy:
+    dest: "~/.hidden"
+    content: |
+      FiraxisLive
+      snap
+  tags: setup,files

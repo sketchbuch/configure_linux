@@ -1,23 +1,26 @@
 # Configure Linux
 
-> **Warning**
-> NOT YET READY - TESTING
+> **Warning** NOT YET READY - TESTING
 
 My ansible setup to configure linux and install apps etc. in real and virtual environments.
 
 ## Prerequisites
 
 - **Install Git**
-  -  `sudo apt install git`
+
+  - `sudo apt install git`
 
 - **Install Ansible**
-  -  `sudo apt install ansible`
+
+  - `sudo apt install ansible`
 
 - **Install Flatpak**
-  -  See official guide, e.g. https://flatpak.org/setup/Ubuntu
+
+  - See official guide, e.g. <https://flatpak.org/setup/Ubuntu>
 
 - **Install psutil**
-  -  `sudo apt-get install -y python3-psutil`
+
+  - `sudo apt-get install -y python3-psutil`
 
 ## Run
 
@@ -27,9 +30,39 @@ My ansible setup to configure linux and install apps etc. in real and virtual en
 
 Although flatpak can be installed via ansible, a restart is required.
 
-Based on: https://www.youtube.com/watch?v=gIDywsGBqf4
+Based on: <https://www.youtube.com/watch?v=gIDywsGBqf4>
 
 ### Example Github Repos:
 
-- https://github.com/LearnLinuxTV/personal_ansible_desktop_configs
-- https://github.com/pppontusw/ansible-role-linux-desktop
+- <https://github.com/LearnLinuxTV/personal_ansible_desktop_configs>
+- <https://github.com/pppontusw/ansible-role-linux-desktop>
+
+## Hosts
+
+The following hosts are used:
+
+Host    | Description
+------- | -----------------------------------------------------------
+all     | All hosts
+real    | Hosts that are real
+virtual | Hosts that are virtual running in something like virtualbox
+
+## Tags
+
+The following tags are used:
+
+### **Host Types**
+
+Tag     | Description
+------- | -----------------
+all     | All hosts
+real    | Real computers
+virtual | Virtual computers
+
+**Facts and Dependencies**
+
+Tag       | Description
+--------- | ----------------------------------------------------
+pkg_facts | To do with collecting package facts
+dep_check | Checking if some dependency is installed
+set_fact  | Storing something to a variable to be accessed later
