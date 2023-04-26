@@ -35,7 +35,7 @@
       real_username: '{{ansible_facts["env"]["SUDO_USER"]}}'
   tags: ['set_fact']
 
-- name: 'Own facts'
+- name: 'Facts collected for other roles'
   ansible.builtin.debug:
     msg:
       - 'distro: {{distro}}'

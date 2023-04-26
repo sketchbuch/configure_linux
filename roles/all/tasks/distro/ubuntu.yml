@@ -1,8 +1,9 @@
 - name: 'Tasks for Gnome'
 
   block:
-  - import_tasks: gnome/dconf/datetime.yml
-  - import_tasks: gnome/dconf/mouse_trackpad.yml
+  - import_tasks: ../gnome/dconf/datetime.yml
+  - import_tasks: ../gnome/dconf/mouse_trackpad.yml
+  - import_tasks: ../system/fonts.yml
 
   tags: ['gnome']
   when: is_gnome
