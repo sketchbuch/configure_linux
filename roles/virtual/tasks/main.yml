@@ -15,7 +15,7 @@
       files:
         - 'distro/{{ distro }}-{{ distro_major_version}}.yml'
         - 'distro/{{ distro }}.yml'
-        skip: true
+      skip: true
   
   rescue:
     - set_fact: virtual_task_failed=true
