@@ -25,3 +25,8 @@ An Ansible setup to configure linux distros and install apps etc.
 Although flatpak can be installed via ansible, a restart is required.
 
 Based on: https://www.youtube.com/watch?v=gIDywsGBqf4
+
+### Example Github Repos:
+
+- https://github.com/LearnLinuxTV/personal_ansible_desktop_configs
+- https://github.com/pppontusw/ansible-role-linux-desktop
