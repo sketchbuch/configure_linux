@@ -5,4 +5,4 @@
     name: "{{ real_username }}"
     groups: "vboxfs"
     append: true
-  when: is_virtual && ansible_virtualization_type == 'virtualbox'
+  when: is_virtual and ansible_virtualization_type == 'virtualbox'
