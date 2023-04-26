@@ -1,7 +1,7 @@
-- name: 'Set is_gnome'
-  set_fact:
-      is_gnome: 'gnome' in ansible_facts["env"]["XDG_CURRENT_DESKTOP"] | ternary(true, false)
-  tags: ['set_fact']
+#- name: 'Set is_gnome'
+#  set_fact:
+#      is_gnome: 'gnome' in ansible_facts["env"]["XDG_CURRENT_DESKTOP"] | ternary(true, false)
+#  tags: ['set_fact']
 
 - name: 'Set is_virtual'
   set_fact:
@@ -28,7 +28,7 @@
 - name: 'Own facts'
   ansible.builtin.debug:
     msg:
-    - 'is_gnome: "{{is_gnome}}"'
+    # - 'is_gnome: "{{is_gnome}}"'
     - 'is_virtual: "{{is_virtual}}"'
     - 'is_virtual2: "{{is_virtual2}}"'
     - 'real_username: "{{real_username}}"'
