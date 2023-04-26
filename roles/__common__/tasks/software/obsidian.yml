@@ -1,0 +1,6 @@
+- name: 'Software > Install Obsidian'
+  community.general.flatpak:
+    name: md.obsidian.Obsidian
+    state: present
+    method: system
+  tags: ['games', 'obsidian', 'flatpak']

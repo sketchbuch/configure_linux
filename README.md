@@ -154,11 +154,13 @@ gnome-weather     | Gnome Weather tasks
 htop              | Htop tasks
 inkscape          | Inkscape tasks
 julius            | Julius tasks
+kdenlive          | Kdenlive tasks
 keepassxc         | KeePass XC tasks
 losslesscut       | LosslessCut tasks
 msedge            | MS Edge Browser tasks
 neofetch          | Neofetch tasks
 obs               | OBS Studio tasks
+obsidian          | Obsidian Markdown tasks
 openra            | Open Red Alert tasks
 pdfarranger       | PDF Arranger tasks
 peek              | Peek tasks
@@ -172,6 +174,7 @@ shotcut           | Shotcut tasks
 skype             | Skype tasks
 slack             | Slack tasks
 soundrecorder     | Sound Recorder tasks
+steam             | Steam game launcher tasks
 tangram           | Tangram browser tasks
 tangrams          | Tangram game tasks
 textpieces        | Text Pieces tasks
