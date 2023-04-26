@@ -16,7 +16,7 @@
 - name: 'Own facts'
   ansible.builtin.debug:
     msg:
-    # - 'is_gnome: "{{is_gnome}}"'
-    - 'is_virtual: "{{is_virtual}}"'
-    - 'real_username: "{{real_username}}"'
+      - 'is_gnome: "{{is_gnome}}"'
+      - 'is_virtual: "{{is_virtual}}"'
+      - 'real_username: "{{real_username}}"'
   tags: ['debug']
