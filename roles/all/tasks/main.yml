@@ -1,25 +1,3 @@
-- name: 'Set real_username'
-  set_fact:
-      real_username: '{{ansible_facts["env"]["SUDO_USER"]}}'
-  tags: set_fact
-
-- name: 'Set is_virtual'
-  set_fact:
-      is_virtual: ansible_virtualization_role == 'guest'
-  tags: set_fact
-
-# Stop the include_vars task from comlaining about tmp folder perms
-- name: 'Create .ansible/tmp folder"'
-  become: false
-  file:
-    group: '{{real_username}}'
-    mode: '0644'
-    owner: '{{real_username}}'
-    path: "~/.ansible/tmp"
-    state: directory
-  tags: setup,folders
-
-
 # Loads vars from the vars folder for this role
 - include_vars: "all.yml"
   tags: always
@@ -46,6 +24,16 @@
       fail_msg: 'Flatpak must be installed since a restart is required'
       success_msg: 'Flatpak is installed'
     tags: dep_check
+
+  - name: 'Set real_username'
+    set_fact:
+        real_username: '{{ansible_facts["env"]["SUDO_USER"]}}'
+    tags: set_fact
+
+  - name: 'Set is_virtual'
+    set_fact:
+        is_virtual: ansible_virtualization_role == 'guest'
+    tags: set_fact
   
   rescue:
     - set_fact: all_task_failed=true
