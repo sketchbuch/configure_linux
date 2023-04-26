@@ -15,7 +15,7 @@
     - "~/Temp"
     - "~/VirtualBox VMs"
   when: not is_virtual
-  tags: setup,folders
+  tags: ['setup','folders']
 
 - name: 'Setup > Home Folder > Create .hidden file'
   become: true
@@ -23,7 +23,7 @@
   ansible.builtin.file:
     path: "~/.hidden"
     state: touch
-  tags: setup,files
+  tags: ['setup','files']
 
 - name: 'Setup > Home Folder > Add content to .hidden file'
   become: true
@@ -33,4 +33,4 @@
     content: |
       FiraxisLive
       snap
-  tags: setup,files
+  tags: ['setup','files']

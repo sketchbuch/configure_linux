@@ -3,11 +3,11 @@
   gather_facts: true
   roles:
     - all
-  tags: all
+  tags: ['all']
 
 - hosts: virtual
   become: true
   gather_facts: true
   roles:
     - virtual
-  tags: virtual
+  tags: ['virtual']
