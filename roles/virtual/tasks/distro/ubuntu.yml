@@ -1,8 +1,17 @@
 - name: 'Tasks for Gnome'
 
   block:
-  - import_tasks: ../gnome/dconf/desktop.yml
-  - import_tasks: ../gnome/dconf/screensaver.yml
+    - import_tasks: ../gnome/dconf/desktop.yml
+    - import_tasks: ../gnome/dconf/screensaver.yml
+
+    #- import_tasks: ../software/audacity.yml
+    #- import_tasks: ../software/celeste.yml
+    #- import_tasks: ../software/eartag.yml
+    #- import_tasks: ../software/foliate.yml
+    #- import_tasks: ../software/freefilesync.yml
+    #- import_tasks: ../software/fsearch.yml
+    #- import_tasks: ../software/gnome_texteditor.yml
+    #- import_tasks: ../software/plocate.yml
 
   tags: ['gnome']
   when: is_gnome

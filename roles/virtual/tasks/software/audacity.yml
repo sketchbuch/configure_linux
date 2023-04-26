@@ -3,9 +3,3 @@
     name: org.audacityteam.Audacity
     state: present
     method: system
-
-- name: 'Install EarTag'
-  community.general.flatpak:
-    name: app.drey.EarTag
-    state: present
-    method: system

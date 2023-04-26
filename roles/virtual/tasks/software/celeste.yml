@@ -1,0 +1,5 @@
+- name: 'Install Celeste'
+  community.general.flatpak:
+    name: com.hunterwittenborn.Celeste
+    state: present
+    method: system

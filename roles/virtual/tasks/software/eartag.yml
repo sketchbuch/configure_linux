@@ -1,0 +1,5 @@
+- name: 'Install EarTag'
+  community.general.flatpak:
+    name: app.drey.EarTag
+    state: present
+    method: system

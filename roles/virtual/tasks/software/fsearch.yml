@@ -1,0 +1,5 @@
+- name: 'Install FSearch'
+  community.general.flatpak:
+    name: io.github.cboxdoerfer.FSearch
+    state: present
+    method: system
