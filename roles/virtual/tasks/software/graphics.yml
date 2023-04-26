@@ -3,21 +3,25 @@
     name: io.gitlab.adhami3310.Converter
     state: present
     method: system
+  tags: ['graphics', 'converter', 'flatpak']
 
 - name: 'Install GIMP'
   community.general.flatpak:
     name: org.gimp.GIMP
     state: present
     method: system
+  tags: ['graphics', 'gimp', 'flatpak']
 
 - name: 'Install Inkscape'
   community.general.flatpak:
     name: org.inkscape.Inkscape
     state: present
     method: system
+  tags: ['graphics', 'inkscape', 'flatpak']
 
 - name: 'Install Gnome Loupe'
   community.general.flatpak:
     name: org.gnome.Loupe
     state: present
     method: system
+  tags: ['graphics', 'gnome-loupe', 'flatpak']

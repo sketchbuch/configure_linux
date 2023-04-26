@@ -3,8 +3,10 @@
     name: org.gnome.Boxes
     state: present
     method: system
+  tags: ['virtualisation', 'gnome-boxes', 'flatpak']
 
 - name: 'Install Virtualbox'
   package:
     name:
       - virtualbox
+  tags: ['virtualisation', 'virtualbox', 'package']

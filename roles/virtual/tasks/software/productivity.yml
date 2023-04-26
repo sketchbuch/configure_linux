@@ -3,9 +3,11 @@
     name: org.gnome.Calendar
     state: present
     method: system
+  tags: ['productivity', 'gnome-calendar', 'flatpak']
 
 - name: 'Install Gnome Contacts'
   community.general.flatpak:
     name: org.gnome.Contacts
     state: present
     method: system
+  tags: ['productivity', 'gnome-contacts', 'flatpak']

@@ -3,27 +3,32 @@
     name: org.gnome.FontManager
     state: present
     method: system
+  tags: ['utils', 'font-manager', 'flatpak']
 
 - name: 'Install Gnome Clocks'
   community.general.flatpak:
     name: org.gnome.clocks
     state: present
     method: system
+  tags: ['utils', 'gnome-clocks', 'flatpak']
 
 - name: 'Install Gnome Maps'
   community.general.flatpak:
     name: org.gnome.Maps
     state: present
     method: system
+  tags: ['utils', 'gnome-maps', 'flatpak']
 
 - name: 'Install Gnome Weather'
   community.general.flatpak:
     name: org.gnome.Weather
     state: present
     method: system
+  tags: ['utils', 'gnome-weather', 'flatpak']
 
 - name: 'Install Wike'
   community.general.flatpak:
     name: com.github.hugolabe.Wike
     state: present
     method: system
+  tags: ['utils', 'wike', 'flatpak']

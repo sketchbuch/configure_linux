@@ -3,30 +3,36 @@
     name: ca.desrt.dconf-editor
     state: present
     method: system
+  tags: ['system', 'dconf-editor', 'flatpak']
 
 - name: 'Install Extension Manager'
   community.general.flatpak:
     name: com.mattjakeman.ExtensionManager
     state: present
     method: system
+  tags: ['system', 'extension-manager', 'flatpak']
 
 - name: 'Install Gnome Extensions'
   community.general.flatpak:
     name: org.gnome.Extensions
     state: present
     method: system
+  tags: ['system', 'gnome-extensions', 'flatpak']
 
 - name: 'Install Htop'
   package:
     name:
       - htop
+  tags: ['system', 'htop', 'package']
 
 - name: 'Install Powertop'
   package:
     name:
       - powertop
+  tags: ['system', 'powertop', 'package']
 
 - name: 'Install Neofetch'
   package:
     name:
       - neofetch
+  tags: ['system', 'neofetch', 'package']

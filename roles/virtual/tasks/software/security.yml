@@ -3,15 +3,18 @@
     name: com.authy.Authy
     state: present
     method: system
+  tags: ['productivity', 'authy', 'flatpak']
 
 - name: 'Install Flatseal'
   community.general.flatpak:
     name: com.github.tchx84.Flatseal
     state: present
     method: system
+  tags: ['productivity', 'flatseal', 'flatpak']
 
 - name: 'Install KeePass XC'
   community.general.flatpak:
     name: org.keepassxc.KeePassXC
     state: present
     method: system
+  tags: ['productivity', 'keepassxc', 'flatpak']

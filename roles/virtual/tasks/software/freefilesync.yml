@@ -1,5 +1,0 @@
-- name: 'Install FreeFileSync'
-  community.general.flatpak:
-    name: org.freefilesync.FreeFileSync
-    state: present
-    method: system

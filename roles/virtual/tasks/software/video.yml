@@ -3,9 +3,11 @@
     name: no.mifi.losslesscut
     state: present
     method: system
+  tags: ['video', 'losslesscut', 'flatpak']
 
 - name: 'Install Peek'
   community.general.flatpak:
     name: com.uploadedlobster.peek
     state: present
     method: system
+  tags: ['video', 'peek', 'flatpak']

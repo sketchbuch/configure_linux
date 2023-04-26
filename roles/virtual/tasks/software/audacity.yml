@@ -1,5 +1,0 @@
-- name: 'Install Audacity'
-  community.general.flatpak:
-    name: org.audacityteam.Audacity
-    state: present
-    method: system
