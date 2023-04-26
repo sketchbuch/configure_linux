@@ -1,7 +1,28 @@
-- name: 'Tasks for Gnome'
+- name: 'Gnome Tasks'
   block:
     - import_tasks: ../gnome/dconf/datetime.yml
     - import_tasks: ../gnome/dconf/mouse_trackpad.yml
     - import_tasks: ../system/fonts.yml
   tags: ['gnome']
   when: is_gnome
+
+- name: 'Gnome Software Tasks'
+  block:
+    # System
+    - import_tasks: ../software/system/dconf-editor.yml
+    - import_tasks: ../software/system/extension-manager.yml
+    - import_tasks: ../software/system/gnome-extensions.yml
+  tags: ['gnome', 'software']
+  when: is_gnome
+
+- name: 'Software Tasks'
+  block:
+    # File Management
+    - import_tasks: ../software/file_mgmt/fsearch.yml
+    - import_tasks: ../software/file_mgmt/plocate.yml
+
+    # System
+    - import_tasks: ../software/system/htop.yml
+    - import_tasks: ../software/system/neofetch.yml
+    - import_tasks: ../software/system/powertop.yml
+  tags: ['software']

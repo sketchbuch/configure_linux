@@ -26,8 +26,6 @@
     # File Management
     - import_tasks: ../software/file_mgmt/celeste.yml
     - import_tasks: ../software/file_mgmt/freefilesync.yml
-    - import_tasks: ../software/file_mgmt/fsearch.yml
-    - import_tasks: ../software/file_mgmt/plocate.yml
 
     # Games
     - import_tasks: ../software/games/0ad.yml
@@ -49,14 +47,6 @@
     - import_tasks: ../software/security/authy.yml
     - import_tasks: ../software/security/flatseal.yml
     - import_tasks: ../software/security/keepassxc.yml
-
-    # System
-    - import_tasks: ../software/system/dconf-editor.yml
-    - import_tasks: ../software/system/extension-manager.yml
-    - import_tasks: ../software/system/gnome-extensions.yml
-    - import_tasks: ../software/system/htop.yml
-    - import_tasks: ../software/system/neofetch.yml
-    - import_tasks: ../software/system/powertop.yml
 
     # Utils
     - import_tasks: ../software/utils/font-manager.yml

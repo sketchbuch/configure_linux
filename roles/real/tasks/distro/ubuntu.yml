@@ -1,5 +1,64 @@
-- name: 'Tasks for Gnome'
+- name: 'Gnome Tasks'
   block:
     - import_tasks: ../gnome/dconf/desktop.yml
   tags: ['gnome']
   when: is_gnome
+
+- name: 'Software Tasks'
+  block:
+    # Audio
+    - import_tasks: ../software/audio/audacity.yml
+    - import_tasks: ../software/audio/eartag.yml
+
+    # Books
+    - import_tasks: ../software/books/foliate.yml
+
+    # Circle Apps
+    - import_tasks: ../software/circle_apps/apostrophe.yml
+    - import_tasks: ../software/circle_apps/collision.yml
+    - import_tasks: ../software/circle_apps/curtail.yml
+    - import_tasks: ../software/circle_apps/fontdownloader.yml
+
+    # Editors
+    - import_tasks: ../software/editors/gnome_texteditor.yml
+
+    # File Management
+    - import_tasks: ../software/file_mgmt/celeste.yml
+    - import_tasks: ../software/file_mgmt/freefilesync.yml
+
+    # Games
+    - import_tasks: ../software/games/0ad.yml
+    - import_tasks: ../software/games/augustus.yml
+    - import_tasks: ../software/games/gnome_sudoku.yml
+    - import_tasks: ../software/games/julius.yml
+
+    # Graphics
+    - import_tasks: ../software/graphics/converter.yml
+    - import_tasks: ../software/graphics/gimp.yml
+    - import_tasks: ../software/graphics/gnome-loupe.yml
+    - import_tasks: ../software/graphics/inkscape.yml
+
+    # Productivity
+    - import_tasks: ../software/productivity/gnome-calendar.yml
+    - import_tasks: ../software/productivity/gnome-contacts.yml
+
+    # Security
+    - import_tasks: ../software/security/authy.yml
+    - import_tasks: ../software/security/flatseal.yml
+    - import_tasks: ../software/security/keepassxc.yml
+
+    # Utils
+    - import_tasks: ../software/utils/font-manager.yml
+    - import_tasks: ../software/utils/gnome-clocks.yml
+    - import_tasks: ../software/utils/gnome-maps.yml
+    - import_tasks: ../software/utils/gnome-weather.yml
+    - import_tasks: ../software/utils/wike.yml
+
+    # Video
+    - import_tasks: ../software/video/losslesscut.yml
+    - import_tasks: ../software/video/peek.yml
+
+    # Virtualisation
+    - import_tasks: ../software/virtualisation/gnome-boxes.yml
+    - import_tasks: ../software/virtualisation/virtualbox.yml
+  tags: ['software']
