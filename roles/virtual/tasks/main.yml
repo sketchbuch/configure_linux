@@ -4,5 +4,4 @@
 
 - block:
   rescue:
-    set_fact:
-      task_failed: true
+    - set_fact: task_failed=true

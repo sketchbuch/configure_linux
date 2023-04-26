@@ -6,5 +6,4 @@
   - import_tasks: setup.yml
   
   rescue:
-    set_fact:
-      all_task_failed: true
+    - set_fact: all_task_failed=true
