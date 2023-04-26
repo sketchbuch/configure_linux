@@ -63,7 +63,7 @@
     - import_tasks: ../software/utils/gnome-clocks.yml
     - import_tasks: ../software/utils/gnome-maps.yml
     - import_tasks: ../software/utils/gnome-weather.yml
-    - import_tasks: ../software/utils/wike.ymlyml
+    - import_tasks: ../software/utils/wike.yml
 
     # Video
     - import_tasks: ../software/video/losslesscut.yml
