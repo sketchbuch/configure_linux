@@ -1,3 +1,9 @@
+- hosts: all
+  become: true
+  roles:
+    - all
+  tags: all
+
 - hosts: virtual
   become: true
   roles:

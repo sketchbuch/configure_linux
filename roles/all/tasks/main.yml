@@ -1,0 +1,27 @@
+# Loads vars from the vars folder for this role
+- include_vars: "all.yml"
+  tags: always
+
+- block:
+  - name: 'Gather package facts'
+    ansible.builtin.package_facts:
+      manager: auto
+    when: collect_package_facts is defined and collect_package_facts == true
+
+  - name: 'Print package facts'
+    ansible.builtin.debug:
+      var: ansible_facts.packages
+    when:
+      - collect_package_facts is defined and collect_package_facts == true
+      - debug_package_facts is defined and debug_package_facts == true
+
+  - name: 'Checking required package: Flatpak'
+    ansible.builtin.assert:
+      that:
+        - ansible_facts.packages['flatpak'] is defined
+      fail_msg: 'Flatpak must be installed since a restart is required'
+      success_msg: 'Flatpak is installed'
+  
+  rescue:
+    - set_fact:
+      all_task_failed: true
