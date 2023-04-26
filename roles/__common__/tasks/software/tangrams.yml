@@ -1,0 +1,5 @@
+- name: 'Software > Games > Install Tangrams'
+  package:
+    name:
+      - gtans
+  tags: ['system', 'tangrams', 'circle', 'package']

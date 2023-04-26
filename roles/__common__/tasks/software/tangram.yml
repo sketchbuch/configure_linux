@@ -1,0 +1,6 @@
+- name: 'Software > Internet > Install Tangram'
+  community.general.flatpak:
+    name: re.sonny.Tangram
+    state: present
+    method: system
+  tags: ['internet', 'tangram', 'circle', 'flatpak']

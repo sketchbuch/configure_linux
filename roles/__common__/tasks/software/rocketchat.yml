@@ -1,0 +1,6 @@
+- name: 'Software > Dev > Install RocketChat'
+  community.general.flatpak:
+    name: chat.rocket.RocketChat
+    state: present
+    method: system
+  tags: ['comms', 'rocketchat', 'flatpak']

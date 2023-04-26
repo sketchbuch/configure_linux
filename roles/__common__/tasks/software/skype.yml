@@ -1,0 +1,6 @@
+- name: 'Software > Dev > Install Skype'
+  community.general.flatpak:
+    name: com.skype.Client
+    state: present
+    method: system
+  tags: ['comms', 'skype', 'flatpak']

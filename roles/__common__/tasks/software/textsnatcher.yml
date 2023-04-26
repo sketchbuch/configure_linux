@@ -1,0 +1,6 @@
+- name: 'Software > Utils > Install TextSnatcher'
+  community.general.flatpak:
+    name: com.github.rajsolai.textsnatcher
+    state: present
+    method: system
+  tags: ['utils', 'textsnatcher', 'flatpak']

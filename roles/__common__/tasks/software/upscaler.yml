@@ -1,0 +1,6 @@
+- name: 'Software > Graphics > Install Upscaler'
+  community.general.flatpak:
+    name: io.gitlab.theevilskeleton.Upscaler
+    state: present
+    method: system
+  tags: ['graphics', 'upscaler', 'flatpak']

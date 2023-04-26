@@ -1,0 +1,6 @@
+- name: 'Software > Graphics > Install Pinta'
+  community.general.flatpak:
+    name: com.github.PintaProject.Pinta
+    state: present
+    method: system
+  tags: ['graphics', 'pinta', 'flatpak']

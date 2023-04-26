@@ -91,20 +91,28 @@ vars         | Tasks including vars
 
 ### Software Tasks
 
+Tag      | Description
+-------- | ------------------
+flatpak  | All Flatpak tasks
+package  | All Package tasks
+software | All Software tasks
+
+### Software Type Tasks
+
 Tag             | Description
---------------- | -----------------------------
+--------------- | -------------------------------
 audio           | Audio software tasks
-books           | Book software tasks
 circle          | Circle App software tasks
+comms           | Communication software tasks
+dev             | Development software tasks
+documents       | Document software tasks
 editors         | Editor software tasks
 file-management | File Mgmt. software tasks
-flatpak         | All Flatpak tasks
 games           | Game software tasks
 graphics        | Graphic software tasks
-package         | All Package tasks
+internet        | Internet related software tasks
 productivity    | Productivity software tasks
 security        | Security software tasks
-software        | Software tasks
 system          | System software tasks
 utils           | Utility software tasks
 video           | Video software tasks
@@ -113,7 +121,7 @@ virtualisation  | Virtualisation software tasks
 ### Software Package Tasks
 
 Tag               | Description
------------------ | -----------------------
+----------------- | ---------------------------
 0ad               | 0AD tasks
 apostrophe        | Apostrophe tasks
 audacity          | Audacity tasks
@@ -141,16 +149,38 @@ gnome-extensions  | Gnome Extensions tasks
 gnome-loupe       | Gnome Loupe tasks
 gnome-maps        | Gnome Maps tasks
 gnome-sudoku      | Gnome Sudoku tasks
-gnome-texteditor  | Gnome TextEditor tasks
+gnome-texteditor  | Gnome Text Editor tasks
 gnome-weather     | Gnome Weather tasks
 htop              | Htop tasks
 inkscape          | Inkscape tasks
 julius            | Julius tasks
 keepassxc         | KeePass XC tasks
 losslesscut       | LosslessCut tasks
+msedge            | MS Edge Browser tasks
 neofetch          | Neofetch tasks
+obs               | OBS Studio tasks
+openra            | Open Red Alert tasks
+pdfarranger       | PDF Arranger tasks
 peek              | Peek tasks
+pinta             | Pinta tasks
+pitivi            | Pitivi tasks
 plocate           | Plocate tasks
+postman           | Postman tasks
 powertop          | Powertop tasks
+rocketchat        | Rocket Chat tasks
+shotcut           | Shotcut tasks
+skype             | Skype tasks
+slack             | Slack tasks
+soundrecorder     | Sound Recorder tasks
+tangram           | Tangram browser tasks
+tangrams          | Tangram game tasks
+textpieces        | Text Pieces tasks
+textsnatcher      | TextSnatcher tasks
+upscaler          | Upscaler tasks
+videodownloader   | Video Downloader tasks
+videotrimmer      | Video Trimmer tasks
 virtualbox        | VirtualBox tasks
+vlc               | VLC Player tasks
+warp              | Warp tasks
+webfontkitgen     | Webfont Kit Generator tasks
 wike              | Wike tasks

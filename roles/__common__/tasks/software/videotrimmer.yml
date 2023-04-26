@@ -1,0 +1,6 @@
+- name: 'Software > Video > Install Video Trimmer'
+  community.general.flatpak:
+    name: org.gnome.gitlab.YaLTeR.VideoTrimmer
+    state: present
+    method: system
+  tags: ['video', 'videotrimmer', 'circle', 'flatpak']

@@ -3,4 +3,4 @@
     name: com.github.hugolabe.Wike
     state: present
     method: system
-  tags: ['utils', 'wike', 'flatpak']
+  tags: ['utils', 'wike', 'circle', 'flatpak']

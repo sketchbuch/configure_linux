@@ -1,0 +1,6 @@
+- name: 'Software > Internet > Install Warp'
+  community.general.flatpak:
+    name: app.drey.Warp
+    state: present
+    method: system
+  tags: ['file-management', 'internet', 'warp', 'circle', 'flatpak']

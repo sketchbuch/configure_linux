@@ -1,0 +1,6 @@
+- name: 'Software > File Mgmt > Install Curtail'
+  community.general.flatpak:
+    name: com.github.huluti.Curtail
+    state: present
+    method: system
+  tags: ['file-management', 'curtail', 'circle', 'flatpak']

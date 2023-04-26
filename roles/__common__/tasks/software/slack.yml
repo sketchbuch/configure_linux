@@ -1,0 +1,6 @@
+- name: 'Software > Dev > Install Slack'
+  community.general.flatpak:
+    name: com.slack.Slack
+    state: present
+    method: system
+  tags: ['comms', 'slack', 'flatpak']

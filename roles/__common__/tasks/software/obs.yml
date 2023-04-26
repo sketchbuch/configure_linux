@@ -1,0 +1,6 @@
+- name: 'Software > Video > Install OBS Studio'
+  community.general.flatpak:
+    name: com.obsproject.Studio
+    state: present
+    method: system
+  tags: ['video', 'obs', 'flatpak']

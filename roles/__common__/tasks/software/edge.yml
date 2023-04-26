@@ -1,0 +1,6 @@
+- name: 'Software > Internet > Install MS Edge'
+  community.general.flatpak:
+    name: com.microsoft.Edge
+    state: present
+    method: system
+  tags: ['internet', 'msedge', 'flatpak']

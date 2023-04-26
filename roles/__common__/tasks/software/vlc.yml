@@ -1,0 +1,6 @@
+- name: 'Software > Audio > Install VLC'
+  community.general.flatpak:
+    name: org.videolan.VLC
+    state: present
+    method: system
+  tags: ['audio', 'video', 'vlc', 'flatpak']

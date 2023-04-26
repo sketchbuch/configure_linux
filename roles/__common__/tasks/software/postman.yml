@@ -1,0 +1,6 @@
+- name: 'Software > Dev > Install Postman'
+  community.general.flatpak:
+    name: com.getpostman.Postman
+    state: present
+    method: system
+  tags: ['dev', 'postman', 'flatpak']

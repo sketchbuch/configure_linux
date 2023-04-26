@@ -1,0 +1,6 @@
+- name: 'Software > Video > Install Pitivi'
+  community.general.flatpak:
+    name: org.pitivi.Pitivi
+    state: present
+    method: system
+  tags: ['video', 'pitivi', 'flatpak']

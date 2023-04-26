@@ -1,0 +1,6 @@
+- name: 'Software > Audio > Install SoundRecorder'
+  community.general.flatpak:
+    name: org.gnome.SoundRecorder
+    state: present
+    method: system
+  tags: ['audio', 'soundrecorder', 'flatpak']

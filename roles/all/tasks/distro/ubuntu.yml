@@ -8,21 +8,18 @@
 
 - name: 'Gnome Software Tasks'
   block:
-    # System
-    - import_tasks: ../software/system/dconf-editor.yml
-    - import_tasks: ../software/system/extension-manager.yml
-    - import_tasks: ../software/system/gnome-extensions.yml
+    - import_tasks: ../software/dconf-editor.yml
+    - import_tasks: ../software/extension-manager.yml
+    - import_tasks: ../software/gnome-extensions.yml
   tags: ['gnome', 'software']
   when: is_gnome
 
 - name: 'Software Tasks'
   block:
     # File Management
-    - import_tasks: ../software/file_mgmt/fsearch.yml
-    - import_tasks: ../software/file_mgmt/plocate.yml
-
-    # System
-    - import_tasks: ../software/system/htop.yml
-    - import_tasks: ../software/system/neofetch.yml
-    - import_tasks: ../software/system/powertop.yml
+    - import_tasks: ../software/fsearch.yml
+    - import_tasks: ../software/htop.yml
+    - import_tasks: ../software/neofetch.yml
+    - import_tasks: ../software/plocate.yml
+    - import_tasks: ../software/powertop.yml
   tags: ['software']

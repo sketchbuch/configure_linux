@@ -1,6 +1,6 @@
-- name: 'Software > Circle Apps > Install Apostrophe'
+- name: 'Software > Documents > Install Apostrophe'
   community.general.flatpak:
     name: org.gnome.gitlab.somas.Apostrophe
     state: present
     method: system
-  tags: ['circle', 'apostrophe', 'flatpak']
+  tags: ['documents', 'apostrophe', 'circle', 'flatpak']

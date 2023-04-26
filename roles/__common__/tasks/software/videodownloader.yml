@@ -1,0 +1,6 @@
+- name: 'Software > Video > Install Video Downloader'
+  community.general.flatpak:
+    name: com.github.unrud.VideoDownloader
+    state: present
+    method: system
+  tags: ['video', 'videodownloader', 'flatpak']

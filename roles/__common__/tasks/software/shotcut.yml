@@ -1,0 +1,6 @@
+- name: 'Software > Video > Install Shotcut'
+  community.general.flatpak:
+    name: org.shotcut.Shotcut
+    state: present
+    method: system
+  tags: ['video', 'shotcut', 'flatpak']
