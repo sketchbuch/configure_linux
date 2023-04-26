@@ -1,7 +1,7 @@
 - name: 'Setup > Home Folder > Create Home Folders"'
   become: true
   become_user: '{{real_username}}'
-  file:
+  ansible.builtin.file:
     path: "{{ item }}"
     state: directory
   loop:
@@ -28,7 +28,7 @@
 - name: 'Setup > Home Folder > Add content to .hidden file'
   become: true
   become_user: '{{real_username}}'
-  copy:
+  ansible.builtin.copy:
     dest: "~/.hidden"
     content: |
       FiraxisLive
