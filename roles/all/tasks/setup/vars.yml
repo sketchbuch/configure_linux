@@ -1,6 +1,6 @@
-- name: 'Set real_username'
+- name: 'Set is_gnome'
   set_fact:
-      real_username: '{{ansible_facts["env"]["SUDO_USER"]}}'
+      is_gnome: 'gnome' in ansible_facts["env"]["XDG_CURRENT_DESKTOP"] | ternary(true, false)
   tags: ['set_fact']
 
 - name: 'Set is_virtual'
@@ -15,9 +15,15 @@
   when: ansible_virtualization_role != "guest"
   tags: ['set_fact']
 
+- name: 'Set real_username'
+  set_fact:
+      real_username: '{{ansible_facts["env"]["SUDO_USER"]}}'
+  tags: ['set_fact']
+
 - name: 'Own facts'
   ansible.builtin.debug:
     msg:
-    - 'real_username: "{{real_username}}"'
+    - 'is_gnome: "{{is_gnome}}"'
     - 'is_virtual: "{{is_virtual}}"'
+    - 'real_username: "{{real_username}}"'
   tags: ['debug']
