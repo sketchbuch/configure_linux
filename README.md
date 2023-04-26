@@ -3,7 +3,7 @@
 > **Warning**
 > NOT YET READY - TESTING
 
-Ansible setup to configure a my linux distro and install apps etc. in real and virtual environments.
+My ansible setup to configure linux and install apps etc. in real and virtual environments.
 
 ## Prerequisites
 
