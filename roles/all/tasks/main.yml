@@ -1,11 +1,19 @@
 # Loads vars from the vars folder for this role
-- include_vars: "all.yml"
+
+- include_vars: 'all.yml'
   tags: ['always']
 
 - block:
   - import_tasks: setup/facts.yml
   - import_tasks: setup/checks.yml
   - import_tasks: setup/vars.yml
+
+  - name: 'Tasks by distro'
+    include_tasks: "{{ item }}"
+    with_first_found:
+      - 'desktop/{{ ansible_distribution|lower }}-{{ ansible_distribution_major_version}}.yml'
+      - 'desktop/{{ ansible_distribution|lower }}.yml'
+    tags: ['distro_tasks']
   
   rescue:
     - set_fact: all_task_failed=true

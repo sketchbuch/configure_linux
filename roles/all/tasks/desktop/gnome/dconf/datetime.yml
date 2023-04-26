@@ -3,7 +3,7 @@
 - name: "Topbar Clock: Format 24h"
   become: true
   become_user: '{{real_username}}'
-  dconf:
+  community.general.dconf:
     key: "/org/gnome/desktop/interface/clock-format"
     state: present
     value: "'24h'"
@@ -11,7 +11,7 @@
 - name: "Topbar Clock: Show date"
   become: true
   become_user: '{{real_username}}'
-  dconf:
+  community.general.dconf:
     key: "/org/gnome/desktop/interface/clock-show-date"
     state: present
     value: "true"
@@ -19,7 +19,7 @@
 - name: "Topbar Clock: Show week day"
   become: true
   become_user: '{{real_username}}'
-  dconf:
+  community.general.dconf:
     key: "/org/gnome/desktop/interface/clock-show-weekday"
     state: present
     value: "true"

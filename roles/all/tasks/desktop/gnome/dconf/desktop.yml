@@ -1,7 +1,7 @@
 - name: "Hot Corners: Enable in real environments"
   become: true
   become_user: '{{real_username}}'
-  dconf:
+  community.general.dconf:
     key: "/org/gnome/desktop/interface/enable-hot-corners"
     state: present
     value: "true"
@@ -10,7 +10,7 @@
 - name: "Hot Corners: Disable in virtual environments"
   become: true
   become_user: '{{real_username}}'
-  dconf:
+  community.general.dconf:
     key: "/org/gnome/desktop/interface/enable-hot-corners"
     state: present
     value: "false"

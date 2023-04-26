@@ -61,12 +61,13 @@ virtual | Virtual computers
 
 ### Facts and Dependencies
 
-Tag       | Description
---------- | ----------------------------------------------------
-dep_check | Checking if some dependency is installed
-files     | To do with creating/editing files
-folders   | To do with creating/editing folders
-pkg_facts | To do with collecting package facts
-set_fact  | Storing something to a variable to be accessed later
-setup     | Some kind of setup, like creating folders or files
-user      | Related to the use profile
+Tag          | Description
+------------ | ----------------------------------------------------
+dep_check    | Checking if some dependency is installed
+distro_tasks | Tasks targeting a specific distro like Ubuntu
+files        | To do with creating/editing files
+folders      | To do with creating/editing folders
+pkg_facts    | To do with collecting package facts
+set_fact     | Storing something to a variable to be accessed later
+setup        | Some kind of setup, like creating folders or files
+user         | Related to the use profile
