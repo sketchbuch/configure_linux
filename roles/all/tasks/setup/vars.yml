@@ -1,23 +1,11 @@
-#- name: 'Set is_gnome'
-#  set_fact:
-#      is_gnome: 'gnome' in ansible_facts["env"]["XDG_CURRENT_DESKTOP"] | ternary(true, false)
-#  tags: ['set_fact']
-
-- name: 'Set is_virtual'
+- name: 'Set is_gnome'
   set_fact:
-      is_virtual: true
-  when: ansible_virtualization_role == "guest"
+      is_gnome: "{{ ('gnome' in ansible_facts["env"]["XDG_CURRENT_DESKTOP"]) | ternary (true, false) }}"
   tags: ['set_fact']
 
 - name: 'Set is_virtual'
   set_fact:
-      is_virtual: false
-  when: ansible_virtualization_role != "guest"
-  tags: ['set_fact']
-
-- name: 'Set is_virtual2'
-  set_fact:
-      is_virtual2: "{{ (ansible_virtualization_role == 'guest') | ternary (true, false) }}"
+      is_virtual: "{{ (ansible_virtualization_role == 'guest') | ternary (true, false) }}"
   tags: ['set_fact']
 
 - name: 'Set real_username'
@@ -30,6 +18,5 @@
     msg:
     # - 'is_gnome: "{{is_gnome}}"'
     - 'is_virtual: "{{is_virtual}}"'
-    - 'is_virtual2: "{{is_virtual2}}"'
     - 'real_username: "{{real_username}}"'
   tags: ['debug']
