@@ -9,8 +9,10 @@
     include_tasks: "{{ item }}"
     tags: ['distro_tasks']
     with_first_found:
-      - 'distro/{{ distro }}-{{ distro_major_version}}.yml'
-      - 'distro/{{ distro }}.yml'
+      files:
+        - 'distro/{{ distro }}-{{ distro_major_version}}.yml'
+        - 'distro/{{ distro }}.yml'
+      skip: true
   
   rescue:
     - set_fact: real_task_failed=true
