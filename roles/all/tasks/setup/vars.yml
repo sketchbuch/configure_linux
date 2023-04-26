@@ -2,7 +2,7 @@
 
 - name: 'Set distro'
   set_fact:
-      distro: '{{ ansible_distribution }}'
+      distro: '{{ ansible_distribution | lower }}'
   tags: ['set_fact']
 
 - name: 'Set distro_major_version'

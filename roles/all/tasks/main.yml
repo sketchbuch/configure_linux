@@ -1,6 +1,7 @@
 # Loads vars from the vars folder for this role
 
-- include_vars: 'all.yml'
+- name: 'Include all vars'
+  include_vars: 'all.yml'
   tags: ['always']
 
 - block:
@@ -8,12 +9,12 @@
   - import_tasks: setup/checks.yml
   - import_tasks: setup/vars.yml
 
-  - name: 'Tasks for: {{ distro }}'
+  - name: 'Tasks for: {{ distro | capitalize }}'
     include_tasks: "{{ item }}"
     tags: ['distro_tasks']
     with_first_found:
-      - 'distro/{{ distro|lower }}-{{ distro_major_version}}.yml'
-      - 'distro/{{ distro|lower }}.yml'
+      - 'distro/{{ distro }}-{{ distro_major_version}}.yml'
+      - 'distro/{{ distro }}.yml'
   
   rescue:
     - set_fact: all_task_failed=true

@@ -1,4 +1,5 @@
 # Loads vars from the vars folder for this role
 
-- include_vars: "{{ distro }}.yml"
+- name: 'Include {{ distro | capitalize  }} vars'
+  include_vars: "{{ distro }}.yml"
   tags: ['always']
