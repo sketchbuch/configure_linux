@@ -32,7 +32,7 @@
 
   - name: 'Set is_virtual'
     set_fact:
-        is_virtual: '{{ansible_virtualization_role == "guest" | bool}}'
+        is_virtual: ansible_virtualization_role == "guest" | bool
     tags: ['set_fact']
 
   - name: 'Output real_username'
