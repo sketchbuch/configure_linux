@@ -8,12 +8,12 @@
   - import_tasks: setup/checks.yml
   - import_tasks: setup/vars.yml
 
-  - name: 'Tasks by distro'
+  - name: 'Tasks for: {{ distro }}'
     include_tasks: "{{ item }}"
     tags: ['distro_tasks']
     with_first_found:
-      - 'distro/{{ ansible_distribution|lower }}-{{ ansible_distribution_major_version}}.yml'
-      - 'distro/{{ ansible_distribution|lower }}.yml'
+      - 'distro/{{ distro|lower }}-{{ distro_major_version}}.yml'
+      - 'distro/{{ distro|lower }}.yml'
   
   rescue:
     - set_fact: all_task_failed=true
