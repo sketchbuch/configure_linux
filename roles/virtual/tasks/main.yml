@@ -2,8 +2,4 @@
 - include_vars: "{{ ansible_distribution }}.yml"
   tags: ['always']
 
-- block:
-  - import_tasks: setup/home_folder.yml
-  
-  rescue:
-    - set_fact: virtual_task_failed=true
+- import_tasks: setup/home_folder.yml
