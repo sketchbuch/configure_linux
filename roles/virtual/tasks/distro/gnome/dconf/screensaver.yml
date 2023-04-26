@@ -8,7 +8,6 @@
     state: present
     value: "false"
   tags: ['dconf', 'gnome', 'screensaver']
-  when: is_virtual
 
 - name: 'Gnome > Dconf > Disable screensaver idle activation'
   become: true
@@ -18,7 +17,6 @@
     state: present
     value: "false"
   tags: ['dconf', 'gnome', 'screensaver']
-  when: is_virtual
 
 - name: 'Gnome > Dconf > Disable lock screen timeout'
   become: true
@@ -28,7 +26,6 @@
     state: present
     value: "uint32 0"
   tags: ['dconf', 'gnome', 'screensaver']
-  when: is_virtual
 
 - name: 'Gnome > Dconf > Disable idle timeout'
   become: true
@@ -38,4 +35,3 @@
     state: present
     value: "uint32 0"
   tags: ['dconf', 'gnome', 'screensaver']
-  when: is_virtual

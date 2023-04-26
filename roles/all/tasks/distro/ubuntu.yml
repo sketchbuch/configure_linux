@@ -2,9 +2,7 @@
 
   block:
   - import_tasks: gnome/dconf/datetime.yml
-  - import_tasks: gnome/dconf/desktop.yml
   - import_tasks: gnome/dconf/mouse_trackpad.yml
-  - import_tasks: gnome/dconf/screensaver.yml
 
   tags: ['gnome']
   when: is_gnome

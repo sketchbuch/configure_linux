@@ -1,5 +1,16 @@
 # Loads vars from the vars folder for this role
 
-- name: 'Include {{ distro | capitalize  }} vars'
+- name: 'Include real {{ distro | capitalize  }} vars'
   include_vars: "{{ distro }}.yml"
   tags: ['always', 'vars']
+
+- block:
+  - name: 'Include tasks for: {{ distro | capitalize }}'
+    include_tasks: "{{ item }}"
+    tags: ['distro_tasks']
+    with_first_found:
+      - 'distro/{{ distro }}-{{ distro_major_version}}.yml'
+      - 'distro/{{ distro }}.yml'
+  
+  rescue:
+    - set_fact: real_task_failed=true
