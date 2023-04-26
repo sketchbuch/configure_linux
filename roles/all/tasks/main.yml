@@ -23,5 +23,5 @@
       success_msg: 'Flatpak is installed'
   
   rescue:
-    - set_fact:
+    set_fact:
       all_task_failed: true
