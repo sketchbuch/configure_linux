@@ -8,13 +8,18 @@
   when: is_gnome
 
   block:
-    - import_tasks: ../software/audacity.yml
-    - import_tasks: ../software/celeste.yml
-    - import_tasks: ../software/eartag.yml
-    - import_tasks: ../software/foliate.yml
-    - import_tasks: ../software/freefilesync.yml
-    - import_tasks: ../software/fsearch.yml
-    - import_tasks: ../software/gnome_texteditor.yml
-    - import_tasks: ../software/plocate.yml
+    - import_tasks: ../software/audio.yml
+    - import_tasks: ../software/circle_apps.yml
+    - import_tasks: ../software/documents.yml
+    - import_tasks: ../software/editors.yml
+    - import_tasks: ../software/file_management.yml
+    - import_tasks: ../software/games.yml
+    - import_tasks: ../software/graphics.yml
+    - import_tasks: ../software/productivity.yml
+    - import_tasks: ../software/security.yml
+    - import_tasks: ../software/system.yml
+    - import_tasks: ../software/utils.yml
+    - import_tasks: ../software/video.yml
+    - import_tasks: ../software/virtualisation.yml
     
   tags: ['software']
