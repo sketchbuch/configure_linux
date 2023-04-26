@@ -2,7 +2,7 @@
   become: true
   become_user: '{{real_username}}'
   ansible.builtin.user:
-    name: "{{ real_username }}"
-    groups: "vboxfs"
+    name: '{{ real_username }}'
+    groups: 'vboxsf'
     append: true
   when: is_virtual and ansible_virtualization_type == 'virtualbox'
