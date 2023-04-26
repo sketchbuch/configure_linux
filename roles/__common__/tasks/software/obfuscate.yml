@@ -1,4 +1,4 @@
-- name: 'Software > Security > Install Obfuscate'
+- name: 'Software > Install Obfuscate'
   community.general.flatpak:
     name: com.belmoussaoui.Obfuscate
     state: present

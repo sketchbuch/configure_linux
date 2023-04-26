@@ -1,4 +1,4 @@
-- name: 'Software > Editors > Install Gnome TextEditor'
+- name: 'Software > Install Gnome TextEditor'
   community.general.flatpak:
     name: org.gnome.TextEditor
     state: present

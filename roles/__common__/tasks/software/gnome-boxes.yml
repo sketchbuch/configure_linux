@@ -1,4 +1,4 @@
-- name: 'Software > Virtualisation > Install Gnome Boxes'
+- name: 'Software > Install Gnome Boxes'
   community.general.flatpak:
     name: org.gnome.Boxes
     state: present

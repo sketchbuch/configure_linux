@@ -1,4 +1,4 @@
-- name: 'Software > Documents > Install Foliate'
+- name: 'Software > Install Foliate'
   community.general.flatpak:
     name: com.github.johnfactotum.Foliate
     state: present

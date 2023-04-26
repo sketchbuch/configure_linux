@@ -1,4 +1,4 @@
-- name: 'Software > Utils > Install Gnome Maps'
+- name: 'Software > Install Gnome Maps'
   community.general.flatpak:
     name: org.gnome.Maps
     state: present

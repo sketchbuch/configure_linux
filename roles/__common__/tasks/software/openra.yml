@@ -1,4 +1,4 @@
-- name: 'Software > Games > Install OpenRA'
+- name: 'Software > Install OpenRA'
   community.general.flatpak:
     name: net.openra.OpenRA
     state: present

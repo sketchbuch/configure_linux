@@ -1,4 +1,4 @@
-- name: 'Software > Internet > Install Tangram'
+- name: 'Software > Install Tangram'
   community.general.flatpak:
     name: re.sonny.Tangram
     state: present

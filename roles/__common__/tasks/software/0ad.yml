@@ -1,4 +1,4 @@
-- name: 'Software > Games > Install 0AD'
+- name: 'Software > Install 0AD'
   community.general.flatpak:
     name: com.play0ad.zeroad
     state: present

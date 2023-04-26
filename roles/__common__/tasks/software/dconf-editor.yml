@@ -1,4 +1,4 @@
-- name: 'Software > System > Install Dconf Editor'
+- name: 'Software > Install Dconf Editor'
   community.general.flatpak:
     name: ca.desrt.dconf-editor
     state: present

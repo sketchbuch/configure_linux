@@ -1,4 +1,4 @@
-- name: 'Software > File Mgmt > Install FreeFileSync'
+- name: 'Software > Install FreeFileSync'
   community.general.flatpak:
     name: org.freefilesync.FreeFileSync
     state: present

@@ -1,4 +1,4 @@
-- name: 'Software > Dev > Install Postman'
+- name: 'Software > Install Postman'
   community.general.flatpak:
     name: com.getpostman.Postman
     state: present

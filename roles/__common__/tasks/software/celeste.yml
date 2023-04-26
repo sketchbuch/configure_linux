@@ -1,4 +1,4 @@
-- name: 'Software > File Mgmt > Install Celeste'
+- name: 'Software > Install Celeste'
   community.general.flatpak:
     name: com.hunterwittenborn.Celeste
     state: present

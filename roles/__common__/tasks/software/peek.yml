@@ -1,4 +1,4 @@
-- name: 'Software > Video > Install Peek'
+- name: 'Software > Install Peek'
   community.general.flatpak:
     name: com.uploadedlobster.peek
     state: present

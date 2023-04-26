@@ -1,4 +1,4 @@
-- name: 'Software > System > Install Powertop'
+- name: 'Software > Install Powertop'
   package:
     name:
       - powertop

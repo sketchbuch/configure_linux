@@ -1,4 +1,4 @@
-- name: 'Software > Utils > Install FontDownloader'
+- name: 'Software > Install FontDownloader'
   community.general.flatpak:
     name: org.gustavoperedo.FontDownloader
     state: present

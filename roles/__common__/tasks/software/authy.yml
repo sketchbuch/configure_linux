@@ -1,4 +1,4 @@
-- name: 'Software > Security > Install Authy'
+- name: 'Software > Install Authy'
   community.general.flatpak:
     name: com.authy.Authy
     state: present

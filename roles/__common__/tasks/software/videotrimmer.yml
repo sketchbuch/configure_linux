@@ -1,4 +1,4 @@
-- name: 'Software > Video > Install Video Trimmer'
+- name: 'Software > Install Video Trimmer'
   community.general.flatpak:
     name: org.gnome.gitlab.YaLTeR.VideoTrimmer
     state: present

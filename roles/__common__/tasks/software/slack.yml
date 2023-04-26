@@ -1,4 +1,4 @@
-- name: 'Software > Dev > Install Slack'
+- name: 'Software > Install Slack'
   community.general.flatpak:
     name: com.slack.Slack
     state: present

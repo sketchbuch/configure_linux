@@ -1,4 +1,4 @@
-- name: 'Software > System > Install Neofetch'
+- name: 'Software > Install Neofetch'
   package:
     name:
       - neofetch

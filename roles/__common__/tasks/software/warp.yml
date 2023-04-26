@@ -1,4 +1,4 @@
-- name: 'Software > Internet > Install Warp'
+- name: 'Software > Install Warp'
   community.general.flatpak:
     name: app.drey.Warp
     state: present

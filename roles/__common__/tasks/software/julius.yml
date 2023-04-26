@@ -1,4 +1,4 @@
-- name: 'Software > Games > Install Julius'
+- name: 'Software > Install Julius'
   community.general.flatpak:
     name: com.github.bvschaik.julius
     state: present

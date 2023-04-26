@@ -1,4 +1,4 @@
-- name: 'Software > Audio > Install VSCode'
+- name: 'Software > Install VSCode'
   community.general.flatpak:
     name: com.visualstudio.code
     state: present

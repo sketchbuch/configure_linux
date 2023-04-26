@@ -1,4 +1,4 @@
-- name: 'Software > Audio > Install Audacity'
+- name: 'Software > Install Audacity'
   community.general.flatpak:
     name: org.audacityteam.Audacity
     state: present

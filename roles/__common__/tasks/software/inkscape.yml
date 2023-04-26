@@ -1,4 +1,4 @@
-- name: 'Software > Graphics > Install Inkscape'
+- name: 'Software > Install Inkscape'
   community.general.flatpak:
     name: org.inkscape.Inkscape
     state: present

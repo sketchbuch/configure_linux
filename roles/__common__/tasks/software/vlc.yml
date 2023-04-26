@@ -1,4 +1,4 @@
-- name: 'Software > Audio > Install VLC'
+- name: 'Software > Install VLC'
   community.general.flatpak:
     name: org.videolan.VLC
     state: present

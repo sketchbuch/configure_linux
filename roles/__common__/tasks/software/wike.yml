@@ -1,4 +1,4 @@
-- name: 'Software > Utils > Install Wike'
+- name: 'Software > Install Wike'
   community.general.flatpak:
     name: com.github.hugolabe.Wike
     state: present

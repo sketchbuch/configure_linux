@@ -1,4 +1,4 @@
-- name: 'Software > Security > Install Collision'
+- name: 'Software > Install Collision'
   community.general.flatpak:
     name: dev.geopjr.Collision
     state: present

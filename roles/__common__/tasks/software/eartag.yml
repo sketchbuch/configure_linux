@@ -1,4 +1,4 @@
-- name: 'Software > Audio > Install EarTag'
+- name: 'Software > Install EarTag'
   community.general.flatpak:
     name: app.drey.EarTag
     state: present
