@@ -2,14 +2,14 @@
 
 - name: 'Include all vars'
   include_vars: 'all.yml'
-  tags: ['always']
+  tags: ['always', 'vars']
 
 - block:
   - import_tasks: setup/facts.yml
   - import_tasks: setup/checks.yml
   - import_tasks: setup/vars.yml
 
-  - name: 'Tasks for: {{ distro | capitalize }}'
+  - name: 'Include tasks for: {{ distro | capitalize }}'
     include_tasks: "{{ item }}"
     tags: ['distro_tasks']
     with_first_found:

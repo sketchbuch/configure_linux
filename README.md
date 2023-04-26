@@ -63,6 +63,7 @@ virtual | Virtual computers
 
 Tag          | Description
 ------------ | ----------------------------------------------------
+always       | Tasks that always need to be done
 clock        | Clock changes
 dconf        | Any tasks to do with dconf config
 dep_check    | Checking if some dependency is installed
@@ -78,3 +79,4 @@ set_fact     | Storing something to a variable to be accessed later
 setup        | Some kind of setup, like creating folders or files
 touchpad     | Anything to do with touchpads
 user         | Related to the use profile
+vars         | Tasks including vars

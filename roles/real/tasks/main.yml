@@ -2,4 +2,4 @@
 
 - name: 'Include {{ distro | capitalize  }} vars'
   include_vars: "{{ distro }}.yml"
-  tags: ['always']
+  tags: ['always', 'vars']

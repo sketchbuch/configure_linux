@@ -2,7 +2,7 @@
 
 - name: 'Include {{ distro | capitalize  }} vars'
   include_vars: '{{ distro }}.yml'
-  tags: ['always']
+  tags: ['always', 'vars']
 
 - block:
   - import_tasks: setup/home_folder.yml
