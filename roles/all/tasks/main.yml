@@ -34,15 +34,12 @@
     set_fact:
         is_virtual: ansible_virtualization_role == "guest" | bool
     tags: ['set_fact']
-
-  - name: 'Output real_username'
+  
+  - name: 'Own facts'
     ansible.builtin.debug:
-      var: real_username
-    tags: ['debug']
-
-  - name: 'Output is_virtual'
-    ansible.builtin.debug:
-      var: is_virtual
+      msg:
+      - 'real_username: "{{real_username}}"'
+      - 'is_virtual: "{{is_virtual}}"'
     tags: ['debug']
   
   rescue:
