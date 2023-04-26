@@ -1,37 +1,41 @@
 # Disable screen locking in VMs
 
-- name: 'Disable Screensaver'
+- name: 'Gnome > Dconf > Disable Screensaver'
   become: true
   become_user: '{{real_username}}'
   community.general.dconf:
     key: "/org/gnome/desktop/screensaver/lock-enabled"
     state: present
     value: "false"
+  tags: ['dconf', 'gnome', 'screensaver']
   when: is_virtual
 
-- name: 'Disable screensaver idle activation'
+- name: 'Gnome > Dconf > Disable screensaver idle activation'
   become: true
   become_user: '{{real_username}}'
   community.general.dconf:
     key: "/org/gnome/desktop/screensaver/idle-activation-enabled"
     state: present
     value: "false"
+  tags: ['dconf', 'gnome', 'screensaver']
   when: is_virtual
 
-- name: 'Disable lock screen timeout'
+- name: 'Gnome > Dconf > Disable lock screen timeout'
   become: true
   become_user: '{{real_username}}'
   community.general.dconf:
     key: '/org/gnome/desktop/session/lock-delay'
     state: present
     value: "uint32 0"
+  tags: ['dconf', 'gnome', 'screensaver']
   when: is_virtual
 
-- name: 'Disable idle timeout'
+- name: 'Gnome > Dconf > Disable idle timeout'
   become: true
   become_user: '{{real_username}}'
   community.general.dconf:
     key: '/org/gnome/desktop/session/idle-delay'
     state: present
     value: "uint32 0"
+  tags: ['dconf', 'gnome', 'screensaver']
   when: is_virtual

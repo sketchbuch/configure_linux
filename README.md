@@ -63,11 +63,18 @@ virtual | Virtual computers
 
 Tag          | Description
 ------------ | ----------------------------------------------------
+clock        | Clock changes
+dconf        | Any tasks to do with dconf config
 dep_check    | Checking if some dependency is installed
+desktop      | Desktop effects and appearance
 distro_tasks | Tasks targeting a specific distro like Ubuntu
 files        | To do with creating/editing files
 folders      | To do with creating/editing folders
+gnome        | Gnome related tasks
+mouse        | Anything to do with mice
 pkg_facts    | To do with collecting package facts
+screensaver  | Screensaver settings
 set_fact     | Storing something to a variable to be accessed later
 setup        | Some kind of setup, like creating folders or files
+touchpad     | Anything to do with touchpads
 user         | Related to the use profile
