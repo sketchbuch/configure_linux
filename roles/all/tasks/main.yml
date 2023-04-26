@@ -1,5 +1,18 @@
+# Stop the include_vars task from comlaining about tmp folder perms
+- name: 'Create .ansible/tmp folder"'
+  become: true
+  become_user: '{{real_username}}'
+  file:
+    group: '{{real_username}}'
+    mode: '0644'
+    owner: '{{real_username}}'
+    path: "~/.ansible/tmp"
+    state: directory
+  when: not is_virtual
+  tags: setup,folders
+
 # Loads vars from the vars folder for this role
-- include_vars: "all.yml"
+  - include_vars: "all.yml"
   tags: always
 
 - block:

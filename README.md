@@ -51,7 +51,7 @@ virtual | Hosts that are virtual running in something like virtualbox
 
 The following tags are used:
 
-### **Host Types**
+### Host Types
 
 Tag     | Description
 ------- | -----------------
@@ -59,10 +59,13 @@ all     | All hosts
 real    | Real computers
 virtual | Virtual computers
 
-**Facts and Dependencies**
+### Facts and Dependencies
 
 Tag       | Description
 --------- | ----------------------------------------------------
-pkg_facts | To do with collecting package facts
 dep_check | Checking if some dependency is installed
+files     | To do with creating/editing files
+folders   | To do with creating/editing folders
+pkg_facts | To do with collecting package facts
 set_fact  | Storing something to a variable to be accessed later
+setup     | Some kind of setup, like creating folders or files
