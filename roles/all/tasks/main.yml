@@ -10,10 +10,10 @@
 
   - name: 'Tasks by distro'
     include_tasks: "{{ item }}"
+    tags: ['distro_tasks']
     with_first_found:
       - 'distro/{{ ansible_distribution|lower }}-{{ ansible_distribution_major_version}}.yml'
       - 'distro/{{ ansible_distribution|lower }}.yml'
-    tags: ['distro_tasks']
   
   rescue:
     - set_fact: all_task_failed=true

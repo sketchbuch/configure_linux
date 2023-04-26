@@ -14,8 +14,8 @@
     - '~/Projects'
     - '~/Temp'
     - '~/VirtualBox VMs'
-  when: not is_virtual
   tags: ['setup','folders']
+  when: not is_virtual
 
 - name: 'Setup > Home Folder > Create .hidden file'
   become: true

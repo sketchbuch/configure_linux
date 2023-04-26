@@ -7,7 +7,7 @@
 
 - hosts: virtual
   become: true
-  gather_facts: true
+  gather_facts: false
   roles:
     - virtual
   tags: ['virtual']

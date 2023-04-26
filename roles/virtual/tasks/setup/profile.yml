@@ -6,4 +6,4 @@
     groups: 'vboxsf'
     append: true
   tags: ['setup','user']
-  when: is_virtual and ansible_virtualization_type == 'virtualbox'
+  when: is_virtual and is_virtualbox
