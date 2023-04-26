@@ -27,7 +27,7 @@
 
 - name: 'Set is_virtualbox'
   set_fact:
-      is_virtualbox: '{{ (ansible_virtualization_type == 'virtualbox') | ternary (true, false) }}'
+      is_virtualbox: '{{ (ansible_virtualization_type == "virtualbox") | ternary (true, false) }}'
   tags: ['set_fact']
 
 - name: 'Set real_username'
