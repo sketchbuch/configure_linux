@@ -60,6 +60,7 @@
     - import_tasks: ../software/videotrimmer.yml
     - import_tasks: ../software/virtualbox.yml
     - import_tasks: ../software/vlc.yml
+    - import_tasks: ../software/vscode.yml
     - import_tasks: ../software/warp.yml
     - import_tasks: ../software/webfontkitgen.yml
     - import_tasks: ../software/wike.yml
