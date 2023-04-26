@@ -69,3 +69,4 @@ folders   | To do with creating/editing folders
 pkg_facts | To do with collecting package facts
 set_fact  | Storing something to a variable to be accessed later
 setup     | Some kind of setup, like creating folders or files
+user      | Related to the use profile

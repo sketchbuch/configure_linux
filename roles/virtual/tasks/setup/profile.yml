@@ -1,6 +1,8 @@
-- name: 'Setup > Profile > Add user to vboxfs group'
+# A reboot/relogin will be required to actually access the shared folder
+- name: 'Setup > Profile > Give user access to VirtualBox shared folders'
   ansible.builtin.user:
     name: '{{ real_username }}'
     groups: 'vboxsf'
     append: true
+  tags: ['setup','user']
   when: is_virtual and ansible_virtualization_type == 'virtualbox'
