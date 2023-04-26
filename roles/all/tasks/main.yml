@@ -4,3 +4,6 @@
 
 - block:
   - import_tasks: setup.yml
+  
+  rescue:
+    - set_fact: all_task_failed=true
