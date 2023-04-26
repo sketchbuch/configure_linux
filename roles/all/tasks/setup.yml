@@ -1,7 +1,7 @@
 - name: 'Gather package facts'
-    ansible.builtin.package_facts:
-      manager: auto
-    when: collect_package_facts is defined and collect_package_facts == true
+  ansible.builtin.package_facts:
+    manager: auto
+  when: collect_package_facts is defined and collect_package_facts == true
 
 - name: 'Print package facts'
   ansible.builtin.debug:
