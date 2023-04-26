@@ -10,8 +10,7 @@
 
 # Stop the include_vars task from comlaining about tmp folder perms
 - name: 'Create .ansible/tmp folder"'
-  become: true
-  become_user: '{{real_username}}'
+  become: false
   file:
     group: '{{real_username}}'
     mode: '0644'
