@@ -1,11 +1,11 @@
-- name: 'Install Gnome Boxes'
+- name: 'Software > Virtualisation > Install Gnome Boxes'
   community.general.flatpak:
     name: org.gnome.Boxes
     state: present
     method: system
   tags: ['virtualisation', 'gnome-boxes', 'flatpak']
 
-- name: 'Install Virtualbox'
+- name: 'Software > Virtualisation > Install Virtualbox'
   package:
     name:
       - virtualbox

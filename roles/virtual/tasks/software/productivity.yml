@@ -1,11 +1,11 @@
-- name: 'Install Gnome Calendar'
+- name: 'Software > Productivity > Install Gnome Calendar'
   community.general.flatpak:
     name: org.gnome.Calendar
     state: present
     method: system
   tags: ['productivity', 'gnome-calendar', 'flatpak']
 
-- name: 'Install Gnome Contacts'
+- name: 'Software > Productivity > Install Gnome Contacts'
   community.general.flatpak:
     name: org.gnome.Contacts
     state: present

@@ -1,25 +1,25 @@
-- name: 'Install 0AD'
+- name: 'Software > Games > Install 0AD'
   community.general.flatpak:
     name: com.play0ad.zeroad
     state: present
     method: system
   tags: ['games', '0ad', 'flatpak']
 
-- name: 'Install Augustus'
+- name: 'Software > Games > Install Augustus'
   community.general.flatpak:
     name: com.github.keriew.augustus
     state: present
     method: system
   tags: ['games', 'augustus', 'flatpak']
     
-- name: 'Install Gnome Sudoku'
+- name: 'Software > Games > Install Gnome Sudoku'
   community.general.flatpak:
     name: org.gnome.Sudoku
     state: present
     method: system
   tags: ['games', 'gnome-sudoku', 'flatpak']
 
-- name: 'Install Julius'
+- name: 'Software > Games > Install Julius'
   community.general.flatpak:
     name: com.github.bvschaik.julius
     state: present

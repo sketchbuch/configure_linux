@@ -1,25 +1,25 @@
-- name: 'Install Celeste'
+- name: 'Software > File Mgmt > Install Celeste'
   community.general.flatpak:
     name: com.hunterwittenborn.Celeste
     state: present
     method: system
   tags: ['file-management', 'celeste', 'flatpak']
 
-- name: 'Install FreeFileSync'
+- name: 'Software > File Mgmt > Install FreeFileSync'
   community.general.flatpak:
     name: org.freefilesync.FreeFileSync
     state: present
     method: system
   tags: ['file-management', 'freefilesync', 'flatpak']
 
-- name: 'Install FSearch'
+- name: 'Software > File Mgmt > Install FSearch'
   community.general.flatpak:
     name: io.github.cboxdoerfer.FSearch
     state: present
     method: system
   tags: ['file-management', 'fsearch', 'flatpak']
 
-- name: 'Install Plocate'
+- name: 'Software > File Mgmt > Install Plocate'
   package:
     name:
       - plocate

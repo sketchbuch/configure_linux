@@ -1,25 +1,25 @@
-- name: 'Install Converter'
+- name: 'Software > Graphics > Install Converter'
   community.general.flatpak:
     name: io.gitlab.adhami3310.Converter
     state: present
     method: system
   tags: ['graphics', 'converter', 'flatpak']
 
-- name: 'Install GIMP'
+- name: 'Software > Graphics > Install GIMP'
   community.general.flatpak:
     name: org.gimp.GIMP
     state: present
     method: system
   tags: ['graphics', 'gimp', 'flatpak']
 
-- name: 'Install Inkscape'
+- name: 'Software > Graphics > Install Inkscape'
   community.general.flatpak:
     name: org.inkscape.Inkscape
     state: present
     method: system
   tags: ['graphics', 'inkscape', 'flatpak']
 
-- name: 'Install Gnome Loupe'
+- name: 'Software > Graphics > Install Gnome Loupe'
   community.general.flatpak:
     name: org.gnome.Loupe
     state: present

@@ -1,11 +1,11 @@
-- name: 'Install Audacity'
+- name: 'Software > Audio > Install Audacity'
   community.general.flatpak:
     name: org.audacityteam.Audacity
     state: present
     method: system
   tags: ['audio', 'audacity', 'flatpak']
 
-- name: 'Install EarTag'
+- name: 'Software > Audio > Install EarTag'
   community.general.flatpak:
     name: app.drey.EarTag
     state: present
