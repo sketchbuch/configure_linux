@@ -15,6 +15,11 @@
   when: ansible_virtualization_role != "guest"
   tags: ['set_fact']
 
+- name: 'Set is_virtual2'
+  set_fact:
+      is_virtual2: "{{ (ansible_virtualization_role == "guest") | ternary (true, false) }}"
+  tags: ['set_fact']
+
 - name: 'Set real_username'
   set_fact:
       real_username: '{{ansible_facts["env"]["SUDO_USER"]}}'
@@ -25,5 +30,6 @@
     msg:
     - 'is_gnome: "{{is_gnome}}"'
     - 'is_virtual: "{{is_virtual}}"'
+    - 'is_virtual2: "{{is_virtual2}}"'
     - 'real_username: "{{real_username}}"'
   tags: ['debug']
