@@ -17,7 +17,7 @@
 
 - name: 'Set is_virtual2'
   set_fact:
-      is_virtual2: "{{ (ansible_virtualization_role == "guest") | ternary (true, false) }}"
+      is_virtual2: "{{ (ansible_virtualization_role == 'guest') | ternary (true, false) }}"
   tags: ['set_fact']
 
 - name: 'Set real_username'
