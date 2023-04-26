@@ -8,7 +8,6 @@
     owner: '{{real_username}}'
     path: "~/.ansible/tmp"
     state: directory
-  when: not is_virtual
   tags: setup,folders
 
 # Loads vars from the vars folder for this role
