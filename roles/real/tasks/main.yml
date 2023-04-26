@@ -12,7 +12,7 @@
       files:
         - 'distro/{{ distro }}-{{ distro_major_version}}.yml'
         - 'distro/{{ distro }}.yml'
-      skip: true
+        skip: true
   
   rescue:
     - set_fact: real_task_failed=true
