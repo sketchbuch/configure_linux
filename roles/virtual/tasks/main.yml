@@ -4,6 +4,7 @@
 
 - block:
   - import_tasks: setup/home_folder.yml
+  - import_tasks: setup/profile.yml
   
   rescue:
     - set_fact: virtual_task_failed=true
