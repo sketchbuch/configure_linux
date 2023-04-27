@@ -12,7 +12,7 @@
 
   - import_tasks: 'users/stephen/profile.yml'
 
-  - name: 'Include tasks for: {{ distro | capitalize }}'
+  - name: 'Include tasks for: {{ distro_pretty }}'
     include_tasks: "{{ item }}"
     tags: ['distro_tasks']
     with_first_found:

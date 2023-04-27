@@ -1,11 +1,11 @@
 # Loads vars from the vars folder for this role
 
-- name: 'Include {{ distro | capitalize  }} vars'
+- name: 'Include {{ distro_pretty  }} vars'
   include_vars: "{{ distro }}.yml"
   tags: ['always', 'vars']
 
 - block:
-  - name: 'Include tasks for: {{ distro | capitalize }}'
+  - name: 'Include tasks for: {{ distro_pretty }}'
     include_tasks: "{{ item }}"
     tags: ['distro_tasks']
     with_first_found:
