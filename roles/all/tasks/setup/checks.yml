@@ -4,4 +4,4 @@
       - ansible_facts.packages['flatpak'] is defined
     fail_msg: 'Flatpak must be installed since a restart is required'
     success_msg: 'Flatpak is installed'
-  tags: ['dep_check']
+  tags: ['setup', 'dep_check']

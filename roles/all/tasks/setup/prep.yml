@@ -5,14 +5,5 @@
     path: "{{ item }}"
     state: directory
   loop:
-    - '~/Apps'
-    - '~/Archive'
-    - '~/Dev'
-    - '~/Games'
-    - '~/KeePassXC'
-    - '~/Notes'
-    - '~/Projects'
-    - '~/Temp'
-    - '~/VirtualBox VMs'
-  tags: ['users','folders']
-  when: not is_virtual
+    - '~/.ansible/tmp'
+  tags: ['setup','folders']

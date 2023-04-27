@@ -2,7 +2,7 @@
   ansible.builtin.package_facts:
     manager: auto
   when: collect_package_facts is defined and collect_package_facts == true
-  tags: ['pkg_facts']
+  tags: ['setup', 'pkg_facts']
 
 - name: 'Setup > Facts > Print package facts'
   ansible.builtin.debug:
@@ -10,4 +10,4 @@
   when:
     - collect_package_facts is defined and collect_package_facts == true
     - debug_package_facts is defined and debug_package_facts == true
-  tags: ['pkg_facts']
+  tags: ['setup', 'pkg_facts']
