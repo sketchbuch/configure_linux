@@ -5,9 +5,6 @@
   tags: ['gnome']
   when: is_gnome
 
-- import_tasks: ../users/{{real_username}}/home_folder.yml
-- import_tasks: ../users/profile.yml
-
 # TODO: Delete aftr testing in VM
 - name: 'Software Tasks'
   block:

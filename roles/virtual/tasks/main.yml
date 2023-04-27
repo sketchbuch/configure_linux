@@ -4,6 +4,9 @@
   include_vars: '{{ distro }}.yml'
   tags: ['always', 'vars']
 
+- import_tasks: users/{{real_username}}/home_folder.yml
+- import_tasks: users/profile.yml
+
 - block:
   - name: 'Include tasks for: {{ distro | capitalize }}'
     include_tasks: "{{ item }}"
