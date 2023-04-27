@@ -1,7 +1,7 @@
 - name: 'Users > {{real_username | capitalize}} > Set profile image'
   copy:
-    src: 'users/{{real_username}}/profile.jpg'
-    dest: '/var/lib/AccountsService/icons/{{real_username}}.jpg'
+    src: 'users/{{real_username}}/profile'
+    dest: '/var/lib/AccountsService/icons/{{real_username}}'
     owner: 'root'
     group: 'root'
     mode: 0644
