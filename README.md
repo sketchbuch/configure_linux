@@ -91,7 +91,7 @@ folders      | To do with creating/editing folders
 gnome        | Gnome tasks
 kde          | KDE Tasks
 mouse        | Anything to do with mice
-nautilus     | Gnome File Manager vars
+nautilus     | Tasks to do with Gnome Files
 profile      | Tasks to do with the profile
 screensaver  | Screensaver settings
 setup        | Some kind of setup, like creating folders or files

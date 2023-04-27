@@ -13,6 +13,7 @@
 
   - include_tasks: 'users/{{ real_username }}/conf.yml'
   - include_tasks: 'users/{{ real_username }}/home_folder.yml'
+  - include_tasks: 'users/{{ real_username }}/nautilus.yml'
   - include_tasks: 'users/{{ real_username }}/profile.yml'
 
   - name: 'Include tasks for {{ distro_pretty }}'

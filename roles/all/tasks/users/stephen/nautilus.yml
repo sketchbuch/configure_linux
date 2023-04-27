@@ -1,0 +1,8 @@
+- name: 'Users > {{ real_username_pretty }} > Nautilus: Create Bookmarks'
+  copy:
+    src: 'users/{{ real_username }}/conf/nautilus/bookmarks'
+    dest: '/home/{{ real_username }}/.config/gtk-3.0/bookmarks'
+    owner: "{{ real_username }}"
+    group: "{{ real_username }}"
+    mode: 0600
+  tags: ['users', 'nautilus']
