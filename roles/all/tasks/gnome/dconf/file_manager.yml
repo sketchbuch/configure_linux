@@ -78,7 +78,7 @@
     state: present
     value: "'larger'"
   tags: ['dconf', 'nauilus', 'gnome']
-  when: distro_major_version < 23
+  when: distro_major_version <= 22
 
 - name: 'Gnome > Dconf > File Manager: Zoom level'
   become: true
