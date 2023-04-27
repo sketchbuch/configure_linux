@@ -1,0 +1,9 @@
+- name: 'Users > {{real_username_pretty}} > Bash: Style prompt'
+  become: true
+  become_user: '{{real_username}}'
+  blockinfile:
+    block: "{{lookup('file', 'files/users/{{real_username}}/.bashrc')}}"
+    create: yes
+    path: ~/.bashrc'
+    state: present
+  tags: ['users','terminal']

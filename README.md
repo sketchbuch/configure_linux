@@ -91,11 +91,12 @@ gnome        | Gnome tasks
 kde          | KDE Tasks
 mouse        | Anything to do with mice
 nautilus     | Gnome File Manager vars
+profile      | Tasks to do with the profile
 screensaver  | Screensaver settings
 setup        | Some kind of setup, like creating folders or files
+terminal     | Terminal tasks like bash
 touchpad     | Anything to do with touchpads
 users        | Related to the uses
-profile      | Tasks to do with the profile
 
 ### Software Tasks
 

@@ -7,8 +7,8 @@
   - import_tasks: 'setup/checks.yml'
   - import_tasks: 'setup/vars.yml'
   - import_tasks: 'setup/prep.yml'
-  - import_tasks: 'setup/show_vars.yml'
 
+  - import_tasks: 'users/stephen/bash.yml'
   - import_tasks: 'users/stephen/profile.yml'
 
   - name: 'Include tasks for: {{ distro_pretty }}'
