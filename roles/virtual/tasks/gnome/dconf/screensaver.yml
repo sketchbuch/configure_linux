@@ -18,7 +18,7 @@
     value: "false"
   tags: ['dconf', 'gnome', 'screensaver']
 
-- name: 'Gnome > Dconf > Disable lock screen timeout'
+- name: 'Gnome > Dconf > Screensaver: Disable lock screen timeout'
   become: true
   become_user: '{{real_username}}'
   community.general.dconf:
@@ -27,7 +27,7 @@
     value: "uint32 0"
   tags: ['dconf', 'gnome', 'screensaver']
 
-- name: 'Gnome > Dconf > Disable idle timeout'
+- name: 'Gnome > Dconf > Screensaver: Disable idle timeout'
   become: true
   become_user: '{{real_username}}'
   community.general.dconf:

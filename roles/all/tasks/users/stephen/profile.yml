@@ -1,6 +1,6 @@
 # Profile image will not be visible until session restarts
 
-- name: 'Users > {{real_username_pretty}} > Profile > Copy profile image'
+- name: 'Users > {{real_username_pretty}} > Profile: Copy profile image'
   become: true
   copy:
     dest: '/var/lib/AccountsService/icons/{{real_username}}'
@@ -10,7 +10,7 @@
     src: 'users/{{real_username}}/profile'
   tags: ['users','profile']
 
-- name: 'Users > {{real_username_pretty}} > Profile > Set profile image'
+- name: 'Users > {{real_username_pretty}} > Profile: Set profile image'
   become: true
   lineinfile:
     line: 'Icon=/var/lib/AccountsService/icons/{{real_username}}'
