@@ -1,10 +1,10 @@
 - name: 'Users > {{real_username_pretty}} > Bash: Copy dot files'
   copy:
-    src: 'users/{{real_username_pretty}}/{{ item.src }}'
-    dest: '/home/{{real_username_pretty}}/{{ item.dest }}'
-    owner: "'{{real_username_pretty}}'"
-    group: "'{{real_username_pretty}}'"
+    src: 'users/{{real_username}}/{{ item.src }}'
+    dest: '/home/{{real_username}}/{{ item.dest }}'
+    owner: "'{{real_username}}'"
+    group: "'{{real_username}}'"
     mode: 0600
   tags: ['users', 'terminal']
   with_items:
-    - { src: 'users/{{real_username_pretty}}/bash/bashrc', dest: '.bashrc' }
+    - { src: 'users/{{real_username}}/bash/bashrc', dest: '.bashrc' }
