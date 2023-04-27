@@ -21,3 +21,14 @@
   tags: ['users', 'dev', 'conf']
   with_items:
     - { src: 'conf/dev/gitconfig', dest: '.gitconfig' }
+
+- name: 'Users > {{ real_username_pretty }} > Conf: Copy gtk dot files'
+  copy:
+    src: 'users/{{ real_username }}/{{ item.src }}'
+    dest: '/home/{{ real_username }}/{{ item.dest }}'
+    owner: "{{ real_username }}"
+    group: "{{ real_username }}"
+    mode: 0600
+  tags: ['users', 'conf']
+  with_items:
+    - { src: 'conf/gtk/gtkcss', dest: '.config/gtk-3.0/gtk.css' }

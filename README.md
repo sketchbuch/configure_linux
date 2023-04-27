@@ -88,7 +88,6 @@ dev          | Dev tasks
 distro_tasks | Tasks targeting a specific distro like Ubuntu
 files        | To do with creating/editing files
 folders      | To do with creating/editing folders
-gnome        | Gnome related tasks
 gnome        | Gnome tasks
 kde          | KDE Tasks
 mouse        | Anything to do with mice

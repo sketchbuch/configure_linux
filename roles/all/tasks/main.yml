@@ -5,6 +5,7 @@
 - block:
   # Import, so that they are executed immediately
   # Otherwise subsequent includes do not have access to the vars.
+  # See: https://serverfault.com/questions/875247/whats-the-difference-between-include-tasks-and-import-tasks
   - import_tasks: 'setup/facts.yml'
   - import_tasks: 'setup/checks.yml'
   - import_tasks: 'setup/vars.yml'
