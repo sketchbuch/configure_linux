@@ -14,8 +14,8 @@
     var: vboxInstallSoftware
 
 # TODO: Delete aftr testing in VM
-- name: 'Software Tasks'
-  block:
+#- name: 'Software Tasks'
+#  block:
 
     # - import_tasks: ../software/0ad.yml
     # - import_tasks: ../software/apostrophe.yml
@@ -76,5 +76,5 @@
     # - import_tasks: ../software/warp.yml
     # - import_tasks: ../software/webfontkitgen.yml
     # - import_tasks: ../software/wike.yml
-  tags: ['software']
-  when: installSoftware
+  #tags: ['software']
+  #when: installSoftware
