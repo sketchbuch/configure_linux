@@ -91,7 +91,7 @@
   community.general.dconf:
     key: '/org/gnome/gedit/preferences/editor/editor-font'
     state: present
-    value: "Source Code Pro 12"
+    value: "'Source Code Pro 12'"
   tags: ['dconf', 'text-editor', 'gnome']
 
 - name: 'Gnome > Dconf > Gedit: Use default font'
