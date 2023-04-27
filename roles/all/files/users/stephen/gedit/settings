@@ -1,0 +1,16 @@
+[org/gnome/gedit/state/window]
+bottom-panel-size=140
+side-panel-active-page='GeditWindowDocumentsPanel'
+side-panel-size=200
+size=(900, 700)
+state=87168
+
+[org/gnome/gedit/preferences/editor]
+wrap-last-split-mode='word'
+use-default-font=false
+editor-font='Source Code Pro 12'
+tabs-size=2
+highlight-current-line=true
+
+[org/gnome/gedit/preferences/ui]
+statusbar-visible=true

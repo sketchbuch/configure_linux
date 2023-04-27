@@ -7,6 +7,7 @@
     state: present
     value: "true"
   tags: ['dconf', 'text-editor', 'gnome']
+  when: distro == 'ubuntu' and (distro_major_version | int) <= 22
 
 - name: 'Gnome > Dconf > Gedit: Show status bar'
   become: true
@@ -16,15 +17,7 @@
     state: present
     value: "true"
   tags: ['dconf', 'text-editor', 'gnome']
-
-- name: 'Gnome > Dconf > Gedit: Show overview map'
-  become: true
-  become_user: '{{ real_username }}'
-  community.general.dconf:
-    key: '/org/gnome/gedit/preferences/editor/display-overview-map'
-    state: present
-    value: "true"
-  tags: ['dconf', 'text-editor', 'gnome']
+  when: distro == 'ubuntu' and (distro_major_version | int) <= 22
 
 - name: 'Gnome > Dconf > Gedit: Enable text wraping'
   become: true
@@ -34,6 +27,7 @@
     state: present
     value: "'word'"
   tags: ['dconf', 'text-editor', 'gnome']
+  when: distro == 'ubuntu' and (distro_major_version | int) <= 22
 
 - name: 'Gnome > Dconf > Gedit: Do not split words'
   become: true
@@ -43,6 +37,7 @@
     state: present
     value: "'word'"
   tags: ['dconf', 'text-editor', 'gnome']
+  when: distro == 'ubuntu' and (distro_major_version | int) <= 22
 
 - name: 'Gnome > Dconf > Gedit: Highlight current line'
   become: true
@@ -52,6 +47,7 @@
     state: present
     value: "true"
   tags: ['dconf', 'text-editor', 'gnome']
+  when: distro == 'ubuntu' and (distro_major_version | int) <= 22
 
 - name: 'Gnome > Dconf > Gedit: Highlight matching brackets'
   become: true
@@ -61,6 +57,7 @@
     state: present
     value: "true"
   tags: ['dconf', 'text-editor', 'gnome']
+  when: distro == 'ubuntu' and (distro_major_version | int) <= 22
 
 
 
@@ -73,6 +70,7 @@
     state: present
     value: "uint32 4"
   tags: ['dconf', 'text-editor', 'gnome']
+  when: distro == 'ubuntu' and (distro_major_version | int) <= 22
 
 - name: 'Gnome > Dconf > Gedit: Automatic indent'
   become: true
@@ -82,6 +80,8 @@
     state: present
     value: "true"
   tags: ['dconf', 'text-editor', 'gnome']
+  when: distro == 'ubuntu' and (distro_major_version | int) <= 22
+
 
 
 # Font & Colours
@@ -93,6 +93,7 @@
     state: present
     value: "'Source Code Pro 12'"
   tags: ['dconf', 'text-editor', 'gnome']
+  when: distro == 'ubuntu' and (distro_major_version | int) <= 22
 
 - name: 'Gnome > Dconf > Gedit: Use default font'
   become: true
@@ -102,6 +103,8 @@
     state: present
     value: "false"
   tags: ['dconf', 'text-editor', 'gnome']
+  when: distro == 'ubuntu' and (distro_major_version | int) <= 22
+
 
 
 # Plugins
@@ -113,3 +116,19 @@
     state: present
     value: "['filebrowser', 'spell', 'sort', 'docinfo', 'openlinks', 'modelines']"
   tags: ['dconf', 'text-editor', 'gnome']
+  when: distro == 'ubuntu' and (distro_major_version | int) <= 22
+
+
+
+# Ubuntu 23.04 uses a different version of gedit that uses a file
+- name: 'Gnome > Dconf > Gedit: Create settings'
+  become: true
+  become_user: '{{ real_username }}'
+  copy:
+    src: 'users/{{ real_username }}/gedit/settings'
+    dest: '/home/{{ real_username }}/.var/app/org.gnome.gedit/config/glib-2.0/settings/keyfile'
+    owner: "{{ real_username }}"
+    group: "{{ real_username }}"
+    mode: 0600
+  tags: ['dconf', 'text-editor', 'gnome', 'files']
+  when: distro == 'fedora' or distro == 'ubuntu' and (distro_major_version | int) == 23
