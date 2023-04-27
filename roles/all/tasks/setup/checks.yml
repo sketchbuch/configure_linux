@@ -1,4 +1,4 @@
-- name: 'Checking required package: Flatpak'
+- name: 'Setup > Checks > Flatpak is installed'
   ansible.builtin.assert:
     that:
       - ansible_facts.packages['flatpak'] is defined
