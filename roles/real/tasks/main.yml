@@ -1,6 +1,4 @@
-# Loads vars from the vars folder for this role
-
-- name: 'Include {{ distro_pretty  }} vars'
+- name: 'Include vars for {{ distro_pretty }}'
   include_vars: "{{ distro }}.yml"
   tags: ['always', 'vars']
 
