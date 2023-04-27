@@ -1,0 +1,5 @@
+[user]
+	name = Sketchbuch
+	email = dev.sketchbuch@gmail.com
+[init]
+	defaultBranch = main

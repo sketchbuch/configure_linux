@@ -81,8 +81,10 @@ Tag          | Description
 ------------ | --------------------------------------------------
 always       | Tasks that always need to be done
 clock        | Clock changes
+conf         | Conf tasks
 dconf        | Any tasks to do with dconf config
 desktop      | Desktop effects and appearance
+dev          | Dev tasks
 distro_tasks | Tasks targeting a specific distro like Ubuntu
 files        | To do with creating/editing files
 folders      | To do with creating/editing folders
