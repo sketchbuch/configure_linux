@@ -83,6 +83,7 @@ gnome        | Gnome related tasks
 gnome        | Gnome tasks
 kde          | KDE Tasks
 mouse        | Anything to do with mice
+nautilus     | Gnome File Manager vars
 screensaver  | Screensaver settings
 setup        | Some kind of setup, like creating folders or files
 touchpad     | Anything to do with touchpads

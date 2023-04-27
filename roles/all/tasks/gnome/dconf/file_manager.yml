@@ -11,7 +11,7 @@
   become: true
   become_user: '{{real_username}}'
   community.general.dconf:
-    key: '/org.gnome.nautilus.preferences/show-hidden-files'
+    key: '/org/gnome/nautilus/preferences/show-hidden-files'
     state: present
     value: "false"
   tags: ['dconf', 'nauilus', 'gnome']
@@ -20,7 +20,7 @@
   become: true
   become_user: '{{real_username}}'
   community.general.dconf:
-    key: '/org.gnome.nautilus.window-state/maximized'
+    key: '/org/gnome/nautilus/window-state/maximized'
     state: present
     value: "true"
   tags: ['dconf', 'nauilus', 'gnome']
@@ -56,7 +56,7 @@
   become: true
   become_user: '{{real_username}}'
   community.general.dconf:
-    key: '/org.gnome.nautilus.window-state/start-with-sidebar'
+    key: '/org/gnome/nautilus/window-state/start-with-sidebar'
     state: present
     value: "true"
   tags: ['dconf', 'nauilus', 'gnome']
@@ -65,7 +65,7 @@
   become: true
   become_user: '{{real_username}}'
   community.general.dconf:
-    key: '/org.gnome.nautilus.window-state/sidebar-width'
+    key: '/org/gnome/nautilus/window-state/sidebar-width'
     state: present
     value: "uint32 250"
   tags: ['dconf', 'nauilus', 'gnome']
@@ -74,9 +74,7 @@
   become: true
   become_user: '{{real_username}}'
   community.general.dconf:
-    key: '/org.gnome.nautilus.icon-view default-zoom-level'
+    key: '/org/gnome/nautilus/icon-view/default-zoom-level'
     state: present
     value: "'larger'"
   tags: ['dconf', 'nauilus', 'gnome']
-
-# Sidebar width
