@@ -8,11 +8,11 @@
   - import_tasks: 'setup/vars.yml'
   - import_tasks: 'setup/prep.yml'
 
-  - import_tasks: 'users/stephen/conf.yml'
-  - import_tasks: 'users/stephen/home_folder.yml'
-  - import_tasks: 'users/stephen/profile.yml'
+  - import_tasks: 'users/{{ real_username }}/conf.yml'
+  - import_tasks: 'users/{{ real_username }}/home_folder.yml'
+  - import_tasks: 'users/{{ real_username }}/profile.yml'
 
-  - name: 'Include tasks for: {{ distro_pretty }}'
+  - name: 'Include tasks for {{ distro_pretty }}'
     include_tasks: "{{ item }}"
     tags: ['distro_tasks']
     with_first_found:

@@ -5,7 +5,7 @@
 - import_tasks: 'users/profile.yml'
 
 - block:
-  - name: 'Include tasks for: {{ distro_pretty }}'
+  - name: 'Include tasks for {{ distro_pretty }}'
     include_tasks: "{{ item }}"
     tags: ['distro_tasks']
     with_first_found:
