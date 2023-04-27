@@ -5,9 +5,6 @@
   tags: ['always', 'vars']
 
 - block:
-  - import_tasks: setup/home_folder.yml
-  - import_tasks: setup/profile.yml
-
   - name: 'Include tasks for: {{ distro | capitalize }}'
     include_tasks: "{{ item }}"
     tags: ['distro_tasks']

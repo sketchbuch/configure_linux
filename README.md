@@ -93,8 +93,8 @@ nautilus     | Gnome File Manager vars
 screensaver  | Screensaver settings
 setup        | Some kind of setup, like creating folders or files
 touchpad     | Anything to do with touchpads
-user         | Related to the use profile
-vars         | Tasks including vars
+users        | Related to the uses
+profile      | Tasks to do with the profile
 
 ### Software Tasks
 

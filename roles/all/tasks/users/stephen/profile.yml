@@ -1,0 +1,8 @@
+- name: 'Users > {{real_username | capitalize}} > Set profile image'
+  copy:
+    src: 'users/{{real_username}}/profile_image.png'
+    dest: '/var/lib/AccountsService/icons/{{real_username}}.png'
+    owner: 'root'
+    group: 'root'
+    mode: 0644
+  tags: ['users','profile']

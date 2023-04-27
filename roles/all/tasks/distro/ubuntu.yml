@@ -7,6 +7,8 @@
   tags: ['gnome']
   when: is_gnome
 
+- import_tasks: ../users/{{real_username}}/profile.yml
+
 - name: 'Gnome Software Tasks'
   block:
     - import_tasks: ../software/dconf-editor.yml

@@ -1,4 +1,4 @@
-- name: 'Setup > Home Folder > Create Home Folders"'
+- name: 'Users > {{real_username | capitalize}} > Home Folder > Create Home Folders"'
   become: true
   become_user: '{{real_username}}'
   ansible.builtin.file:
@@ -14,18 +14,18 @@
     - '~/Projects'
     - '~/Temp'
     - '~/VirtualBox VMs'
-  tags: ['setup','folders']
+  tags: ['users','folders']
   when: not is_virtual
 
-- name: 'Setup > Home Folder > Create .hidden file'
+- name: 'Users > {{real_username | capitalize}} > Home Folder > Create .hidden file'
   become: true
   become_user: '{{real_username}}'
   ansible.builtin.file:
     dest: '~/.hidden'
     state: touch
-  tags: ['setup','files']
+  tags: ['users','files']
 
-- name: 'Setup > Home Folder > Add content to .hidden file'
+- name: 'Users > {{real_username | capitalize}} > Home Folder > Add content to .hidden file'
   become: true
   become_user: '{{real_username}}'
   ansible.builtin.copy:
@@ -33,4 +33,4 @@
     content: |
       FiraxisLive
       snap
-  tags: ['setup','files']
+  tags: ['users','files']
