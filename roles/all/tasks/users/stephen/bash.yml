@@ -1,9 +1,10 @@
-- name: 'Users > {{real_username_pretty}} > Bash: Style prompt'
-  become: true
-  become_user: '{{real_username}}'
-  blockinfile:
-    block: "{{lookup('file', 'files/users/{{real_username}}/.bashrc')}}"
-    create: yes
-    path: ~/.bashrc'
-    state: present
-  tags: ['users','terminal']
+- name: 'Users > {{real_username_pretty}} > Bash: Copy dot files'
+  copy:
+    src: 'users/{{real_username_pretty}}/{{ item.src }}'
+    dest: '/home/{{real_username_pretty}}/{{ item.dest }}'
+    owner: "'{{real_username_pretty}}'"
+    group: "'{{real_username_pretty}}'"
+    mode: 0600
+  tags: ['users', 'terminal']
+  with_items:
+    - { src: 'users/{{real_username_pretty}}/bash/bashrc', dest: '.bashrc' }
