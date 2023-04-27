@@ -1,31 +1,25 @@
 - name: 'Include vars'
   include_vars: 'all.yml'
   tags: ['always', 'vars']
-  
-- name: 'Prep'
-  block:
-    - import_tasks: 'setup/facts.yml'
-    - import_tasks: 'setup/checks.yml'
-    - import_tasks: 'setup/vars.yml'
-    - import_tasks: 'setup/prep.yml'
-  
-  rescue:
-    - set_fact: all_task_failed=true
 
-- name: 'Main Tasks'
-  block:
-    - import_tasks: 'users/{{ real_username }}/conf.yml'
-    - import_tasks: 'users/{{ real_username }}/home_folder.yml'
-    - import_tasks: 'users/{{ real_username }}/profile.yml'
+- block:
+  - import_tasks: 'setup/facts.yml'
+  - import_tasks: 'setup/checks.yml'
+  - import_tasks: 'setup/vars.yml'
+  - import_tasks: 'setup/prep.yml'
 
-    - name: 'Include tasks for {{ distro_pretty }}'
-      include_tasks: "{{ item }}"
-      tags: ['distro_tasks']
-      with_first_found:
-        - files:
-            - 'distro/{{ distro }}-{{ distro_major_version }}.yml'
-            - 'distro/{{ distro }}.yml'
-          skip: true
+  - import_tasks: 'users/{{ real_username }}/conf.yml'
+  - import_tasks: 'users/{{ real_username }}/home_folder.yml'
+  - import_tasks: 'users/{{ real_username }}/profile.yml'
+
+  - name: 'Include tasks for {{ distro_pretty }}'
+    include_tasks: "{{ item }}"
+    tags: ['distro_tasks']
+    with_first_found:
+      - files:
+          - 'distro/{{ distro }}-{{ distro_major_version }}.yml'
+          - 'distro/{{ distro }}.yml'
+        skip: true
   
   rescue:
     - set_fact: all_task_failed=true
