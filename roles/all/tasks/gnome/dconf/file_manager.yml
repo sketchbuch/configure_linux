@@ -70,7 +70,7 @@
     value: "uint32 250"
   tags: ['dconf', 'nauilus', 'gnome']
 
-- name: 'Gnome > Dconf > File Manager: Zoom level'
+- name: 'Gnome > Dconf > File Manager: Zoom level (larger)'
   become: true
   become_user: '{{real_username}}'
   community.general.dconf:
@@ -80,7 +80,7 @@
   tags: ['dconf', 'nauilus', 'gnome']
   when: (distro_major_version | int) <= 22
 
-- name: 'Gnome > Dconf > File Manager: Zoom level'
+- name: 'Gnome > Dconf > File Manager: Zoom level (medium)'
   become: true
   become_user: '{{real_username}}'
   community.general.dconf:
