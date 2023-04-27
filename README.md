@@ -36,7 +36,7 @@ Based on: <https://www.youtube.com/watch?v=gIDywsGBqf4>
 
 - <https://github.com/LearnLinuxTV/personal_ansible_desktop_configs>
 - <https://github.com/pppontusw/ansible-role-linux-desktop>
-- <https://gist.github.com/carlwgeorge>
+- <https://gist.github.com/carlwgeorge/c560a532b6929f49d9c0df52f75a68ae>
 
 ### Supported Distros and versions
 

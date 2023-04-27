@@ -3,7 +3,7 @@
   copy:
     src: 'users/{{real_username}}/profile'
     dest: '/var/lib/AccountsService/icons/{{real_username}}'
-    owner: "{{real_username}}"
-    group: "{{real_username}}"
+    owner: 'root'
+    group: 'root'
     mode: 0644
   tags: ['users','profile']
