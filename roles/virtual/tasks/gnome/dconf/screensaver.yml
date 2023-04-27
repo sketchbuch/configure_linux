@@ -2,7 +2,7 @@
 
 - name: 'Gnome > Dconf > Screensaver: Disable'
   become: true
-  become_user: '{{real_username}}'
+  become_user: '{{ real_username }}'
   community.general.dconf:
     key: '/org/gnome/desktop/screensaver/lock-enabled'
     state: present
@@ -11,7 +11,7 @@
 
 - name: 'Gnome > Dconf > Screensaver: Disable idle activation'
   become: true
-  become_user: '{{real_username}}'
+  become_user: '{{ real_username }}'
   community.general.dconf:
     key: '/org/gnome/desktop/screensaver/idle-activation-enabled'
     state: present
@@ -20,7 +20,7 @@
 
 - name: 'Gnome > Dconf > Screensaver: Disable lock screen timeout'
   become: true
-  become_user: '{{real_username}}'
+  become_user: '{{ real_username }}'
   community.general.dconf:
     key: '/org/gnome/desktop/session/lock-delay'
     state: present
@@ -29,7 +29,7 @@
 
 - name: 'Gnome > Dconf > Screensaver: Disable idle timeout'
   become: true
-  become_user: '{{real_username}}'
+  become_user: '{{ real_username }}'
   community.general.dconf:
     key: '/org/gnome/desktop/session/idle-delay'
     state: present

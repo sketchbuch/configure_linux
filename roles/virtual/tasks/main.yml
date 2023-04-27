@@ -11,7 +11,7 @@
     tags: ['distro_tasks']
     with_first_found:
       - files:
-          - 'distro/{{ distro }}-{{ distro_major_version}}.yml'
+          - 'distro/{{ distro }}-{{ distro_major_version }}.yml'
           - 'distro/{{ distro }}.yml'
         skip: true
   

@@ -1,6 +1,6 @@
 - name: 'Gnome > Dconf > File Manager: Dirs sorted with files'
   become: true
-  become_user: '{{real_username}}'
+  become_user: '{{ real_username }}'
   community.general.dconf:
     key: '/org/gtk/settings/file-chooser/sort-directories-first'
     state: present
@@ -9,7 +9,7 @@
 
 - name: 'Gnome > Dconf > File Manager: Hide hidden files'
   become: true
-  become_user: '{{real_username}}'
+  become_user: '{{ real_username }}'
   community.general.dconf:
     key: '/org/gnome/nautilus/preferences/show-hidden-files'
     state: present
@@ -18,7 +18,7 @@
 
 - name: 'Gnome > Dconf > File Manager: Maximise window'
   become: true
-  become_user: '{{real_username}}'
+  become_user: '{{ real_username }}'
   community.general.dconf:
     key: '/org/gnome/nautilus/window-state/maximized'
     state: present
@@ -27,7 +27,7 @@
 
 - name: 'Gnome > Dconf > File Manager: Set icon view'
   become: true
-  become_user: '{{real_username}}'
+  become_user: '{{ real_username }}'
   community.general.dconf:
     key: '/org/gnome/nautilus/preferences/default-folder-viewer'
     state: present
@@ -36,7 +36,7 @@
 
 - name: 'Gnome > Dconf > File Manager: Set single-click to open'
   become: true
-  become_user: '{{real_username}}'
+  become_user: '{{ real_username }}'
   community.general.dconf:
     key: '/org/gnome/nautilus/preferences/click-policy'
     state: present
@@ -45,7 +45,7 @@
 
 - name: 'Gnome > Dconf > File Manager: Show create link'
   become: true
-  become_user: '{{real_username}}'
+  become_user: '{{ real_username }}'
   community.general.dconf:
     key: '/org/gnome/nautilus/preferences/show-create-link'
     state: present
@@ -54,7 +54,7 @@
 
 - name: 'Gnome > Dconf > File Manager: Sidebar enabled'
   become: true
-  become_user: '{{real_username}}'
+  become_user: '{{ real_username }}'
   community.general.dconf:
     key: '/org/gnome/nautilus/window-state/start-with-sidebar'
     state: present
@@ -63,7 +63,7 @@
 
 - name: 'Gnome > Dconf > File Manager: Sidebar width'
   become: true
-  become_user: '{{real_username}}'
+  become_user: '{{ real_username }}'
   community.general.dconf:
     key: '/org/gnome/nautilus/window-state/sidebar-width'
     state: present
@@ -72,7 +72,7 @@
 
 - name: 'Gnome > Dconf > File Manager: Zoom level'
   become: true
-  become_user: '{{real_username}}'
+  become_user: '{{ real_username }}'
   community.general.dconf:
     key: '/org/gnome/nautilus/icon-view/default-zoom-level'
     state: present
@@ -82,7 +82,7 @@
 
 - name: 'Gnome > Dconf > File Manager: Zoom level'
   become: true
-  become_user: '{{real_username}}'
+  become_user: '{{ real_username }}'
   community.general.dconf:
     key: '/org/gnome/nautilus/icon-view/default-zoom-level'
     state: present

@@ -1,6 +1,6 @@
 - name: 'Gnome > Dconf > Touchpad: Disable natural scrolling'
   become: true
-  become_user: '{{real_username}}'
+  become_user: '{{ real_username }}'
   community.general.dconf:
     key: '/org/gnome/desktop/peripherals/touchpad/natural-scroll'
     state: present
@@ -9,7 +9,7 @@
 
 - name: 'Gnome > Dconf > Touchpad: Enable tap-to-click'
   become: true
-  become_user: '{{real_username}}'
+  become_user: '{{ real_username }}'
   community.general.dconf:
     key: '/org/gnome/desktop/peripherals/touchpad/tap-to-click'
     state: present
@@ -18,7 +18,7 @@
 
 - name: 'Gnome > Dconf > Touchpad: Enable two-finger-scrolling-enabled'
   become: true
-  become_user: '{{real_username}}'
+  become_user: '{{ real_username }}'
   community.general.dconf:
     key: '/org/gnome/desktop/peripherals/touchpad/two-finger-scrolling-enabled'
     state: present

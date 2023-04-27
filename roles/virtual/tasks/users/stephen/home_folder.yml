@@ -1,6 +1,6 @@
-- name: 'Users > {{real_username_pretty}} > Home Folder: Create Home Folders"'
+- name: 'Users > {{ real_username_pretty }} > Home Folder: Create Home Folders"'
   become: true
-  become_user: '{{real_username}}'
+  become_user: '{{ real_username }}'
   ansible.builtin.file:
     path: "{{ item }}"
     state: directory
@@ -17,17 +17,17 @@
   tags: ['users','folders']
   when: not is_virtual
 
-- name: 'Users > {{real_username_pretty}} > Home Folder: Create .hidden file'
+- name: 'Users > {{ real_username_pretty }} > Home Folder: Create .hidden file'
   become: true
-  become_user: '{{real_username}}'
+  become_user: '{{ real_username }}'
   ansible.builtin.file:
     dest: '~/.hidden'
     state: touch
   tags: ['users','files']
 
-- name: 'Users > {{real_username_pretty}} > Home Folder: Add content to .hidden file'
+- name: 'Users > {{ real_username_pretty }} > Home Folder: Add content to .hidden file'
   become: true
-  become_user: '{{real_username}}'
+  become_user: '{{ real_username }}'
   ansible.builtin.copy:
     dest: '~/.hidden'
     content: |

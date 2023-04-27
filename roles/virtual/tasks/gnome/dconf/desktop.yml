@@ -1,6 +1,6 @@
 - name: 'Gnome > Dconf > Desktop: Disable Hot Corners in virtual environments'
   become: true
-  become_user: '{{real_username}}'
+  become_user: '{{ real_username }}'
   community.general.dconf:
     key: '/org/gnome/desktop/interface/enable-hot-corners'
     state: present
