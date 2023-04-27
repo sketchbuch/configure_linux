@@ -5,11 +5,11 @@
   tags: ['always', 'vars']
 
 - block:
-  - import_tasks: setup/facts.yml
-  - import_tasks: setup/checks.yml
-  - import_tasks: setup/vars.yml
+  - import_tasks: 'setup/facts.yml'
+  - import_tasks: 'setup/checks.yml'
+  - import_tasks: 'setup/vars.yml'
 
-  - import_tasks: users/{{real_username}}/profile.yml
+  - import_tasks: 'users/{{real_username}}/profile.yml'
 
   - name: 'Include tasks for: {{ distro | capitalize }}'
     include_tasks: "{{ item }}"
