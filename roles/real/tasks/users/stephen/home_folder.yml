@@ -1,0 +1,17 @@
+- name: 'Users > {{ real_username_pretty }} > Home Folder: Create Home Folders"'
+  become: true
+  become_user: '{{ real_username }}'
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+  loop:
+    - '~/Apps'
+    - '~/Archive'
+    - '~/Dev'
+    - '~/Games'
+    - '~/KeePassXC'
+    - '~/Notes'
+    - '~/Projects'
+    - '~/Temp'
+    - '~/VirtualBox VMs'
+  tags: ['users','folders']

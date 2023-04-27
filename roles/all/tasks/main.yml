@@ -9,6 +9,7 @@
   - import_tasks: 'setup/prep.yml'
 
   - import_tasks: 'users/stephen/conf.yml'
+  - import_tasks: 'users/stephen/home_folder.yml'
   - import_tasks: 'users/stephen/profile.yml'
 
   - name: 'Include tasks for: {{ distro_pretty }}'

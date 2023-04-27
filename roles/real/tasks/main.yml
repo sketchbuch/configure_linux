@@ -1,6 +1,8 @@
 - name: 'Include vars for {{ distro_pretty }}'
-  include_vars: "{{ distro }}.yml"
+  include_vars: '{{ distro }}.yml'
   tags: ['always', 'vars']
+
+- import_tasks: 'users/{{ real_username }}/home_folder.yml'
 
 - block:
   - name: 'Include tasks for: {{ distro_pretty }}'
