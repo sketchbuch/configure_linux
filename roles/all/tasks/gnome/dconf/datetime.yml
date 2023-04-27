@@ -22,7 +22,7 @@
   become: true
   become_user: '{{real_username}}'
   community.general.dconf:
-    key: '/org/gnome/desktop/interface/clock-show-weekday"''
+    key: '/org/gnome/desktop/interface/clock-show-weekday'
     state: present
     value: "true"
   tags: ['dconf', 'clock', 'gnome']
