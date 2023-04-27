@@ -7,4 +7,4 @@
     mode: 0600
   tags: ['users', 'terminal']
   with_items:
-    - { src: 'users/{{real_username}}/bash/bashrc', dest: '.bashrc' }
+    - { src: 'bash/bashrc', dest: '.bashrc' }
