@@ -37,6 +37,12 @@ Based on: <https://www.youtube.com/watch?v=gIDywsGBqf4>
 - <https://github.com/LearnLinuxTV/personal_ansible_desktop_configs>
 - <https://github.com/pppontusw/ansible-role-linux-desktop>
 
+### Supported Distros and versions
+
+- Ubuntu 22.04
+- Ubuntu 23.04
+- Fedora 37
+
 ## Hosts
 
 The following hosts are used:

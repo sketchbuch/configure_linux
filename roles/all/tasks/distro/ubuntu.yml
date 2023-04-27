@@ -1,7 +1,6 @@
 - name: 'Gnome Tasks'
   block:
     - import_tasks: ../gnome/dconf/file_manager.yml
-    - import_tasks: ../gnome/dconf/file_manager_ubuntu.yml
     - import_tasks: ../gnome/dconf/datetime.yml
     - import_tasks: ../gnome/dconf/mouse_trackpad.yml
     - import_tasks: ../system/fonts.yml
