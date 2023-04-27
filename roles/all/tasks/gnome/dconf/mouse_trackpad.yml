@@ -11,7 +11,7 @@
   become: true
   become_user: '{{real_username}}'
   community.general.dconf:
-    key: '/org/gnome/desktop/peripherals/touchpad/natural-scroll"
+    key: '/org/gnome/desktop/peripherals/touchpad/natural-scroll'
     state: present
     value: "false"
   tags: ['dconf', 'gnome', 'touchpad']
