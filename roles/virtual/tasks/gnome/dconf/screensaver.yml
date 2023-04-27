@@ -4,7 +4,7 @@
   become: true
   become_user: '{{real_username}}'
   community.general.dconf:
-    key: "/org/gnome/desktop/screensaver/lock-enabled"
+    key: '/org/gnome/desktop/screensaver/lock-enabled'
     state: present
     value: "false"
   tags: ['dconf', 'gnome', 'screensaver']
@@ -13,7 +13,7 @@
   become: true
   become_user: '{{real_username}}'
   community.general.dconf:
-    key: "/org/gnome/desktop/screensaver/idle-activation-enabled"
+    key: '/org/gnome/desktop/screensaver/idle-activation-enabled'
     state: present
     value: "false"
   tags: ['dconf', 'gnome', 'screensaver']

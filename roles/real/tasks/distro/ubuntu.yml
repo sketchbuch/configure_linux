@@ -66,3 +66,4 @@
     - import_tasks: ../software/webfontkitgen.yml
     - import_tasks: ../software/wike.yml
   tags: ['software']
+  when: installSoftware

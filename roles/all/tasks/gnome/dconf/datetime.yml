@@ -1,28 +1,28 @@
 # Configure Gnome Topbar Time/Date Display
 
-- name: "Gnome > Dconf > Topbar Clock: Format 24h"
+- name: 'Gnome > Dconf > Topbar Clock: Format 24h'
   become: true
   become_user: '{{real_username}}'
   community.general.dconf:
-    key: "/org/gnome/desktop/interface/clock-format"
+    key: '/org/gnome/desktop/interface/clock-format'
     state: present
     value: "'24h'"
   tags: ['dconf', 'clock', 'gnome']
 
-- name: "Gnome > Dconf > Topbar Clock: Show date"
+- name: 'Gnome > Dconf > Topbar Clock: Show date'
   become: true
   become_user: '{{real_username}}'
   community.general.dconf:
-    key: "/org/gnome/desktop/interface/clock-show-date"
+    key: '/org/gnome/desktop/interface/clock-show-date'
     state: present
     value: "true"
   tags: ['dconf', 'clock', 'gnome']
 
-- name: "Gnome > Dconf > Topbar Clock: Show week day"
+- name: 'Gnome > Dconf > Topbar Clock: Show week day'
   become: true
   become_user: '{{real_username}}'
   community.general.dconf:
-    key: "/org/gnome/desktop/interface/clock-show-weekday"
+    key: '/org/gnome/desktop/interface/clock-show-weekday"''
     state: present
     value: "true"
   tags: ['dconf', 'clock', 'gnome']

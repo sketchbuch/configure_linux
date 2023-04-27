@@ -1,8 +1,8 @@
-- name: "Gnome > Dconf > Hot Corners: Enable in real environments"
+- name: 'Gnome > Dconf > Hot Corners: Enable in real environments'
   become: true
   become_user: '{{real_username}}'
   community.general.dconf:
-    key: "/org/gnome/desktop/interface/enable-hot-corners"
+    key: '/org/gnome/desktop/interface/enable-hot-corners'
     state: present
     value: "true"
   tags: ['dconf', 'desktop', 'gnome']
