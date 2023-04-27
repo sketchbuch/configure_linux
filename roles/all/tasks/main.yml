@@ -5,10 +5,10 @@
   tags: ['always', 'vars']
 
 - block:
-  - import_tasks: 'setup/prep.yml'
   - import_tasks: 'setup/facts.yml'
   - import_tasks: 'setup/checks.yml'
   - import_tasks: 'setup/vars.yml'
+  - import_tasks: 'setup/prep.yml'
 
   - import_tasks: 'users/stephen/profile.yml'
 
