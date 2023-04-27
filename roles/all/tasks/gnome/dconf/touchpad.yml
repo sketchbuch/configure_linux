@@ -16,7 +16,7 @@
     value: "true"
   tags: ['dconf', 'gnome', 'touchpad']
 
-- name: 'Gnome > Dconf > Touchpad: Enable two-finger-scrolling-enabled'
+- name: 'Gnome > Dconf > Touchpad: Enable two finger scrolling'
   become: true
   become_user: '{{ real_username }}'
   community.general.dconf:
