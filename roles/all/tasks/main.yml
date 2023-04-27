@@ -3,6 +3,8 @@
   tags: ['always', 'vars']
 
 - block:
+  # Import, so that they are executed immediately
+  # Otherwise subsequent includes do not have access to the vars.
   - import_tasks: 'setup/facts.yml'
   - import_tasks: 'setup/checks.yml'
   - import_tasks: 'setup/vars.yml'
