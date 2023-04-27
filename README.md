@@ -85,21 +85,22 @@ dconf        | Any tasks to do with dconf config
 desktop      | Desktop effects and appearance
 dev          | Dev tasks
 distro_tasks | Tasks targeting a specific distro like Ubuntu
+file-manager | File Manager tasks
 files        | To do with creating/editing files
 folders      | To do with creating/editing folders
+git          | Git related tasks
 gnome        | Gnome tasks
+gtk          | GTK related tasks
 kde          | KDE Tasks
 mouse        | Anything to do with mice
-nautilus     | Tasks to do with Gnome Files
 profile      | Tasks to do with the profile
 screensaver  | Screensaver settings
 setup        | Some kind of setup, like creating folders or files
+stephen      | Tasks for stephen
 terminal     | Terminal tasks like bash
+text-editor  | Text Editor tasks
 touchpad     | Anything to do with touchpads
 users        | Related to the uses
-stephen      | Tasks for stephen
-gtk          | GTK related tasks
-git          | Git related tasks
 
 ### Software Tasks
 
@@ -199,3 +200,7 @@ vlc               | VLC Player tasks
 warp              | Warp tasks
 webfontkitgen     | Webfont Kit Generator tasks
 wike              | Wike tasks
+
+## Todo
+
+- Install source code pro font

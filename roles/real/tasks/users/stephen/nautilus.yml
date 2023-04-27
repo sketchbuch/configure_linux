@@ -5,4 +5,4 @@
     owner: "{{ real_username }}"
     group: "{{ real_username }}"
     mode: 0600
-  tags: ['users', 'nautilus', 'files', 'stephen']
+  tags: ['users', 'file-manager', 'files', 'stephen']

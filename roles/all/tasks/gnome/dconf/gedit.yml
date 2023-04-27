@@ -1,0 +1,115 @@
+# View
+- name: 'Gnome > Dconf > Gedit: Display line numbers'
+  become: true
+  become_user: '{{ real_username }}'
+  community.general.dconf:
+    key: '/org/gnome/gedit/preferences/editor/display-line-numbers'
+    state: present
+    value: "true"
+  tags: ['dconf', 'text-editor', 'gnome']
+
+- name: 'Gnome > Dconf > Gedit: Show status bar'
+  become: true
+  become_user: '{{ real_username }}'
+  community.general.dconf:
+    key: '/org/gnome/gedit/preferences/ui/statusbar-visible'
+    state: present
+    value: "true"
+  tags: ['dconf', 'text-editor', 'gnome']
+
+- name: 'Gnome > Dconf > Gedit: Show overview map'
+  become: true
+  become_user: '{{ real_username }}'
+  community.general.dconf:
+    key: '/org/gnome/gedit/preferences/editor/display-overview-map'
+    state: present
+    value: "true"
+  tags: ['dconf', 'text-editor', 'gnome']
+
+- name: 'Gnome > Dconf > Gedit: Enable text wraping'
+  become: true
+  become_user: '{{ real_username }}'
+  community.general.dconf:
+    key: '/org/gnome/gedit/preferences/editor/wrap-mode'
+    state: present
+    value: "'word'"
+  tags: ['dconf', 'text-editor', 'gnome']
+
+- name: 'Gnome > Dconf > Gedit: Do not split words'
+  become: true
+  become_user: '{{ real_username }}'
+  community.general.dconf:
+    key: '/org/gnome/gedit/preferences/editor/wrap-last-split-mode'
+    state: present
+    value: "'word'"
+  tags: ['dconf', 'text-editor', 'gnome']
+
+- name: 'Gnome > Dconf > Gedit: Highlight current line'
+  become: true
+  become_user: '{{ real_username }}'
+  community.general.dconf:
+    key: '/org/gnome/gedit/preferences/editor/highlight-current-line'
+    state: present
+    value: "true"
+  tags: ['dconf', 'text-editor', 'gnome']
+
+- name: 'Gnome > Dconf > Gedit: Highlight matching brackets'
+  become: true
+  become_user: '{{ real_username }}'
+  community.general.dconf:
+    key: '/org/gnome/gedit/preferences/editor/bracket-matching'
+    state: present
+    value: "true"
+  tags: ['dconf', 'text-editor', 'gnome']
+
+
+
+# Editor
+- name: 'Gnome > Dconf > Gedit: Tab Width'
+  become: true
+  become_user: '{{ real_username }}'
+  community.general.dconf:
+    key: '/org/gnome/gedit/preferences/editor/tabs-size'
+    state: present
+    value: "uint32 4"
+  tags: ['dconf', 'text-editor', 'gnome']
+
+- name: 'Gnome > Dconf > Gedit: Automatic indent'
+  become: true
+  become_user: '{{ real_username }}'
+  community.general.dconf:
+    key: '/org/gnome/gedit/preferences/editor/auto-indent'
+    state: present
+    value: "true"
+  tags: ['dconf', 'text-editor', 'gnome']
+
+
+# Font & Colours
+- name: 'Gnome > Dconf > Gedit: Set editor font'
+  become: true
+  become_user: '{{ real_username }}'
+  community.general.dconf:
+    key: '/org/gnome/gedit/preferences/editor/editor-font'
+    state: present
+    value: "Source Code Pro 12"
+  tags: ['dconf', 'text-editor', 'gnome']
+
+- name: 'Gnome > Dconf > Gedit: Use default font'
+  become: true
+  become_user: '{{ real_username }}'
+  community.general.dconf:
+    key: '/org/gnome/gedit/preferences/editor/use-default-font'
+    state: present
+    value: "false"
+  tags: ['dconf', 'text-editor', 'gnome']
+
+
+# Plugins
+- name: 'Gnome > Dconf > Gedit: Active plugins'
+  become: true
+  become_user: '{{ real_username }}'
+  community.general.dconf:
+    key: '/org/gnome/gedit/plugins/active-plugins'
+    state: present
+    value: "['filebrowser', 'spell', 'sort', 'docinfo', 'openlinks', 'modelines']"
+  tags: ['dconf', 'text-editor', 'gnome']
