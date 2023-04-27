@@ -10,7 +10,7 @@
     src: 'users/{{real_username}}/profile'
   tags: ['users','profile']
 
-- name: 'Users > Profile > Set profile image'
+- name: 'Users > {{real_username | capitalize}} > Profile > Set profile image'
   become: true
   lineinfile:
     line: 'Icon=/var/lib/AccountsService/icons/{{real_username}}'
