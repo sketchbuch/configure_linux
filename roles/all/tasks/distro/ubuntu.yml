@@ -6,20 +6,20 @@
   tags: ['gnome']
   when: is_gnome
 
-- name: 'Gnome Software Tasks'
-  block:
-    - import_tasks: ../software/dconf-editor.yml
-    - import_tasks: ../software/extension-manager.yml
-    - import_tasks: ../software/gnome-extensions.yml
-  tags: ['gnome', 'software']
-  when: is_gnome
+# - name: 'Gnome Software Tasks'
+#   block:
+#     - import_tasks: ../software/dconf-editor.yml
+#     - import_tasks: ../software/extension-manager.yml
+#     - import_tasks: ../software/gnome-extensions.yml
+#   tags: ['gnome', 'software']
+#   when: is_gnome
 
-- name: 'Software Tasks'
-  block:
-    # File Management
-    - import_tasks: ../software/fsearch.yml
-    - import_tasks: ../software/htop.yml
-    - import_tasks: ../software/neofetch.yml
-    - import_tasks: ../software/plocate.yml
-    - import_tasks: ../software/powertop.yml
-  tags: ['software']
+# - name: 'Software Tasks'
+#   block:
+#     # File Management
+#     - import_tasks: ../software/fsearch.yml
+#     - import_tasks: ../software/htop.yml
+#     - import_tasks: ../software/neofetch.yml
+#     - import_tasks: ../software/plocate.yml
+#     - import_tasks: ../software/powertop.yml
+#   tags: ['software']

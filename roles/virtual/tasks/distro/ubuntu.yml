@@ -5,9 +5,13 @@
   tags: ['gnome']
   when: is_gnome
 
-- name: 'Print package facts'
+- name: 'installSoftware'
   ansible.builtin.debug:
     var: installSoftware
+
+- name: 'vboxInstallSoftware'
+  ansible.builtin.debug:
+    var: vboxInstallSoftware
 
 # TODO: Delete aftr testing in VM
 - name: 'Software Tasks'
