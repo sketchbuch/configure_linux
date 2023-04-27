@@ -5,12 +5,13 @@
   tags: ['gnome']
   when: is_gnome
 
+- name: 'Print package facts'
+  ansible.builtin.debug:
+    var: installSoftware
+
 # TODO: Delete aftr testing in VM
 - name: 'Software Tasks'
   block:
-    - name: 'Print package facts'
-      ansible.builtin.debug:
-        msg: "NO SOFTWARE"
 
     # - import_tasks: ../software/0ad.yml
     # - import_tasks: ../software/apostrophe.yml
