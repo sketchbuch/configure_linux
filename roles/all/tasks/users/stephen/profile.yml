@@ -1,4 +1,5 @@
 - name: 'Users > {{real_username | capitalize}} > Set profile image'
+  become: true
   copy:
     src: 'users/{{real_username}}/profile'
     dest: '/var/lib/AccountsService/icons/{{real_username}}'
