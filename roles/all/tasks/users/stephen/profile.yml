@@ -1,4 +1,4 @@
-- name: 'Users > {{real_username | capitalize}} > Set profile image'
+- name: 'Users > {{real_username | capitalize}} > Copy profile image'
   become: true
   copy:
     src: 'users/{{real_username}}/profile'
@@ -7,3 +7,10 @@
     group: 'root'
     mode: 0644
   tags: ['users','profile']
+
+- name: 'Users > {{real_username | capitalize}} > Set profile image'
+  become: true
+  lineinfile:
+    path: '/var/lib/AccountsService/users/{{real_username}}'
+    regexp: '^Icon='
+    line: 'Icon=/var/lib/AccountsService/icons/{{real_username}}'
