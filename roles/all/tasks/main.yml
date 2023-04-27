@@ -14,9 +14,9 @@
       - 'real_username: {{ real_username }}'
   tags: ['setup', 'debug']
 
-  - import_tasks: 'users/{{ real_username }}/conf.yml'
-  - import_tasks: 'users/{{ real_username }}/home_folder.yml'
-  - import_tasks: 'users/{{ real_username }}/profile.yml'
+ # - import_tasks: 'users/{{ real_username }}/conf.yml'
+  #- import_tasks: 'users/{{ real_username }}/home_folder.yml'
+  #- import_tasks: 'users/{{ real_username }}/profile.yml'
 
   - name: 'Include tasks for {{ distro_pretty }}'
     include_tasks: "{{ item }}"
