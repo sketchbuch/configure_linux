@@ -195,3 +195,7 @@ vlc               | VLC Player tasks
 warp              | Warp tasks
 webfontkitgen     | Webfont Kit Generator tasks
 wike              | Wike tasks
+
+## Todo
+
+- Find out why hiding hiden files in nautilus does not work

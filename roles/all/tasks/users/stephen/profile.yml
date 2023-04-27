@@ -1,3 +1,5 @@
+# Profile image will not be visible until session restarts
+
 - name: 'Users > {{real_username | capitalize}} > Copy profile image'
   become: true
   copy:
