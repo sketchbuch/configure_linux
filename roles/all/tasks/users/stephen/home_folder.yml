@@ -4,7 +4,7 @@
   ansible.builtin.file:
     dest: '~/.hidden'
     state: touch
-  tags: ['users','files']
+  tags: ['users', 'files', 'stephen']
 
 - name: 'Users > {{ real_username_pretty }} > Home Folder: Add content to .hidden file'
   become: true
@@ -14,4 +14,4 @@
     content: |
       FiraxisLive
       snap
-  tags: ['users','files']
+  tags: ['users', 'files', 'stephen']

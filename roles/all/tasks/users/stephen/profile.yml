@@ -8,7 +8,7 @@
     mode: 0644
     owner: 'root'
     src: 'users/{{ real_username }}/profile'
-  tags: ['users','profile']
+  tags: ['users', 'profile', 'files', 'stephen']
 
 - name: 'Users > {{ real_username_pretty }} > Profile: Set profile image'
   become: true
@@ -16,4 +16,4 @@
     line: 'Icon=/var/lib/AccountsService/icons/{{ real_username }}'
     path: '/var/lib/AccountsService/users/{{ real_username }}'
     regexp: '^Icon='
-  tags: ['users','profile']
+  tags: ['users', 'profile', 'files', 'stephen']

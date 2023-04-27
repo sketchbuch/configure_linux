@@ -8,4 +8,4 @@
     state: directory
   loop:
     - '~/.ansible/tmp'
-  tags: ['setup','folders']
+  tags: ['setup', 'folders']

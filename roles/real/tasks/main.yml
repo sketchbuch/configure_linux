@@ -3,6 +3,7 @@
   tags: ['always', 'vars']
 
 - import_tasks: 'users/{{ real_username }}/home_folder.yml'
+  - include_tasks: 'users/{{ real_username }}/nautilus.yml'
 
 - block:
   - name: 'Include tasks for {{ distro_pretty }}'

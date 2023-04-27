@@ -1,0 +1,8 @@
+- name: 'Users > {{ real_username_pretty }} > GTK: Create GTK CSS (3.0)'
+  copy:
+    src: 'users/{{ real_username }}/conf/gtk/gtkcss'
+    dest: '/home/{{ real_username }}/.config/gtk-3.0/gtk.css'
+    owner: "{{ real_username }}"
+    group: "{{ real_username }}"
+    mode: 0600
+  tags: ['users', 'gtk', 'files', 'stephen']

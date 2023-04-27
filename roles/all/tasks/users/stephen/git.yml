@@ -1,0 +1,8 @@
+- name: 'Users > {{ real_username_pretty }} > Git: Create gitconfig'
+  copy:
+    dest: '/home/{{ real_username }}/.gitconfig'
+    group: "{{ real_username }}"
+    mode: 0600
+    owner: "{{ real_username }}"
+    src: 'users/{{ real_username }}/conf/dev/gitconfig'
+  tags: ['users', 'git', 'files', 'stephen']

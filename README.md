@@ -81,7 +81,6 @@ Tag          | Description
 ------------ | --------------------------------------------------
 always       | Tasks that always need to be done
 clock        | Clock changes
-conf         | Conf tasks
 dconf        | Any tasks to do with dconf config
 desktop      | Desktop effects and appearance
 dev          | Dev tasks
@@ -98,6 +97,9 @@ setup        | Some kind of setup, like creating folders or files
 terminal     | Terminal tasks like bash
 touchpad     | Anything to do with touchpads
 users        | Related to the uses
+stephen      | Tasks for stephen
+gtk          | GTK related tasks
+git          | Git related tasks
 
 ### Software Tasks
 
