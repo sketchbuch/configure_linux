@@ -1,6 +1,6 @@
 # Profile image will not be visible until session restarts
 
-- name: 'Users > Profile > Copy profile image'
+- name: 'Users > {{real_username | capitalize}} > Profile > Copy profile image'
   become: true
   copy:
     dest: '/var/lib/AccountsService/icons/{{real_username}}'
