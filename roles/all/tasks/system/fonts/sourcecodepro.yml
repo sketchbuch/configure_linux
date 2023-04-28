@@ -11,7 +11,6 @@
     dest: '/tmp/scp.zip'
   register: scp_zip
   tags: ['system', 'fonts']
-  when: distro == 'ubuntu'
 
 - name: 'System > Fonts: Download Source Code Pro'
   unarchive:
@@ -21,4 +20,3 @@
   tags: ['system', 'fonts']
   with_items:
     - "{{ scp_zip.stdout }}"
-  when: distro == 'ubuntu'
