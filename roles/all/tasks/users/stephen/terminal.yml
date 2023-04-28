@@ -7,6 +7,6 @@
     src: 'users/{{ real_username }}/{{ item.src }}'
   tags: ['users', 'terminal', 'files', 'stephen']
   with_items:
-    - { src: 'conf/terminal/bash_aliases', dest: '.bash_aliases' }
-    - { src: 'conf/terminal/bashrc', dest: '.bashrc' }
-    - { src: 'conf/terminal/profile', dest: '.profile' }
+    - { src: 'terminal/bash_aliases', dest: '.bash_aliases' }
+    - { src: 'terminal/bashrc', dest: '.bashrc' }
+    - { src: 'terminal/profile', dest: '.profile' }

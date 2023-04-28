@@ -4,5 +4,5 @@
     group: "{{ real_username }}"
     mode: 0600
     owner: "{{ real_username }}"
-    src: 'users/{{ real_username }}/conf/dev/gitconfig'
+    src: 'users/{{ real_username }}/dev/gitconfig'
   tags: ['users', 'git', 'files', 'stephen']

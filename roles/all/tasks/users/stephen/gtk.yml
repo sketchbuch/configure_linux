@@ -10,7 +10,7 @@
   become: true
   become_user: '{{ real_username }}'
   copy:
-    src: 'users/{{ real_username }}/conf/gtk/gtkcss'
+    src: 'users/{{ real_username }}/gtk/gtkcss'
     dest: '/home/{{ real_username }}/.config/gtk-3.0/gtk.css'
     owner: "{{ real_username }}"
     group: "{{ real_username }}"
