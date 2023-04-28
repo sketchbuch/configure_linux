@@ -14,6 +14,11 @@
           - 'distro/{{ distro }}-{{ distro_major_version }}.yml'
           - 'distro/{{ distro }}.yml'
         skip: true
+  
+  - name: 'Include tasks for Gnome'
+    import_tasks: 'desktop/gnome.yml'
+    tags: ['gnome']
+    when: is_gnome
 
   rescue:
     - set_fact: real_task_failed=true

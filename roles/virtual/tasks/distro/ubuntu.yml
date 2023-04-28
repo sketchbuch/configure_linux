@@ -61,5 +61,5 @@
     - import_tasks: '../software/warp.yml'
     - import_tasks: '../software/webfontkitgen.yml'
     - import_tasks: '../software/wike.yml'
-  tags: ['software']
+  tags: ['software', 'ubuntu']
   when: installSoftware
