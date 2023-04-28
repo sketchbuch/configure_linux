@@ -1,4 +1,4 @@
-- name: 'Fonts: Install Source Code Pro'
+- name: 'System > Fonts: Install Source Code Pro'
   package: 
     name: 
       - adobe-source-code-pro-fonts
