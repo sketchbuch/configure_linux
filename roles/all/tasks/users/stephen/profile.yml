@@ -2,7 +2,7 @@
 
 - name: 'Users > {{ real_username_pretty }} > Profile: Copy profile image'
   become: true
-  copy:
+  ansible.builtin.copy:
     dest: '/var/lib/AccountsService/icons/{{ real_username }}'
     group: 'root'
     mode: 0644

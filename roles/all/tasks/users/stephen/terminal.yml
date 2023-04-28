@@ -1,5 +1,5 @@
 - name: 'Users > {{ real_username_pretty }} > Conf: Copy terminal dot files'
-  copy:
+  ansible.builtin.copy:
     dest: '/home/{{ real_username }}/{{ item.dest }}'
     group: "{{ real_username }}"
     mode: 0600

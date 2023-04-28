@@ -1,5 +1,5 @@
 - name: 'Users > {{ real_username_pretty }} > Git: Create gitconfig'
-  copy:
+  ansible.builtin.copy:
     dest: '/home/{{ real_username }}/.gitconfig'
     group: "{{ real_username }}"
     mode: 0600

@@ -9,7 +9,7 @@
 - name: 'Users > {{ real_username_pretty }} > GTK: Create GTK CSS (3.0)'
   become: true
   become_user: '{{ real_username }}'
-  copy:
+  ansible.builtin.copy:
     src: 'users/{{ real_username }}/gtk/gtkcss'
     dest: '/home/{{ real_username }}/.config/gtk-3.0/gtk.css'
     owner: "{{ real_username }}"

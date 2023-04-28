@@ -1,5 +1,5 @@
 - name: 'Users > {{ real_username_pretty }} > Nautilus: Create Bookmarks'
-  copy:
+  ansible.builtin.copy:
     src: 'users/{{ real_username }}/nautilus/bookmarks'
     dest: '/home/{{ real_username }}/.config/gtk-3.0/bookmarks'
     owner: "{{ real_username }}"
