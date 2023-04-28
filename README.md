@@ -207,4 +207,3 @@ wike              | Wike tasks
 
 - Install source code pro font
 - Settings for nautilus are now a file
-- Split up distro tasks into de tasks

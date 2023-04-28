@@ -13,7 +13,7 @@
 
 - name: 'Gnome Software Tasks'
   block:
-    - import_tasks: '../software/config-editor.yml'
+    - import_tasks: '../software/dconf-editor.yml'
     - import_tasks: '../software/extension-manager.yml'
     - import_tasks: '../software/gnome-extensions.yml'
   tags: ['gnome', 'software']
