@@ -1,0 +1,5 @@
+- name: 'Software > Install Gnome Tweaks'
+  package: 
+    name: 
+      - 'gnome-tweaks'
+  tags: ['games', 'gnome-sudoku', 'flatpak']

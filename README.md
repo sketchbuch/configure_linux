@@ -49,10 +49,10 @@ Based on: <https://www.youtube.com/watch?v=gIDywsGBqf4>
 The following hosts are used:
 
 Host    | Description
-------- | -----------------------------------------------------------
+------- | ------------------------------------------------------------
 all     | All hosts
 real    | Hosts that are real
-virtual | Hosts that are virtual running in something like virtualbox
+virtual | Hosts that are virtual, running in something like virtualbox
 
 ## Tags
 

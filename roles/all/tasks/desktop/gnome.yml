@@ -4,6 +4,7 @@
     - import_tasks: '../system/apps/nautilus.yml'
     
     - import_tasks: '../system/config/datetime.yml'
+    - import_tasks: '../system/config/fonts.yml'
     - import_tasks: '../system/config/mouse.yml'
     - import_tasks: '../system/config/touchpad.yml'
 
@@ -16,5 +17,6 @@
     - import_tasks: '../software/dconf-editor.yml'
     - import_tasks: '../software/extension-manager.yml'
     - import_tasks: '../software/gnome-extensions.yml'
+    - import_tasks: '../software/gnome-tweaks.yml'
   tags: ['gnome', 'software']
   when: is_gnome and installSoftware
