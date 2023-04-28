@@ -10,12 +10,12 @@
   become: true
   become_user: '{{ real_username }}'
   ansible.builtin.shell:
-    cmd: nvm install 16.13.0 && nvm install 16.15.1 & nvm install 18.4.0
+    cmd: source ~/.nvm/nvm.sh && nvm install 16.13.0 && nvm install 16.15.1 & nvm install 18.4.0
   tags: ['system', 'dev']
 
 - name: 'System > Apps > NVM: Set default node version'
   become: true
   become_user: '{{ real_username }}'
   ansible.builtin.shell:
-    cmd: vm alias default 16.13.0
+    cmd: source ~/.nvm/nvm.sh && vm alias default 16.13.0
   tags: ['system', 'dev']
