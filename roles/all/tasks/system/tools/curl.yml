@@ -1,4 +1,4 @@
-- name: 'System > Apps > Curl: Install'
+- name: 'System > Tools > Curl: Install'
   package: 
     name: 
       - 'curl'

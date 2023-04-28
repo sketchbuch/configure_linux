@@ -205,4 +205,15 @@ wike              | Wike tasks
 
 ## Todo
 
-- Check on clean VM if font cache rebuilt
+- Etcher
+- Solitaire
+- Android studio
+- pnpm
+- yarn
+- yoeman
+- vsce
+- yoeman vscode template
+- gnome-epub-thumbnailer
+- <https://github.com/aruiz/webp-pixbuf-loader>
+- Remove some libre office apps
+- Remove Thundebird

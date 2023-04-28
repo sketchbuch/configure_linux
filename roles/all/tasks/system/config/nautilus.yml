@@ -1,4 +1,4 @@
-- name: 'System > Apps > Nautilus: Dirs sorted with files'
+- name: 'System > Config > Nautilus: Dirs sorted with files'
   become: true
   become_user: '{{ real_username }}'
   community.general.dconf:
@@ -7,7 +7,7 @@
     value: "false"
   tags: ['system', 'file-manager', 'gnome']
 
-- name: 'System > Apps > Nautilus: Hide hidden files'
+- name: 'System > Config > Nautilus: Hide hidden files'
   become: true
   become_user: '{{ real_username }}'
   community.general.dconf:
@@ -16,7 +16,7 @@
     value: "true"
   tags: ['system', 'file-manager', 'gnome']
 
-- name: 'System > Apps > Nautilus: Maximise window'
+- name: 'System > Config > Nautilus: Maximise window'
   become: true
   become_user: '{{ real_username }}'
   community.general.dconf:
@@ -25,7 +25,7 @@
     value: "true"
   tags: ['system', 'file-manager', 'gnome']
 
-- name: 'System > Apps > Nautilus: Set icon view'
+- name: 'System > Config > Nautilus: Set icon view'
   become: true
   become_user: '{{ real_username }}'
   community.general.dconf:
@@ -34,7 +34,7 @@
     value: "'icon-view'"
   tags: ['system', 'file-manager', 'gnome']
 
-- name: 'System > Apps > Nautilus: Set single-click to open'
+- name: 'System > Config > Nautilus: Set single-click to open'
   become: true
   become_user: '{{ real_username }}'
   community.general.dconf:
@@ -43,7 +43,7 @@
     value: "'single'"
   tags: ['system', 'file-manager', 'gnome']
 
-- name: 'System > Apps > Nautilus: Show create link'
+- name: 'System > Config > Nautilus: Show create link'
   become: true
   become_user: '{{ real_username }}'
   community.general.dconf:
@@ -52,7 +52,7 @@
     value: "true"
   tags: ['system', 'file-manager', 'gnome']
 
-- name: 'System > Apps > Nautilus: Sidebar enabled'
+- name: 'System > Config > Nautilus: Sidebar enabled'
   become: true
   become_user: '{{ real_username }}'
   community.general.dconf:
@@ -61,7 +61,7 @@
     value: "true"
   tags: ['system', 'file-manager', 'gnome']
 
-- name: 'System > Apps > Nautilus: Sidebar width'
+- name: 'System > Config > Nautilus: Sidebar width'
   become: true
   become_user: '{{ real_username }}'
   community.general.dconf:
@@ -70,7 +70,7 @@
     value: "uint32 250"
   tags: ['system', 'file-manager', 'gnome']
 
-- name: 'System > Apps > Nautilus: Zoom level'
+- name: 'System > Config > Nautilus: Zoom level'
   become: true
   become_user: '{{ real_username }}'
   community.general.dconf:
@@ -80,7 +80,7 @@
   tags: ['system', 'file-manager', 'gnome']
   when: distro == 'ubuntu' and (distro_major_version | int) <= 22
 
-- name: 'System > Apps > Nautilus: Zoom level'
+- name: 'System > Config > Nautilus: Zoom level'
   become: true
   become_user: '{{ real_username }}'
   community.general.dconf:

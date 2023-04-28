@@ -1,4 +1,4 @@
-- name: 'System > Apps > NVM: Install'
+- name: 'System > Tools > NVM: Install'
   become: true
   become_user: '{{ real_username }}'
   ansible.builtin.shell:
@@ -6,14 +6,14 @@
     creates: '/home/{{ real_username }}/.nvm/nvm.sh'
   tags: ['system', 'dev']
 
-- name: 'System > Apps > NVM: Install node versions'
+- name: 'System > Tools > NVM: Install node versions'
   become: true
   become_user: '{{ real_username }}'
   ansible.builtin.shell: >
     /bin/bash -c "source ~/.nvm/nvm.sh && nvm install 16.13.0 && nvm install 16.15.1 && nvm install 18.4.0"
   tags: ['system', 'dev']
 
-- name: 'System > Apps > NVM: Set default node version'
+- name: 'System > Tools > NVM: Set default node version'
   become: true
   become_user: '{{ real_username }}'
   ansible.builtin.shell: >
