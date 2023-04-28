@@ -121,7 +121,16 @@
 
 
 # Ubuntu 23.04 uses a different version of gedit that uses a file
-- name: 'Gnome > Dconf > Gedit: Create settings'
+- name: 'Gnome > Dconf > Gedit: Create settings folder'
+  become: true
+  become_user: '{{ real_username }}'
+  ansible.builtin.file:
+    path: '/home/{{ real_username }}/.var/app/org.gnome.gedit/config/glib-2.0/settings/'
+    state: directory
+  tags: ['dconf', 'text-editor', 'gnome', 'folders']
+  when: distro == 'fedora' or distro == 'ubuntu' and (distro_major_version | int) >= 23
+
+- name: 'Gnome > Dconf > Gedit: Create settings file'
   become: true
   become_user: '{{ real_username }}'
   copy:
