@@ -2,9 +2,6 @@
   - name: 'Include vars for {{ distro_pretty }}'
     include_vars: '{{ distro }}.yml'
     tags: ['always', 'vars']
-  
-  - import_tasks: 'users/{{ real_username }}/home_folder.yml'
-  - include_tasks: 'users/{{ real_username }}/nautilus.yml'
 
   - name: 'Include tasks for {{ distro_pretty }}'
     include_tasks: "{{ item }}"
@@ -19,6 +16,9 @@
     import_tasks: 'desktop/gnome.yml'
     tags: ['gnome']
     when: is_gnome
+  
+  - import_tasks: 'users/{{ real_username }}/home_folder.yml'
+  - include_tasks: 'users/{{ real_username }}/nautilus.yml'
 
   rescue:
     - set_fact: real_task_failed=true

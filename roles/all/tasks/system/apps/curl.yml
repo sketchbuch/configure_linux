@@ -1,0 +1,5 @@
+- name: 'System > Apps > Curl: Install'
+  package: 
+    name: 
+      - 'curl'
+  tags: ['system', 'dev']

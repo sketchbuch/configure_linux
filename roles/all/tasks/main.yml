@@ -10,20 +10,7 @@
   - name: 'Include vars for {{ distro_pretty }}'
     include_vars: '{{ distro }}.yml'
     tags: ['always', 'vars']
-
-  - include_tasks: 'users/{{ real_username }}/git.yml'
-  - include_tasks: 'users/{{ real_username }}/gtk.yml'
-  - include_tasks: 'users/{{ real_username }}/home_folder.yml'
-  - include_tasks: 'users/{{ real_username }}/profile.yml'
-  - include_tasks: 'users/{{ real_username }}/terminal.yml'
   
-  - import_tasks: 'system/apps/nvm.yml'
-
-  - import_tasks: 'system/fonts/firacode.yml'
-  - import_tasks: 'system/fonts/inconsolata.yml'
-  - import_tasks: 'system/fonts/mscorefonts.yml'
-  - import_tasks: 'system/fonts/sourcecodepro.yml'
-
   - name: 'Include tasks for {{ distro_pretty }}'
     include_tasks: "{{ item }}"
     tags: ['distro_tasks']
@@ -37,6 +24,19 @@
     import_tasks: 'desktop/gnome.yml'
     tags: ['gnome']
     when: is_gnome
+  
+  - import_tasks: 'system/apps/nvm.yml'
+
+  - import_tasks: 'system/fonts/firacode.yml'
+  - import_tasks: 'system/fonts/inconsolata.yml'
+  - import_tasks: 'system/fonts/mscorefonts.yml'
+  - import_tasks: 'system/fonts/sourcecodepro.yml'
+
+  - include_tasks: 'users/{{ real_username }}/git.yml'
+  - include_tasks: 'users/{{ real_username }}/gtk.yml'
+  - include_tasks: 'users/{{ real_username }}/home_folder.yml'
+  - include_tasks: 'users/{{ real_username }}/profile.yml'
+  - include_tasks: 'users/{{ real_username }}/terminal.yml'
 
   rescue:
     - set_fact: all_task_failed=true

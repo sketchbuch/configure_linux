@@ -3,8 +3,6 @@
     include_vars: '{{ distro }}.yml'
     tags: ['always', 'vars']
 
-  - import_tasks: 'users/profile.yml'
-
   - name: 'Include tasks for {{ distro_pretty }}'
     include_tasks: "{{ item }}"
     tags: ['distro_tasks']
@@ -18,6 +16,8 @@
     import_tasks: 'desktop/gnome.yml'
     tags: ['gnome']
     when: is_gnome
+
+  - import_tasks: 'users/profile.yml'
   
   rescue:
     - set_fact: virtual_task_failed=true
