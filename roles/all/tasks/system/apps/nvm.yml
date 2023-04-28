@@ -4,4 +4,5 @@
   become_user: '{{ real_username }}'
   ansible.builtin.shell:
     cmd: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-    creates: '~/.nvm/nvm.sh'
+    creates: '/home/{{ real_username }}/.nvm/nvm.sh'
+  tags: ['system', 'dev', 'gnome']
