@@ -17,5 +17,6 @@
   become: true
   become_user: '{{ real_username }}'
   ansible.builtin.shell:
-    cmd: source ~/.nvm/nvm.sh && vm alias default 16.13.0
+    cmd: nvm alias default 16.13.0
+    creates: '/home/{{ real_username }}/.nvm/alias'
   tags: ['system', 'dev']
