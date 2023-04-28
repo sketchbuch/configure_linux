@@ -31,20 +31,6 @@
   register: scp_installed
   tags: ['system', 'fonts']
 
-- name: 'Fonts | Debian | Accept Microsoft Core Fonts EULA.'
-  debconf:
-    name: 'ttf-mscorefonts-installer'
-    question: 'msttcorefonts/accepted-mscorefonts-eula'
-    value: 'true'
-    vtype: 'select'
-  tags: ['system', 'fonts']
-
-- name: 'Fonts | Debian | Install Microsoft Core Fonts.'
-  package: 
-    name: 
-      - 'ttf-mscorefonts-installer'
-  register: scp_installed
-
 - name: 'System > Fonts: Install Source Code Pro - Rebuild font cache'
   become: no
   command: fc-cache --force --verbose
