@@ -7,5 +7,5 @@
     path: "{{ item }}"
     state: directory
   loop:
-    - '~/.ansible/tmp'
+    - "{{ anisbleTmp }}"
   tags: ['setup', 'folders']
