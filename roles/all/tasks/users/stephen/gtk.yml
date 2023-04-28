@@ -1,4 +1,14 @@
+- name: 'Users > {{ real_username_pretty }} > GTK: Create gtk-3.0 folder'
+  become: true
+  become_user: '{{ real_username }}'
+  ansible.builtin.file:
+    path: '/home/{{ real_username }}/.config/gtk-3.0/'
+    state: directory
+  tags: ['users', 'gtk', 'folders', 'stephen']
+
 - name: 'Users > {{ real_username_pretty }} > GTK: Create GTK CSS (3.0)'
+  become: true
+  become_user: '{{ real_username }}'
   copy:
     src: 'users/{{ real_username }}/conf/gtk/gtkcss'
     dest: '/home/{{ real_username }}/.config/gtk-3.0/gtk.css'
