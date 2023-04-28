@@ -1,11 +1,11 @@
-- name: 'Include vars for {{ distro_pretty }}'
-  include_vars: '{{ distro }}.yml'
-  tags: ['always', 'vars']
-
-- import_tasks: 'users/{{ real_username }}/home_folder.yml'
+- block:
+  - name: 'Include vars for {{ distro_pretty }}'
+    include_vars: '{{ distro }}.yml'
+    tags: ['always', 'vars']
+  
+  - import_tasks: 'users/{{ real_username }}/home_folder.yml'
   - include_tasks: 'users/{{ real_username }}/nautilus.yml'
 
-- block:
   - name: 'Include tasks for {{ distro_pretty }}'
     include_tasks: "{{ item }}"
     tags: ['distro_tasks']
@@ -14,6 +14,6 @@
           - 'distro/{{ distro }}-{{ distro_major_version }}.yml'
           - 'distro/{{ distro }}.yml'
         skip: true
-  
+
   rescue:
     - set_fact: real_task_failed=true

@@ -1,9 +1,3 @@
-- name: 'Gnome Tasks'
-  block:
-    - import_tasks: ''../system/dconf/desktop.yml'
-  tags: ['gnome']
-  when: is_gnome
-
 - name: 'Software Tasks'
   block:
     - import_tasks: '../software/0ad.yml'

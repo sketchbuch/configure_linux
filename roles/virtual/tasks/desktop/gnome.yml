@@ -1,0 +1,6 @@
+- name: 'Gnome Tasks'
+  block:
+    - import_tasks: '../system/dconf/desktop.yml'
+    - import_tasks: '../system/dconf/screensaver.yml'
+  tags: ['gnome']
+  when: is_gnome

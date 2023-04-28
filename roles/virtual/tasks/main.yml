@@ -1,10 +1,10 @@
-- name: 'Include vars for {{ distro_pretty }}'
-  include_vars: '{{ distro }}.yml'
-  tags: ['always', 'vars']
-
-- import_tasks: 'users/profile.yml'
-
 - block:
+  - name: 'Include vars for {{ distro_pretty }}'
+    include_vars: '{{ distro }}.yml'
+    tags: ['always', 'vars']
+
+  - import_tasks: 'users/profile.yml'
+
   - name: 'Include tasks for {{ distro_pretty }}'
     include_tasks: "{{ item }}"
     tags: ['distro_tasks']
