@@ -2,7 +2,6 @@
 
 - name: 'Setup > Prep: Create .ansible/tmp"'
   become: true
-  become_user: '{{ real_username }}'
   ansible.builtin.file:
     path: "{{ item }}"
     state: directory
