@@ -1,8 +1,21 @@
-
 - name: 'System > Apps > NVM: Install'
   become: true
   become_user: '{{ real_username }}'
   ansible.builtin.shell:
     cmd: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
     creates: '/home/{{ real_username }}/.nvm/nvm.sh'
+  tags: ['system', 'dev']
+
+- name: 'System > Apps > NVM: Install node versions'
+  become: true
+  become_user: '{{ real_username }}'
+  ansible.builtin.shell:
+    cmd: nvm install 16.13.0 && nvm install 16.15.1 & nvm install 18.4.0
+  tags: ['system', 'dev']
+
+- name: 'System > Apps > NVM: Set default node version'
+  become: true
+  become_user: '{{ real_username }}'
+  ansible.builtin.shell:
+    cmd: vm alias default 16.13.0
   tags: ['system', 'dev']
