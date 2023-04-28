@@ -19,7 +19,7 @@
 
 - name: 'System > Fonts: Install Source Code Pro - Extact to tmp folder'
   unarchive:
-    ansible.builtin.copy: no
+    copy: no
     dest: '{{ anisbleTmp }}/scp/'
     src: '{{ anisbleTmp }}/scp.zip'
   tags: ['system', 'fonts']
