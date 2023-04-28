@@ -131,4 +131,4 @@
     group: "{{ real_username }}"
     mode: 0600
   tags: ['dconf', 'text-editor', 'gnome', 'files']
-  when: distro == 'fedora' or distro == 'ubuntu' and (distro_major_version | int) == 23
+  when: distro == 'fedora' or distro == 'ubuntu' and (distro_major_version | int) >= 23

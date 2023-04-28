@@ -1,0 +1,4 @@
+- name: 'System > Fonts: Install Cantarell'
+  package: 
+    name: 
+      - fonts-cantarell

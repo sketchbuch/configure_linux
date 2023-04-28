@@ -1,7 +1,3 @@
-- name: 'Include vars'
-  include_vars: 'all.yml'
-  tags: ['always', 'vars']
-
 - block:
   # Import, so that they are executed immediately
   # Otherwise subsequent includes do not have access to the vars.
@@ -11,11 +7,19 @@
   - import_tasks: 'setup/vars.yml'
   - import_tasks: 'setup/prep.yml'
 
+  - name: 'Include vars for {{ distro_pretty }}'
+    include_vars: '{{ distro }}.yml'
+    tags: ['always', 'vars']
+
   - include_tasks: 'users/{{ real_username }}/git.yml'
   - include_tasks: 'users/{{ real_username }}/gtk.yml'
   - include_tasks: 'users/{{ real_username }}/home_folder.yml'
   - include_tasks: 'users/{{ real_username }}/profile.yml'
   - include_tasks: 'users/{{ real_username }}/terminal.yml'
+
+  - import_tasks: 'system/fonts/firacode.yml'
+  - import_tasks: 'system/fonts/inconsolata.yml'
+  - import_tasks: 'system/fonts/sourcecodepro.yml'
 
   - name: 'Include tasks for {{ distro_pretty }}'
     include_tasks: "{{ item }}"

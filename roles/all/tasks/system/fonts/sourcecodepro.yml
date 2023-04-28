@@ -1,0 +1,9 @@
+- name: 'Fonts: Install Source Code Pro'
+  package: 
+    name: 
+      - adobe-source-code-pro-fonts
+  when: distro == 'fedora'
+
+# https://github.com/adobe-fonts/source-code-pro/releases/download/2.042R-u%2F1.062R-i%2F1.026R-vf/OTF-source-code-pro-2.042R-u_1.062R-i.zip
+#- name: 'Fonts: Download Source Code Pro (2.042)'
+#  when: distro == 'ubuntu'

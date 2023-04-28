@@ -1,0 +1,4 @@
+- name: 'Fonts: Install Inconsolata'
+  package: 
+    name: 
+      - '{{font_inconsolata}}'
