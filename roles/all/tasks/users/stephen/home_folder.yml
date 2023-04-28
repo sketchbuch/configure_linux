@@ -15,3 +15,14 @@
       FiraxisLive
       snap
   tags: ['users', 'files', 'stephen']
+
+- name: 'Users > {{ real_username_pretty }} > Home Folder: Copy user-dirs'
+  become: true
+  become_user: '{{ real_username }}'
+  ansible.builtin.copy:
+    src: 'users/{{ real_username }}/system/user-dirs.dirs'
+    dest: '~/.config/user-dirs.dirs'
+    owner: "{{ real_username }}"
+    group: "{{ real_username }}"
+    mode: 0600
+  tags: ['users', 'files', 'stephen']

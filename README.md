@@ -205,5 +205,4 @@ wike              | Wike tasks
 
 ## Todo
 
-- Install source code pro font
-- Settings for nautilus are now a file
+- Check on clean VM if font cache rebuilt

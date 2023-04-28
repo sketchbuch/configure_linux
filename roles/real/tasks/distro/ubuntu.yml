@@ -25,7 +25,6 @@
     - import_tasks: '../software/gnome-maps.yml'
     - import_tasks: '../software/gnome-sudoku.yml'
     - import_tasks: '../software/gnome-texteditor.yml'
-    - import_tasks: '../software/gnome-tweaks.yml'
     - import_tasks: '../software/gnome-weather.yml'
     - import_tasks: '../software/inkscape.yml'
     - import_tasks: '../software/julius.yml'
