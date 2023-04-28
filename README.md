@@ -78,16 +78,16 @@ debug     | Debug tasks
 ### Tasks
 
 Tag          | Description
------------- | --------------------------------------------------
+------------ | ---------------------------------------------
 always       | Tasks that always need to be done
 clock        | Clock changes
-dconf        | Any tasks to do with dconf config
 desktop      | Desktop effects and appearance
 dev          | Dev tasks
 distro_tasks | Tasks targeting a specific distro like Ubuntu
 file-manager | File Manager tasks
 files        | To do with creating/editing files
 folders      | To do with creating/editing folders
+fonts        | Font related tasks
 git          | Git related tasks
 gnome        | Gnome tasks
 gtk          | GTK related tasks
@@ -95,11 +95,13 @@ kde          | KDE Tasks
 mouse        | Anything to do with mice
 profile      | Tasks to do with the profile
 screensaver  | Screensaver settings
-setup        | Some kind of setup, like creating folders or files
+setup        | Some kind of setup, to do with ansible
 stephen      | Tasks for stephen
+system       | System related tasks
 terminal     | Terminal tasks like bash
 text-editor  | Text Editor tasks
 touchpad     | Anything to do with touchpads
+ubuntu       | Ubuntu tasks
 users        | Related to the uses
 
 ### Software Tasks

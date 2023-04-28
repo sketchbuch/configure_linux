@@ -1,91 +1,91 @@
-- name: 'System > Dconf > Nautilus: Dirs sorted with files'
+- name: 'System > Apps > Nautilus: Dirs sorted with files'
   become: true
   become_user: '{{ real_username }}'
   community.general.dconf:
     key: '/org/gtk/settings/file-chooser/sort-directories-first'
     state: present
     value: "false"
-  tags: ['dconf', 'file-manager', 'gnome']
+  tags: ['system', 'file-manager', 'gnome']
 
-- name: 'System > Dconf > Nautilus: Hide hidden files'
+- name: 'System > Apps > Nautilus: Hide hidden files'
   become: true
   become_user: '{{ real_username }}'
   community.general.dconf:
     key: '/org/gnome/nautilus/preferences/show-hidden-files'
     state: present
     value: "true"
-  tags: ['dconf', 'file-manager', 'gnome']
+  tags: ['system', 'file-manager', 'gnome']
 
-- name: 'System > Dconf > Nautilus: Maximise window'
+- name: 'System > Apps > Nautilus: Maximise window'
   become: true
   become_user: '{{ real_username }}'
   community.general.dconf:
     key: '/org/gnome/nautilus/window-state/maximized'
     state: present
     value: "true"
-  tags: ['dconf', 'file-manager', 'gnome']
+  tags: ['system', 'file-manager', 'gnome']
 
-- name: 'System > Dconf > Nautilus: Set icon view'
+- name: 'System > Apps > Nautilus: Set icon view'
   become: true
   become_user: '{{ real_username }}'
   community.general.dconf:
     key: '/org/gnome/nautilus/preferences/default-folder-viewer'
     state: present
     value: "'icon-view'"
-  tags: ['dconf', 'file-manager', 'gnome']
+  tags: ['system', 'file-manager', 'gnome']
 
-- name: 'System > Dconf > Nautilus: Set single-click to open'
+- name: 'System > Apps > Nautilus: Set single-click to open'
   become: true
   become_user: '{{ real_username }}'
   community.general.dconf:
     key: '/org/gnome/nautilus/preferences/click-policy'
     state: present
     value: "'single'"
-  tags: ['dconf', 'file-manager', 'gnome']
+  tags: ['system', 'file-manager', 'gnome']
 
-- name: 'System > Dconf > Nautilus: Show create link'
+- name: 'System > Apps > Nautilus: Show create link'
   become: true
   become_user: '{{ real_username }}'
   community.general.dconf:
     key: '/org/gnome/nautilus/preferences/show-create-link'
     state: present
     value: "true"
-  tags: ['dconf', 'file-manager', 'gnome']
+  tags: ['system', 'file-manager', 'gnome']
 
-- name: 'System > Dconf > Nautilus: Sidebar enabled'
+- name: 'System > Apps > Nautilus: Sidebar enabled'
   become: true
   become_user: '{{ real_username }}'
   community.general.dconf:
     key: '/org/gnome/nautilus/window-state/start-with-sidebar'
     state: present
     value: "true"
-  tags: ['dconf', 'file-manager', 'gnome']
+  tags: ['system', 'file-manager', 'gnome']
 
-- name: 'System > Dconf > Nautilus: Sidebar width'
+- name: 'System > Apps > Nautilus: Sidebar width'
   become: true
   become_user: '{{ real_username }}'
   community.general.dconf:
     key: '/org/gnome/nautilus/window-state/sidebar-width'
     state: present
     value: "uint32 250"
-  tags: ['dconf', 'file-manager', 'gnome']
+  tags: ['system', 'file-manager', 'gnome']
 
-- name: 'System > Dconf > Nautilus: Zoom level'
+- name: 'System > Apps > Nautilus: Zoom level'
   become: true
   become_user: '{{ real_username }}'
   community.general.dconf:
     key: '/org/gnome/nautilus/icon-view/default-zoom-level'
     state: present
     value: "'larger'"
-  tags: ['dconf', 'file-manager', 'gnome']
+  tags: ['system', 'file-manager', 'gnome']
   when: distro == 'ubuntu' and (distro_major_version | int) <= 22
 
-- name: 'System > Dconf > Nautilus: Zoom level'
+- name: 'System > Apps > Nautilus: Zoom level'
   become: true
   become_user: '{{ real_username }}'
   community.general.dconf:
     key: '/org/gnome/nautilus/icon-view/default-zoom-level'
     state: present
     value: "'medium'"
-  tags: ['dconf', 'file-manager', 'gnome']
+  tags: ['system', 'file-manager', 'gnome']
   when: distro == 'fedora' or distro == 'ubuntu' and (distro_major_version | int) == 23

@@ -5,4 +5,4 @@
     key: '/org/gnome/desktop/peripherals/mouse/natural-scroll'
     state: present
     value: "false"
-  tags: ['dconf', 'gnome', 'mouse']
+  tags: ['system', 'gnome', 'mouse']
