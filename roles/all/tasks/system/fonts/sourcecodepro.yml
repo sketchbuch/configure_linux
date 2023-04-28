@@ -9,14 +9,11 @@
   get_url:
     url: 'https://github.com/adobe-fonts/source-code-pro/releases/download/2.042R-u%2F1.062R-i%2F1.026R-vf/OTF-source-code-pro-2.042R-u_1.062R-i.zip'
     dest: '/tmp/scp.zip'
-  register: scp_zip
   tags: ['system', 'fonts']
 
 - name: 'System > Fonts: Download Source Code Pro'
   unarchive:
-    src: '/tmp/scp/{{ item }}'
+    src: '/tmp/scp.zip'
     dest: '/tmp/scp/'
     copy: no
   tags: ['system', 'fonts']
-  with_items:
-    - "{{ scp_zip.stdout }}"
