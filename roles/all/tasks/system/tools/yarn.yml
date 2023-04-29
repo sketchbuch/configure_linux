@@ -9,14 +9,12 @@
   become: true
   become_user: '{{ real_username }}'
   ansible.builtin.shell: >
-    /bin/bash -c "source ~/.nvm/nvm.sh && nvm use {{ nodeVersions | last}}"
-    /bin/bash -c "source ~/.nvm/nvm.sh && npm install -g yarn"
+    /bin/bash -c "source ~/.nvm/nvm.sh && nvm use {{ nodeVersions | last}} && npm install -g yarn"
   tags: ['system', 'dev']
 
 - name: 'System > Tools > Yarn: install for node version ({{ nodeVersions | first}})'
   become: true
   become_user: '{{ real_username }}'
   ansible.builtin.shell: >
-    /bin/bash -c "source ~/.nvm/nvm.sh && nvm use {{ nodeVersions | first}}"
-    /bin/bash -c "source ~/.nvm/nvm.sh && npm install -g yarn"
+    /bin/bash -c "source ~/.nvm/nvm.sh && nvm use {{ nodeVersions | first}} && npm install -g yarn"
   tags: ['system', 'dev']
