@@ -22,5 +22,5 @@
   become_user: '{{ real_username }}'
   ansible.builtin.shell: >
     /bin/bash -c "source ~/.nvm/nvm.sh && nvm alias default 16.13.0"
-    creates: '/home/{{ real_username }}/.nvm/alias'
   tags: ['system', 'dev']
+  creates: '/home/{{ real_username }}/.nvm/alias'
