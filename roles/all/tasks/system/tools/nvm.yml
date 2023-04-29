@@ -14,10 +14,10 @@
   tags: ['system', 'dev']
   with_items: '{{ nodeVersions }}'
 
-- name: 'System > Tools > NVM: Set default node version'
+- name: 'System > Tools > NVM: Set default node version {{ nodeVersions | first}}'
   become: true
   become_user: '{{ real_username }}'
   ansible.builtin.shell: >
-    /bin/bash -c "source ~/.nvm/nvm.sh && nvm alias default 16.13.0"
+    /bin/bash -c "source ~/.nvm/nvm.sh && nvm alias default {{ nodeVersions | first}}"
     creates: '/home/{{ real_username }}/.nvm/alias'
   tags: ['system', 'dev']
