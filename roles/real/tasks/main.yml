@@ -13,7 +13,7 @@
     when: is_gnome
   
   - import_tasks: 'users/{{ real_username }}/home_folder.yml'
-  - include_tasks: 'users/{{ real_username }}/nautilus.yml'
+  - import_tasks: 'users/{{ real_username }}/nautilus.yml'
 
   - import_tasks: 'system/tools/vsce.yml'
   - import_tasks: 'system/tools/yeoman.yml'

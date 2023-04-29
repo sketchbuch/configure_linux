@@ -20,24 +20,24 @@
     tags: ['gnome']
     when: is_gnome
 
-  - include_tasks: 'users/{{ real_username }}/git.yml'
-  - include_tasks: 'users/{{ real_username }}/gtk.yml'
-  - include_tasks: 'users/{{ real_username }}/home_folder.yml'
-  - include_tasks: 'users/{{ real_username }}/profile.yml'
-  - include_tasks: 'users/{{ real_username }}/terminal.yml'
+  - import_tasks: 'users/{{ real_username }}/git.yml'
+  - import_tasks: 'users/{{ real_username }}/gtk.yml'
+  - import_tasks: 'users/{{ real_username }}/home_folder.yml'
+  - import_tasks: 'users/{{ real_username }}/profile.yml'
+  - import_tasks: 'users/{{ real_username }}/terminal.yml'
 
-  - include_tasks: 'system/fonts/firacode.yml'
-  - include_tasks: 'system/fonts/inconsolata.yml'
-  - include_tasks: 'system/fonts/mscorefonts.yml'
-  - include_tasks: 'system/fonts/sourcecodepro.yml'
+  - import_tasks: 'system/fonts/firacode.yml'
+  - import_tasks: 'system/fonts/inconsolata.yml'
+  - import_tasks: 'system/fonts/mscorefonts.yml'
+  - import_tasks: 'system/fonts/sourcecodepro.yml'
 
-  - include_tasks: 'system/thumbnailer/epub.yml'
-  - include_tasks: 'system/thumbnailer/webp.yml'
+  - import_tasks: 'system/thumbnailer/epub.yml'
+  - import_tasks: 'system/thumbnailer/webp.yml'
   
-  - include_tasks: 'system/tools/nvm.yml'
+  - import_tasks: 'system/tools/nvm.yml'
 
-  - include_tasks: 'system/tools/pnpm.yml'
-  - include_tasks: 'system/tools/yarn.yml'
+  - import_tasks: 'system/tools/pnpm.yml'
+  - import_tasks: 'system/tools/yarn.yml'
 
   rescue:
     - set_fact: all_task_failed=true
