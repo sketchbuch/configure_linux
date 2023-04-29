@@ -1,11 +1,14 @@
 - name: 'Users > {{ real_username_pretty }} > FreeFileSync: Create folder'
   become: true
+  become_user: '{{ real_username }}'
   ansible.builtin.file:
     path: '/home/{{ real_username }}/Apps/FreeFileSync'
     state: directory
   tags: ['users', 'folders', 'stephen']
 
 - name: 'Users > {{ real_username_pretty }} > FreeFileSync: Copy ffs_gui files'
+  become: true
+  become_user: '{{ real_username }}'
   ansible.builtin.copy:
     dest: '/home/{{ real_username }}/Apps/FreeFileSync/{{ file }}'
     group: "{{ real_username }}"
