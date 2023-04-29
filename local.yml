@@ -5,6 +5,13 @@
     - all
   tags: ['all']
 
+- hosts: real
+  become: true
+  gather_facts: false
+  roles:
+    - real
+  tags: ['real']
+
 - hosts: virtual
   become: true
   gather_facts: false
