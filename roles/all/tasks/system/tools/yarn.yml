@@ -12,12 +12,12 @@
 #     /bin/bash -c "source ~/.nvm/nvm.sh && nvm use {{ nodeVersions | first}} && npm install -g yarn"
 #   tags: ['system', 'dev']
 
-- name: 'System > Tools > Yarn'
-  block:
-    - name: 'System > Tools > Yarn: install for node v({{ item }})'
-      become: true
-      become_user: '{{ real_username }}'
-      ansible.builtin.shell: >
-        /bin/bash -c "source ~/.nvm/nvm.sh && nvm use {{ item }} && npm install -g yarn"
+- name: 'System > Tools > Yarn: Install for node all node versions'
+  become: true
+  become_user: '{{ real_username }}'
+  ansible.builtin.shell: >
+    /bin/bash -c "source ~/.nvm/nvm.sh && nvm use {{ nodeVersion }} && npm install -g yarn"
   tags: ['system', 'dev']
-  with_items: '{{ nodeVersions }}'
+  loop: '{{ nodeVersions }}'
+  loop_control:
+    loop_var: nodeVersion
