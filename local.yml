@@ -12,9 +12,9 @@
 #     - real
 #   tags: ['real']
 
-# - hosts: virtual
-#   become: true
-#   gather_facts: false
-#   roles:
-#     - virtual
-#   tags: ['virtual']
+- hosts: virtual
+  become: true
+  gather_facts: false
+  roles:
+    - virtual
+  tags: ['virtual']
