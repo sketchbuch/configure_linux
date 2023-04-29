@@ -8,6 +8,7 @@
     loop_var: nodeVersion
   tags: ['system', 'dev']
 
+# VSCode generator
 - name: 'System > Tools > Yeoman: Install generator-code for all node versions'
   become: true
   become_user: '{{ real_username }}'
