@@ -1,10 +1,3 @@
-# - name: 'System > Tools > Install Yarn'
-#   become: true
-#   become_user: '{{ real_username }}'
-#   ansible.builtin.shell: >
-#     /bin/bash -c "source ~/.nvm/nvm.sh && npm install --global yarn"
-#   tags: ['system', 'dev']
-
 - name: 'System > Tools > Yarn: install for node version ({{ nodeVersions | last}})'
   become: true
   become_user: '{{ real_username }}'
