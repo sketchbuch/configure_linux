@@ -1,143 +1,132 @@
-# View
-- name: 'System > Config > Gedit: Display line numbers'
-  become: true
-  become_user: '{{ real_username }}'
-  community.general.dconf:
-    key: '/org/gnome/gedit/preferences/editor/display-line-numbers'
-    state: present
-    value: "true"
-  tags: ['system', 'text-editor', 'gnome']
-  when: distro == 'ubuntu' and (distro_major_version | int) <= 22
+- name: 'Gedit: Ubuntu 22.x'
+  block:
+    # View
+  - name: 'System > Config > Gedit: Display line numbers'
+    become: true
+    become_user: '{{ real_username }}'
+    community.general.dconf:
+      key: '/org/gnome/gedit/preferences/editor/display-line-numbers'
+      state: present
+      value: "true"
+    tags: ['system', 'text-editor', 'gnome']
 
-- name: 'System > Config > Gedit: Show status bar'
-  become: true
-  become_user: '{{ real_username }}'
-  community.general.dconf:
-    key: '/org/gnome/gedit/preferences/ui/statusbar-visible'
-    state: present
-    value: "true"
-  tags: ['system', 'text-editor', 'gnome']
-  when: distro == 'ubuntu' and (distro_major_version | int) <= 22
+  - name: 'System > Config > Gedit: Show status bar'
+    become: true
+    become_user: '{{ real_username }}'
+    community.general.dconf:
+      key: '/org/gnome/gedit/preferences/ui/statusbar-visible'
+      state: present
+      value: "true"
+    tags: ['system', 'text-editor', 'gnome']
 
-- name: 'System > Config > Gedit: Enable text wraping'
-  become: true
-  become_user: '{{ real_username }}'
-  community.general.dconf:
-    key: '/org/gnome/gedit/preferences/editor/wrap-mode'
-    state: present
-    value: "'word'"
-  tags: ['system', 'text-editor', 'gnome']
-  when: distro == 'ubuntu' and (distro_major_version | int) <= 22
+  - name: 'System > Config > Gedit: Enable text wraping'
+    become: true
+    become_user: '{{ real_username }}'
+    community.general.dconf:
+      key: '/org/gnome/gedit/preferences/editor/wrap-mode'
+      state: present
+      value: "'word'"
+    tags: ['system', 'text-editor', 'gnome']
 
-- name: 'System > Config > Gedit: Do not split words'
-  become: true
-  become_user: '{{ real_username }}'
-  community.general.dconf:
-    key: '/org/gnome/gedit/preferences/editor/wrap-last-split-mode'
-    state: present
-    value: "'word'"
-  tags: ['system', 'text-editor', 'gnome']
-  when: distro == 'ubuntu' and (distro_major_version | int) <= 22
+  - name: 'System > Config > Gedit: Do not split words'
+    become: true
+    become_user: '{{ real_username }}'
+    community.general.dconf:
+      key: '/org/gnome/gedit/preferences/editor/wrap-last-split-mode'
+      state: present
+      value: "'word'"
+    tags: ['system', 'text-editor', 'gnome']
 
-- name: 'System > Config > Gedit: Highlight current line'
-  become: true
-  become_user: '{{ real_username }}'
-  community.general.dconf:
-    key: '/org/gnome/gedit/preferences/editor/highlight-current-line'
-    state: present
-    value: "true"
-  tags: ['system', 'text-editor', 'gnome']
-  when: distro == 'ubuntu' and (distro_major_version | int) <= 22
+  - name: 'System > Config > Gedit: Highlight current line'
+    become: true
+    become_user: '{{ real_username }}'
+    community.general.dconf:
+      key: '/org/gnome/gedit/preferences/editor/highlight-current-line'
+      state: present
+      value: "true"
+    tags: ['system', 'text-editor', 'gnome']
 
-- name: 'System > Config > Gedit: Highlight matching brackets'
-  become: true
-  become_user: '{{ real_username }}'
-  community.general.dconf:
-    key: '/org/gnome/gedit/preferences/editor/bracket-matching'
-    state: present
-    value: "true"
-  tags: ['system', 'text-editor', 'gnome']
-  when: distro == 'ubuntu' and (distro_major_version | int) <= 22
+  - name: 'System > Config > Gedit: Highlight matching brackets'
+    become: true
+    become_user: '{{ real_username }}'
+    community.general.dconf:
+      key: '/org/gnome/gedit/preferences/editor/bracket-matching'
+      state: present
+      value: "true"
+    tags: ['system', 'text-editor', 'gnome']
 
 
+  # Editor
+  - name: 'System > Config > Gedit: Tab Width'
+    become: true
+    become_user: '{{ real_username }}'
+    community.general.dconf:
+      key: '/org/gnome/gedit/preferences/editor/tabs-size'
+      state: present
+      value: "uint32 4"
+    tags: ['system', 'text-editor', 'gnome']
 
-# Editor
-- name: 'System > Config > Gedit: Tab Width'
-  become: true
-  become_user: '{{ real_username }}'
-  community.general.dconf:
-    key: '/org/gnome/gedit/preferences/editor/tabs-size'
-    state: present
-    value: "uint32 4"
-  tags: ['system', 'text-editor', 'gnome']
-  when: distro == 'ubuntu' and (distro_major_version | int) <= 22
-
-- name: 'System > Config > Gedit: Automatic indent'
-  become: true
-  become_user: '{{ real_username }}'
-  community.general.dconf:
-    key: '/org/gnome/gedit/preferences/editor/auto-indent'
-    state: present
-    value: "true"
-  tags: ['system', 'text-editor', 'gnome']
-  when: distro == 'ubuntu' and (distro_major_version | int) <= 22
+  - name: 'System > Config > Gedit: Automatic indent'
+    become: true
+    become_user: '{{ real_username }}'
+    community.general.dconf:
+      key: '/org/gnome/gedit/preferences/editor/auto-indent'
+      state: present
+      value: "true"
+    tags: ['system', 'text-editor', 'gnome']
 
 
+  # Font & Colours
+  - name: 'System > Config > Gedit: Set editor font'
+    become: true
+    become_user: '{{ real_username }}'
+    community.general.dconf:
+      key: '/org/gnome/gedit/preferences/editor/editor-font'
+      state: present
+      value: "'Source Code Pro 12'"
+    tags: ['system', 'text-editor', 'gnome']
 
-# Font & Colours
-- name: 'System > Config > Gedit: Set editor font'
-  become: true
-  become_user: '{{ real_username }}'
-  community.general.dconf:
-    key: '/org/gnome/gedit/preferences/editor/editor-font'
-    state: present
-    value: "'Source Code Pro 12'"
-  tags: ['system', 'text-editor', 'gnome']
-  when: distro == 'ubuntu' and (distro_major_version | int) <= 22
-
-- name: 'System > Config > Gedit: Use default font'
-  become: true
-  become_user: '{{ real_username }}'
-  community.general.dconf:
-    key: '/org/gnome/gedit/preferences/editor/use-default-font'
-    state: present
-    value: "false"
-  tags: ['system', 'text-editor', 'gnome']
-  when: distro == 'ubuntu' and (distro_major_version | int) <= 22
+  - name: 'System > Config > Gedit: Use default font'
+    become: true
+    become_user: '{{ real_username }}'
+    community.general.dconf:
+      key: '/org/gnome/gedit/preferences/editor/use-default-font'
+      state: present
+      value: "false"
+    tags: ['system', 'text-editor', 'gnome']
 
 
-
-# Plugins
-- name: 'System > Config > Gedit: Active plugins'
-  become: true
-  become_user: '{{ real_username }}'
-  community.general.dconf:
-    key: '/org/gnome/gedit/plugins/active-plugins'
-    state: present
-    value: "['filebrowser', 'spell', 'sort', 'docinfo', 'openlinks', 'modelines']"
-  tags: ['system', 'text-editor', 'gnome']
+  # Plugins
+  - name: 'System > Config > Gedit: Active plugins'
+    become: true
+    become_user: '{{ real_username }}'
+    community.general.dconf:
+      key: '/org/gnome/gedit/plugins/active-plugins'
+      state: present
+      value: "['filebrowser', 'spell', 'sort', 'docinfo', 'openlinks', 'modelines']"
+    tags: ['system', 'text-editor', 'gnome']
   when: distro == 'ubuntu' and (distro_major_version | int) <= 22
 
 
+  # Ubuntu 23.04 uses a different version of gedit that uses a file
+- name: 'Gedit: Ubuntu 23.x / Fedora'
+  block:
+  - name: 'System > Config > Gedit: Create settings folder'
+    become: true
+    become_user: '{{ real_username }}'
+    ansible.builtin.file:
+      path: '/home/{{ real_username }}/.var/app/org.gnome.gedit/config/glib-2.0/settings/'
+      state: directory
+    tags: ['system', 'text-editor', 'gnome', 'folders']
 
-# Ubuntu 23.04 uses a different version of gedit that uses a file
-- name: 'System > Config > Gedit: Create settings folder'
-  become: true
-  become_user: '{{ real_username }}'
-  ansible.builtin.file:
-    path: '/home/{{ real_username }}/.var/app/org.gnome.gedit/config/glib-2.0/settings/'
-    state: directory
-  tags: ['system', 'text-editor', 'gnome', 'folders']
-  when: distro == 'fedora' or distro == 'ubuntu' and (distro_major_version | int) >= 23
-
-- name: 'System > Config > Gedit: Create settings file'
-  become: true
-  become_user: '{{ real_username }}'
-  ansible.builtin.copy:
-    src: 'users/{{ real_username }}/gedit/settings'
-    dest: '/home/{{ real_username }}/.var/app/org.gnome.gedit/config/glib-2.0/settings/keyfile'
-    owner: "{{ real_username }}"
-    group: "{{ real_username }}"
-    mode: 0600
-  tags: ['system', 'text-editor', 'gnome', 'files']
+  - name: 'System > Config > Gedit: Create settings file'
+    become: true
+    become_user: '{{ real_username }}'
+    ansible.builtin.copy:
+      src: 'users/{{ real_username }}/gedit/settings'
+      dest: '/home/{{ real_username }}/.var/app/org.gnome.gedit/config/glib-2.0/settings/keyfile'
+      owner: "{{ real_username }}"
+      group: "{{ real_username }}"
+      mode: 0600
+    tags: ['system', 'text-editor', 'gnome', 'files']
   when: distro == 'fedora' or distro == 'ubuntu' and (distro_major_version | int) >= 23
