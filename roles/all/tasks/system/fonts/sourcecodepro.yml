@@ -5,34 +5,34 @@
   tags: ['system', 'fonts']
   when: distro == 'fedora'
 
-- name: 'System > Fonts: Install Source Code Pro - Download archive'
-  get_url:
-    url: 'https://github.com/adobe-fonts/source-code-pro/releases/download/2.042R-u%2F1.062R-i%2F1.026R-vf/OTF-source-code-pro-2.042R-u_1.062R-i.zip'
-    dest: '{{ anisbleTmp }}/scp.zip'
-  tags: ['system', 'fonts']
+- name: 'Source Code Pro: Ubuntu'
+  block:
+  - name: 'System > Fonts: Install Source Code Pro - Download archive'
+    get_url:
+      url: 'https://github.com/adobe-fonts/source-code-pro/releases/download/2.042R-u%2F1.062R-i%2F1.026R-vf/OTF-source-code-pro-2.042R-u_1.062R-i.zip'
+      dest: '{{ anisbleTmp }}/scp.zip'
 
-- name: 'System > Fonts: Install Source Code Pro - Create tmp folder'
-  ansible.builtin.file:
-    path: '{{ anisbleTmp }}/scp/'
-    state: directory
-  tags: ['system', 'fonts']
+  - name: 'System > Fonts: Install Source Code Pro - Create tmp folder'
+    ansible.builtin.file:
+      path: '{{ anisbleTmp }}/scp/'
+      state: directory
 
-- name: 'System > Fonts: Install Source Code Pro - Extact to tmp folder'
-  unarchive:
-    copy: no
-    dest: '{{ anisbleTmp }}/scp/'
-    src: '{{ anisbleTmp }}/scp.zip'
-  tags: ['system', 'fonts']
+  - name: 'System > Fonts: Install Source Code Pro - Extact to tmp folder'
+    unarchive:
+      copy: no
+      dest: '{{ anisbleTmp }}/scp/'
+      src: '{{ anisbleTmp }}/scp.zip'
 
-- name: 'System > Fonts: Install Source Code Pro - Copy to font folder'
-  ansible.builtin.copy:
-    dest: '/usr/local/share/fonts/SourceCodePro'
-    src: '{{ anisbleTmp }}/scp/OTF'
-  register: scp_installed
-  tags: ['system', 'fonts']
+  - name: 'System > Fonts: Install Source Code Pro - Copy to font folder'
+    ansible.builtin.copy:
+      dest: '/usr/local/share/fonts/SourceCodePro'
+      src: '{{ anisbleTmp }}/scp/OTF'
+    register: scp_installed
 
-- name: 'System > Fonts: Install Source Code Pro - Rebuild font cache'
-  become: no
-  command: fc-cache --force --verbose
-  tags: ['system', 'fonts']
-  when: scp_installed.changed
+  - name: 'System > Fonts: Install Source Code Pro - Rebuild font cache'
+    become: no
+    command: fc-cache --force --verbose
+    when: scp_installed.changed
+
+tags: ['system', 'fonts']
+when: distro == 'ubuntu'

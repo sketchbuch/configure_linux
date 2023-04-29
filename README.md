@@ -208,8 +208,6 @@ wike              | Wike tasks
 - Android studio
 - Chrome
 - Gnome Web
-- yoeman
-- yoeman vscode template
 - gnome-epub-thumbnailer
 - <https://github.com/aruiz/webp-pixbuf-loader>
 - Remove some libre office apps
@@ -219,4 +217,11 @@ wike              | Wike tasks
 - nord vpn
 - ssh
 - clone repos?
-- Copy hidden
+
+## Manual Todos
+
+Things to do after install
+
+- Setup online accounts
+- Download keepassxc dbs
+- Setup login to vsce
