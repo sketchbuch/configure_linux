@@ -209,8 +209,6 @@ wike              | Wike tasks
 ## Todo
 
 - Android studio
-- gnome-epub-thumbnailer
-- <https://github.com/aruiz/webp-pixbuf-loader>
 - Remove some libre office apps
 - Remove Thundebird
 - Add where clauses to source code pro when not fedora
@@ -220,6 +218,10 @@ wike              | Wike tasks
 - clone repos?
 - Update cache before <https://stackoverflow.com/questions/49087220/how-to-update-package-cache-when-using-module-package-from-ansible>
 - Chrome - move fedora repos to fedora config
+- Move all cache update tasks to a sep. file in common and import
+- Clear up tmp files
+- Update package manager caches
+- Update font caches
 
 - Final - move software to correct roles and remove symlinks
 
