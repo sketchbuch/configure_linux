@@ -17,6 +17,7 @@ My ansible setup to configure linux and install apps etc. in real and virtual en
 - **Install Flatpak**
 
   - See official guide, e.g. <https://flatpak.org/setup/Ubuntu>
+  - Although flatpak can be installed via ansible, a restart is required.
 
 - **Install psutil**
 
@@ -28,7 +29,6 @@ My ansible setup to configure linux and install apps etc. in real and virtual en
 
 ## Notes
 
-- Although flatpak can be installed via ansible, a restart is required.
 - Based on: <https://www.youtube.com/watch?v=gIDywsGBqf4>
 - [YML Validator](https://codebeautify.org/yaml-validator)
 - [What's the difference between include_tasks and import_tasks?](https://serverfault.com/questions/875247/whats-the-difference-between-include-tasks-and-import-tasks)
@@ -81,6 +81,7 @@ debug     | Debug tasks
 Tag          | Description
 ------------ | ---------------------------------------------
 always       | Tasks that always need to be done
+cleanup      | Tasks to do removing files and cleaning up
 clock        | Clock changes
 desktop      | Desktop effects and appearance
 dev          | Dev tasks
@@ -209,10 +210,7 @@ wike              | Wike tasks
 
 ## Todo
 
-- Add freefilesync files
 - Android studio
-- Remove some libre office apps
-- Remove Thundebird
 - Setup vpn
 - nord vpn
 - ssh

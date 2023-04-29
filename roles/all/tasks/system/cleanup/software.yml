@@ -5,4 +5,4 @@
       - thunderbird*
       - transmission-gtk
     state: absent
-  tags: ['system', 'packages', 'gnome']
+  tags: ['system', 'packages', 'gnome', 'cleanup']
