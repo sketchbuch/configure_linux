@@ -33,7 +33,7 @@
         state: present
     
     - name: 'Software > Install Chrome: Enable chrome in DNF config manager'
-        ansible.builtin.shell:
+      ansible.builtin.shell:
         cmd: dnf config-manager --set-enabled google-chrome
 
     - name: 'Software > Install Chrome'
