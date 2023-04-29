@@ -12,9 +12,9 @@
   ansible.builtin.shell: >
     /bin/bash -c "source ~/.nvm/nvm.sh && nvm install {{ nodeVersion }}"
   tags: ['system', 'dev']
-  loop: '{{ nodeVersion }}'
+  loop: '{{ nodeVersions }}'
   loop_control:
-    loop_var: dotFile
+    loop_var: nodeVersion
 
 - name: 'System > Tools > NVM: Set default node version to {{ nodeVersions | first}}'
   become: true
