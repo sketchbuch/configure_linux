@@ -3,8 +3,6 @@
 - name: 'Setup > Prep: Create .ansible/tmp"'
   become: true
   ansible.builtin.file:
-    path: "{{ item }}"
+    path: "{{ anisbleTmp }}"
     state: directory
-  loop:
-    - "{{ anisbleTmp }}"
   tags: ['setup', 'folders']

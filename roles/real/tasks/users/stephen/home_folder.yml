@@ -2,7 +2,7 @@
   become: true
   become_user: '{{ real_username }}'
   ansible.builtin.file:
-    path: "{{ item }}"
+    path: "{{ folder }}"
     state: directory
   loop:
     - '~/Apps'
@@ -14,4 +14,6 @@
     - '~/Projects'
     - '~/Temp'
     - '~/VirtualBox VMs'
+  loop_control:
+    loop_var: folder
   tags: ['users', 'folders', 'stephen']

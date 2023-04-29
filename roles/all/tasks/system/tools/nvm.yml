@@ -10,9 +10,11 @@
   become: true
   become_user: '{{ real_username }}'
   ansible.builtin.shell: >
-    /bin/bash -c "source ~/.nvm/nvm.sh && nvm install {{ item }}"
+    /bin/bash -c "source ~/.nvm/nvm.sh && nvm install {{ nodeVersion }}"
   tags: ['system', 'dev']
-  with_items: '{{ nodeVersions }}'
+  loop: '{{ nodeVersion }}'
+  loop_control:
+    loop_var: dotFile
 
 - name: 'System > Tools > NVM: Set default node version to {{ nodeVersions | first}}'
   become: true

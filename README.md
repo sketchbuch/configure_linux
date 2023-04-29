@@ -31,6 +31,7 @@ My ansible setup to configure linux and install apps etc. in real and virtual en
 - Although flatpak can be installed via ansible, a restart is required.
 - Based on: <https://www.youtube.com/watch?v=gIDywsGBqf4>
 - [YML Validator](https://codebeautify.org/yaml-validator)
+- [What's the difference between include_tasks and import_tasks?](https://serverfault.com/questions/875247/whats-the-difference-between-include-tasks-and-import-tasks)
 
 ### Example Github Repos:
 
@@ -208,10 +209,10 @@ wike              | Wike tasks
 
 ## Todo
 
+- Add freefilesync files
 - Android studio
 - Remove some libre office apps
 - Remove Thundebird
-- Add where clauses to source code pro when not fedora
 - Setup vpn
 - nord vpn
 - ssh
@@ -222,6 +223,7 @@ wike              | Wike tasks
 - Clear up tmp files
 - Update package manager caches
 - Update font caches
+- Check virtual in gnome boxes
 
 - Final - move software to correct roles and remove symlinks
 
