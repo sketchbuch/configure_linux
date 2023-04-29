@@ -2,7 +2,6 @@
 
 - name: 'Software Tasks'
   block:
-    # File Management
     - import_tasks: '../software/fsearch.yml'
     - import_tasks: '../software/htop.yml'
     - import_tasks: '../software/neofetch.yml'
