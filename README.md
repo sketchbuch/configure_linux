@@ -220,3 +220,4 @@ wike              | Wike tasks
 - nord vpn
 - ssh
 - clone repos?
+- Copy hidden

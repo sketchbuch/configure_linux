@@ -16,7 +16,7 @@
       snap
   tags: ['users', 'files', 'stephen']
 
-- name: 'Users > {{ real_username_pretty }} > Home Folder: Copy user-dirs'
+- name: 'Users > {{ real_username_pretty }} > Home Folder: Create user-dirs'
   become: true
   become_user: '{{ real_username }}'
   ansible.builtin.copy:
