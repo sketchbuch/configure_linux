@@ -3,7 +3,7 @@
 # the playbook. This is kept for future reference.
 
 #- name: 'Install Flatpak'
-#  package:
+#  ansible.builtin.package:
 #    name:
 #      - flatpak
 #      - gnome-software-plugin-flatpak

@@ -1,5 +1,5 @@
 - name: 'Software > Install Plocate'
-  package:
-    name:
-      - plocate
+  ansible.builtin.package:
+    name: plocate
+    state: present
   tags: ['file-management', 'plocate', 'package']

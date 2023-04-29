@@ -7,7 +7,7 @@
   tags: ['system', 'fonts']
 
 - name: 'System > Fonts: Install MS Core Fonts'
-  package: 
+  ansible.builtin.package: 
     name: 
       - 'ttf-mscorefonts-installer'
   register: mscore_installed

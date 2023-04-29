@@ -1,5 +1,5 @@
 - name: 'System > Fonts: Install Source Code Pro'
-  package: 
+  ansible.builtin.package: 
     name: 
       - adobe-source-code-pro-fonts
   tags: ['system', 'fonts']

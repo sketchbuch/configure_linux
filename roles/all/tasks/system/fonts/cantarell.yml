@@ -1,5 +1,5 @@
 - name: 'System > Fonts: Install Cantarell'
-  package: 
+  ansible.builtin.package: 
     name: 
       - fonts-cantarell
   tags: ['system', 'fonts']

@@ -143,6 +143,7 @@ audacity          | Audacity tasks
 augustus          | Augustus tasks
 authy             | Authy tasks
 celeste           | Celeste tasks
+chrome            | Google Chrome tasks
 collision         | Collision tasks
 converter         | Converter tasks
 curtail           | Curtail tasks
@@ -165,6 +166,7 @@ gnome-loupe       | Gnome Loupe tasks
 gnome-maps        | Gnome Maps tasks
 gnome-sudoku      | Gnome Sudoku tasks
 gnome-texteditor  | Gnome Text Editor tasks
+gnome-web         | Gnome Web Browser tasks
 gnome-weather     | Gnome Weather tasks
 htop              | Htop tasks
 inkscape          | Inkscape tasks
@@ -206,7 +208,6 @@ wike              | Wike tasks
 ## Todo
 
 - Android studio
-- Chrome
 - Gnome Web
 - gnome-epub-thumbnailer
 - <https://github.com/aruiz/webp-pixbuf-loader>
@@ -217,6 +218,10 @@ wike              | Wike tasks
 - nord vpn
 - ssh
 - clone repos?
+- Update cache before <https://stackoverflow.com/questions/49087220/how-to-update-package-cache-when-using-module-package-from-ansible>
+- Chrome - move fedora repos to fedora config
+
+- Final - move software to correct roles and remove symlinks
 
 ## Manual Todos
 

@@ -1,5 +1,5 @@
 - name: 'Software > Install Gnome Tweaks'
-  package: 
-    name: 
-      - 'gnome-tweaks'
+  ansible.builtin.package: 
+    name: 'gnome-tweaks'
+    state: present
   tags: ['games', 'gnome-sudoku', 'flatpak']
