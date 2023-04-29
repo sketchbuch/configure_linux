@@ -1,4 +1,4 @@
-- import_tasks: 'system/tools/curl.yml'
+- include_tasks: 'system/tools/curl.yml'
 
 - name: 'Software Tasks'
   block:
