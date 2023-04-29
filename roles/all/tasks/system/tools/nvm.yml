@@ -20,3 +20,10 @@
     /bin/bash -c "source ~/.nvm/nvm.sh && nvm alias default 16.13.0"
     creates: '/home/{{ real_username }}/.nvm/alias'
   tags: ['system', 'dev']
+
+- name: 'System > Tools > NVM: Test'
+  become: true
+  become_user: '{{ real_username }}'
+  ansible.builtin.shell:
+    cmd: exec bash
+  tags: ['system', 'dev']
