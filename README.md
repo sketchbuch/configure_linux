@@ -224,6 +224,7 @@ wike              | Wike tasks
 - Update package manager caches
 - Update font caches
 - Check virtual in gnome boxes
+- Set dock width
 
 - Final - move software to correct roles and remove symlinks
 
