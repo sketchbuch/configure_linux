@@ -1,11 +1,11 @@
-- include_tasks: 'system/tools/curl.yml'
+- import_tasks: 'system/tools/curl.yml'
 
 - name: 'Software Tasks'
   block:
-    - include_tasks: '../software/fsearch.yml'
-    - include_tasks: '../software/htop.yml'
-    - include_tasks: '../software/neofetch.yml'
-    - include_tasks: '../software/plocate.yml'
-    - include_tasks: '../software/powertop.yml'
+    - import_tasks: '../software/fsearch.yml'
+    - import_tasks: '../software/htop.yml'
+    - import_tasks: '../software/neofetch.yml'
+    - import_tasks: '../software/plocate.yml'
+    - import_tasks: '../software/powertop.yml'
   tags: ['software', 'ubuntu']
   when: installSoftware
