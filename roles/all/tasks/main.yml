@@ -38,7 +38,7 @@
   
   - import_tasks: 'system/tools/nvm.yml'
   #- import_tasks: 'system/tools/pnpm.yml'
-  #- import_tasks: 'system/tools/yarn.yml'
+  - import_tasks: 'system/tools/yarn.yml'
 
   rescue:
     - set_fact: all_task_failed=true
