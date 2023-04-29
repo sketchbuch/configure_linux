@@ -13,6 +13,7 @@
     when: is_gnome
   
   - include_tasks: 'users/{{ real_username }}/home_folder.yml'
+  - include_tasks: 'users/{{ real_username }}/freefilesync.yml'
   - include_tasks: 'users/{{ real_username }}/nautilus.yml'
 
   - import_tasks: 'system/tools/vsce.yml'
