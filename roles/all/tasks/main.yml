@@ -13,7 +13,7 @@
 
   - name: 'Include tasks for {{ distro_pretty }}'
     include_tasks: 'distro/{{ distro }}.yml'
-    tags: ['always', 'vars']
+    tags: ['distro_tasks']
   
   - name: 'Include tasks for Gnome'
     include_tasks: 'desktop/gnome.yml'
