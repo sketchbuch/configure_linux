@@ -1,4 +1,4 @@
-- name: 'System > Tools > PNPM: Install for node all node versions'
+- name: 'System > Tools > PNPM: Install for all node versions'
   become: true
   become_user: '{{ real_username }}'
   ansible.builtin.shell: >
