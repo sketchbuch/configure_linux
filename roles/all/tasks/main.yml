@@ -12,11 +12,11 @@
     tags: ['always', 'vars']
 
   - name: 'Include tasks for {{ distro_pretty }}'
-    include_vars: 'distro/{{ distro }}.yml'
+    include_tasks: 'distro/{{ distro }}.yml'
     tags: ['always', 'vars']
   
   - name: 'Include tasks for Gnome'
-    import_tasks: 'desktop/gnome.yml'
+    include_tasks: 'desktop/gnome.yml'
     tags: ['gnome']
     when: is_gnome
 
@@ -26,18 +26,18 @@
   - include_tasks: 'users/{{ real_username }}/profile.yml'
   - include_tasks: 'users/{{ real_username }}/terminal.yml'
 
-  - import_tasks: 'system/fonts/firacode.yml'
-  - import_tasks: 'system/fonts/inconsolata.yml'
-  - import_tasks: 'system/fonts/mscorefonts.yml'
-  - import_tasks: 'system/fonts/sourcecodepro.yml'
+  - include_tasks: 'system/fonts/firacode.yml'
+  - include_tasks: 'system/fonts/inconsolata.yml'
+  - include_tasks: 'system/fonts/mscorefonts.yml'
+  - include_tasks: 'system/fonts/sourcecodepro.yml'
 
-  - import_tasks: 'system/thumbnailer/epub.yml'
-  - import_tasks: 'system/thumbnailer/webp.yml'
+  - include_tasks: 'system/thumbnailer/epub.yml'
+  - include_tasks: 'system/thumbnailer/webp.yml'
   
-  - import_tasks: 'system/tools/nvm.yml'
+  - include_tasks: 'system/tools/nvm.yml'
 
-  - import_tasks: 'system/tools/pnpm.yml'
-  - import_tasks: 'system/tools/yarn.yml'
+  - include_tasks: 'system/tools/pnpm.yml'
+  - include_tasks: 'system/tools/yarn.yml'
 
   rescue:
     - set_fact: all_task_failed=true

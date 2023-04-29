@@ -4,7 +4,7 @@
     tags: ['always', 'vars']
 
   - name: 'Include tasks for {{ distro_pretty }}'
-    include_vars: 'distro/{{ distro }}.yml'
+    import_tasks: 'distro/{{ distro }}.yml'
     tags: ['always', 'vars']
   
   - name: 'Include tasks for Gnome'
