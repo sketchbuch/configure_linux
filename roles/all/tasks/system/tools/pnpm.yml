@@ -1,5 +1,6 @@
 - name: 'System > Tools > Install PNPM (globally)'
-  community.general.npm:
-    global: true
-    name: pnpm
+  become: true
+  become_user: '{{ real_username }}'
+  ansible.builtin.shell: >
+    /bin/bash -c "source ~/.nvm/nvm.sh && npm install --global pnpm"
   tags: ['system', 'dev']

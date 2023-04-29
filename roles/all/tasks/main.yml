@@ -37,7 +37,7 @@
   - import_tasks: 'system/fonts/sourcecodepro.yml'
   
   - import_tasks: 'system/tools/nvm.yml'
-  #- import_tasks: 'system/tools/pnpm.yml'
+  - import_tasks: 'system/tools/pnpm.yml'
   - import_tasks: 'system/tools/yarn.yml'
 
   rescue:
