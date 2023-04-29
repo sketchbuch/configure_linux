@@ -1,0 +1,5 @@
+- name: 'System > Tools > Install PNPM (globally)'
+  community.general.npm:
+    global: true
+    name: pnpm
+  tags: ['system', 'dev']

@@ -205,8 +205,6 @@ wike              | Wike tasks
 
 ## Todo
 
-- Etcher
-- Solitaire
 - Android studio
 - pnpm
 - yarn
@@ -217,3 +215,8 @@ wike              | Wike tasks
 - <https://github.com/aruiz/webp-pixbuf-loader>
 - Remove some libre office apps
 - Remove Thundebird
+- Add where clauses to source code pro when not fedora
+- Setup vpn
+- nord vpn
+- ssh
+- clone repos?

@@ -1,0 +1,5 @@
+- name: 'System > Tools > Install Yarn (globally)'
+  community.general.npm:
+    global: true
+    name: yarn
+  tags: ['system', 'dev']
