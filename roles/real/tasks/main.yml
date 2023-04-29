@@ -4,13 +4,8 @@
     tags: ['always', 'vars']
 
   - name: 'Include tasks for {{ distro_pretty }}'
-    include_tasks: "{{ item }}"
-    tags: ['distro_tasks']
-    with_first_found:
-      - files:
-          - 'distro/{{ distro }}-{{ distro_major_version }}.yml'
-          - 'distro/{{ distro }}.yml'
-        skip: true
+    include_vars: 'distro/{{ distro }}.yml'
+    tags: ['always', 'vars']
   
   - name: 'Include tasks for Gnome'
     import_tasks: 'desktop/gnome.yml'
