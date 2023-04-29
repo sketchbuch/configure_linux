@@ -1,26 +1,19 @@
-- name: 'Users > {{ real_username_pretty }} > Home Folder: Create .hidden file'
-  become: true
-  become_user: '{{ real_username }}'
-  ansible.builtin.file:
-    dest: '~/.hidden'
-    state: touch
-  tags: ['users', 'files', 'stephen']
-
-- name: 'Users > {{ real_username_pretty }} > Home Folder: Add content to .hidden file'
+- name: 'Users > {{ real_username_pretty }} > Home Folder: Create .hidden'
   become: true
   become_user: '{{ real_username }}'
   ansible.builtin.copy:
+    src: 'users/{{ real_username }}/home/.hidden'
     dest: '~/.hidden'
-    content: |
-      FiraxisLive
-      snap
+    owner: "{{ real_username }}"
+    group: "{{ real_username }}"
+    mode: 0600
   tags: ['users', 'files', 'stephen']
 
 - name: 'Users > {{ real_username_pretty }} > Home Folder: Create user-dirs'
   become: true
   become_user: '{{ real_username }}'
   ansible.builtin.copy:
-    src: 'users/{{ real_username }}/system/user-dirs.dirs'
+    src: 'users/{{ real_username }}/home/user-dirs.dirs'
     dest: '~/.config/user-dirs.dirs'
     owner: "{{ real_username }}"
     group: "{{ real_username }}"
