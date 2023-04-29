@@ -28,9 +28,9 @@ My ansible setup to configure linux and install apps etc. in real and virtual en
 
 ## Notes
 
-Although flatpak can be installed via ansible, a restart is required.
-
-Based on: <https://www.youtube.com/watch?v=gIDywsGBqf4>
+- Although flatpak can be installed via ansible, a restart is required.
+- Based on: <https://www.youtube.com/watch?v=gIDywsGBqf4>
+- [YML Validator](https://codebeautify.org/yaml-validator)
 
 ### Example Github Repos:
 
