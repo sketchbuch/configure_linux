@@ -25,16 +25,16 @@
     tags: ['gnome']
     when: is_gnome
 
-  - import_tasks: 'system/fonts/firacode.yml'
-  - import_tasks: 'system/fonts/inconsolata.yml'
-  - import_tasks: 'system/fonts/mscorefonts.yml'
-  - import_tasks: 'system/fonts/sourcecodepro.yml'
-
   - include_tasks: 'users/{{ real_username }}/git.yml'
   - include_tasks: 'users/{{ real_username }}/gtk.yml'
   - include_tasks: 'users/{{ real_username }}/home_folder.yml'
   - include_tasks: 'users/{{ real_username }}/profile.yml'
   - include_tasks: 'users/{{ real_username }}/terminal.yml'
+
+  - import_tasks: 'system/fonts/firacode.yml'
+  - import_tasks: 'system/fonts/inconsolata.yml'
+  - import_tasks: 'system/fonts/mscorefonts.yml'
+  - import_tasks: 'system/fonts/sourcecodepro.yml'
   
   - import_tasks: 'system/tools/nvm.yml'
   #- import_tasks: 'system/tools/pnpm.yml'
