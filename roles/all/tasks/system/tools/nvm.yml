@@ -6,13 +6,6 @@
     creates: '/home/{{ real_username }}/.nvm/nvm.sh'
   tags: ['system', 'dev']
 
-- name: 'System > Tools > NVM: Test'
-  become: true
-  become_user: '{{ real_username }}'
-  ansible.builtin.shell:
-    cmd: source ~/.bashrc
-  tags: ['system', 'dev']
-
 - name: 'System > Tools > NVM: Install node versions'
   become: true
   become_user: '{{ real_username }}'
