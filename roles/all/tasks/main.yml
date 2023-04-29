@@ -31,6 +31,8 @@
   - include_tasks: 'users/{{ real_username }}/profile.yml'
   - include_tasks: 'users/{{ real_username }}/terminal.yml'
 
+  - import_tasks: 'system/webp.yml'
+
   - import_tasks: 'system/fonts/firacode.yml'
   - import_tasks: 'system/fonts/inconsolata.yml'
   - import_tasks: 'system/fonts/mscorefonts.yml'

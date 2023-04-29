@@ -84,6 +84,7 @@ clock        | Clock changes
 desktop      | Desktop effects and appearance
 dev          | Dev tasks
 distro_tasks | Tasks targeting a specific distro like Ubuntu
+fedora       | Fedora tasks
 file-manager | File Manager tasks
 files        | To do with creating/editing files
 folders      | To do with creating/editing folders
@@ -208,7 +209,6 @@ wike              | Wike tasks
 ## Todo
 
 - Android studio
-- Gnome Web
 - gnome-epub-thumbnailer
 - <https://github.com/aruiz/webp-pixbuf-loader>
 - Remove some libre office apps

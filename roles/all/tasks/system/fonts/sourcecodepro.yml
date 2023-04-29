@@ -1,6 +1,7 @@
 - name: 'System > Fonts: Install Source Code Pro'
   ansible.builtin.package: 
     name: adobe-source-code-pro-fonts
+    state: present
   tags: ['system', 'fonts']
   when: distro == 'fedora'
 

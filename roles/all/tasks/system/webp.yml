@@ -1,0 +1,18 @@
+- name: 'System > WebP: Ubuntu prep'
+  block:
+    - name: 'System > WebP: Add repo'
+      ansible.builtin.apt_repository:
+        repo: ppa:helkaluin/webp-pixbuf-loader
+        state: present
+    
+    - name: 'System > WebP: Update cache'
+      ansible.builtin.apt:
+        update_cache: yes
+  tags: ['system', 'graphics', 'nautilus']
+  when: distro == 'ubuntu'
+
+- name: 'System > WebP: Add thumbnail support to Nautilus'
+  ansible.builtin.package: 
+    name: webp-pixbuf-loader
+    state: present
+  tags: ['system', 'graphics', 'nautilus']

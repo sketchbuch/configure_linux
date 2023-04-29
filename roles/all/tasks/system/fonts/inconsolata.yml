@@ -1,5 +1,5 @@
 - name: 'System > Fonts: Install Inconsolata'
   ansible.builtin.package: 
-    name: 
-      - '{{font_inconsolata}}'
+    name: '{{font_inconsolata}}'
+    state: present
   tags: ['system', 'fonts']
