@@ -1,11 +1,11 @@
 - name: 'Gnome Tasks'
   block:
-    - import_tasks: '../system/config/datetime.yml'
-    - import_tasks: '../system/config/fonts.yml'
-    - import_tasks: '../system/config/gedit.yml'
-    - import_tasks: '../system/config/mouse.yml'
-    - import_tasks: '../system/config/nautilus.yml'
-    - import_tasks: '../system/config/touchpad.yml'
+    - include_tasks: '../system/config/datetime.yml'
+    - include_tasks: '../system/config/fonts.yml'
+    - include_tasks: '../system/config/gedit.yml'
+    - include_tasks: '../system/config/mouse.yml'
+    - include_tasks: '../system/config/nautilus.yml'
+    - include_tasks: '../system/config/touchpad.yml'
 
     - include_tasks: '../system/fonts/cantarell.yml'
   tags: ['gnome']
