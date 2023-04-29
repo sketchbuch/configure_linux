@@ -1,6 +1,34 @@
-- name: 'System > Tools > Install Yarn'
+# - name: 'System > Tools > Install Yarn'
+#   become: true
+#   become_user: '{{ real_username }}'
+#   ansible.builtin.shell: >
+#     /bin/bash -c "source ~/.nvm/nvm.sh && npm install --global yarn"
+#   tags: ['system', 'dev']
+
+- name: 'System > Tools > Yarn: switch node version ({{ nodeVersions | last}})'
   become: true
   become_user: '{{ real_username }}'
   ansible.builtin.shell: >
-    /bin/bash -c "source ~/.nvm/nvm.sh && npm install --global yarn"
+    /bin/bash -c "source ~/.nvm/nvm.sh && nvm use {{ nodeVersions | last}}"
+  tags: ['system', 'dev']
+
+- name: 'System > Tools > Yarn: install for node version ({{ nodeVersions | last}})'
+  become: true
+  become_user: '{{ real_username }}'
+  ansible.builtin.shell: >
+    /bin/bash -c "source ~/.nvm/nvm.sh && npm install yarn"
+  tags: ['system', 'dev']
+
+- name: 'System > Tools > Yarn: switch node version ({{ nodeVersions | first}})'
+  become: true
+  become_user: '{{ real_username }}'
+  ansible.builtin.shell: >
+    /bin/bash -c "source ~/.nvm/nvm.sh && nvm use {{ nodeVersions | first}}"
+  tags: ['system', 'dev']
+
+- name: 'System > Tools > Yarn: install for node version ({{ nodeVersions | first}})'
+  become: true
+  become_user: '{{ real_username }}'
+  ansible.builtin.shell: >
+    /bin/bash -c "source ~/.nvm/nvm.sh && npm install yarn"
   tags: ['system', 'dev']
