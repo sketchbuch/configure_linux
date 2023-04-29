@@ -14,7 +14,7 @@
   tags: ['system', 'dev']
   with_items: '{{ nodeVersions }}'
 
-- name: 'System > Tools > NVM: Set default node version {{ nodeVersions | first}}'
+- name: 'System > Tools > NVM: Set default node version to {{ nodeVersions | first}}'
   become: true
   become_user: '{{ real_username }}'
   ansible.builtin.shell: >
