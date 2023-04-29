@@ -9,7 +9,9 @@
 - name: 'System > Tools > NVM: Install node versions'
   become: true
   become_user: '{{ real_username }}'
-  ansible.builtin.shell: '/bin/bash -c "source ~/.nvm/nvm.sh && nvm install 16.13.0 && nvm install 16.15.1 && nvm install 18.4.0"'
+  ansible.builtin.shell: source ~/.nvm/nvm.sh && nvm install 16.13.0 && nvm install 16.15.1 && nvm install 18.4.0
+  args:
+    executable: /bin/bash
   tags: ['system', 'dev']
 
 - name: 'System > Tools > NVM: Set default node version'
