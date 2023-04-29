@@ -3,7 +3,7 @@
   become_user: '{{ real_username }}'
   ansible.builtin.shell: >
     /bin/bash -c "source ~/.nvm/nvm.sh && nvm use {{ nodeVersion }} && npm install -g yarn"
-  tags: ['system', 'dev']
   loop: '{{ nodeVersions }}'
   loop_control:
     loop_var: nodeVersion
+  tags: ['system', 'dev']

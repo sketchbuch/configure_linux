@@ -1,0 +1,31 @@
+# Tools required for vscode extension dev
+
+- name: 'System > Tools > Vscode: Install vsce for all node versions'
+  become: true
+  become_user: '{{ real_username }}'
+  ansible.builtin.shell: >
+    /bin/bash -c "source ~/.nvm/nvm.sh && nvm use {{ nodeVersion }} && npm install -g vsce"
+  loop: '{{ nodeVersions }}'
+  loop_control:
+    loop_var: nodeVersion
+  tags: ['system', 'dev']
+
+- name: 'System > Tools > Vscode: Install yeoman for all node versions'
+  become: true
+  become_user: '{{ real_username }}'
+  ansible.builtin.shell: >
+    /bin/bash -c "source ~/.nvm/nvm.sh && nvm use {{ nodeVersion }} && npm install -g yo"
+  loop: '{{ nodeVersions }}'
+  loop_control:
+    loop_var: nodeVersion
+  tags: ['system', 'dev']
+
+- name: 'System > Tools > Vscode: Install vscode yeoman generator for all node versions'
+  become: true
+  become_user: '{{ real_username }}'
+  ansible.builtin.shell: >
+    /bin/bash -c "source ~/.nvm/nvm.sh && nvm use {{ nodeVersion }} && npm install -g generator-code"
+  loop: '{{ nodeVersions }}'
+  loop_control:
+    loop_var: nodeVersion
+  tags: ['system', 'dev']
