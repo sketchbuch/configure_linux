@@ -206,6 +206,8 @@ wike              | Wike tasks
 ## Todo
 
 - Android studio
+- Chrome
+- Gnome Web
 - pnpm
 - yarn
 - yoeman
