@@ -1,0 +1,6 @@
+- name: 'System > Cleanup > Software: Remove unwanted packages'
+  package:
+    name:
+      - thunderbird*
+    state: absent
+  tags: ['system', 'packages', 'gnome']
