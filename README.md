@@ -223,8 +223,12 @@ wike              | Wike tasks
 - Update font caches
 - Check virtual in gnome boxes
 - Set dock width
+- Setup dash favourites
 - Add gnome extensions
 - Remove all folders from app grid
+- Installed extensions and settings
+- Weather and clock settings
+- Try force_color
 
 - Final - move software to correct roles and remove symlinks
 

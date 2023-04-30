@@ -1,4 +1,4 @@
-- name: 'System > WebP: Ubuntu prep'
+- name: 'System > Thumbnailer > WebP: Ubuntu prep'
   block:
     - name: 'System > Thumbnailer > WebP: Add repo'
       ansible.builtin.apt_repository:
