@@ -223,6 +223,8 @@ wike              | Wike tasks
 - Update font caches
 - Check virtual in gnome boxes
 - Set dock width
+- Add gnome extensions
+- Remove all folders from app grid
 
 - Final - move software to correct roles and remove symlinks
 
