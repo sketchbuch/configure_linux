@@ -1,0 +1,47 @@
+# Alpha. App Grid
+- name: 'System > Config > Extensions >  Alphabetical App Grid: Folder order position'
+  become: true
+  become_user: '{{ real_username }}'
+  community.general.dconf:
+    key: '/org/gnome/shell/extensions/alphabetical-app-grid/folder-order-position'
+    state: present
+    value: "'alphabetical'"
+  tags: ['system', 'desktop', 'gnome']
+
+- name: 'System > Config > Extensions >  Alphabetical App Grid: Sort folder contents'
+  become: true
+  become_user: '{{ real_username }}'
+  community.general.dconf:
+    key: '/org/gnome/shell/extensions/alphabetical-app-grid/sort-folder-contents'
+    state: present
+    value: "true"
+  tags: ['system', 'desktop', 'gnome']
+
+
+# Dash to Dock
+- name: 'System > Config > Dash: Hide rubbish bin'
+  become: true
+  become_user: '{{ real_username }}'
+  community.general.dconf:
+    key: '/org/gnome/shell/extensions/dash-to-dock/show-trash'
+    state: present
+    value: "false"
+  tags: ['system', 'desktop', 'gnome']
+
+- name: 'System > Config > Dash: Set favourite apps'
+  become: true
+  become_user: '{{ real_username }}'
+  community.general.dconf:
+    key: '/org/gnome/shell/favorite-apps'
+    state: present
+    value: "['org.gnome.Nautilus.desktop', 'google-chrome.desktop', 'org.gnome.gedit.desktop', 'code.desktop', 'org.gnome.Terminal.desktop', 'keepassxc_keepassxc.desktop', 'steam.desktop', 'md.obsidian.Obsidian.desktop', 'firefox.desktop', 'org.kde.kdenlive.desktop', 'virtualbox.desktop', 'ca.desrt.dconf-editor.desktop']"
+  tags: ['system', 'desktop', 'gnome']
+
+- name: 'System > Config > Dash: Set max icon size'
+  become: true
+  become_user: '{{ real_username }}'
+  community.general.dconf:
+    key: '/org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size'
+    state: present
+    value: "uint32 40"
+  tags: ['system', 'desktop', 'gnome']

@@ -1,7 +1,7 @@
 - name: 'Gnome Tasks'
   block:
-    - import_tasks: '../system/config/dash.yml'
     - import_tasks: '../system/config/datetime.yml'
+    - import_tasks: '../system/config/extensions.yml'
     - import_tasks: '../system/config/fonts.yml'
     - import_tasks: '../system/config/gedit.yml'
     - import_tasks: '../system/config/mouse.yml'

@@ -1,8 +1,0 @@
-- name: 'System > Config > Dash: Set favourite apps'
-  become: true
-  become_user: '{{ real_username }}'
-  community.general.dconf:
-    key: '/org/gnome/shell/favorite-apps'
-    state: present
-    value: "['org.gnome.Nautilus.desktop', 'google-chrome.desktop', 'org.gnome.gedit.desktop', 'code.desktop', 'org.gnome.Terminal.desktop', 'keepassxc_keepassxc.desktop', 'steam.desktop', 'md.obsidian.Obsidian.desktop', 'firefox.desktop', 'org.kde.kdenlive.desktop', 'virtualbox.desktop', 'ca.desrt.dconf-editor.desktop']"
-  tags: ['system', 'desktop', 'gnome']
