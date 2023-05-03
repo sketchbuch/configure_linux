@@ -15,6 +15,11 @@
       distro_major_version: '{{ ansible_distribution_major_version }}'
   tags: ['setup', 'set_fact']
 
+- name: 'Setup > Vars: Set is_fedora'
+  set_fact:
+      is_fedora: '{{ (distro == 'fedora) | ternary (true, false) }}'
+  tags: ['setup', 'set_fact']
+
 - name: 'Setup > Vars: Set is_gnome'
   set_fact:
       is_gnome: '{{ ("gnome" in (ansible_facts["env"]["XDG_CURRENT_DESKTOP"] | lower)) | ternary (true, false) }}'
@@ -23,6 +28,11 @@
 - name: 'Setup > Vars: Set is_kde'
   set_fact:
       is_kde: '{{ ("kde" in (ansible_facts["env"]["XDG_CURRENT_DESKTOP"] | lower)) | ternary (true, false) }}'
+  tags: ['setup', 'set_fact']
+
+- name: 'Setup > Vars: Set is_ubuntu'
+  set_fact:
+      is_ubuntu: '{{ (distro == 'ubuntu) | ternary (true, false) }}'
   tags: ['setup', 'set_fact']
 
 - name: 'Setup > Vars: Set is_virtual'
@@ -51,8 +61,10 @@
       - 'distro: {{ distro }}'
       - 'distro_pretty: {{ distro_pretty }}'
       - 'distro_major_version: {{ distro_major_version }}'
+      - 'is_fedora: {{ is_fedora }}'
       - 'is_gnome: {{ is_gnome }}'
       - 'is_kde: {{ is_kde }}'
+      - 'is_ubuntu: {{ is_ubuntu }}'
       - 'is_virtual: {{ is_virtual }}'
       - 'is_virtualbox: {{ is_virtual }}'
       - 'real_username: {{ real_username }}'
