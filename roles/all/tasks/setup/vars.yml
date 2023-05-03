@@ -17,7 +17,7 @@
 
 - name: 'Setup > Vars: Set is_fedora'
   set_fact:
-      is_fedora: '{{ (distro == 'fedora) | ternary (true, false) }}'
+      is_fedora: '{{ (distro == 'fedora') | ternary (true, false) }}'
   tags: ['setup', 'set_fact']
 
 - name: 'Setup > Vars: Set is_gnome'
@@ -32,7 +32,7 @@
 
 - name: 'Setup > Vars: Set is_ubuntu'
   set_fact:
-      is_ubuntu: '{{ (distro == 'ubuntu) | ternary (true, false) }}'
+      is_ubuntu: '{{ (distro == 'ubuntu') | ternary (true, false) }}'
   tags: ['setup', 'set_fact']
 
 - name: 'Setup > Vars: Set is_virtual'
