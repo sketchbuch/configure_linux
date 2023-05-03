@@ -21,14 +21,11 @@
     tags: ['gnome']
     when: is_gnome
 
-  - block:
-      - import_tasks: 'users/{{ user }}/git.yml'
-      - import_tasks: 'users/{{ user }}/gtk.yml'
-      - import_tasks: 'users/{{ user }}/home_folder.yml'
-      - import_tasks: 'users/{{ user }}/profile.yml'
-      - import_tasks: 'users/{{ user }}/terminal.yml'
-    vars:
-      user: real_username
+  - include_tasks: 'users/{{ real_username }}/git.yml'
+  - include_tasks: 'users/{{ real_username }}/gtk.yml'
+  - include_tasks: 'users/{{ real_username }}/home_folder.yml'
+  - include_tasks: 'users/{{ real_username }}/profile.yml'
+  - include_tasks: 'users/{{ real_username }}/terminal.yml'
 
   - import_tasks: 'system/cleanup/software.yml'
 
