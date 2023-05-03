@@ -1,6 +1,6 @@
 # Configure Gnome Topbar Time/Date Display
 
-- name: 'System > Config > Datetime: Set time to use 24h Format'
+- name: 'Desktop > Gnome > Config > Datetime: Set time to use 24h Format'
   become: true
   become_user: '{{ real_username }}'
   community.general.dconf:
@@ -9,7 +9,7 @@
     value: "'24h'"
   tags: ['system', 'clock', 'gnome']
 
-- name: 'System > Config > Datetime: Show date next to clock'
+- name: 'Desktop > Gnome > Config > Datetime: Show date next to clock'
   become: true
   become_user: '{{ real_username }}'
   community.general.dconf:
@@ -18,7 +18,7 @@
     value: "true"
   tags: ['system', 'clock', 'gnome']
 
-- name: 'System > Config > Datetime: Show week day next to clock'
+- name: 'Desktop > Gnome > Config > Datetime: Show week day next to clock'
   become: true
   become_user: '{{ real_username }}'
   community.general.dconf:

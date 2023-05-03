@@ -8,6 +8,9 @@
     - import_tasks: 'gnome/config/nautilus.yml'
     - import_tasks: 'gnome/config/touchpad.yml'
 
+    - import_tasks: 'gnome/thumbnailer/epub.yml'
+    - import_tasks: 'gnome/thumbnailer/webp.yml'
+
     - import_tasks: '../system/fonts/cantarell.yml'
   tags: ['gnome']
   when: is_gnome

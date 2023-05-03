@@ -33,9 +33,6 @@
   - import_tasks: 'system/fonts/inconsolata.yml'
   - import_tasks: 'system/fonts/mscorefonts.yml'
   - import_tasks: 'system/fonts/sourcecodepro.yml'
-
-  - import_tasks: 'distro/ubuntu/gnome/thumbnailer/epub.yml'
-  - import_tasks: 'distro/ubuntu/gnome/thumbnailer/webp.yml'
   
   - import_tasks: 'system/tools/nvm.yml'
   - import_tasks: 'system/tools/pnpm.yml'

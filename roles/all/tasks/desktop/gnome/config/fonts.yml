@@ -1,4 +1,4 @@
-- name: 'System > Config > Fonts: Set system monospace fornt and size'
+- name: 'Desktop > Gnome > Config > Fonts: Set system monospace fornt and size'
   become: true
   become_user: '{{ real_username }}'
   community.general.dconf:
