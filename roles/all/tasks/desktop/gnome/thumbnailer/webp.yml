@@ -9,7 +9,7 @@
       ansible.builtin.apt:
         update_cache: yes
   tags: ['system', 'graphics', 'nautilus']
-  when: distro == 'ubuntu'
+  when: is_ubuntu
 
 - name: 'Gnome > Thumbnailer > WebP: Add thumbnail support to Nautilus'
   ansible.builtin.package: 

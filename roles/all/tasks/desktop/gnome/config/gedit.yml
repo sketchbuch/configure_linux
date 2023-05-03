@@ -105,7 +105,7 @@
       state: present
       value: "['filebrowser', 'spell', 'sort', 'docinfo', 'openlinks', 'modelines']"
     tags: ['system', 'text-editor', 'gnome']
-  when: distro == 'ubuntu' and (distro_major_version | int) <= 22
+  when: is_ubuntu and (distro_major_version | int) <= 22
 
 
   # Ubuntu 23.04 uses a different version of gedit that uses a file
@@ -129,4 +129,4 @@
       group: "{{ real_username }}"
       mode: 0600
     tags: ['system', 'text-editor', 'gnome', 'files']
-  when: distro == 'fedora' or distro == 'ubuntu' and (distro_major_version | int) >= 23
+  when: is_fedora or is_ubuntu and (distro_major_version | int) >= 23

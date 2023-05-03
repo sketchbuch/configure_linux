@@ -14,7 +14,7 @@
   - name: 'Include tasks for {{ distro_pretty }}'
     import_tasks: 'distro/ubuntu.yml'
     tags: ['distro_tasks']
-    when: distro == 'ubuntu'
+    when: is_ubuntu
   
   - name: 'Include tasks for Gnome'
     include_tasks: 'desktop/gnome.yml'

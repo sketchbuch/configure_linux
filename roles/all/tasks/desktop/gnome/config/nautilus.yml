@@ -78,7 +78,7 @@
     state: present
     value: "'larger'"
   tags: ['system', 'file-manager', 'gnome']
-  when: distro == 'ubuntu' and (distro_major_version | int) <= 22
+  when: is_ubuntu and (distro_major_version | int) <= 22
 
 - name: 'Gnome > Config > Nautilus: Zoom level'
   become: true
@@ -88,4 +88,4 @@
     state: present
     value: "'medium'"
   tags: ['system', 'file-manager', 'gnome']
-  when: distro == 'fedora' or distro == 'ubuntu' and (distro_major_version | int) == 23
+  when: is_fedora or is_ubuntu and (distro_major_version | int) == 23
