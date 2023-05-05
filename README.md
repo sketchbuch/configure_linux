@@ -229,7 +229,6 @@ wike              | Wike tasks
 - Installed extensions and settings
 - Weather and clock settings
 - Try force_color
-- Obsidian dictionary
 
 - Final - move software to correct roles and remove symlinks
 

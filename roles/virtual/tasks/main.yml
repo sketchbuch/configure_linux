@@ -14,6 +14,7 @@
     when: is_gnome
 
   - import_tasks: 'users/profile.yml'
+  - include_tasks: 'users/{{ real_username }}/obsidian.yml'
   
   rescue:
     - set_fact: virtual_task_failed=true
