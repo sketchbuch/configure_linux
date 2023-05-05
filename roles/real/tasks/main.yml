@@ -16,6 +16,7 @@
   - include_tasks: 'users/{{ real_username }}/home_folder.yml'
   - include_tasks: 'users/{{ real_username }}/freefilesync.yml'
   - include_tasks: 'users/{{ real_username }}/nautilus.yml'
+  - include_tasks: 'users/{{ real_username }}/obsidian.yml'
 
   - import_tasks: 'system/tools/vsce.yml'
   - import_tasks: 'system/tools/yeoman.yml'
