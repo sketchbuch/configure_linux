@@ -1,5 +1,14 @@
 # https://forum.obsidian.md/t/where-is-the-user-spell-check-dictionary-file-located/35714/2
 
+- name: 'Users > {{ real_username_pretty }} > Obsidian: Create dictionary directory'
+  become: true
+  become_user: '{{ real_username }}'
+  ansible.builtin.file:
+    path: '~/.var/app/md.obsidian.Obsidian/config'
+    state: directory
+  tags: ['users', 'folders', 'stephen', 'obsidian']
+  when: is_virtual and is_virtualbox
+
 - name: 'Users > {{ real_username_pretty }} > Obsidian: Copy dictionary'
   become: true
   become_user: '{{ real_username }}'
