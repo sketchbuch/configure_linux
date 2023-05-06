@@ -82,7 +82,7 @@ Tag          | Description
 ------------ | ---------------------------------------------
 always       | Tasks that always need to be done
 cleanup      | Tasks to do removing files and cleaning up
-clock        | Clock changes
+clock        | System clock changes
 desktop      | Desktop effects and appearance
 dev          | Dev tasks
 distro_tasks | Tasks targeting a specific distro like Ubuntu

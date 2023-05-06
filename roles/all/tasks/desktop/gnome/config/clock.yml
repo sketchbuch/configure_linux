@@ -1,3 +1,5 @@
+# Don't appear in calendar topbar menu without new session
+
 - name: 'Gnome > Config > Clock: Set world clocks'
   become: true
   become_user: '{{ real_username }}'
@@ -10,4 +12,4 @@
         {'location': <(uint32 2, <('Trieste', 'LIVT', true, [(0.79674280353541149, 0.23998277214922031)], [(0.79671856091210125, 0.24050637092481861)])>)>},
         {'location': <(uint32 2, <('Leipzig', 'EDDP', true, [(0.89739012955151531, 0.21351193934287546)], [(0.89535390627309097, 0.21525726859486979)])>)>}
       ]"
-  tags: ['system', 'clock', 'gnome']
+  tags: ['system', 'gnome-clocks', 'gnome']
