@@ -103,7 +103,14 @@
     community.general.dconf:
       key: '/org/gnome/gedit/plugins/active-plugins'
       state: present
-      value: "['filebrowser', 'spell', 'sort', 'docinfo', 'openlinks', 'modelines']"
+      value: "[
+          'filebrowser',
+          'spell',
+          'sort',
+          'docinfo',
+          'openlinks',
+          'modelines'
+        ]"
     tags: ['system', 'text-editor', 'gnome']
   when: is_ubuntu and (distro_major_version | int) <= 22
 
