@@ -216,15 +216,12 @@ wike              | Wike tasks
 - ssh
 - clone repos?
 - Update cache before <https://stackoverflow.com/questions/49087220/how-to-update-package-cache-when-using-module-package-from-ansible>
-- Chrome - move fedora repos to fedora config
-- Clear up tmp files
 - Check virtual in gnome boxes
 - Set dock width
 - Setup dash favourites
 - Add gnome extensions
 - Remove all folders from app grid
 - Installed extensions and settings
-- Weather and clock settings
 - Try force_color
 - Indicate pw chars
 
