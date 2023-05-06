@@ -1,6 +1,6 @@
 # Don't appear in calendar topbar menu without new session
 
-- name: 'Gnome > Config > Weather: Set world clocks'
+- name: 'Gnome > Config > Weather: Set locations'
   become: true
   become_user: '{{ real_username }}'
   community.general.dconf:
