@@ -3,4 +3,4 @@
     name: org.shotcut.Shotcut
     state: present
     method: system
-  tags: ['video', 'shotcut', 'flatpak']
+  tags: ['software, 'video', 'shotcut', 'flatpak']

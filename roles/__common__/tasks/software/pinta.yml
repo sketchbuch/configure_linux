@@ -3,4 +3,4 @@
     name: com.github.PintaProject.Pinta
     state: present
     method: system
-  tags: ['graphics', 'pinta', 'flatpak']
+  tags: ['software, 'graphics', 'pinta', 'flatpak']

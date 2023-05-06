@@ -3,4 +3,4 @@
     name: com.github.keriew.augustus
     state: present
     method: system
-  tags: ['games', 'augustus', 'flatpak']
+  tags: ['software, 'games', 'augustus', 'flatpak']

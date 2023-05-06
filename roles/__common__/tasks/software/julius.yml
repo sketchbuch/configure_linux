@@ -3,4 +3,4 @@
     name: com.github.bvschaik.julius
     state: present
     method: system
-  tags: ['games', 'julius', 'flatpak']
+  tags: ['software, 'games', 'julius', 'flatpak']

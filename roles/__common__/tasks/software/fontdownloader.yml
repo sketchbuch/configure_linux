@@ -3,4 +3,4 @@
     name: org.gustavoperedo.FontDownloader
     state: present
     method: system
-  tags: ['utils', 'fontdownloader', 'circle', 'flatpak']
+  tags: ['software, 'utils', 'fontdownloader', 'circle', 'flatpak']

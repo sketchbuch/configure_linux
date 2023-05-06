@@ -3,4 +3,4 @@
     name: net.openra.OpenRA
     state: present
     method: system
-  tags: ['games', 'openra', 'flatpak']
+  tags: ['software, 'games', 'openra', 'flatpak']

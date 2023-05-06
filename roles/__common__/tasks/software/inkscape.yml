@@ -3,4 +3,4 @@
     name: org.inkscape.Inkscape
     state: present
     method: system
-  tags: ['graphics', 'inkscape', 'flatpak']
+  tags: ['software, 'graphics', 'inkscape', 'flatpak']

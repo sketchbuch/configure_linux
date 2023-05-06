@@ -3,4 +3,4 @@
     name: com.mattjakeman.ExtensionManager
     state: present
     method: system
-  tags: ['system', 'extension-manager', 'flatpak']
+  tags: ['software, 'system', 'extension-manager', 'flatpak']

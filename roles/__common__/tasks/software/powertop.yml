@@ -2,4 +2,4 @@
   ansible.builtin.package:
     name: powertop
     state: present
-  tags: ['system', 'powertop', 'package']
+  tags: ['software, 'system', 'powertop', 'package']

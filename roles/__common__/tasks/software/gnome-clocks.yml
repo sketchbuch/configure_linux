@@ -3,4 +3,4 @@
     name: org.gnome.clocks
     state: present
     method: system
-  tags: ['utils', 'gnome-clocks', 'flatpak']
+  tags: ['software, 'utils', 'gnome-clocks', 'flatpak']

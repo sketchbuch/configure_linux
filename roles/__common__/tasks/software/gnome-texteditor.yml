@@ -3,4 +3,4 @@
     name: org.gnome.TextEditor
     state: present
     method: system
-  tags: ['editors', 'gnome-texteditor', 'flatpak']
+  tags: ['software, 'editors', 'gnome-texteditor', 'flatpak']

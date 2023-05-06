@@ -3,4 +3,4 @@
     name: com.github.liferooter.textpieces
     state: present
     method: system
-  tags: ['utils', 'textpieces', 'circle', 'flatpak']
+  tags: ['software, 'utils', 'textpieces', 'circle', 'flatpak']

@@ -3,4 +3,4 @@
     name: com.microsoft.Edge
     state: present
     method: system
-  tags: ['internet', 'msedge', 'flatpak']
+  tags: ['software, 'internet', 'msedge', 'flatpak']

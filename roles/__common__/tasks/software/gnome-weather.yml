@@ -3,4 +3,4 @@
     name: org.gnome.Weather
     state: present
     method: system
-  tags: ['utils', 'gnome-weather', 'flatpak']
+  tags: ['software, 'utils', 'gnome-weather', 'flatpak']

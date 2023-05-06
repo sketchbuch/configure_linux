@@ -3,4 +3,4 @@
     name: org.freefilesync.FreeFileSync
     state: present
     method: system
-  tags: ['file-management', 'freefilesync', 'flatpak']
+  tags: ['software, 'file-management', 'freefilesync', 'flatpak']

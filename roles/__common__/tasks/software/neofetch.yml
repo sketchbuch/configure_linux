@@ -2,4 +2,4 @@
   ansible.builtin.package:
     name: neofetch
     state: present
-  tags: ['system', 'neofetch', 'package']
+  tags: ['software, 'system', 'neofetch', 'package']

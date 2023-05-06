@@ -3,4 +3,4 @@
     name: dev.geopjr.Collision
     state: present
     method: system
-  tags: ['security', 'collision', 'circle', 'flatpak']
+  tags: ['software, 'security', 'collision', 'circle', 'flatpak']

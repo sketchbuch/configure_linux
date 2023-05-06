@@ -3,4 +3,4 @@
     name: org.gnome.Epiphany
     state: present
     method: system
-  tags: ['internet', 'gnome-web', 'flatpak']
+  tags: ['software, 'internet', 'gnome-web', 'flatpak']

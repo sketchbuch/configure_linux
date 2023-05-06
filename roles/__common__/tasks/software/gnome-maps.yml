@@ -3,4 +3,4 @@
     name: org.gnome.Maps
     state: present
     method: system
-  tags: ['utils', 'gnome-maps', 'flatpak']
+  tags: ['software, 'utils', 'gnome-maps', 'flatpak']

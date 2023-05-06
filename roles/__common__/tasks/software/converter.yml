@@ -3,4 +3,4 @@
     name: io.gitlab.adhami3310.Converter
     state: present
     method: system
-  tags: ['graphics', 'converter', 'flatpak']
+  tags: ['software, 'graphics', 'converter', 'flatpak']

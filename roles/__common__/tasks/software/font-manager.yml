@@ -3,4 +3,4 @@
     name: org.gnome.FontManager
     state: present
     method: system
-  tags: ['utils', 'font-manager', 'flatpak']
+  tags: ['software, 'utils', 'font-manager', 'flatpak']

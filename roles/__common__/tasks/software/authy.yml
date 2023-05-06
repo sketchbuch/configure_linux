@@ -3,4 +3,4 @@
     name: com.authy.Authy
     state: present
     method: system
-  tags: ['security', 'authy', 'flatpak']
+  tags: ['software, 'security', 'authy', 'flatpak']

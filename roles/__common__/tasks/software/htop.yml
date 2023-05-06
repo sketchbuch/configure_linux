@@ -2,4 +2,4 @@
   ansible.builtin.package:
     name: htop
     state: present
-  tags: ['system', 'htop', 'package']
+  tags: ['software, 'system', 'htop', 'package']

@@ -3,4 +3,4 @@
     name: com.github.johnfactotum.Foliate
     state: present
     method: system
-  tags: ['documents', 'foliate', 'flatpak']
+  tags: ['software, 'documents', 'foliate', 'flatpak']

@@ -3,4 +3,4 @@
     name: org.gnome.Contacts
     state: present
     method: system
-  tags: ['productivity', 'gnome-contacts', 'flatpak']
+  tags: ['software, 'productivity', 'gnome-contacts', 'flatpak']

@@ -3,4 +3,4 @@
     name: org.keepassxc.KeePassXC
     state: present
     method: system
-  tags: ['security', 'keepassxc', 'flatpak']
+  tags: ['software, 'security', 'keepassxc', 'flatpak']

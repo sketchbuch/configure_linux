@@ -3,4 +3,4 @@
     name: org.gimp.GIMP
     state: present
     method: system
-  tags: ['graphics', 'gimp', 'flatpak']
+  tags: ['software, 'graphics', 'gimp', 'flatpak']

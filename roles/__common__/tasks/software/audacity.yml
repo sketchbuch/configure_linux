@@ -3,4 +3,4 @@
     name: org.audacityteam.Audacity
     state: present
     method: system
-  tags: ['audio', 'audacity', 'flatpak']
+  tags: ['software, 'audio', 'audacity', 'flatpak']

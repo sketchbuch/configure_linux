@@ -3,4 +3,4 @@
     name: org.gnome.Extensions
     state: present
     method: system
-  tags: ['system', 'gnome-extensions', 'flatpak']
+  tags: ['software, 'system', 'gnome-extensions', 'flatpak']

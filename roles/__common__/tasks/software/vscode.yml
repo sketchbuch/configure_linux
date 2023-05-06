@@ -3,4 +3,4 @@
     name: com.visualstudio.code
     state: present
     method: system
-  tags: ['editors', 'dev', 'vscode', 'flatpak']
+  tags: ['software, 'editors', 'dev', 'vscode', 'flatpak']

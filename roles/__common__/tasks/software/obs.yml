@@ -3,4 +3,4 @@
     name: com.obsproject.Studio
     state: present
     method: system
-  tags: ['video', 'obs', 'flatpak']
+  tags: ['software, 'video', 'obs', 'flatpak']
