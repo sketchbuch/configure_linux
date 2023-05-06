@@ -1,7 +1,8 @@
 - name: 'Gnome Tasks'
   block:
+    - import_tasks: 'gnome/config/alphabetical-app-grid.yml'
+    - import_tasks: 'gnome/config/dash-to-dock.yml'
     - import_tasks: 'gnome/config/datetime.yml'
-    - import_tasks: 'gnome/config/extensions.yml'
     - import_tasks: 'gnome/config/fonts.yml'
     - import_tasks: 'gnome/config/gedit.yml'
     - import_tasks: 'gnome/config/mouse.yml'

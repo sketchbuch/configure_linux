@@ -217,10 +217,7 @@ wike              | Wike tasks
 - clone repos?
 - Update cache before <https://stackoverflow.com/questions/49087220/how-to-update-package-cache-when-using-module-package-from-ansible>
 - Chrome - move fedora repos to fedora config
-- Move all cache update tasks to a sep. file in common and import
 - Clear up tmp files
-- Update package manager caches
-- Update font caches
 - Check virtual in gnome boxes
 - Set dock width
 - Setup dash favourites
@@ -229,6 +226,7 @@ wike              | Wike tasks
 - Installed extensions and settings
 - Weather and clock settings
 - Try force_color
+- Indicate pw chars
 
 - Final - move software to correct roles and remove symlinks
 

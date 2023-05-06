@@ -10,10 +10,4 @@
   ansible.builtin.package: 
     name: 'ttf-mscorefonts-installer'
     state: present
-  register: mscore_installed
-
-- name: 'System > Fonts: Install MS Core Fonts - Rebuild font cache'
-  become: no
-  command: fc-cache --force --verbose
   tags: ['system', 'fonts']
-  when: mscore_installed.changed
