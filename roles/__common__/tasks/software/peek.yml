@@ -3,4 +3,4 @@
     name: com.uploadedlobster.peek
     state: present
     method: system
-  tags: ['software, 'video', 'peek', 'flatpak']
+  tags: ['software', 'video', 'peek', 'flatpak']

@@ -3,4 +3,4 @@
     name: com.github.unrud.VideoDownloader
     state: present
     method: system
-  tags: ['software, 'video', 'videodownloader', 'flatpak']
+  tags: ['software', 'video', 'videodownloader', 'flatpak']

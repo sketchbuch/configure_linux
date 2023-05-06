@@ -3,4 +3,4 @@
     name: org.gnome.gitlab.somas.Apostrophe
     state: present
     method: system
-  tags: ['software, 'documents', 'apostrophe', 'circle', 'flatpak']
+  tags: ['software', 'documents', 'apostrophe', 'circle', 'flatpak']

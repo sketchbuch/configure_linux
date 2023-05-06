@@ -3,4 +3,4 @@
     name: org.gnome.Calendar
     state: present
     method: system
-  tags: ['software, 'productivity', 'gnome-calendar', 'flatpak']
+  tags: ['software', 'productivity', 'gnome-calendar', 'flatpak']

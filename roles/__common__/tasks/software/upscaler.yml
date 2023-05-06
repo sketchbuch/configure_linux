@@ -3,4 +3,4 @@
     name: io.gitlab.theevilskeleton.Upscaler
     state: present
     method: system
-  tags: ['software, 'graphics', 'upscaler', 'flatpak']
+  tags: ['software', 'graphics', 'upscaler', 'flatpak']

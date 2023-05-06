@@ -3,4 +3,4 @@
     name: com.belmoussaoui.Obfuscate
     state: present
     method: system
-  tags: ['software, 'security', 'obfuscate', 'circle', 'flatpak']
+  tags: ['software', 'security', 'obfuscate', 'circle', 'flatpak']

@@ -3,4 +3,4 @@
     name: com.hunterwittenborn.Celeste
     state: present
     method: system
-  tags: ['software, 'file-management', 'celeste', 'flatpak']
+  tags: ['software', 'file-management', 'celeste', 'flatpak']

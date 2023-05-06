@@ -3,4 +3,4 @@
     name: com.skype.Client
     state: present
     method: system
-  tags: ['software, 'comms', 'skype', 'flatpak']
+  tags: ['software', 'comms', 'skype', 'flatpak']

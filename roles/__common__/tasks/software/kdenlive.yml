@@ -3,4 +3,4 @@
     name: org.kde.kdenlive
     state: present
     method: system
-  tags: ['software, 'games', 'kdenlive', 'flatpak']
+  tags: ['software', 'games', 'kdenlive', 'flatpak']

@@ -2,4 +2,4 @@
   ansible.builtin.package:
     name: plocate
     state: present
-  tags: ['software, 'file-management', 'plocate', 'package']
+  tags: ['software', 'file-management', 'plocate', 'package']

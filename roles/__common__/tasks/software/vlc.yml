@@ -3,4 +3,4 @@
     name: org.videolan.VLC
     state: present
     method: system
-  tags: ['software, 'audio', 'video', 'vlc', 'flatpak']
+  tags: ['software', 'audio', 'video', 'vlc', 'flatpak']

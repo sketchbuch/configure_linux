@@ -3,4 +3,4 @@
     name: com.slack.Slack
     state: present
     method: system
-  tags: ['software, 'comms', 'slack', 'flatpak']
+  tags: ['software', 'comms', 'slack', 'flatpak']

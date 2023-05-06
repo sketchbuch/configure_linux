@@ -3,4 +3,4 @@
     name: no.mifi.losslesscut
     state: present
     method: system
-  tags: ['software, 'video', 'losslesscut', 'flatpak']
+  tags: ['software', 'video', 'losslesscut', 'flatpak']

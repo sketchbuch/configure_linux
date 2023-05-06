@@ -3,4 +3,4 @@
     name: com.getpostman.Postman
     state: present
     method: system
-  tags: ['software, 'dev', 'postman', 'flatpak']
+  tags: ['software', 'dev', 'postman', 'flatpak']

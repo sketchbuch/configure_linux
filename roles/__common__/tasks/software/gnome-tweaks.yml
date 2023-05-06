@@ -2,4 +2,4 @@
   ansible.builtin.package: 
     name: 'gnome-tweaks'
     state: present
-  tags: ['software, 'games', 'gnome-sudoku', 'flatpak']
+  tags: ['software', 'games', 'gnome-sudoku', 'flatpak']

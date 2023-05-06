@@ -3,4 +3,4 @@
     name: com.github.rajsolai.textsnatcher
     state: present
     method: system
-  tags: ['software, 'utils', 'textsnatcher', 'flatpak']
+  tags: ['software', 'utils', 'textsnatcher', 'flatpak']

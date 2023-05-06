@@ -3,4 +3,4 @@
     name: app.drey.Warp
     state: present
     method: system
-  tags: ['software, 'file-management', 'internet', 'warp', 'circle', 'flatpak']
+  tags: ['software', 'file-management', 'internet', 'warp', 'circle', 'flatpak']

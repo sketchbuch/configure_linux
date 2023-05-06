@@ -2,4 +2,4 @@
   ansible.builtin.package:
     name: gtans
     state: present
-  tags: ['software, 'system', 'tangrams', 'circle', 'package']
+  tags: ['software', 'system', 'tangrams', 'circle', 'package']

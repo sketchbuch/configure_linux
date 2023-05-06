@@ -3,4 +3,4 @@
     name: ca.desrt.dconf-editor
     state: present
     method: system
-  tags: ['software, 'system', 'dconf-editor', 'flatpak']
+  tags: ['software', 'system', 'dconf-editor', 'flatpak']

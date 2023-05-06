@@ -3,4 +3,4 @@
     name: app.drey.EarTag
     state: present
     method: system
-  tags: ['software, 'audio', 'eartag', 'flatpak']
+  tags: ['software', 'audio', 'eartag', 'flatpak']

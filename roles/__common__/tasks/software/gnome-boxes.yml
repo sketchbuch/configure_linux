@@ -3,4 +3,4 @@
     name: org.gnome.Boxes
     state: present
     method: system
-  tags: ['software, 'virtualisation', 'gnome-boxes', 'flatpak']
+  tags: ['software', 'virtualisation', 'gnome-boxes', 'flatpak']

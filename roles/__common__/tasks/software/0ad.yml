@@ -3,4 +3,4 @@
     name: com.play0ad.zeroad
     state: present
     method: system
-  tags: ['software, 'games', '0ad', 'flatpak']
+  tags: ['software', 'games', '0ad', 'flatpak']

@@ -3,4 +3,4 @@
     name: org.gnome.gitlab.YaLTeR.VideoTrimmer
     state: present
     method: system
-  tags: ['software, 'video', 'videotrimmer', 'circle', 'flatpak']
+  tags: ['software', 'video', 'videotrimmer', 'circle', 'flatpak']

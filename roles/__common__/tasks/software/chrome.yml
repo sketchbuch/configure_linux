@@ -19,7 +19,7 @@
         name: "google-chrome-stable"
         state: latest
         update_cache: true
-  tags: ['software, 'internet', 'chrome', 'package']
+  tags: ['software', 'internet', 'chrome', 'package']
   when: is_ubuntu
 
 
@@ -40,5 +40,5 @@
       ansible.builtin.dnf:
         name: google-chrome-stable
         state: present
-  tags: ['software, 'internet', 'chrome', 'package']
+  tags: ['software', 'internet', 'chrome', 'package']
   when: is_fedora

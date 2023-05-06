@@ -3,4 +3,4 @@
     name: com.valvesoftware.Steam
     state: present
     method: system
-  tags: ['software, 'games', 'steam', 'flatpak']
+  tags: ['software', 'games', 'steam', 'flatpak']

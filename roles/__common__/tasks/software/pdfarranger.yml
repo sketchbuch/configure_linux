@@ -3,4 +3,4 @@
     name: com.github.jeromerobert.pdfarranger
     state: present
     method: system
-  tags: ['software, 'documents', 'pdfarranger', 'flatpak']
+  tags: ['software', 'documents', 'pdfarranger', 'flatpak']
