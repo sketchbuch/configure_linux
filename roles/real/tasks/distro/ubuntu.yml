@@ -62,4 +62,4 @@
     - import_tasks: '../software/webfontkitgen.yml'
     - import_tasks: '../software/wike.yml'
   tags: ['software', 'ubuntu']
-  when: installSoftware
+  when: installSoftware and is_ubuntu
