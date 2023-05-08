@@ -63,7 +63,7 @@
     community.general.dconf:
       key: '/org/gnome/gedit/preferences/editor/tabs-size'
       state: present
-      value: "uint32 4"
+      value: 4
     tags: ['system', 'text-editor', 'gnome']
 
   - name: 'Gnome > Config > Gedit: Automatic indent'
