@@ -224,6 +224,7 @@ wike              | Wike tasks
 - Installed extensions and settings
 - Try force_color
 - Indicate pw chars
+- Disable auto updates virtual
 
 - Final - move software to correct roles and remove symlinks
 
