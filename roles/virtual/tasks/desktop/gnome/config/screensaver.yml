@@ -24,7 +24,7 @@
   community.general.dconf:
     key: '/org/gnome/desktop/session/lock-delay'
     state: present
-    value: "uint32 0"
+    value: 0
   tags: ['system', 'gnome', 'screensaver']
 
 - name: 'Gnome > Config > Screensaver: Disable idle timeout'
@@ -33,5 +33,5 @@
   community.general.dconf:
     key: '/org/gnome/desktop/session/idle-delay'
     state: present
-    value: "uint32 0"
+    value: 0
   tags: ['system', 'gnome', 'screensaver']

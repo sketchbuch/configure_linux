@@ -67,7 +67,7 @@
   community.general.dconf:
     key: '/org/gnome/nautilus/window-state/sidebar-width'
     state: present
-    value: "uint32 250"
+    value: 250
   tags: ['system', 'file-manager', 'gnome']
 
 - name: 'Gnome > Config > Nautilus: Zoom level'
