@@ -8,7 +8,7 @@
     value: "'alphabetical'"
   tags: ['system', 'desktop', 'gnome']
 
-- name: 'Gnome > Config > Extensions > Alphabetical App Grid: Sort folder contents'
+- name: 'Gnome > Extensions > Alphabetical App Grid: Sort folder contents'
   become: true
   become_user: '{{ real_username }}'
   community.general.dconf:
