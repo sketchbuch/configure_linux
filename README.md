@@ -220,8 +220,6 @@ wike              | Wike tasks
 - Installed extensions and settings
 - Indicate pw chars
 - Disable auto updates virtual
-- Enable accessibility menu
-- Set window controls
 - Update cache before <https://stackoverflow.com/questions/49087220/how-to-update-package-cache-when-using-module-package-from-ansible>
 
 - Final - move software to correct roles and remove symlinks
