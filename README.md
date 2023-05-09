@@ -212,21 +212,17 @@ wike              | Wike tasks
 
 - Android studio
 - Setup vpn
-- nord vpn
 - ssh
 - clone repos?
-- Update cache before <https://stackoverflow.com/questions/49087220/how-to-update-package-cache-when-using-module-package-from-ansible>
 - Check virtual in gnome boxes
-- Set dock width
-- Setup dash favourites
 - Add gnome extensions
 - Remove all folders from app grid
 - Installed extensions and settings
-- Try force_color
 - Indicate pw chars
 - Disable auto updates virtual
 - Enable accessibility menu
 - Set window controls
+- Update cache before <https://stackoverflow.com/questions/49087220/how-to-update-package-cache-when-using-module-package-from-ansible>
 
 - Final - move software to correct roles and remove symlinks
 

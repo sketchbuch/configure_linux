@@ -1,0 +1,17 @@
+- name: 'Gnome > Config > Desktop: Enable only close window button'
+  become: true
+  become_user: '{{ real_username }}'
+  community.general.dconf:
+    key: '/org/gnome/desktop/wm/preferences/button-layout'
+    state: present
+    value: "':close'"
+  tags: ['system', 'desktop', 'gnome']
+
+- name: 'Gnome > Config > Desktop: Prefer light mode'
+  become: true
+  become_user: '{{ real_username }}'
+  community.general.dconf:
+    key: '/org/gnome/desktop/interface/color-scheme'
+    state: present
+    value: "'prefer-light'"
+  tags: ['system', 'desktop', 'gnome']

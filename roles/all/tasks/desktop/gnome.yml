@@ -2,6 +2,7 @@
   block:
     - import_tasks: 'gnome/config/clock.yml'
     - import_tasks: 'gnome/config/datetime.yml'
+    - import_tasks: 'gnome/config/desktop.yml'
     - import_tasks: 'gnome/config/fonts.yml'
     - import_tasks: 'gnome/config/gedit.yml'
     - import_tasks: 'gnome/config/mouse.yml'
