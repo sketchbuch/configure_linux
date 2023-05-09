@@ -225,6 +225,8 @@ wike              | Wike tasks
 - Try force_color
 - Indicate pw chars
 - Disable auto updates virtual
+- Enable accessibility menu
+- Set window controls
 
 - Final - move software to correct roles and remove symlinks
 

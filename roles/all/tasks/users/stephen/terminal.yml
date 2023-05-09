@@ -1,4 +1,4 @@
-- name: 'Users > {{ real_username_pretty }} > Conf: Create terminal dot files'
+- name: 'Users > {{ real_username_pretty }} > Terminal: Create terminal dot files'
   become: true
   become_user: '{{ real_username }}'
   ansible.builtin.copy:
