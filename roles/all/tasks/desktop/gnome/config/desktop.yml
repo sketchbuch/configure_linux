@@ -21,6 +21,5 @@
   become_user: '{{ real_username }}'
   community.general.dconf:
     key: '/org/gnome/desktop/app-folders/folder-children'
-    state: present
-    value: "[]"
+    state: absent
   tags: ['system', 'desktop', 'gnome']
