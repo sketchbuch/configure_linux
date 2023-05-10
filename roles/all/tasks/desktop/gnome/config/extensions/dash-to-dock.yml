@@ -1,4 +1,4 @@
-- name: 'Gnome > Extensions > Dash to Dock: Hide rubbish bin'
+- name: 'Gnome > Config > Extensions > Dash to Dock: Hide rubbish bin'
   become: true
   become_user: '{{ real_username }}'
   community.general.dconf:
@@ -7,7 +7,7 @@
     value: "false"
   tags: ['system', 'desktop', 'gnome']
 
-- name: 'Gnome > Extensions > Dash to Dock: Set favourite apps'
+- name: 'Gnome > Config > Extensions > Dash to Dock: Set favourite apps'
   become: true
   become_user: '{{ real_username }}'
   community.general.dconf:
@@ -29,7 +29,7 @@
       ]"
   tags: ['system', 'desktop', 'gnome']
 
-- name: 'Gnome > Extensions > Dash to Dock: Set max icon size'
+- name: 'Gnome > Config > Extensions > Dash to Dock: Set max icon size'
   become: true
   become_user: '{{ real_username }}'
   community.general.dconf:

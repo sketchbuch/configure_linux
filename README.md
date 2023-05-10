@@ -38,6 +38,7 @@ My ansible setup to configure linux and install apps etc. in real and virtual en
 - <https://github.com/LearnLinuxTV/personal_ansible_desktop_configs>
 - <https://github.com/pppontusw/ansible-role-linux-desktop>
 - <https://gist.github.com/carlwgeorge/c560a532b6929f49d9c0df52f75a68ae>
+- <https://github.com/PeterMosmans/ansible-role-customize-gnome>
 
 ### Supported Distros and versions
 

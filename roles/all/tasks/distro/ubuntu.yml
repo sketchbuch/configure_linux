@@ -1,4 +1,5 @@
 - import_tasks: 'system/tools/curl.yml'
+- import_tasks: '../system/fonts/cantarell.yml'
 
 - name: 'Software Tasks'
   block:

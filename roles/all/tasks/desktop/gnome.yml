@@ -3,20 +3,16 @@
     - import_tasks: 'gnome/config/clock.yml'
     - import_tasks: 'gnome/config/datetime.yml'
     - import_tasks: 'gnome/config/desktop.yml'
+    - import_tasks: 'gnome/config/extensions/alphabetical-app-grid.yml'
+    - import_tasks: 'gnome/config/extensions/dash-to-dock.yml'
     - import_tasks: 'gnome/config/fonts.yml'
     - import_tasks: 'gnome/config/gedit.yml'
     - import_tasks: 'gnome/config/mouse.yml'
     - import_tasks: 'gnome/config/nautilus.yml'
+    - import_tasks: 'gnome/config/thumbnailer/epub.yml'
+    - import_tasks: 'gnome/config/thumbnailer/webp.yml'
     - import_tasks: 'gnome/config/touchpad.yml'
     - import_tasks: 'gnome/config/weather.yml'
-
-    - import_tasks: 'gnome/extensions/alphabetical-app-grid.yml'
-    - import_tasks: 'gnome/extensions/dash-to-dock.yml'
-
-    - import_tasks: 'gnome/thumbnailer/epub.yml'
-    - import_tasks: 'gnome/thumbnailer/webp.yml'
-
-    - import_tasks: '../system/fonts/cantarell.yml'
   tags: ['gnome']
   when: is_gnome
 

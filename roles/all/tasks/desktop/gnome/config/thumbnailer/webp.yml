@@ -1,17 +1,17 @@
-- name: 'Gnome > Thumbnailer > WebP: Ubuntu prep'
+- name: 'Gnome > Config > Thumbnailer > WebP: Ubuntu prep'
   block:
-    - name: 'Gnome > Thumbnailer > WebP: Add repo'
+    - name: 'Gnome > Config > Thumbnailer > WebP: Add repo'
       ansible.builtin.apt_repository:
         repo: ppa:helkaluin/webp-pixbuf-loader
         state: present
     
-    - name: 'Gnome > Thumbnailer > WebP: Update cache'
+    - name: 'Gnome > Config > Thumbnailer > WebP: Update cache'
       ansible.builtin.apt:
         update_cache: yes
   tags: ['system', 'graphics', 'nautilus']
   when: is_ubuntu
 
-- name: 'Gnome > Thumbnailer > WebP: Add thumbnail support to Nautilus'
+- name: 'Gnome > Config > Thumbnailer > WebP: Add thumbnail support to Nautilus'
   ansible.builtin.package: 
     name: webp-pixbuf-loader
     state: present
