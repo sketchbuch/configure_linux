@@ -13,8 +13,6 @@
     - import_tasks: 'gnome/config/thumbnailer/webp.yml'
     - import_tasks: 'gnome/config/touchpad.yml'
     - import_tasks: 'gnome/config/weather.yml'
-    
-    - import_tasks: 'gnome/terminal.yml'
   tags: ['gnome']
   when: is_gnome
 

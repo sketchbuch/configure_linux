@@ -1,4 +1,4 @@
-- name: 'Gnome > Terminal: Show password indicator'
+- name: 'System > Terminal: Show password indicator'
   become: true
   ansible.builtin.lineinfile:
     insertafter: '^Defaults	env_reset'
