@@ -219,7 +219,6 @@ wike              | Wike tasks
 - Add gnome extensions
 - Remove all folders from app grid
 - Installed extensions and settings
-- Indicate pw chars
 - Disable auto updates virtual
 - Update cache before <https://stackoverflow.com/questions/49087220/how-to-update-package-cache-when-using-module-package-from-ansible>
 

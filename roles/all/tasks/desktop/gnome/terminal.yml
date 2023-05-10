@@ -1,7 +1,7 @@
 - name: 'Gnome > Terminal: Show password indicator'
   become: true
   ansible.builtin.lineinfile:
-    path: '/etc/sudoers'
     insertafter: '^Defaults	env_reset'
     line: 'Defaults	pwfeedback'
+    path: '/etc/sudoers'
   tags: ['system', 'terminal', 'files']
