@@ -39,6 +39,7 @@ My ansible setup to configure linux and install apps etc. in real and virtual en
 - <https://github.com/pppontusw/ansible-role-linux-desktop>
 - <https://gist.github.com/carlwgeorge/c560a532b6929f49d9c0df52f75a68ae>
 - <https://github.com/PeterMosmans/ansible-role-customize-gnome>
+- <https://github.com/FinalDes/ansible-ubuntu-disable-auto-update/>
 
 ### Supported Distros and versions
 
@@ -217,7 +218,6 @@ wike              | Wike tasks
 - clone repos?
 - Check virtual in gnome boxes
 - Add gnome extensions
-- Remove all folders from app grid
 - Installed extensions and settings
 - Disable auto updates virtual
 - Update cache before <https://stackoverflow.com/questions/49087220/how-to-update-package-cache-when-using-module-package-from-ansible>

@@ -4,3 +4,9 @@
     - import_tasks: 'gnome/config/screensaver.yml'
   tags: ['gnome']
   when: is_gnome
+
+- name: 'Ubuntu Gnome Tasks'
+  block:
+    - import_tasks: 'gnome/config/ubuntu.yml'
+  tags: ['gnome']
+  when: is_gnome and is_ubuntu

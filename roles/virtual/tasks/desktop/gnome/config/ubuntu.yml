@@ -1,0 +1,8 @@
+- name: 'Gnome > Config > Ubuntu: Stop update notifications'
+  become: true
+  become_user: '{{ real_username }}'
+  community.general.dconf:
+    key: '/com/ubuntu/update-notifier/no-show-notifications'
+    state: present
+    value: "true"
+  tags: ['system', 'desktop', 'gnome']
