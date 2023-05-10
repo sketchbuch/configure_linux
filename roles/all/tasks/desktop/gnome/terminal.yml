@@ -3,5 +3,5 @@
   ansible.builtin.lineinfile:
     path: '/etc/sudoers'
     insertafter: '^Defaults	env_reset'
-    line: 'Defaults        pwfeedback'
+    line: 'Defaults	pwfeedback'
   tags: ['system', 'terminal', 'files']
