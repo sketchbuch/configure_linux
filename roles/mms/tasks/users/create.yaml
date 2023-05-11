@@ -1,6 +1,18 @@
-- name: 'Users > MMS > Create: group for user'
+- name: 'Users > MMS > Create: user group'
   become: true
   ansible.builtin.user:
-    name: "mms"
+    name: "{{ mmsGroup }}"
+    state: present
+  tags: ['system', 'users', 'mms']
+
+- name: 'Users > MMS > Create: user'
+  become: true
+  ansible.builtin.user:
+    comment: "Jay LaCroix"
+    name: "{{ mmsGroup }}"
+    groups: adm,ansible,{{ sudo_group }}
+    name: "{{ mmsUsername }}"
+    password: "{{ mmsPassword }}"
+    shell: /bin/bash
     state: present
   tags: ['system', 'users', 'mms']
