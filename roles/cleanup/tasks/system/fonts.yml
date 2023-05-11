@@ -1,4 +1,4 @@
-- name: 'Cleanup > Fonts > Rebuild font cache'
+- name: 'System > Fonts: Rebuild font cache'
   become: no
   command: fc-cache --force --verbose
   tags: ['system', 'fonts', 'cleanup']

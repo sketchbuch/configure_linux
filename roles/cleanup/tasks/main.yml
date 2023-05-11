@@ -1,7 +1,10 @@
 - block:
-  - import_tasks: 'cleanup/fonts.yml'
-  - import_tasks: 'cleanup/software.yml'
-  - import_tasks: 'cleanup/pkg_caches.yml'
+  - import_tasks: 'software/unwanted.yml'
+
+  - import_tasks: 'system/apt.yml'
+    when: is_ubuntu and is_gnome
+  
+  - import_tasks: 'system/fonts.yml'
   
   rescue:
     - set_fact: cleanup_task_failed=true

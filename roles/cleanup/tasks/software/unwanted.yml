@@ -1,8 +1,8 @@
-- name: 'Cleanup > Software: Remove software'
+- name: 'Software > Unwanted: Remove software'
   package:
     name:
       - gnome-mines
       - thunderbird*
       - transmission-gtk
     state: absent
-  tags: ['system', 'packages', 'gnome', 'cleanup']
+  tags: ['software', 'packages', 'cleanup']
