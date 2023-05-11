@@ -9,8 +9,7 @@
   become: true
   ansible.builtin.user:
     comment: "Jay LaCroix"
-    name: "{{ mmsGroup }}"
-    groups: adm,ansible,{{ sudo_group }}
+    groups: "{{ mmsGroup }}, sudo"
     name: "{{ mmsUsername }}"
     password: "{{ mmsPassword }}"
     shell: /bin/bash
