@@ -4,8 +4,8 @@
     tags: ['always', 'vars']
 
 
-  - import_tasks: 'setup/facts.yaml'
-  - import_tasks: 'setup/checks.yaml'
+  - import_tasks: 'facts/package.yaml'
+  - import_tasks: 'facts/checks.yaml'
 
   - import_tasks: 'vars/get.yaml'
   - import_tasks: 'vars/debug.yaml'
