@@ -3,8 +3,14 @@
   gather_facts: true
   roles:
     - setup
-    - all
   tags: ['all']
+
+# - hosts: all
+#   become: true
+#   gather_facts: false
+#   roles:
+#     - all
+#   tags: ['all']
 
 # - hosts: real
 #   become: true
