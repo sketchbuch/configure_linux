@@ -1,4 +1,9 @@
 - block:
+  - name: 'MMS'
+    ansible.builtin.debug:
+      msg: "Doing MMS"
+    tags: ['setup', 'debug']
+
   - name: 'Include vars for {{ distro_pretty }}'
     include_vars: '{{ distro }}.yaml'
     tags: ['always', 'vars']
