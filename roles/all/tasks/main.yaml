@@ -1,12 +1,4 @@
 - block:
-  # Import, so that they are executed immediately
-  # Otherwise subsequent includes do not have access to the vars.
-  # See: https://serverfault.com/questions/875247/whats-the-difference-between-include-tasks-and-import-tasks
-  - import_tasks: 'setup/facts.yaml'
-  - import_tasks: 'setup/checks.yaml'
-  - import_tasks: 'setup/vars.yaml'
-  - import_tasks: 'setup/prep.yaml'
-
   - name: 'Include vars for {{ distro_pretty }}'
     include_vars: '{{ distro }}.yaml'
     tags: ['always', 'vars']

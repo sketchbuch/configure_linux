@@ -1,0 +1,11 @@
+- block:
+  - import_tasks: 'setup/facts.yaml'
+  - import_tasks: 'setup/checks.yaml'
+
+  - import_tasks: 'vars/get.yaml'
+  - import_tasks: 'vars/debug.yaml'
+  
+  - import_tasks: 'prep/files.yaml'
+
+  rescue:
+    - set_fact: setup_task_failed=true

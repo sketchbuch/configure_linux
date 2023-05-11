@@ -1,6 +1,5 @@
 # Make sure the tmp folder exists, otheriwse errors can occur
-
-- name: 'Setup > Prep: Create .ansible/tmp"'
+- name: 'Prep > Files: Create .ansible/tmp"'
   become: true
   ansible.builtin.file:
     path: "{{ anisbleTmp }}"
