@@ -1,0 +1,25 @@
+- block:
+  - name: 'Include vars for {{ distro_pretty }}'
+    include_vars: '{{ distro }}.yaml'
+    tags: ['always', 'vars']
+
+  - name: 'Include tasks for {{ distro_pretty }}'
+    import_tasks: 'distro/ubuntu.yaml'
+    tags: ['distro_tasks']
+    when: is_ubuntu
+  
+  - name: 'Include tasks for Gnome'
+    import_tasks: 'desktop/gnome.yaml'
+    tags: ['gnome']
+    when: is_gnome
+  
+  - include_tasks: 'users/{{ real_username }}/home_folder.yaml'
+  - include_tasks: 'users/{{ real_username }}/freefilesync.yaml'
+  - include_tasks: 'users/{{ real_username }}/nautilus.yaml'
+  - include_tasks: 'users/{{ real_username }}/obsidian.yaml'
+
+  - import_tasks: 'system/tools/vsce.yaml'
+  - import_tasks: 'system/tools/yeoman.yaml'
+
+  rescue:
+    - set_fact: real_task_failed=true

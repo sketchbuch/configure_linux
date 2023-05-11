@@ -1,0 +1,10 @@
+- block:
+  - import_tasks: 'software/unwanted.yaml'
+
+  - import_tasks: 'system/apt.yaml'
+    when: is_ubuntu and is_gnome
+  
+  - import_tasks: 'system/fonts.yaml'
+  
+  rescue:
+    - set_fact: cleanup_task_failed=true

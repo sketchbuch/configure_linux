@@ -1,14 +1,14 @@
 - block:
   - name: 'Include vars for {{ distro_pretty }}'
-    include_vars: '{{ distro }}.yml'
+    include_vars: '{{ distro }}.yaml'
     tags: ['always', 'vars']
   
   - name: 'Include tasks for Gnome'
-    import_tasks: 'desktop/gnome.yml'
+    import_tasks: 'desktop/gnome.yaml'
     tags: ['gnome']
     when: is_gnome
 
-  - import_tasks: 'users/profile.yml'
+  - import_tasks: 'users/profile.yaml'
   
   rescue:
     - set_fact: virtual_task_failed=true

@@ -1,0 +1,42 @@
+- block:
+  # Import, so that they are executed immediately
+  # Otherwise subsequent includes do not have access to the vars.
+  # See: https://serverfault.com/questions/875247/whats-the-difference-between-include-tasks-and-import-tasks
+  - import_tasks: 'setup/facts.yaml'
+  - import_tasks: 'setup/checks.yaml'
+  - import_tasks: 'setup/vars.yaml'
+  - import_tasks: 'setup/prep.yaml'
+
+  - name: 'Include vars for {{ distro_pretty }}'
+    include_vars: '{{ distro }}.yaml'
+    tags: ['always', 'vars']
+
+  - name: 'Include tasks for {{ distro_pretty }}'
+    import_tasks: 'distro/ubuntu.yaml'
+    tags: ['distro_tasks']
+    when: is_ubuntu
+  
+  - name: 'Include tasks for Gnome'
+    include_tasks: 'desktop/gnome.yaml'
+    tags: ['gnome']
+    when: is_gnome
+
+  - include_tasks: 'users/{{ real_username }}/git.yaml'
+  - include_tasks: 'users/{{ real_username }}/gtk.yaml'
+  - include_tasks: 'users/{{ real_username }}/home_folder.yaml'
+  - include_tasks: 'users/{{ real_username }}/profile.yaml'
+  - include_tasks: 'users/{{ real_username }}/terminal.yaml'
+
+  - import_tasks: 'system/fonts/firacode.yaml'
+  - import_tasks: 'system/fonts/inconsolata.yaml'
+  - import_tasks: 'system/fonts/mscorefonts.yaml'
+  - import_tasks: 'system/fonts/sourcecodepro.yaml'
+  
+  - import_tasks: 'system/tools/nvm.yaml'
+  - import_tasks: 'system/tools/pnpm.yaml'
+  - import_tasks: 'system/tools/yarn.yaml'
+    
+  - import_tasks: 'system/terminal.yaml'
+
+  rescue:
+    - set_fact: all_task_failed=true
