@@ -8,10 +8,10 @@
 - name: 'Users > MMS > Create: user'
   become: true
   ansible.builtin.user:
-    comment: "Jay LaCroix"
+    comment: "MMS"
     groups: "{{ mmsGroup }}, sudo"
     name: "{{ mmsUsername }}"
-    password: "{{ mmsPassword }}"
+    password: "{{ mmsPassword | password_hash('sha512') }}"
     shell: /bin/bash
     state: present
   tags: ['system', 'users', 'mms']
