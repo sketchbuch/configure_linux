@@ -21,9 +21,5 @@
   - import_tasks: 'system/tools/vsce.yml'
   - import_tasks: 'system/tools/yeoman.yml'
 
-  - import_tasks: 'cleanup/fonts.yml'
-  - import_tasks: 'cleanup/software.yml'
-  - import_tasks: 'cleanup/pkg_caches.yml'
-
   rescue:
     - set_fact: real_task_failed=true

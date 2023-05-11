@@ -1,0 +1,7 @@
+- block:
+  - import_tasks: 'cleanup/fonts.yml'
+  - import_tasks: 'cleanup/software.yml'
+  - import_tasks: 'cleanup/pkg_caches.yml'
+  
+  rescue:
+    - set_fact: cleanup_task_failed=true

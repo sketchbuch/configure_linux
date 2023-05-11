@@ -61,13 +61,14 @@ virtual | Hosts that are virtual, running in something like virtualbox
 
 The following tags are used:
 
-### Host Types
+### Roles
 
 Tag     | Description
 ------- | -----------------
 all     | All hosts
 real    | Real computers
 virtual | Virtual computers
+cleanup | Virtual computers
 
 ### Facts and Dependencies
 

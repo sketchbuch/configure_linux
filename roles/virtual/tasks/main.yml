@@ -14,10 +14,6 @@
     when: is_gnome
 
   - import_tasks: 'users/profile.yml'
-
-  - import_tasks: 'cleanup/fonts.yml'
-  - import_tasks: 'cleanup/software.yml'
-  - import_tasks: 'cleanup/pkg_caches.yml'
   
   rescue:
     - set_fact: virtual_task_failed=true

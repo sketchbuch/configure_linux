@@ -1,4 +1,4 @@
-- name: 'Cleanup > Software: Remove unwanted packages'
+- name: 'Cleanup > Software: Remove software'
   package:
     name:
       - gnome-mines

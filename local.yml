@@ -5,12 +5,12 @@
     - all
   tags: ['all']
 
-# - hosts: real
-#   become: true
-#   gather_facts: false
-#   roles:
-#     - real
-#   tags: ['real']
+- hosts: real
+  become: true
+  gather_facts: false
+  roles:
+    - real
+  tags: ['real']
 
 - hosts: virtual
   become: true
@@ -18,3 +18,10 @@
   roles:
     - virtual
   tags: ['virtual']
+
+- hosts: all
+  become: true
+  gather_facts: false
+  roles:
+    - cleanup
+  tags: ['cleanup']
