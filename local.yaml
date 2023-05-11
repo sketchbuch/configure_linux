@@ -3,12 +3,6 @@
   gather_facts: true
   roles:
     - setup
-  tags: ['all']
-
-- hosts: all
-  become: true
-  gather_facts: false
-  roles:
     - all
   tags: ['all']
 
@@ -20,17 +14,17 @@
 #     - cleanup
 #   tags: ['real']
 
-# - hosts: virtual
-#   become: true
-#   gather_facts: false
-#   roles:
-#     - mms
-#   tags: ['virtual']
-
 - hosts: virtual
   become: true
   gather_facts: false
   roles:
     - virtual
     - cleanup
+  tags: ['virtual']
+
+- hosts: virtual
+  become: true
+  gather_facts: false
+  roles:
+    - mms
   tags: ['virtual']
