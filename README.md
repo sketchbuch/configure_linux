@@ -64,28 +64,22 @@ The following tags are used:
 ### Roles
 
 Tag     | Description
-------- | -----------------
+------- | ----------------------------
 all     | All hosts
+cleanup | Cleanup tasks
 real    | Real computers
+setup   | Ansible setup and prep tasks
 virtual | Virtual computers
-cleanup | Virtual computers
-
-### Facts and Dependencies
-
-Tag       | Description
---------- | ----------------------------------------------------
-pkg_facts | To do with collecting package facts
-dep_check | Checking if some dependency is installed
-set_fact  | Storing something to a variable to be accessed later
-debug     | Debug tasks
 
 ### Tasks
 
 Tag          | Description
------------- | ---------------------------------------------
+------------ | ----------------------------------------------------
 always       | Tasks that always need to be done
 cleanup      | Tasks to do removing files and cleaning up
 clock        | System clock changes
+debug        | Debug tasks
+dep_check    | Checking if some dependency is installed
 desktop      | Desktop effects and appearance
 dev          | Dev tasks
 distro_tasks | Tasks targeting a specific distro like Ubuntu
@@ -98,9 +92,12 @@ git          | Git related tasks
 gnome        | Gnome tasks
 gtk          | GTK related tasks
 kde          | KDE Tasks
+mms          | Tasks for mms
 mouse        | Anything to do with mice
+pkg_facts    | To do with collecting package facts
 profile      | Tasks to do with the profile
 screensaver  | Screensaver settings
+set_fact     | Storing something to a variable to be accessed later
 setup        | Some kind of setup, to do with ansible
 stephen      | Tasks for stephen
 system       | System related tasks

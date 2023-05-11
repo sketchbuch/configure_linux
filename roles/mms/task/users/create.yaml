@@ -1,0 +1,5 @@
+- name: 'Users > MMS > Create: group for user'
+  group:
+    name: "{{ mms }}"
+    state: present
+  tags: ['system', 'users', 'mms']
