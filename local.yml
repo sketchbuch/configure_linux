@@ -10,6 +10,7 @@
   gather_facts: false
   roles:
     - real
+    - cleanup
   tags: ['real']
 
 - hosts: virtual
@@ -17,11 +18,5 @@
   gather_facts: false
   roles:
     - virtual
-  tags: ['virtual']
-
-- hosts: all
-  become: true
-  gather_facts: false
-  roles:
     - cleanup
-  tags: ['cleanup']
+  tags: ['virtual']
