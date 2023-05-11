@@ -25,7 +25,7 @@ My ansible setup to configure linux and install apps etc. in real and virtual en
 
 ## Run
 
-`sudo ansible-pull -U https://github.com/sketchbuch/configure_linux.git`
+`sudo ansible-pull -U https://github.com/sketchbuch/configure_linux.git local.yaml`
 
 ## Notes
 
