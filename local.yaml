@@ -28,4 +28,3 @@
   roles:
     - mms
   tags: ['virtual']
-  when: lookup('mms', users) | bool

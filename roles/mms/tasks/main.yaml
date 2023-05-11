@@ -22,3 +22,4 @@
 
   rescue:
     - set_fact: mms_task_failed=true
+  when: users.mms
