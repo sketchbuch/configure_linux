@@ -33,6 +33,7 @@ My ansible setup to configure linux and install apps etc. in real and virtual en
 - [YML Validator](https://codebeautify.org/yaml-validator)
 - [What's the difference between include_tasks and import_tasks?](https://serverfault.com/questions/875247/whats-the-difference-between-include-tasks-and-import-tasks)
 - [Ansible – add user to sudo](https://blaszkowski.com/2018/09/02/ansible-add-user-to-sudo)
+- [How to update package cache when using module package from ansible](https://stackoverflow.com/questions/49087220/how-to-update-package-cache-when-using-module-package-from-ansible)
 
 ### Example Github Repos:
 
@@ -212,6 +213,7 @@ wike              | Wike tasks
 ## Todo
 
 - Android studio
+- Move profile image to real and virtual
 - Setup vpn
 - ssh
 - clone repos?
@@ -219,7 +221,6 @@ wike              | Wike tasks
 - Add gnome extensions
 - Installed extensions and settings
 - Disable auto updates virtual
-- Update cache before <https://stackoverflow.com/questions/49087220/how-to-update-package-cache-when-using-module-package-from-ansible>
 
 - Final - move software to correct roles and remove symlinks
 
