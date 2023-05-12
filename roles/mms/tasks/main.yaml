@@ -19,6 +19,7 @@
   #   when: is_gnome
   
   - import_tasks: 'users/create.yaml'
+  - import_tasks: 'users/profile.yaml'
 
   rescue:
     - set_fact: mms_task_failed=true
