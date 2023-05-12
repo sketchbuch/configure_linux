@@ -14,4 +14,5 @@
     password: "{{ mmsPassword | password_hash }}"
     shell: /bin/bash
     state: present
+    update_password: 'on_create'
   tags: ['system', 'users', 'mms']
