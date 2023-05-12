@@ -16,8 +16,13 @@
   - include_tasks: 'users/{{ real_username }}/git.yaml'
   - include_tasks: 'users/{{ real_username }}/gtk.yaml'
   - include_tasks: 'users/{{ real_username }}/home_folder.yaml'
-  - include_tasks: 'users/{{ real_username }}/profile.yaml'
   - include_tasks: 'users/{{ real_username }}/terminal.yaml'
+
+  - import_tasks: 'shared/users/profile_image.yaml'
+    tags: ['stephen']
+    vars:
+      profile_username: '{{ real_username }}'
+      profile_username_pretty: '{{ real_username_pretty }}'
 
   - import_tasks: 'system/fonts/firacode.yaml'
   - import_tasks: 'system/fonts/inconsolata.yaml'
