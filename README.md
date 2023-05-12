@@ -32,6 +32,7 @@ My ansible setup to configure linux and install apps etc. in real and virtual en
 - Based on: <https://www.youtube.com/watch?v=gIDywsGBqf4>
 - [YML Validator](https://codebeautify.org/yaml-validator)
 - [What's the difference between include_tasks and import_tasks?](https://serverfault.com/questions/875247/whats-the-difference-between-include-tasks-and-import-tasks)
+- [Ansible – add user to sudo](https://blaszkowski.com/2018/09/02/ansible-add-user-to-sudo)
 
 ### Example Github Repos:
 

@@ -12,7 +12,7 @@
 
 - name: 'Users > {{ profile_username_pretty }} > Profile: Set profile image'
   become: true
-  lineinfile:
+  ansible.builtin.lineinfile:
     line: 'Icon=/var/lib/AccountsService/icons/{{ profile_username }}'
     path: '/var/lib/AccountsService/users/{{ profile_username }}'
     regexp: '^Icon='
