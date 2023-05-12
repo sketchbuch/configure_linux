@@ -11,7 +11,7 @@
     comment: "MMS"
     groups: "{{ mmsGroup }}, sudo"
     name: "{{ mmsUsername }}"
-    password: "{{ mmsPassword | password_hash('sha512') }}"
+    password: "{{ mmsPassword | password_hash }}"
     shell: /bin/bash
     state: present
   tags: ['system', 'users', 'mms']
