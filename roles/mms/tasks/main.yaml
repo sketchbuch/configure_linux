@@ -22,8 +22,8 @@
   - import_tasks: 'shared/users/profile_image.yaml'
     tags: ['mms']
     vars:
-      profile_username: mmsUsername
-      profile_username_pretty: mmsFullname
+      profile_username: '{{ mmsUsername }}'
+      profile_username_pretty: '{{ mmsFullname }}'
 
   rescue:
     - set_fact: mms_task_failed=true
