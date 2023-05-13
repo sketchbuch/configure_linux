@@ -1,6 +1,6 @@
 - name: 'Users > MMS > Create: user group'
   become: true
-  ansible.builtin.user:
+  ansible.builtin.group:
     name: "{{ mmsGroup }}"
     state: present
   tags: ['system', 'users', 'mms']
