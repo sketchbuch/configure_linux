@@ -16,3 +16,11 @@
     state: present
     update_password: 'on_create'
   tags: ['system', 'users', 'mms']
+
+- name: 'Prep > Files: Create .ansible/tmp"'
+  become: true
+  become_user: '{{ mmsUsername }}'
+  ansible.builtin.file:
+    path: "/home/{{ mmsUsername }}/.ansible/tmp"
+    state: directory
+  tags: ['setup', 'folders']
