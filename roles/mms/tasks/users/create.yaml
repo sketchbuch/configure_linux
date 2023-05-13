@@ -8,11 +8,6 @@
   changed_when: false
 
 - name: 'Users > MMS > Create: user group "{{ mmsGroup }}"'
-  ansible.builtin.debug:
-    msg: '{{ userExists }}'
-  tags: ['system', 'users', 'mms']
-
-- name: 'Users > MMS > Create: user group "{{ mmsGroup }}"'
   become: true
   ansible.builtin.group:
     name: '{{ mmsGroup }}'
