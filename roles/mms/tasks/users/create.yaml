@@ -27,7 +27,7 @@
     update_password: 'on_create'
   tags: ['system', 'users', 'mms']
 
-# This file would normaly be made on login, but we need to create it as we will not be logging in.
+# This file would normally be made on login, but we need to create it as we will not be logging in.
 - name: 'Users > MMS > Create: Copy AccountsService file'
   become: true
   ansible.builtin.copy:
