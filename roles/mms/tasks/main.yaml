@@ -22,6 +22,7 @@
     vars:
       profile_username: '{{ mmsUsername }}'
       profile_username_pretty: '{{ mmsFullname }}'
+      role: 'mms'
 
   - block:
       - import_tasks: 'shared/system/tools/nvm.yaml'
