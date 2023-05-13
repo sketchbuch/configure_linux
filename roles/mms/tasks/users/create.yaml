@@ -6,6 +6,8 @@
     fail_key: false
     key: '{{ mmsUsername }}'
   changed_when: false
+  set_fact:
+      userExists: '{{ getent_passwd[mmsUsername] | bool }}'
 
 - name: 'Users > MMS > Create: user group "{{ mmsGroup }}"'
   become: true
@@ -43,4 +45,4 @@
   ansible.builtin.shell:
     cmd: 'chage -d 0 {{ mmsUsername }}'
   tags: ['system', 'users', 'mms']
-  when: getent_passwd[mmsUsername] == ""
+  when: userExists
