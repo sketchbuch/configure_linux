@@ -49,4 +49,4 @@
   ansible.builtin.shell:
     cmd: 'chage -d 0 {{ mmsUsername }}'
   tags: ['system', 'users', 'mms']
-  when: userExists.ansible_facts[mmsUsername] == ""
+  when: userExists.ansible_facts.getent_passwd[mmsUsername] == ""
