@@ -2,6 +2,6 @@
 - name: 'Prep > Files: Create .ansible/tmp"'
   become: true
   ansible.builtin.file:
-    path: "{{ ansible_remote_tmp }}"
+    path: "{{ anisbleTmp }}"
     state: directory
   tags: ['setup', 'folders']
