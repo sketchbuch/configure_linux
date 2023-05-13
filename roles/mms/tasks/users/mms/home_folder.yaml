@@ -1,0 +1,13 @@
+- name: 'Users > {{ mmsFullname }} > Home Folder: Create Home Folders"'
+  become: true
+  become_user: '{{ mmsUsername }}'
+  ansible.builtin.file:
+    path: "{{ folder }}"
+    state: directory
+  loop:
+    - '~/Apps'
+    - '~/Dev'
+    - '~/KeePassXC'
+  loop_control:
+    loop_var: folder
+  tags: ['users', 'folders', 'mms']

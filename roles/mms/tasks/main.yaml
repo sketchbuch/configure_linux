@@ -14,11 +14,21 @@
   #   when: is_gnome
   
   - import_tasks: 'users/create.yaml'
-  - import_tasks: 'shared/users/profile_image.yaml'
+  - import_tasks: 'users/mms/home_folder.yaml'
+
+  - import_tasks: 'shared/users/profile.yaml'
     tags: ['mms']
     vars:
       profile_username: '{{ mmsUsername }}'
       profile_username_pretty: '{{ mmsFullname }}'
+
+  - block:
+      - import_tasks: 'shared/system/tools/nvm.yaml'
+      - import_tasks: 'shared/system/tools/pnpm.yaml'
+      - import_tasks: 'shared/system/tools/yarn.yaml'
+    vars:
+      profile_username: '{{ mmsUsername }}'
+    tags: ['mms']
 
   rescue:
     - set_fact: mms_task_failed=true

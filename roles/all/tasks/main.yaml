@@ -18,7 +18,7 @@
   - include_tasks: 'users/{{ real_username }}/home_folder.yaml'
   - include_tasks: 'users/{{ real_username }}/terminal.yaml'
 
-  - import_tasks: 'shared/users/profile_image.yaml'
+  - import_tasks: 'shared/users/profile.yaml'
     tags: ['stephen']
     vars:
       profile_username: '{{ real_username }}'
