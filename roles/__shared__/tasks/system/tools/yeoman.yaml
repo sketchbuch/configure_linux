@@ -1,6 +1,6 @@
 - name: 'System > Tools > Yeoman: Install for all node versions'
   become: true
-  become_user: '{{ real_username }}'
+  become_user: '{{ profile_username }}'
   ansible.builtin.shell: >
     /bin/bash -c "source ~/.nvm/nvm.sh && nvm use {{ nodeVersion }} && npm install -g yo"
   loop: '{{ nodeVersions }}'
@@ -11,7 +11,7 @@
 # VSCode generator
 - name: 'System > Tools > Yeoman: Install generator-code for all node versions'
   become: true
-  become_user: '{{ real_username }}'
+  become_user: '{{ profile_username }}'
   ansible.builtin.shell: >
     /bin/bash -c "source ~/.nvm/nvm.sh && nvm use {{ nodeVersion }} && npm install -g generator-code"
   loop: '{{ nodeVersions }}'
