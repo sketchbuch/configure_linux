@@ -34,6 +34,7 @@ My ansible setup to configure linux and install apps etc. in real and virtual en
 - [What's the difference between include_tasks and import_tasks?](https://serverfault.com/questions/875247/whats-the-difference-between-include-tasks-and-import-tasks)
 - [Ansible – add user to sudo](https://blaszkowski.com/2018/09/02/ansible-add-user-to-sudo)
 - [How to update package cache when using module package from ansible](https://stackoverflow.com/questions/49087220/how-to-update-package-cache-when-using-module-package-from-ansible)
+- [Check if user exists with Ansible](http://loc2log.ucoz.com/blog/2020-07-04-70)
 
 ### Example Github Repos:
 
