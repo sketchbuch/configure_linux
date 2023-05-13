@@ -40,11 +40,6 @@
 
 # Only done if the user did not already exist and we created one with the above tasks
 - name: 'Users > MMS > Create: Force password change on next login'
-  debug:
-    msg: '{{ userExists }}'
-
-# Only done if the user did not already exist and we created one with the above tasks
-- name: 'Users > MMS > Create: Force password change on next login'
   become: true
   ansible.builtin.shell:
     cmd: 'chage -d 0 {{ mmsUsername }}'
