@@ -7,7 +7,7 @@
     key: '{{ mmsUsername }}'
   changed_when: false
   set_fact:
-      userExists: '{{ (lookup("getent_passwd", "{{ mmsUsername }}") | bool }}'
+      userExists: '{{ (lookup("getent_passwd", "mmsUsername") | bool) }}'
 
 - name: 'Users > MMS > Create: user group "{{ mmsGroup }}"'
   become: true
