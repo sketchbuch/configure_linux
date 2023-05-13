@@ -1,0 +1,8 @@
+[User]
+Session=
+PasswordHint=
+Icon=/var/lib/AccountsService/icons/mms
+SystemAccount=false
+
+[InputSource0]
+xkb=de

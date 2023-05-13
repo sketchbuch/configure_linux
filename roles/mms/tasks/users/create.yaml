@@ -1,26 +1,35 @@
 - name: 'Users > MMS > Create: user group'
   become: true
   ansible.builtin.group:
-    name: "{{ mmsGroup }}"
+    name: '{{ mmsGroup }}'
     state: present
   tags: ['system', 'users', 'mms']
 
 - name: 'Users > MMS > Create: user'
   become: true
   ansible.builtin.user:
-    comment: "MMS"
-    groups: "{{ mmsGroup }}, sudo"
-    name: "{{ mmsUsername }}"
-    password: "{{ mmsPassword | password_hash }}"
+    comment: 'MMS'
+    groups: '{{ mmsGroup }}, sudo'
+    name: '{{ mmsUsername }}'
+    password: '{{ mmsPassword | password_hash }}'
     shell: /bin/bash
     state: present
     update_password: 'on_create'
   tags: ['system', 'users', 'mms']
 
-# - name: 'Prep > Files: Create .ansible/tmp"'
-  # become: true
-  # become_user: '{{ mmsUsername }}'
-  # ansible.builtin.file:
-  #   path: "/home/{{ mmsUsername }}/.ansible/tmp"
-  #   state: directory
-  # tags: ['setup', 'folders']
+# This file would normaly be made on login, but we need to create it as we will not be loging in.
+- name: 'Users > MMS > Create: Copy AccountsService file'
+  become: true
+  ansible.builtin.copy:
+    src: 'users/{{ mmsUsername }}/acounts_service'
+    dest: '/var/lib/AccountsService/users/{{ mmsUsername }}'
+    owner: 'root'
+    group: 'root'
+    mode: 0700
+  tags: ['system', 'users', 'mms']
+
+- name: 'Users > MMS > Create: Force password change on first login'
+  become: true
+  ansible.builtin.shell:
+    cmd: 'chage -d 0 "{{ mmsUsername }}"''
+  tags: ['system', 'users', 'mms']
