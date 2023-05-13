@@ -25,22 +25,20 @@
     update_password: 'on_create'
   tags: ['system', 'users', 'mms']
 
-- name: 'Users > MMS > Create: Things to do if the user was created'
-  block:
-    # This file would normaly be made on login, but we need to create it as we will not be logging in.
-    - name: 'Users > MMS > Create: Copy AccountsService file'
-      become: true
-      ansible.builtin.copy:
-        src: 'users/{{ mmsUsername }}/acounts_service'
-        dest: '/var/lib/AccountsService/users/{{ mmsUsername }}'
-        owner: 'root'
-        group: 'root'
-        mode: 0700
-      tags: ['system', 'users', 'mms']
+# This file would normaly be made on login, but we need to create it as we will not be logging in.
+- name: 'Users > MMS > Create: Copy AccountsService file'
+  become: true
+  ansible.builtin.copy:
+    src: 'users/{{ mmsUsername }}/acounts_service'
+    dest: '/var/lib/AccountsService/users/{{ mmsUsername }}'
+    owner: 'root'
+    group: 'root'
+    mode: 0700
+  tags: ['system', 'users', 'mms']
 
-    - name: 'Users > MMS > Create: Force password change on next login'
-      become: true
-      ansible.builtin.shell:
-        cmd: 'chage -d 0 {{ mmsUsername }}'
-      tags: ['system', 'users', 'mms']
+- name: 'Users > MMS > Create: Force password change on next login'
+  become: true
+  ansible.builtin.shell:
+    cmd: 'chage -d 0 {{ mmsUsername }}'
+  tags: ['system', 'users', 'mms']
   when: grep_output.stdout == '1'
