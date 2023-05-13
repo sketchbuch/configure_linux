@@ -7,10 +7,10 @@
   - import_tasks: 'facts/package.yaml'
   - import_tasks: 'facts/checks.yaml'
 
+  - import_tasks: 'prep/files.yaml'
+
   - import_tasks: 'vars/get.yaml'
   - import_tasks: 'vars/debug.yaml'
-
-  - import_tasks: 'prep/files.yaml'
 
   rescue:
     - set_fact: setup_task_failed=true
