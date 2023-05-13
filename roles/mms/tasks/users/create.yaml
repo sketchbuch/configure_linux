@@ -41,7 +41,7 @@
 # Only done if the user did not already exist and we created one with the above tasks
 - name: 'Users > MMS > Create: Force password change on next login'
   debug:
-    msg: userExists
+    msg: '{{ userExists }}'
 
 # Only done if the user did not already exist and we created one with the above tasks
 - name: 'Users > MMS > Create: Force password change on next login'
