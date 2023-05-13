@@ -1,11 +1,12 @@
 
 - name: 'Users > MMS > Create: Check if user "{{ mmsUsername }}" already exists'
   become: true
-  ansible.builtin.command: 'grep {{ mmsUsername }} -q /etc/passwd'
+  ansible.builtin.getent:
+    database: passwd
+    fail_key: false
+    key: '{{ mmsUsername }}'
   changed_when: false
-  failed_when: 'grep_output.rc == 2'
-  ignore_errors: true
-  register: grep_output
+  register: userExists
 
 - name: 'Users > MMS > Create: user group "{{ mmsGroup }}"'
   become: true
@@ -37,9 +38,10 @@
     mode: 0700
   tags: ['system', 'users', 'mms']
 
+# Only done if the user did not already exist and we created one with the above tasks
 - name: 'Users > MMS > Create: Force password change on next login'
   become: true
   ansible.builtin.shell:
     cmd: 'chage -d 0 {{ mmsUsername }}'
   tags: ['system', 'users', 'mms']
-  when: grep_output.stdout == '1'
+  when: '{{ ansible_facts.getent_passwd.{{ mmsUsername }} | bool }}'
