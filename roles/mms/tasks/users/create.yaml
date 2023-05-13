@@ -31,5 +31,5 @@
 - name: 'Users > MMS > Create: Force password change on first login'
   become: true
   ansible.builtin.shell:
-    cmd: 'chage -d 0 "{{ mmsUsername }}"''
+    cmd: 'chage -d 0 {{ mmsUsername }}'
   tags: ['system', 'users', 'mms']
