@@ -1,7 +1,8 @@
 # Make sure the tmp folder exists, otheriwse errors can occur
 - name: 'Prep > Files: Create .ansible/tmp"'
   become: true
+  become_user: '{{ real_username }}'
   ansible.builtin.file:
-    path: "{{ anisbleTmp }}"
+    path: "{{ remote_tmp }}"
     state: directory
   tags: ['setup', 'folders']
