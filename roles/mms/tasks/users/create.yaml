@@ -38,6 +38,12 @@
   tags: ['system', 'users', 'mms']
 
 # Only done if the user did not already exist and we created one with the above tasks
+- name: 'Users > MMS > Create: TEST'
+  become: true
+  ansible.builtin.debug:
+    var: getent_passwd[mmsUsername]
+  tags: ['system', 'users', 'mms']
+
 - name: 'Users > MMS > Create: Force password change on next login'
   become: true
   ansible.builtin.shell:
