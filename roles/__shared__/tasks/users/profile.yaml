@@ -7,7 +7,7 @@
     group: 'root'
     mode: 0644
     owner: 'root'
-    src: '../../../{{ role }}/users/{{ profile_username }}/profile'
+    src: 'users/{{ profile_username }}/profile'
   tags: ['users', 'profile', 'files']
 
 - name: 'Users > {{ profile_username_pretty }} > Profile: Set profile image'
