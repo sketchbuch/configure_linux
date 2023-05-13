@@ -3,7 +3,7 @@
   become: true
   ansible.builtin.command: 'grep {{ mmsUsername }} -q /etc/passwd'
   changed_when: false
-  failed_when: 'cmdln.rc == 2'
+  failed_when: 'grep_output.rc == 2'
   ignore_errors: true
   register: grep_output
 
