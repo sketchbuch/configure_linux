@@ -14,6 +14,15 @@
   #   when: is_gnome
   
   - import_tasks: 'users/create.yaml'
+
+  - name: 'Prep > Files: Create .ansible/tmp"'
+    become: true
+    become_user: '{{ mmsUsername }}'
+    ansible.builtin.file:
+      path: "{{ anisbleTmp }}"
+      state: directory
+    tags: ['setup', 'folders']
+    
   - import_tasks: 'users/mms/home_folder.yaml'
 
   - import_tasks: 'shared/users/profile.yaml'
