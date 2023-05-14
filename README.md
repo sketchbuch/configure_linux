@@ -229,6 +229,7 @@ wike              | Wike tasks
 - Check mms has access to fonts installed by stephen
 - Check if ms has password stars
 - Check software installed for stephen
+- Remove curl from which ever profile isn't first
 
 ## Manual Todos
 

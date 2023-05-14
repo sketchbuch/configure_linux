@@ -19,10 +19,10 @@
       profile_username_pretty: '{{ mmsFullname }}'
       profile_image_folder: '{{ mmsImageFolder }}'
 
-  # - name: 'Include tasks for {{ distro_pretty }}'
-  #   import_tasks: 'distro/ubuntu.yaml'
-  #   tags: ['distro_tasks']
-  #   when: is_ubuntu
+  - name: 'Include tasks for {{ distro_pretty }}'
+    import_tasks: 'distro/ubuntu.yaml'
+    tags: ['distro_tasks']
+    when: is_ubuntu
   
   - name: 'Include tasks for Gnome'
     import_tasks: 'desktop/gnome.yaml'
@@ -39,15 +39,6 @@
     vars:
       profile_username: '{{ mmsUsername }}'
     tags: ['mms']
-
-  - name: 'User settings post tools'
-    block:
-      - import_tasks: 'shared/users/terminal.yaml'
-    tags: ['mms']
-    vars:
-      profile_username: '{{ mmsUsername }}'
-      profile_username_pretty: '{{ mmsFullname }}'
-      profile_image_folder: '{{ mmsImageFolder }}'
 
   rescue:
     - set_fact: mms_task_failed=true

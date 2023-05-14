@@ -1,4 +1,1 @@
-# - name: 'Software Tasks'
-#   block:
-#   tags: ['software', 'ubuntu']
-#   when: installSoftware and is_ubuntu
+- import_tasks: 'system/tools/curl.yaml'
