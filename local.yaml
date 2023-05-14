@@ -5,20 +5,20 @@
     - setup
   tags: ['all']
 
-# - hosts: all
-#   become: true
-#   gather_facts: false
-#   roles:
-#     - all
-#   tags: ['all']
+- hosts: all
+  become: true
+  gather_facts: false
+  roles:
+    - all
+  tags: ['all']
 
-# - hosts: real
-#   become: true
-#   gather_facts: false
-#   roles:
-#     - real
-#     - cleanup
-#   tags: ['real']
+- hosts: real
+  become: true
+  gather_facts: false
+  roles:
+    - real
+    - cleanup
+  tags: ['real']
 
 # - hosts: virtual
 #   become: true
