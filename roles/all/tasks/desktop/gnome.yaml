@@ -13,7 +13,12 @@
     - import_tasks: 'gnome/config/thumbnailer/webp.yaml'
     - import_tasks: 'gnome/config/touchpad.yaml'
     - import_tasks: 'gnome/config/weather.yaml'
+    
+    - import_tasks: 'shared/users/nautilus.yaml'
   tags: ['gnome']
+  vars:
+    profile_username: '{{ real_username }}'
+    profile_username_pretty: '{{ real_username_pretty }}'
   when: is_gnome
 
 - name: 'Gnome Software Tasks'
