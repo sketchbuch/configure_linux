@@ -1,5 +1,0 @@
-- name: 'System > Tools > Curl: Install'
-  ansible.builtin.package: 
-    name: 'curl'
-    state: present
-  tags: ['system', 'dev']

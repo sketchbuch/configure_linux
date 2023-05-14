@@ -18,8 +18,13 @@
   - include_tasks: 'users/{{ real_username }}/nautilus.yaml'
   - include_tasks: 'users/{{ real_username }}/obsidian.yaml'
 
-  - import_tasks: 'system/tools/vsce.yaml'
-  - import_tasks: 'system/tools/yeoman.yaml'
+  - block:
+      - import_tasks: 'shared/system/tools/vsce.yaml'
+      - import_tasks: 'shared/system/tools/yeoman.yaml'
+    vars:
+      profile_username: '{{ real_username }}'
+    tags: ['stephen']
+
 
   rescue:
     - set_fact: real_task_failed=true

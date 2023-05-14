@@ -28,10 +28,14 @@
   - import_tasks: 'system/fonts/inconsolata.yaml'
   - import_tasks: 'system/fonts/mscorefonts.yaml'
   - import_tasks: 'system/fonts/sourcecodepro.yaml'
-  
-  - import_tasks: 'system/tools/nvm.yaml'
-  - import_tasks: 'system/tools/pnpm.yaml'
-  - import_tasks: 'system/tools/yarn.yaml'
+
+  - block:
+      - import_tasks: 'shared/system/tools/nvm.yaml'
+      - import_tasks: 'shared/system/tools/pnpm.yaml'
+      - import_tasks: 'shared/system/tools/yarn.yaml'
+    vars:
+      profile_username: '{{ real_username }}'
+    tags: ['mms']
     
   - import_tasks: 'system/terminal.yaml'
 
