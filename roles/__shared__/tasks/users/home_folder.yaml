@@ -18,7 +18,7 @@
     cmd: 'xdg-user-dirs-update'
     creates: '/home/{{ profile_username }}/Dokumente'
   tags: ['users', 'folders']
-  when: profile_username != real_username
+  when: profile_username is not real_username
 
 - name: 'Users > {{ profile_username_pretty }} > Home Folder: Create user-dirs'
   become: true
