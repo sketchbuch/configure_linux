@@ -227,7 +227,7 @@ wike              | Wike tasks
 
 - Check mms has access to fonts installed by stephen
 - Check if ms has password stars
-- Check gnome software
+- Check software installed for stephen
 
 ## Manual Todos
 

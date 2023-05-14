@@ -1,19 +1,27 @@
 - block:
   - name: 'Include vars for {{ distro_pretty }}'
-    include_vars: '{{ distro }}.yaml'
+    import_tasks: '{{ distro }}.yaml'
     tags: ['always', 'vars']
+  
+  - import_tasks: 'users/create.yaml'
+
+  - name: 'User settings'
+    import_tasks: 'shared/users/desktop.yaml'
+    tags: ['stephen']
+    vars:
+      profile_username: '{{ mmsUsername }}'
+      profile_username_pretty: '{{ mmsFullname }}'
+      profile_image_folder: '{{ mmsImageFolder }}'
 
   # - name: 'Include tasks for {{ distro_pretty }}'
   #   import_tasks: 'distro/ubuntu.yaml'
   #   tags: ['distro_tasks']
   #   when: is_ubuntu
   
-  # - name: 'Include tasks for Gnome'
-  #   import_tasks: 'desktop/gnome.yaml'
-  #   tags: ['gnome']
-  #   when: is_gnome
-  
-  - import_tasks: 'users/create.yaml'
+  - name: 'Include tasks for Gnome'
+    import_tasks: 'desktop/gnome.yaml'
+    tags: ['gnome']
+    when: is_gnome
 
   - name: 'User settings'
     block:
