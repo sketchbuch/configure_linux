@@ -1,8 +1,7 @@
 - name: 'System > Tools > Yeoman: Install for all node versions'
   become: true
   become_user: '{{ profile_username }}'
-  ansible.builtin.shell: >
-    /bin/bash -c "source ~/.nvm/nvm.sh && nvm use {{ nodeVersion }} && npm install -g yo"
+  ansible.builtin.command: /bin/bash -c "source ~/.nvm/nvm.sh && nvm use {{ nodeVersion }} && npm install -g yo"
   loop: '{{ nodeVersions }}'
   loop_control:
     loop_var: nodeVersion
@@ -12,8 +11,7 @@
 - name: 'System > Tools > Yeoman: Install generator-code for all node versions'
   become: true
   become_user: '{{ profile_username }}'
-  ansible.builtin.shell: >
-    /bin/bash -c "source ~/.nvm/nvm.sh && nvm use {{ nodeVersion }} && npm install -g generator-code"
+  ansible.builtin.command: '/bin/bash -c "source ~/.nvm/nvm.sh && nvm use {{ nodeVersion }} && npm install -g generator-code"'
   loop: '{{ nodeVersions }}'
   loop_control:
     loop_var: nodeVersion

@@ -1,4 +1,4 @@
 - name: 'System > Rebuild font cache'
   become: no
-  command: fc-cache --force --verbose
+  ansible.builtin.command: fc-cache --force --verbose
   tags: ['system', 'fonts', 'cleanup']
