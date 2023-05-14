@@ -223,11 +223,13 @@ wike              | Wike tasks
 - Installed extensions and settings
 - Disable auto updates virtual
 - Make sure yeoman/vsce do not rerun like yarn et al
+- Add nautilus bookmarks for mms
+- Split all into all an dstephen roles
 
 ### Final
 
 - Check software installed for stephen
-- Remove curl from which ever profile isn't first
+- Remove curl from which ever profile isn't first (if still combine all/stephen role)
 
 ## Manual Todos
 
