@@ -2,4 +2,8 @@
   block:
     - import_tasks: 'gnome/config/desktop.yaml'
   tags: ['gnome']
+  vars:
+    profile_username: '{{ mmsUsername }}'
+    profile_username_pretty: '{{ mmsFullname }}'
+    profile_image_folder: '{{ mmsImageFolder }}'
   when: is_gnome
