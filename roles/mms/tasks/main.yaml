@@ -25,8 +25,8 @@
       - import_tasks: 'shared/users/profile.yaml'
     tags: ['mms']
     vars:
-      profile_username: '{{ real_username }}'
-      profile_username_pretty: '{{ real_username_pretty }}'
+      profile_username: '{{ mmsUsername }}'
+      profile_username_pretty: '{{ mmsFullname }}'
     
   - import_tasks: 'users/mms/home_folder.yaml'
 
