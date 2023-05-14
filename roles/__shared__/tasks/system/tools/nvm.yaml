@@ -1,7 +1,7 @@
 - name: 'System > Tools > NVM: Install'
   become: true
   become_user: '{{ profile_username }}'
-  ansible.builtin.command:
+  ansible.builtin.shell:
     cmd: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
     creates: '/home/{{ profile_username }}/.nvm/nvm.sh'
   tags: ['system', 'dev']
