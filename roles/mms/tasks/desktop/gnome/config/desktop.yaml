@@ -1,4 +1,4 @@
-- name: 'Users > {{ profile_username_pretty }} > Desktop: Set wallpaper'
+- name: 'Gnome > Config > Desktop: Set wallpaper'
   become: true
   become_user: '{{ profile_username }}'
   dconf:

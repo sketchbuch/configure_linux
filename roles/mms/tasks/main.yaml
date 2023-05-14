@@ -7,13 +7,12 @@
 
   - name: 'User settings'
     block:
+      - import_tasks: 'shared/users/desktop.yaml'
       - import_tasks: 'shared/users/git.yaml'
       - import_tasks: 'shared/users/gtk.yaml'
       - import_tasks: 'shared/users/home_folder.yaml'
       - import_tasks: 'shared/users/profile.yaml'
       - import_tasks: 'shared/users/terminal.yaml'
-      
-      - import_tasks: 'shared/users/desktop.yaml'
     tags: ['mms']
     vars:
       profile_username: '{{ mmsUsername }}'
