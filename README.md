@@ -223,7 +223,11 @@ wike              | Wike tasks
 - Installed extensions and settings
 - Disable auto updates virtual
 
-- Final - move software to correct roles and remove symlinks
+### Final
+
+- Check mms has access to fonts installed by stephen
+- Check if ms has password stars
+- Check gnome software
 
 ## Manual Todos
 

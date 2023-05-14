@@ -1,0 +1,16 @@
+- name: 'Users > {{ profile_username_pretty }} > Terminal: Create terminal dot files'
+  become: true
+  become_user: '{{ profile_username }}'
+  ansible.builtin.copy:
+    dest: '/home/{{ profile_username }}/{{ dotFile }}'
+    group: "{{ profile_username }}"
+    mode: 0600
+    owner: "{{ profile_username }}"
+    src: 'users/{{ profile_username }}/terminal/{{ dotFile }}'
+  loop:
+    - '.bash_aliases'
+    - '.bashrc'
+    - '.profile'
+  loop_control:
+    loop_var: dotFile
+  tags: ['users', 'terminal', 'files']

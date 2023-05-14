@@ -1,0 +1,7 @@
+[user]
+	name = Stephen Bungert
+	email = bungert@mediamarktsaturn.com
+[pull]
+	rebase = false
+[core]
+	ignoreCase = false

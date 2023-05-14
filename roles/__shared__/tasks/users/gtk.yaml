@@ -1,0 +1,18 @@
+- name: 'Users > {{ profile_username_pretty }} > GTK: Create gtk-3.0 folder'
+  become: true
+  become_user: '{{ profile_username }}'
+  ansible.builtin.file:
+    path: '/home/{{ profile_username }}/.config/gtk-3.0/'
+    state: directory
+  tags: ['users', 'gtk', 'folders']
+
+- name: 'Users > {{ profile_username_pretty }} > GTK: Create GTK CSS (3.0)'
+  become: true
+  become_user: '{{ profile_username }}'
+  ansible.builtin.copy:
+    dest: '/home/{{ profile_username }}/.config/gtk-3.0/gtk.css'
+    group: "{{ profile_username }}"
+    mode: 0600
+    owner: "{{ profile_username }}"
+    src: 'users/{{ profile_username }}/gtk/gtk.css'
+  tags: ['users', 'gtk', 'files']

@@ -13,12 +13,14 @@
     tags: ['gnome']
     when: is_gnome
 
-  - include_tasks: 'users/{{ real_username }}/git.yaml'
-  - include_tasks: 'users/{{ real_username }}/gtk.yaml'
-  - include_tasks: 'users/{{ real_username }}/home_folder.yaml'
-  - include_tasks: 'users/{{ real_username }}/terminal.yaml'
+  - name: 'User settings'
+    block:
+      - import_tasks: 'shared/users/git.yaml'
+      - import_tasks: 'shared/users/gtk.yaml'
+      - import_tasks: 'shared/users/home_folder.yaml'
+      - import_tasks: 'shared/users/terminal.yaml'
 
-  - import_tasks: 'shared/users/profile.yaml'
+      - import_tasks: 'shared/users/profile.yaml'
     tags: ['stephen']
     vars:
       profile_username: '{{ real_username }}'
@@ -29,13 +31,14 @@
   - import_tasks: 'system/fonts/mscorefonts.yaml'
   - import_tasks: 'system/fonts/sourcecodepro.yaml'
 
-  - block:
+  - name: 'Install tools'
+    block:
       - import_tasks: 'shared/system/tools/nvm.yaml'
       - import_tasks: 'shared/system/tools/pnpm.yaml'
       - import_tasks: 'shared/system/tools/yarn.yaml'
+    tags: ['stephen']
     vars:
       profile_username: '{{ real_username }}'
-    tags: ['mms']
     
   - import_tasks: 'system/terminal.yaml'
 
