@@ -1,4 +1,4 @@
-- import_tasks: 'system/tools/curl.yaml'
+- import_tasks: 'shared/system/tools/curl.yaml'
 - import_tasks: '../system/fonts/cantarell.yaml'
 
 - name: 'Software Tasks'
