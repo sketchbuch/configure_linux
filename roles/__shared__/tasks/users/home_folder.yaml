@@ -16,6 +16,7 @@
   become_user: '{{ profile_username }}'
   ansible.builtin.command:
     cmd: 'xdg-user-dirs-update'
+    creates: '/home/{{ profile_username }}/Dokumente'
   tags: ['users', 'folders']
   when: profile_username != real_username
 
