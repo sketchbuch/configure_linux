@@ -222,6 +222,7 @@ wike              | Wike tasks
 - Add gnome extensions
 - Installed extensions and settings
 - Disable auto updates virtual
+- Make sure yeoman does not rerun like yarn et al
 
 ### Final
 

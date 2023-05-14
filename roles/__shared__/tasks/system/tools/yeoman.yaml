@@ -1,7 +1,8 @@
 - name: 'System > Tools > Yeoman: Install for all node versions'
   become: true
   become_user: '{{ profile_username }}'
-  ansible.builtin.command: /bin/bash -c "source ~/.nvm/nvm.sh && nvm use {{ nodeVersion }} && npm install -g yo"
+  ansible.builtin.command:
+    cmd: /bin/bash -c "source ~/.nvm/nvm.sh && nvm use {{ nodeVersion }} && npm install -g yo"
   loop: '{{ nodeVersions }}'
   loop_control:
     loop_var: nodeVersion

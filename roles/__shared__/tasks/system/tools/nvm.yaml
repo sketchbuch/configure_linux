@@ -11,6 +11,7 @@
   become_user: '{{ profile_username }}'
   ansible.builtin.command:
     cmd: '/bin/bash -c "source ~/.nvm/nvm.sh && nvm install {{ nodeVersion }}"'
+    creates: '/home/{{ profile_username }}/.nvm/versions/node/v{{ nodeVersion }}/bin/npm'
   loop: '{{ nodeVersions }}'
   loop_control:
     loop_var: nodeVersion

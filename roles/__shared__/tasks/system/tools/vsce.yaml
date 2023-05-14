@@ -1,7 +1,9 @@
 - name: 'System > Tools > VSCE: Install for all node versions'
   become: true
   become_user: '{{ profile_username }}'
-  ansible.builtin.command: '/bin/bash -c "source ~/.nvm/nvm.sh && nvm use {{ nodeVersion }} && npm install -g vsce"'
+  ansible.builtin.command:
+    cmd: '/bin/bash -c "source ~/.nvm/nvm.sh && nvm use {{ nodeVersion }} && npm install -g vsce"'
+    creates: '/home/{{ profile_username }}/.nvm/versions/node/v{{ nodeVersion }}/bin/vsce'
   loop: '{{ nodeVersions }}'
   loop_control:
     loop_var: nodeVersion
