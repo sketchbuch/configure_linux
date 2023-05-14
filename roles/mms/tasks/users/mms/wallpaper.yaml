@@ -2,7 +2,7 @@
   become: true
   become_user: '{{ mmsUsername }}'
   ansible.builtin.file:
-    path: '~/{{ profile_image_folder }}/Wallpaper'
+    path: '~/{{ mmsImageFolder }}/Wallpaper'
     state: directory
   tags: ['users', 'folders']
 
