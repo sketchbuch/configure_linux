@@ -14,9 +14,10 @@
       - import_tasks: 'shared/users/terminal.yaml'
     tags: ['mms']
     vars:
-      profile_username: '{{ mmsUsername }}'
-      profile_username_pretty: '{{ mmsFullname }}'
+      create_home_folders: true
       profile_image_folder: '{{ mmsImageFolder }}'
+      profile_username_pretty: '{{ mmsFullname }}'
+      profile_username: '{{ mmsUsername }}'
 
   - name: 'Include tasks for {{ distro_pretty }}'
     import_tasks: 'distro/ubuntu.yaml'
