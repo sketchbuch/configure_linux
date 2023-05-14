@@ -236,3 +236,4 @@ Things to do after install
 - Setup online accounts
 - Download keepassxc dbs
 - Setup login to vsce
+- Download wallpapers and set

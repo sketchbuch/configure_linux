@@ -8,14 +8,14 @@
   changed_when: false
   register: userExists
 
-- name: 'Users > MMS > Create: user group "{{ mmsGroup }}"'
+- name: 'Users > MMS > Create: User group "{{ mmsGroup }}"'
   become: true
   ansible.builtin.group:
     name: '{{ mmsGroup }}'
     state: present
   tags: ['system', 'users', 'mms']
 
-- name: 'Users > MMS > Create: user "{{ mmsUsername }}"'
+- name: 'Users > MMS > Create: User "{{ mmsUsername }}"'
   become: true
   ansible.builtin.user:
     comment: 'MMS'
