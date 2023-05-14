@@ -20,13 +20,13 @@
     - cleanup
   tags: ['real']
 
-# - hosts: virtual
-#   become: true
-#   gather_facts: false
-#   roles:
-#     - virtual
-#     - cleanup
-#   tags: ['virtual']
+- hosts: virtual
+  become: true
+  gather_facts: false
+  roles:
+    - virtual
+    - cleanup
+  tags: ['virtual']
 
 - hosts: virtual
   become: true
