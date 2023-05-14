@@ -1,6 +1,6 @@
 - block:
   - name: 'Include vars for {{ distro_pretty }}'
-    import_tasks: '{{ distro }}.yaml'
+    include_vars: '{{ distro }}.yaml'
     tags: ['always', 'vars']
   
   - import_tasks: 'users/create.yaml'
