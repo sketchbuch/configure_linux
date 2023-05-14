@@ -17,7 +17,7 @@
   ansible.builtin.command:
     cmd: 'xdg-user-dirs-update'
   tags: ['users', 'folders']
-  when: create_home_folders == true
+  when: profile_username != real_username
 
 - name: 'Users > {{ profile_username_pretty }} > Home Folder: Create user-dirs'
   become: true
