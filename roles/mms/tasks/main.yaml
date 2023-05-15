@@ -18,10 +18,10 @@
       profile_username_pretty: '{{ mmsFullname }}'
       profile_username: '{{ mmsUsername }}'
 
-  - name: 'Include tasks for {{ distro_pretty }}'
-    import_tasks: 'distro/ubuntu.yaml'
-    tags: ['distro_tasks']
-    when: is_ubuntu
+  # - name: 'Include tasks for {{ distro_pretty }}'
+  #   import_tasks: 'distro/ubuntu.yaml'
+  #   tags: ['distro_tasks']
+  #   when: is_ubuntu
   
   - name: 'Include tasks for Gnome'
     import_tasks: 'desktop/gnome.yaml'

@@ -13,8 +13,6 @@
     - import_tasks: 'gnome/config/thumbnailer/webp.yaml'
     - import_tasks: 'gnome/config/touchpad.yaml'
     - import_tasks: 'gnome/config/weather.yaml'
-    
-    - import_tasks: 'shared/users/nautilus.yaml'
   tags: ['gnome']
   vars:
     profile_username: '{{ real_username }}'
