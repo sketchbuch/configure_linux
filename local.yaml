@@ -12,7 +12,8 @@
     - all
   tags: ['all']
 
-- hosts: real
+# change hosts back to real
+- hosts: virtual
   become: true
   gather_facts: false
   roles:
@@ -26,12 +27,12 @@
     - virtual
   tags: ['virtual']
 
-- hosts: virtual
-  become: true
-  gather_facts: false
-  roles:
-    - mms
-  tags: ['virtual', 'mms']
+# - hosts: virtual
+#   become: true
+#   gather_facts: false
+#   roles:
+#     - mms
+#   tags: ['virtual', 'mms']
 
 - hosts: all
   become: true

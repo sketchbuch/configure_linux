@@ -223,7 +223,7 @@ wike              | Wike tasks
 - Installed extensions and settings
 - Disable auto updates virtual
 - Make sure yeoman/vsce do not rerun like yarn et al
-- Split all into all and stephen roles
+- Virtual stuff needs doing for mms
 
 ### Final
 
