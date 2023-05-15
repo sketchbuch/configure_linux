@@ -69,7 +69,7 @@
       community.general.dconf:
         key: '/org/gtk/settings/file-chooser/show-hidden'
         state: present
-        value: "true"
+        value: "false"
       tags: ['system', 'file-manager', 'gnome']
     
     - name: 'Gnome > Config > Nautilus: Zoom level'
@@ -90,7 +90,7 @@
       community.general.dconf:
         key: '/org/gtk/gtk4/settings/file-chooser/show-hidden'
         state: present
-        value: "true"
+        value: "false"
       tags: ['system', 'file-manager', 'gnome']
     
     - name: 'Gnome > Config > Nautilus: Zoom level'
