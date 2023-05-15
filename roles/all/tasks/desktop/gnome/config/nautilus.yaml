@@ -7,15 +7,6 @@
     value: "false"
   tags: ['system', 'file-manager', 'gnome']
 
-- name: 'Gnome > Config > Nautilus: Hide hidden files'
-  become: true
-  become_user: '{{ real_username }}'
-  community.general.dconf:
-    key: '/org/gnome/nautilus/preferences/show-hidden-files'
-    state: present
-    value: "true"
-  tags: ['system', 'file-manager', 'gnome']
-
 - name: 'Gnome > Config > Nautilus: Maximise window'
   become: true
   become_user: '{{ real_username }}'
@@ -70,22 +61,44 @@
     value: 250
   tags: ['system', 'file-manager', 'gnome']
 
-- name: 'Gnome > Config > Nautilus: Zoom level'
-  become: true
-  become_user: '{{ real_username }}'
-  community.general.dconf:
-    key: '/org/gnome/nautilus/icon-view/default-zoom-level'
-    state: present
-    value: "'larger'"
-  tags: ['system', 'file-manager', 'gnome']
+- name: 'Ubuntu <= 23'
+  block:
+    - name: 'Gnome > Config > Nautilus: Hide hidden files'
+      become: true
+      become_user: '{{ real_username }}'
+      community.general.dconf:
+        key: '/org/gtk/settings/file-chooser/show-hidden'
+        state: present
+        value: "true"
+      tags: ['system', 'file-manager', 'gnome']
+    
+    - name: 'Gnome > Config > Nautilus: Zoom level'
+      become: true
+      become_user: '{{ real_username }}'
+      community.general.dconf:
+        key: '/org/gnome/nautilus/icon-view/default-zoom-level'
+        state: present
+        value: "'larger'"
+      tags: ['system', 'file-manager', 'gnome']
   when: is_ubuntu and (distro_major_version | int) <= 22
 
-- name: 'Gnome > Config > Nautilus: Zoom level'
-  become: true
-  become_user: '{{ real_username }}'
-  community.general.dconf:
-    key: '/org/gnome/nautilus/icon-view/default-zoom-level'
-    state: present
-    value: "'medium'"
-  tags: ['system', 'file-manager', 'gnome']
+- name: 'Fedora or Ubuntu > 23'
+  block:
+    - name: 'Gnome > Config > Nautilus: Hide hidden files'
+      become: true
+      become_user: '{{ real_username }}'
+      community.general.dconf:
+        key: '/org/gtk/gtk4/settings/file-chooser/show-hidden'
+        state: present
+        value: "true"
+      tags: ['system', 'file-manager', 'gnome']
+    
+    - name: 'Gnome > Config > Nautilus: Zoom level'
+      become: true
+      become_user: '{{ real_username }}'
+      community.general.dconf:
+        key: '/org/gnome/nautilus/icon-view/default-zoom-level'
+        state: present
+        value: "'medium'"
+      tags: ['system', 'file-manager', 'gnome']
   when: is_fedora or is_ubuntu and (distro_major_version | int) == 23
