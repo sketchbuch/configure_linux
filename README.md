@@ -223,8 +223,7 @@ wike              | Wike tasks
 - Installed extensions and settings
 - Disable auto updates virtual
 - Make sure yeoman/vsce do not rerun like yarn et al
-- Add nautilus bookmarks for mms
-- Split all into all an dstephen roles
+- Split all into all and stephen roles
 
 ### Final
 
