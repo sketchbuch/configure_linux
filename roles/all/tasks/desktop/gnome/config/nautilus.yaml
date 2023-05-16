@@ -1,3 +1,4 @@
+# Instant changes
 - name: 'Gnome > Config > Nautilus: Dirs sorted with files'
   become: true
   become_user: '{{ real_username }}'
@@ -5,24 +6,6 @@
     key: '/org/gtk/settings/file-chooser/sort-directories-first'
     state: present
     value: "false"
-  tags: ['system', 'file-manager', 'gnome']
-
-- name: 'Gnome > Config > Nautilus: Maximise window'
-  become: true
-  become_user: '{{ real_username }}'
-  community.general.dconf:
-    key: '/org/gnome/nautilus/window-state/maximized'
-    state: present
-    value: "true"
-  tags: ['system', 'file-manager', 'gnome']
-
-- name: 'Gnome > Config > Nautilus: Set icon view'
-  become: true
-  become_user: '{{ real_username }}'
-  community.general.dconf:
-    key: '/org/gnome/nautilus/preferences/default-folder-viewer'
-    state: present
-    value: "'icon-view'"
   tags: ['system', 'file-manager', 'gnome']
 
 - name: 'Gnome > Config > Nautilus: Set single-click to open'
@@ -52,6 +35,25 @@
     value: "true"
   tags: ['system', 'file-manager', 'gnome']
 
+# Affects new windows only
+- name: 'Gnome > Config > Nautilus: Maximise window'
+  become: true
+  become_user: '{{ real_username }}'
+  community.general.dconf:
+    key: '/org/gnome/nautilus/window-state/maximized'
+    state: present
+    value: "true"
+  tags: ['system', 'file-manager', 'gnome']
+
+- name: 'Gnome > Config > Nautilus: Set icon view'
+  become: true
+  become_user: '{{ real_username }}'
+  community.general.dconf:
+    key: '/org/gnome/nautilus/preferences/default-folder-viewer'
+    state: present
+    value: "'icon-view'"
+  tags: ['system', 'file-manager', 'gnome']
+
 - name: 'Gnome > Config > Nautilus: Sidebar width'
   become: true
   become_user: '{{ real_username }}'
@@ -61,44 +63,43 @@
     value: 250
   tags: ['system', 'file-manager', 'gnome']
 
+# Version speciic changes
 - name: 'Ubuntu <= 23'
+  become: true
+  become_user: '{{ real_username }}'
   block:
+    # Instant changes
     - name: 'Gnome > Config > Nautilus: Hide hidden files'
-      become: true
-      become_user: '{{ real_username }}'
       community.general.dconf:
         key: '/org/gtk/settings/file-chooser/show-hidden'
         state: present
         value: "false"
-      tags: ['system', 'file-manager', 'gnome']
     
+    # Affects new windows only
     - name: 'Gnome > Config > Nautilus: Zoom level'
-      become: true
-      become_user: '{{ real_username }}'
       community.general.dconf:
         key: '/org/gnome/nautilus/icon-view/default-zoom-level'
         state: present
         value: "'larger'"
-      tags: ['system', 'file-manager', 'gnome']
+  tags: ['system', 'file-manager', 'gnome']
   when: is_ubuntu and (distro_major_version | int) <= 22
 
 - name: 'Fedora or Ubuntu > 23'
+  become: true
+  become_user: '{{ real_username }}'
   block:
+    # Instant changes
     - name: 'Gnome > Config > Nautilus: Hide hidden files'
-      become: true
-      become_user: '{{ real_username }}'
       community.general.dconf:
         key: '/org/gtk/gtk4/settings/file-chooser/show-hidden'
         state: present
         value: "false"
-      tags: ['system', 'file-manager', 'gnome']
     
+    # Affects new windows only
     - name: 'Gnome > Config > Nautilus: Zoom level'
-      become: true
-      become_user: '{{ real_username }}'
       community.general.dconf:
         key: '/org/gnome/nautilus/icon-view/default-zoom-level'
         state: present
         value: "'medium'"
-      tags: ['system', 'file-manager', 'gnome']
+  tags: ['system', 'file-manager', 'gnome']
   when: is_fedora or is_ubuntu and (distro_major_version | int) == 23
