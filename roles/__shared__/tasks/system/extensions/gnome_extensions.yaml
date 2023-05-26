@@ -10,11 +10,6 @@
   become: true
   become_user: '{{ profile_username }}'
   block:
-    - name: 'System > Extensions > Gnome: Create download folder'
-      ansible.builtin.file:
-        path: '{{ anisbleTmp }}/gnome_extensions'
-        state: directory
-    
     - name: 'System > Extensions > Gnome: Download "{{ extension.name }}"'
       ansible.builtin.get_url:
         dest: '{{ anisbleTmp }}/gnome_extensions/{{ extension.uuid }}.zip'
