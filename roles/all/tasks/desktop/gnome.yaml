@@ -20,6 +20,8 @@
   when: is_gnome
 
 - import_tasks: '../shared/system/extensions/gnome.yaml'
+  include_tasks:
+    username: '{{ real_username }}'
 
 - name: 'Gnome Software Tasks'
   block:
