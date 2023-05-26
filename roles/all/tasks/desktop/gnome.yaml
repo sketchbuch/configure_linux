@@ -19,8 +19,8 @@
     profile_username_pretty: '{{ real_username_pretty }}'
   when: is_gnome
 
-- import_tasks: '../shared/system/extensions/gnome.yaml'
-  include_tasks:
+- include_tasks: '../shared/system/extensions/gnome.yaml'
+  vars:
     username: '{{ real_username }}'
 
 - name: 'Gnome Software Tasks'
