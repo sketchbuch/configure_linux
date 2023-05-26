@@ -5,18 +5,18 @@
     path: 'home/{{ profile_username }}/.local/share/gnome-shell/extensions/{{ extension.uuid }}/metadata.json'
   register: r_gnome_extensions_check_existing
 
-- name: 'System > Extensions > Gnome: Create temporary download directory'
+- name: 'System > Extensions > Gnome: Download extension "{{ extension.name }}"'
   become: true
   become_user: '{{ profile_username }}'
-  ansible.builtin.tempfile:
-    state: directory
-    suffix: ".gnome_extension_download"
-  register: r_gnome_extension_download_dir
-  changed_when: no
-  when: r_gnome_extensions_check_existing.stat.exists == False
-
-- name: 'System > Extensions > Gnome: Download extension "{{ extension.name }}"'
   ansible.builtin.get_url:
-    url: https://extensions.gnome.org/extension-data/{{ extension.url }}
-    dest: "{{ r_gnome_extension_download_dir.path }}/{{ extension.uuid }}.zip"
+    url: 'https://extensions.gnome.org/extension-data/{{ extension.url }}'
+    dest: '{{ anisbleTmp }}/{{ extension.uuid }}.zip'
   register: r_gnome_extension_download
+
+- name: 'System > Extensions > Gnome: Create install directory for "{{ gnome_extension_info.name }}"'
+  become: true
+  become_user: '{{ profile_username }}'
+  ansible.builtin.file:
+    path: 'home/{{ profile_username }}/.local/share/gnome-shell/extensions/{{ gnome_extension_info.uuid }}'
+    state: directory
+    mode: 0775
