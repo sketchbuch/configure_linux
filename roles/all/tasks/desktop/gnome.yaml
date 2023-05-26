@@ -19,21 +19,7 @@
     profile_username_pretty: '{{ real_username_pretty }}'
   when: is_gnome
 
-- import_tasks: '../shared/system/extensions/gnome_prep.yaml'
-  vars:
-    profile_username: '{{ real_username }}'
-
-- name: 'Gnome Extensions'
-  include_tasks: '../shared/system/extensions/gnome_extensions.yaml'
-  loop: '{{ gnome_extensions }}'
-  loop_control:
-    loop_var: extension
-  tags: ['gnome']
-  vars:
-    profile_username: '{{ real_username }}'
-  when: is_gnome
-
-- import_tasks: '../shared/system/extensions/gnome_cleanup.yaml'
+- import_tasks: '../shared/system/extensions/gnome.yaml'
   vars:
     profile_username: '{{ real_username }}'
 
