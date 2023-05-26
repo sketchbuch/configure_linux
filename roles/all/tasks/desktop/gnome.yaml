@@ -1,4 +1,4 @@
-- name: 'Gnome Tasks'
+- name: 'Gnome Dconf'
   block:
     - import_tasks: 'gnome/config/clock.yaml'
     - import_tasks: 'gnome/config/datetime.yaml'
@@ -13,6 +13,15 @@
     - import_tasks: 'gnome/config/thumbnailer/webp.yaml'
     - import_tasks: 'gnome/config/touchpad.yaml'
     - import_tasks: 'gnome/config/weather.yaml'
+  tags: ['gnome']
+  vars:
+    profile_username: '{{ real_username }}'
+    profile_username_pretty: '{{ real_username_pretty }}'
+  when: is_gnome
+
+- name: 'Gnome Extensions'
+  block:
+    - import_tasks: '../shared/system/extensions/gnome.yaml'
   tags: ['gnome']
   vars:
     profile_username: '{{ real_username }}'

@@ -1,3 +1,8 @@
 font_droidmono: google-droid-sans-mono-fonts
 font_firacode: fonts-firacode
 font_inconsolata: fonts-inconsolata
+
+extensions:
+  - name: 'alphabetical-app-grid'
+    url: 'AlphabeticalAppGridstuarthayhurst.v29.shell-extension.zip'
+    uuid: 'AlphabeticalAppGrid@stuarthayhurst'
