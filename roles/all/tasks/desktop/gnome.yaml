@@ -20,7 +20,7 @@
   when: is_gnome
 
 - name: 'Gnome Extensions'
-  import_tasks: '../shared/system/extensions/gnome.yaml'
+  include_tasks: '../shared/system/extensions/gnome.yaml'
   loop: '{{ gnome_extensions }}'
   loop_control:
     loop_var: extension
