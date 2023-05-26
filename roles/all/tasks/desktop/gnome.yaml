@@ -21,7 +21,7 @@
 
 - include_tasks: '../shared/system/extensions/gnome.yaml'
   vars:
-    username: '{{ real_username }}'
+    profile_username: '{{ real_username }}'
 
 - name: 'Gnome Software Tasks'
   block:
