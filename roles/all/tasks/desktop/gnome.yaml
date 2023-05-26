@@ -20,12 +20,13 @@
   when: is_gnome
 
 - name: 'Gnome Extensions'
-  block:
-    - import_tasks: '../shared/system/extensions/gnome.yaml'
+  import_tasks: '../shared/system/extensions/gnome.yaml'
+  loop: '{{ gnome_extensions }}'
+  loop_control:
+    loop_var: extension
   tags: ['gnome']
   vars:
     profile_username: '{{ real_username }}'
-    extensions: '{{ gnome_extensions }}'
   when: is_gnome
 
 - name: 'Gnome Software Tasks'
