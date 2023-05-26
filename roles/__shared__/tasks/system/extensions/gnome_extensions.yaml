@@ -1,4 +1,4 @@
-- name: 'System > Extensions > Gnome: Check if "{{ extension.name }}" is already installed'
+- name: 'System > Extensions > Gnome Extensions: Check if "{{ extension.name }}" is already installed'
   become: true
   become_user: '{{ profile_username }}'
   ansible.builtin.stat:
@@ -10,24 +10,24 @@
   become: true
   become_user: '{{ profile_username }}'
   block:
-    - name: 'System > Extensions > Gnome: Download "{{ extension.name }}"'
+    - name: 'System > Extensions > Gnome Extensions: Download "{{ extension.name }}"'
       ansible.builtin.get_url:
         dest: '{{ anisbleTmp }}/gnome_extensions/{{ extension.uuid }}.zip'
         url: 'https://extensions.gnome.org/extension-data/{{ extension.url }}'
 
-    - name: 'System > Extensions > Gnome: Create install directory for "{{ extension.name }}"'
+    - name: 'System > Extensions > Gnome Extensions: Create install directory for "{{ extension.name }}"'
       ansible.builtin.file:
         path: '/home/{{ profile_username }}/.local/share/gnome-shell/extensions/{{ extension.uuid }}'
         state: directory
 
-    - name: 'System > Extensions > Gnome: Install "{{ extension.name }}"'
+    - name: 'System > Extensions > Gnome Extensions: Install "{{ extension.name }}"'
       ansible.builtin.unarchive:
         dest: '/home/{{ profile_username }}/.local/share/gnome-shell/extensions/{{ extension.uuid }}'
         remote_src: yes
         src: '{{ anisbleTmp }}/gnome_extensions/{{ extension.uuid }}.zip'
 
     # Will not show up in extension manager until session restarts
-    - name: 'System > Extensions > Gnome: Enable "{{ extension.name }}"'
+    - name: 'System > Extensions > Gnome Extensions: Enable "{{ extension.name }}"'
       ansible.builtin.command:
         cmd: 'gnome-shell-extension-tool --enable-extension {{ extension.uuid }}'
   tags: ['system', 'desktop', 'gnome', 'extensions', 'files', 'folders']

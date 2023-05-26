@@ -1,4 +1,4 @@
-- name: 'System > Extensions > Gnome: Remove tmp directory'
+- name: 'System > Extensions > Gnome Cleanup: Remove tmp directory'
   become: true
   become_user: '{{ profile_username }}'
   ansible.builtin.file:
