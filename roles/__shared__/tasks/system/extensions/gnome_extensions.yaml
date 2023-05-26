@@ -26,6 +26,7 @@
         remote_src: yes
         src: '{{ anisbleTmp }}/gnome_extensions/{{ extension.uuid }}.zip'
 
+    # Will not show up in extension manager until session restarts
     - name: 'System > Extensions > Gnome: Enable "{{ extension.name }}"'
       ansible.builtin.command:
         cmd: 'gnome-shell-extension-tool --enable-extension {{ extension.uuid }}'
