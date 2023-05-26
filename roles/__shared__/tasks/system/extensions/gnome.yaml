@@ -3,34 +3,40 @@
   become_user: '{{ profile_username }}'
   ansible.builtin.stat:
     path: 'home/{{ profile_username }}/.local/share/gnome-shell/extensions/{{ extension.uuid }}/metadata.json'
-  register: r_gnome_extensions_check_existing
+  register: gnome_extension_check
   tags: ['system', 'desktop', 'gnome', 'extensions', 'files']
 
-- name: 'System > Extensions > Gnome: Download "{{ extension.name }}"'
-  become: true
-  become_user: '{{ profile_username }}'
-  ansible.builtin.get_url:
-    dest: '{{ anisbleTmp }}/gnome_extensions/{{ extension.uuid }}.zip'
-    url: 'https://extensions.gnome.org/extension-data/{{ extension.url }}'
-  register: r_gnome_extension_download
-  tags: ['system', 'desktop', 'gnome', 'extensions', 'files']
+- name: '{{ extension.name }}:'
+  block:
+    - name: 'System > Extensions > Gnome: Create download folder'
+      become: true
+      become_user: '{{ profile_username }}'
+      ansible.builtin.file:
+        path: '{{ anisbleTmp }}/gnome_extensions'
+        state: directory
+    
+    - name: 'System > Extensions > Gnome: Download "{{ extension.name }}"'
+      become: true
+      become_user: '{{ profile_username }}'
+      ansible.builtin.get_url:
+        dest: '{{ anisbleTmp }}/gnome_extensions/{{ extension.uuid }}.zip'
+        url: 'https://extensions.gnome.org/extension-data/{{ extension.url }}'
 
-- name: 'System > Extensions > Gnome: Create install directory for "{{ extension.name }}"'
-  become: true
-  become_user: '{{ profile_username }}'
-  ansible.builtin.file:
-    path: 'home/{{ profile_username }}/.local/share/gnome-shell/extensions/{{ extension.uuid }}'
-    state: directory
-  tags: ['system', 'desktop', 'gnome', 'extensions', 'folders']
+    - name: 'System > Extensions > Gnome: Create install directory for "{{ extension.name }}"'
+      become: true
+      become_user: '{{ profile_username }}'
+      ansible.builtin.file:
+        path: 'home/{{ profile_username }}/.local/share/gnome-shell/extensions/{{ extension.uuid }}'
+        state: directory
 
-- name: 'System > Extensions > Gnome: Install "{{ extension.name }}"'
-  ansible.builtin.unarchive:
-    dest: 'home/{{ profile_username }}/.local/share/gnome-shell/extensions/{{ extension.uuid }}'
-    remote_src: yes
-    src: '{{ anisbleTmp }}/gnome_extensions/{{ extension.uuid }}.zip'
-  tags: ['system', 'desktop', 'gnome', 'extensions', 'files']
+    - name: 'System > Extensions > Gnome: Install "{{ extension.name }}"'
+      ansible.builtin.unarchive:
+        dest: 'home/{{ profile_username }}/.local/share/gnome-shell/extensions/{{ extension.uuid }}'
+        remote_src: yes
+        src: '{{ anisbleTmp }}/gnome_extensions/{{ extension.uuid }}.zip'
 
-- name: 'System > Extensions > Gnome: Enable "{{ extension.name }}"'
-  ansible.builtin.command:
-    cmd: 'gnome-shell-extension-tool --enable-extension {{ extension.uuid }}'
-  tags: ['system', 'desktop', 'gnome', 'extensions']
+    - name: 'System > Extensions > Gnome: Enable "{{ extension.name }}"'
+      ansible.builtin.command:
+        cmd: 'gnome-shell-extension-tool --enable-extension {{ extension.uuid }}'
+  tags: ['system', 'desktop', 'gnome', 'extensions', 'files', 'folders']
+  when: gnome_extension_check.stat.exists == false
