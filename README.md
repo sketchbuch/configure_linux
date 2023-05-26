@@ -86,6 +86,7 @@ dep_check    | Checking if some dependency is installed
 desktop      | Desktop effects and appearance
 dev          | Dev tasks
 distro_tasks | Tasks targeting a specific distro like Ubuntu
+extensions   | Extnsions tasks
 fedora       | Fedora tasks
 file-manager | File Manager tasks
 files        | To do with creating/editing files
@@ -167,7 +168,7 @@ gnome-boxes       | Gnome Boxes tasks
 gnome-calendar    | Gnome Calendar tasks
 gnome-clocks      | Gnome Clocks tasks
 gnome-contacts    | Gnome Contacts tasks
-gnome-extensions  | Gnome Extensions tasks
+gnome-extensions  | Gnome Extensions app tasks
 gnome-loupe       | Gnome Loupe tasks
 gnome-maps        | Gnome Maps tasks
 gnome-sudoku      | Gnome Sudoku tasks
