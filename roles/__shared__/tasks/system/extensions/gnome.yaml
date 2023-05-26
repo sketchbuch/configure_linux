@@ -7,7 +7,6 @@
   loop: '{{ gnome_extensions }}'
   loop_control:
     loop_var: extension
-  tags: ['gnome']
   vars:
     profile_username: '{{ username }}'
   when: is_gnome

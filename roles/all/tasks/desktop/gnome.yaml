@@ -20,6 +20,7 @@
   when: is_gnome
 
 - import_tasks: '../shared/system/extensions/gnome.yaml'
+  tags: ['gnome']
   vars:
     username: '{{ real_username }}'
 
