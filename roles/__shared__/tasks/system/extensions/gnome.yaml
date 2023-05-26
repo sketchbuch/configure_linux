@@ -28,7 +28,7 @@
   ansible.builtin.unarchive:
     dest: 'home/{{ profile_username }}/.local/share/gnome-shell/extensions/{{ extension.uuid }}'
     remote_src: yes
-    src: 'home/{{ profile_username }}/.local/share/gnome-shell/extensions/{{ extension.uuid }}'
+    src: '{{ anisbleTmp }}/{{ extension.uuid }}.zip'
   tags: ['system', 'desktop', 'gnome', 'extensions', 'files']
 
 - name: 'System > Extensions > Gnome: Enable "{{ extension.name }}"'
