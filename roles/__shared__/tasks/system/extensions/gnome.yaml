@@ -13,10 +13,10 @@
     dest: '{{ anisbleTmp }}/{{ extension.uuid }}.zip'
   register: r_gnome_extension_download
 
-- name: 'System > Extensions > Gnome: Create install directory for "{{ gnome_extension_info.name }}"'
+- name: 'System > Extensions > Gnome: Create install directory for "{{ extension.name }}"'
   become: true
   become_user: '{{ profile_username }}'
   ansible.builtin.file:
-    path: 'home/{{ profile_username }}/.local/share/gnome-shell/extensions/{{ gnome_extension_info.uuid }}'
+    path: 'home/{{ profile_username }}/.local/share/gnome-shell/extensions/{{ extension.uuid }}'
     state: directory
     mode: 0775
