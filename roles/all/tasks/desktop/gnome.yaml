@@ -20,6 +20,8 @@
   when: is_gnome
 
 - import_tasks: '../shared/system/extensions/gnome_prep.yaml'
+  vars:
+    profile_username: '{{ real_username }}'
 
 - name: 'Gnome Extensions'
   include_tasks: '../shared/system/extensions/gnome_extensions.yaml'
@@ -32,6 +34,8 @@
   when: is_gnome
 
 - import_tasks: '../shared/system/extensions/gnome_cleanup.yaml'
+  vars:
+    profile_username: '{{ real_username }}'
 
 - name: 'Gnome Software Tasks'
   block:
