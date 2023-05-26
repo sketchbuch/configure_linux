@@ -25,7 +25,7 @@
   tags: ['gnome']
   vars:
     profile_username: '{{ real_username }}'
-    profile_username_pretty: '{{ real_username_pretty }}'
+    extensions: '{{ gnome_extensions }}'
   when: is_gnome
 
 - name: 'Gnome Software Tasks'
