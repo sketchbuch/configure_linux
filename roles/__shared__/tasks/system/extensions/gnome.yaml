@@ -17,6 +17,6 @@
 
 - name: 'System > Extensions > Gnome: Download extension "{{ extension.name }}"'
   ansible.builtin.get_url:
-    url: https://extensions.gnome.org{{ extension.url }}
+    url: https://extensions.gnome.org/extension-data/{{ extension.url }}
     dest: "{{ r_gnome_extension_download_dir.path }}/{{ extension.uuid }}.zip"
   register: r_gnome_extension_download
