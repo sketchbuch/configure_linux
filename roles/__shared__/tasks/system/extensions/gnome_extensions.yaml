@@ -15,7 +15,7 @@
         dest: '{{ anisbleTmp }}/gnome_extensions/{{ extension.uuid }}.zip'
         url: 'https://extensions.gnome.org/extension-data/{{ extension.url }}'
 
-    - name: 'System > Extensions > Gnome Extensions: Create install directory for "{{ extension.name }}"'
+    - name: 'System > Extensions > Gnome Extensions: "{{ extension.name }}" - Create install directory'
       ansible.builtin.file:
         path: '/home/{{ profile_username }}/.local/share/gnome-shell/extensions/{{ extension.uuid }}'
         state: directory
