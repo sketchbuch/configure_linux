@@ -1,13 +1,4 @@
 # Instant changes
-- name: 'Gnome > Config > Nautilus: Dirs sorted with files'
-  become: true
-  become_user: '{{ real_username }}'
-  community.general.dconf:
-    key: '/org/gtk/settings/file-chooser/sort-directories-first'
-    state: present
-    value: "false"
-  tags: ['system', 'file-manager', 'gnome']
-
 - name: 'Gnome > Config > Nautilus: Set single-click to open'
   become: true
   become_user: '{{ real_username }}'
@@ -69,6 +60,15 @@
   become_user: '{{ real_username }}'
   block:
     # Instant changes
+    - name: 'Gnome > Config > Nautilus: Dirs sorted with files'
+      become: true
+      become_user: '{{ real_username }}'
+      community.general.dconf:
+        key: '/org/gtk/settings/file-chooser/sort-directories-first'
+        state: present
+        value: "false"
+      tags: ['system', 'file-manager', 'gnome']
+
     - name: 'Gnome > Config > Nautilus: Hide hidden files'
       community.general.dconf:
         key: '/org/gtk/settings/file-chooser/show-hidden'
@@ -89,6 +89,15 @@
   become_user: '{{ real_username }}'
   block:
     # Instant changes
+    - name: 'Gnome > Config > Nautilus: Dirs sorted with files'
+      become: true
+      become_user: '{{ real_username }}'
+      community.general.dconf:
+        key: '/org/gtk/gtk4/settings/file-chooser/sort-directories-first'
+        state: present
+        value: "false"
+      tags: ['system', 'file-manager', 'gnome']
+      
     - name: 'Gnome > Config > Nautilus: Hide hidden files'
       community.general.dconf:
         key: '/org/gtk/gtk4/settings/file-chooser/show-hidden'
