@@ -223,7 +223,7 @@ wike              | Wike tasks
 - Add gnome extensions
 - Installed extensions and settings
 - Disable auto updates virtual
-- Make sure yeoman/vsce do not rerun like yarn et al
+- Chck if htop etc is available for mms if installed for stephen (all>distro>ubuntu)
 - Virtual stuff needs doing for mms
 
 ### Final

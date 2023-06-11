@@ -12,13 +12,12 @@
     - all
   tags: ['all']
 
-# change hosts back to real
-- hosts: virtual
+- hosts: real
   become: true
   gather_facts: false
   roles:
-    - real
-  tags: ['real', 'stephen']
+    - stephen
+  tags: ['stephen']
 
 - hosts: virtual
   become: true
