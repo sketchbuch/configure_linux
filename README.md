@@ -70,8 +70,9 @@ Tag     | Description
 ------- | ----------------------------
 all     | All hosts
 cleanup | Cleanup tasks
-real    | Real computers
+mms     | MMS User
 setup   | Ansible setup and prep tasks
+stephen | My user
 virtual | Virtual computers
 
 ### Tasks
