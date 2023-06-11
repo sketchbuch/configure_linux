@@ -1,5 +1,5 @@
 
-- name: 'Users > MMS > Create: Check if user "{{ mmsUsername }}" already exists'
+- name: 'Users > {{ mmsUsername }} > Create: Check if user "{{ mmsUsername }}" already exists'
   become: true
   ansible.builtin.getent:
     database: passwd

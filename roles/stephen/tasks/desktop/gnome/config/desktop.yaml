@@ -15,3 +15,14 @@
     state: present
     value: "true"
   tags: ['system', 'desktop', 'gnome']
+  when: not is_virtual
+
+- name: 'Gnome > Config > Desktop: Disable Hot Corners'
+  become: true
+  become_user: '{{ real_username }}'
+  community.general.dconf:
+    key: '/org/gnome/desktop/interface/enable-hot-corners'
+    state: present
+    value: "false"
+  tags: ['system', 'desktop', 'gnome']
+  when: is_virtual

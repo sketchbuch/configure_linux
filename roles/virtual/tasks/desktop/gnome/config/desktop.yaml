@@ -1,8 +1,0 @@
-- name: 'Gnome > Config > Desktop: Disable Hot Corners'
-  become: true
-  become_user: '{{ real_username }}'
-  community.general.dconf:
-    key: '/org/gnome/desktop/interface/enable-hot-corners'
-    state: present
-    value: "false"
-  tags: ['system', 'desktop', 'gnome']

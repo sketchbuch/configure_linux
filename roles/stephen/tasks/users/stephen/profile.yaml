@@ -1,6 +1,6 @@
 # A reboot/relogin will be required to actually access the shared folder
 
-- name: 'Users > Profile: Give user access to VirtualBox shared folders'
+- name: 'Users > {{ real_username_pretty }} > Profile: Give user access to VirtualBox shared folders'
   ansible.builtin.user:
     name: '{{ real_username }}'
     groups: 'vboxsf'

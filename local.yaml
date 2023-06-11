@@ -23,15 +23,8 @@
 #   become: true
 #   gather_facts: false
 #   roles:
-#     - virtual
-#   tags: ['virtual']
-
-# - hosts: virtual
-#   become: true
-#   gather_facts: false
-#   roles:
 #     - mms
-#   tags: ['virtual', 'mms']
+#   tags: ['mms']
 
 - hosts: all
   become: true

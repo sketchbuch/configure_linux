@@ -6,3 +6,4 @@
     state: present
     value: "true"
   tags: ['system', 'desktop', 'gnome']
+  when: is_ubuntu

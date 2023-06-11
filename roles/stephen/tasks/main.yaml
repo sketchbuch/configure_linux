@@ -12,6 +12,7 @@
   - include_tasks: 'users/{{ real_username }}/home_folder.yaml'
   - include_tasks: 'users/{{ real_username }}/freefilesync.yaml'
   - include_tasks: 'users/{{ real_username }}/obsidian.yaml'
+  - include_tasks: 'users/{{ real_username }}/profile.yaml'
 
   - block:
       - import_tasks: 'shared/system/tools/vsce.yaml'
