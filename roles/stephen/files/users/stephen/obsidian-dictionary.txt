@@ -2,11 +2,14 @@ A11y
 APG
 AbilityNet
 Ansible
+AxeCore
+CICD
 Callouts
 Checkboxes
 CodePen
 DOM
 Deque
+E2E
 EAA
 Enums
 FFmpeg
@@ -17,6 +20,7 @@ GraphQL
 HTML5
 I18n
 Infographic
+JSON
 Javascript
 L10n
 MDN
@@ -48,6 +52,7 @@ WebAIM
 WebAIM's
 Youtube
 a11y
+activatable
 callouts
 checkboxes
 codebase
@@ -80,4 +85,5 @@ tooltip
 uBlock
 unfocusable
 url
-checksum_v1 = 4c56d0cf8a76d575b550c7ddcfa4076e
+webaim
+checksum_v1 = abb220dd261d898edf248f21d053b79d
