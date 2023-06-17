@@ -5,5 +5,5 @@
     name: '{{ real_username }}'
     groups: 'vboxsf'
     append: true
-  tags: ['users', 'profile']
+  tags: ['users', 'profile', 'virtual']
   when: is_virtual and is_virtualbox

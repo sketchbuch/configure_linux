@@ -6,7 +6,7 @@
   ansible.builtin.file:
     path: '~/.var/app/md.obsidian.Obsidian/config/obsidian'
     state: directory
-  tags: ['users', 'folders', 'stephen', 'obsidian']
+  tags: ['users', 'folders', 'stephen', 'obsidian', 'virtual']
   when: is_virtual and is_virtualbox
 
 - name: 'Users > {{ real_username_pretty }} > Obsidian: Copy dictionary'
@@ -18,5 +18,5 @@
     owner: "{{ real_username }}"
     group: "{{ real_username }}"
     mode: 0600
-  tags: ['users', 'files', 'stephen', 'obsidian']
+  tags: ['users', 'files', 'stephen', 'obsidian', 'virtual']
   when: is_virtual and is_virtualbox

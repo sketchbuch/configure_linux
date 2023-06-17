@@ -73,7 +73,6 @@ cleanup | Cleanup tasks
 mms     | MMS User
 setup   | Ansible setup and prep tasks
 stephen | My user
-virtual | Virtual computers
 
 ### Tasks
 
@@ -111,6 +110,7 @@ text-editor  | Text Editor tasks
 touchpad     | Anything to do with touchpads
 ubuntu       | Ubuntu tasks
 users        | Related to the uses
+virtual      | Tasks for virtual computers
 
 ### Software Tasks
 
