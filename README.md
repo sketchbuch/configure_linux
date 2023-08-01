@@ -221,10 +221,9 @@ wike              | Wike tasks
 - ssh
 - clone repos?
 - Check virtual in gnome boxes
-- Add gnome extensions
 - Installed extensions and settings
 - Disable auto updates virtual
-- Chck if htop etc is available for mms if installed for stephen (all>distro>ubuntu)
+- Check if htop etc is available for mms if installed for stephen (all>distro>ubuntu)
 - Virtual stuff needs doing for mms
 
 ### Final

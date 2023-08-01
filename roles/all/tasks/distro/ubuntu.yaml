@@ -9,4 +9,4 @@
     - import_tasks: '../software/plocate.yaml'
     - import_tasks: '../software/powertop.yaml'
   tags: ['software', 'ubuntu']
-  when: is_ubuntu
+  when: installSoftware and is_ubuntu
