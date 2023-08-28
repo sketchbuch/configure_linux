@@ -2,7 +2,6 @@
   package:
     name:
       - gnome-mines
-      - thunderbird*
       - transmission-gtk
     state: absent
   tags: ['software', 'packages', 'cleanup']
