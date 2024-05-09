@@ -7,4 +7,4 @@ nodeVersions:
   - '18.4.0'
 
 users:
-  mms: true
+  mms: false
