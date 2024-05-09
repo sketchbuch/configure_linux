@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FreeFileSync XmlType="GUI" XmlFormat="17">
+<FreeFileSync XmlType="GUI" XmlFormat="23">
+    <Notes/>
     <Compare>
         <Variant>TimeAndSize</Variant>
         <Symlinks>Exclude</Symlinks>
         <IgnoreTimeShift/>
     </Compare>
     <Synchronize>
-        <Variant>Update</Variant>
-        <DetectMovedFiles>false</DetectMovedFiles>
+        <Differences LeftOnly="right" LeftNewer="right" RightNewer="none" RightOnly="none"/>
         <DeletionPolicy>RecycleBin</DeletionPolicy>
         <VersioningFolder Style="Replace"/>
     </Synchronize>
@@ -24,6 +24,7 @@
         <Exclude>
             <Item>*/.Trash-*/</Item>
             <Item>*/.recycle/</Item>
+            <Item>/Öffentlich/VM Dev/</Item>
         </Exclude>
         <SizeMin Unit="None">0</SizeMin>
         <SizeMax Unit="None">0</SizeMax>
@@ -39,7 +40,5 @@
     <PostSyncCommand Condition="Completion"/>
     <LogFolder/>
     <EmailNotification Condition="Always"/>
-    <Gui>
-        <GridViewType>Action</GridViewType>
-    </Gui>
+    <GridViewType>Action</GridViewType>
 </FreeFileSync>
