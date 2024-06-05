@@ -18,6 +18,11 @@
       tags: ["distro_tasks"]
       when: is_ubuntu
 
+    - import_tasks: "system/fonts/firacode.yaml"
+    - import_tasks: "system/fonts/inconsolata.yaml"
+    - import_tasks: "system/fonts/mscorefonts.yaml"
+    - import_tasks: "system/fonts/sourcecodepro.yaml"
+
     - name: "Include tasks for Gnome"
       include_tasks: "desktop/gnome.yaml"
       tags: ["gnome"]
@@ -34,11 +39,6 @@
       vars:
         profile_username: "{{ real_username }}"
         profile_username_pretty: "{{ real_username_pretty }}"
-
-    - import_tasks: "system/fonts/firacode.yaml"
-    - import_tasks: "system/fonts/inconsolata.yaml"
-    - import_tasks: "system/fonts/mscorefonts.yaml"
-    - import_tasks: "system/fonts/sourcecodepro.yaml"
 
     - name: "Install tools"
       block:
