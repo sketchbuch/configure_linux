@@ -1,12 +1,12 @@
 all:
   hosts:
-    - pulse
-    - vbox
+    pulse:
+    vbox:
 
 real:
   hosts:
-    - pulse
+    pulse:
 
 virtual:
   hosts:
-    - vbox
+    vbox:
