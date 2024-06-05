@@ -1,16 +1,3 @@
 font_droidmono: google-droid-sans-mono-fonts
 font_firacode: fonts-firacode
 font_inconsolata: fonts-inconsolata
-
-gnome_extensions:
-  - name: 'alphabetical-app-grid'
-    url: 'AlphabeticalAppGridstuarthayhurst.v29.shell-extension.zip'
-    uuid: 'AlphabeticalAppGrid@stuarthayhurst'
-  
-  - name: 'bluetooth-quick-connect'
-    url: 'bluetooth-quick-connectbjarosze.gmail.com.v34.shell-extension.zip'
-    uuid: 'bluetooth-quick-connect@bjarosze.gmail.com'
-  
-  - name: 'color-picker'
-    url: 'color-pickertuberry.v30.shell-extension.zip'
-    uuid: 'color-picker@tuberry'
