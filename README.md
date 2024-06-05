@@ -233,8 +233,9 @@ wike              | Wike tasks
 - Ubuntu 24.04
 
   - Remove Desktop Icons
-  - Set world clocks
-  - Set date time
+  - Set world clocks: roles/all/tasks/shared/desktop/gnome/config/clock.yaml
+  - Set date time: roles/all/tasks/shared/desktop/gnome/config/datetime.yaml
+  - Desktop: roles/all/tasks/shared/desktop/gnome/config/desktop.yaml
 
 ### Final
 
