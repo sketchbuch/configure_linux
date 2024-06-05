@@ -7,9 +7,16 @@
     - name: "Include tasks for {{ distro_pretty }}"
       block:
         - import_tasks: "distro/common.yaml"
-        - import_tasks: "distro/{{ distro }}.yaml"
+        - import_tasks: "distro/fedora.yaml"
       tags: ["distro_tasks"]
-      when: is_ubuntu or is_fedora
+      when: is_fedora
+
+    - name: "Include tasks for {{ distro_pretty }}"
+      block:
+        - import_tasks: "distro/common.yaml"
+        - import_tasks: "distro/ubuntu.yaml"
+      tags: ["distro_tasks"]
+      when: is_ubuntu
 
     - name: "Include tasks for Gnome"
       import_tasks: "desktop/gnome.yaml"
