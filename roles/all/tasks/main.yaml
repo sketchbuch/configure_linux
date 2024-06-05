@@ -1,8 +1,13 @@
 - block:
     - name: "Include vars for {{ distro_pretty }}"
-      include_vars: "{{ distro }}.yaml"
+      include_vars: "fedora.yaml"
       tags: ["always", "vars"]
-      when: is_ubuntu or is_fedora
+      when: is_fedora
+
+    - name: "Include vars for {{ distro_pretty }}"
+      include_vars: "ubuntu.yaml"
+      tags: ["always", "vars"]
+      when: is_ubuntu
 
     - name: "Include tasks for {{ distro_pretty }}"
       block:
