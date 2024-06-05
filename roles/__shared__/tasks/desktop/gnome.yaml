@@ -17,8 +17,6 @@
     - import_tasks: "gnome/config/touchpad.yaml"
     - import_tasks: "gnome/config/weather.yaml"
   tags: ["gnome"]
-  vars:
-    profile_username: "{{ profile_username }}"
   when: is_gnome
 
 - name: "Gnome Software Tasks"
