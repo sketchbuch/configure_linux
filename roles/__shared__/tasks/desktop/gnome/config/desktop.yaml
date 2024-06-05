@@ -6,6 +6,7 @@
     state: present
     value: "':close'"
   tags: ["system", "desktop", "gnome"]
+  when: is_ubuntu and (distro_major_version | int) <= 23
 
 - name: "Gnome > Config > Desktop: Prefer light mode"
   become: true
