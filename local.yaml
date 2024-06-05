@@ -4,7 +4,7 @@
   gather_facts: true
   roles:
     - setup
-  tags: ['setup', 'all']
+  tags: ["setup", "all"]
 
 # Things to do for all users
 - hosts: all
@@ -12,28 +12,27 @@
   gather_facts: false
   roles:
     - all
-  tags: ['all']
-
+  tags: ["all"]
 # My user
-- hosts: all
-  become: true
-  gather_facts: false
-  roles:
-    - stephen
-  tags: ['stephen']
+# - hosts: all
+#   become: true
+#   gather_facts: false
+#   roles:
+#     - stephen
+#   tags: ["stephen"]
 
 # Work user
-- hosts: real
-  become: true  
-  gather_facts: false
-  roles:
-    - mms
-  tags: ['mms']
+# - hosts: real
+#   become: true
+#   gather_facts: false
+#   roles:
+#     - mms
+#   tags: ["mms"]
 
 # Finish
-- hosts: all
-  become: true
-  gather_facts: false
-  roles:
-    - cleanup
-  tags: ['cleanup', 'all']
+# - hosts: all
+#   become: true
+#   gather_facts: false
+#   roles:
+#     - cleanup
+#   tags: ["cleanup", "all"]
