@@ -6,7 +6,6 @@
     state: present
     value: "':close'"
   tags: ["system", "desktop", "gnome"]
-  when: is_ubuntu and (distro_major_version | int) <= 23
 
 - name: "Gnome > Config > Desktop: Prefer light mode"
   become: true
@@ -16,7 +15,6 @@
     state: present
     value: "'prefer-light'"
   tags: ["system", "desktop", "gnome"]
-  when: is_ubuntu and (distro_major_version | int) <= 23
 
 - name: "Gnome > Config > Desktop: Remove app grid folders"
   become: true
@@ -25,4 +23,3 @@
     key: "/org/gnome/desktop/app-folders/folder-children"
     state: absent
   tags: ["system", "desktop", "gnome"]
-  when: is_ubuntu and (distro_major_version | int) <= 23
