@@ -1,6 +1,6 @@
 - name: "Gnome > Config > Desktop: Enable only close window button"
   become: true
-  become_user: "{{ real_username }}"
+  become_user: "{{ profile_username }}"
   community.general.dconf:
     key: "/org/gnome/desktop/wm/preferences/button-layout"
     state: present
@@ -9,7 +9,7 @@
 
 - name: "Gnome > Config > Desktop: Prefer light mode"
   become: true
-  become_user: "{{ real_username }}"
+  become_user: "{{ profile_username }}"
   community.general.dconf:
     key: "/org/gnome/desktop/interface/color-scheme"
     state: present
@@ -18,7 +18,7 @@
 
 - name: "Gnome > Config > Desktop: Remove app grid folders"
   become: true
-  become_user: "{{ real_username }}"
+  become_user: "{{ profile_username }}"
   community.general.dconf:
     key: "/org/gnome/desktop/app-folders/folder-children"
     state: absent

@@ -15,13 +15,13 @@
     - import_tasks: "gnome/config/weather.yaml"
   tags: ["gnome"]
   vars:
-    profile_username: "{{ real_username }}"
+    profile_username: "{{ profile_username }}"
   when: is_gnome
 
-- import_tasks: "../shared/system/extensions/gnome.yaml"
+- import_tasks: "../system/extensions/gnome.yaml"
   tags: ["gnome"]
   vars:
-    username: "{{ real_username }}"
+    profile_username: "{{ profile_username }}"
 
 - name: "Gnome Software Tasks"
   block:

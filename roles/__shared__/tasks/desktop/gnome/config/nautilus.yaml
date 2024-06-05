@@ -1,7 +1,7 @@
 # Instant changes
 - name: "Gnome > Config > Nautilus: Set single-click to open"
   become: true
-  become_user: "{{ real_username }}"
+  become_user: "{{ profile_username }}"
   community.general.dconf:
     key: "/org/gnome/nautilus/preferences/click-policy"
     state: present
@@ -10,7 +10,7 @@
 
 - name: "Gnome > Config > Nautilus: Show create link"
   become: true
-  become_user: "{{ real_username }}"
+  become_user: "{{ profile_username }}"
   community.general.dconf:
     key: "/org/gnome/nautilus/preferences/show-create-link"
     state: present
@@ -19,7 +19,7 @@
 
 - name: "Gnome > Config > Nautilus: Sidebar enabled"
   become: true
-  become_user: "{{ real_username }}"
+  become_user: "{{ profile_username }}"
   community.general.dconf:
     key: "/org/gnome/nautilus/window-state/start-with-sidebar"
     state: present
@@ -29,7 +29,7 @@
 # Affects new windows only
 - name: "Gnome > Config > Nautilus: Maximise window"
   become: true
-  become_user: "{{ real_username }}"
+  become_user: "{{ profile_username }}"
   community.general.dconf:
     key: "/org/gnome/nautilus/window-state/maximized"
     state: present
@@ -38,7 +38,7 @@
 
 - name: "Gnome > Config > Nautilus: Set icon view"
   become: true
-  become_user: "{{ real_username }}"
+  become_user: "{{ profile_username }}"
   community.general.dconf:
     key: "/org/gnome/nautilus/preferences/default-folder-viewer"
     state: present
@@ -47,7 +47,7 @@
 
 - name: "Gnome > Config > Nautilus: Sidebar width"
   become: true
-  become_user: "{{ real_username }}"
+  become_user: "{{ profile_username }}"
   community.general.dconf:
     key: "/org/gnome/nautilus/window-state/sidebar-width"
     state: present
@@ -57,12 +57,12 @@
 # Version speciic changes
 - name: "Ubuntu <= 23"
   become: true
-  become_user: "{{ real_username }}"
+  become_user: "{{ profile_username }}"
   block:
     # Instant changes
     - name: "Gnome > Config > Nautilus: Dirs sorted with files"
       become: true
-      become_user: "{{ real_username }}"
+      become_user: "{{ profile_username }}"
       community.general.dconf:
         key: "/org/gtk/settings/file-chooser/sort-directories-first"
         state: present
@@ -86,12 +86,12 @@
 
 - name: "Fedora or Ubuntu > 23"
   become: true
-  become_user: "{{ real_username }}"
+  become_user: "{{ profile_username }}"
   block:
     # Instant changes
     - name: "Gnome > Config > Nautilus: Dirs sorted with files"
       become: true
-      become_user: "{{ real_username }}"
+      become_user: "{{ profile_username }}"
       community.general.dconf:
         key: "/org/gtk/gtk4/settings/file-chooser/sort-directories-first"
         state: present

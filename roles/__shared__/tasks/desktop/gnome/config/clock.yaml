@@ -2,7 +2,7 @@
 
 - name: "Gnome > Config > Clock: Set world clocks"
   become: true
-  become_user: "{{ real_username }}"
+  become_user: "{{ profile_username }}"
   community.general.dconf:
     key: "/org/gnome/clocks/world-clocks"
     state: present

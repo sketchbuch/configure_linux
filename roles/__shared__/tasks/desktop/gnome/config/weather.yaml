@@ -2,7 +2,7 @@
 
 - name: "Gnome > Config > Weather: Set locations"
   become: true
-  become_user: "{{ real_username }}"
+  become_user: "{{ profile_username }}"
   community.general.dconf:
     key: "/org/gnome/Weather/locations"
     state: present

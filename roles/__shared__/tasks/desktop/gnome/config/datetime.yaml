@@ -2,7 +2,7 @@
 
 - name: "Gnome > Config > Datetime: Set time to use 24h Format"
   become: true
-  become_user: "{{ real_username }}"
+  become_user: "{{ profile_username }}"
   community.general.dconf:
     key: "/org/gnome/desktop/interface/clock-format"
     state: present
@@ -11,7 +11,7 @@
 
 - name: "Gnome > Config > Datetime: Show date next to clock"
   become: true
-  become_user: "{{ real_username }}"
+  become_user: "{{ profile_username }}"
   community.general.dconf:
     key: "/org/gnome/desktop/interface/clock-show-date"
     state: present
@@ -20,7 +20,7 @@
 
 - name: "Gnome > Config > Datetime: Show week day next to clock"
   become: true
-  become_user: "{{ real_username }}"
+  become_user: "{{ profile_username }}"
   community.general.dconf:
     key: "/org/gnome/desktop/interface/clock-show-weekday"
     state: present

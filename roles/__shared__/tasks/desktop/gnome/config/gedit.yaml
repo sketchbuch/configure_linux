@@ -3,7 +3,7 @@
     # View
     - name: "Gnome > Config > Gedit: Display line numbers"
       become: true
-      become_user: "{{ real_username }}"
+      become_user: "{{ profile_username }}"
       community.general.dconf:
         key: "/org/gnome/gedit/preferences/editor/display-line-numbers"
         state: present
@@ -12,7 +12,7 @@
 
     - name: "Gnome > Config > Gedit: Show status bar"
       become: true
-      become_user: "{{ real_username }}"
+      become_user: "{{ profile_username }}"
       community.general.dconf:
         key: "/org/gnome/gedit/preferences/ui/statusbar-visible"
         state: present
@@ -21,7 +21,7 @@
 
     - name: "Gnome > Config > Gedit: Enable text wraping"
       become: true
-      become_user: "{{ real_username }}"
+      become_user: "{{ profile_username }}"
       community.general.dconf:
         key: "/org/gnome/gedit/preferences/editor/wrap-mode"
         state: present
@@ -30,7 +30,7 @@
 
     - name: "Gnome > Config > Gedit: Do not split words"
       become: true
-      become_user: "{{ real_username }}"
+      become_user: "{{ profile_username }}"
       community.general.dconf:
         key: "/org/gnome/gedit/preferences/editor/wrap-last-split-mode"
         state: present
@@ -39,7 +39,7 @@
 
     - name: "Gnome > Config > Gedit: Highlight current line"
       become: true
-      become_user: "{{ real_username }}"
+      become_user: "{{ profile_username }}"
       community.general.dconf:
         key: "/org/gnome/gedit/preferences/editor/highlight-current-line"
         state: present
@@ -48,7 +48,7 @@
 
     - name: "Gnome > Config > Gedit: Highlight matching brackets"
       become: true
-      become_user: "{{ real_username }}"
+      become_user: "{{ profile_username }}"
       community.general.dconf:
         key: "/org/gnome/gedit/preferences/editor/bracket-matching"
         state: present
@@ -58,7 +58,7 @@
     # Editor
     - name: "Gnome > Config > Gedit: Tab Width"
       become: true
-      become_user: "{{ real_username }}"
+      become_user: "{{ profile_username }}"
       community.general.dconf:
         key: "/org/gnome/gedit/preferences/editor/tabs-size"
         state: present
@@ -67,7 +67,7 @@
 
     - name: "Gnome > Config > Gedit: Automatic indent"
       become: true
-      become_user: "{{ real_username }}"
+      become_user: "{{ profile_username }}"
       community.general.dconf:
         key: "/org/gnome/gedit/preferences/editor/auto-indent"
         state: present
@@ -77,7 +77,7 @@
     # Font & Colours
     - name: "Gnome > Config > Gedit: Set editor font"
       become: true
-      become_user: "{{ real_username }}"
+      become_user: "{{ profile_username }}"
       community.general.dconf:
         key: "/org/gnome/gedit/preferences/editor/editor-font"
         state: present
@@ -86,7 +86,7 @@
 
     - name: "Gnome > Config > Gedit: Use default font"
       become: true
-      become_user: "{{ real_username }}"
+      become_user: "{{ profile_username }}"
       community.general.dconf:
         key: "/org/gnome/gedit/preferences/editor/use-default-font"
         state: present
@@ -96,7 +96,7 @@
     # Plugins
     - name: "Gnome > Config > Gedit: Active plugins"
       become: true
-      become_user: "{{ real_username }}"
+      become_user: "{{ profile_username }}"
       community.general.dconf:
         key: "/org/gnome/gedit/plugins/active-plugins"
         state: present
@@ -116,20 +116,20 @@
   block:
     - name: "Gnome > Config > Gedit: Create settings folder"
       become: true
-      become_user: "{{ real_username }}"
+      become_user: "{{ profile_username }}"
       ansible.builtin.file:
-        path: "/home/{{ real_username }}/.var/app/org.gnome.gedit/config/glib-2.0/settings/"
+        path: "/home/{{ profile_username }}/.var/app/org.gnome.gedit/config/glib-2.0/settings/"
         state: directory
       tags: ["system", "text-editor", "gnome", "folders"]
 
     - name: "Gnome > Config > Gedit: Create settings file"
       become: true
-      become_user: "{{ real_username }}"
+      become_user: "{{ profile_username }}"
       ansible.builtin.copy:
-        src: "users/{{ real_username }}/gedit/settings"
-        dest: "/home/{{ real_username }}/.var/app/org.gnome.gedit/config/glib-2.0/settings/keyfile"
-        owner: "{{ real_username }}"
-        group: "{{ real_username }}"
+        src: "users/{{ profile_username }}/gedit/settings"
+        dest: "/home/{{ profile_username }}/.var/app/org.gnome.gedit/config/glib-2.0/settings/keyfile"
+        owner: "{{ profile_username }}"
+        group: "{{ profile_username }}"
         mode: 0600
       tags: ["system", "text-editor", "gnome", "files"]
   when: is_fedora or is_ubuntu and (distro_major_version | int) >= 23

@@ -33,8 +33,12 @@
         profile_username_pretty: "{{ userFullname }}"
 
     - name: "Include tasks for Gnome"
-      import_tasks: "desktop/gnome.yaml"
+      block:
+        - include_tasks: "shared/desktop/gnome.yaml"
+        - import_tasks: "desktop/gnome.yaml"
       tags: ["gnome"]
+      vars:
+        profile_username: "{{ userUsername }}"
       when: is_gnome
 
     - include_tasks: "users/{{ userUsername }}/home_folder.yaml"

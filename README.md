@@ -216,22 +216,27 @@ wike              | Wike tasks
 
 ## Todo
 
-- Android studio
-- Move profile image to real and virtual
-- Setup vpn
-- ssh
-- clone repos?
-- Check virtual in gnome boxes
-- Installed extensions and settings
-- Disable auto updates virtual
-- Check if htop etc is available for mms if installed for stephen (all>distro>ubuntu)
-- Virtual stuff needs doing for mms
-- Test on Fedora 40
+- Old
+
+  - Android studio
+  - Move profile image to real and virtual
+  - Setup vpn
+  - ssh
+  - clone repos?
+  - Disable auto updates virtual
+  - Virtual stuff needs doing for mms
+
+- Fedora 40
+
+  - ...
+
+- Ubuntu 24.04
+
+  - Remove Desktop Icons
 
 ### Final
 
 - Check software installed for stephen
-- Remove curl from which ever profile isn't first (if still combine all/stephen role)
 
 ## Manual Todos
 

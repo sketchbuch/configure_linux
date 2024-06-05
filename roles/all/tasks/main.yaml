@@ -22,12 +22,6 @@
     - import_tasks: "system/fonts/inconsolata.yaml"
     - import_tasks: "system/fonts/mscorefonts.yaml"
     - import_tasks: "system/fonts/sourcecodepro.yaml"
-
-    - name: "Include tasks for Gnome"
-      include_tasks: "desktop/gnome.yaml"
-      tags: ["gnome"]
-      when: is_gnome
-
     - import_tasks: "system/terminal.yaml"
 
   rescue:
