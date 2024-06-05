@@ -1,6 +1,6 @@
-- name: 'Software > Install Julius'
+- name: "Software > Install Julius"
   community.general.flatpak:
     name: com.github.bvschaik.julius
     state: present
     method: system
-  tags: ['software', 'games', 'julius', 'flatpak']
+  tags: ["software", "games", "julius", "flatpak"]

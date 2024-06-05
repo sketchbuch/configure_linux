@@ -1,34 +1,34 @@
 - name: 'System > Extensions > Gnome Extensions: "{{ extension.name }}" - Check if is already installed'
   become: true
-  become_user: '{{ profile_username }}'
+  become_user: "{{ profile_username }}"
   ansible.builtin.stat:
-    path: 'home/{{ profile_username }}/.local/share/gnome-shell/extensions/{{ extension.uuid }}/metadata.json'
+    path: "home/{{ profile_username }}/.local/share/gnome-shell/extensions/{{ extension.uuid }}/metadata.json"
   register: gnome_extension_check
-  tags: ['system', 'desktop', 'gnome', 'extensions', 'files']
+  tags: ["system", "desktop", "gnome", "extensions", "files"]
 
-- name: '{{ extension.name }}:'
+- name: "{{ extension.name }}:"
   become: true
-  become_user: '{{ profile_username }}'
+  become_user: "{{ profile_username }}"
   block:
     - name: 'System > Extensions > Gnome Extensions: "{{ extension.name }}" - Download'
       ansible.builtin.get_url:
-        dest: '{{ anisbleTmp }}/gnome_extensions/{{ extension.uuid }}.zip'
-        url: 'https://extensions.gnome.org/extension-data/{{ extension.url }}'
+        dest: "{{ anisbleTmp }}/gnome_extensions/{{ extension.uuid }}.zip"
+        url: "https://extensions.gnome.org/extension-data/{{ extension.url }}"
 
     - name: 'System > Extensions > Gnome Extensions: "{{ extension.name }}" - Create install directory'
       ansible.builtin.file:
-        path: '/home/{{ profile_username }}/.local/share/gnome-shell/extensions/{{ extension.uuid }}'
+        path: "/home/{{ profile_username }}/.local/share/gnome-shell/extensions/{{ extension.uuid }}"
         state: directory
 
     - name: 'System > Extensions > Gnome Extensions: "{{ extension.name }}" - Install'
       ansible.builtin.unarchive:
-        dest: '/home/{{ profile_username }}/.local/share/gnome-shell/extensions/{{ extension.uuid }}'
+        dest: "/home/{{ profile_username }}/.local/share/gnome-shell/extensions/{{ extension.uuid }}"
         remote_src: yes
-        src: '{{ anisbleTmp }}/gnome_extensions/{{ extension.uuid }}.zip'
+        src: "{{ anisbleTmp }}/gnome_extensions/{{ extension.uuid }}.zip"
 
     # Will not show up in extension manager until session restarts
     - name: 'System > Extensions > Gnome Extensions: "{{ extension.name }}" - Enable'
       ansible.builtin.command:
-        cmd: 'gnome-shell-extension-tool --enable-extension {{ extension.uuid }}'
-  tags: ['system', 'desktop', 'gnome', 'extensions', 'files', 'folders']
+        cmd: "gnome-shell-extension-tool --enable-extension {{ extension.uuid }}"
+  tags: ["system", "desktop", "gnome", "extensions", "files", "folders"]
   when: gnome_extension_check.stat.exists == false

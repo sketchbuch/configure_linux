@@ -1,6 +1,6 @@
-- name: 'Software > Install Pitivi'
+- name: "Software > Install Pitivi"
   community.general.flatpak:
     name: org.pitivi.Pitivi
     state: present
     method: system
-  tags: ['software', 'video', 'pitivi', 'flatpak']
+  tags: ["software", "video", "pitivi", "flatpak"]

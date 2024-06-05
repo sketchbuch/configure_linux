@@ -1,6 +1,6 @@
-- name: 'Software > Install VSCode'
+- name: "Software > Install VSCode"
   community.general.flatpak:
     name: com.visualstudio.code
     state: present
     method: system
-  tags: ['software', 'editors', 'dev', 'vscode', 'flatpak']
+  tags: ["software", "editors", "dev", "vscode", "flatpak"]

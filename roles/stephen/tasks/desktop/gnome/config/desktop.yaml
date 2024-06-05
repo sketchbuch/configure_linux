@@ -1,28 +1,28 @@
-- name: 'Gnome > Config > Desktop: Always show A11y Menu'
+- name: "Gnome > Config > Desktop: Always show A11y Menu"
   become: true
-  become_user: '{{ real_username }}'
+  become_user: "{{ real_username }}"
   community.general.dconf:
-    key: '/org/gnome/desktop/a11y/always-show-universal-access-status'
+    key: "/org/gnome/desktop/a11y/always-show-universal-access-status"
     state: present
     value: "true"
-  tags: ['system', 'desktop', 'gnome']
+  tags: ["system", "desktop", "gnome"]
 
-- name: 'Gnome > Config > Desktop: Enable Hot Corners'
+- name: "Gnome > Config > Desktop: Enable Hot Corners"
   become: true
-  become_user: '{{ real_username }}'
+  become_user: "{{ real_username }}"
   community.general.dconf:
-    key: '/org/gnome/desktop/interface/enable-hot-corners'
+    key: "/org/gnome/desktop/interface/enable-hot-corners"
     state: present
     value: "true"
-  tags: ['system', 'desktop', 'gnome']
+  tags: ["system", "desktop", "gnome"]
   when: not is_virtual
 
-- name: 'Gnome > Config > Desktop: Disable Hot Corners'
+- name: "Gnome > Config > Desktop: Disable Hot Corners"
   become: true
-  become_user: '{{ real_username }}'
+  become_user: "{{ real_username }}"
   community.general.dconf:
-    key: '/org/gnome/desktop/interface/enable-hot-corners'
+    key: "/org/gnome/desktop/interface/enable-hot-corners"
     state: present
     value: "false"
-  tags: ['system', 'desktop', 'gnome', 'virtual']
+  tags: ["system", "desktop", "gnome", "virtual"]
   when: is_virtual

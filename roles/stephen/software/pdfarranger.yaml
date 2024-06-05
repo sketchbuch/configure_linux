@@ -1,6 +1,6 @@
-- name: 'Software > Install PDF Arranger'
+- name: "Software > Install PDF Arranger"
   community.general.flatpak:
     name: com.github.jeromerobert.pdfarranger
     state: present
     method: system
-  tags: ['software', 'documents', 'pdfarranger', 'flatpak']
+  tags: ["software", "documents", "pdfarranger", "flatpak"]

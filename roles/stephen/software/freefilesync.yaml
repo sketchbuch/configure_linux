@@ -1,6 +1,6 @@
-- name: 'Software > Install FreeFileSync'
+- name: "Software > Install FreeFileSync"
   community.general.flatpak:
     name: org.freefilesync.FreeFileSync
     state: present
     method: system
-  tags: ['software', 'file-management', 'freefilesync', 'flatpak']
+  tags: ["software", "file-management", "freefilesync", "flatpak"]

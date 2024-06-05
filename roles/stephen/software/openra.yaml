@@ -1,6 +1,6 @@
-- name: 'Software > Install OpenRA'
+- name: "Software > Install OpenRA"
   community.general.flatpak:
     name: net.openra.OpenRA
     state: present
     method: system
-  tags: ['software', 'games', 'openra', 'flatpak']
+  tags: ["software", "games", "openra", "flatpak"]

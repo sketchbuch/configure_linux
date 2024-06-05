@@ -1,6 +1,6 @@
-- name: 'Software > Install Gnome Web'
+- name: "Software > Install Gnome Web"
   community.general.flatpak:
     name: org.gnome.Epiphany
     state: present
     method: system
-  tags: ['software', 'internet', 'gnome-web', 'flatpak']
+  tags: ["software", "internet", "gnome-web", "flatpak"]

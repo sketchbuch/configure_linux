@@ -1,6 +1,6 @@
-- name: 'Software > Install Curtail'
+- name: "Software > Install Curtail"
   community.general.flatpak:
     name: com.github.huluti.Curtail
     state: present
     method: system
-  tags: ['software', 'file-management', 'curtail', 'circle', 'flatpak']
+  tags: ["software", "file-management", "curtail", "circle", "flatpak"]

@@ -1,6 +1,6 @@
-- name: 'Software > Install Gnome Loupe'
+- name: "Software > Install Gnome Loupe"
   community.general.flatpak:
     name: org.gnome.Loupe
     state: present
     method: system
-  tags: ['software', 'graphics', 'gnome-loupe', 'flatpak']
+  tags: ["software", "graphics", "gnome-loupe", "flatpak"]

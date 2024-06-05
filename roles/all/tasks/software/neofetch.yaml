@@ -1,5 +1,0 @@
-- name: 'Software > Install Neofetch'
-  ansible.builtin.package:
-    name: neofetch
-    state: present
-  tags: ['software', 'system', 'neofetch', 'package']

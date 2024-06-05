@@ -1,6 +1,6 @@
-- name: 'Software > Install Gnome Calendar'
+- name: "Software > Install Gnome Calendar"
   community.general.flatpak:
     name: org.gnome.Calendar
     state: present
     method: system
-  tags: ['software', 'productivity', 'gnome-calendar', 'flatpak']
+  tags: ["software", "productivity", "gnome-calendar", "flatpak"]

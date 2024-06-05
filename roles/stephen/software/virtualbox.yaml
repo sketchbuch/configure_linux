@@ -1,5 +1,5 @@
-- name: 'Software > Install VirtualBox'
+- name: "Software > Install VirtualBox"
   ansible.builtin.package:
     name: virtualbox
     state: present
-  tags: ['software', 'virtualisation', 'virtualbox', 'package']
+  tags: ["software", "virtualisation", "virtualbox", "package"]

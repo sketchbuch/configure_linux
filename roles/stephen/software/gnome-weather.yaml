@@ -1,6 +1,6 @@
-- name: 'Software > Install Gnome Weather'
+- name: "Software > Install Gnome Weather"
   community.general.flatpak:
     name: org.gnome.Weather
     state: present
     method: system
-  tags: ['software', 'utils', 'gnome-weather', 'flatpak']
+  tags: ["software", "utils", "gnome-weather", "flatpak"]

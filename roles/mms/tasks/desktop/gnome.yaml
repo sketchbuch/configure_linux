@@ -1,11 +1,11 @@
-- name: 'Gnome Tasks'
+- name: "Gnome Tasks"
   block:
-    - import_tasks: 'gnome/config/desktop.yaml'
-    
-    - import_tasks: 'shared/users/nautilus.yaml'
-  tags: ['gnome']
+    - import_tasks: "gnome/config/desktop.yaml"
+
+    - import_tasks: "shared/users/nautilus.yaml"
+  tags: ["gnome"]
   vars:
-    profile_username: '{{ mmsUsername }}'
-    profile_username_pretty: '{{ mmsFullname }}'
-    profile_image_folder: '{{ mmsImageFolder }}'
+    profile_username: "{{ mmsUsername }}"
+    profile_username_pretty: "{{ mmsFullname }}"
+    profile_image_folder: "{{ mmsImageFolder }}"
   when: is_gnome

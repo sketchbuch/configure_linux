@@ -1,6 +1,6 @@
-- name: 'Software > Install Flatseal'
+- name: "Software > Install Flatseal"
   community.general.flatpak:
     name: com.github.tchx84.Flatseal
     state: present
     method: system
-  tags: ['software', 'security', 'flatseal', 'flatpak']
+  tags: ["software", "security", "flatseal", "flatpak"]

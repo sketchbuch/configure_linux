@@ -1,14 +1,14 @@
-- name: 'System > Remove useless packages'
+- name: "System > Remove useless packages"
   ansible.builtin.apt:
     autoclean: yes
-  tags: ['system', 'package', 'cleanup']
+  tags: ["system", "package", "cleanup"]
 
-- name: 'System > Remove unused dependencies'
+- name: "System > Remove unused dependencies"
   ansible.builtin.apt:
     autoremove: yes
-  tags: ['system', 'package', 'cleanup']
+  tags: ["system", "package", "cleanup"]
 
-- name: 'System > Update package cache'
+- name: "System > Update package cache"
   ansible.builtin.apt:
     update_cache: true
-  tags: ['system', 'package', 'cleanup']
+  tags: ["system", "package", "cleanup"]

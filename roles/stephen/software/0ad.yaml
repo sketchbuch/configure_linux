@@ -1,6 +1,6 @@
-- name: 'Software > Install 0AD'
+- name: "Software > Install 0AD"
   community.general.flatpak:
     name: com.play0ad.zeroad
     state: present
     method: system
-  tags: ['software', 'games', '0ad', 'flatpak']
+  tags: ["software", "games", "0ad", "flatpak"]

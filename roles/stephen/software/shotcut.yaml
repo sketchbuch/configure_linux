@@ -1,6 +1,6 @@
-- name: 'Software > Install Shotcut'
+- name: "Software > Install Shotcut"
   community.general.flatpak:
     name: org.shotcut.Shotcut
     state: present
     method: system
-  tags: ['software', 'video', 'shotcut', 'flatpak']
+  tags: ["software", "video", "shotcut", "flatpak"]

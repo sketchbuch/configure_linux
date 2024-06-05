@@ -1,6 +1,6 @@
-- name: 'Software > Install Celeste'
+- name: "Software > Install Celeste"
   community.general.flatpak:
     name: com.hunterwittenborn.Celeste
     state: present
     method: system
-  tags: ['software', 'file-management', 'celeste', 'flatpak']
+  tags: ["software", "file-management", "celeste", "flatpak"]

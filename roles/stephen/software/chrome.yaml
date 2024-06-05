@@ -1,44 +1,43 @@
 # https://www.itzgeek.com/how-tos/linux/ubuntu-how-tos/how-to-install-google-chrome-on-ubuntu-22-04.html
 # https://www.ansiblepilot.com/articles/install-google-chrome-in-debian-like-systems-ansible-module-apt_key-apt_repository-and-apt/
 
-- name: 'Chrome for Ubuntu'
+- name: "Chrome for Ubuntu"
   block:
-    - name: 'Software > Install Chrome: Add Google signing key'
+    - name: "Software > Install Chrome: Add Google signing key"
       ansible.builtin.apt_key:
         state: present
         url: "https://dl.google.com/linux/linux_signing_key.pub"
 
-    - name: 'Software > Install Chrome: Add repo'
+    - name: "Software > Install Chrome: Add repo"
       ansible.builtin.apt_repository:
         filename: google-chrome
         repo: deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
         state: present
 
-    - name: 'Software > Install Chrome'
+    - name: "Software > Install Chrome"
       ansible.builtin.apt:
         name: "google-chrome-stable"
         state: latest
         update_cache: true
-  tags: ['software', 'internet', 'chrome', 'package']
+  tags: ["software", "internet", "chrome", "package"]
   when: is_ubuntu
-
 
 # https://docs.fedoraproject.org/en-US/quick-docs/installing-chromium-or-google-chrome-browsers/
 
-- name: 'Chrome for Fedora'
+- name: "Chrome for Fedora"
   block:
-    - name: 'Software > Install Chrome: Add workstation repos'
+    - name: "Software > Install Chrome: Add workstation repos"
       ansible.builtin.dnf:
         name: fedora-workstation-repositories
         state: present
-    
-    - name: 'Software > Install Chrome: Enable chrome in DNF config manager'
+
+    - name: "Software > Install Chrome: Enable chrome in DNF config manager"
       ansible.builtin.shell:
         cmd: dnf config-manager --set-enabled google-chrome
 
-    - name: 'Software > Install Chrome'
+    - name: "Software > Install Chrome"
       ansible.builtin.dnf:
         name: google-chrome-stable
         state: present
-  tags: ['software', 'internet', 'chrome', 'package']
+  tags: ["software", "internet", "chrome", "package"]
   when: is_fedora

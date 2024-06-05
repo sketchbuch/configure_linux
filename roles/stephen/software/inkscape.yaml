@@ -1,6 +1,6 @@
-- name: 'Software > Install Inkscape'
+- name: "Software > Install Inkscape"
   community.general.flatpak:
     name: org.inkscape.Inkscape
     state: present
     method: system
-  tags: ['software', 'graphics', 'inkscape', 'flatpak']
+  tags: ["software", "graphics", "inkscape", "flatpak"]

@@ -1,6 +1,6 @@
-- name: 'Software > Install Tangram'
+- name: "Software > Install Tangram"
   community.general.flatpak:
     name: re.sonny.Tangram
     state: present
     method: system
-  tags: ['software', 'internet', 'tangram', 'circle', 'flatpak']
+  tags: ["software", "internet", "tangram", "circle", "flatpak"]

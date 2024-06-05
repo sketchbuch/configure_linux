@@ -1,27 +1,27 @@
 # Install fails if using command so use shell
-- name: 'System > Tools > NVM: Install'
+- name: "System > Tools > NVM: Install"
   become: true
-  become_user: '{{ profile_username }}'
+  become_user: "{{ profile_username }}"
   ansible.builtin.shell:
-    cmd: 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash'
-    creates: '/home/{{ profile_username }}/.nvm/nvm.sh'
-  tags: ['system', 'dev']
+    cmd: "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash"
+    creates: "/home/{{ profile_username }}/.nvm/nvm.sh"
+  tags: ["system", "dev"]
 
-- name: 'System > Tools > NVM: Install node versions'
+- name: "System > Tools > NVM: Install node versions"
   become: true
-  become_user: '{{ profile_username }}'
+  become_user: "{{ profile_username }}"
   ansible.builtin.command:
     cmd: '/bin/bash -c "source ~/.nvm/nvm.sh && nvm install {{ nodeVersion }}"'
-    creates: '/home/{{ profile_username }}/.nvm/versions/node/v{{ nodeVersion }}/bin/npm'
-  loop: '{{ nodeVersions }}'
+    creates: "/home/{{ profile_username }}/.nvm/versions/node/v{{ nodeVersion }}/bin/npm"
+  loop: "{{ nodeVersions }}"
   loop_control:
     loop_var: nodeVersion
-  tags: ['system', 'dev']
+  tags: ["system", "dev"]
 
-- name: 'System > Tools > NVM: Set default node version to {{ nodeVersions | first}}'
+- name: "System > Tools > NVM: Set default node version to {{ nodeVersions | first}}"
   become: true
-  become_user: '{{ profile_username }}'
+  become_user: "{{ profile_username }}"
   ansible.builtin.command:
     cmd: '/bin/bash -c "source ~/.nvm/nvm.sh && nvm alias default {{ nodeVersions | first}}"'
-    creates: '/home/{{ profile_username }}/.nvm/alias'
-  tags: ['system', 'dev']
+    creates: "/home/{{ profile_username }}/.nvm/alias"
+  tags: ["system", "dev"]

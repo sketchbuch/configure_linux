@@ -1,6 +1,6 @@
-- name: 'Software > Install KeePass XC'
+- name: "Software > Install KeePass XC"
   community.general.flatpak:
     name: org.keepassxc.KeePassXC
     state: present
     method: system
-  tags: ['software', 'security', 'keepassxc', 'flatpak']
+  tags: ["software", "security", "keepassxc", "flatpak"]

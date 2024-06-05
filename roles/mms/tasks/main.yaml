@@ -1,39 +1,39 @@
 - block:
-  - name: 'Include vars for mms'
-    include_vars: 'mms.yaml'
-    tags: ['always', 'vars']
-  
-  - import_tasks: 'users/create.yaml'
+    - name: "Include vars for mms"
+      include_vars: "mms.yaml"
+      tags: ["always", "vars"]
 
-  - name: 'User settings'
-    block:
-      - import_tasks: 'shared/users/git.yaml'
-      - import_tasks: 'shared/users/gtk.yaml'
-      - import_tasks: 'shared/users/home_folder.yaml'
-      - import_tasks: 'shared/users/profile.yaml'
-      - import_tasks: 'shared/users/terminal.yaml'
-    tags: ['mms']
-    vars:
-      profile_image_folder: '{{ mmsImageFolder }}'
-      profile_username_pretty: '{{ mmsFullname }}'
-      profile_username: '{{ mmsUsername }}'
-  
-  - name: 'Include tasks for Gnome'
-    import_tasks: 'desktop/gnome.yaml'
-    tags: ['gnome']
-    when: is_gnome
-    
-  - import_tasks: 'users/mms/home_folder.yaml'
-  - import_tasks: 'users/mms/wallpaper.yaml'
+    - import_tasks: "users/create.yaml"
 
-  - name: 'Install tools'
-    block:
-      - import_tasks: 'shared/system/tools/nvm.yaml'
-      - import_tasks: 'shared/system/tools/pnpm.yaml'
-      - import_tasks: 'shared/system/tools/yarn.yaml'
-    vars:
-      profile_username: '{{ mmsUsername }}'
-    tags: ['mms']
+    - name: "User settings"
+      block:
+        - import_tasks: "shared/users/git.yaml"
+        - import_tasks: "shared/users/gtk.yaml"
+        - import_tasks: "shared/users/home_folder.yaml"
+        - import_tasks: "shared/users/profile.yaml"
+        - import_tasks: "shared/users/terminal.yaml"
+      tags: ["mms"]
+      vars:
+        profile_image_folder: "{{ mmsImageFolder }}"
+        profile_username_pretty: "{{ mmsFullname }}"
+        profile_username: "{{ mmsUsername }}"
+
+    - name: "Include tasks for Gnome"
+      import_tasks: "desktop/gnome.yaml"
+      tags: ["gnome"]
+      when: is_gnome
+
+    - import_tasks: "users/mms/home_folder.yaml"
+    - import_tasks: "users/mms/wallpaper.yaml"
+
+    - name: "Install tools"
+      block:
+        - import_tasks: "shared/system/tools/nvm.yaml"
+        - import_tasks: "shared/system/tools/pnpm.yaml"
+        - import_tasks: "shared/system/tools/yarn.yaml"
+      vars:
+        profile_username: "{{ mmsUsername }}"
+      tags: ["mms"]
 
   rescue:
     - set_fact: mms_task_failed=true

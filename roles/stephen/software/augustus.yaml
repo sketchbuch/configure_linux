@@ -1,6 +1,6 @@
-- name: 'Software > Install Augustus'
+- name: "Software > Install Augustus"
   community.general.flatpak:
     name: com.github.keriew.augustus
     state: present
     method: system
-  tags: ['software', 'games', 'augustus', 'flatpak']
+  tags: ["software", "games", "augustus", "flatpak"]

@@ -1,16 +1,15 @@
 - block:
-  - name: 'Include vars for setup'
-    include_vars: 'setup.yaml'
-    tags: ['always', 'vars']
+    - name: "Include vars for setup"
+      include_vars: "setup.yaml"
+      tags: ["always", "vars"]
 
+    - import_tasks: "facts/package.yaml"
+    - import_tasks: "facts/checks.yaml"
 
-  - import_tasks: 'facts/package.yaml'
-  - import_tasks: 'facts/checks.yaml'
+    - import_tasks: "prep/files.yaml"
 
-  - import_tasks: 'prep/files.yaml'
-
-  - import_tasks: 'vars/get.yaml'
-  - import_tasks: 'vars/debug.yaml'
+    - import_tasks: "variables/get.yaml"
+    - import_tasks: "variables/debug.yaml"
 
   rescue:
     - set_fact: setup_task_failed=true

@@ -1,6 +1,6 @@
-- name: 'Software > Install LosslessCut'
+- name: "Software > Install LosslessCut"
   community.general.flatpak:
     name: no.mifi.losslesscut
     state: present
     method: system
-  tags: ['software', 'video', 'losslesscut', 'flatpak']
+  tags: ["software", "video", "losslesscut", "flatpak"]

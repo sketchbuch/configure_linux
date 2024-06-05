@@ -5,7 +5,6 @@
   block:
     - import_tasks: '../software/fsearch.yaml'
     - import_tasks: '../software/htop.yaml'
-    - import_tasks: '../software/neofetch.yaml'
     - import_tasks: '../software/plocate.yaml'
     - import_tasks: '../software/powertop.yaml'
   tags: ['software', 'ubuntu']

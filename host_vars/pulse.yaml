@@ -1,10 +1,11 @@
-anisbleTmp: '~/.ansible/tmp'
+anisbleTmp: "~/.ansible/tmp"
 installSoftware: true
 
 nodeVersions:
-  - '16.13.0'
-  - '16.15.1'
-  - '18.4.0'
+  - "16.13.0"
+  - "16.15.1"
+  - "18.4.0"
 
 users:
   mms: true
+  stephen: true

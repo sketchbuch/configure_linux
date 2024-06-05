@@ -1,6 +1,6 @@
-- name: 'Software > Install Webfont Kit Generator'
+- name: "Software > Install Webfont Kit Generator"
   community.general.flatpak:
     name: com.rafaelmardojai.WebfontKitGenerator
     state: present
     method: system
-  tags: ['software', 'dev', 'webfontkitgen', 'circle', 'flatpak']
+  tags: ["software", "dev", "webfontkitgen", "circle", "flatpak"]

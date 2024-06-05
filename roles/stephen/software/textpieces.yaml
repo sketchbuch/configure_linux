@@ -1,6 +1,6 @@
-- name: 'Software > Install Text Pieces'
+- name: "Software > Install Text Pieces"
   community.general.flatpak:
     name: com.github.liferooter.textpieces
     state: present
     method: system
-  tags: ['software', 'utils', 'textpieces', 'circle', 'flatpak']
+  tags: ["software", "utils", "textpieces", "circle", "flatpak"]

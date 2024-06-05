@@ -1,10 +1,10 @@
-- name: 'System > Tools > PNPM: Install for all node versions'
+- name: "System > Tools > PNPM: Install for all node versions"
   become: true
-  become_user: '{{ profile_username }}'
+  become_user: "{{ profile_username }}"
   ansible.builtin.command:
     cmd: '/bin/bash -c "source ~/.nvm/nvm.sh && nvm use {{ nodeVersion }} && npm install -g pnpm"'
-    creates: '/home/{{ profile_username }}/.nvm/versions/node/v{{ nodeVersion }}/bin/pnpm'
-  loop: '{{ nodeVersions }}'
+    creates: "/home/{{ profile_username }}/.nvm/versions/node/v{{ nodeVersion }}/bin/pnpm"
+  loop: "{{ nodeVersions }}"
   loop_control:
     loop_var: nodeVersion
-  tags: ['system', 'dev']
+  tags: ["system", "dev"]

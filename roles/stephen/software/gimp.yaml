@@ -1,6 +1,6 @@
-- name: 'Software > Install GIMP'
+- name: "Software > Install GIMP"
   community.general.flatpak:
     name: org.gimp.GIMP
     state: present
     method: system
-  tags: ['software', 'graphics', 'gimp', 'flatpak']
+  tags: ["software", "graphics", "gimp", "flatpak"]

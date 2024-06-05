@@ -5,4 +5,4 @@
   ansible.builtin.file:
     path: "{{ anisbleTmp }}"
     state: directory
-  tags: ['setup', 'folders']
+  tags: ["setup", "folders"]

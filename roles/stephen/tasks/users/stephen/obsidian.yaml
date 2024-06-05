@@ -1,20 +1,20 @@
 # https://forum.obsidian.md/t/where-is-the-user-spell-check-dictionary-file-located/35714/2
 
-- name: 'Users > {{ real_username_pretty }} > Obsidian: Create dictionary directory'
+- name: "Users > {{ real_username_pretty }} > Obsidian: Create dictionary directory"
   become: true
-  become_user: '{{ real_username }}'
+  become_user: "{{ real_username }}"
   ansible.builtin.file:
-    path: '~/.var/app/md.obsidian.Obsidian/config/obsidian'
+    path: "~/.var/app/md.obsidian.Obsidian/config/obsidian"
     state: directory
-  tags: ['users', 'folders', 'stephen', 'obsidian', 'virtual']
+  tags: ["users", "folders", "stephen", "obsidian", "virtual"]
 
-- name: 'Users > {{ real_username_pretty }} > Obsidian: Copy dictionary'
+- name: "Users > {{ real_username_pretty }} > Obsidian: Copy dictionary"
   become: true
-  become_user: '{{ real_username }}'
+  become_user: "{{ real_username }}"
   ansible.builtin.copy:
-    src: 'users/{{ real_username }}/obsidian-dictionary.txt'
-    dest: '~/.var/app/md.obsidian.Obsidian/config/obsidian/Custom Dictionary.txt'
+    src: "users/{{ real_username }}/obsidian-dictionary.txt"
+    dest: "~/.var/app/md.obsidian.Obsidian/config/obsidian/Custom Dictionary.txt"
     owner: "{{ real_username }}"
     group: "{{ real_username }}"
     mode: 0600
-  tags: ['users', 'files', 'stephen', 'obsidian', 'virtual']
+  tags: ["users", "files", "stephen", "obsidian", "virtual"]

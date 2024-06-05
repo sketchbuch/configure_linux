@@ -1,6 +1,6 @@
-- name: 'Software > Install Collision'
+- name: "Software > Install Collision"
   community.general.flatpak:
     name: dev.geopjr.Collision
     state: present
     method: system
-  tags: ['software', 'security', 'collision', 'circle', 'flatpak']
+  tags: ["software", "security", "collision", "circle", "flatpak"]

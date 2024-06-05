@@ -1,7 +1,7 @@
-- name: 'System > Extensions > Gnome Prep: Create tmp directory'
+- name: "System > Extensions > Gnome Prep: Create tmp directory"
   become: true
-  become_user: '{{ profile_username }}'
+  become_user: "{{ profile_username }}"
   ansible.builtin.file:
-    path: '{{ anisbleTmp }}/gnome_extensions'
+    path: "{{ anisbleTmp }}/gnome_extensions"
     state: directory
-  tags: ['system', 'desktop', 'gnome', 'extensions', 'folders']
+  tags: ["system", "desktop", "gnome", "extensions", "folders"]

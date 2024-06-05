@@ -1,6 +1,6 @@
-- name: 'Software > Install Peek'
+- name: "Software > Install Peek"
   community.general.flatpak:
     name: com.uploadedlobster.peek
     state: present
     method: system
-  tags: ['software', 'video', 'peek', 'flatpak']
+  tags: ["software", "video", "peek", "flatpak"]

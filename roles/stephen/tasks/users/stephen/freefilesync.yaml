@@ -1,25 +1,25 @@
-- name: 'Users > {{ real_username_pretty }} > FreeFileSync: Create folder'
+- name: "Users > {{ real_username_pretty }} > FreeFileSync: Create folder"
   become: true
-  become_user: '{{ real_username }}'
+  become_user: "{{ real_username }}"
   ansible.builtin.file:
-    path: '/home/{{ real_username }}/Apps/FreeFileSync'
+    path: "/home/{{ real_username }}/Apps/FreeFileSync"
     state: directory
-  tags: ['users', 'folders', 'stephen']
+  tags: ["users", "folders", "stephen"]
 
-- name: 'Users > {{ real_username_pretty }} > FreeFileSync: Copy ffs_gui files'
+- name: "Users > {{ real_username_pretty }} > FreeFileSync: Copy ffs_gui files"
   become: true
-  become_user: '{{ real_username }}'
+  become_user: "{{ real_username }}"
   ansible.builtin.copy:
-    dest: '/home/{{ real_username }}/Apps/FreeFileSync/{{ file }}'
+    dest: "/home/{{ real_username }}/Apps/FreeFileSync/{{ file }}"
     group: "{{ real_username }}"
     mode: 0600
     owner: "{{ real_username }}"
-    src: 'users/{{ real_username }}/freefilesync/{{ file }}'
+    src: "users/{{ real_username }}/freefilesync/{{ file }}"
   loop:
-    - 'Books.ffs_gui'
-    - 'Laptop.ffs_gui'
-    - 'Projects.ffs_gui'
-    - 'Work.ffs_gui'
+    - "Books.ffs_gui"
+    - "Laptop.ffs_gui"
+    - "Projects.ffs_gui"
+    - "Work.ffs_gui"
   loop_control:
     loop_var: file
-  tags: ['users', 'file-management', 'files', 'stephen']
+  tags: ["users", "file-management", "files", "stephen"]

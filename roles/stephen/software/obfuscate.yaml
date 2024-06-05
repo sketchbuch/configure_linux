@@ -1,6 +1,6 @@
-- name: 'Software > Install Obfuscate'
+- name: "Software > Install Obfuscate"
   community.general.flatpak:
     name: com.belmoussaoui.Obfuscate
     state: present
     method: system
-  tags: ['software', 'security', 'obfuscate', 'circle', 'flatpak']
+  tags: ["software", "security", "obfuscate", "circle", "flatpak"]

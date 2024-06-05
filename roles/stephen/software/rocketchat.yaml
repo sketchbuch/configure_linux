@@ -1,6 +1,6 @@
-- name: 'Software > Install RocketChat'
+- name: "Software > Install RocketChat"
   community.general.flatpak:
     name: chat.rocket.RocketChat
     state: present
     method: system
-  tags: ['software', 'comms', 'rocketchat', 'flatpak']
+  tags: ["software", "comms", "rocketchat", "flatpak"]

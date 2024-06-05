@@ -1,7 +1,7 @@
-- name: 'Facts > Checks: Flatpak is installed'
+- name: "Facts > Checks: Flatpak is installed"
   ansible.builtin.assert:
     that:
       - ansible_facts.packages['flatpak'] is defined
-    fail_msg: 'Flatpak must be installed since a restart is required'
-    success_msg: 'Flatpak is installed'
-  tags: ['setup', 'dep_check']
+    fail_msg: "Flatpak must be installed since a restart is required"
+    success_msg: "Flatpak is installed"
+  tags: ["setup", "dep_check"]

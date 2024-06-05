@@ -1,6 +1,6 @@
-- name: 'Software > Install Gnome Sudoku'
+- name: "Software > Install Gnome Sudoku"
   community.general.flatpak:
     name: org.gnome.Sudoku
     state: present
     method: system
-  tags: ['software', 'games', 'gnome-sudoku', 'flatpak']
+  tags: ["software", "games", "gnome-sudoku", "flatpak"]

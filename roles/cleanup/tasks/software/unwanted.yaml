@@ -1,7 +1,7 @@
-- name: 'Software > Remove unwanted software'
+- name: "Software > Remove unwanted software"
   package:
     name:
       - gnome-mines
       - transmission-gtk
     state: absent
-  tags: ['software', 'packages', 'cleanup']
+  tags: ["software", "packages", "cleanup"]

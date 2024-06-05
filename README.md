@@ -8,11 +8,12 @@ My ansible setup to configure linux and install apps etc. in real and virtual en
 
 - **Install Git**
 
-  - `sudo apt install git`
+  - `sudo apt install git` (Ubuntu)
 
 - **Install Ansible**
 
-  - `sudo apt install ansible`
+  - `sudo apt install ansible` (Ubuntu)
+  - `sudo dnf install ansible` (Fedora)
 
 - **Install Flatpak**
 
@@ -48,7 +49,7 @@ My ansible setup to configure linux and install apps etc. in real and virtual en
 
 - Ubuntu 22.04
 - Ubuntu 23.04
-- Fedora 37
+- Fedora 40
 
 ## Hosts
 
@@ -177,13 +178,13 @@ gnome-texteditor  | Gnome Text Editor tasks
 gnome-web         | Gnome Web Browser tasks
 gnome-weather     | Gnome Weather tasks
 htop              | Htop tasks
+impression        | Impression Tasks
 inkscape          | Inkscape tasks
 julius            | Julius tasks
 kdenlive          | Kdenlive tasks
 keepassxc         | KeePass XC tasks
 losslesscut       | LosslessCut tasks
 msedge            | MS Edge Browser tasks
-neofetch          | Neofetch tasks
 obs               | OBS Studio tasks
 obsidian          | Obsidian Markdown tasks
 openra            | Open Red Alert tasks
@@ -225,6 +226,7 @@ wike              | Wike tasks
 - Disable auto updates virtual
 - Check if htop etc is available for mms if installed for stephen (all>distro>ubuntu)
 - Virtual stuff needs doing for mms
+- Test on Fedora 40
 
 ### Final
 

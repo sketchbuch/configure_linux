@@ -1,6 +1,6 @@
-- name: 'Software > Install Gnome Clocks'
+- name: "Software > Install Gnome Clocks"
   community.general.flatpak:
     name: org.gnome.clocks
     state: present
     method: system
-  tags: ['software', 'utils', 'gnome-clocks', 'flatpak']
+  tags: ["software", "utils", "gnome-clocks", "flatpak"]

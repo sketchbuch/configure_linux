@@ -1,16 +1,16 @@
-- import_tasks: 'gnome_prep.yaml'
+- import_tasks: "gnome_prep.yaml"
   vars:
-    profile_username: '{{ username }}'
+    profile_username: "{{ username }}"
 
-- name: 'Gnome Extensions'
-  include_tasks: 'gnome_extensions.yaml'
-  loop: '{{ gnome_extensions }}'
+- name: "Gnome Extensions"
+  include_tasks: "gnome_extensions.yaml"
+  loop: "{{ gnome_extensions }}"
   loop_control:
     loop_var: extension
   vars:
-    profile_username: '{{ username }}'
+    profile_username: "{{ username }}"
   when: is_gnome
 
-- import_tasks: 'gnome_cleanup.yaml'
+- import_tasks: "gnome_cleanup.yaml"
   vars:
-    profile_username: '{{ username }}'
+    profile_username: "{{ username }}"

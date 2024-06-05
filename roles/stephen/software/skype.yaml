@@ -1,6 +1,6 @@
-- name: 'Software > Install Skype'
+- name: "Software > Install Skype"
   community.general.flatpak:
     name: com.skype.Client
     state: present
     method: system
-  tags: ['software', 'comms', 'skype', 'flatpak']
+  tags: ["software", "comms", "skype", "flatpak"]
