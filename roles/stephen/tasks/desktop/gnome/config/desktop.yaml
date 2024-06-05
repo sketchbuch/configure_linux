@@ -1,6 +1,6 @@
 - name: "Gnome > Config > Desktop: Always show A11y Menu"
   become: true
-  become_user: "{{ real_username }}"
+  become_user: "{{ userUsername }}"
   community.general.dconf:
     key: "/org/gnome/desktop/a11y/always-show-universal-access-status"
     state: present
@@ -9,7 +9,7 @@
 
 - name: "Gnome > Config > Desktop: Enable Hot Corners"
   become: true
-  become_user: "{{ real_username }}"
+  become_user: "{{ userUsername }}"
   community.general.dconf:
     key: "/org/gnome/desktop/interface/enable-hot-corners"
     state: present
@@ -19,7 +19,7 @@
 
 - name: "Gnome > Config > Desktop: Disable Hot Corners"
   become: true
-  become_user: "{{ real_username }}"
+  become_user: "{{ userUsername }}"
   community.general.dconf:
     key: "/org/gnome/desktop/interface/enable-hot-corners"
     state: present

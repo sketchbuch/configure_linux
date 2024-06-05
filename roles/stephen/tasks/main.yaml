@@ -1,6 +1,8 @@
 - block:
     - name: "Include vars for {{ distro_pretty }}"
-      include_vars: "{{ distro }}.yaml"
+      block:
+        - include_vars: "user.yaml"
+        - include_vars: "{{ distro }}.yaml"
       tags: ["always", "vars"]
       when: is_ubuntu or is_fedora
 
@@ -27,18 +29,18 @@
         - import_tasks: "shared/users/terminal.yaml"
       tags: ["stephen"]
       vars:
-        profile_username: "{{ real_username }}"
-        profile_username_pretty: "{{ real_username_pretty }}"
+        profile_username: "{{ userUsername }}"
+        profile_username_pretty: "{{ userFullname }}"
 
     - name: "Include tasks for Gnome"
       import_tasks: "desktop/gnome.yaml"
       tags: ["gnome"]
       when: is_gnome
 
-    - include_tasks: "users/{{ real_username }}/home_folder.yaml"
-    - include_tasks: "users/{{ real_username }}/freefilesync.yaml"
-    - include_tasks: "users/{{ real_username }}/obsidian.yaml"
-    - include_tasks: "users/{{ real_username }}/profile.yaml"
+    - include_tasks: "users/{{ userUsername }}/home_folder.yaml"
+    - include_tasks: "users/{{ userUsername }}/freefilesync.yaml"
+    - include_tasks: "users/{{ userUsername }}/obsidian.yaml"
+    - include_tasks: "users/{{ userUsername }}/profile.yaml"
 
     - name: "Install tools"
       block:
@@ -50,7 +52,7 @@
         - import_tasks: "shared/users/nautilus.yaml"
       tags: ["stephen"]
       vars:
-        profile_username: "{{ real_username }}"
+        profile_username: "{{ userUsername }}"
 
   rescue:
     - set_fact: stephen_task_failed=true

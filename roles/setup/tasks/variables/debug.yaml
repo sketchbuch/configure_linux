@@ -10,6 +10,4 @@
       - "is_ubuntu: {{ is_ubuntu }}"
       - "is_virtual: {{ is_virtual }}"
       - "is_virtualbox: {{ is_virtual }}"
-      - "real_username: {{ real_username }}"
-      - "real_username_pretty: {{ real_username_pretty }}"
   tags: ["setup", "debug"]

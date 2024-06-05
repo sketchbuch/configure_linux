@@ -42,13 +42,3 @@
   set_fact:
     is_virtualbox: '{{ (ansible_virtualization_type == "virtualbox") | ternary (true, false) }}'
   tags: ["setup", "set_fact"]
-
-- name: "Vars > Get: real_username"
-  set_fact:
-    real_username: '{{ ansible_facts["env"]["SUDO_USER"] }}'
-  tags: ["setup", "set_fact"]
-
-- name: "Vars > Get: real_username_pretty"
-  set_fact:
-    real_username_pretty: "{{ real_username | capitalize }}"
-  tags: ["setup", "set_fact"]
