@@ -1,8 +1,15 @@
 - block:
+    - name: "Include vars for {{ distro_pretty }}"
+      include_vars: "{{ distro }}.yaml"
+      tags: ["always", "vars"]
+      when: is_ubuntu or is_fedora
+
     - name: "Include tasks for {{ distro_pretty }}"
-      import_tasks: "distro/ubuntu.yaml"
+      block:
+        - import_tasks: "distro/common.yaml"
+        - import_tasks: "distro/{{ distro }}.yaml"
       tags: ["distro_tasks"]
-      when: is_ubuntu
+      when: is_ubuntu or is_fedora
 
     - name: "Include tasks for Gnome"
       import_tasks: "desktop/gnome.yaml"

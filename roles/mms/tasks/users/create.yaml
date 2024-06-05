@@ -1,46 +1,46 @@
-- name: 'Users > {{ mmsUsername }} > Create: Check if user "{{ mmsUsername }}" already exists'
+- name: 'Users > {{ userUsername }} > Create: Check if user "{{ userUsername }}" already exists'
   become: true
   ansible.builtin.getent:
     database: passwd
     fail_key: false
-    key: "{{ mmsUsername }}"
+    key: "{{ userUsername }}"
   changed_when: false
   register: userExists
 
-- name: 'Users > {{ mmsFullname }} > Create: User group "{{ mmsGroup }}"'
+- name: 'Users > {{ userFullname }} > Create: User group "{{ userGroup }}"'
   become: true
   ansible.builtin.group:
-    name: "{{ mmsGroup }}"
+    name: "{{ userGroup }}"
     state: present
   tags: ["system", "users", "mms"]
 
-- name: 'Users > {{ mmsFullname }} > Create: User "{{ mmsUsername }}"'
+- name: 'Users > {{ userFullname }} > Create: User "{{ userUsername }}"'
   become: true
   ansible.builtin.user:
-    comment: "{{ mmsFullname }}"
-    groups: "{{ mmsGroup }}, sudo"
-    name: "{{ mmsUsername }}"
-    password: "{{ mmsPassword | password_hash }}"
+    comment: "{{ userFullname }}"
+    groups: "{{ userGroup }}, sudo"
+    name: "{{ userUsername }}"
+    password: "{{ userPassword | password_hash }}"
     shell: /bin/bash
     state: present
     update_password: "on_create"
   tags: ["system", "users", "mms"]
 
 # This file would normally be made on login, but we need to create it as we will not be logging in.
-- name: "Users > {{ mmsFullname }} > Create: Copy AccountsService file"
+- name: "Users > {{ userFullname }} > Create: Copy AccountsService file"
   become: true
   ansible.builtin.copy:
-    src: "users/{{ mmsUsername }}/acounts_service"
-    dest: "/var/lib/AccountsService/users/{{ mmsUsername }}"
+    src: "users/{{ userUsername }}/acounts_service"
+    dest: "/var/lib/AccountsService/users/{{ userUsername }}"
     owner: "root"
     group: "root"
     mode: 0700
   tags: ["system", "users", "mms"]
 
 # Only done if the user did not already exist and we created one with the above tasks
-- name: "Users > {{ mmsFullname }} > Create: Force password change on next login"
+- name: "Users > {{ userFullname }} > Create: Force password change on next login"
   become: true
   ansible.builtin.shell:
-    cmd: "chage -d 0 {{ mmsUsername }}"
+    cmd: "chage -d 0 {{ userUsername }}"
   tags: ["system", "users", "mms"]
-  when: userExists.ansible_facts.getent_passwd[mmsUsername] is none
+  when: userExists.ansible_facts.getent_passwd[userUsername] is none

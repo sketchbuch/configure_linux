@@ -1,18 +1,18 @@
-- name: "Users > {{ mmsFullname }} > Desktop: Create wallpaper folder"
+- name: "Users > {{ userFullname }} > Desktop: Create wallpaper folder"
   become: true
-  become_user: "{{ mmsUsername }}"
+  become_user: "{{ userUsername }}"
   ansible.builtin.file:
-    path: "~/{{ mmsImageFolder }}/Wallpaper"
+    path: "~/{{ userImageFolder }}/Wallpaper"
     state: directory
   tags: ["users", "folders"]
 
-- name: "Users > {{ mmsFullname }} > Desktop: Copy wallpaper"
+- name: "Users > {{ userFullname }} > Desktop: Copy wallpaper"
   become: true
-  become_user: "{{ mmsUsername }}"
+  become_user: "{{ userUsername }}"
   ansible.builtin.copy:
-    dest: "/home/{{ mmsUsername }}/{{ mmsImageFolder }}/Wallpaper/Grey MMS Wallpaper.png"
-    group: "{{ mmsUsername }}"
+    dest: "/home/{{ userUsername }}/{{ userImageFolder }}/Wallpaper/Grey MMS Wallpaper.png"
+    group: "{{ userUsername }}"
     mode: 0644
-    owner: "{{ mmsUsername }}"
-    src: "users/{{ mmsUsername }}/wallpaper"
+    owner: "{{ userUsername }}"
+    src: "users/{{ userUsername }}/wallpaper"
   tags: ["users", "desktop", "files"]

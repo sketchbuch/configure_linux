@@ -5,7 +5,7 @@
     - import_tasks: "shared/users/nautilus.yaml"
   tags: ["gnome"]
   vars:
-    profile_username: "{{ mmsUsername }}"
-    profile_username_pretty: "{{ mmsFullname }}"
-    profile_image_folder: "{{ mmsImageFolder }}"
+    profile_username: "{{ userUsername }}"
+    profile_username_pretty: "{{ userFullname }}"
+    profile_image_folder: "{{ userImageFolder }}"
   when: is_gnome
