@@ -1,5 +1,5 @@
-- name: 'Software > Install Powertop'
+- name: "Software > Install Powertop"
   ansible.builtin.package:
     name: powertop
     state: present
-  tags: ['software', 'system', 'powertop', 'package']
+  tags: ["software", "system", "powertop", "package"]

@@ -1,45 +1,45 @@
 - block:
-  - name: 'Include vars for {{ distro_pretty }}'
-    include_vars: '{{ distro }}.yaml'
-    tags: ['always', 'vars']
+    - name: "Include vars for {{ distro_pretty }}"
+      include_vars: "{{ distro }}.yaml"
+      tags: ["always", "vars"]
 
-  - name: 'Include tasks for {{ distro_pretty }}'
-    import_tasks: 'distro/ubuntu.yaml'
-    tags: ['distro_tasks']
-    when: is_ubuntu
-  
-  - name: 'Include tasks for Gnome'
-    include_tasks: 'desktop/gnome.yaml'
-    tags: ['gnome']
-    when: is_gnome
+    - name: "Include tasks for {{ distro_pretty }}"
+      import_tasks: "distro/ubuntu.yaml"
+      tags: ["distro_tasks"]
+      when: is_ubuntu
 
-  - name: 'User settings'
-    block:
-      - import_tasks: 'shared/users/git.yaml'
-      - import_tasks: 'shared/users/gtk.yaml'
-      - import_tasks: 'shared/users/home_folder.yaml'
-      - import_tasks: 'shared/users/profile.yaml'
-      - import_tasks: 'shared/users/terminal.yaml'
-    tags: ['stephen']
-    vars:
-      profile_username: '{{ real_username }}'
-      profile_username_pretty: '{{ real_username_pretty }}'
+    - name: "Include tasks for Gnome"
+      include_tasks: "desktop/gnome.yaml"
+      tags: ["gnome"]
+      when: is_gnome
 
-  - import_tasks: 'system/fonts/firacode.yaml'
-  - import_tasks: 'system/fonts/inconsolata.yaml'
-  - import_tasks: 'system/fonts/mscorefonts.yaml'
-  - import_tasks: 'system/fonts/sourcecodepro.yaml'
+    - name: "User settings"
+      block:
+        - import_tasks: "shared/users/git.yaml"
+        - import_tasks: "shared/users/gtk.yaml"
+        - import_tasks: "shared/users/home_folder.yaml"
+        - import_tasks: "shared/users/profile.yaml"
+        - import_tasks: "shared/users/terminal.yaml"
+      tags: ["stephen"]
+      vars:
+        profile_username: "{{ real_username }}"
+        profile_username_pretty: "{{ real_username_pretty }}"
 
-  - name: 'Install tools'
-    block:
-      - import_tasks: 'shared/system/tools/nvm.yaml'
-      - import_tasks: 'shared/system/tools/pnpm.yaml'
-      - import_tasks: 'shared/system/tools/yarn.yaml'
-    tags: ['stephen']
-    vars:
-      profile_username: '{{ real_username }}'
-    
-  - import_tasks: 'system/terminal.yaml'
+    - import_tasks: "system/fonts/firacode.yaml"
+    - import_tasks: "system/fonts/inconsolata.yaml"
+    - import_tasks: "system/fonts/mscorefonts.yaml"
+    - import_tasks: "system/fonts/sourcecodepro.yaml"
+
+    - name: "Install tools"
+      block:
+        - import_tasks: "shared/system/tools/nvm.yaml"
+        - import_tasks: "shared/system/tools/pnpm.yaml"
+        - import_tasks: "shared/system/tools/yarn.yaml"
+      tags: ["stephen"]
+      vars:
+        profile_username: "{{ real_username }}"
+
+    - import_tasks: "system/terminal.yaml"
 
   rescue:
     - set_fact: all_task_failed=true

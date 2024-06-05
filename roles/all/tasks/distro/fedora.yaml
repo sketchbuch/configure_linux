@@ -1,6 +1,3 @@
-- import_tasks: "shared/system/tools/curl.yaml"
-- import_tasks: "../system/fonts/cantarell.yaml"
-
 - name: "Software Tasks"
   block:
     - import_tasks: "../software/fsearch.yaml"
@@ -8,4 +5,4 @@
     - import_tasks: "../software/plocate.yaml"
     - import_tasks: "../software/powertop.yaml"
   tags: ["software", "ubuntu"]
-  when: installSoftware and is_ubuntu
+  when: installSoftware and is_fedora

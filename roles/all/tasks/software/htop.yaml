@@ -1,5 +1,5 @@
-- name: 'Software > Install Htop'
+- name: "Software > Install Htop"
   ansible.builtin.package:
     name: htop
     state: present
-  tags: ['software', 'system', 'htop', 'package']
+  tags: ["software", "system", "htop", "package"]

@@ -1,34 +1,34 @@
-- name: 'Gnome Dconf'
+- name: "Gnome Dconf"
   block:
-    - import_tasks: 'gnome/config/clock.yaml'
-    - import_tasks: 'gnome/config/datetime.yaml'
-    - import_tasks: 'gnome/config/desktop.yaml'
-    - import_tasks: 'gnome/config/extensions/alphabetical-app-grid.yaml'
-    - import_tasks: 'gnome/config/extensions/dash-to-dock.yaml'
-    - import_tasks: 'gnome/config/fonts.yaml'
-    - import_tasks: 'gnome/config/gedit.yaml'
-    - import_tasks: 'gnome/config/mouse.yaml'
-    - import_tasks: 'gnome/config/nautilus.yaml'
-    - import_tasks: 'gnome/config/thumbnailer/epub.yaml'
-    - import_tasks: 'gnome/config/thumbnailer/webp.yaml'
-    - import_tasks: 'gnome/config/touchpad.yaml'
-    - import_tasks: 'gnome/config/weather.yaml'
-  tags: ['gnome']
+    - import_tasks: "gnome/config/clock.yaml"
+    - import_tasks: "gnome/config/datetime.yaml"
+    - import_tasks: "gnome/config/desktop.yaml"
+    - import_tasks: "gnome/config/extensions/alphabetical-app-grid.yaml"
+    - import_tasks: "gnome/config/extensions/dash-to-dock.yaml"
+    - import_tasks: "gnome/config/fonts.yaml"
+    - import_tasks: "gnome/config/gedit.yaml"
+    - import_tasks: "gnome/config/mouse.yaml"
+    - import_tasks: "gnome/config/nautilus.yaml"
+    - import_tasks: "gnome/config/thumbnailer/epub.yaml"
+    - import_tasks: "gnome/config/thumbnailer/webp.yaml"
+    - import_tasks: "gnome/config/touchpad.yaml"
+    - import_tasks: "gnome/config/weather.yaml"
+  tags: ["gnome"]
   vars:
-    profile_username: '{{ real_username }}'
-    profile_username_pretty: '{{ real_username_pretty }}'
+    profile_username: "{{ real_username }}"
+    profile_username_pretty: "{{ real_username_pretty }}"
   when: is_gnome
 
-- import_tasks: '../shared/system/extensions/gnome.yaml'
-  tags: ['gnome']
+- import_tasks: "../shared/system/extensions/gnome.yaml"
+  tags: ["gnome"]
   vars:
-    username: '{{ real_username }}'
+    username: "{{ real_username }}"
 
-- name: 'Gnome Software Tasks'
+- name: "Gnome Software Tasks"
   block:
-    - import_tasks: '../software/dconf-editor.yaml'
-    - import_tasks: '../software/extension-manager.yaml'
-    - import_tasks: '../software/gnome-extensions.yaml'
-    - import_tasks: '../software/gnome-tweaks.yaml'
-  tags: ['gnome', 'software']
+    - import_tasks: "../software/dconf-editor.yaml"
+    - import_tasks: "../software/extension-manager.yaml"
+    - import_tasks: "../software/gnome-extensions.yaml"
+    - import_tasks: "../software/gnome-tweaks.yaml"
+  tags: ["gnome", "software"]
   when: is_gnome and installSoftware

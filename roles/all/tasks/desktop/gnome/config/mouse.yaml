@@ -1,8 +1,8 @@
-- name: 'Gnome > Config > Mouse: Disable natural scrolling'
+- name: "Gnome > Config > Mouse: Disable natural scrolling"
   become: true
-  become_user: '{{ real_username }}'
+  become_user: "{{ real_username }}"
   community.general.dconf:
-    key: '/org/gnome/desktop/peripherals/mouse/natural-scroll'
+    key: "/org/gnome/desktop/peripherals/mouse/natural-scroll"
     state: present
     value: "false"
-  tags: ['system', 'gnome', 'mouse']
+  tags: ["system", "gnome", "mouse"]

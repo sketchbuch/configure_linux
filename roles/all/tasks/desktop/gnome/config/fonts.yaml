@@ -1,8 +1,8 @@
-- name: 'Gnome > Config > Fonts: Set system monospace fornt and size'
+- name: "Gnome > Config > Fonts: Set system monospace fornt and size"
   become: true
-  become_user: '{{ real_username }}'
+  become_user: "{{ real_username }}"
   community.general.dconf:
-    key: '/org/gnome/desktop/interface/monospace-font-name'
+    key: "/org/gnome/desktop/interface/monospace-font-name"
     state: present
     value: "'Source Code Pro 12'"
-  tags: ['system', 'font', 'gnome']
+  tags: ["system", "font", "gnome"]

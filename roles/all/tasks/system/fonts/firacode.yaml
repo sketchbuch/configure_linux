@@ -1,5 +1,5 @@
-- name: 'System > Fonts: Install Fira Code'
-  ansible.builtin.package: 
-    name: '{{font_firacode}}'
+- name: "System > Fonts: Install Fira Code"
+  ansible.builtin.package:
+    name: "{{font_firacode}}"
     state: present
-  tags: ['system', 'fonts']
+  tags: ["system", "fonts"]

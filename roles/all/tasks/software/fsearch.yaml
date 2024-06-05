@@ -1,6 +1,6 @@
-- name: 'Software > Install FSearch'
+- name: "Software > Install FSearch"
   community.general.flatpak:
     name: io.github.cboxdoerfer.FSearch
     state: present
     method: system
-  tags: ['software', 'file-management', 'fsearch', 'flatpak']
+  tags: ["software", "file-management", "fsearch", "flatpak"]

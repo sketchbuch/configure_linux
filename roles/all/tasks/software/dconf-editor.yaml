@@ -1,6 +1,6 @@
-- name: 'Software > Install Dconf Editor'
+- name: "Software > Install Dconf Editor"
   community.general.flatpak:
     name: ca.desrt.dconf-editor
     state: present
     method: system
-  tags: ['software', 'system', 'dconf-editor', 'flatpak']
+  tags: ["software", "system", "dconf-editor", "flatpak"]

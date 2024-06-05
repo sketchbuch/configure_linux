@@ -1,5 +1,5 @@
-- name: 'Gnome > Config > Thumbnailer > EPub: Add thumbnail support to Nautilus'
-  ansible.builtin.package: 
+- name: "Gnome > Config > Thumbnailer > EPub: Add thumbnail support to Nautilus"
+  ansible.builtin.package:
     name: gnome-epub-thumbnailer
     state: present
-  tags: ['system', 'graphics', 'nautilus']
+  tags: ["system", "graphics", "nautilus"]
