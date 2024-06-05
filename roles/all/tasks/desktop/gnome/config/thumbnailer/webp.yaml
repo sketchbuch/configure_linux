@@ -16,4 +16,4 @@
     name: webp-pixbuf-loader
     state: present
   tags: ["system", "graphics", "nautilus"]
-  when: is_fedora or (is_ubuntu and (distro_major_version | int) <= 23)
+  when: is_ubuntu and (distro_major_version | int) <= 23
