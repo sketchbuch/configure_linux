@@ -233,6 +233,7 @@ wike              | Wike tasks
 - Ubuntu 24.04
 
   - Remove Desktop Icons
+  - Set world clocks
 
 ### Final
 
