@@ -25,9 +25,9 @@
 
 - name: "Gnome Software Tasks"
   block:
-    - import_tasks: "../../software/dconf-editor.yaml"
-    - import_tasks: "../../software/extension-manager.yaml"
-    - import_tasks: "../../software/gnome-extensions.yaml"
-    - import_tasks: "../../software/gnome-tweaks.yaml"
+    - import_tasks: "../software/dconf-editor.yaml"
+    - import_tasks: "../software/extension-manager.yaml"
+    - import_tasks: "../software/gnome-extensions.yaml"
+    - import_tasks: "../software/gnome-tweaks.yaml"
   tags: ["gnome", "software"]
   when: is_gnome and installSoftware
