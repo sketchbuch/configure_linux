@@ -8,6 +8,7 @@
     state: present
     value: "'24h'"
   tags: ["system", "clock", "gnome"]
+  when: is_ubuntu and (distro_major_version | int) <= 23
 
 - name: "Gnome > Config > Datetime: Show date next to clock"
   become: true
@@ -17,6 +18,7 @@
     state: present
     value: "true"
   tags: ["system", "clock", "gnome"]
+  when: is_ubuntu and (distro_major_version | int) <= 23
 
 - name: "Gnome > Config > Datetime: Show week day next to clock"
   become: true
@@ -26,3 +28,4 @@
     state: present
     value: "true"
   tags: ["system", "clock", "gnome"]
+  when: is_ubuntu and (distro_major_version | int) <= 23

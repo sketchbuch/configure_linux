@@ -234,6 +234,7 @@ wike              | Wike tasks
 
   - Remove Desktop Icons
   - Set world clocks
+  - Set date time
 
 ### Final
 
