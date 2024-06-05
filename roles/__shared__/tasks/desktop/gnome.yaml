@@ -1,8 +1,5 @@
 - import_tasks: "../system/extensions/gnome.yaml"
   tags: ["gnome"]
-  vars:
-    gnome_extensions: "{{ gnome_extensions }}"
-    profile_username: "{{ profile_username }}"
 
 - name: "Gnome Dconf"
   block:
