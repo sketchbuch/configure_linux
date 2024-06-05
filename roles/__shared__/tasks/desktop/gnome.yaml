@@ -1,3 +1,8 @@
+- import_tasks: "../system/extensions/gnome.yaml"
+  tags: ["gnome"]
+  vars:
+    profile_username: "{{ profile_username }}"
+
 - name: "Gnome Dconf"
   block:
     - import_tasks: "gnome/config/clock.yaml"
@@ -17,11 +22,6 @@
   vars:
     profile_username: "{{ profile_username }}"
   when: is_gnome
-
-- import_tasks: "../system/extensions/gnome.yaml"
-  tags: ["gnome"]
-  vars:
-    profile_username: "{{ profile_username }}"
 
 - name: "Gnome Software Tasks"
   block:
