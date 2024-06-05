@@ -1,1 +1,12 @@
-# A stub for inclusion via distro name
+gnome_extensions:
+  - name: "alphabetical-app-grid"
+    url: "AlphabeticalAppGridstuarthayhurst.v29.shell-extension.zip"
+    uuid: "AlphabeticalAppGrid@stuarthayhurst"
+
+  - name: "bluetooth-quick-connect"
+    url: "bluetooth-quick-connectbjarosze.gmail.com.v34.shell-extension.zip"
+    uuid: "bluetooth-quick-connect@bjarosze.gmail.com"
+
+  - name: "color-picker"
+    url: "color-pickertuberry.v30.shell-extension.zip"
+    uuid: "color-picker@tuberry"

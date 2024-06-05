@@ -38,6 +38,7 @@
         - import_tasks: "desktop/gnome.yaml"
       tags: ["gnome"]
       vars:
+        gnome_extensions: "{{ gnome_extensions }}"
         profile_username: "{{ userUsername }}"
       when: is_gnome
 
