@@ -17,7 +17,6 @@
         - import_tasks: "shared/users/terminal.yaml"
       tags: ["mms"]
       vars:
-        profile_image_folder: "{{ userImageFolder }}"
         profile_username_pretty: "{{ userFullname }}"
         profile_username: "{{ userUsername }}"
 

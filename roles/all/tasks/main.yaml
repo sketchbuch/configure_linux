@@ -28,27 +28,6 @@
       tags: ["gnome"]
       when: is_gnome
 
-    - name: "User settings"
-      block:
-        - import_tasks: "shared/users/git.yaml"
-        - import_tasks: "shared/users/gtk.yaml"
-        - import_tasks: "shared/users/home_folder.yaml"
-        - import_tasks: "shared/users/profile.yaml"
-        - import_tasks: "shared/users/terminal.yaml"
-      tags: ["stephen"]
-      vars:
-        profile_username: "{{ real_username }}"
-        profile_username_pretty: "{{ real_username_pretty }}"
-
-    - name: "Install tools"
-      block:
-        - import_tasks: "shared/system/tools/nvm.yaml"
-        - import_tasks: "shared/system/tools/pnpm.yaml"
-        - import_tasks: "shared/system/tools/yarn.yaml"
-      tags: ["stephen"]
-      vars:
-        profile_username: "{{ real_username }}"
-
     - import_tasks: "system/terminal.yaml"
 
   rescue:
