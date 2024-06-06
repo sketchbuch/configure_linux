@@ -2,5 +2,5 @@
   community.general.flatpak:
     name: com.github.huluti.Curtail
     state: present
-    method: system
+    method: user
   tags: ["software", "file-management", "curtail", "circle", "flatpak"]

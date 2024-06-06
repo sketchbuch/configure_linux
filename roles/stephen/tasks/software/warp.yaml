@@ -2,5 +2,5 @@
   community.general.flatpak:
     name: app.drey.Warp
     state: present
-    method: system
+    method: user
   tags: ["software", "file-management", "internet", "warp", "circle", "flatpak"]

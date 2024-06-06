@@ -2,5 +2,5 @@
   community.general.flatpak:
     name: net.openra.OpenRA
     state: present
-    method: system
+    method: user
   tags: ["software", "games", "openra", "flatpak"]

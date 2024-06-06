@@ -2,5 +2,5 @@
   community.general.flatpak:
     name: org.gnome.FontManager
     state: present
-    method: system
+    method: user
   tags: ["software", "utils", "font-manager", "flatpak"]

@@ -2,5 +2,5 @@
   community.general.flatpak:
     name: org.freefilesync.FreeFileSync
     state: present
-    method: system
+    method: user
   tags: ["software", "file-management", "freefilesync", "flatpak"]

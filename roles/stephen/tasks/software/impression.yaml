@@ -2,5 +2,5 @@
   community.general.flatpak:
     name: io.gitlab.adhami3310.Impression
     state: present
-    method: system
+    method: user
   tags: ["software", "file-management", "impression", "flatpak"]

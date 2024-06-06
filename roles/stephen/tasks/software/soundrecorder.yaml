@@ -2,5 +2,5 @@
   community.general.flatpak:
     name: org.gnome.SoundRecorder
     state: present
-    method: system
+    method: user
   tags: ["software", "audio", "soundrecorder", "flatpak"]

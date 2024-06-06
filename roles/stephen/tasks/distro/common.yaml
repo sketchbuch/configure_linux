@@ -63,4 +63,4 @@
     - import_tasks: "../software/webfontkitgen.yaml"
     - import_tasks: "../software/wike.yaml"
   tags: ["software", "fedora"]
-  when: installSoftware and is_fedora
+  when: installSoftware

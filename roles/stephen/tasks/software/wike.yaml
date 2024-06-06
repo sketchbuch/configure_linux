@@ -2,5 +2,5 @@
   community.general.flatpak:
     name: com.github.hugolabe.Wike
     state: present
-    method: system
+    method: user
   tags: ["software", "utils", "wike", "circle", "flatpak"]

@@ -2,5 +2,5 @@
   community.general.flatpak:
     name: chat.rocket.RocketChat
     state: present
-    method: system
+    method: user
   tags: ["software", "comms", "rocketchat", "flatpak"]

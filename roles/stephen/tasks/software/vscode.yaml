@@ -2,5 +2,5 @@
   community.general.flatpak:
     name: com.visualstudio.code
     state: present
-    method: system
+    method: user
   tags: ["software", "editors", "dev", "vscode", "flatpak"]

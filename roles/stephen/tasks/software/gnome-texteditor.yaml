@@ -2,5 +2,5 @@
   community.general.flatpak:
     name: org.gnome.TextEditor
     state: present
-    method: system
+    method: user
   tags: ["software", "editors", "gnome-texteditor", "flatpak"]

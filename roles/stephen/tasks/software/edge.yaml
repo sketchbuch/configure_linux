@@ -2,5 +2,5 @@
   community.general.flatpak:
     name: com.microsoft.Edge
     state: present
-    method: system
+    method: user
   tags: ["software", "internet", "msedge", "flatpak"]

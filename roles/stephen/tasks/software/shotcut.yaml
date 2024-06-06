@@ -2,5 +2,5 @@
   community.general.flatpak:
     name: org.shotcut.Shotcut
     state: present
-    method: system
+    method: user
   tags: ["software", "video", "shotcut", "flatpak"]

@@ -2,5 +2,5 @@
   community.general.flatpak:
     name: com.getpostman.Postman
     state: present
-    method: system
+    method: user
   tags: ["software", "dev", "postman", "flatpak"]

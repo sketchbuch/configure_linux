@@ -2,5 +2,5 @@
   community.general.flatpak:
     name: com.hunterwittenborn.Celeste
     state: present
-    method: system
+    method: user
   tags: ["software", "file-management", "celeste", "flatpak"]

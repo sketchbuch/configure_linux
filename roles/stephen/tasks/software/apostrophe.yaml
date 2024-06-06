@@ -2,5 +2,5 @@
   community.general.flatpak:
     name: org.gnome.gitlab.somas.Apostrophe
     state: present
-    method: system
+    method: user
   tags: ["software", "documents", "apostrophe", "circle", "flatpak"]

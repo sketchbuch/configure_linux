@@ -2,5 +2,5 @@
   community.general.flatpak:
     name: com.github.bvschaik.julius
     state: present
-    method: system
+    method: user
   tags: ["software", "games", "julius", "flatpak"]

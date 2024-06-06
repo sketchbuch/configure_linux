@@ -2,5 +2,5 @@
   community.general.flatpak:
     name: md.obsidian.Obsidian
     state: present
-    method: system
+    method: user
   tags: ["software", "games", "obsidian", "flatpak"]

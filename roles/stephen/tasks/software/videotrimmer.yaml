@@ -2,5 +2,5 @@
   community.general.flatpak:
     name: org.gnome.gitlab.YaLTeR.VideoTrimmer
     state: present
-    method: system
+    method: user
   tags: ["software", "video", "videotrimmer", "circle", "flatpak"]

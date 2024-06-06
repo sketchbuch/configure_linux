@@ -2,5 +2,5 @@
   community.general.flatpak:
     name: com.valvesoftware.Steam
     state: present
-    method: system
+    method: user
   tags: ["software", "games", "steam", "flatpak"]

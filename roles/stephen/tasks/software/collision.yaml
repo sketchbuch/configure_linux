@@ -2,5 +2,5 @@
   community.general.flatpak:
     name: dev.geopjr.Collision
     state: present
-    method: system
+    method: user
   tags: ["software", "security", "collision", "circle", "flatpak"]

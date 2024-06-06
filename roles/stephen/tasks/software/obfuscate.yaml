@@ -2,5 +2,5 @@
   community.general.flatpak:
     name: com.belmoussaoui.Obfuscate
     state: present
-    method: system
+    method: user
   tags: ["software", "security", "obfuscate", "circle", "flatpak"]

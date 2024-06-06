@@ -2,5 +2,5 @@
   community.general.flatpak:
     name: org.videolan.VLC
     state: present
-    method: system
+    method: user
   tags: ["software", "audio", "video", "vlc", "flatpak"]

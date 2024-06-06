@@ -2,5 +2,5 @@
   community.general.flatpak:
     name: com.github.jeromerobert.pdfarranger
     state: present
-    method: system
+    method: user
   tags: ["software", "documents", "pdfarranger", "flatpak"]

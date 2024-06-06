@@ -2,5 +2,5 @@
   community.general.flatpak:
     name: org.keepassxc.KeePassXC
     state: present
-    method: system
+    method: user
   tags: ["software", "security", "keepassxc", "flatpak"]

@@ -2,5 +2,5 @@
   community.general.flatpak:
     name: com.rafaelmardojai.WebfontKitGenerator
     state: present
-    method: system
+    method: user
   tags: ["software", "dev", "webfontkitgen", "circle", "flatpak"]
