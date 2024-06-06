@@ -13,14 +13,14 @@
   roles:
     - all
   tags: ["all"]
-# My user
-# - hosts: all
-#   become: true
-#   gather_facts: false
-#   roles:
-#     - stephen
-#   tags: ["stephen"]
 
+# My user
+- hosts: all
+  become: true
+  gather_facts: false
+  roles:
+    - stephen
+  tags: ["stephen"]
 # Work user
 # - hosts: real
 #   become: true

@@ -235,6 +235,8 @@ wike              | Wike tasks
   - Remove Desktop Icons
   - nautilus: set icon size
   - Remove trash dash icon, software cnter, help
+  - Install Ubuntu font
+  - Remove empty tasks/vars
 
     ### Final
 

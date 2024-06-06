@@ -4,17 +4,13 @@
       tags: ["always", "vars"]
       when: is_ubuntu or is_fedora
 
-    - name: "Include tasks for {{ distro_pretty }}"
-      block:
-        - import_tasks: "distro/common.yaml"
-        - import_tasks: "distro/fedora.yaml"
+    - name: "Include common tasks for {{ distro_pretty }}"
+      import_tasks: "distro/common.yaml"
       tags: ["distro_tasks"]
       when: is_fedora
 
     - name: "Include tasks for {{ distro_pretty }}"
-      block:
-        - import_tasks: "distro/common.yaml"
-        - import_tasks: "distro/ubuntu.yaml"
+      import_tasks: "distro/ubuntu.yaml"
       tags: ["distro_tasks"]
       when: is_ubuntu
 
