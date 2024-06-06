@@ -234,11 +234,9 @@ wike              | Wike tasks
 
   - Remove Desktop Icons
   - nautilus: set icon size
-  - Set world clocks: roles/all/tasks/shared/desktop/gnome/config/clock.yaml
-  - Set date time: roles/all/tasks/shared/desktop/gnome/config/datetime.yaml
-  - Desktop: roles/all/tasks/shared/desktop/gnome/config/desktop.yaml
+  - Remove trash dash icon, software cnter, help
 
-### Final
+    ### Final
 
 - Check software installed for stephen
 
