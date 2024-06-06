@@ -5,7 +5,6 @@
     - import_tasks: "../software/apostrophe.yaml"
     - import_tasks: "../software/audacity.yaml"
     - import_tasks: "../software/augustus.yaml"
-    - import_tasks: "../software/authy.yaml"
     - import_tasks: "../software/celeste.yaml"
     - import_tasks: "../software/chrome.yaml"
     - import_tasks: "../software/collision.yaml"

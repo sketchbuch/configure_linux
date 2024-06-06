@@ -1,6 +1,0 @@
-- name: "Software > Install Authy"
-  community.general.flatpak:
-    name: com.authy.Authy
-    state: present
-    method: user
-  tags: ["software", "security", "authy", "flatpak"]
