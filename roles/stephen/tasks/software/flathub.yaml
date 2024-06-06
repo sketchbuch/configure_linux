@@ -1,0 +1,7 @@
+- name: "Software > Add Flathub remote for user"
+  community.general.flatpak_remote:
+    flatpakrepo_url: "https://dl.flathub.org/repo/flathub.flatpakrepo"
+    method: user
+    name: flathub
+    state: present
+  tags: ["software", "flatpak"]
