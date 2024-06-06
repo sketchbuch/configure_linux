@@ -11,16 +11,6 @@
       tags: ["distro_tasks"]
       when: is_fedora or is_ubuntu
 
-    # - name: "Include tasks for {{ distro_pretty }}"
-    #   import_tasks: "distro/fedora.yaml"
-    #   tags: ["distro_tasks"]
-    #   when: is_fedora
-
-    # - name: "Include tasks for {{ distro_pretty }}"
-    #   import_tasks: "distro/ubuntu.yaml"
-    #   tags: ["distro_tasks"]
-    #   when: is_ubuntu
-
     - name: "User settings"
       block:
         - import_tasks: "shared/users/git.yaml"
