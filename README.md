@@ -237,6 +237,7 @@ wike              | Wike tasks
   - Remove trash dash icon, software cnter, help
   - Install Ubuntu font
   - Remove empty tasks/vars
+  - Libre Office
 
     ### Final
 
