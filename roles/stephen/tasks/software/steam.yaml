@@ -1,4 +1,6 @@
 - name: "Software > Install Steam"
+  become: true
+  become_user: "{{ userUsername }}"
   community.general.flatpak:
     name: com.valvesoftware.Steam
     state: present

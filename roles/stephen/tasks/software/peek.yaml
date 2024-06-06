@@ -1,4 +1,6 @@
 - name: "Software > Install Peek"
+  become: true
+  become_user: "{{ userUsername }}"
   community.general.flatpak:
     name: com.uploadedlobster.peek
     state: present

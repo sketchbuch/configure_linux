@@ -1,4 +1,6 @@
 - name: "Software > Install EarTag"
+  become: true
+  become_user: "{{ userUsername }}"
   community.general.flatpak:
     name: app.drey.EarTag
     state: present

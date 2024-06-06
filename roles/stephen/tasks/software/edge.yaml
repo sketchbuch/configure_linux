@@ -1,4 +1,6 @@
 - name: "Software > Install MS Edge"
+  become: true
+  become_user: "{{ userUsername }}"
   community.general.flatpak:
     name: com.microsoft.Edge
     state: present

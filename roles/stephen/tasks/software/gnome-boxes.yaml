@@ -1,4 +1,6 @@
 - name: "Software > Install Gnome Boxes"
+  become: true
+  become_user: "{{ userUsername }}"
   community.general.flatpak:
     name: org.gnome.Boxes
     state: present

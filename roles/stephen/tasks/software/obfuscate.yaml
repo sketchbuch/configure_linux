@@ -1,4 +1,6 @@
 - name: "Software > Install Obfuscate"
+  become: true
+  become_user: "{{ userUsername }}"
   community.general.flatpak:
     name: com.belmoussaoui.Obfuscate
     state: present

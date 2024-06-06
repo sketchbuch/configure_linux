@@ -1,4 +1,6 @@
 - name: "Software > Install Tangram"
+  become: true
+  become_user: "{{ userUsername }}"
   community.general.flatpak:
     name: re.sonny.Tangram
     state: present

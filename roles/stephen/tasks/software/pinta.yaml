@@ -1,4 +1,6 @@
 - name: "Software > Install Pinta"
+  become: true
+  become_user: "{{ userUsername }}"
   community.general.flatpak:
     name: com.github.PintaProject.Pinta
     state: present

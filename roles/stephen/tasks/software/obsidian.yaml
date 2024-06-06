@@ -1,4 +1,6 @@
 - name: "Software > Install Obsidian"
+  become: true
+  become_user: "{{ userUsername }}"
   community.general.flatpak:
     name: md.obsidian.Obsidian
     state: present

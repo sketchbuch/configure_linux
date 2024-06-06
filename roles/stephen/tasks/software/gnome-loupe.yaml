@@ -1,4 +1,6 @@
 - name: "Software > Install Gnome Loupe"
+  become: true
+  become_user: "{{ userUsername }}"
   community.general.flatpak:
     name: org.gnome.Loupe
     state: present

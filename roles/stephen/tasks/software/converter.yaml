@@ -1,4 +1,6 @@
 - name: "Software > Install Converter"
+  become: true
+  become_user: "{{ userUsername }}"
   community.general.flatpak:
     name: io.gitlab.adhami3310.Converter
     state: present

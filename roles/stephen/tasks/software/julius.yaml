@@ -1,4 +1,6 @@
 - name: "Software > Install Julius"
+  become: true
+  become_user: "{{ userUsername }}"
   community.general.flatpak:
     name: com.github.bvschaik.julius
     state: present

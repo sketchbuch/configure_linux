@@ -1,4 +1,6 @@
 - name: "Software > Install Curtail"
+  become: true
+  become_user: "{{ userUsername }}"
   community.general.flatpak:
     name: com.github.huluti.Curtail
     state: present

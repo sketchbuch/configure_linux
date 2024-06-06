@@ -1,4 +1,6 @@
 - name: "Software > Install Webfont Kit Generator"
+  become: true
+  become_user: "{{ userUsername }}"
   community.general.flatpak:
     name: com.rafaelmardojai.WebfontKitGenerator
     state: present

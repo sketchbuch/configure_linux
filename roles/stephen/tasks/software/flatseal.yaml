@@ -1,4 +1,6 @@
 - name: "Software > Install Flatseal"
+  become: true
+  become_user: "{{ userUsername }}"
   community.general.flatpak:
     name: com.github.tchx84.Flatseal
     state: present

@@ -1,4 +1,6 @@
 - name: "Software > Install Video Trimmer"
+  become: true
+  become_user: "{{ userUsername }}"
   community.general.flatpak:
     name: org.gnome.gitlab.YaLTeR.VideoTrimmer
     state: present

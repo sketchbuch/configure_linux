@@ -1,4 +1,6 @@
 - name: "Software > Install Collision"
+  become: true
+  become_user: "{{ userUsername }}"
   community.general.flatpak:
     name: dev.geopjr.Collision
     state: present

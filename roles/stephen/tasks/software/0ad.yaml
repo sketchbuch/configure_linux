@@ -1,4 +1,6 @@
 - name: "Software > Install 0AD"
+  become: true
+  become_user: "{{ userUsername }}"
   community.general.flatpak:
     name: com.play0ad.zeroad
     state: present

@@ -1,4 +1,6 @@
 - name: "Software > Install Audacity"
+  become: true
+  become_user: "{{ userUsername }}"
   community.general.flatpak:
     name: org.audacityteam.Audacity
     state: present

@@ -1,4 +1,6 @@
 - name: "Software > Install Celeste"
+  become: true
+  become_user: "{{ userUsername }}"
   community.general.flatpak:
     name: com.hunterwittenborn.Celeste
     state: present

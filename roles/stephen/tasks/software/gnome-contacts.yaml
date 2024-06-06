@@ -1,4 +1,6 @@
 - name: "Software > Install Gnome Contacts"
+  become: true
+  become_user: "{{ userUsername }}"
   community.general.flatpak:
     name: org.gnome.Contacts
     state: present

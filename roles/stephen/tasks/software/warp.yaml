@@ -1,4 +1,6 @@
 - name: "Software > Install Warp"
+  become: true
+  become_user: "{{ userUsername }}"
   community.general.flatpak:
     name: app.drey.Warp
     state: present

@@ -1,4 +1,6 @@
 - name: "Software > Install FreeFileSync"
+  become: true
+  become_user: "{{ userUsername }}"
   community.general.flatpak:
     name: org.freefilesync.FreeFileSync
     state: present

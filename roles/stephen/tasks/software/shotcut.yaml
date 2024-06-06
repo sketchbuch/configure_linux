@@ -1,4 +1,6 @@
 - name: "Software > Install Shotcut"
+  become: true
+  become_user: "{{ userUsername }}"
   community.general.flatpak:
     name: org.shotcut.Shotcut
     state: present

@@ -1,4 +1,6 @@
 - name: "Software > Install KeePass XC"
+  become: true
+  become_user: "{{ userUsername }}"
   community.general.flatpak:
     name: org.keepassxc.KeePassXC
     state: present

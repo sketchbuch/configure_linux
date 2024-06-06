@@ -1,4 +1,6 @@
 - name: "Software > Install Slack"
+  become: true
+  become_user: "{{ userUsername }}"
   community.general.flatpak:
     name: com.slack.Slack
     state: present
