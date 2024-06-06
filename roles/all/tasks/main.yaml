@@ -7,7 +7,7 @@
     - name: "Include common tasks for {{ distro_pretty }}"
       import_tasks: "distro/common.yaml"
       tags: ["distro_tasks"]
-      when: is_fedora
+      when: is_fedora or is_ubuntu
 
     - name: "Include tasks for {{ distro_pretty }}"
       import_tasks: "distro/ubuntu.yaml"
