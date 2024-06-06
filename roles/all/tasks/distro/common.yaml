@@ -1,8 +1,8 @@
 - name: "Software Tasks"
   block:
-    - import_tasks: "../shared/software/fsearch.yaml"
-    - import_tasks: "../shared/software/htop.yaml"
-    - import_tasks: "../shared/software/plocate.yaml"
-    - import_tasks: "../shared/software/powertop.yaml"
+    - import_tasks: "../software/fsearch.yaml"
+    - import_tasks: "../software/htop.yaml"
+    - import_tasks: "../software/plocate.yaml"
+    - import_tasks: "../software/powertop.yaml"
   tags: ["software", "fedora", "ubuntu"]
   when: installSoftware
