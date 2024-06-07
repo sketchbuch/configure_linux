@@ -20,4 +20,4 @@
       ansible.builtin.command:
         cmd: 'gnome-extensions install "{{ anisbleTmp }}/gnome_extensions/{{ extension.uuid }}.zip"'
   tags: ["system", "desktop", "gnome", "extensions"]
-  when: gnome_extension_check.stat.exists == false
+  when: not gnome_extension_check.stat.exists
