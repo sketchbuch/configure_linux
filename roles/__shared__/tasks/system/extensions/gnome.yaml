@@ -8,11 +8,13 @@
     loop_var: extension
   when: is_gnome
 
-- name: 'System > Extensions > Gnome Extensions: "Desktop Icons NG (DING)" - Uninstall'
+- name: 'System > Extensions > Gnome Extensions: "desktop-icons-ng-ding" - Disable'
   ansible.builtin.command:
-    cmd: "gnome-extensions uninstall ding@rastersoft.com"
+    cmd: "gnome-extensions disable ding@rastersoft.com"
   tags: ["system", "desktop", "gnome", "extensions"]
-  when: is_gnome and (distro_major_version | int) >= 24
+  when:
+    - is_gnome
+    - (distro_major_version | int) >= 24
 
 - import_tasks: "gnome_cleanup.yaml"
   when: is_gnome
