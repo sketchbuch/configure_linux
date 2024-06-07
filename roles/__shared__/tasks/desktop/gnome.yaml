@@ -1,5 +1,6 @@
 - import_tasks: "../system/extensions/gnome.yaml"
   tags: ["gnome"]
+  when: is_gnome and installGnomeExtensions
 
 - name: "Gnome Dconf"
   block:

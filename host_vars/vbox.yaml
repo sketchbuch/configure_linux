@@ -1,6 +1,7 @@
 anisbleTmp: "~/.ansible/tmp"
 installSoftware: false
 installDevTools: false
+installGnomeExtensions: true
 
 nodeVersions:
   - "16.13.0"
