@@ -8,9 +8,9 @@
     loop_var: extension
   when: is_gnome
 
+# Requires re-login to see changes
 - name: 'System > Extensions > Gnome Extensions: "desktop-icons-ng-ding" - Disable'
   ansible.builtin.command:
-    # cmd: "gnome-extensions disable ding@rastersoft.com"
     cmd: "gnome-shell-extension-tool --disable-extension ding@rastersoft.com"
   become: true
   become_user: "{{ profile_username }}"

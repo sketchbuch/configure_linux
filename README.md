@@ -251,6 +251,7 @@ wike              | Wike tasks
   - Remove empty tasks/vars
   - Libre Office
   - Terminal Light Mode
+  - Add vbox profile image
 
     ### Final
 
