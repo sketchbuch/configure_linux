@@ -250,6 +250,7 @@ wike              | Wike tasks
   - Install Ubuntu font
   - Remove empty tasks/vars
   - Libre Office
+  - Terminal Light Mode
 
     ### Final
 

@@ -29,6 +29,6 @@
     # Will not show up in extension manager until session restarts
     - name: 'System > Extensions > Gnome Extensions: "{{ extension.name }}" - Enable'
       ansible.builtin.command:
-        cmd: "gnome-shell-extension-tool --enable-extension {{ extension.uuid }}"
+        cmd: "gnome-extensions enable {{ extension.uuid }}"
   tags: ["system", "desktop", "gnome", "extensions", "files", "folders"]
   when: gnome_extension_check.stat.exists == false
