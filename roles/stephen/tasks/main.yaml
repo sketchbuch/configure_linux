@@ -36,7 +36,7 @@
     - include_tasks: "users/{{ userUsername }}/freefilesync.yaml"
     - include_tasks: "users/{{ userUsername }}/obsidian.yaml"
     - include_tasks: "users/{{ userUsername }}/profile.yaml"
-    - import_tasks: "shared/users/nautilus.yaml"
+    - include_tasks: "shared/users/nautilus.yaml"
 
     - name: "Install dev tools"
       block:
