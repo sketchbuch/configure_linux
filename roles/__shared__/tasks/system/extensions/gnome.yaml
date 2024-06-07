@@ -12,9 +12,7 @@
   ansible.builtin.command:
     cmd: "gnome-extensions uninstall ding@rastersoft.com"
   tags: ["system", "desktop", "gnome", "extensions"]
-  when:
-    - is_gnome
-    - (distro_major_version | int) = 24
+  when: is_gnome and (distro_major_version | int) = 24
 
 - import_tasks: "gnome_cleanup.yaml"
   when: is_gnome
