@@ -11,7 +11,7 @@
 - name: 'System > Extensions > Gnome Extensions: "desktop-icons-ng-ding" - Disable'
   ansible.builtin.command:
     # cmd: "gnome-extensions disable ding@rastersoft.com"
-    cmd: "gnome-shell-extension-tool disable ding@rastersoft.com"
+    cmd: "gnome-shell-extension-tool --disable-extension ding@rastersoft.com"
   become: true
   become_user: "{{ profile_username }}"
   tags: ["system", "desktop", "gnome", "extensions"]
