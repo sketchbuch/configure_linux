@@ -37,8 +37,13 @@
   become: true
   become_user: "{{ profile_username }}"
   block:
-    - name: 'System > Extensions > Gnome Extensions: Installing "{{ extension.name }}"'
+    - name: 'System > Extensions > Gnome Extensions: "{{ extension.name }}" - Download'
+      ansible.builtin.get_url:
+        dest: "{{ anisbleTmp }}/gnome_extensions/{{ extension.uuid }}.zip"
+        url: "https://extensions.gnome.org/extension-data/{{ extension.url }}"
+
+    - name: 'System > Extensions > Gnome Extensions: "{{ extension.name }}" - Install'
       ansible.builtin.command:
-        cmd: "gnome-extensions install {{ extension.uuid }}"
+        cmd: 'gnome-extensions install "{{ anisbleTmp }}/gnome_extensions/{{ extension.uuid }}.zip"'
   tags: ["system", "desktop", "gnome", "extensions"]
   when: gnome_extension_check.stat.exists == false
