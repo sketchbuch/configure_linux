@@ -1,12 +1,8 @@
 gnome_extensions:
   - name: "alphabetical-app-grid"
-    url: "AlphabeticalAppGridstuarthayhurst.v29.shell-extension.zip"
+    url: "AlphabeticalAppGridstuarthayhurst.v40.shell-extension.zip"
     uuid: "AlphabeticalAppGrid@stuarthayhurst"
 
-  - name: "bluetooth-quick-connect"
-    url: "bluetooth-quick-connectbjarosze.gmail.com.v34.shell-extension.zip"
-    uuid: "bluetooth-quick-connect@bjarosze.gmail.com"
-
   - name: "color-picker"
-    url: "color-pickertuberry.v30.shell-extension.zip"
+    url: "color-pickertuberry.v44.shell-extension.zip"
     uuid: "color-picker@tuberry"
