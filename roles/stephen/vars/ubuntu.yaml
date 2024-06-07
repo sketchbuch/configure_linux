@@ -1,8 +1,8 @@
 gnome_extensions:
   - name: "alphabetical-app-grid"
-    url: "AlphabeticalAppGridstuarthayhurst.v40.shell-extension.zip"
+    url: "AlphabeticalAppGridstuarthayhurst.v29.shell-extension.zip"
     uuid: "AlphabeticalAppGrid@stuarthayhurst"
 
   - name: "color-picker"
-    url: "color-pickertuberry.v44.shell-extension.zip"
+    url: "color-pickertuberry.v30.shell-extension.zip"
     uuid: "color-picker@tuberry"

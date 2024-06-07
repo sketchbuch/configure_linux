@@ -1,3 +1,5 @@
+# Ubuntu 24+ has support for webp in Nautilus
+
 - name: "Gnome > Config > Thumbnailer > WebP: Ubuntu prep"
   block:
     - name: "Gnome > Config > Thumbnailer > WebP: Add repo"
