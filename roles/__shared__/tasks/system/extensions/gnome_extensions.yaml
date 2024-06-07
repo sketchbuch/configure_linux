@@ -6,9 +6,7 @@
   register: gnome_extension_check
   tags: ["system", "desktop", "gnome", "extensions", "files"]
 
-- name: 'System > Extensions > Gnome Extensions: "{{ extension.name }}" - Exists'
-  ansible.builtin.debug:
-    msg: "Skipping install"
+- name: 'System > Extensions > Gnome Extensions: "{{ extension.name }}" - Skipping install'
   become: true
   become_user: "{{ profile_username }}"
   tags: ["system", "desktop", "gnome", "extensions"]
