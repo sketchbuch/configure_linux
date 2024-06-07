@@ -1,6 +1,6 @@
 - name: 'System > Extensions > Gnome Extensions: "{{ extension.name }}" - Check if is already installed'
   ansible.builtin.stat:
-    path: "home/{{ profile_username }}/.local/share/gnome-shell/extensions/{{ extension.uuid }}"
+    path: "/home/{{ profile_username }}/.local/share/gnome-shell/extensions/{{ extension.uuid }}"
   become: true
   become_user: "{{ profile_username }}"
   register: gnome_extension_check
