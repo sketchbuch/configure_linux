@@ -6,7 +6,7 @@
     - import_tasks: "facts/package.yaml"
     - import_tasks: "facts/checks.yaml"
 
-    # import_tasks: "prep/files.yaml"
+    - import_tasks: "prep/files.yaml"
 
     - import_tasks: "variables/get.yaml"
     - import_tasks: "variables/debug.yaml"
