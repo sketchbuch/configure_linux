@@ -18,6 +18,7 @@
         - import_tasks: "shared/users/home_folder.yaml"
         - import_tasks: "shared/users/profile.yaml"
         - import_tasks: "shared/users/terminal.yaml"
+        - import_tasks: "shared/users/nautilus.yaml"
       tags: ["stephen"]
       vars:
         profile_username: "{{ userUsername }}"
@@ -36,7 +37,6 @@
     - include_tasks: "users/{{ userUsername }}/freefilesync.yaml"
     - include_tasks: "users/{{ userUsername }}/obsidian.yaml"
     - include_tasks: "users/{{ userUsername }}/profile.yaml"
-    - include_tasks: "shared/users/nautilus.yaml"
 
     - name: "Install dev tools"
       block:
