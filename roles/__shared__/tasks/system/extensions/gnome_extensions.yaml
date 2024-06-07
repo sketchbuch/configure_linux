@@ -6,20 +6,6 @@
   register: gnome_extension_check
   tags: ["system", "desktop", "gnome", "extensions", "files"]
 
-- name: 'System > Extensions > Gnome Extensions: "{{ extension.name }}" - Debug'
-  ansible.builtin.debug:
-    msg: "home/{{ profile_username }}/.local/share/gnome-shell/extensions/{{ extension.uuid }}/metadata.json"
-  become: true
-  become_user: "{{ profile_username }}"
-  tags: ["system", "desktop", "gnome", "extensions", "files"]
-
-- name: 'System > Extensions > Gnome Extensions: "{{ extension.name }}" - Debug 2'
-  ansible.builtin.debug:
-    var: gnome_extension_check
-  become: true
-  become_user: "{{ profile_username }}"
-  tags: ["system", "desktop", "gnome", "extensions", "files"]
-
 - name: "{{ extension.name }}:"
   become: true
   become_user: "{{ profile_username }}"
