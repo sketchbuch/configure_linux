@@ -15,9 +15,7 @@
 #   become: true
 #   become_user: "{{ profile_username }}"
 #   tags: ["system", "desktop", "gnome", "extensions"]
-#   when:
-#     - is_gnome
-#     - (distro_major_version | int) >= 24
+#   when: is_gnome
 
 - import_tasks: "gnome_cleanup.yaml"
   when: is_gnome

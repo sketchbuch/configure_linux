@@ -55,36 +55,7 @@
   tags: ["system", "file-manager", "gnome"]
 
 # Version speciic changes
-- name: "Ubuntu <= 23"
-  become: true
-  become_user: "{{ profile_username }}"
-  block:
-    # Instant changes
-    - name: "Gnome > Config > Nautilus: Dirs sorted with files"
-      become: true
-      become_user: "{{ profile_username }}"
-      community.general.dconf:
-        key: "/org/gtk/settings/file-chooser/sort-directories-first"
-        state: present
-        value: "false"
-      tags: ["system", "file-manager", "gnome"]
-
-    - name: "Gnome > Config > Nautilus: Hide hidden files"
-      community.general.dconf:
-        key: "/org/gtk/settings/file-chooser/show-hidden"
-        state: present
-        value: "false"
-
-    # Affects new windows only
-    - name: "Gnome > Config > Nautilus: Zoom level"
-      community.general.dconf:
-        key: "/org/gnome/nautilus/icon-view/default-zoom-level"
-        state: present
-        value: "'larger'"
-  tags: ["system", "file-manager", "gnome"]
-  when: is_ubuntu and (distro_major_version | int) <= 22
-
-- name: "Fedora or Ubuntu > 23"
+- name: "Nautilus: Ubuntu 24.x / Fedora 40"
   become: true
   become_user: "{{ profile_username }}"
   block:
@@ -111,4 +82,3 @@
         state: present
         value: "'medium'"
   tags: ["system", "file-manager", "gnome"]
-  when: is_fedora or is_ubuntu and (distro_major_version | int) == 23

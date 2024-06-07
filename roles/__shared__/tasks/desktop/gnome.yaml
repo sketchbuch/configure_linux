@@ -13,7 +13,6 @@
     - import_tasks: "gnome/config/mouse.yaml"
     - import_tasks: "gnome/config/nautilus.yaml"
     - import_tasks: "gnome/config/thumbnailer/epub.yaml"
-    - import_tasks: "gnome/config/thumbnailer/webp.yaml"
     - import_tasks: "gnome/config/touchpad.yaml"
     - import_tasks: "gnome/config/weather.yaml"
   tags: ["gnome"]

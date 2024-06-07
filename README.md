@@ -1,8 +1,11 @@
 # Configure Linux
 
-> **Warning** NOT YET READY - TESTING
-
 My ansible setup to configure linux and install apps etc. in real and virtual environments.
+
+## Supported Distros and versions
+
+- Ubuntu 24.04
+- Fedora 40
 
 ## Prerequisites
 
@@ -34,7 +37,7 @@ My ansible setup to configure linux and install apps etc. in real and virtual en
 
 - **Install psutil**
 
-  - `sudo apt-get install -y python3-psutil`
+  - `sudo apt-get install -y python3-psutil` (Ubuntu)
 
 ## Run
 
@@ -56,12 +59,6 @@ My ansible setup to configure linux and install apps etc. in real and virtual en
 - <https://gist.github.com/carlwgeorge/c560a532b6929f49d9c0df52f75a68ae>
 - <https://github.com/PeterMosmans/ansible-role-customize-gnome>
 - <https://github.com/FinalDes/ansible-ubuntu-disable-auto-update/>
-
-### Supported Distros and versions
-
-- Ubuntu 22.04
-- Ubuntu 23.04
-- Fedora 40
 
 ## Hosts
 
