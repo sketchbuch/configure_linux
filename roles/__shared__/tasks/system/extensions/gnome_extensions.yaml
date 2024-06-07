@@ -6,6 +6,13 @@
   register: gnome_extension_check
   tags: ["system", "desktop", "gnome", "extensions", "files"]
 
+- name: 'System > Extensions > Gnome Extensions: "{{ extension.name }}" - Debug'
+  ansible.builtin.debug:
+    var: gnome_extension_check
+  become: true
+  become_user: "{{ profile_username }}"
+  tags: ["system", "desktop", "gnome", "extensions", "files"]
+
 - name: "{{ extension.name }}:"
   become: true
   become_user: "{{ profile_username }}"
