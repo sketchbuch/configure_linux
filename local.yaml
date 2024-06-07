@@ -11,7 +11,7 @@
   become: true
   gather_facts: false
   roles:
-    - all
+    - common
   tags: ["all"]
 
 # My user

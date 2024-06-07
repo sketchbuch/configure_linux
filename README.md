@@ -77,9 +77,9 @@ The following tags are used:
 ### Roles
 
 Tag     | Description
-------- | ----------------------------
-all     | All hosts
+------- | --------------------------------------------------------
 cleanup | Cleanup tasks
+common  | Tasks theat need doing no mattr what user tasks are run.
 mms     | MMS User
 setup   | Ansible setup and prep tasks
 stephen | My user

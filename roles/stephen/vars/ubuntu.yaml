@@ -6,7 +6,3 @@ gnome_extensions:
   - name: "color-picker"
     url: "color-pickertuberry.v44.shell-extension.zip"
     uuid: "color-picker@tuberry"
-
-  # - name: "color-picker"
-  #   url: "color-pickertuberry.v30.shell-extension.zip"
-  #   uuid: "color-picker@tuberry"

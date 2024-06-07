@@ -21,4 +21,4 @@
     - import_tasks: "system/terminal.yaml"
 
   rescue:
-    - set_fact: all_task_failed=true
+    - set_fact: common_task_failed=true
