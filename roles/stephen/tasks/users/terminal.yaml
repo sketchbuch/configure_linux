@@ -12,7 +12,7 @@
 - name: "Users > {{ userFullname }} > Terminal: Import settings"
   become: true
   become_user: "{{ profile_username }}"
-  ansible.builtin.command:
+  ansible.builtin.shell:
     cmd: "dconf load /org/gnome/terminal/ < {{ anisbleTmp }}/gnome_terminal_settings.txt"
   tags: ["system", "terminal", "files"]
 
