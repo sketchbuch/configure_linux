@@ -239,13 +239,8 @@ wike              | Wike tasks
 
 - Ubuntu 24.04
 
-  - Remove empty tasks/vars
-  - Libre Office
   - Terminal Light Mode
-
-    ### Final
-
-- Check software installed for stephen
+  - Turn on corner
 
 ## Manual Todos
 
@@ -255,3 +250,5 @@ Things to do after install
 - Download keepassxc dbs
 - Setup login to vsce
 - Download wallpapers and set
+- Clone Repos
+- Deactivate desktop icons extension
