@@ -1,4 +1,4 @@
-- name: "Users > {{ userFullname }} > Terminal: Lightmode"
+- name: "Users > {{ userFullname }} > Terminal: Light mode"
   become: true
   become_user: "{{ profile_username }}"
   community.general.dconf:
