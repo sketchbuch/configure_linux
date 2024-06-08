@@ -1,8 +1,3 @@
-- name: "Vars > Debug: ansible facts"
-  ansible.builtin.debug:
-    msg: "{{ ansible_facts['env'] }}"
-  tags: ["setup", "debug"]
-
 - name: "Vars > Get: distro"
   set_fact:
     distro: "{{ ansible_distribution | lower }}"
@@ -21,16 +16,6 @@
 - name: "Vars > Get: is_fedora"
   set_fact:
     is_fedora: '{{ (distro == "fedora") | ternary (true, false) }}'
-  tags: ["setup", "set_fact"]
-
-- name: "Vars > Get: is_gnome"
-  set_fact:
-    is_gnome: '{{ ("gnome" in (ansible_facts["env"]["XDG_CURRENT_DESKTOP"] | lower)) | ternary (true, false) }}'
-  tags: ["setup", "set_fact"]
-
-- name: "Vars > Get: is_kde"
-  set_fact:
-    is_kde: '{{ ("kde" in (ansible_facts["env"]["XDG_CURRENT_DESKTOP"] | lower)) | ternary (true, false) }}'
   tags: ["setup", "set_fact"]
 
 - name: "Vars > Get: is_ubuntu"

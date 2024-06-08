@@ -28,7 +28,6 @@
       vars:
         gnome_extensions: "{{ gnome_extensions }}"
         profile_username: "{{ userUsername }}"
-      when: is_gnome
 
     - import_tasks: "users/mms/home_folder.yaml"
     - import_tasks: "users/mms/wallpaper.yaml"

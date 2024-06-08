@@ -4,4 +4,3 @@
     - import_tasks: "gnome/config/screensaver.yaml"
     - import_tasks: "gnome/config/ubuntu.yaml"
   tags: ["gnome"]
-  when: is_gnome

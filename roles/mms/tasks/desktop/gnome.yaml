@@ -8,4 +8,3 @@
     profile_username: "{{ userUsername }}"
     profile_username_pretty: "{{ userFullname }}"
     profile_image_folder: "{{ userImageFolder }}"
-  when: is_gnome

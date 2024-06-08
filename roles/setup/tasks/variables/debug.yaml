@@ -5,8 +5,6 @@
       - "distro_pretty: {{ distro_pretty }}"
       - "distro_major_version: {{ distro_major_version }}"
       - "is_fedora: {{ is_fedora }}"
-      - "is_gnome: {{ is_gnome }}"
-      - "is_kde: {{ is_kde }}"
       - "is_ubuntu: {{ is_ubuntu }}"
       - "is_virtual: {{ is_virtual }}"
       - "is_virtualbox: {{ is_virtual }}"
