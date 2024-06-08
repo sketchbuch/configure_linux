@@ -12,9 +12,9 @@
   become: true
   become_user: "{{ userUsername }}"
   ansible.builtin.copy:
-    src: "users/{{ userUsername }}/obsidian-dictionary.txt"
     dest: "~/.var/app/md.obsidian.Obsidian/config/obsidian/Custom Dictionary.txt"
-    owner: "{{ userUsername }}"
     group: "{{ userUsername }}"
     mode: 0600
+    owner: "{{ userUsername }}"
+    src: "users/{{ userUsername }}/obsidian-dictionary.txt"
   tags: ["users", "files", "stephen", "obsidian", "virtual"]
