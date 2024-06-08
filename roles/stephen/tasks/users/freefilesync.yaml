@@ -11,6 +11,7 @@
   become_user: "{{ userUsername }}"
   ansible.builtin.copy:
     dest: "/home/{{ userUsername }}/Apps/FreeFileSync/{{ file }}"
+    force: false
     group: "{{ userUsername }}"
     mode: 0600
     owner: "{{ userUsername }}"
