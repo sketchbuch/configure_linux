@@ -16,19 +16,6 @@
       tags: ["distro_tasks"]
       when: is_ubuntu
 
-    - name: "User settings"
-      block:
-        - import_tasks: "shared/users/git.yaml"
-        - import_tasks: "shared/users/gtk.yaml"
-        - import_tasks: "shared/users/home_folder.yaml"
-        - import_tasks: "shared/users/profile.yaml"
-        - import_tasks: "shared/users/terminal.yaml"
-        - import_tasks: "shared/users/nautilus.yaml"
-      tags: ["stephen"]
-      vars:
-        profile_username: "{{ userUsername }}"
-        profile_username_pretty: "{{ userFullname }}"
-
     - name: "Include tasks for Gnome"
       block:
         - include_tasks: "shared/desktop/gnome.yaml"
@@ -38,10 +25,22 @@
         profile_username: "{{ userUsername }}"
       when: is_gnome
 
-    - include_tasks: "users/{{ userUsername }}/home_folder.yaml"
-    - include_tasks: "users/{{ userUsername }}/freefilesync.yaml"
-    - include_tasks: "users/{{ userUsername }}/obsidian.yaml"
-    - include_tasks: "users/{{ userUsername }}/profile.yaml"
+    - name: "User settings"
+      block:
+        - import_tasks: "shared/users/git.yaml"
+        - import_tasks: "shared/users/gtk.yaml"
+        - import_tasks: "shared/users/home_folder.yaml"
+        - import_tasks: "shared/users/profile.yaml"
+        - import_tasks: "shared/users/terminal.yaml"
+        - import_tasks: "shared/users/nautilus.yaml"
+        - include_tasks: "users/{{ userUsername }}/home_folder.yaml"
+        - include_tasks: "users/{{ userUsername }}/freefilesync.yaml"
+        - include_tasks: "users/{{ userUsername }}/obsidian.yaml"
+        - include_tasks: "users/{{ userUsername }}/profile.yaml"
+      tags: ["stephen"]
+      vars:
+        profile_username: "{{ userUsername }}"
+        profile_username_pretty: "{{ userFullname }}"
 
     - name: "Install dev tools"
       block:
