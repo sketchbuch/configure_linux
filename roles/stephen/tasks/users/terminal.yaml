@@ -7,9 +7,20 @@
     value: "'light'"
   tags: ["system", "terminal"]
 
-- name: "Users > {{ userFullname }} > Terminal: Import Settings"
+- name: "Users > {{ userFullname }} > Terminal: Copy settings"
+  become: true
+  become_user: "{{ profile_username }}"
+  ansible.builtin.copy:
+    dest: "{{ anisbleTmp }}/gnome_terminal_settings.txt"
+    group: "{{ profile_username }}"
+    mode: 0600
+    owner: "{{ profile_username }}"
+    src: "users/{{ profile_username }}/terminal/gnome_terminal_settings.txt"
+  tags: ["users", "git", "files"]
+
+- name: "Users > {{ userFullname }} > Terminal: Import settings"
   become: true
   become_user: "{{ profile_username }}"
   ansible.builtin.command:
-    cmd: 'dconf load /org/gnome/terminal/ < "users/stephen/terminal/gnome_terminal_settings.txt"'
+    cmd: 'dconf load /org/gnome/terminal/ < "{{ anisbleTmp }}/gnome_terminal_settings.txt"'
   tags: ["system", "terminal"]
