@@ -11,6 +11,11 @@
       tags: ["distro_tasks"]
       when: is_fedora or is_ubuntu
 
+    - name: "Include tasks for {{ distro_pretty }}"
+      import_tasks: "distro/ubuntu.yaml"
+      tags: ["distro_tasks"]
+      when: is_ubuntu
+
     - name: "User settings"
       block:
         - import_tasks: "shared/users/git.yaml"
@@ -49,6 +54,12 @@
       vars:
         profile_username: "{{ userUsername }}"
       when: installDevTools
+
+    - import_tasks: "system/fonts/firacode.yaml"
+    - import_tasks: "system/fonts/inconsolata.yaml"
+    - import_tasks: "system/fonts/mscorefonts.yaml"
+    - import_tasks: "system/fonts/sourcecodepro.yaml"
+    - import_tasks: "system/terminal.yaml"
 
   rescue:
     - set_fact: stephen_task_failed=true

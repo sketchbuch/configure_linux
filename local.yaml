@@ -6,14 +6,6 @@
     - setup
   tags: ["setup", "all"]
 
-# Things to do for all users
-- hosts: all
-  become: true
-  gather_facts: false
-  roles:
-    - common
-  tags: ["all"]
-
 # My user
 - hosts: all
   become: true
@@ -30,9 +22,9 @@
 #   tags: ["mms"]
 
 # Finish
-# - hosts: all
-#   become: true
-#   gather_facts: false
-#   roles:
-#     - cleanup
-#   tags: ["cleanup", "all"]
+- hosts: all
+  become: true
+  gather_facts: false
+  roles:
+    - cleanup
+  tags: ["cleanup", "all"]

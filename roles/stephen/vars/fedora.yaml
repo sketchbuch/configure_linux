@@ -1,3 +1,7 @@
+font_droidmono: google-droid-sans-mono-fonts
+font_firacode: fira-code-fonts
+font_inconsolata: levien-inconsolata-fonts
+
 gnome_extensions:
   - name: "alphabetical-app-grid"
     url: "AlphabeticalAppGridstuarthayhurst.v40.shell-extension.zip"
