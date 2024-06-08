@@ -11,5 +11,5 @@
   become: true
   become_user: "{{ profile_username }}"
   ansible.builtin.command:
-    cmd: 'dconf load /org/gnome/terminal/ < "../../files/users/stephen/terminal/gnome_terminal_settings.txt"'
+    cmd: 'dconf load /org/gnome/terminal/ < "./files/users/stephen/terminal/gnome_terminal_settings.txt"'
   tags: ["system", "terminal"]
