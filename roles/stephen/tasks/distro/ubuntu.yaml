@@ -1,2 +1,8 @@
-- import_tasks: "shared/system/tools/curl.yaml"
+- import_tasks: "../shared/system/tools/curl.yaml"
 - import_tasks: "../system/fonts/cantarell.yaml"
+
+- name: "Software Tasks (Ubuntu)"
+  block:
+    - import_tasks: "../software/libreoffice.yaml"
+  tags: ["software", "ubuntu"]
+  when: installSoftware

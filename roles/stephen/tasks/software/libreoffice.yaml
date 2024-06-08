@@ -1,0 +1,8 @@
+- name: "Software > Install LibreOffice"
+  become: true
+  become_user: "{{ userUsername }}"
+  community.general.flatpak:
+    name: org.libreoffice.LibreOffice
+    state: present
+    method: user
+  tags: ["software", "libreoffice", "flatpak"]

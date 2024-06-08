@@ -192,6 +192,7 @@ inkscape          | Inkscape tasks
 julius            | Julius tasks
 kdenlive          | Kdenlive tasks
 keepassxc         | KeePass XC tasks
+libreoffice       | LibreOffice tasks
 losslesscut       | LosslessCut tasks
 msedge            | MS Edge Browser tasks
 obs               | OBS Studio tasks
@@ -225,30 +226,22 @@ wike              | Wike tasks
 
 ## Todo
 
-- Old
+- Nice to ahve
 
   - Android studio
-  - Move profile image to real and virtual
-  - Setup vpn
   - ssh
-  - clone repos?
+  - clone repos
   - Disable auto updates virtual
-  - Virtual stuff needs doing for mms
 
 - Fedora 40
 
-  - ...
+  - Install Ubuntu font
 
 - Ubuntu 24.04
 
-  - Remove Desktop Icons
-  - nautilus: set icon size
-  - Remove trash dash icon, software cnter, help
-  - Install Ubuntu font
   - Remove empty tasks/vars
   - Libre Office
   - Terminal Light Mode
-  - Add vbox profile image
 
     ### Final
 
