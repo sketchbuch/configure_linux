@@ -1,6 +1,6 @@
 - name: "Vars > Debug: ansible facts"
   ansible.builtin.debug:
-    msg: "{{ ansible_facts }}"
+    msg: "{{ ansible_facts['env'] }}"
   tags: ["setup", "debug"]
 
 - name: "Vars > Get: distro"
