@@ -1,13 +1,35 @@
-- name: "System > Fonts: Install MS Core Fonts - Accept EULA"
-  debconf:
-    name: "ttf-mscorefonts-installer"
-    question: "msttcorefonts/accepted-mscorefonts-eula"
-    value: "true"
-    vtype: "select"
-  tags: ["system", "fonts"]
+- name: "System > Fonts: Install MS Core Fonts (Fedora)"
+  block:
+    - name: "System > Fonts: Install MS Core Fonts - Install needed packages"
+      ansible.builtin.dnf:
+        name:
+          - cabextract
+          - xorg-x11-font-utils
+          - fontconfig
+        state: present
+      tags: ["system", "fonts"]
 
-- name: "System > Fonts: Install MS Core Fonts"
-  ansible.builtin.package:
-    name: "ttf-mscorefonts-installer"
-    state: present
-  tags: ["system", "fonts"]
+    - name: "System > Fonts: Install MS Core Fonts"
+      ansible.builtin.shell:
+        cmd: "sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm"
+      tags: ["system", "fonts"]
+  tags: ["fedora"]
+  when: is_fedora
+
+- name: "System > Fonts: Install MS Core Fonts (Ubuntu)"
+  block:
+    - name: "System > Fonts: Install MS Core Fonts - Accept EULA"
+      ansible.builtin.debconf:
+        name: "ttf-mscorefonts-installer"
+        question: "msttcorefonts/accepted-mscorefonts-eula"
+        value: "true"
+        vtype: "select"
+      tags: ["system", "fonts"]
+
+    - name: "System > Fonts: Install MS Core Fonts"
+      ansible.builtin.package:
+        name: "ttf-mscorefonts-installer"
+        state: present
+      tags: ["system", "fonts"]
+  tags: ["ubuntu"]
+  when: is_ubuntu

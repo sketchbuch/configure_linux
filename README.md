@@ -52,6 +52,7 @@ My ansible setup to configure linux and install apps etc. in real and virtual en
 - [How to update package cache when using module package from ansible](https://stackoverflow.com/questions/49087220/how-to-update-package-cache-when-using-module-package-from-ansible)
 - [Check if user exists with Ansible](http://loc2log.ucoz.com/blog/2020-07-04-70)
 - [Export and Import of Gnome Terminal Settings](https://www.reddit.com/r/Ubuntu/comments/mjrqxy/how_to_export_gnome_terminal_settings_profiles/)
+- [How to Install Microsoft Fonts on Fedora 37/36/35](https://computingpost.medium.com/how-to-install-microsoft-fonts-on-fedora-37-36-35-26beec25c415)
 
 ### Example Github Repos:
 
