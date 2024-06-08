@@ -29,7 +29,6 @@
       tags: ["gnome"]
       vars:
         profile_username: "{{ userUsername }}"
-      when: is_gnome
 
     - name: "User settings"
       block:
