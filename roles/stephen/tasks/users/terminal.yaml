@@ -14,7 +14,7 @@
   become_user: "{{ profile_username }}"
   ansible.builtin.shell:
     chdir: "{{anisbleTmp}}"
-    cmd: "dconf load /org/gnome/terminal/ < gnome_terminal_settings.txt"
+    cmd: 'dconf load /org/gnome/terminal/ < "{{ inventory_dir }}/roles/stephen/files/users/stephen/terminal/gnome_terminal_settings.txt"'
   tags: ["system", "terminal", "files"]
 
 - name: "Users > {{ userFullname }} > Terminal: Set light mode"
