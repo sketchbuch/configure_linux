@@ -43,6 +43,7 @@
         - include_tasks: "users/home_folder.yaml"
         - include_tasks: "users/obsidian.yaml"
         - include_tasks: "users/profile.yaml"
+        - include_tasks: "users/terminal.yaml"
       tags: ["stephen"]
       vars:
         profile_username: "{{ userUsername }}"

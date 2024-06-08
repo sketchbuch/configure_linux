@@ -1,0 +1,8 @@
+- name: "Users > {{ userFullname }} > Terminal: Lightmode"
+  become: true
+  become_user: "{{ profile_username }}"
+  community.general.dconf:
+    key: "/org/gnome/terminal/legacy/theme-variant"
+    state: present
+    value: "'light'"
+  tags: ["system", "terminal"]
