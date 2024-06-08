@@ -33,10 +33,10 @@
         - import_tasks: "shared/users/profile.yaml"
         - import_tasks: "shared/users/terminal.yaml"
         - import_tasks: "shared/users/nautilus.yaml"
-        - include_tasks: "users/{{ userUsername }}/home_folder.yaml"
-        - include_tasks: "users/{{ userUsername }}/freefilesync.yaml"
-        - include_tasks: "users/{{ userUsername }}/obsidian.yaml"
-        - include_tasks: "users/{{ userUsername }}/profile.yaml"
+        - include_tasks: "users/home_folder.yaml"
+        - include_tasks: "users/freefilesync.yaml"
+        - include_tasks: "users/obsidian.yaml"
+        - include_tasks: "users/profile.yaml"
       tags: ["stephen"]
       vars:
         profile_username: "{{ userUsername }}"
