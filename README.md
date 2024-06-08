@@ -239,9 +239,6 @@ wike              | Wike tasks
 
 - Ubuntu 24.04
 
-  - Terminal Light Mode
-  - Turn on corner
-
 ## Manual Todos
 
 Things to do after install

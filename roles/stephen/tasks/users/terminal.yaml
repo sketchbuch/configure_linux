@@ -11,7 +11,7 @@
   become: true
   become_user: "{{ profile_username }}"
   community.general.dconf:
-    key: "/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/"
+    key: "/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9"
     state: present
     value: "false"
   tags: ["system", "terminal"]
