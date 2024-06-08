@@ -61,6 +61,8 @@
         profile_username: "{{ userUsername }}"
       when: installDevTools
 
+    - import_tasks: "software/switcheroo.yaml"
+
   rescue:
     - set_fact: stephen_task_failed=true
   when: users.stephen

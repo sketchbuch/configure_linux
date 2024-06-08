@@ -1,0 +1,8 @@
+- name: "Software > Install Switcheroo"
+  become: true
+  become_user: "{{ userUsername }}"
+  community.general.flatpak:
+    name: io.gitlab.adhami3310.Converter
+    state: present
+    method: user
+  tags: ["software", "graphics", "switcheroo", "flatpak"]
