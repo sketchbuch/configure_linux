@@ -7,11 +7,9 @@
     value: "'light'"
   tags: ["system", "terminal"]
 
-- name: "Users > {{ userFullname }} > Terminal: Disable system colours"
+- name: "Users > {{ userFullname }} > Terminal: Import Settings"
   become: true
   become_user: "{{ profile_username }}"
-  community.general.dconf:
-    key: "/org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9"
-    state: present
-    value: "false"
+  ansible.builtin.command:
+    cmd: 'dconf load /org/gnome/terminal/ < "../../files/users/stephen/terminal/gnome_terminal_settings.txt"'
   tags: ["system", "terminal"]

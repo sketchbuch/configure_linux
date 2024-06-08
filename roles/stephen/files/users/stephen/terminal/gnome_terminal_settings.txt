@@ -1,0 +1,8 @@
+[legacy]
+theme-variant='light'
+
+[legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+background-color='rgb(255,255,255)'
+foreground-color='rgb(23,20,33)'
+use-theme-colors=false
+visible-name='Stephen'
