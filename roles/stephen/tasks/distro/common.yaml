@@ -9,7 +9,6 @@
 
 - name: "Software Tasks"
   block:
-    - import_tasks: "../software/flathub.yaml"
     - import_tasks: "../software/0ad.yaml"
     - import_tasks: "../software/apostrophe.yaml"
     - import_tasks: "../software/audacity.yaml"
@@ -58,6 +57,7 @@
     - import_tasks: "../software/slack.yaml"
     - import_tasks: "../software/soundrecorder.yaml"
     - import_tasks: "../software/steam.yaml"
+    - import_tasks: "../software/switcheroo.yaml"
     - import_tasks: "../software/tangram.yaml"
     - import_tasks: "../software/tangrams.yaml"
     - import_tasks: "../software/textpieces.yaml"
