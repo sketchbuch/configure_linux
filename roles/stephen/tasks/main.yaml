@@ -28,7 +28,7 @@
         - import_tasks: "desktop/gnome.yaml"
       tags: ["gnome"]
       vars:
-        profile_username: "{{ userUsername }}"
+        profileUsername: "{{ userUsername }}"
 
     - name: "User settings"
       block:
@@ -45,8 +45,8 @@
         - include_tasks: "users/terminal.yaml"
       tags: ["stephen"]
       vars:
-        profile_username: "{{ userUsername }}"
-        profile_username_pretty: "{{ userFullname }}"
+        profileUsername: "{{ userUsername }}"
+        profileFullname: "{{ userFullname }}"
 
     - name: "Install dev tools"
       block:
@@ -57,7 +57,7 @@
         - import_tasks: "shared/system/tools/yeoman.yaml"
       tags: ["stephen"]
       vars:
-        profile_username: "{{ userUsername }}"
+        profileUsername: "{{ userUsername }}"
       when: installDevTools
 
   rescue:

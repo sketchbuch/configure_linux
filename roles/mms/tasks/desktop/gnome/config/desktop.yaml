@@ -1,7 +1,7 @@
 - name: "Gnome > Config > Desktop: Set wallpaper"
   become: true
-  become_user: "{{ profile_username }}"
+  become_user: "{{ profileUsername }}"
   dconf:
     key: "/org/gnome/desktop/background/picture-uri"
-    value: "'file:///home/{{ profile_username }}/{{ profile_image_folder }}/Wallpaper/Grey MMS Wallpaper.png'"
+    value: "'file:///home/{{ profileUsername }}/{{ profile_image_folder }}/Wallpaper/Grey MMS Wallpaper.png'"
   tags: ["system", "desktop", "gnome"]

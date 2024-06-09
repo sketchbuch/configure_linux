@@ -1,8 +1,8 @@
 - name: 'System > Extensions > Gnome Extensions: "{{ extension.name }}" - Check if is already installed'
   ansible.builtin.stat:
-    path: "/home/{{ profile_username }}/.local/share/gnome-shell/extensions/{{ extension.uuid }}"
+    path: "/home/{{ profileUsername }}/.local/share/gnome-shell/extensions/{{ extension.uuid }}"
   become: true
-  become_user: "{{ profile_username }}"
+  become_user: "{{ profileUsername }}"
   register: gnome_extension_check
   tags: ["system", "desktop", "gnome", "extensions", "files"]
 
@@ -10,13 +10,13 @@
   ansible.builtin.debug:
     msg: "Skipping extension"
   become: true
-  become_user: "{{ profile_username }}"
+  become_user: "{{ profileUsername }}"
   tags: ["system", "desktop", "gnome", "extensions"]
   when: gnome_extension_check.stat.exists
 
 - name: "{{ extension.name }}:"
   become: true
-  become_user: "{{ profile_username }}"
+  become_user: "{{ profileUsername }}"
   block:
     - name: 'System > Extensions > Gnome Extensions: "{{ extension.name }}" - Download'
       ansible.builtin.get_url:

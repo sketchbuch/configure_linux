@@ -1,10 +1,10 @@
-- name: "Users > {{ profile_username_pretty }} > Git: Create gitconfig"
+- name: "Users > {{ profileFullname }} > Git: Create gitconfig"
   become: true
-  become_user: "{{ profile_username }}"
+  become_user: "{{ profileUsername }}"
   ansible.builtin.copy:
-    dest: "/home/{{ profile_username }}/.gitconfig"
-    group: "{{ profile_username }}"
+    dest: "/home/{{ profileUsername }}/.gitconfig"
+    group: "{{ profileUsername }}"
     mode: 0600
-    owner: "{{ profile_username }}"
-    src: "users/{{ profile_username }}/dev/gitconfig"
+    owner: "{{ profileUsername }}"
+    src: "users/{{ profileUsername }}/dev/gitconfig"
   tags: ["users", "git", "files"]

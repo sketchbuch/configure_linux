@@ -17,8 +17,8 @@
         - import_tasks: "shared/users/terminal.yaml"
       tags: ["mms"]
       vars:
-        profile_username_pretty: "{{ userFullname }}"
-        profile_username: "{{ userUsername }}"
+        profileFullname: "{{ userFullname }}"
+        profileUsername: "{{ userUsername }}"
 
     - name: "Include tasks for Gnome"
       block:
@@ -27,7 +27,7 @@
       tags: ["gnome"]
       vars:
         gnomeExtensions: "{{ gnomeExtensions }}"
-        profile_username: "{{ userUsername }}"
+        profileUsername: "{{ userUsername }}"
 
     - import_tasks: "users/mms/home_folder.yaml"
     - import_tasks: "users/mms/wallpaper.yaml"
@@ -38,7 +38,7 @@
         - import_tasks: "shared/system/tools/pnpm.yaml"
         - import_tasks: "shared/system/tools/yarn.yaml"
       vars:
-        profile_username: "{{ userUsername }}"
+        profileUsername: "{{ userUsername }}"
       tags: ["mms"]
 
   rescue:

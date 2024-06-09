@@ -1,31 +1,31 @@
 # Profile image will not be visible until session restarts
 
-- name: "Users > {{ profile_username_pretty }} > Profile: Copy virtual profile image"
+- name: "Users > {{ profileFullname }} > Profile: Copy virtual profile image"
   become: true
   ansible.builtin.copy:
-    dest: "/var/lib/AccountsService/icons/{{ profile_username }}"
+    dest: "/var/lib/AccountsService/icons/{{ profileUsername }}"
     group: "root"
     mode: 0644
     owner: "root"
-    src: "users/{{ profile_username }}/profile_virtual.png"
+    src: "users/{{ profileUsername }}/profile_virtual.png"
   tags: ["users", "profile", "files"]
   when: isVirtual
 
-- name: "Users > {{ profile_username_pretty }} > Profile: Copy profile image"
+- name: "Users > {{ profileFullname }} > Profile: Copy profile image"
   become: true
   ansible.builtin.copy:
-    dest: "/var/lib/AccountsService/icons/{{ profile_username }}"
+    dest: "/var/lib/AccountsService/icons/{{ profileUsername }}"
     group: "root"
     mode: 0644
     owner: "root"
-    src: "users/{{ profile_username }}/profile.png"
+    src: "users/{{ profileUsername }}/profile.png"
   tags: ["users", "profile", "files"]
   when: not isVirtual
 
-- name: "Users > {{ profile_username_pretty }} > Profile: Set profile image"
+- name: "Users > {{ profileFullname }} > Profile: Set profile image"
   become: true
   ansible.builtin.lineinfile:
-    line: "Icon=/var/lib/AccountsService/icons/{{ profile_username }}"
-    path: "/var/lib/AccountsService/users/{{ profile_username }}"
+    line: "Icon=/var/lib/AccountsService/icons/{{ profileUsername }}"
+    path: "/var/lib/AccountsService/users/{{ profileUsername }}"
     regexp: "^Icon="
   tags: ["users", "profile", "files"]

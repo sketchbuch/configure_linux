@@ -1,11 +1,11 @@
 # GTK in this folder must be run first to create gtk-3.0 folder
-- name: "Users > {{ profile_username_pretty }} > Nautilus: Create Bookmarks"
+- name: "Users > {{ profileFullname }} > Nautilus: Create Bookmarks"
   become: true
-  become_user: "{{ profile_username }}"
+  become_user: "{{ profileUsername }}"
   ansible.builtin.copy:
-    src: "users/{{ profile_username }}/nautilus/bookmarks"
-    dest: "/home/{{ profile_username }}/.config/gtk-3.0/bookmarks"
-    owner: "{{ profile_username }}"
-    group: "{{ profile_username }}"
+    src: "users/{{ profileUsername }}/nautilus/bookmarks"
+    dest: "/home/{{ profileUsername }}/.config/gtk-3.0/bookmarks"
+    owner: "{{ profileUsername }}"
+    group: "{{ profileUsername }}"
     mode: 0600
   tags: ["users", "file-manager", "files", "stephen"]

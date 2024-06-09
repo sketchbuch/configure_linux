@@ -1,9 +1,9 @@
 - name: "System > Tools > Yeoman: Install for all node versions"
   become: true
-  become_user: "{{ profile_username }}"
+  become_user: "{{ profileUsername }}"
   ansible.builtin.command:
     cmd: /bin/bash -c "source ~/.nvm/nvm.sh && nvm use {{ nodeVersion }} && npm install -g yo"
-    creates: "/home/{{ profile_username }}/.nvm/versions/node/v{{ nodeVersion }}/bin/yo"
+    creates: "/home/{{ profileUsername }}/.nvm/versions/node/v{{ nodeVersion }}/bin/yo"
   loop: "{{ nodeVersions }}"
   loop_control:
     loop_var: nodeVersion
@@ -12,10 +12,10 @@
 # VSCode generator
 - name: "System > Tools > Yeoman: Install generator-code for all node versions"
   become: true
-  become_user: "{{ profile_username }}"
+  become_user: "{{ profileUsername }}"
   ansible.builtin.command:
     cmd: '/bin/bash -c "source ~/.nvm/nvm.sh && nvm use {{ nodeVersion }} && npm install -g generator-code"'
-    creates: "/home/{{ profile_username }}/.nvm/versions/node/v{{ nodeVersion }}/lib/node_modules/generator-code"
+    creates: "/home/{{ profileUsername }}/.nvm/versions/node/v{{ nodeVersion }}/lib/node_modules/generator-code"
   loop: "{{ nodeVersions }}"
   loop_control:
     loop_var: nodeVersion

@@ -2,20 +2,20 @@
   block:
     - name: "Gnome > Config > Gedit: Create settings folder"
       become: true
-      become_user: "{{ profile_username }}"
+      become_user: "{{ profileUsername }}"
       ansible.builtin.file:
-        path: "/home/{{ profile_username }}/.var/app/org.gnome.gedit/config/glib-2.0/settings/"
+        path: "/home/{{ profileUsername }}/.var/app/org.gnome.gedit/config/glib-2.0/settings/"
         state: directory
       tags: ["system", "text-editor", "gnome", "folders"]
 
     - name: "Gnome > Config > Gedit: Create settings file"
       become: true
-      become_user: "{{ profile_username }}"
+      become_user: "{{ profileUsername }}"
       ansible.builtin.copy:
-        src: "users/{{ profile_username }}/gedit/settings"
-        dest: "/home/{{ profile_username }}/.var/app/org.gnome.gedit/config/glib-2.0/settings/keyfile"
-        owner: "{{ profile_username }}"
-        group: "{{ profile_username }}"
+        src: "users/{{ profileUsername }}/gedit/settings"
+        dest: "/home/{{ profileUsername }}/.var/app/org.gnome.gedit/config/glib-2.0/settings/keyfile"
+        owner: "{{ profileUsername }}"
+        group: "{{ profileUsername }}"
         mode: 0600
       tags: ["system", "text-editor", "gnome", "files"]
   when: isFedora or isUbuntu

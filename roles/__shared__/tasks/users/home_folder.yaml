@@ -1,30 +1,30 @@
-- name: "Users > {{ profile_username_pretty }} > Home Folder: Create .hidden"
+- name: "Users > {{ profileFullname }} > Home Folder: Create .hidden"
   become: true
-  become_user: "{{ profile_username }}"
+  become_user: "{{ profileUsername }}"
   ansible.builtin.copy:
     dest: "~/.hidden"
-    group: "{{ profile_username }}"
+    group: "{{ profileUsername }}"
     mode: 0600
-    owner: "{{ profile_username }}"
-    src: "users/{{ profile_username }}/home/.hidden"
+    owner: "{{ profileUsername }}"
+    src: "users/{{ profileUsername }}/home/.hidden"
   tags: ["users", "files"]
 
-- name: "Users > {{ profile_username_pretty }} > Home Folder: Create default folders"
+- name: "Users > {{ profileFullname }} > Home Folder: Create default folders"
   become: true
-  become_user: "{{ profile_username }}"
+  become_user: "{{ profileUsername }}"
   ansible.builtin.command:
     cmd: "xdg-user-dirs-update"
-    creates: "/home/{{ profile_username }}/Dokumente"
+    creates: "/home/{{ profileUsername }}/Dokumente"
   tags: ["users", "folders"]
-  when: profile_username != userUsername
+  when: profileUsername != userUsername
 
-- name: "Users > {{ profile_username_pretty }} > Home Folder: Create user-dirs"
+- name: "Users > {{ profileFullname }} > Home Folder: Create user-dirs"
   become: true
-  become_user: "{{ profile_username }}"
+  become_user: "{{ profileUsername }}"
   ansible.builtin.copy:
     dest: "~/.config/user-dirs.dirs"
-    group: "{{ profile_username }}"
+    group: "{{ profileUsername }}"
     mode: 0600
-    owner: "{{ profile_username }}"
-    src: "users/{{ profile_username }}/home/user-dirs.dirs"
+    owner: "{{ profileUsername }}"
+    src: "users/{{ profileUsername }}/home/user-dirs.dirs"
   tags: ["users", "files", "folders"]

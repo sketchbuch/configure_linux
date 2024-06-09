@@ -1,17 +1,17 @@
 # - name: "Users > {{ userFullname }} > Terminal: Copy settings"
 #   become: true
-#   become_user: "{{ profile_username }}"
+#   become_user: "{{ profileUsername }}"
 #   ansible.builtin.copy:
 #     dest: "{{ ansibleTmp }}/gnome_terminal_settings.txt"
-#     group: "{{ profile_username }}"
+#     group: "{{ profileUsername }}"
 #     mode: 0600
-#     owner: "{{ profile_username }}"
-#     src: "users/{{ profile_username }}/terminal/gnome_terminal_settings.txt"
+#     owner: "{{ profileUsername }}"
+#     src: "users/{{ profileUsername }}/terminal/gnome_terminal_settings.txt"
 #   tags: ["system", "terminal", "files"]
 
 # - name: "Users > {{ userFullname }} > Terminal: Import settings"
 #   become: true
-#   become_user: "{{ profile_username }}"
+#   become_user: "{{ profileUsername }}"
 #   ansible.builtin.shell:
 #     chdir: "{{ ansibleTmp }}"
 #     cmd: 'dconf load /org/gnome/terminal/ < "./gnome_terminal_settings.txt"'
@@ -19,7 +19,7 @@
 
 - name: "Users > {{ userFullname }} > Terminal: Set light mode"
   become: true
-  become_user: "{{ profile_username }}"
+  become_user: "{{ profileUsername }}"
   community.general.dconf:
     key: "/org/gnome/terminal/legacy/theme-variant"
     state: present

@@ -1,7 +1,7 @@
 # Alpha. App Grid
 - name: "Gnome > Config > Extensions > Alphabetical App Grid: Folder order position"
   become: true
-  become_user: "{{ profile_username }}"
+  become_user: "{{ profileUsername }}"
   community.general.dconf:
     key: "/org/gnome/shell/extensions/alphabetical-app-grid/folder-order-position"
     state: present
@@ -10,7 +10,7 @@
 
 - name: "Gnome > Config > Extensions > Alphabetical App Grid: Sort folder contents"
   become: true
-  become_user: "{{ profile_username }}"
+  become_user: "{{ profileUsername }}"
   community.general.dconf:
     key: "/org/gnome/shell/extensions/alphabetical-app-grid/sort-folder-contents"
     state: present

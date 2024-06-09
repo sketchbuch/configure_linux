@@ -1,6 +1,6 @@
 - name: "Gnome > Config > Extensions > Dash to Dock: Hide rubbish bin"
   become: true
-  become_user: "{{ profile_username }}"
+  become_user: "{{ profileUsername }}"
   community.general.dconf:
     key: "/org/gnome/shell/extensions/dash-to-dock/show-trash"
     state: present
@@ -9,7 +9,7 @@
 
 - name: "Gnome > Config > Extensions > Dash to Dock: Set favourite apps"
   become: true
-  become_user: "{{ profile_username }}"
+  become_user: "{{ profileUsername }}"
   community.general.dconf:
     key: "/org/gnome/shell/favorite-apps"
     state: present
@@ -31,7 +31,7 @@
 
 - name: "Gnome > Config > Extensions > Dash to Dock: Set max icon size"
   become: true
-  become_user: "{{ profile_username }}"
+  become_user: "{{ profileUsername }}"
   community.general.dconf:
     key: "/org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size"
     state: present

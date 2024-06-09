@@ -1,5 +1,21 @@
 - name: "System > Fonts: Install MS Core Fonts (Fedora)"
   block:
+    - name: "System > Fonts: Install MS Core Fonts - Check if installed"
+      ansible.builtin.stat:
+        path: "/usr/share/fonts/msttcore/arial.ttf"
+      become: true
+      become_user: "{{ profileUsername }}"
+      register: fedoraMsCoreFontsInstalled
+      tags: ["system", "fonts"]
+
+    - name: "System > Fonts: Install MS Core Fonts - Already installed"
+      ansible.builtin.debug:
+        msg: "Skipping font"
+      become: true
+      become_user: "{{ profileUsername }}"
+      tags: ["system", "fonts"]
+      when: fedoraMsCoreFontsInstalled
+
     - name: "System > Fonts: Install MS Core Fonts - Install needed packages"
       ansible.builtin.dnf:
         name:
@@ -9,11 +25,13 @@
           - python-psutil
         state: present
       tags: ["system", "fonts"]
+      when: not fedoraMsCoreFontsInstalled
 
     - name: "System > Fonts: Install MS Core Fonts"
       ansible.builtin.shell:
         cmd: "sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm"
       tags: ["system", "fonts"]
+      when: not fedoraMsCoreFontsInstalled
   tags: ["fedora"]
   when: isFedora
 
