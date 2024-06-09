@@ -9,7 +9,7 @@
   block:
     - name: "Software > Install VirtualBox - Check if is already installed"
       ansible.builtin.stat:
-        path: "/etc/yum.repos.de/virtualbox.repo"
+        path: "/etc/yum.repos.d/virtualbox.repo"
       become: true
       become_user: "{{ profileUsername }}"
       register: vboxRepoFile
@@ -28,7 +28,7 @@
       become: true
       become_user: "{{ profileUsername }}"
       ansible.builtin.copy:
-        dest: "/etc/yum.repos.de/virtualbox.repo"
+        dest: "/etc/yum.repos.d/virtualbox.repo"
         group: "{{ profileUsername }}"
         mode: 0600
         owner: "{{ profileUsername }}"
