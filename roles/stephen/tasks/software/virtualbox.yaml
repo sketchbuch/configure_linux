@@ -18,7 +18,8 @@
       ansible.builtin.dnf:
         name:
           - "@development-tools"
-          - kernel-headers kernel-devel
+          - kernel-headers
+          - kernel-devel
           - dkms
         state: present
       when: not vboxRepoFile.stat.exists
