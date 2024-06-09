@@ -25,4 +25,16 @@
         key: "/org/gnome/desktop/wm/preferences/titlebar-font"
         state: present
         value: "'IBM Plex Sans Bold 11'"
+
+    - name: "Gnome > Config > Fonts: Set anti-aliasing"
+      community.general.dconf:
+        key: "/org/gnome/desktop/interface/font-antialiasing"
+        state: present
+        value: "'rgba'"
+
+    - name: "Gnome > Config > Fonts: Set hinting"
+      community.general.dconf:
+        key: "/org/gnome/desktop/interface/font-hinting"
+        state: present
+        value: "'slight'"
   tags: ["system", "font", "gnome"]
