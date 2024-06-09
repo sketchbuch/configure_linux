@@ -2,26 +2,36 @@
   ansible.builtin.package:
     name: virtualbox
     state: present
-  tags: ["software", "virtualisation", "virtualbox", "package"]
+  tags: ["ubuntu", "software", "virtualisation", "virtualbox", "package"]
   when: isUbuntu
 
 - name: "Software > Install VirtualBox (Fedora)"
   block:
+    - name: "Software > Install VirtualBox - Check if is already installed"
+      ansible.builtin.stat:
+        path: "/etc/yum.repos.d/virtualbox.repo"
+      become: true
+      become_user: "{{ profileUsername }}"
+      register: vboxRepoFile
+
     - name: "Software > Install VirtualBox - Add key"
       ansible.builtin.command:
         cmd: "sudo rpm --import https://www.virtualbox.org/download/oracle_vbox_2016.asc"
+      when: not vboxRepoFile.stat.exists
 
     - name: "Software > Install VirtualBox - Add repo"
       ansible.builtin.command:
         cmd: "sudo dnf config-manager --add-repo https://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo"
+      when: not vboxRepoFile.stat.exists
 
     - name: "Software > Install VirtualBox - Update packages"
       ansible.builtin.dnf:
         update_cache: yes
+      when: not vboxRepoFile.stat.exists
 
     - name: "Software > Install VirtualBox - Install needed packages"
       ansible.builtin.dnf:
         name: VirtualBox-7.0
         state: present
-  tags: ["software", "virtualisation", "virtualbox", "package"]
+  tags: ["fedora", "software", "virtualisation", "virtualbox", "package"]
   when: isFedora

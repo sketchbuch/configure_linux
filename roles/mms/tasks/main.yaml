@@ -4,7 +4,6 @@
         - include_vars: "user.yaml"
         - include_vars: "{{ distro }}.yaml"
       tags: ["always", "vars"]
-      when: isUbuntu or isFedora
 
     - import_tasks: "users/create.yaml"
 

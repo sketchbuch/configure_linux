@@ -4,7 +4,6 @@
         - include_vars: "user.yaml"
         - include_vars: "{{ distro }}.yaml"
       tags: ["always", "vars"]
-      when: isUbuntu or isFedora
 
     - import_tasks: "system/fonts/firacode.yaml"
     - import_tasks: "system/fonts/inconsolata.yaml"
@@ -16,7 +15,6 @@
     - name: "Include common tasks for {{ distroName }}"
       import_tasks: "distro/common.yaml"
       tags: ["distro_tasks"]
-      when: isFedora or isUbuntu
 
     - name: "Include tasks for {{ distroName }}"
       import_tasks: "distro/ubuntu.yaml"

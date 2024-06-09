@@ -17,4 +17,3 @@
         group: "{{ profileUsername }}"
         mode: 0600
   tags: ["system", "text-editor", "gnome", "files", "folders"]
-  when: isFedora or isUbuntu

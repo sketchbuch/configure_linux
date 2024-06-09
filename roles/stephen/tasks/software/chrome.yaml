@@ -19,7 +19,7 @@
         name: "google-chrome-stable"
         state: latest
         update_cache: true
-  tags: ["software", "internet", "chrome", "package"]
+  tags: ["ubuntu", "software", "internet", "chrome", "package"]
   when: isUbuntu
 
 # https://docs.fedoraproject.org/en-US/quick-docs/installing-chromium-or-google-chrome-browsers/
@@ -39,5 +39,5 @@
       ansible.builtin.dnf:
         name: google-chrome-stable
         state: present
-  tags: ["software", "internet", "chrome", "package"]
+  tags: ["fedora", "software", "internet", "chrome", "package"]
   when: isFedora

@@ -2,7 +2,7 @@
   ansible.builtin.package:
     name: adobe-source-code-pro-fonts
     state: present
-  tags: ["system", "fonts"]
+  tags: ["fedora", "system", "fonts"]
   when: isFedora
 
 - name: "Source Code Pro: Ubuntu"
@@ -27,5 +27,5 @@
       ansible.builtin.copy:
         dest: "/usr/local/share/fonts/SourceCodePro"
         src: "{{ ansibleTmp }}/scp/OTF"
-  tags: ["system", "fonts"]
+  tags: ["ubuntu", "system", "fonts"]
   when: isUbuntu
