@@ -6,5 +6,5 @@
 - name: "Facts > Package: Print facts"
   ansible.builtin.debug:
     var: ansible_facts.packages
-  when: debug_package_facts is defined and debug_package_facts == true
+  when: debugPackageFacts is defined and debugPackageFacts == true
   tags: ["setup", "pkg_facts"]

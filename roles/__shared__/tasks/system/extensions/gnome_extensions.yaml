@@ -20,12 +20,12 @@
   block:
     - name: 'System > Extensions > Gnome Extensions: "{{ extension.name }}" - Download'
       ansible.builtin.get_url:
-        dest: "{{ ansibleTmp }}/gnome_extensions/{{ extension.uuid }}.zip"
+        dest: "{{ ansibleTmp }}/gnomeExtensions/{{ extension.uuid }}.zip"
         url: "https://extensions.gnome.org/extension-data/{{ extension.url }}"
 
     # enable command does not work, so manual enabling is still required
     - name: 'System > Extensions > Gnome Extensions: "{{ extension.name }}" - Install'
       ansible.builtin.command:
-        cmd: 'gnome-extensions install "{{ ansibleTmp }}/gnome_extensions/{{ extension.uuid }}.zip"'
+        cmd: 'gnome-extensions install "{{ ansibleTmp }}/gnomeExtensions/{{ extension.uuid }}.zip"'
   tags: ["system", "desktop", "gnome", "extensions"]
   when: not gnome_extension_check.stat.exists

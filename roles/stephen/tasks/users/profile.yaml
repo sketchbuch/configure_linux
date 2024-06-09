@@ -6,4 +6,4 @@
     groups: "vboxsf"
     append: true
   tags: ["users", "profile", "virtual"]
-  when: is_virtual and is_virtualbox
+  when: isVirtual and isVirtualBox

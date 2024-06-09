@@ -9,7 +9,7 @@
     owner: "root"
     src: "users/{{ profile_username }}/profile_virtual.png"
   tags: ["users", "profile", "files"]
-  when: is_virtual
+  when: isVirtual
 
 - name: "Users > {{ profile_username_pretty }} > Profile: Copy profile image"
   become: true
@@ -20,7 +20,7 @@
     owner: "root"
     src: "users/{{ profile_username }}/profile.png"
   tags: ["users", "profile", "files"]
-  when: not is_virtual
+  when: not isVirtual
 
 - name: "Users > {{ profile_username_pretty }} > Profile: Set profile image"
   become: true

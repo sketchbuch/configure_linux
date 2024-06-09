@@ -13,4 +13,4 @@
       {'location': <(uint32 2, <('Trieste', 'LIVT', true, [(0.79674280353541149, 0.23998277214922031)], [(0.79671856091210125, 0.24050637092481861)])>)>}
       ]"
   tags: ["system", "gnome-clocks", "gnome"]
-  when: is_ubuntu
+  when: isUbuntu

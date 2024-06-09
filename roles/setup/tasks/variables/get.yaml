@@ -3,32 +3,32 @@
     distro: "{{ ansible_distribution | lower }}"
   tags: ["setup", "set_fact"]
 
-- name: "Vars > Get: distro_pretty"
+- name: "Vars > Get: distroPretty"
   set_fact:
-    distro_pretty: "{{ distro | capitalize }}"
+    distroPretty: "{{ distro | capitalize }}"
   tags: ["setup", "set_fact"]
 
-- name: "Vars > Get: distro_major_version"
+- name: "Vars > Get: distroVersion"
   set_fact:
-    distro_major_version: "{{ ansible_distribution_major_version }}"
+    distroVersion: "{{ ansible_distribution_major_version }}"
   tags: ["setup", "set_fact"]
 
-- name: "Vars > Get: is_fedora"
+- name: "Vars > Get: isFedora"
   set_fact:
-    is_fedora: '{{ (distro == "fedora") | ternary (true, false) }}'
+    isFedora: '{{ (distro == "fedora") | ternary (true, false) }}'
   tags: ["setup", "set_fact"]
 
-- name: "Vars > Get: is_ubuntu"
+- name: "Vars > Get: isUbuntu"
   set_fact:
-    is_ubuntu: '{{ (distro == "ubuntu") | ternary (true, false) }}'
+    isUbuntu: '{{ (distro == "ubuntu") | ternary (true, false) }}'
   tags: ["setup", "set_fact"]
 
-- name: "Vars > Get: is_virtual"
+- name: "Vars > Get: isVirtual"
   set_fact:
-    is_virtual: '{{ (ansible_virtualization_role == "guest") | ternary (true, false) }}'
+    isVirtual: '{{ (ansible_virtualization_role == "guest") | ternary (true, false) }}'
   tags: ["setup", "set_fact"]
 
-- name: "Vars > Get: is_virtualbox"
+- name: "Vars > Get: isVirtualBox"
   set_fact:
-    is_virtualbox: '{{ (ansible_virtualization_type == "virtualbox") | ternary (true, false) }}'
+    isVirtualBox: '{{ (ansible_virtualization_type == "virtualbox") | ternary (true, false) }}'
   tags: ["setup", "set_fact"]

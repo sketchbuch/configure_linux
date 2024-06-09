@@ -2,10 +2,10 @@
   ansible.builtin.debug:
     msg:
       - "distro: {{ distro }}"
-      - "distro_pretty: {{ distro_pretty }}"
-      - "distro_major_version: {{ distro_major_version }}"
-      - "is_fedora: {{ is_fedora }}"
-      - "is_ubuntu: {{ is_ubuntu }}"
-      - "is_virtual: {{ is_virtual }}"
-      - "is_virtualbox: {{ is_virtual }}"
+      - "distroPretty: {{ distroPretty }}"
+      - "distroVersion: {{ distroVersion }}"
+      - "isFedora: {{ isFedora }}"
+      - "isUbuntu: {{ isUbuntu }}"
+      - "isVirtual: {{ isVirtual }}"
+      - "isVirtualBox: {{ isVirtual }}"
   tags: ["setup", "debug"]

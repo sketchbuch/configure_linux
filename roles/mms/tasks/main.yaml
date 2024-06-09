@@ -1,10 +1,10 @@
 - block:
-    - name: "Include vars for {{ distro_pretty }}"
+    - name: "Include vars for {{ distroPretty }}"
       block:
         - include_vars: "user.yaml"
         - include_vars: "{{ distro }}.yaml"
       tags: ["always", "vars"]
-      when: is_ubuntu or is_fedora
+      when: isUbuntu or isFedora
 
     - import_tasks: "users/create.yaml"
 
@@ -26,7 +26,7 @@
         - import_tasks: "desktop/gnome.yaml"
       tags: ["gnome"]
       vars:
-        gnome_extensions: "{{ gnome_extensions }}"
+        gnomeExtensions: "{{ gnomeExtensions }}"
         profile_username: "{{ userUsername }}"
 
     - import_tasks: "users/mms/home_folder.yaml"

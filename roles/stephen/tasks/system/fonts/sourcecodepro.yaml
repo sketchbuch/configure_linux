@@ -3,7 +3,7 @@
     name: adobe-source-code-pro-fonts
     state: present
   tags: ["system", "fonts"]
-  when: is_fedora
+  when: isFedora
 
 - name: "Source Code Pro: Ubuntu"
   block:
@@ -28,4 +28,4 @@
         dest: "/usr/local/share/fonts/SourceCodePro"
         src: "{{ ansibleTmp }}/scp/OTF"
   tags: ["system", "fonts"]
-  when: is_ubuntu
+  when: isUbuntu

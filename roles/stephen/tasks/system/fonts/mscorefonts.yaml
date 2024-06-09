@@ -15,7 +15,7 @@
         cmd: "sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm"
       tags: ["system", "fonts"]
   tags: ["fedora"]
-  when: is_fedora
+  when: isFedora
 
 - name: "System > Fonts: Install MS Core Fonts (Ubuntu)"
   block:
@@ -33,4 +33,4 @@
         state: present
       tags: ["system", "fonts"]
   tags: ["ubuntu"]
-  when: is_ubuntu
+  when: isUbuntu

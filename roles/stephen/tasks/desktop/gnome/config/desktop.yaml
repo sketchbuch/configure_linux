@@ -15,7 +15,7 @@
     state: present
     value: "true"
   tags: ["system", "desktop", "gnome"]
-  when: not is_virtual
+  when: not isVirtual
 
 - name: "Gnome > Config > Desktop: Disable Hot Corners"
   become: true
@@ -25,4 +25,4 @@
     state: present
     value: "false"
   tags: ["system", "desktop", "gnome", "virtual"]
-  when: is_virtual
+  when: isVirtual

@@ -2,6 +2,6 @@
   become: true
   become_user: "{{ profile_username }}"
   ansible.builtin.file:
-    path: "{{ ansibleTmp }}/gnome_extensions"
+    path: "{{ ansibleTmp }}/gnomeExtensions"
     state: directory
   tags: ["system", "desktop", "gnome", "extensions", "folders"]

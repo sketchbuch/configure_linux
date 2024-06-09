@@ -1,4 +1,4 @@
-gnome_extensions:
+gnomeExtensions:
   - name: "alphabetical-app-grid"
     url: "AlphabeticalAppGridstuarthayhurst.v29.shell-extension.zip"
     uuid: "AlphabeticalAppGrid@stuarthayhurst"

@@ -1,10 +1,10 @@
 - block:
-    - name: "Include vars for {{ distro_pretty }}"
+    - name: "Include vars for {{ distroPretty }}"
       block:
         - include_vars: "user.yaml"
         - include_vars: "{{ distro }}.yaml"
       tags: ["always", "vars"]
-      when: is_ubuntu or is_fedora
+      when: isUbuntu or isFedora
 
     - import_tasks: "system/fonts/firacode.yaml"
     - import_tasks: "system/fonts/inconsolata.yaml"
@@ -12,15 +12,15 @@
     - import_tasks: "system/fonts/sourcecodepro.yaml"
     - import_tasks: "system/terminal.yaml"
 
-    - name: "Include common tasks for {{ distro_pretty }}"
+    - name: "Include common tasks for {{ distroPretty }}"
       import_tasks: "distro/common.yaml"
       tags: ["distro_tasks"]
-      when: is_fedora or is_ubuntu
+      when: isFedora or isUbuntu
 
-    - name: "Include tasks for {{ distro_pretty }}"
+    - name: "Include tasks for {{ distroPretty }}"
       import_tasks: "distro/ubuntu.yaml"
       tags: ["distro_tasks"]
-      when: is_ubuntu
+      when: isUbuntu
 
     - name: "Include tasks for Gnome"
       block:

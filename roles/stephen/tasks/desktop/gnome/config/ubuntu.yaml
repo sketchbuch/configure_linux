@@ -6,4 +6,4 @@
     state: present
     value: "true"
   tags: ["system", "desktop", "gnome"]
-  when: is_ubuntu and is_virtual
+  when: isUbuntu and isVirtual

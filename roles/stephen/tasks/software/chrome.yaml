@@ -20,7 +20,7 @@
         state: latest
         update_cache: true
   tags: ["software", "internet", "chrome", "package"]
-  when: is_ubuntu
+  when: isUbuntu
 
 # https://docs.fedoraproject.org/en-US/quick-docs/installing-chromium-or-google-chrome-browsers/
 
@@ -40,4 +40,4 @@
         name: google-chrome-stable
         state: present
   tags: ["software", "internet", "chrome", "package"]
-  when: is_fedora
+  when: isFedora
