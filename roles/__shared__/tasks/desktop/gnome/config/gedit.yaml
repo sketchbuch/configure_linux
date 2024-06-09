@@ -6,7 +6,6 @@
       ansible.builtin.file:
         path: "/home/{{ profileUsername }}/.var/app/org.gnome.gedit/config/glib-2.0/settings/"
         state: directory
-      tags: ["system", "text-editor", "gnome", "folders"]
 
     - name: "Gnome > Config > Gedit: Create settings file"
       become: true
@@ -17,5 +16,5 @@
         owner: "{{ profileUsername }}"
         group: "{{ profileUsername }}"
         mode: 0600
-      tags: ["system", "text-editor", "gnome", "files"]
+  tags: ["system", "text-editor", "gnome", "files", "folders"]
   when: isFedora or isUbuntu

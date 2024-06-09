@@ -67,7 +67,6 @@
         key: "/org/gtk/gtk4/settings/file-chooser/sort-directories-first"
         state: present
         value: "false"
-      tags: ["system", "file-manager", "gnome"]
 
     - name: "Gnome > Config > Nautilus: Hide hidden files"
       community.general.dconf:

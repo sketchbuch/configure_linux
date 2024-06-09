@@ -3,3 +3,46 @@
     name: virtualbox
     state: present
   tags: ["software", "virtualisation", "virtualbox", "package"]
+  when: isUbuntu
+
+- name: "Software > Install VirtualBox (Fedora)"
+  block:
+    - name: "Software > Install VirtualBox - Check if is already installed"
+      ansible.builtin.stat:
+        path: "/etc/yum.repos.de/virtualbox.repo"
+      become: true
+      become_user: "{{ profileUsername }}"
+      register: vboxRepoFile
+
+    - name: "Software > Install VirtualBox - Install needed packages"
+      ansible.builtin.dnf:
+        name:
+          - "@development-tools"
+          - kernel-headers kernel-devel
+          - dkms
+        state: present
+      when: not vboxRepoFile.stat.exists
+
+    - name: "Software > Install VirtualBox - Create repo file"
+      become: true
+      become_user: "{{ profileUsername }}"
+      ansible.builtin.copy:
+        dest: "/etc/yum.repos.de/virtualbox.repo"
+        group: "{{ profileUsername }}"
+        mode: 0600
+        owner: "{{ profileUsername }}"
+        src: "fedora/virtualbox.repo"
+      when: not vboxRepoFile.stat.exists
+
+    - name: "Software > Install VirtualBox - Update packages"
+      ansible.builtin.command:
+        cmd: "sudo dnf update"
+      when: not vboxRepoFile.stat.exists
+
+    - name: "Software > Install VirtualBox - Install needed packages"
+      ansible.builtin.dnf:
+        name: VirtualBox-7.0
+        state: present
+      when: vboxRepoFile.stat.exists
+  tags: ["software", "virtualisation", "virtualbox", "package"]
+  when: isFedora
