@@ -29,11 +29,6 @@
       vars:
         profileUsername: "{{ userUsername }}"
 
-    - name: "test"
-      import_tasks: "software/virtualbox.yaml"
-      vars:
-        profileUsername: "{{ userUsername }}"
-
     - name: "User settings"
       block:
         - import_tasks: "shared/users/git.yaml"
