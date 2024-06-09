@@ -7,9 +7,13 @@
   tags: ["software", "fedora", "ubuntu"]
   when: installSoftware
 
+- name: "Software > Add FlatHub as a source to Flatpak for the currnet user"
+  import_tasks: "../software/flathub.yaml"
+  tags: ["software", "fedora", "ubuntu"]
+  when: installSoftware
+
 - name: "Software Tasks"
   block:
-    - import_tasks: "../software/flathub.yaml"
     - import_tasks: "../software/0ad.yaml"
     - import_tasks: "../software/apostrophe.yaml"
     - import_tasks: "../software/audacity.yaml"

@@ -239,8 +239,11 @@ wike              | Wike tasks
 
   - Install Ubuntu font
   - Install tuxedo stuff
+  - Set UI font to ibm plex
 
 - Ubuntu 24.04
+
+  - Set UI font to ibm plex
 
 ## Manual Todos
 
