@@ -37,7 +37,7 @@ My ansible setup to configure linux and install apps etc. in real and virtual en
 
 - **Install psutil**
 
-  - `sudo apt-get install -y python3-psutil` (Ubuntu)
+  - ~~`sudo apt-get install -y python3-psutil` (Ubuntu)~~ Now done via ansible
 
 ## Run
 
@@ -84,7 +84,7 @@ virtual | Hosts that are virtual, running in something like virtualbox
 
 **Fedora 40**
 
-- Install tuxedo stuff
+- ...
 
 **Ubuntu 24.04**
 
