@@ -35,3 +35,4 @@
           - tuxedo-drivers
         state: present
   tags: ["fedora", "software", "tuxedo", "package"]
+  when: not isVirtual
