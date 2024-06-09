@@ -2,7 +2,7 @@
 
 - name: "Tuxedo Software"
   become: true
-  become_user: "{{ profileUsername }}"
+  become_user: "{{ userUsername }}"
   block:
     - name: "Software > Tuxedo Software - Check if repo already installed"
       ansible.builtin.stat:
