@@ -35,13 +35,13 @@
     #     src: "fedora/virtualbox.repo"
     #   when: not vboxRepoFile.stat.exists
 
-    - name: "Software > Install VirtualBox - Add repo"
-      ansible.builtin.command:
-        cmd: "sudo dnf config-manager --add-repo https://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo"
-
     - name: "Software > Install VirtualBox - Add key"
       ansible.builtin.command:
         cmd: "sudo rpm --import https://www.virtualbox.org/download/oracle_vbox_2016.asc"
+
+    - name: "Software > Install VirtualBox - Add repo"
+      ansible.builtin.command:
+        cmd: "sudo dnf config-manager --add-repo https://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo"
 
     - name: "Software > Install VirtualBox - Update packages"
       ansible.builtin.command:
