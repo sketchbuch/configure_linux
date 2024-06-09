@@ -26,12 +26,12 @@
 
     - name: "Software > Install VirtualBox - Create repo file"
       become: true
-      become_user: "{{ profileUsername }}"
+      become_user: "root"
       ansible.builtin.copy:
         dest: "/etc/yum.repos.d/virtualbox.repo"
-        group: "{{ profileUsername }}"
+        group: "root"
         mode: 0600
-        owner: "{{ profileUsername }}"
+        owner: "root"
         src: "fedora/virtualbox.repo"
       when: not vboxRepoFile.stat.exists
 
