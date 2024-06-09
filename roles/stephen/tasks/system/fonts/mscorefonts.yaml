@@ -10,7 +10,7 @@
       ansible.builtin.debug:
         msg: "Skipping font"
       tags: ["system", "fonts"]
-      when: gnomeExtensionCheck.stat.exists
+      when: fedoraMsCoreFontsInstalled.stat.exists
 
     - name: "System > Fonts: Install MS Core Fonts - Install needed packages"
       ansible.builtin.dnf:
@@ -20,13 +20,13 @@
           - fontconfig
         state: present
       tags: ["system", "fonts"]
-      when: not gnomeExtensionCheck.stat.exists
+      when: not fedoraMsCoreFontsInstalled.stat.exists
 
     - name: "System > Fonts: Install MS Core Fonts"
       ansible.builtin.shell:
         cmd: "sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm"
       tags: ["system", "fonts"]
-      when: not gnomeExtensionCheck.stat.exists
+      when: not fedoraMsCoreFontsInstalled.stat.exists
   tags: ["fedora"]
   when: isFedora
 
