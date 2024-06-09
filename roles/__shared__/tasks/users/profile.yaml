@@ -1,6 +1,6 @@
 # Profile image will not be visible until session restarts
 
-- name: "Users > {{ profileName }} > Profile: Copy virtual profile image"
+- name: "Profile: Copy virtual profile image"
   become: true
   ansible.builtin.copy:
     dest: "/var/lib/AccountsService/icons/{{ profileUsername }}"
@@ -11,7 +11,7 @@
   tags: ["users", "profile", "files"]
   when: isVirtual
 
-- name: "Users > {{ profileName }} > Profile: Copy profile image"
+- name: "Profile: Copy profile image"
   become: true
   ansible.builtin.copy:
     dest: "/var/lib/AccountsService/icons/{{ profileUsername }}"
@@ -22,7 +22,7 @@
   tags: ["users", "profile", "files"]
   when: not isVirtual
 
-- name: "Users > {{ profileName }} > Profile: Set profile image"
+- name: "Profile: Set profile image"
   become: true
   ansible.builtin.lineinfile:
     line: "Icon=/var/lib/AccountsService/icons/{{ profileUsername }}"

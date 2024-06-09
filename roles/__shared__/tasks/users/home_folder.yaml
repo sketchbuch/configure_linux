@@ -1,4 +1,4 @@
-- name: "Users > {{ profileName }} > Home Folder: Create .hidden"
+- name: "Home Folder: Create .hidden"
   become: true
   become_user: "{{ profileUsername }}"
   ansible.builtin.copy:
@@ -9,7 +9,7 @@
     src: "home/.hidden"
   tags: ["users", "files"]
 
-- name: "Users > {{ profileName }} > Home Folder: Create default folders"
+- name: "Home Folder: Create default folders"
   become: true
   become_user: "{{ profileUsername }}"
   ansible.builtin.command:
@@ -18,7 +18,7 @@
   tags: ["users", "folders"]
   when: profileUsername != userUsername
 
-- name: "Users > {{ profileName }} > Home Folder: Create user-dirs"
+- name: "Home Folder: Create user-dirs"
   become: true
   become_user: "{{ profileUsername }}"
   ansible.builtin.copy:

@@ -1,4 +1,4 @@
-- name: "Users > {{ profileName }} > Terminal: Create terminal dot files"
+- name: "Terminal: Create terminal dot files"
   become: true
   become_user: "{{ profileUsername }}"
   ansible.builtin.copy:

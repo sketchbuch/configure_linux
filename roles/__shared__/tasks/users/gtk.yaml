@@ -1,4 +1,4 @@
-- name: "Users > {{ profileName }} > GTK: Create gtk-3.0 folder"
+- name: "GTK: Create gtk-3.0 folder"
   become: true
   become_user: "{{ profileUsername }}"
   ansible.builtin.file:
@@ -6,7 +6,7 @@
     state: directory
   tags: ["users", "gtk", "folders"]
 
-- name: "Users > {{ profileName }} > GTK: Create GTK CSS (3.0)"
+- name: "GTK: Create GTK CSS (3.0)"
   become: true
   become_user: "{{ profileUsername }}"
   ansible.builtin.copy:

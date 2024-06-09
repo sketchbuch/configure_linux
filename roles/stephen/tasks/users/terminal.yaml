@@ -1,4 +1,4 @@
-# - name: "Users > {{ userName }} > Terminal: Copy settings"
+# - name: "Terminal: Copy settings"
 #   become: true
 #   become_user: "{{ profileUsername }}"
 #   ansible.builtin.copy:
@@ -9,7 +9,7 @@
 #     src: "terminal/gnome_terminal_settings.txt"
 #   tags: ["system", "terminal", "files"]
 
-# - name: "Users > {{ userName }} > Terminal: Import settings"
+# - name: "Terminal: Import settings"
 #   become: true
 #   become_user: "{{ profileUsername }}"
 #   ansible.builtin.shell:
@@ -17,7 +17,7 @@
 #     cmd: 'dconf load /org/gnome/terminal/ < "./gnome_terminal_settings.txt"'
 #   tags: ["system", "terminal", "files"]
 
-- name: "Users > {{ userName }} > Terminal: Set light mode"
+- name: "Terminal: Set light mode"
   become: true
   become_user: "{{ profileUsername }}"
   community.general.dconf:
