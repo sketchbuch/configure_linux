@@ -82,9 +82,9 @@ virtual | Hosts that are virtual, running in something like virtualbox
 
 **Fedora 40**
 
-- Install Ubuntu font
 - Install tuxedo stuff
 - Set UI font to ibm plex
+- St sudo timeout to be same as ubuntu
 
 **Ubuntu 24.04**
 
