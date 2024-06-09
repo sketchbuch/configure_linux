@@ -238,6 +238,7 @@ wike              | Wike tasks
 - Fedora 40
 
   - Install Ubuntu font
+  - Install tuxedo stuff
 
 - Ubuntu 24.04
 
