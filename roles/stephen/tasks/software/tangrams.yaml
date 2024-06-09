@@ -1,5 +1,0 @@
-- name: "Software > Install Tangrams"
-  ansible.builtin.package:
-    name: gtans
-    state: present
-  tags: ["software", "system", "tangrams", "circle", "package"]

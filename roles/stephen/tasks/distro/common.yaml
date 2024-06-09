@@ -64,7 +64,6 @@
     - import_tasks: "../software/steam.yaml"
     - import_tasks: "../software/switcheroo.yaml"
     - import_tasks: "../software/tangram.yaml"
-    - import_tasks: "../software/tangrams.yaml"
     - import_tasks: "../software/textpieces.yaml"
     - import_tasks: "../software/textsnatcher.yaml"
     - import_tasks: "../software/upscaler.yaml"
