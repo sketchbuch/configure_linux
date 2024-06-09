@@ -48,6 +48,7 @@ system       | System related tasks
 terminal     | Terminal tasks like bash
 text-editor  | Text Editor tasks
 touchpad     | Anything to do with touchpads
+tuxedo       | Tuxedo tasks
 ubuntu       | Ubuntu tasks
 users        | Related to the uses
 virtual      | Tasks for virtual computers

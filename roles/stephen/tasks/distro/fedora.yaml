@@ -1,1 +1,37 @@
 - import_tasks: "../system/fonts/ubuntu.yaml"
+
+- name: "Tuxedo Software"
+  become: true
+  become_user: "{{ profileUsername }}"
+  block:
+    - name: "Software > Tuxedo Software - Check if repo already installed"
+      ansible.builtin.stat:
+        path: "/etc/yum.repos.d/tuxedo.repo"
+      register: tuxRepoFile
+
+    - name: "Software > Install VirtualBox - Add key"
+      ansible.builtin.command:
+        cmd: "sudo rpm --import /path/to/your/download/directory/0x54840598.pub.asc"
+      when: not tuxRepoFile.stat.exists
+
+    - name: "Software > Install VirtualBox - Copy repo file"
+      ansible.builtin.copy:
+        dest: "/etc/yum.repos.d/tuxedo.repo"
+        group: "root"
+        mode: 0644
+        owner: "root"
+        src: "fedora/tuxedo.fedora.40.repo"
+      when: not tuxRepoFile.stat.exists
+
+    - name: "Software > Install VirtualBox - Update packages"
+      ansible.builtin.dnf:
+        update_cache: yes
+      when: not tuxRepoFile.stat.exists
+
+    - name: "Software > Install VirtualBox"
+      ansible.builtin.dnf:
+        name:
+          - tuxedo-control-center
+          - tuxedo-drivers
+        state: present
+  tags: ["fedora", "software", "tuxedo", "package"]

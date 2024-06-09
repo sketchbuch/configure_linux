@@ -80,17 +80,15 @@ virtual | Hosts that are virtual, running in something like virtualbox
 - Android studio
 - ssh
 - clone repos
+- Fedora sudo timeout to be same as ubuntu
 
 **Fedora 40**
 
 - Install tuxedo stuff
-- Set UI font to ibm plex
-- St sudo timeout to be same as ubuntu
 
 **Ubuntu 24.04**
 
-- Set UI font to ibm plex
-- Set center
+- ...
 
 **Manual Todos After Running**
 
