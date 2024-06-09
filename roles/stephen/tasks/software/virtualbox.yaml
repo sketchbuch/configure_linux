@@ -29,7 +29,7 @@
         update_cache: yes
       when: not vboxRepoFile.stat.exists
 
-    - name: "Software > Install VirtualBox - Install needed packages"
+    - name: "Software > Install VirtualBox"
       ansible.builtin.dnf:
         name: VirtualBox-7.0
         state: present
