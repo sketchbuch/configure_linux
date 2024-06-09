@@ -3,16 +3,12 @@
     - name: "System > Fonts: Install MS Core Fonts - Check if installed"
       ansible.builtin.stat:
         path: "/usr/share/fonts/msttcore/arial.ttf"
-      become: true
-      become_user: "{{ profileUsername }}"
       register: fedoraMsCoreFontsInstalled
       tags: ["system", "fonts"]
 
     - name: "System > Fonts: Install MS Core Fonts - Already installed"
       ansible.builtin.debug:
         msg: "Skipping font"
-      become: true
-      become_user: "{{ profileUsername }}"
       tags: ["system", "fonts"]
       when: fedoraMsCoreFontsInstalled
 
