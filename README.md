@@ -89,6 +89,7 @@ virtual | Hosts that are virtual, running in something like virtualbox
 **Ubuntu 24.04**
 
 - Set UI font to ibm plex
+- Set center
 
 **Manual Todos After Running**
 

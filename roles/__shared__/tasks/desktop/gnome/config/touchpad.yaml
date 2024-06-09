@@ -1,26 +1,22 @@
-- name: "Gnome > Config > Touchpad: Disable natural scrolling"
+- name: "Gnome > Config > Touchpad"
   become: true
   become_user: "{{ profileUsername }}"
-  community.general.dconf:
-    key: "/org/gnome/desktop/peripherals/touchpad/natural-scroll"
-    state: present
-    value: "false"
-  tags: ["system", "gnome", "touchpad"]
+  block:
+    - name: "Gnome > Config > Touchpad: Disable natural scrolling"
+      community.general.dconf:
+        key: "/org/gnome/desktop/peripherals/touchpad/natural-scroll"
+        state: present
+        value: "false"
 
-- name: "Gnome > Config > Touchpad: Enable tap-to-click"
-  become: true
-  become_user: "{{ profileUsername }}"
-  community.general.dconf:
-    key: "/org/gnome/desktop/peripherals/touchpad/tap-to-click"
-    state: present
-    value: "true"
-  tags: ["system", "gnome", "touchpad"]
+    - name: "Gnome > Config > Touchpad: Enable tap-to-click"
+      community.general.dconf:
+        key: "/org/gnome/desktop/peripherals/touchpad/tap-to-click"
+        state: present
+        value: "true"
 
-- name: "Gnome > Config > Touchpad: Enable two finger scrolling"
-  become: true
-  become_user: "{{ profileUsername }}"
-  community.general.dconf:
-    key: "/org/gnome/desktop/peripherals/touchpad/two-finger-scrolling-enabled"
-    state: present
-    value: "true"
+    - name: "Gnome > Config > Touchpad: Enable two finger scrolling"
+      community.general.dconf:
+        key: "/org/gnome/desktop/peripherals/touchpad/two-finger-scrolling-enabled"
+        state: present
+        value: "true"
   tags: ["system", "gnome", "touchpad"]

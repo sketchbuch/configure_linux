@@ -1,25 +1,33 @@
-- name: "Gnome > Config > Desktop: Enable only close window button"
+- name: "Gnome > Config > Desktop"
   become: true
   become_user: "{{ profileUsername }}"
-  community.general.dconf:
-    key: "/org/gnome/desktop/wm/preferences/button-layout"
-    state: present
-    value: "':close'"
-  tags: ["system", "desktop", "gnome"]
+  block:
+    - name: "Gnome > Config > Desktop: Enable only close window button"
+      community.general.dconf:
+        key: "/org/gnome/desktop/wm/preferences/button-layout"
+        state: present
+        value: "':close'"
 
-- name: "Gnome > Config > Desktop: Prefer light mode"
-  become: true
-  become_user: "{{ profileUsername }}"
-  community.general.dconf:
-    key: "/org/gnome/desktop/interface/color-scheme"
-    state: present
-    value: "'prefer-light'"
-  tags: ["system", "desktop", "gnome"]
+    - name: "Gnome > Config > Desktop: Prefer light mode"
+      community.general.dconf:
+        key: "/org/gnome/desktop/interface/color-scheme"
+        state: present
+        value: "'prefer-light'"
 
-- name: "Gnome > Config > Desktop: Remove app grid folders"
-  become: true
-  become_user: "{{ profileUsername }}"
-  community.general.dconf:
-    key: "/org/gnome/desktop/app-folders/folder-children"
-    state: absent
+    - name: "Gnome > Config > Desktop: Remove app grid folders"
+      community.general.dconf:
+        key: "/org/gnome/desktop/app-folders/folder-children"
+        state: absent
+
+    - name: "Gnome > Config > Desktop: Set center window shortcut"
+      community.general.dconf:
+        key: "/org/gnome/desktop/wm/keybindings/move-to-center"
+        state: present
+        value: "'<Super><Shift>c'"
+
+    - name: "Gnome > Config > Desktop: Center new windows"
+      community.general.dconf:
+        key: "/org/gnome/mutter/center-new-windows"
+        state: present
+        value: "true"
   tags: ["system", "desktop", "gnome"]

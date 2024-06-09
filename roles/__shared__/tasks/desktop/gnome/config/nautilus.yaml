@@ -1,57 +1,47 @@
-# Instant changes
-- name: "Gnome > Config > Nautilus: Set single-click to open"
+- name: "Gnome > Config > Nautilus (Instant changes)"
   become: true
   become_user: "{{ profileUsername }}"
-  community.general.dconf:
-    key: "/org/gnome/nautilus/preferences/click-policy"
-    state: present
-    value: "'single'"
+  block:
+    - name: "Gnome > Config > Nautilus: Set single-click to open"
+      community.general.dconf:
+        key: "/org/gnome/nautilus/preferences/click-policy"
+        state: present
+        value: "'single'"
+
+    - name: "Gnome > Config > Nautilus: Show create link"
+      community.general.dconf:
+        key: "/org/gnome/nautilus/preferences/show-create-link"
+        state: present
+        value: "true"
+
+    - name: "Gnome > Config > Nautilus: Sidebar enabled"
+      community.general.dconf:
+        key: "/org/gnome/nautilus/window-state/start-with-sidebar"
+        state: present
+        value: "true"
   tags: ["system", "file-manager", "gnome"]
 
-- name: "Gnome > Config > Nautilus: Show create link"
+- name: "Gnome > Config > Nautilus (Affects new windows only)"
   become: true
   become_user: "{{ profileUsername }}"
-  community.general.dconf:
-    key: "/org/gnome/nautilus/preferences/show-create-link"
-    state: present
-    value: "true"
-  tags: ["system", "file-manager", "gnome"]
+  block:
+    - name: "Gnome > Config > Nautilus: Maximise window"
+      community.general.dconf:
+        key: "/org/gnome/nautilus/window-state/maximized"
+        state: present
+        value: "true"
 
-- name: "Gnome > Config > Nautilus: Sidebar enabled"
-  become: true
-  become_user: "{{ profileUsername }}"
-  community.general.dconf:
-    key: "/org/gnome/nautilus/window-state/start-with-sidebar"
-    state: present
-    value: "true"
-  tags: ["system", "file-manager", "gnome"]
+    - name: "Gnome > Config > Nautilus: Set icon view"
+      community.general.dconf:
+        key: "/org/gnome/nautilus/preferences/default-folder-viewer"
+        state: present
+        value: "'icon-view'"
 
-# Affects new windows only
-- name: "Gnome > Config > Nautilus: Maximise window"
-  become: true
-  become_user: "{{ profileUsername }}"
-  community.general.dconf:
-    key: "/org/gnome/nautilus/window-state/maximized"
-    state: present
-    value: "true"
-  tags: ["system", "file-manager", "gnome"]
-
-- name: "Gnome > Config > Nautilus: Set icon view"
-  become: true
-  become_user: "{{ profileUsername }}"
-  community.general.dconf:
-    key: "/org/gnome/nautilus/preferences/default-folder-viewer"
-    state: present
-    value: "'icon-view'"
-  tags: ["system", "file-manager", "gnome"]
-
-- name: "Gnome > Config > Nautilus: Sidebar width"
-  become: true
-  become_user: "{{ profileUsername }}"
-  community.general.dconf:
-    key: "/org/gnome/nautilus/window-state/sidebar-width"
-    state: present
-    value: 250
+    - name: "Gnome > Config > Nautilus: Sidebar width"
+      community.general.dconf:
+        key: "/org/gnome/nautilus/window-state/sidebar-width"
+        state: present
+        value: 250
   tags: ["system", "file-manager", "gnome"]
 
 # Version speciic changes
