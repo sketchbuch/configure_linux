@@ -3,3 +3,4 @@
     name: fonts-cantarell
     state: present
   tags: ["system", "fonts"]
+  when: isUbuntu

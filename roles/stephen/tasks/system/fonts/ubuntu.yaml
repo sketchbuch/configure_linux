@@ -1,0 +1,6 @@
+- name: "System > Fonts: Install Ubuntu"
+  ansible.builtin.package:
+    name: ubuntu-family-fonts
+    state: present
+  tags: ["system", "fonts"]
+  when: isFedora

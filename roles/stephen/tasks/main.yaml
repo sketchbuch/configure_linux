@@ -21,6 +21,11 @@
       tags: ["distro_tasks"]
       when: isUbuntu
 
+    - name: "Include tasks for {{ distroName }}"
+      import_tasks: "distro/fedora.yaml"
+      tags: ["distro_tasks"]
+      when: isFedora
+
     - name: "Include tasks for Gnome"
       block:
         - import_tasks: "shared/desktop/gnome.yaml"
