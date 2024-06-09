@@ -31,7 +31,10 @@
       vars:
         profileUsername: "{{ userUsername }}"
 
-    - import_tasks: "software/virtualbox.yaml"
+    - name: "test"
+      import_tasks: "software/virtualbox.yaml"
+      vars:
+        profileUsername: "{{ userUsername }}"
 
     - name: "User settings"
       block:
