@@ -11,7 +11,7 @@
 
     - name: "Software > Install VirtualBox - Add key"
       ansible.builtin.command:
-        cmd: "sudo rpm --import /path/to/your/download/directory/0x54840598.pub.asc"
+        cmd: "sudo rpm --import https://rpm.tuxedocomputers.com/fedora/40/0x54840598.pub.asc"
       when: not tuxRepoFile.stat.exists
 
     - name: "Software > Install VirtualBox - Copy repo file"
