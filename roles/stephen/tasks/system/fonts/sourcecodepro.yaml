@@ -10,22 +10,22 @@
     - name: "System > Fonts: Install Source Code Pro - Download archive"
       get_url:
         url: "https://github.com/adobe-fonts/source-code-pro/releases/download/2.042R-u%2F1.062R-i%2F1.026R-vf/OTF-source-code-pro-2.042R-u_1.062R-i.zip"
-        dest: "{{ anisbleTmp }}/scp.zip"
+        dest: "{{ ansibleTmp }}/scp.zip"
 
     - name: "System > Fonts: Install Source Code Pro - Create tmp folder"
       ansible.builtin.file:
-        path: "{{ anisbleTmp }}/scp/"
+        path: "{{ ansibleTmp }}/scp/"
         state: directory
 
     - name: "System > Fonts: Install Source Code Pro - Extact to tmp folder"
       unarchive:
         copy: no
-        dest: "{{ anisbleTmp }}/scp/"
-        src: "{{ anisbleTmp }}/scp.zip"
+        dest: "{{ ansibleTmp }}/scp/"
+        src: "{{ ansibleTmp }}/scp.zip"
 
     - name: "System > Fonts: Install Source Code Pro - Copy to font folder"
       ansible.builtin.copy:
         dest: "/usr/local/share/fonts/SourceCodePro"
-        src: "{{ anisbleTmp }}/scp/OTF"
+        src: "{{ ansibleTmp }}/scp/OTF"
   tags: ["system", "fonts"]
   when: is_ubuntu

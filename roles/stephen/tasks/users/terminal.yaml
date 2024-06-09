@@ -2,7 +2,7 @@
 #   become: true
 #   become_user: "{{ profile_username }}"
 #   ansible.builtin.copy:
-#     dest: "{{ anisbleTmp }}/gnome_terminal_settings.txt"
+#     dest: "{{ ansibleTmp }}/gnome_terminal_settings.txt"
 #     group: "{{ profile_username }}"
 #     mode: 0600
 #     owner: "{{ profile_username }}"
@@ -13,7 +13,7 @@
 #   become: true
 #   become_user: "{{ profile_username }}"
 #   ansible.builtin.shell:
-#     chdir: "{{ anisbleTmp }}"
+#     chdir: "{{ ansibleTmp }}"
 #     cmd: 'dconf load /org/gnome/terminal/ < "./gnome_terminal_settings.txt"'
 #   tags: ["system", "terminal", "files"]
 

@@ -1,4 +1,4 @@
-anisbleTmp: "~/.ansible/tmp"
+ansibleTmp: "~/.ansible/tmp"
 installSoftware: true
 installDevTools: true
 installGnomeExtensions: true
