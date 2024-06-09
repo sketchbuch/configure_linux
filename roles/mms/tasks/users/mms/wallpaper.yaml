@@ -1,4 +1,4 @@
-- name: "Users > {{ userFullname }} > Desktop: Create wallpaper folder"
+- name: "Users > {{ userName }} > Desktop: Create wallpaper folder"
   become: true
   become_user: "{{ userUsername }}"
   ansible.builtin.file:
@@ -6,7 +6,7 @@
     state: directory
   tags: ["users", "folders"]
 
-- name: "Users > {{ userFullname }} > Desktop: Copy wallpaper"
+- name: "Users > {{ userName }} > Desktop: Copy wallpaper"
   become: true
   become_user: "{{ userUsername }}"
   ansible.builtin.copy:

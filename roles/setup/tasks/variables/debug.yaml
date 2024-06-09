@@ -2,7 +2,7 @@
   ansible.builtin.debug:
     msg:
       - "distro: {{ distro }}"
-      - "distroPretty: {{ distroPretty }}"
+      - "distroName: {{ distroName }}"
       - "distroVersion: {{ distroVersion }}"
       - "isFedora: {{ isFedora }}"
       - "isUbuntu: {{ isUbuntu }}"

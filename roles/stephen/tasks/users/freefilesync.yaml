@@ -1,4 +1,4 @@
-- name: "Users > {{ userFullname }} > FreeFileSync: Create folder"
+- name: "Users > {{ userName }} > FreeFileSync: Create folder"
   become: true
   become_user: "{{ userUsername }}"
   ansible.builtin.file:
@@ -6,7 +6,7 @@
     state: directory
   tags: ["users", "folders", "stephen"]
 
-- name: "Users > {{ userFullname }} > FreeFileSync: Copy ffs_gui files"
+- name: "Users > {{ userName }} > FreeFileSync: Copy ffs_gui files"
   become: true
   become_user: "{{ userUsername }}"
   ansible.builtin.copy:

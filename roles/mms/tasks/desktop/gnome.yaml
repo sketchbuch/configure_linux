@@ -6,5 +6,5 @@
   tags: ["gnome"]
   vars:
     profileUsername: "{{ userUsername }}"
-    profileFullname: "{{ userFullname }}"
+    profileName: "{{ userName }}"
     profile_image_folder: "{{ userImageFolder }}"

@@ -1,5 +1,5 @@
 - block:
-    - name: "Include vars for {{ distroPretty }}"
+    - name: "Include vars for {{ distroName }}"
       block:
         - include_vars: "user.yaml"
         - include_vars: "{{ distro }}.yaml"
@@ -13,12 +13,12 @@
     - import_tasks: "system/fonts/sourcecodepro.yaml"
     - import_tasks: "system/terminal.yaml"
 
-    - name: "Include common tasks for {{ distroPretty }}"
+    - name: "Include common tasks for {{ distroName }}"
       import_tasks: "distro/common.yaml"
       tags: ["distro_tasks"]
       when: isFedora or isUbuntu
 
-    - name: "Include tasks for {{ distroPretty }}"
+    - name: "Include tasks for {{ distroName }}"
       import_tasks: "distro/ubuntu.yaml"
       tags: ["distro_tasks"]
       when: isUbuntu
@@ -52,7 +52,7 @@
       tags: ["stephen"]
       vars:
         profileUsername: "{{ userUsername }}"
-        profileFullname: "{{ userFullname }}"
+        profileName: "{{ userName }}"
 
     - name: "Install dev tools"
       block:

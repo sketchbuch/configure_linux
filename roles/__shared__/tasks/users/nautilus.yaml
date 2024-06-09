@@ -1,5 +1,5 @@
 # GTK in this folder must be run first to create gtk-3.0 folder
-- name: "Users > {{ profileFullname }} > Nautilus: Create Bookmarks"
+- name: "Users > {{ profileName }} > Nautilus: Create Bookmarks"
   become: true
   become_user: "{{ profileUsername }}"
   ansible.builtin.copy:

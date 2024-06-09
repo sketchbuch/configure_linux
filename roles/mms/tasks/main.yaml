@@ -1,5 +1,5 @@
 - block:
-    - name: "Include vars for {{ distroPretty }}"
+    - name: "Include vars for {{ distroName }}"
       block:
         - include_vars: "user.yaml"
         - include_vars: "{{ distro }}.yaml"
@@ -17,7 +17,7 @@
         - import_tasks: "shared/users/terminal.yaml"
       tags: ["mms"]
       vars:
-        profileFullname: "{{ userFullname }}"
+        profileName: "{{ userName }}"
         profileUsername: "{{ userUsername }}"
 
     - name: "Include tasks for Gnome"

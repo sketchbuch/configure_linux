@@ -1,6 +1,6 @@
 # https://forum.obsidian.md/t/where-is-the-user-spell-check-dictionary-file-located/35714/2
 
-- name: "Users > {{ userFullname }} > Obsidian: Create dictionary directory"
+- name: "Users > {{ userName }} > Obsidian: Create dictionary directory"
   become: true
   become_user: "{{ userUsername }}"
   ansible.builtin.file:
@@ -8,7 +8,7 @@
     state: directory
   tags: ["users", "folders", "stephen", "obsidian", "virtual"]
 
-- name: "Users > {{ userFullname }} > Obsidian: Copy dictionary"
+- name: "Users > {{ userName }} > Obsidian: Copy dictionary"
   become: true
   become_user: "{{ userUsername }}"
   ansible.builtin.copy:

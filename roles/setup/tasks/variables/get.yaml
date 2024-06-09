@@ -3,9 +3,9 @@
     distro: "{{ ansible_distribution | lower }}"
   tags: ["setup", "set_fact"]
 
-- name: "Vars > Get: distroPretty"
+- name: "Vars > Get: distroName"
   set_fact:
-    distroPretty: "{{ distro | capitalize }}"
+    distroName: "{{ distro | capitalize }}"
   tags: ["setup", "set_fact"]
 
 - name: "Vars > Get: distroVersion"

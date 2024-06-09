@@ -1,4 +1,4 @@
-- name: 'Users > {{ userFullname }} > Home Folder: Create Home Folders"'
+- name: 'Users > {{ userName }} > Home Folder: Create Home Folders"'
   become: true
   become_user: "{{ userUsername }}"
   ansible.builtin.file:

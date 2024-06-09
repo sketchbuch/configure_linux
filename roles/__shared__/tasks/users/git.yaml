@@ -1,4 +1,4 @@
-- name: "Users > {{ profileFullname }} > Git: Create gitconfig"
+- name: "Users > {{ profileName }} > Git: Create gitconfig"
   become: true
   become_user: "{{ profileUsername }}"
   ansible.builtin.copy:

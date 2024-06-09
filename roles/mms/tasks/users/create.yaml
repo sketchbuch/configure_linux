@@ -7,17 +7,17 @@
   changed_when: false
   register: userExists
 
-- name: 'Users > {{ userFullname }} > Create: User group "{{ userGroup }}"'
+- name: 'Users > {{ userName }} > Create: User group "{{ userGroup }}"'
   become: true
   ansible.builtin.group:
     name: "{{ userGroup }}"
     state: present
   tags: ["system", "users", "mms"]
 
-- name: 'Users > {{ userFullname }} > Create: User "{{ userUsername }}"'
+- name: 'Users > {{ userName }} > Create: User "{{ userUsername }}"'
   become: true
   ansible.builtin.user:
-    comment: "{{ userFullname }}"
+    comment: "{{ userName }}"
     groups: "{{ userGroup }}, sudo"
     name: "{{ userUsername }}"
     password: "{{ userPassword | password_hash }}"
@@ -27,7 +27,7 @@
   tags: ["system", "users", "mms"]
 
 # This file would normally be made on login, but we need to create it as we will not be logging in.
-- name: "Users > {{ userFullname }} > Create: Copy AccountsService file"
+- name: "Users > {{ userName }} > Create: Copy AccountsService file"
   become: true
   ansible.builtin.copy:
     src: "users/{{ userUsername }}/acounts_service"
@@ -38,7 +38,7 @@
   tags: ["system", "users", "mms"]
 
 # Only done if the user did not already exist and we created one with the above tasks
-- name: "Users > {{ userFullname }} > Create: Force password change on next login"
+- name: "Users > {{ userName }} > Create: Force password change on next login"
   become: true
   ansible.builtin.shell:
     cmd: "chage -d 0 {{ userUsername }}"
