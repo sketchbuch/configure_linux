@@ -3,7 +3,7 @@
     path: "/home/{{ profileUsername }}/.local/share/gnome-shell/extensions/{{ extension.uuid }}"
   become: true
   become_user: "{{ profileUsername }}"
-  register: gnome_extension_check
+  register: gnomeExtensionCheck
   tags: ["system", "desktop", "gnome", "extensions", "files"]
 
 - name: 'System > Extensions > Gnome Extensions: "{{ extension.name }}" - Already installed'
@@ -12,7 +12,7 @@
   become: true
   become_user: "{{ profileUsername }}"
   tags: ["system", "desktop", "gnome", "extensions"]
-  when: gnome_extension_check.stat.exists
+  when: gnomeExtensionCheck.stat.exists
 
 - name: "{{ extension.name }}:"
   become: true
@@ -28,4 +28,4 @@
       ansible.builtin.command:
         cmd: 'gnome-extensions install "{{ ansibleTmp }}/gnomeExtensions/{{ extension.uuid }}.zip"'
   tags: ["system", "desktop", "gnome", "extensions"]
-  when: not gnome_extension_check.stat.exists
+  when: not gnomeExtensionCheck.stat.exists
