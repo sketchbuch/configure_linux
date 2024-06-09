@@ -61,6 +61,7 @@ My ansible setup to configure linux and install apps etc. in real and virtual en
 - <https://gist.github.com/carlwgeorge/c560a532b6929f49d9c0df52f75a68ae>
 - <https://github.com/PeterMosmans/ansible-role-customize-gnome>
 - <https://github.com/FinalDes/ansible-ubuntu-disable-auto-update/>
+- <https://github.com/MichaelAquilina/ubuntu-ansible/blob/master/roles/gnomeshell/tasks/main.yml>
 
 ## Hosts
 

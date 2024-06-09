@@ -23,7 +23,7 @@
       community.general.dconf:
         key: "/org/gnome/desktop/wm/keybindings/move-to-center"
         state: present
-        value: "'<Super><Shift>c'"
+        value: "['<Super><Shift>c']"
 
     - name: "Gnome > Config > Desktop: Center new windows"
       community.general.dconf:
