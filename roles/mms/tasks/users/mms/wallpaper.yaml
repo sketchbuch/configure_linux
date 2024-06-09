@@ -14,5 +14,5 @@
     group: "{{ userUsername }}"
     mode: 0644
     owner: "{{ userUsername }}"
-    src: "users/{{ userUsername }}/wallpaper"
+    src: "wallpaper"
   tags: ["users", "desktop", "files"]

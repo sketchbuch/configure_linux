@@ -7,7 +7,7 @@
     group: "root"
     mode: 0644
     owner: "root"
-    src: "users/{{ profileUsername }}/profile_virtual.png"
+    src: "profile_virtual.png"
   tags: ["users", "profile", "files"]
   when: isVirtual
 
@@ -18,7 +18,7 @@
     group: "root"
     mode: 0644
     owner: "root"
-    src: "users/{{ profileUsername }}/profile.png"
+    src: "profile.png"
   tags: ["users", "profile", "files"]
   when: not isVirtual
 

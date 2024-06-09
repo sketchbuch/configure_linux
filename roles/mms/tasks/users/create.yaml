@@ -30,7 +30,7 @@
 - name: "Users > {{ userName }} > Create: Copy AccountsService file"
   become: true
   ansible.builtin.copy:
-    src: "users/{{ userUsername }}/acounts_service"
+    src: "accounts_service"
     dest: "/var/lib/AccountsService/users/{{ userUsername }}"
     owner: "root"
     group: "root"

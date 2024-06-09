@@ -6,5 +6,5 @@
     group: "{{ profileUsername }}"
     mode: 0600
     owner: "{{ profileUsername }}"
-    src: "users/{{ profileUsername }}/dev/gitconfig"
+    src: "dev/gitconfig"
   tags: ["users", "git", "files"]

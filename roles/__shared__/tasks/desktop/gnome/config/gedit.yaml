@@ -11,7 +11,7 @@
       become: true
       become_user: "{{ profileUsername }}"
       ansible.builtin.copy:
-        src: "users/{{ profileUsername }}/gedit/settings"
+        src: "gedit/settings"
         dest: "/home/{{ profileUsername }}/.var/app/org.gnome.gedit/config/glib-2.0/settings/keyfile"
         owner: "{{ profileUsername }}"
         group: "{{ profileUsername }}"

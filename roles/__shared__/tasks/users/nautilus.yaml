@@ -3,7 +3,7 @@
   become: true
   become_user: "{{ profileUsername }}"
   ansible.builtin.copy:
-    src: "users/{{ profileUsername }}/nautilus/bookmarks"
+    src: "nautilus/bookmarks"
     dest: "/home/{{ profileUsername }}/.config/gtk-3.0/bookmarks"
     owner: "{{ profileUsername }}"
     group: "{{ profileUsername }}"

@@ -6,7 +6,7 @@
     group: "{{ profileUsername }}"
     mode: 0600
     owner: "{{ profileUsername }}"
-    src: "users/{{ profileUsername }}/home/.hidden"
+    src: "home/.hidden"
   tags: ["users", "files"]
 
 - name: "Users > {{ profileName }} > Home Folder: Create default folders"
@@ -26,5 +26,5 @@
     group: "{{ profileUsername }}"
     mode: 0600
     owner: "{{ profileUsername }}"
-    src: "users/{{ profileUsername }}/home/user-dirs.dirs"
+    src: "home/user-dirs.dirs"
   tags: ["users", "files", "folders"]

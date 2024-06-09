@@ -6,7 +6,7 @@
     group: "{{ profileUsername }}"
     mode: 0600
     owner: "{{ profileUsername }}"
-    src: "users/{{ profileUsername }}/terminal/{{ dotFile }}"
+    src: "terminal/{{ dotFile }}"
   loop:
     - ".bash_aliases"
     - ".bashrc"

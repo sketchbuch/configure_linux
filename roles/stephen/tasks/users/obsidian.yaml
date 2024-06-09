@@ -16,5 +16,5 @@
     group: "{{ userUsername }}"
     mode: 0600
     owner: "{{ userUsername }}"
-    src: "users/{{ userUsername }}/obsidian-dictionary.txt"
+    src: "obsidian-dictionary.txt"
   tags: ["users", "files", "stephen", "obsidian", "virtual"]

@@ -14,7 +14,7 @@
     group: "{{ userUsername }}"
     mode: 0600
     owner: "{{ userUsername }}"
-    src: "users/{{ userUsername }}/freefilesync/{{ file }}"
+    src: "freefilesync/{{ file }}"
   loop:
     - "Books.ffs_gui"
     - "Laptop.ffs_gui"

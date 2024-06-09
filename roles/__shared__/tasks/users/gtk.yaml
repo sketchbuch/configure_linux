@@ -14,5 +14,5 @@
     group: "{{ profileUsername }}"
     mode: 0600
     owner: "{{ profileUsername }}"
-    src: "users/{{ profileUsername }}/gtk/gtk.css"
+    src: "gtk/gtk.css"
   tags: ["users", "gtk", "files"]

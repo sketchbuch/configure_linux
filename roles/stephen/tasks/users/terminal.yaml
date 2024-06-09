@@ -6,7 +6,7 @@
 #     group: "{{ profileUsername }}"
 #     mode: 0600
 #     owner: "{{ profileUsername }}"
-#     src: "users/{{ profileUsername }}/terminal/gnome_terminal_settings.txt"
+#     src: "terminal/gnome_terminal_settings.txt"
 #   tags: ["system", "terminal", "files"]
 
 # - name: "Users > {{ userName }} > Terminal: Import settings"
