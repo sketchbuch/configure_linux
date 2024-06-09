@@ -34,14 +34,14 @@
         - import_tasks: "shared/users/git.yaml"
         - import_tasks: "shared/users/gtk.yaml"
         - import_tasks: "shared/users/home_folder.yaml"
+        - import_tasks: "users/home_folder.yaml"
         - import_tasks: "shared/users/nautilus.yaml"
         - import_tasks: "shared/users/profile.yaml"
-        - import_tasks: "shared/users/terminal.yaml"
-        - import_tasks: "users/freefilesync.yaml"
-        - import_tasks: "users/home_folder.yaml"
-        - import_tasks: "users/obsidian.yaml"
         - import_tasks: "users/profile.yaml"
+        - import_tasks: "shared/users/terminal.yaml"
         - import_tasks: "users/terminal.yaml"
+        - import_tasks: "users/freefilesync.yaml"
+        - import_tasks: "users/obsidian.yaml"
       tags: ["stephen"]
       vars:
         profileUsername: "{{ userUsername }}"
