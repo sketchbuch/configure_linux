@@ -18,7 +18,6 @@
           - cabextract
           - xorg-x11-font-utils
           - fontconfig
-          - python-psutil
         state: present
       tags: ["system", "fonts"]
       when: not fedoraMsCoreFontsInstalled

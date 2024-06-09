@@ -1,0 +1,6 @@
+- name: "Software > PS Utils"
+  ansible.builtin.package:
+    name:
+      - python-psutil
+    state: present
+  tags: ["system", "fonts"]

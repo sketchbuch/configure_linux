@@ -9,5 +9,7 @@
     - import_tasks: "variables/get.yaml"
     - import_tasks: "variables/debug.yaml"
 
+    - import_tasks: "software/psutils.yaml"
+
   rescue:
     - set_fact: setup_task_failed=true
