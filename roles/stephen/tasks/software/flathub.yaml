@@ -1,4 +1,6 @@
 - name: "Software > Add Flathub remote for user"
+  become: true
+  become_user: "{{ userUsername }}"
   community.general.flatpak_remote:
     flatpakrepo_url: "https://dl.flathub.org/repo/flathub.flatpakrepo"
     method: user
