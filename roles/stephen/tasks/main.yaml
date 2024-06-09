@@ -23,7 +23,7 @@
 
     - name: "Include tasks for Gnome"
       block:
-        - include_tasks: "shared/desktop/gnome.yaml"
+        - import_tasks: "shared/desktop/gnome.yaml"
         - import_tasks: "desktop/gnome.yaml"
       tags: ["gnome"]
       vars:
@@ -37,11 +37,11 @@
         - import_tasks: "shared/users/nautilus.yaml"
         - import_tasks: "shared/users/profile.yaml"
         - import_tasks: "shared/users/terminal.yaml"
-        - include_tasks: "users/freefilesync.yaml"
-        - include_tasks: "users/home_folder.yaml"
-        - include_tasks: "users/obsidian.yaml"
-        - include_tasks: "users/profile.yaml"
-        - include_tasks: "users/terminal.yaml"
+        - import_tasks: "users/freefilesync.yaml"
+        - import_tasks: "users/home_folder.yaml"
+        - import_tasks: "users/obsidian.yaml"
+        - import_tasks: "users/profile.yaml"
+        - import_tasks: "users/terminal.yaml"
       tags: ["stephen"]
       vars:
         profileUsername: "{{ userUsername }}"
