@@ -7,34 +7,6 @@
 
 - name: "Software > Install VirtualBox (Fedora)"
   block:
-    # - name: "Software > Install VirtualBox - Check if is already installed"
-    #   ansible.builtin.stat:
-    #     path: "/etc/yum.repos.d/virtualbox.repo"
-    #   become: true
-    #   become_user: "{{ profileUsername }}"
-    #   register: vboxRepoFile
-
-    # - name: "Software > Install VirtualBox - Install needed packages"
-    #   ansible.builtin.dnf:
-    #     name:
-    #       - "@development-tools"
-    #       - kernel-headers
-    #       - kernel-devel
-    #       - dkms
-    #     state: present
-    #   when: not vboxRepoFile.stat.exists
-
-    # - name: "Software > Install VirtualBox - Create repo file"
-    #   become: true
-    #   become_user: "root"
-    #   ansible.builtin.copy:
-    #     dest: "/etc/yum.repos.d/virtualbox.repo"
-    #     group: "root"
-    #     mode: 0644
-    #     owner: "root"
-    #     src: "fedora/virtualbox.repo"
-    #   when: not vboxRepoFile.stat.exists
-
     - name: "Software > Install VirtualBox - Add key"
       ansible.builtin.command:
         cmd: "sudo rpm --import https://www.virtualbox.org/download/oracle_vbox_2016.asc"
@@ -44,8 +16,8 @@
         cmd: "sudo dnf config-manager --add-repo https://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo"
 
     - name: "Software > Install VirtualBox - Update packages"
-      ansible.builtin.command:
-        cmd: "sudo dnf update"
+      ansible.builtin.dnf:
+        update_cache: yes
 
     - name: "Software > Install VirtualBox - Install needed packages"
       ansible.builtin.dnf:
