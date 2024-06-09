@@ -9,6 +9,7 @@
     - import_tasks: "system/fonts/firacode.yaml"
     - import_tasks: "system/fonts/inconsolata.yaml"
     - import_tasks: "system/fonts/mscorefonts.yaml"
+    - import_tasks: "system/fonts/plex.yaml"
     - import_tasks: "system/fonts/sourcecodepro.yaml"
     - import_tasks: "system/terminal.yaml"
 

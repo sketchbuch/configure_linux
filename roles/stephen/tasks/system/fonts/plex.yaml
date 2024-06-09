@@ -1,5 +1,5 @@
-- name: "System > Fonts: Install Fira Code"
+- name: "System > Fonts: Install IBM Plex"
   ansible.builtin.package:
-    name: "{{fontFiraCode}}"
+    name: "{{fontPlex}}"
     state: present
   tags: ["system", "fonts"]

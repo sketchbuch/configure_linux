@@ -1,6 +1,7 @@
-fontDroidmono: google-droid-sans-mono-fonts
-fontFiracode: fonts-firacode
+fontDroidMono: google-droid-sans-mono-fonts
+fontFiraCode: fonts-firacode
 fontInconsolata: fonts-inconsolata
+fontPlex: fonts-ibm-plex
 
 gnomeExtensions:
   - name: "alphabetical-app-grid"
