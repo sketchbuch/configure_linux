@@ -1,6 +1,12 @@
-- name: "System > Fonts: Install Ubuntu"
-  ansible.builtin.package:
-    name: ubuntu-family-fonts
-    state: present
+- name: "System > Fonts: Install Ubuntu (Fedora)"
+  block:
+    - name: "System > Fonts: Add Ubuntu support"
+      ansible.builtin.command:
+        cmd: "sudo dnf copr enable atim/ubuntu-fonts -y"
+
+    - name: "System > Fonts: Install Ubuntu"
+      ansible.builtin.package:
+        name: ubuntu-family-fonts
+        state: present
   tags: ["system", "fonts"]
   when: isFedora
