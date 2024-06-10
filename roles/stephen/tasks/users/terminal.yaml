@@ -9,6 +9,10 @@
 #     src: "terminal/gnome_terminal_settings.txt"
 #   tags: ["system", "terminal", "files"]
 
+- name: "DEBUG DEBUG DEBUG"
+  ansible.builtin.debug:
+    msg: "{{ inventory_dir }}"
+
 - name: "Terminal: Import settings"
   become: true
   become_user: "{{ profileUsername }}"
