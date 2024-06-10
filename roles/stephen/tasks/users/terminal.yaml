@@ -9,13 +9,13 @@
 #     src: "terminal/gnome_terminal_settings.txt"
 #   tags: ["system", "terminal", "files"]
 
-# - name: "Terminal: Import settings"
-#   become: true
-#   become_user: "{{ profileUsername }}"
-#   ansible.builtin.shell:
-#     chdir: "{{ ansibleTmp }}"
-#     cmd: 'dconf load /org/gnome/terminal/ < "./gnome_terminal_settings.txt"'
-#   tags: ["system", "terminal", "files"]
+- name: "Terminal: Import settings"
+  become: true
+  become_user: "{{ profileUsername }}"
+  ansible.builtin.shell:
+    chdir: "{{ ansibleTmp }}"
+    cmd: 'dconf load /org/gnome/terminal/ < "terminal/gnome_terminal_settings.txt"'
+  tags: ["system", "terminal", "files"]
 
 - name: "Terminal: Set light mode"
   become: true
