@@ -1,8 +1,45 @@
-- import_tasks: "../shared/system/tools/curl.yaml"
-- import_tasks: "../system/fonts/cantarell.yaml"
+- import_tasks: '../shared/system/tools/curl.yaml'
+- import_tasks: '../system/fonts/cantarell.yaml'
 
-- name: "Software Tasks (Ubuntu)"
+- name: 'Software Tasks (Ubuntu)'
   block:
-    - import_tasks: "../software/libreoffice.yaml"
-  tags: ["software", "ubuntu"]
+    - import_tasks: '../software/libreoffice.yaml'
+  tags: ['software', 'ubuntu']
   when: installSoftware
+
+- name: 'Install Tuxedo Software'
+  become: true
+  become_user: 'root'
+  block:
+    - name: 'Software > Install Tuxedo Software - Check if repo already installed'
+      ansible.builtin.stat:
+        path: '/etc/yum.repos.d/tuxedo.repo'
+      register: tuxRepoFile
+
+    - name: 'Software > Install Tuxedo Software - Add key'
+      ansible.builtin.command:
+        cmd: 'sudo rpm --import https://rpm.tuxedocomputers.com/fedora/40/0x54840598.pub.asc'
+      when: not tuxRepoFile.stat.exists
+
+    - name: 'Software > Install Tuxedo Software - Copy repo file'
+      ansible.builtin.copy:
+        dest: '/etc/yum.repos.d/tuxedo.repo'
+        group: 'root'
+        mode: 0644
+        owner: 'root'
+        src: 'fedora/tuxedo.fedora.40.repo'
+      when: not tuxRepoFile.stat.exists
+
+    - name: 'Software > Install Tuxedo Software - Update packages'
+      ansible.builtin.dnf:
+        update_cache: yes
+      when: not tuxRepoFile.stat.exists
+
+    - name: 'Software > Install Tuxedo Software'
+      ansible.builtin.dnf:
+        name:
+          - tuxedo-control-center
+          - tuxedo-drivers
+        state: present
+  tags: ['fedora', 'software', 'tuxedo', 'package']
+  when: not isVirtual
