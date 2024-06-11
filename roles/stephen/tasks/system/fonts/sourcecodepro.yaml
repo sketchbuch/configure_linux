@@ -25,7 +25,7 @@
 
     - name: "System > Fonts: Install Source Code Pro - Copy to font folder"
       ansible.builtin.copy:
-        dest: "/usr/local/share/fonts/SourceCodePro"
+        dest: "/usr/share/fonts/SourceCodePro"
         src: "{{ ansibleTmp }}/scp/OTF"
   tags: ["ubuntu", "system", "fonts"]
   when: isUbuntu
