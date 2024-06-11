@@ -6,7 +6,7 @@
       community.general.dconf:
         key: "/org/gnome/desktop/interface/monospace-font-name"
         state: present
-        value: "'Source Code Pro 12'"
+        value: "'IBM Plex Mono 12'"
 
     - name: "Gnome > Config > Fonts: Set system document font and size"
       community.general.dconf:
