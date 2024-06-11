@@ -1,5 +1,5 @@
 ansibleTmp: "~/.ansible/tmp"
-installSoftware: false
+installSoftware: true
 installDevTools: true
 installGnomeExtensions: true
 
