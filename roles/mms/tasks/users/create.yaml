@@ -1,46 +1,48 @@
 - name: 'Create: Check if user "{{ userUsername }}" already exists'
-  become: true
-  ansible.builtin.getent:
-    database: passwd
-    fail_key: false
-    key: "{{ userUsername }}"
-  changed_when: false
-  register: userExists
+  block:
+    - name: 'Create: Check if user "{{ userUsername }}" already exists'
+      become: true
+      ansible.builtin.getent:
+        database: passwd
+        fail_key: false
+        key: "{{ userUsername }}"
+      changed_when: false
+      register: userExists
 
-- name: 'Create: User group "{{ userGroup }}"'
-  become: true
-  ansible.builtin.group:
-    name: "{{ userGroup }}"
-    state: present
-  tags: ["system", "users", "mms"]
+    - name: 'Create: User group "{{ userGroup }}"'
+      become: true
+      ansible.builtin.group:
+        name: "{{ userGroup }}"
+        state: present
+      when: not userExists.stat.exists
 
-- name: 'Create: User "{{ userUsername }}"'
-  become: true
-  ansible.builtin.user:
-    comment: "{{ userName }}"
-    groups: "{{ userGroup }}, sudo"
-    name: "{{ userUsername }}"
-    password: "{{ userPassword | password_hash }}"
-    shell: /bin/bash
-    state: present
-    update_password: "on_create"
-  tags: ["system", "users", "mms"]
+    - name: 'Create: User "{{ userUsername }}"'
+      become: true
+      ansible.builtin.user:
+        comment: "{{ userName }}"
+        groups: "{{ userGroup }}, sudo"
+        name: "{{ userUsername }}"
+        password: "{{ userPassword | password_hash }}"
+        shell: /bin/bash
+        state: present
+        update_password: "on_create"
+      when: not userExists.stat.exists
 
-# This file would normally be made on login, but we need to create it as we will not be logging in.
-- name: "Create: Copy AccountsService file"
-  become: true
-  ansible.builtin.copy:
-    src: "accounts_service"
-    dest: "/var/lib/AccountsService/users/{{ userUsername }}"
-    owner: "root"
-    group: "root"
-    mode: 0700
-  tags: ["system", "users", "mms"]
+    # This file would normally be made on login, but we need to create it as we will not be logging in.
+    - name: "Create: Copy AccountsService file"
+      become: true
+      ansible.builtin.copy:
+        dest: "/var/lib/AccountsService/users/{{ userUsername }}"
+        group: "root"
+        mode: 0700
+        owner: "root"
+        src: "accounts_service"
+      when: not userExists.stat.exists
 
-# Only done if the user did not already exist and we created one with the above tasks
-- name: "Create: Force password change on next login"
-  become: true
-  ansible.builtin.shell:
-    cmd: "chage -d 0 {{ userUsername }}"
+    # Only done if the user did not already exist and we created one with the above tasks
+    - name: "Create: Force password change on next login"
+      become: true
+      ansible.builtin.shell:
+        cmd: "chage -d 0 {{ userUsername }}"
+      when: userExists.ansible_facts.getent_passwd[userUsername] is none
   tags: ["system", "users", "mms"]
-  when: userExists.ansible_facts.getent_passwd[userUsername] is none

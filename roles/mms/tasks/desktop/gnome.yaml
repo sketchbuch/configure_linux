@@ -1,7 +1,6 @@
 - name: "Gnome Tasks"
   block:
     - import_tasks: "gnome/config/desktop.yaml"
-
     - import_tasks: "shared/users/nautilus.yaml"
   tags: ["gnome"]
   vars:
