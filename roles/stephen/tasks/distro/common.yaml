@@ -1,79 +1,116 @@
-- name: "Software Tasks (global)"
+- name: 'Software Tasks (global)'
   block:
-    - import_tasks: "../shared/software/fsearch.yaml"
-    - import_tasks: "../shared/software/htop.yaml"
-    - import_tasks: "../shared/software/plocate.yaml"
-    - import_tasks: "../shared/software/powertop.yaml"
-  tags: ["software", "fedora", "ubuntu"]
+    - import_tasks: '../shared/software/fsearch.yaml'
+    - import_tasks: '../shared/software/htop.yaml'
+    - import_tasks: '../shared/software/plocate.yaml'
+    - import_tasks: '../shared/software/powertop.yaml'
+  tags: ['software', 'fedora', 'ubuntu']
   when: installSoftware
 
-- name: "Software > Add FlatHub as a remote to Flatpak for the current user"
-  import_tasks: "../software/flathub.yaml"
-  tags: ["software", "fedora", "ubuntu"]
+- name: 'Software > Add FlatHub as a remote to Flatpak for the current user'
+  import_tasks: '../software/flathub.yaml'
+  tags: ['software', 'fedora', 'ubuntu']
   when: installSoftware
 
-- name: "Software Tasks"
+- name: 'Software Tasks'
   block:
-    - import_tasks: "../software/0ad.yaml"
-    - import_tasks: "../software/apostrophe.yaml"
-    - import_tasks: "../software/audacity.yaml"
-    - import_tasks: "../software/augustus.yaml"
-    - import_tasks: "../software/celeste.yaml"
-    - import_tasks: "../software/chrome.yaml"
-    - import_tasks: "../software/collision.yaml"
-    - import_tasks: "../software/converter.yaml"
-    - import_tasks: "../software/curtail.yaml"
-    - import_tasks: "../software/eartag.yaml"
-    - import_tasks: "../software/edge.yaml"
-    - import_tasks: "../software/flatseal.yaml"
-    - import_tasks: "../software/foliate.yaml"
-    - import_tasks: "../software/font-manager.yaml"
-    - import_tasks: "../software/fontdownloader.yaml"
-    - import_tasks: "../software/freefilesync.yaml"
-    - import_tasks: "../software/gimp.yaml"
-    - import_tasks: "../software/gnome-boxes.yaml"
-    - import_tasks: "../software/gnome-calendar.yaml"
-    - import_tasks: "../software/gnome-clocks.yaml"
-    - import_tasks: "../software/gnome-contacts.yaml"
-    - import_tasks: "../software/gnome-loupe.yaml"
-    - import_tasks: "../software/gnome-maps.yaml"
-    - import_tasks: "../software/gnome-sudoku.yaml"
-    - import_tasks: "../software/gnome-texteditor.yaml"
-    - import_tasks: "../software/gnome-weather.yaml"
-    - import_tasks: "../software/gnome-web.yaml"
-    - import_tasks: "../software/impression.yaml"
-    - import_tasks: "../software/inkscape.yaml"
-    - import_tasks: "../software/julius.yaml"
-    - import_tasks: "../software/kdenlive.yaml"
-    - import_tasks: "../software/keepassxc.yaml"
-    - import_tasks: "../software/losslesscut.yaml"
-    - import_tasks: "../software/obfuscate.yaml"
-    - import_tasks: "../software/obs.yaml"
-    - import_tasks: "../software/obsidian.yaml"
-    - import_tasks: "../software/openra.yaml"
-    - import_tasks: "../software/pdfarranger.yaml"
-    - import_tasks: "../software/peek.yaml"
-    - import_tasks: "../software/pinta.yaml"
-    - import_tasks: "../software/pitivi.yaml"
-    - import_tasks: "../software/postman.yaml"
-    - import_tasks: "../software/rocketchat.yaml"
-    - import_tasks: "../software/shotcut.yaml"
-    - import_tasks: "../software/skype.yaml"
-    - import_tasks: "../software/slack.yaml"
-    - import_tasks: "../software/soundrecorder.yaml"
-    - import_tasks: "../software/steam.yaml"
-    - import_tasks: "../software/switcheroo.yaml"
-    - import_tasks: "../software/tangram.yaml"
-    - import_tasks: "../software/textpieces.yaml"
-    - import_tasks: "../software/textsnatcher.yaml"
-    - import_tasks: "../software/upscaler.yaml"
-    - import_tasks: "../software/videodownloader.yaml"
-    - import_tasks: "../software/videotrimmer.yaml"
-    - import_tasks: "../software/virtualbox.yaml"
-    - import_tasks: "../software/vlc.yaml"
-    - import_tasks: "../software/vscode.yaml"
-    - import_tasks: "../software/warp.yaml"
-    - import_tasks: "../software/webfontkitgen.yaml"
-    - import_tasks: "../software/wike.yaml"
-  tags: ["software", "fedora"]
+    - import_tasks: '../software/0ad.yaml'
+    - import_tasks: '../software/apostrophe.yaml'
+    - import_tasks: '../software/audacity.yaml'
+    - import_tasks: '../software/augustus.yaml'
+    - import_tasks: '../software/celeste.yaml'
+    - import_tasks: '../software/chrome.yaml'
+    - import_tasks: '../software/collision.yaml'
+    - import_tasks: '../software/converter.yaml'
+    - import_tasks: '../software/curtail.yaml'
+    - import_tasks: '../software/eartag.yaml'
+    - import_tasks: '../software/edge.yaml'
+    - import_tasks: '../software/flatseal.yaml'
+    - import_tasks: '../software/foliate.yaml'
+    - import_tasks: '../software/font-manager.yaml'
+    - import_tasks: '../software/fontdownloader.yaml'
+    - import_tasks: '../software/freefilesync.yaml'
+    - import_tasks: '../software/gimp.yaml'
+    - import_tasks: '../software/gnome-boxes.yaml'
+    - import_tasks: '../software/gnome-calendar.yaml'
+    - import_tasks: '../software/gnome-clocks.yaml'
+    - import_tasks: '../software/gnome-contacts.yaml'
+    - import_tasks: '../software/gnome-loupe.yaml'
+    - import_tasks: '../software/gnome-maps.yaml'
+    - import_tasks: '../software/gnome-sudoku.yaml'
+    - import_tasks: '../software/gnome-texteditor.yaml'
+    - import_tasks: '../software/gnome-weather.yaml'
+    - import_tasks: '../software/gnome-web.yaml'
+    - import_tasks: '../software/impression.yaml'
+    - import_tasks: '../software/inkscape.yaml'
+    - import_tasks: '../software/julius.yaml'
+    - import_tasks: '../software/kdenlive.yaml'
+    - import_tasks: '../software/keepassxc.yaml'
+    - import_tasks: '../software/losslesscut.yaml'
+    - import_tasks: '../software/obfuscate.yaml'
+    - import_tasks: '../software/obs.yaml'
+    - import_tasks: '../software/obsidian.yaml'
+    - import_tasks: '../software/openra.yaml'
+    - import_tasks: '../software/pdfarranger.yaml'
+    - import_tasks: '../software/peek.yaml'
+    - import_tasks: '../software/pinta.yaml'
+    - import_tasks: '../software/pitivi.yaml'
+    - import_tasks: '../software/postman.yaml'
+    - import_tasks: '../software/rocketchat.yaml'
+    - import_tasks: '../software/shotcut.yaml'
+    - import_tasks: '../software/skype.yaml'
+    - import_tasks: '../software/slack.yaml'
+    - import_tasks: '../software/soundrecorder.yaml'
+    - import_tasks: '../software/steam.yaml'
+    - import_tasks: '../software/switcheroo.yaml'
+    - import_tasks: '../software/tangram.yaml'
+    - import_tasks: '../software/textpieces.yaml'
+    - import_tasks: '../software/textsnatcher.yaml'
+    - import_tasks: '../software/upscaler.yaml'
+    - import_tasks: '../software/videodownloader.yaml'
+    - import_tasks: '../software/videotrimmer.yaml'
+    - import_tasks: '../software/virtualbox.yaml'
+    - import_tasks: '../software/vlc.yaml'
+    - import_tasks: '../software/vscode.yaml'
+    - import_tasks: '../software/warp.yaml'
+    - import_tasks: '../software/webfontkitgen.yaml'
+    - import_tasks: '../software/wike.yaml'
+  tags: ['software', 'fedora']
   when: installSoftware
+
+- name: 'Install Tuxedo Software'
+  become: true
+  become_user: 'root'
+  block:
+    - name: 'Software > Install Tuxedo Software - Check if repo already installed'
+      ansible.builtin.stat:
+        path: '/etc/yum.repos.d/tuxedo.repo'
+      register: tuxRepoFile
+
+    - name: 'Software > Install Tuxedo Software - Add key'
+      ansible.builtin.command:
+        cmd: 'sudo rpm --import https://rpm.tuxedocomputers.com/fedora/40/0x54840598.pub.asc'
+      when: not tuxRepoFile.stat.exists
+
+    - name: 'Software > Install Tuxedo Software - Copy repo file'
+      ansible.builtin.copy:
+        dest: '/etc/yum.repos.d/tuxedo.repo'
+        group: 'root'
+        mode: 0644
+        owner: 'root'
+        src: 'fedora/tuxedo.fedora.40.repo'
+      when: not tuxRepoFile.stat.exists
+
+    - name: 'Software > Install Tuxedo Software - Update packages'
+      ansible.builtin.dnf:
+        update_cache: yes
+      when: not tuxRepoFile.stat.exists
+
+    - name: 'Software > Install Tuxedo Software'
+      ansible.builtin.dnf:
+        name:
+          - tuxedo-control-center
+          - tuxedo-drivers
+        state: present
+  tags: ['fedora', 'software', 'tuxedo', 'package']
+  when: not isVirtual
