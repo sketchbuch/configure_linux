@@ -1,9 +1,9 @@
-- import_tasks: "gnome_prep.yaml"
+- import_tasks: 'gnome_prep.yaml'
 
-- name: "Add Gnome Extensions"
-  include_tasks: "gnomeExtensions.yaml"
-  loop: "{{ gnomeExtensions }}"
+- name: 'Add Gnome Extensions'
+  include_tasks: 'gnome_extensions.yaml'
+  loop: '{{ gnomeExtensions }}'
   loop_control:
     loop_var: extension
 
-- import_tasks: "gnome_cleanup.yaml"
+- import_tasks: 'gnome_cleanup.yaml'
