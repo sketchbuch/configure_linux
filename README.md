@@ -81,6 +81,7 @@ virtual | Hosts that are virtual, running in something like virtualbox
 - ssh
 - clone repos
 - Fedora sudo timeout to be same as ubuntu
+- Add vars liek software install to debug
 
 **MMS**
 
