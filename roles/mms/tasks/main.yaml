@@ -13,6 +13,7 @@
         - import_tasks: "shared/users/gtk.yaml"
         - import_tasks: "shared/users/home_folder.yaml"
         - import_tasks: "users/mms/home_folder.yaml"
+        - import_tasks: "shared/users/nautilus.yaml"
         - import_tasks: "shared/users/profile.yaml"
         - import_tasks: "shared/users/terminal.yaml"
         - import_tasks: "users/mms/wallpaper.yaml"
