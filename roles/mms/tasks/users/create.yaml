@@ -11,7 +11,7 @@
 
     - name: "Create: Debug"
       ansible.builtin.debug:
-        database: "{{ userExists }}"
+        msg: "{{ userExists }}"
 
     - name: 'Create: User group "{{ userGroup }}"'
       become: true
