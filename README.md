@@ -82,6 +82,11 @@ virtual | Hosts that are virtual, running in something like virtualbox
 - clone repos
 - Fedora sudo timeout to be same as ubuntu
 
+**MMS**
+
+- Get MMS working
+- NVM folder needs making before NVM task
+
 **Fedora 40**
 
 - ...
