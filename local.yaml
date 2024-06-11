@@ -15,7 +15,7 @@
   tags: ["stephen"]
 
 # Work user
-- hosts: real
+- hosts: all
   become: true
   gather_facts: false
   roles:
