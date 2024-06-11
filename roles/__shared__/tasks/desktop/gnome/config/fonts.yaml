@@ -12,19 +12,19 @@
       community.general.dconf:
         key: "/org/gnome/desktop/interface/document-font-name"
         state: present
-        value: "'IBM Plex Sans 11'"
+        value: "'Source Code Pro 12'"
 
     - name: "Gnome > Config > Fonts: Set system font and size"
       community.general.dconf:
         key: "/org/gnome/desktop/interface/font-name"
         state: present
-        value: "'IBM Plex Sans 11'"
+        value: "'Source Code Pro 12'"
 
     - name: "Gnome > Config > Fonts: Set classic window title font and size"
       community.general.dconf:
         key: "/org/gnome/desktop/wm/preferences/titlebar-font"
         state: present
-        value: "'IBM Plex Sans Bold 11'"
+        value: "'Source Code Pro 12'"
 
     - name: "Gnome > Config > Fonts: Set anti-aliasing"
       community.general.dconf:
