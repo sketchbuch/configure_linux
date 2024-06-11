@@ -9,6 +9,10 @@
       changed_when: false
       register: userExists
 
+    - name: "Create: Debug"
+      ansible.builtin.debug:
+        database: "{{ userExists }}"
+
     - name: 'Create: User group "{{ userGroup }}"'
       become: true
       ansible.builtin.group:
