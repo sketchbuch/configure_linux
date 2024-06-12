@@ -16,13 +16,13 @@
     value: "[
       'org.gnome.Nautilus.desktop',
       'google-chrome.desktop',
-      'org.gnome.gedit.desktop',
+      'org.gnome.TextEditor.desktop',
       'code.desktop',
       'org.gnome.Terminal.desktop',
-      'keepassxc_keepassxc.desktop',
-      'steam.desktop',
+      'org.keepassxc.KeePassXC.desktop',
+      'com.valvesoftware.Steam.desktop',
       'md.obsidian.Obsidian.desktop',
-      'firefox.desktop',
+      'firefox_firefox.desktop',
       'org.kde.kdenlive.desktop',
       'virtualbox.desktop',
       'ca.desrt.dconf-editor.desktop'
