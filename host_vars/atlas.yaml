@@ -2,9 +2,9 @@ ansibleTmp: "~/.ansible/tmp"
 installSoftware: true
 installDevTools: true
 installGnomeExtensions: true
-installTuxedoKeyboard: true
-installTuxedoCC: true
-installTuxedoDrivers: true
+installTuxedoKeyboard: false
+installTuxedoCC: false
+installTuxedoDrivers: false
 
 nodeVersions:
   - "16.13.0"

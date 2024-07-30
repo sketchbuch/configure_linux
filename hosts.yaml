@@ -1,11 +1,13 @@
 all:
   hosts:
     pulse:
+    atlas:
     vbox:
 
 real:
   hosts:
     pulse:
+    atlas:
 
 virtual:
   hosts:
