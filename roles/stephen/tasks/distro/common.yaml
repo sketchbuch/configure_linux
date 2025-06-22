@@ -58,7 +58,7 @@
     - import_tasks: '../software/postman.yaml'
     - import_tasks: '../software/rocketchat.yaml'
     - import_tasks: '../software/shotcut.yaml'
-    - import_tasks: '../software/skype.yaml'
+    # - import_tasks: '../software/skype.yaml'
     - import_tasks: '../software/slack.yaml'
     - import_tasks: '../software/soundrecorder.yaml'
     - import_tasks: '../software/steam.yaml'
