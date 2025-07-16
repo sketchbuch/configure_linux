@@ -20,7 +20,7 @@
         group: 'root'
         mode: 0644
         owner: 'root'
-        src: 'fedora/tuxedo.fedora.40.repo'
+        src: 'fedora/tuxedo.fedora.42.repo'
       when: not tuxRepoFile.stat.exists
 
     - name: 'Software > Install Tuxedo Software - Update packages'
