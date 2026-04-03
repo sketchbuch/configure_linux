@@ -1,8 +1,8 @@
 ---
 
-- name: "Include task vars"
-  block:
-    - include_vars: "task.yaml"
+- name: Include task vars
+  ansible.builtin.include_vars:
+    file: "task.yaml"
 
 - name: Get facts
   ansible.builtin.package_facts:
