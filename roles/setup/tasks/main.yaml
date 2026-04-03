@@ -26,6 +26,13 @@
       - "is_virtual: {{ is_virtual }}"
   when: debugVars
 
-- name: "Include vars for {{ distroName }}"
+- name: Include vars for fedora
   block:
-    - include_vars: "{{ distro }}.yaml"
+    - include_vars: "fedora.yaml"
+  when: is_fedora
+
+- name: Include vars for ubuntu
+  block:
+    - include_vars: "ubuntu.yaml"
+  when: is_ubuntu
+    
