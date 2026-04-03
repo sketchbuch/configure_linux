@@ -27,5 +27,5 @@ ansible-lint -c ./.ansible-lint.yaml
 ## Run
 
 ```bash
-sudo ansible-pull --checkout version-2 -U https://github.com/sketchbuch/configure_linux.git ./playbooks/base.yaml
+sudo ansible-pull --checkout feat/version-2 -U https://github.com/sketchbuch/configure_linux.git ./playbooks/base.yaml
 ```
