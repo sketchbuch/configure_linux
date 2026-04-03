@@ -12,6 +12,12 @@
     isUbuntu: '{{ ansible_distribution | lower == "ubuntu" | ternary (true, false) }}'
     isVirtual: '{{ ansible_virtualization_role == "guest" | ternary (true, false) }}'
 
+- name: "Vars > Get: distroVersion"
+  set_fact:
+    isFedora2: '{{ (distro == "fedora") | ternary (true, false) }}'
+    isUbuntu2: '{{ (distro == "ubuntu") | ternary (true, false) }}'
+  tags: ["setup", "set_fact"]
+
 - name: Debug facts
   ansible.builtin.debug:
     msg:
@@ -20,3 +26,5 @@
       - "isFedora: {{ isFedora }}"
       - "isUbuntu: {{ isUbuntu }}"
       - "isVirtual: {{ isVirtual }}"
+      - "isFedora2: {{ isFedora }}"
+      - "isUbuntu2: {{ isUbuntu }}"
