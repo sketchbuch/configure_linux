@@ -1,14 +1,14 @@
 ---
 
-- name: Include task vars
+- name: include task vars
   ansible.builtin.include_vars:
     file: "task.yaml"
 
-- name: Get facts
+- name: get facts
   ansible.builtin.package_facts:
     manager: auto
 
-- name: Set facts
+- name: set facts
   ansible.builtin.set_fact:
     distro: "{{ ansible_distribution | lower }}"
     distro_version: "{{ ansible_distribution_major_version }}"
@@ -16,7 +16,7 @@
     is_ubuntu: '{{ ((ansible_distribution | lower) == "ubuntu") | ternary(true, false) }}'
     is_virtual: '{{ ansible_virtualization_role == "guest" | ternary(true, false) }}'
 
-- name: Debug facts
+- name: debug facts
   ansible.builtin.debug:
     msg:
       - "distro: {{ distro }}"
@@ -26,12 +26,12 @@
       - "is_virtual: {{ is_virtual }}"
   when: debugVars
 
-- name: Include vars for fedora
+- name: include vars for fedora
   ansible.builtin.include_vars:
     file: "fedora.yaml"
   when: is_fedora
 
-- name: Include vars for ubuntu
+- name: include vars for ubuntu
   ansible.builtin.include_vars:
     file: "ubuntu.yaml"
   when: is_ubuntu

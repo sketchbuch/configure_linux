@@ -1,0 +1,17 @@
+- name: install font - ubuntu
+  block:
+    - name: ubuntu - check if installed
+      ansible.builtin.stat:
+        path: "/usr/share/fonts/ubuntu-family/Ubuntu-B.ttf"
+      register: ubuntuFontsInstalled
+
+    - name: ubuntu - add ubuntu support
+      ansible.builtin.command:
+        cmd: "sudo dnf copr enable atim/ubuntu-fonts -y"
+      when: not ubuntuFontsInstalled.stat.exists
+
+    - name: ubuntu - install font"
+      ansible.builtin.package:
+        name: ubuntu-family-fonts
+        state: present
+  when: is_fedora

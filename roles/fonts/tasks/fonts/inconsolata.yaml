@@ -1,0 +1,4 @@
+- name: install font - inconsolata
+  ansible.builtin.package:
+    name: "{{fontInconsolata}}"
+    state: present

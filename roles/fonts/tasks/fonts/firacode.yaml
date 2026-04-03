@@ -1,0 +1,4 @@
+- name: install font - fira code
+  ansible.builtin.package:
+    name: "{{fontFiraCode}}"
+    state: present

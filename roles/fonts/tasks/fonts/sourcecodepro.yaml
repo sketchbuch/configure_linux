@@ -1,0 +1,31 @@
+---
+
+- name: install font - source code pro
+  ansible.builtin.package:
+    name: adobe-source-code-pro-fonts
+    state: present
+  when: is_fedora
+
+- name: install font - source code pro
+  block:
+    - name: source code pro - install fontsownload archive
+      ansible.builtin.get_url:
+        dest: "{{ ansibleTmp }}/scp.zip"
+        url: "https://github.com/adobe-fonts/source-code-pro/releases/download/2.042R-u%2F1.062R-i%2F1.026R-vf/OTF-source-code-pro-2.042R-u_1.062R-i.zip"
+
+    - name: source code pro - create tmp folder
+      ansible.builtin.file:
+        path: "{{ ansibleTmp }}/scp/"
+        state: directory
+
+    - name: source code pro - extact to tmp folder
+      ansible.builtin.unarchive:
+        copy: no
+        dest: "{{ ansibleTmp }}/scp/"
+        src: "{{ ansibleTmp }}/scp.zip"
+
+    - name: source code pro - copy to font folder
+      ansible.builtin.copy:
+        dest: "/usr/share/fonts/SourceCodePro"
+        src: "{{ ansibleTmp }}/scp/OTF"
+  when: is_ubuntu

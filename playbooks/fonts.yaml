@@ -1,0 +1,6 @@
+---
+
+- name: install fonts
+  hosts: all
+  roles:
+    - fonts

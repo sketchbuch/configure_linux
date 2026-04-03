@@ -1,6 +1,6 @@
 ---
 
-- name: Install software
-  hosts: real
+- name: install software
+  hosts: all
   roles:
     - software_flatpak

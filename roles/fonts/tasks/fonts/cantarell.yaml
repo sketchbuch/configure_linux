@@ -1,0 +1,5 @@
+- name: install font - cantarell
+  ansible.builtin.package:
+    name: fonts-cantarell
+    state: present
+  when: is_ubuntu
