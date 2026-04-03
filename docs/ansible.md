@@ -1,6 +1,6 @@
 # Ansible
 
-[Back to Readme](../README.md)
+[Back to home](../readme.md)
 
 Information about ansible that has been useful.
 
