@@ -11,7 +11,7 @@
 - name: Set facts - core
   set_fact:
     distroVersion: "{{ ansible_distribution_major_version }}"
-    isFedora: '{{ distro == "fedora" | ternary (true, false) }}'
+    isFedora: '{{ "fedora" == "fedora" | ternary (true, false) }}'
     isUbuntu: '{{ distro == "ubuntu" | ternary (true, false) }}'
     isVirtual: '{{ ansible_virtualization_role == "guest" | ternary (true, false) }}'
 
