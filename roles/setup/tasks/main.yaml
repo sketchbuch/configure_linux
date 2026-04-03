@@ -5,13 +5,14 @@
     manager: auto
 
 - name: Set facts
-  set_fact:
+  ansible.builtin.set_fact:
     distro: "{{ ansible_distribution | lower }}"
     distroName: "{{ distro | capitalize }}"
     distroVersion: "{{ ansible_distribution_major_version }}"
     isFedora: '{{ (distro == "fedora") | ternary (true, false) }}'
     isUbuntu: '{{ (distro == "ubuntu") | ternary (true, false) }}'
     isVirtual: '{{ (ansible_virtualization_role == "guest") | ternary (true, false) }}'
+
 - name: Debug facts
   ansible.builtin.debug:
     msg:
