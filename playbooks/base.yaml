@@ -1,6 +1,6 @@
 ---
 
-- name: Prep for ansible setup
+- name: Initialise ansible and run common tasks
   hosts: all
   roles:
     - setup
