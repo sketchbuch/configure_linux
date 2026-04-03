@@ -27,12 +27,12 @@
   when: debugVars
 
 - name: Include vars for fedora
-  block:
-    - include_vars: "fedora.yaml"
+  ansible.builtin.include_vars:
+    file: "fedora.yaml"
   when: is_fedora
 
 - name: Include vars for ubuntu
-  block:
-    - include_vars: "ubuntu.yaml"
+  ansible.builtin.include_vars:
+    file: "ubuntu.yaml"
   when: is_ubuntu
     
