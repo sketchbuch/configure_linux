@@ -23,3 +23,9 @@ sudo apt install ansible-lint
 
 ansible-lint -c ./.ansible-lint.yaml
 ```
+
+## Run
+
+```bash
+sudo ansible-pull --checkout version-2 -U https://github.com/sketchbuch/configure_linux.git ./playbooks/base.yaml
+```
