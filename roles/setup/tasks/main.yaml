@@ -4,28 +4,13 @@
   ansible.builtin.package_facts:
     manager: auto
 
-- name: Set fact - distro
+- name: Set facts
   set_fact:
     distro: "{{ ansible_distribution | lower }}"
-
-- name: Set fact - distroName
-  set_fact:
     distroName: "{{ distro | capitalize }}"
-
-- name: Set fact - distroVersion
-  set_fact:
     distroVersion: "{{ ansible_distribution_major_version }}"
-
-- name: Set fact - isFedora
-  set_fact:
     isFedora: '{{ (distro == "fedora") | ternary (true, false) }}'
-
-- name: Set fact - isUbuntu
-  set_fact:
     isUbuntu: '{{ (distro == "ubuntu") | ternary (true, false) }}'
-
-- name: Set fact - isVirtual
-  set_fact:
     isVirtual: '{{ (ansible_virtualization_role == "guest") | ternary (true, false) }}'
 - name: Debug facts
   ansible.builtin.debug:
