@@ -1,22 +1,22 @@
 ---
 
-- name: Gather facts
+- name: Get facts
   ansible.builtin.package_facts:
     manager: auto
 
-- name: Set facts - core
-  set_fact:
+- name: Set vars
+  ansible.builtin.set_fact:
     distro: "{{ ansible_distribution | lower }}"
-    distroVersion: "{{ ansible_distribution_major_version }}"
-    isFedora: '{{ ((ansible_distribution | lower) == "fedora") | ternary (true, false) }}'
-    isUbuntu: '{{ ((ansible_distribution | lower) == "ubuntu") | ternary (true, false) }}'
-    isVirtual: '{{ ansible_virtualization_role == "guest" | ternary (true, false) }}'
+    distro_version: "{{ ansible_distribution_major_version }}"
+    is_fedora: '{{ ((ansible_distribution | lower) == "fedora") | ternary(true, false) }}'
+    is_ubuntu: '{{ ((ansible_distribution | lower) == "ubuntu") | ternary(true, false) }}'
+    is_virtual: '{{ ansible_virtualization_role == "guest" | ternary(true, false) }}'
 
-- name: Debug facts
+- name: Debug vars
   ansible.builtin.debug:
     msg:
       - "distro: {{ distro }}"
-      - "distroVersion: {{ distroVersion }}"
-      - "isFedora: {{ isFedora }}"
-      - "isUbuntu: {{ isUbuntu }}"
-      - "isVirtual: {{ isVirtual }}"
+      - "distro_version: {{ distro_version }}"
+      - "is_fedora: {{ is_fedora }}"
+      - "is_ubuntu: {{ is_ubuntu }}"
+      - "is_virtual: {{ is_virtual }}"
