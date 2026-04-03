@@ -16,12 +16,10 @@ My ansible setup to configure linux and install apps etc. in real and virtual en
 
 ## Linting
 
-To lint yaml, make sure you have yamllint installed and then:
+To lint yaml:
 
 ```bash
-sudo apt install yamllint
+sudo apt install ansible-lint
 
-yamllint .
+ansible-lint -c ./.ansible-lint.yaml
 ```
-
-Unlike other linting tools like eslint, tslint etc. there is no automatic fixing supported.

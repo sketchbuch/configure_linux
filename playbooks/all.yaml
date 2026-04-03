@@ -1,3 +1,4 @@
 ---
 
-- ansible.builtin.import_playbook: base.yaml
+- name: Run all playbooks
+  ansible.builtin.import_playbook: base.yaml
