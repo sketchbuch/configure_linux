@@ -2,4 +2,4 @@
 
 [Back to home](../../readme.md)
 
-This role is for doing setup before running other roles/tasks.
+This role creates vars based on ansible facts for use later in task "when" clauses.
