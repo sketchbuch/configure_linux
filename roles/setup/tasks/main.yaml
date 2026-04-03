@@ -8,9 +8,9 @@
   set_fact:
     distro: "{{ ansible_distribution | lower }}"
     distroVersion: "{{ ansible_distribution_major_version }}"
-    isFedora: '{{ (ansible_distribution | lower) == "fedora" | ternary (true, false) }}'
-    isUbuntu: '{{ (ansible_distribution | lower) == "ubuntu" | ternary (true, false) }}'
-    isVirtual: '{{ (ansible_virtualization_role == "guest") | ternary (true, false) }}'
+    isFedora: '{{ ansible_distribution | lower == "fedora" | ternary (true, false) }}'
+    isUbuntu: '{{ ansible_distribution | lower == "ubuntu" | ternary (true, false) }}'
+    isVirtual: '{{ ansible_virtualization_role == "guest" | ternary (true, false) }}'
 
 - name: Debug facts
   ansible.builtin.debug:
