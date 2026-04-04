@@ -9,11 +9,11 @@
 - name: sourcecodepro | Install font
   when: is_ubuntu
   block:
-    - name: sourcecodepro | Install fontsownload archive
+    - name: sourcecodepro | Download archive
       ansible.builtin.get_url:
         dest: "{{ ansibleTmp }}/scp.zip"
         mode: "0600"
-        url: "https://github.com/adobe-fonts/source-code-pro/releases/download/2.042R-u%2F1.062R-i%2F1.026R-vf/OTF-source-code-pro-2.042R-u_1.062R-i.zip"
+        url: "https://github.com/adobe-fonts/source-code-pro/releases/download/2.042R-u%2F1.062R-i%2F1.026R-vf/TTF-source-code-pro-2.042R-u_1.062R-i.zip"
 
     - name: sourcecodepro | Create tmp folder
       ansible.builtin.file:
