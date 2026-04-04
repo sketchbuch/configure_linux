@@ -26,12 +26,12 @@
       - "is_ubuntu: {{ is_ubuntu }}"
       - "is_virtual: {{ is_virtual }}"
 
-- name: Include vars for fedora
+- name: Include fedora vars
   when: is_fedora
   ansible.builtin.include_vars:
     file: "fedora.yaml"
 
-- name: Include vars for ubuntu
+- name: Include ubuntu vars
   when: is_ubuntu
   ansible.builtin.include_vars:
     file: "ubuntu.yaml"
