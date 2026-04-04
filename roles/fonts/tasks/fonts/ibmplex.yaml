@@ -1,0 +1,6 @@
+---
+
+- name: ibmplex | Install font
+  ansible.builtin.package:
+    name: "{{ font_ibmplex }}"
+    state: present

@@ -20,13 +20,14 @@ exclude_paths:
 extra_vars:
   foo: bar
   multiline_string_variable: |
-    line1
+    line1c
     line2
   complex_variable: ":{;\t$()"
 
 offline: true
 profile: null # min, basic, moderate,safety, shared, production
 quiet: true
+
 strict: true
 task_name_prefix: "{stem} | "
 use_default_rules: true
@@ -34,5 +35,6 @@ var_naming_pattern: "^[a-z_][a-z0-9_]*$"
 verbosity: 1
 
 warn_list:
-  - skip_this_tag
+  - document-start
   - experimental
+  - skip_this_tag

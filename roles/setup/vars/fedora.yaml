@@ -1,9 +1,9 @@
-fontDroidMono: google-droid-sans-mono-fonts
-fontFiraCode: fira-code-fonts
-fontInconsolata: levien-inconsolata-fonts
-fontPlex: ibm-plex-fonts-all
+font_droid_mono: google-droid-sans-mono-fonts
+font_fira_code: fira-code-fonts
+font_ibmplex: ibm-plex-fonts-all
+font_inconsolata: levien-inconsolata-fonts
 
-gnomeExtensions:
+gnome_extensions:
   - name: "alphabetical-app-grid"
     url: "AlphabeticalAppGridstuarthayhurst.v40.shell-extension.zip"
     uuid: "AlphabeticalAppGrid@stuarthayhurst"

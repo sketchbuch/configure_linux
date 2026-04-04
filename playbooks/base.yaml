@@ -1,6 +1,6 @@
 ---
 
-- name: initialise ansible and run common tasks
+- name: Initialise ansible and run common tasks
   hosts: all
   roles:
     - setup

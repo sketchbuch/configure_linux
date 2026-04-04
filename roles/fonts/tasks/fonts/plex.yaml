@@ -1,4 +1,0 @@
-- name: install font - ibm plex
-  ansible.builtin.package:
-    name: "{{fontPlex}}"
-    state: present
