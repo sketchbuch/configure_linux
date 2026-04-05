@@ -6,7 +6,7 @@
     state: present
 
 
-- name: ibmplex | Remove unrequired languages
+- name: ibmplex | Remove unnecessary languages
   ansible.builtin.file:
     path: "/usr/share/fonts/{{ item }}"
     state: absent
