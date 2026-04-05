@@ -1,1 +1,10 @@
 ---
+
+- name: Include task vars
+  ansible.builtin.include_vars:
+    file: "task.yaml"
+
+- name: Install flatpak software
+  ansible.builtin.include_tasks: "{{ item }}"
+  with_fileglob:
+    - ./software/*.yaml

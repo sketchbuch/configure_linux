@@ -1,0 +1,7 @@
+- name: apostrophe | Install flatpak (user)
+  become: true
+  become_user: "{{ user_username }}"
+  community.general.flatpak:
+    name: org.gnome.gitlab.somas.Apostrophe
+    state: present
+    method: user
