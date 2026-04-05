@@ -2,6 +2,7 @@ font_droid_mono: google-droid-sans-mono-fonts
 font_fira_code: fonts-firacode
 font_ibmplex: fonts-ibm-plex
 font_inconsolata: fonts-inconsolata
+font_mscore: ttf-mscorefonts-installer
 
 gnome_extensions:
   - name: "alphabetical-app-grid"
