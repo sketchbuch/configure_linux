@@ -25,7 +25,7 @@
     - name: mscorefonts | Install font files
       when: not fedora_ms_core_fonts_installed.stat.exists
       ansible.builtin.command:
-        cmd: "sudo dnf install https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm"
+        cmd: "sudo dnf install -y https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm"
 
 - name: mscorefonts | Install font
   when: is_ubuntu
