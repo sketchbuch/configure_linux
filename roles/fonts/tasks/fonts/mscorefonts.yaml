@@ -1,7 +1,7 @@
 ---
 
 - name: mscorefonts | Install font
-  when: isFedora
+  when: is_fedora
   block:
     - name: mscorefonts | Check if installed
       ansible.builtin.stat:
@@ -28,7 +28,7 @@
         cmd: "sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm"
 
 - name: mscorefonts | Install font
-  when: isUbuntu
+  when: is_ubuntu
   block:
     - name: mscorefonts | Accept eula
       ansible.builtin.debconf:
