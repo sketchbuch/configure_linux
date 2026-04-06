@@ -11,6 +11,7 @@
 
 - name: flatpak | Install GNOME Software Flatpak plugin
   when: is_fedora or is_ubuntu
+  become: true
   ansible.builtin.package:
     name: gnome-software-plugin-flatpak
     state: present
