@@ -1,0 +1,16 @@
+---
+
+- name: flatpak | Add flathub to flatpak remotes for user
+  become: true
+  become_user: stephen
+  community.general.flatpak_remote:
+    flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+    method: user
+    name: flathub
+    state: present
+
+- name: flatpak | Install GNOME Software Flatpak plugin
+  when: is_fedora or is_ubuntu
+  ansible.builtin.package:
+    name: gnome-software-plugin-flatpak
+    state: present

@@ -11,6 +11,7 @@ Ansible related examples: tasks, roles, playbooks, setup, etc.
 ## Tutorials
 
 - [How to Use Ansible to Install Flatpak Packages](https://oneuptime.com/blog/post/2026-02-21-ansible-install-flatpak-packages/view)
+- [Setting up a Developer System with Ansible & dotfiles](https://sumit.me/posts/setting-up-developer-system-with-ansible-and-dotfiles)
 
 ## Youtube
 
