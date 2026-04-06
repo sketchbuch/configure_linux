@@ -27,10 +27,9 @@
 
 - name: chrome | Install chrome (fedora)
   when: is_fedora
-  become: true
-  become_user: "{{ user_username }}"
   block:
     - name: chrome | Add workstation repos
+      become: true
       ansible.builtin.dnf:
         name: fedora-workstation-repositories
         state: present
@@ -40,6 +39,8 @@
         cmd: dnf config-manager --set-enabled google-chrome
 
     - name: chrome | Install software
+      become: true
+      become_user: "{{ user_username }}"
       ansible.builtin.dnf:
         name: google-chrome-stable
         state: present

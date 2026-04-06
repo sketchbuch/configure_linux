@@ -4,13 +4,13 @@
   ansible.builtin.include_vars:
     file: "task.yaml"
 
-- name: Setup flatpak
-  ansible.builtin.import_tasks:
-    file: ./flatpak/flatpak.yaml
+# - name: Setup flatpak
+#   ansible.builtin.import_tasks:
+#     file: ./flatpak/flatpak.yaml
 
-- name: Install software from flathub
-  ansible.builtin.import_tasks:
-    file: ./remotes/flathub.yaml
+# - name: Install software from flathub
+#   ansible.builtin.import_tasks:
+#     file: ./remotes/flathub.yaml
 
 - name: Install software with multiple steps
   ansible.builtin.include_tasks: "{{ app_file }}"
