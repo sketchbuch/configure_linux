@@ -8,6 +8,17 @@
   ansible.builtin.import_tasks:
     file: ./flatpak/flatpak.yaml
 
+- name: Install audio software
+  become: true
+  become_user: "{{ user_username }}"
+  community.general.flatpak:
+    name: "{{ app_name }}"
+    state: present
+    method: user
+  loop: "{{ flathub.audio }}"
+  loop_control:
+    loop_var: app_name
+
 - name: Install browsers
   become: true
   become_user: "{{ user_username }}"
@@ -16,6 +27,17 @@
     state: present
     method: user
   loop: "{{ flathub.browsers }}"
+  loop_control:
+    loop_var: app_name
+
+- name: Install development tools
+  become: true
+  become_user: "{{ user_username }}"
+  community.general.flatpak:
+    name: "{{ app_name }}"
+    state: present
+    method: user
+  loop: "{{ flathub.development }}"
   loop_control:
     loop_var: app_name
 
