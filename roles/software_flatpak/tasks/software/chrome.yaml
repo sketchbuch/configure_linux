@@ -43,4 +43,4 @@
       become: true
       ansible.builtin.dnf:
         name: google-chrome-stable
-        state: present
+        state: latest
