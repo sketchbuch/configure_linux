@@ -15,7 +15,7 @@
   ansible.builtin.package:
     name: gnome-software-plugin-flatpak
     state: present
-    
+
 - name: flatpak | Install flatseal
   community.general.flatpak:
     method: user

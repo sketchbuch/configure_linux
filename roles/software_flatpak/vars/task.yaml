@@ -2,9 +2,9 @@ user_username: stephen
 
 flathub:
   audio:
-   - org.audacityteam.Audacity
-   - org.gnome.SoundRecorder
-   - org.videolan.VLC
+    - org.audacityteam.Audacity
+    - org.gnome.SoundRecorder
+    - org.videolan.VLC
 
   browsers:
     - com.microsoft.Edge
@@ -13,7 +13,7 @@ flathub:
   development:
     - com.getpostman.Postman
     - com.visualstudio.code
-  
+
   games:
     - com.github.bvschaik.julius
     - com.github.keriew.augustus
@@ -21,7 +21,7 @@ flathub:
     - com.valvesoftware.Steam
     - net.openra.OpenRA
     - org.gnome.Sudoku
-  
+
   gnome:
     - org.gnome.Boxes
     - org.gnome.Calendar
@@ -45,7 +45,7 @@ flathub:
     - org.gnome.gitlab.YaLTeR.VideoTrimmer
     - org.gustavoperedo.FontDownloader
     - re.sonny.Tangram
-  
+
   imagery:
     - com.github.PintaProject.Pinta
     - com.github.rajsolai.textsnatcher
@@ -54,7 +54,7 @@ flathub:
     - io.gitlab.theevilskeleton.Upscaler
     - org.gimp.GIMP
     - org.inkscape.Inkscape
-  
+
   productivity:
     - com.github.jeromerobert.pdfarranger
     - com.github.johnfactotum.Foliate
@@ -67,10 +67,10 @@ flathub:
     - org.freefilesync.FreeFileSync
     - org.gnome.FontManager
     - org.keepassxc.KeePassXC
-  
+
   videos:
-   - com.github.unrud.VideoDownloader
-   - com.obsproject.Studio
-   - no.mifi.losslesscut
-   - org.kde.kdenlive
-   - org.pitivi.Pitivi
+    - com.github.unrud.VideoDownloader
+    - com.obsproject.Studio
+    - no.mifi.losslesscut
+    - org.kde.kdenlive
+    - org.pitivi.Pitivi

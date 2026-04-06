@@ -20,7 +20,7 @@
     - name: chrome | Install software
       ansible.builtin.apt:
         name: "google-chrome-stable"
-        state: latest
+        state: present
         update_cache: true
 
 # https://docs.fedoraproject.org/en-US/quick-docs/installing-chromium-or-google-chrome-browsers/
