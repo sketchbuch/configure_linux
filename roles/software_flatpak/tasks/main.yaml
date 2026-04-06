@@ -15,7 +15,7 @@
     name: "{{ browser }}"
     state: present
     method: user
-  loop: "{{ flathub.browsers }}"
+  loop: "{{ flathub['browsers'] }}"
 
 # - name: Install flatpak software
 #   ansible.builtin.include_tasks: "{{ item }}"
