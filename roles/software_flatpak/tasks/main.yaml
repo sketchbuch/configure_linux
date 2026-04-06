@@ -4,6 +4,10 @@
   ansible.builtin.include_vars:
     file: "task.yaml"
 
+- name: Setup flatpak
+  ansible.builtin.import_tasks:
+    file: ./flatpak/flatpak.yaml
+
 - name: Install flatpak software
   ansible.builtin.include_tasks: "{{ item }}"
   with_fileglob:
