@@ -9,5 +9,7 @@
     file: ./flatpak/flatpak.yaml
 
 - name: Install software from flathub
+  become: true
+  become_user: "{{ user_username }}"
   ansible.builtin.import_tasks:
     file: ./remotes/flathub.yaml
