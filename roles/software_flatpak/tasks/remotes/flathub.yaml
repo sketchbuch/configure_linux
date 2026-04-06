@@ -1,111 +1,95 @@
 ---
 
-- name: flathub | Install audio
+- name: flathub | Install flatpak apps
   become: true
   become_user: "{{ user_username }}"
-  community.general.flatpak:
-    method: user
-    name: "{{ app_name }}"
-    state: present
-  loop: "{{ flathub.audio }}"
-  loop_control:
-    loop_var: app_name
+  block:
+  - name: flathub | Install audio
+    community.general.flatpak:
+      method: user
+      name: "{{ app_name }}"
+      state: present
+    loop: "{{ flathub.audio }}"
+    loop_control:
+      loop_var: app_name
 
-- name: flathub | Install browsers
-  become: true
-  become_user: "{{ user_username }}"
-  community.general.flatpak:
-    name: "{{ app_name }}"
-    state: present
-    method: user
-  loop: "{{ flathub.browsers }}"
-  loop_control:
-    loop_var: app_name
+  - name: flathub | Install browsers
+    community.general.flatpak:
+      name: "{{ app_name }}"
+      state: present
+      method: user
+    loop: "{{ flathub.browsers }}"
+    loop_control:
+      loop_var: app_name
 
-- name: flathub | Install development
-  become: true
-  become_user: "{{ user_username }}"
-  community.general.flatpak:
-    name: "{{ app_name }}"
-    state: present
-    method: user
-  loop: "{{ flathub.development }}"
-  loop_control:
-    loop_var: app_name
+  - name: flathub | Install development
+    community.general.flatpak:
+      name: "{{ app_name }}"
+      state: present
+      method: user
+    loop: "{{ flathub.development }}"
+    loop_control:
+      loop_var: app_name
 
-- name: flathub | Install games
-  become: true
-  become_user: "{{ user_username }}"
-  community.general.flatpak:
-    name: "{{ app_name }}"
-    state: present
-    method: user
-  loop: "{{ flathub.games }}"
-  loop_control:
-    loop_var: app_name
+  - name: flathub | Install games
+    community.general.flatpak:
+      name: "{{ app_name }}"
+      state: present
+      method: user
+    loop: "{{ flathub.games }}"
+    loop_control:
+      loop_var: app_name
 
-- name: flathub | Install gnome
-  become: true
-  become_user: "{{ user_username }}"
-  community.general.flatpak:
-    name: "{{ app_name }}"
-    state: present
-    method: user
-  loop: "{{ flathub.gnome }}"
-  loop_control:
-    loop_var: app_name
+  - name: flathub | Install gnome
+    community.general.flatpak:
+      name: "{{ app_name }}"
+      state: present
+      method: user
+    loop: "{{ flathub.gnome }}"
+    loop_control:
+      loop_var: app_name
 
-- name: flathub | Install gnome circle
-  become: true
-  become_user: "{{ user_username }}"
-  community.general.flatpak:
-    name: "{{ app_name }}"
-    state: present
-    method: user
-  loop: "{{ flathub.gnome_circle }}"
-  loop_control:
-    loop_var: app_name
+  - name: flathub | Install gnome circle
+    community.general.flatpak:
+      name: "{{ app_name }}"
+      state: present
+      method: user
+    loop: "{{ flathub.gnome_circle }}"
+    loop_control:
+      loop_var: app_name
 
-- name: flathub | Install imagery
-  become: true
-  become_user: "{{ user_username }}"
-  community.general.flatpak:
-    name: "{{ app_name }}"
-    state: present
-    method: user
-  loop: "{{ flathub.imagery }}"
-  loop_control:
-    loop_var: app_name
+  - name: flathub | Install imagery
+    community.general.flatpak:
+      name: "{{ app_name }}"
+      state: present
+      method: user
+    loop: "{{ flathub.imagery }}"
+    loop_control:
+      loop_var: app_name
 
-- name: flathub | Install productivity
-  become: true
-  become_user: "{{ user_username }}"
-  community.general.flatpak:
-    name: "{{ app_name }}"
-    state: present
-    method: user
-  loop: "{{ flathub.productivity }}"
-  loop_control:
-    loop_var: app_name
+  - name: flathub | Install productivity
+    community.general.flatpak:
+      name: "{{ app_name }}"
+      state: present
+      method: user
+    loop: "{{ flathub.productivity }}"
+    loop_control:
+      loop_var: app_name
 
-- name: flathub | Install utils
-  become: true
-  become_user: "{{ user_username }}"
-  community.general.flatpak:
-    name: "{{ app_name }}"
-    state: present
-    method: user
-  loop: "{{ flathub.utils }}"
-  loop_control:
-    loop_var: app_name
+  - name: flathub | Install utils
+    community.general.flatpak:
+      name: "{{ app_name }}"
+      state: present
+      method: user
+    loop: "{{ flathub.utils }}"
+    loop_control:
+      loop_var: app_name
 
-- name: flathub | Install videos
-  become: true
-  become_user: "{{ user_username }}"
-  community.general.flatpak:
-    name: "{{ app_name }}"
-    state: present
-    method: user
-  loop: "{{ flathub.videos }}"
-  loop_control:
-    loop_var: app_name
+  - name: flathub | Install videos
+    community.general.flatpak:
+      name: "{{ app_name }}"
+      state: present
+      method: user
+    loop: "{{ flathub.videos }}"
+    loop_control:
+      loop_var: app_name
