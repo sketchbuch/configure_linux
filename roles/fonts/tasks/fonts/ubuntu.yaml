@@ -13,7 +13,7 @@
       ansible.builtin.command:
         cmd: "sudo dnf copr enable atim/ubuntu-fonts -y"
 
-    - name: ubuntu | Install font"
+    - name: ubuntu | Install font
       ansible.builtin.package:
         name: ubuntu-family-fonts
         state: present
