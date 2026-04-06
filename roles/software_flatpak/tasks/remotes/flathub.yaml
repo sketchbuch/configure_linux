@@ -1,6 +1,8 @@
 ---
 
 - name: flathub | Install audio
+  become: true
+  become_user: "{{ user_username }}"
   community.general.flatpak:
     method: user
     name: "{{ app_name }}"
@@ -10,6 +12,8 @@
     loop_var: app_name
 
 - name: flathub | Install browsers
+  become: true
+  become_user: "{{ user_username }}"
   community.general.flatpak:
     name: "{{ app_name }}"
     state: present
@@ -19,6 +23,8 @@
     loop_var: app_name
 
 - name: flathub | Install development
+  become: true
+  become_user: "{{ user_username }}"
   community.general.flatpak:
     name: "{{ app_name }}"
     state: present
@@ -28,6 +34,8 @@
     loop_var: app_name
 
 - name: flathub | Install gnome circle
+  become: true
+  become_user: "{{ user_username }}"
   community.general.flatpak:
     name: "{{ app_name }}"
     state: present
@@ -37,6 +45,8 @@
     loop_var: app_name
 
 - name: flathub | Install imagery
+  become: true
+  become_user: "{{ user_username }}"
   community.general.flatpak:
     name: "{{ app_name }}"
     state: present
@@ -46,6 +56,8 @@
     loop_var: app_name
 
 - name: flathub | Install productivity
+  become: true
+  become_user: "{{ user_username }}"
   community.general.flatpak:
     name: "{{ app_name }}"
     state: present
@@ -55,6 +67,8 @@
     loop_var: app_name
 
 - name: flathub | Install utils
+  become: true
+  become_user: "{{ user_username }}"
   community.general.flatpak:
     name: "{{ app_name }}"
     state: present
@@ -64,6 +78,8 @@
     loop_var: app_name
 
 - name: flathub | Install videos
+  become: true
+  become_user: "{{ user_username }}"
   community.general.flatpak:
     name: "{{ app_name }}"
     state: present
