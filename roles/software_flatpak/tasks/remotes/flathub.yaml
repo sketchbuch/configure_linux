@@ -33,6 +33,17 @@
   loop_control:
     loop_var: app_name
 
+- name: flathub | Install games
+  become: true
+  become_user: "{{ user_username }}"
+  community.general.flatpak:
+    name: "{{ app_name }}"
+    state: present
+    method: user
+  loop: "{{ flathub.games }}"
+  loop_control:
+    loop_var: app_name
+
 - name: flathub | Install gnome circle
   become: true
   become_user: "{{ user_username }}"
