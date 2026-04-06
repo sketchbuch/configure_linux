@@ -41,6 +41,7 @@
 
     - name: chrome | Install software
       become: true
+      become_user: "{{ user_username }}"
       ansible.builtin.dnf:
         name: google-chrome-stable
         state: latest
