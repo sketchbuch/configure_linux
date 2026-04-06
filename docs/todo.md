@@ -14,3 +14,4 @@ Todos for this repo or the ansible setup.
 
 - ansible-lint
 - mscore fonts not being installed fedora
+- chrome
