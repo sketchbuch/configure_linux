@@ -37,6 +37,7 @@
     file: "ubuntu.yaml"
 
 - name: Add flathub to flatpak remotes for user
+  become: true
   community.general.flatpak_remote:
     flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
     method: user
