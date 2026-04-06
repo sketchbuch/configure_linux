@@ -38,6 +38,7 @@
 
 - name: Add flathub to flatpak remotes for user
   become: true
+  become_user: stephen
   community.general.flatpak_remote:
     flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
     method: user
