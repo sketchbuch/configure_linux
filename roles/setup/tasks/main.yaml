@@ -35,3 +35,11 @@
   when: is_ubuntu
   ansible.builtin.include_vars:
     file: "ubuntu.yaml"
+
+- name: Add flathub to flatpak remotes for user
+  community.general.flatpak_remote:
+    flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+    method: user
+    name: flathub
+    state: present
+
