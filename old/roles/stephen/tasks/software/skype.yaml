@@ -1,8 +1,0 @@
-- name: "Software > Install Skype"
-  become: true
-  become_user: "{{ userUsername }}"
-  community.general.flatpak:
-    name: com.skype.Client
-    state: present
-    method: user
-  tags: ["software", "comms", "skype", "flatpak"]
