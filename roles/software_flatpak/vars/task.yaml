@@ -1,5 +1,6 @@
 user_username: stephen
 
+# Flatpak apps to install
 flathub:
   audio:
     - org.audacityteam.Audacity
@@ -74,3 +75,17 @@ flathub:
     - no.mifi.losslesscut
     - org.kde.kdenlive
     - org.pitivi.Pitivi
+
+# Packages to add/remove
+# These are mostly apps that come with systems so that flatpak can be used instead
+# See flathub.gnome
+gnome:
+  remove:
+    - gnome-boxes
+    - gnome-calendar 
+    - gnome-clocks
+    - gnome-contacts
+    - gnome-maps
+    - gnome-text-editor
+    - gnome-weather
+    - loupe

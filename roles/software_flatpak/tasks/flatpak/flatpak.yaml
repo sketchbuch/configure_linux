@@ -23,3 +23,13 @@
     method: user
     name: com.github.tchx84.Flatseal
     state: present
+
+# These will be replaced with flatpak versions
+- name: flatpak | Remove non-flatpak gnome apps
+  become: true
+  ansible.builtin.package:
+    name: "{{ app_name }}"
+    state: absent
+  loop: "{{ gnome.remove }}"
+  loop_control:
+    loop_var: app_name
