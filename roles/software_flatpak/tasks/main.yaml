@@ -10,4 +10,4 @@
 
 - name: Install software from flathub
   ansible.builtin.import_tasks:
-    file: ./flatpak/flathub.yaml
+    file: ./remotes/flathub.yaml

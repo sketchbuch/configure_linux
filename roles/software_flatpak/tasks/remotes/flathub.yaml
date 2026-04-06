@@ -1,17 +1,17 @@
 ---
 
-- name: Install audio software
+- name: flathub | Install audio software
   become: true
   become_user: "{{ user_username }}"
   community.general.flatpak:
+    method: user
     name: "{{ app_name }}"
     state: present
-    method: user
   loop: "{{ flathub.audio }}"
   loop_control:
     loop_var: app_name
 
-- name: Install browsers
+- name: flathub | Install browsers
   become: true
   become_user: "{{ user_username }}"
   community.general.flatpak:
@@ -22,7 +22,7 @@
   loop_control:
     loop_var: app_name
 
-- name: Install development tools
+- name: flathub | Install development tools
   become: true
   become_user: "{{ user_username }}"
   community.general.flatpak:
@@ -33,7 +33,7 @@
   loop_control:
     loop_var: app_name
 
-- name: Install gnome circle apps
+- name: flathub | Install gnome circle apps
   become: true
   become_user: "{{ user_username }}"
   community.general.flatpak:
