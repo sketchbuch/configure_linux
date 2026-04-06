@@ -36,6 +36,7 @@
 
     - name: chrome | Enable chrome in DNF config manager
       become: true
+      become_user: "{{ user_username }}"
       ansible.builtin.command:
         cmd: dnf config-manager --set-enabled google-chrome
 
