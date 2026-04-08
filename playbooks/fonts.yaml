@@ -2,5 +2,6 @@
 
 - name: Install fonts
   hosts: all
+  gather_facts: false
   roles:
     - fonts
