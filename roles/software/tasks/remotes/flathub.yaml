@@ -1,6 +1,6 @@
 ---
 
-- name: flathub | Install flatpak apps
+- name: flathub | Add/remove flatpaks from flathub
   become: true
   become_user: "{{ user_username }}"
   block:

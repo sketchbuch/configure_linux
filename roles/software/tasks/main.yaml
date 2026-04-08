@@ -8,13 +8,10 @@
   ansible.builtin.import_tasks:
     file: ./flatpak/flatpak.yaml
 
-- name: Install software from flathub
+- name: Add/remove packages
+  ansible.builtin.import_tasks:
+    file: ./packages/packages.yaml
+
+- name: Add/remove flatpaks from flathub
   ansible.builtin.import_tasks:
     file: ./remotes/flathub.yaml
-
-# - name: Install software with multiple steps
-#   ansible.builtin.include_tasks: "{{ app_file }}"
-#   with_fileglob:
-#     - ./software/*.yaml
-#   loop_control:
-#     loop_var: app_file

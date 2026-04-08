@@ -9,16 +9,6 @@
     name: flathub
     state: present
 
-# These will be replaced with flatpak versions
-- name: flatpak | Remove non-flatpak gnome apps
-  become: true
-  ansible.builtin.package:
-    name: "{{ app_name }}"
-    state: absent
-  loop: "{{ gnome.remove.core }}"
-  loop_control:
-    loop_var: app_name
-
 - name: flatpak | Install GNOME Software Flatpak plugin
   when: is_ubuntu
   become: true

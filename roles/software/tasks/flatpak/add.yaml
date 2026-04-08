@@ -1,12 +1,5 @@
 ---
 
-- name: Debug vars
-  ansible.builtin.debug:
-    msg:
-      - "apps: {{ apps }}"
-      - "group_name: {{ group_name }}"
-      - "remote: {{ remote }}"
-
 - name: "flatpak | Install {{ group_name }}"
   community.general.flatpak:
     method: user
