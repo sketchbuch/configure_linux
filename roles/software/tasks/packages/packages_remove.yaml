@@ -1,6 +1,6 @@
 ---
 
-- name: packages | Uninstall {{ group_name }}
+- name: packages_remove | Uninstall {{ group_name }}
   ansible.builtin.package:
     name: "{{ app_name }}"
     state: absent

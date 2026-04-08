@@ -1,6 +1,6 @@
 ---
 
-- name: "flatpak | Install {{ group_name }}"
+- name: "flatpak_add | Install {{ group_name }}"
   community.general.flatpak:
     method: user
     name: "{{ app_name }}"

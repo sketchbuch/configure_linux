@@ -82,11 +82,11 @@ packages:
   remove:
     # Some of these apps come with different distros by default but they need replacing with flatpak versions
     gnome:
-    - gnome-boxes
-    - gnome-calendar 
-    - gnome-clocks
-    - gnome-contacts
-    - gnome-maps
-    - gnome-text-editor
-    - gnome-weather
-    - loupe
+      - gnome-boxes
+      - gnome-calendar
+      - gnome-clocks
+      - gnome-contacts
+      - gnome-maps
+      - gnome-text-editor
+      - gnome-weather
+      - loupe

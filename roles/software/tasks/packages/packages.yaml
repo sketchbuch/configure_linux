@@ -3,9 +3,9 @@
 - name: packages | Add/remove packages
   become: true
   block:
-  # These will be replaced with flatpak versions
-  - name: packages | Remove gnome
-    ansible.builtin.import_tasks: ./remove.yaml
-    vars:
-      apps: "{{ packages.remove.gnome}}"
-      group_name: gnome
+    # These will be replaced with flatpak versions
+    - name: packages | Remove gnome
+      ansible.builtin.import_tasks: ./packages_remove.yaml
+      vars:
+        apps: "{{ packages.remove.gnome }}"
+        group_name: gnome
