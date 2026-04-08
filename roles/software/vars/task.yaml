@@ -78,10 +78,10 @@ flathub:
       - org.pitivi.Pitivi
 
 # Packages to add/remove
-gnome:
+packages:
   remove:
     # Some of these apps come with different distros by default but they need replacing with flatpak versions
-    core:
+    gnome:
     - gnome-boxes
     - gnome-calendar 
     - gnome-clocks
