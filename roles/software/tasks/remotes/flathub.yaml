@@ -15,5 +15,5 @@
     ansible.builtin.import_tasks: ../flatpak/add.yaml
     vars:
       group_name: browsers
-      apps: "{{flathub.add.browsers}}"
+      apps: flathub.add.browsers
       remote: flathub
