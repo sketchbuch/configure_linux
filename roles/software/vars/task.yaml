@@ -1,0 +1,92 @@
+user_username: stephen
+
+# Flatpak apps to install
+flathub:
+  add:
+    audio:
+      - org.audacityteam.Audacity
+      - org.gnome.SoundRecorder
+      - org.videolan.VLC
+
+    browsers:
+      - com.microsoft.Edge
+      - org.gnome.Epiphany
+
+    development:
+      - com.getpostman.Postman
+      - com.visualstudio.code
+
+    games:
+      - com.github.bvschaik.julius
+      - com.github.keriew.augustus
+      - com.play0ad.zeroad
+      - com.valvesoftware.Steam
+      - net.openra.OpenRA
+      - org.gnome.Sudoku
+
+    gnome:
+      - org.gnome.Boxes
+      - org.gnome.Calendar
+      - org.gnome.clocks
+      - org.gnome.Contacts
+      - org.gnome.Loupe
+      - org.gnome.Maps
+      - org.gnome.TextEditor
+      - org.gnome.Weather
+
+    gnome_circle:
+      - app.drey.EarTag
+      - app.drey.Warp
+      - com.belmoussaoui.Obfuscate
+      - com.github.hugolabe.Wike
+      - com.github.huluti.Curtail
+      - com.github.liferooter.textpieces
+      - com.rafaelmardojai.WebfontKitGenerator
+      - dev.geopjr.Collision
+      - org.gnome.gitlab.somas.Apostrophe
+      - org.gnome.gitlab.YaLTeR.VideoTrimmer
+      - org.gustavoperedo.FontDownloader
+      - re.sonny.Tangram
+
+    imagery:
+      - com.github.PintaProject.Pinta
+      - com.github.rajsolai.textsnatcher
+      - com.uploadedlobster.peek
+      - io.gitlab.adhami3310.Converter
+      - io.gitlab.theevilskeleton.Upscaler
+      - org.gimp.GIMP
+      - org.inkscape.Inkscape
+
+    productivity:
+      - com.github.jeromerobert.pdfarranger
+      - com.github.johnfactotum.Foliate
+      - com.slack.Slack
+      - md.obsidian.Obsidian
+      - org.libreoffice.LibreOffice
+
+    utils:
+      - io.gitlab.adhami3310.Impression
+      - org.freefilesync.FreeFileSync
+      - org.gnome.FontManager
+      - org.keepassxc.KeePassXC
+
+    videos:
+      - com.github.unrud.VideoDownloader
+      - com.obsproject.Studio
+      - no.mifi.losslesscut
+      - org.kde.kdenlive
+      - org.pitivi.Pitivi
+
+# Packages to add/remove
+gnome:
+  remove:
+    # Some of these apps come with different distros by default but they need replacing with flatpak versions
+    core:
+    - gnome-boxes
+    - gnome-calendar 
+    - gnome-clocks
+    - gnome-contacts
+    - gnome-maps
+    - gnome-text-editor
+    - gnome-weather
+    - loupe

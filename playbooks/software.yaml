@@ -3,4 +3,4 @@
 - name: Install software
   hosts: all
   roles:
-    - software_flatpak
+    - software

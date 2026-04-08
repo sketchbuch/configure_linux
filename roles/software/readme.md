@@ -2,4 +2,4 @@
 
 [Back to home](../../readme.md)
 
-Adds software to the system.
+Add/remove software on the system.

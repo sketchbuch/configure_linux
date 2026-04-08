@@ -1,0 +1,19 @@
+---
+
+- name: flathub | Install flatpak apps
+  become: true
+  become_user: "{{ user_username }}"
+  block:
+  - name: flathub | Install audio
+    ansible.builtin.import_tasks: ../flatpak/add.yaml
+    vars:
+      group_name: audio
+      apps: "{{flathub.add.audio}}"
+      remote: flathub
+  
+  - name: flathub | Install browsers
+    ansible.builtin.import_tasks: ../flatpak/add.yaml
+    vars:
+      group_name: browsers
+      apps: "{{flathub.add.browsers}}"
+      remote: flathub

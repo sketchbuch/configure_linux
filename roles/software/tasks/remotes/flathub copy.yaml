@@ -9,7 +9,7 @@
       method: user
       name: "{{ app_name }}"
       state: present
-    loop: "{{ flathub.audio }}"
+    loop: "{{ flathub.add.audio }}"
     loop_control:
       loop_var: app_name
 
@@ -18,7 +18,7 @@
       name: "{{ app_name }}"
       state: present
       method: user
-    loop: "{{ flathub.browsers }}"
+    loop: "{{ flathub.add.browsers }}"
     loop_control:
       loop_var: app_name
 
@@ -27,7 +27,7 @@
       name: "{{ app_name }}"
       state: present
       method: user
-    loop: "{{ flathub.development }}"
+    loop: "{{ flathub.add.development }}"
     loop_control:
       loop_var: app_name
 
@@ -36,7 +36,7 @@
       name: "{{ app_name }}"
       state: present
       method: user
-    loop: "{{ flathub.games }}"
+    loop: "{{ flathub.add.games }}"
     loop_control:
       loop_var: app_name
 
@@ -45,7 +45,7 @@
       name: "{{ app_name }}"
       state: present
       method: user
-    loop: "{{ flathub.gnome }}"
+    loop: "{{ flathub.add.gnome }}"
     loop_control:
       loop_var: app_name
 
@@ -54,7 +54,7 @@
       name: "{{ app_name }}"
       state: present
       method: user
-    loop: "{{ flathub.gnome_circle }}"
+    loop: "{{ flathub.add.gnome_circle }}"
     loop_control:
       loop_var: app_name
 
@@ -63,7 +63,7 @@
       name: "{{ app_name }}"
       state: present
       method: user
-    loop: "{{ flathub.imagery }}"
+    loop: "{{ flathub.add.imagery }}"
     loop_control:
       loop_var: app_name
 
@@ -72,7 +72,7 @@
       name: "{{ app_name }}"
       state: present
       method: user
-    loop: "{{ flathub.productivity }}"
+    loop: "{{ flathub.add.productivity }}"
     loop_control:
       loop_var: app_name
 
@@ -81,7 +81,7 @@
       name: "{{ app_name }}"
       state: present
       method: user
-    loop: "{{ flathub.utils }}"
+    loop: "{{ flathub.add.utils }}"
     loop_control:
       loop_var: app_name
 
@@ -90,6 +90,6 @@
       name: "{{ app_name }}"
       state: present
       method: user
-    loop: "{{ flathub.videos }}"
+    loop: "{{ flathub.add.videos }}"
     loop_control:
       loop_var: app_name
