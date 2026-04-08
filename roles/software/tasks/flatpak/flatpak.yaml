@@ -15,7 +15,7 @@
   ansible.builtin.package:
     name: "{{ app_name }}"
     state: absent
-  loop: "{{ gnome.remove }}"
+  loop: "{{ gnome.remove.core }}"
   loop_control:
     loop_var: app_name
 
