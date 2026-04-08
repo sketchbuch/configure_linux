@@ -7,13 +7,13 @@
   - name: flathub | Install audio
     ansible.builtin.import_tasks: ../flatpak/add.yaml
     vars:
-      apps: flathub.add.audio
+      apps: "{{ flathub.add.audio }}"
       group_name: audio
       remote: flathub
   
   - name: flathub | Install browsers
     ansible.builtin.import_tasks: ../flatpak/add.yaml
     vars:
-      apps: flathub.add.browsers
+      apps: "{{ flathub.add.browsers }}"
       group_name: browsers
       remote: flathub
