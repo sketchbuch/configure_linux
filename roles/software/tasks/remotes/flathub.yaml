@@ -8,7 +8,7 @@
     ansible.builtin.import_tasks: ../flatpak/add.yaml
     vars:
       group_name: audio
-      apps: "{{flathub.add.audio}}"
+      apps: flathub.add.audio
       remote: flathub
   
   - name: flathub | Install browsers
