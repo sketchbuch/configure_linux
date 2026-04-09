@@ -1,1 +1,5 @@
+debug_env: true
+debug_facts: true
+
+# Vars set by role from facts/env
 debug_vars: true

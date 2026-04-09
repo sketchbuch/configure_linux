@@ -36,8 +36,13 @@
       - "is_ubuntu: {{ is_ubuntu }}"
       - "is_virtual: {{ is_virtual }}"
 
+- name: Debug facts
+  when: debug_facts
+  ansible.builtin.debug:
+    var: ansible_facts
+
 - name: Debug env vars
-  when: debug_vars
+  when: debug_env
   ansible.builtin.debug:
     var: ansible_env
 
