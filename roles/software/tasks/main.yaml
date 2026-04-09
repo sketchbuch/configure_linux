@@ -4,13 +4,13 @@
   ansible.builtin.include_vars:
     file: "task.yaml"
 
-- name: Add/remove packages
-  ansible.builtin.import_tasks:
-    file: ./packages/packages.yaml
-
 - name: Setup flatpak
   ansible.builtin.import_tasks:
     file: ./flatpak/flatpak_setup.yaml
+
+- name: Add/remove packages
+  ansible.builtin.import_tasks:
+    file: ./packages/packages.yaml
 
 - name: Add/remove flatpaks
   ansible.builtin.import_tasks:

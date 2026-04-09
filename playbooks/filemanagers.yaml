@@ -1,0 +1,7 @@
+---
+
+- name: Configure filemanagers
+  hosts: all
+  gather_facts: false
+  roles:
+    - software
