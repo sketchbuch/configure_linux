@@ -8,29 +8,21 @@
   ansible.builtin.package_facts:
     manager: auto
 
-# - name: Get desktop environment
-#   ansible.builtin.command:
-#     cmd: echo $XDG_CURRENT_DESKTOP
-#   register: xdg_desktop
-#   changed_when: false
-#   environment:
-#     XDG_CURRENT_DESKTOP: "{{ lookup('env', 'XDG_CURRENT_DESKTOP') }}"
-
 - name: Fallback to process check if XDG variable empty
   ansible.builtin.shell: |
     if pgrep -x gnome-shell > /dev/null; then
-      echo "GNOME"
+      echo "gnome"
     elif pgrep -x kwin > /dev/null; then
-      echo "KDE"
+      echo "kde"
     else
-      echo "UNKNOWN"
+      echo "unknown"
     fi
   register: desktop_environment
   changed_when: false 
 
 - name: Set facts
   ansible.builtin.set_fact:
-    desktop: "{{ desktop_environment.stdout | lower }}"
+    desktop: "{{ desktop_environment.stdout }}"
     distro: "{{ ansible_distribution | lower }}"
     distro_version: "{{ ansible_distribution_major_version }}"
     is_fedora: '{{ ((ansible_distribution | lower) == "fedora") | ternary(true, false) }}'
