@@ -18,7 +18,7 @@
 
 - name: Set facts
   ansible.builtin.set_fact:
-    desktop: "{{ lookup('env','XDG_CURRENT_DESKTOP') | lower }}"
+    desktop: "{{ xdg_desktop | lower }}"
     distro: "{{ ansible_distribution | lower }}"
     distro_version: "{{ ansible_distribution_major_version }}"
     is_fedora: '{{ ((ansible_distribution | lower) == "fedora") | ternary(true, false) }}'
