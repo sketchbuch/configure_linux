@@ -18,7 +18,7 @@
       echo "unknown"
     fi
   register: desktop_environment
-  changed_when: false 
+  changed_when: false
   tags: ['skip_ansible_lint']
 
 - name: Set facts
