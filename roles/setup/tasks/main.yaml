@@ -36,6 +36,11 @@
       - "is_ubuntu: {{ is_ubuntu }}"
       - "is_virtual: {{ is_virtual }}"
 
+- name: Debug env vars
+  when: debug_vars
+  ansible.builtin.debug:
+    var: ansible_env
+
 - name: Include fedora vars
   when: is_fedora
   ansible.builtin.include_vars:
