@@ -89,5 +89,7 @@ packages:
       - gnome-maps
       - gnome-text-editor
       - gnome-weather
-      - libreoffice
       - loupe
+
+    productivity:
+      - libreoffice

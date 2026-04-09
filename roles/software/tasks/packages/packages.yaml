@@ -1,12 +1,18 @@
 ---
 
 - name: packages | Add/remove packages
-  when: desktop == "gnome"
   become: true
   block:
     # These will be replaced with flatpak versions
     - name: packages | Remove gnome
+      when: is_gnome
       ansible.builtin.import_tasks: ./packages_remove.yaml
       vars:
         apps: "{{ packages.remove.gnome }}"
         group_name: gnome
+
+    - name: packages | Remove productivity
+      ansible.builtin.import_tasks: ./packages_remove.yaml
+      vars:
+        apps: "{{ packages.remove.productivity }}"
+        group_name: productivity
