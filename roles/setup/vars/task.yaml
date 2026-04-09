@@ -2,4 +2,4 @@ debug_env: false
 debug_facts: false
 
 # Vars set by role from facts/env
-debug_vars: false
+debug_vars: true
