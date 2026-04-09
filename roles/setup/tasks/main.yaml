@@ -8,8 +8,8 @@
   ansible.builtin.package_facts:
     manager: auto
 
-- name: Fallback to process check if XDG variable empty
-  ansible.builtin.shell: |
+- name: Get desktop environment
+  ansible.builtin.cmd: |
     if pgrep -x gnome-shell > /dev/null; then
       echo "gnome"
     elif pgrep -x kwin > /dev/null; then
