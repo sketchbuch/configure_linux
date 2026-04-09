@@ -12,9 +12,9 @@
   ansible.builtin.command:
     cmd: echo $XDG_CURRENT_DESKTOP
   register: xdg_desktop
-  #changed_when: false
-  #environment:
-    #XDG_CURRENT_DESKTOP: "{{ lookup('env', 'XDG_CURRENT_DESKTOP') }}"
+  changed_when: false
+  environment:
+    XDG_CURRENT_DESKTOP: "{{ lookup('env', 'XDG_CURRENT_DESKTOP') }}"
 
 - name: Set facts
   ansible.builtin.set_fact:
