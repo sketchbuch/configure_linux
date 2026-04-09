@@ -1,6 +1,7 @@
 ---
 
 - name: packages | Add/remove packages
+  when: desktop == "gnome"
   become: true
   block:
     # These will be replaced with flatpak versions
