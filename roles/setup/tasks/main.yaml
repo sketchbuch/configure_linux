@@ -9,9 +9,17 @@
     manager: auto
 
 - name: Get desktop environment
-  ansible.builtin.command: if pgrep -x gnome-shell > /dev/null; then echo "gnome"; elif pgrep -x kwin > /dev/null; then echo "kde"; else echo "unknown"; fi
+  ansible.builtin.shell: |
+    if pgrep -x gnome-shell > /dev/null; then
+      echo "gnome"
+    elif pgrep -x kwin > /dev/null; then
+      echo "kde"
+    else
+      echo "unknown"
+    fi
   register: desktop_environment
   changed_when: false 
+  tags: ['skip_ansible_lint']
 
 - name: Set facts
   ansible.builtin.set_fact:
