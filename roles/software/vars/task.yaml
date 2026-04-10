@@ -66,6 +66,8 @@ flathub:
 
     system:
       - ca.desrt.dconf-editor
+      - com.mattjakeman.ExtensionManager
+      - org.gnome.Extensions
 
     utils:
       - io.gitlab.adhami3310.Impression
@@ -82,6 +84,11 @@ flathub:
 
 # Packages to add/remove
 packages:
+  add:
+    system:
+      - gnome-epub-thumbnailer
+      - gnome-tweaks
+
   remove:
     # Some of these apps come with different distros by default but they need replacing with flatpak versions
     gnome:
