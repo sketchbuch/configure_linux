@@ -64,6 +64,9 @@ flathub:
       - md.obsidian.Obsidian
       - org.libreoffice.LibreOffice
 
+    system:
+      - ca.desrt.dconf-editor
+
     utils:
       - io.gitlab.adhami3310.Impression
       - org.freefilesync.FreeFileSync

@@ -60,6 +60,13 @@
         group_name: productivity
         remote: flathub
 
+    - name: flatpak | Install system
+      ansible.builtin.import_tasks: ../flatpak/flatpak_add.yaml
+      vars:
+        apps: "{{ flathub.add.system }}"
+        group_name: system
+        remote: flathub
+
     - name: flatpak | Install utils
       ansible.builtin.import_tasks: ../flatpak/flatpak_add.yaml
       vars:
