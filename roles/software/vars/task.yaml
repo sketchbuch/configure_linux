@@ -1,6 +1,8 @@
+---
+
 user_username: stephen
 
-# Flatpak apps to install
+# Flatpak apps to add/remove
 flathub:
   add:
     audio:
@@ -85,12 +87,12 @@ flathub:
 # Packages to add/remove
 packages:
   add:
-    system:
+    gnome:
       - gnome-epub-thumbnailer
       - gnome-tweaks
 
+  # Some of these apps come with different distros by default but they need replacing with flatpak versions
   remove:
-    # Some of these apps come with different distros by default but they need replacing with flatpak versions
     gnome:
       - gnome-boxes
       - gnome-calendar

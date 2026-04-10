@@ -11,3 +11,6 @@
 
 - name: Run filemanagers playbook
   ansible.builtin.import_playbook: filemanagers.yaml
+
+- name: Run extensions playbook
+  ansible.builtin.import_playbook: extensions.yaml

@@ -1,0 +1,11 @@
+---
+
+# Gnome extensions to add/remove
+gnome:
+  add:
+  remove:
+    - apps-menu@gnome-shell-extensions.gcampax.github.com
+    - launch-new-instance@gnome-shell-extensions.gcampax.github.com
+    - places-menu@gnome-shell-extensions.gcampax.github.com
+    - window-list@gnome-shell-extensions.gcampax.github.com
+

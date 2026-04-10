@@ -3,12 +3,6 @@
 - name: packages | Add/remove packages
   become: true
   block:
-    - name: packages | Install system
-      ansible.builtin.import_tasks: ./packages_add.yaml
-      vars:
-        apps: "{{ packages.add.system }}"
-        group_name: system
-
     # These will be replaced with flatpak versions
     - name: packages | Uninstall gnome
       when: is_gnome
@@ -22,3 +16,10 @@
       vars:
         apps: "{{ packages.remove.productivity }}"
         group_name: productivity
+
+    - name: packages | Install gnome
+      when: is_gnome
+      ansible.builtin.import_tasks: ./packages_add.yaml
+      vars:
+        apps: "{{ packages.add.gnome }}"
+        group_name: gnome

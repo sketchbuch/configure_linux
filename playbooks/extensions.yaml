@@ -1,0 +1,6 @@
+---
+
+- name: Setup desktop extensions
+  hosts: all
+  roles:
+    - extensions
