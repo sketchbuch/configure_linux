@@ -1,7 +1,7 @@
 ---
 
 - name: Install fonts
-  ansible.builtin.import_tasks: "{{ font_file }}"
+  ansible.builtin.include_tasks: "{{ font_file }}"
   with_fileglob:
     - ./fonts/*.yaml
   loop_control:
