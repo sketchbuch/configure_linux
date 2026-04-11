@@ -8,7 +8,7 @@
 #   ansible.builtin.import_tasks:
 #     file: ./gnome/extensions.yaml
 
-- name: extensions_add | Install TEST"
+- name: extensions_add | Install TEST
   jaybeede.linux_desktop.gnome_extensions:
     action: enable
     url: https://github.com/stuarthayhurst/alphabetical-grid-extension
