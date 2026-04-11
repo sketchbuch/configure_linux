@@ -16,9 +16,11 @@
         exts: "{{ gnome.add.system }}"
         group_name: system
 
+- name: extensions | Add/remove user extensions
+  become: true
+  become_user: "{{ user_username }}"
+  block:
     - name: extensions | Add user extensions
-      become: true
-      become_user: "{{ user_username }}"
       ansible.builtin.include_tasks: ./extensions_add.yaml
       vars:
         exts: "{{ gnome.add.user }}"
