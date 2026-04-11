@@ -3,5 +3,5 @@
 - name: Install collection to manage gnome extensions
   when: is_gnome
   community.general.ansible_galaxy_install:
-    name: jaybeede.linux_desktop
+    name:  
     type: collection

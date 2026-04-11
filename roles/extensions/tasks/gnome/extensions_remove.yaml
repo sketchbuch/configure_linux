@@ -1,0 +1,9 @@
+---
+
+- name: extensions_remove | Uninstall {{ group_name }}"
+  gnome_extensions:
+    action: uninstall
+    url: "{{ ext }}"
+  loop: "{{ exts }}"
+  loop_control:
+    loop_var: ext

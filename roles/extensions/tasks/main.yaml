@@ -3,3 +3,7 @@
 - name: Include task vars
   ansible.builtin.include_vars:
     file: "task.yaml"
+
+- name: Add/remove gnome extension
+  ansible.builtin.import_tasks:
+    file: ./gnome/extensions.yaml
