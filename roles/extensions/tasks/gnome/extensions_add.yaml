@@ -1,7 +1,7 @@
 ---
 
 - name: extensions_add | Install {{ group_name }}"
-  gnome_extensions:
+  jaybeede.linux_desktop.gnome_extensions:
     action: enable
     url: "{{ ext }}"
   loop: "{{ exts }}"
