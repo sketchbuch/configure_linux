@@ -5,13 +5,13 @@
   become: true
   block:
     - name: extensions | Remove system extensions
-      ansible.builtin.include: ./extensions_remove.yaml
+      ansible.builtin.include_tasks: ./extensions_remove.yaml
       vars:
         exts: "{{ gnome.remove.system }}"
         group_name: system
 
     - name: extensions | Add system extensions
-      ansible.builtin.include: ./extensions_add.yaml
+      ansible.builtin.include_tasks: ./extensions_add.yaml
       vars:
         exts: "{{ gnome.add.system }}"
         group_name: system
@@ -19,7 +19,7 @@
     - name: extensions | Add user extensions
       become: true
       become_user: "{{ user_username }}"
-      ansible.builtin.include: ./extensions_add.yaml
+      ansible.builtin.include_tasks: ./extensions_add.yaml
       vars:
         exts: "{{ gnome.add.user }}"
         group_name: user
