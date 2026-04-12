@@ -1,6 +1,11 @@
 ---
 
 - name: pip | Install gnome extensions cli
+  ansible.builtin.package:
+    name: python3-pip
+    state: present
+
+- name: pip | Install gnome extensions cli
   ansible.builtin.pip:
     name: gnome-extensions-cli
     extra_args: --user --upgrade
