@@ -31,4 +31,4 @@
   become: true
   become_user: "{{ user_username }}"
   ansible.builtin.command:
-    cmd: gext install "color-picker@tuberry" && gext enable "color-picker@tuberry"
+    cmd: gext install "color-picker@tuberry"
