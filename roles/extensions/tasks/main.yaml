@@ -4,6 +4,10 @@
   ansible.builtin.include_vars:
     file: "task.yaml"
 
+- name: Add/remove python apps
+  ansible.builtin.import_tasks:
+    file: ./pip/pip.yaml
+
 - name: Add/remove gnome extension
   ansible.builtin.import_tasks:
     file: ./gnome/extensions.yaml
