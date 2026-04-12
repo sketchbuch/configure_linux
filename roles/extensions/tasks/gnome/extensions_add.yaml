@@ -3,9 +3,6 @@
 - name: extensions_add | Install {{ group_name }}"
   become: true
   become_user: "{{ profileUsername }}"
-  loop: "{{ exts }}"
-  loop_control:
-    loop_var: ext
   block:
     - name: extensions_add | Check if is already installed {{ ext.uuid }}
       ansible.builtin.stat:
