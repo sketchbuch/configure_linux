@@ -16,6 +16,11 @@
   ansible.builtin.import_tasks:
     file: ./flatpak/flatpak.yaml
 
+- name: pip | Install pip
+  ansible.builtin.package:
+    name: python3-pip
+    state: present
+
 - name: Add/remove python apps
   ansible.builtin.import_tasks:
     file: ./pip/pip.yaml
