@@ -6,6 +6,8 @@
     state: present
 
 - name: pip | Install gnome extensions cli
+  become: true
+  become_user: "{{ user_username }}"
   ansible.builtin.pip:
     name: gnome-extensions-cli
     extra_args: --upgrade
