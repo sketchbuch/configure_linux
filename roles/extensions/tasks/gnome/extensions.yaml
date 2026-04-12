@@ -27,8 +27,8 @@
 #         group_name: user
 
 
-- name: extensions | Install and enable color-picker@tuberry
+- name: extensions | Install AlphabeticalAppGrid@stuarthayhurst
   become: true
   become_user: "{{ user_username }}"
   ansible.builtin.command:
-    cmd: gext install "color-picker@tuberry"
+    cmd: gext install "AlphabeticalAppGrid@stuarthayhurst"
