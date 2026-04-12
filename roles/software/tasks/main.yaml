@@ -15,3 +15,7 @@
 - name: Add/remove flatpaks
   ansible.builtin.import_tasks:
     file: ./flatpak/flatpak.yaml
+
+- name: Add/remove python apps
+  ansible.builtin.import_tasks:
+    file: ./pip/pip.yaml
