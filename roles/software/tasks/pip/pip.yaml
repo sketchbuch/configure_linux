@@ -10,4 +10,4 @@
   become_user: "{{ user_username }}"
   ansible.builtin.pip:
     name: gnome-extensions-cli
-    extra_args: --upgrade
+    extra_args: --user --upgrade
