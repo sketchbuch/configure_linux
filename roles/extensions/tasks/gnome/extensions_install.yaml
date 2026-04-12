@@ -5,14 +5,14 @@
     path: /home/{{ user_username }}/.local/share/gnome-shell/extensions/{{ ext.uuid }}
   register: gnome_extension_check
 
-- name: extensions_add | {{ extension.uuid }}
+- name: extensions_add | {{ ext.uuid }}
   when: not gnome_extension_check.stat.exists
   block:
     - name: extensions_add | Download
       ansible.builtin.get_url:
         dest: "/tmp/gnomeExtensions/{{ ext.uuid }}.zip"
         mode: "0600"
-        url: "https://extensions.gnome.org/extension-data/{{ extension.url }}"
+        url: "https://extensions.gnome.org/extension-data/{{ ext.url }}"
 
     # enable command does not work, so manual enabling is still required
     - name: extensions_add | Install
