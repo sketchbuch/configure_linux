@@ -1,5 +1,7 @@
 ---
 
+user_username: stephen
+
 # Gnome extensions to add/remove
 gnome2:
   add:

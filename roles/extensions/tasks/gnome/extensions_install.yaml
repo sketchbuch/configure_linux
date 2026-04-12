@@ -2,7 +2,7 @@
 
 - name: extensions_add | Check if is already installed {{ ext.uuid }}
   ansible.builtin.stat:
-    path: /home/{{ profileUsername }}/.local/share/gnome-shell/extensions/{{ ext.uuid }}
+    path: /home/{{ user_username }}/.local/share/gnome-shell/extensions/{{ ext.uuid }}
   register: gnome_extension_check
 
 - name: extensions_add | {{ extension.uuid }}
