@@ -4,13 +4,6 @@
   ansible.builtin.include_vars:
     file: "task.yaml"
 
-# - name: Add/remove gnome extension
-#   ansible.builtin.import_tasks:
-#     file: ./gnome/extensions.yaml
-
-- name: extensions_add | Install TEST
-  become: true
-  become_user: "{{ user_username }}"
-  jaybeede.linux_desktop.gnome_extensions:
-    action: enable
-    url: https://github.com/stuarthayhurst/alphabetical-grid-extension
+- name: Add/remove gnome extension
+  ansible.builtin.import_tasks:
+    file: ./gnome/extensions.yaml

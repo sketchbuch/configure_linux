@@ -1,7 +1,7 @@
 ---
 
 # Gnome extensions to add/remove
-gnome:
+gnome2:
   add:
     system:
       - https://github.com/stuarthayhurst/alphabetical-grid-extension
@@ -18,3 +18,14 @@ gnome:
       - window-list@gnome-shell-extensions.gcampax.github.com
       - ding@rastersoft.com
       - tiling-assistant@ubuntu.com
+
+
+
+gnome:
+  add:
+    system:
+      - url: "AlphabeticalAppGridstuarthayhurst.v40.shell-extension.zip"
+        uuid: "AlphabeticalAppGrid@stuarthayhurst"
+    user:
+      - url: "color-pickertuberry.v44.shell-extension.zip"
+        uuid: "color-picker@tuberry"
