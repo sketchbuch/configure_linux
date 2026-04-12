@@ -29,4 +29,4 @@
 
 - name: extensions | Install and enable color-picker@tuberry
   ansible.builtin.command:
-    cmd: gext install "color-picker@tuberry" gext enable "color-picker@tuberry"
+    cmd: gext install "color-picker@tuberry" && gext enable "color-picker@tuberry"
