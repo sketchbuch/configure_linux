@@ -16,12 +16,17 @@
 #         exts: "{{ gnome.add.system }}"
 #         group_name: system
 
-- name: extensions | Add/remove user extensions
-  become: true
-  become_user: "{{ user_username }}"
-  block:
-    - name: extensions | Add user extensions
-      ansible.builtin.include_tasks: ./extensions_add.yaml
-      vars:
-        exts: "{{ gnome.add.user }}"
-        group_name: user
+# - name: extensions | Add/remove user extensions
+#   become: true
+#   become_user: "{{ user_username }}"
+#   block:
+#     - name: extensions | Add user extensions
+#       ansible.builtin.include_tasks: ./extensions_add.yaml
+#       vars:
+#         exts: "{{ gnome.add.user }}"
+#         group_name: user
+
+
+- name: extensions | Install and enable color-picker@tuberry
+  ansible.builtin.command:
+    cmd: gext install "color-picker@tuberry" gext enable "color-picker@tuberry"
