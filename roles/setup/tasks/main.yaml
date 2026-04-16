@@ -40,16 +40,15 @@
 
 - name: Debug gnome version
   when: is_gnome
-  ansible.builtin.debug:
-    msg:
-      - "gnome version: {{ gnome_version_result.stdout }}"
-      - "gnome version_int: {{ gnome_version_result.stdout | regex_search('\\d+') }}"
+  ansible.builtin.set_fact:
+    desktop_version: "{{ gnome_version_result.stdout | regex_search('\\d+') | int }}"
 
 - name: Debug facts
   when: debug_vars
   ansible.builtin.debug:
     msg:
       - "desktop: {{ desktop }}"
+      - "desktop_version: {{ desktop_version }}"
       - "distro_version: {{ distro_version }}"
       - "distro: {{ distro }}"
       - "is_fedora: {{ is_fedora }}"
