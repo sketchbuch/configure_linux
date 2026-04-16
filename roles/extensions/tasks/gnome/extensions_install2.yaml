@@ -10,7 +10,7 @@
     ext_download_url: "{{ (ext_info | from_json).download_url }}"
 
 - name: Debug exxt url
-  ansible.builtin.set_fact:
+  ansible.builtin.debug:
     ext_download_url: "{{ ext_download_url }}"
 
 - name: extensions_add | Download ext
