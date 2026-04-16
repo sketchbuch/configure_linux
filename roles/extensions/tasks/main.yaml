@@ -13,7 +13,7 @@
 
 - name: Set tmp folder fact
   ansible.builtin.set_fact:
-    tmp_dir: "/tmp/{{ anisible_tmp }}"
+    tmp_dir: /tmp/anisible_tmp
 
 - name: Debug extension facts
   ansible.builtin.debug:
