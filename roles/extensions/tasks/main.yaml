@@ -4,6 +4,22 @@
   ansible.builtin.include_vars:
     file: "task.yaml"
 
+- name: Create tmp folder
+  become: true
+  become_user: "{{ user_username }}"
+  ansible.builtin.tempfile:
+    prefix: anisible_tmp
+    state: directory
+
+- name: Set tmp folder fact
+  ansible.builtin.set_fact:
+    tmp_dir: "/tmp/{{ anisible_tmp }}"
+
+- name: Debug extension facts
+  ansible.builtin.debug:
+    msg:
+      - "tmp_dir: {{ tmp_dir }}"
+
 - name: Add/remove gnome extension
   ansible.builtin.import_tasks:
     file: ./gnome/extensions.yaml

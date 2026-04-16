@@ -4,11 +4,6 @@
   ansible.builtin.include_vars:
     file: "task.yaml"
 
-- name: Create tmp folder
-  ansible.builtin.tempfile:
-    prefix: anisible_tmp
-    state: directory
-
 - name: Get facts
   ansible.builtin.package_facts:
     manager: auto
@@ -36,7 +31,6 @@
     is_kde: '{{ (desktop_environment.stdout == "kde") | ternary(true, false) }}'
     is_ubuntu: '{{ ((ansible_distribution | lower) == "ubuntu") | ternary(true, false) }}'
     is_virtual: '{{ (ansible_virtualization_role == "guest") | ternary(true, false) }}'
-    tmp_dir: "/tmp/anisible_tmp"
 
 - name: Get gnome version
   when: is_gnome
