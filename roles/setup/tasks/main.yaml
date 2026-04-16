@@ -43,7 +43,7 @@
   ansible.builtin.debug:
     msg:
       - "gnome version: {{ gnome_version_result.stdout }}"
-      - "gnome version_int: {{ gnome_version_result.stdout | regex_search('^[0-9]+') }}"
+      - "gnome version_int: {{ gnome_version_result.stdout | regex_search('^\\d+') }}"
 
 - name: Debug facts
   when: debug_vars
