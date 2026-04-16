@@ -12,7 +12,6 @@
 - name: Debug exxt url
   ansible.builtin.debug:
     ext_info: "{{ ext_info }}"
-    ext_download_url: "{{ ext_download_url }}"
 
 # - name: extensions_add | Download ext
 #   ansible.builtin.get_url:
