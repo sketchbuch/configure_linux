@@ -10,6 +10,7 @@
   ansible.builtin.tempfile:
     prefix: anisible_tmp
     state: directory
+    suffix: ""
 
 - name: Set tmp folder fact
   ansible.builtin.set_fact:

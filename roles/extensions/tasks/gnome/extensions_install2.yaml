@@ -17,6 +17,8 @@
 
 # validate_certs=False as extensions.gnome.org often has cert issues.
 - name: extensions_add | Download ext
+  become: true
+  become_user: "{{ user_username }}"
   ansible.builtin.get_url:
     dest: "{{ tmp_dir }/{{ ext.uuid }}.zip"
     mode: 0600
