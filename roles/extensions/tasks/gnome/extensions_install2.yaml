@@ -7,7 +7,7 @@
 
 - name: extensions_add | Get download url
   ansible.builtin.set_fact:
-    ext_download_url: "{{ (ext_info | to_json).download_url }}"
+    ext_download_url: "{{ (ext_info | to_json) }}"
 
 - name: extensions_add | Debug info
   when: debug_vars
