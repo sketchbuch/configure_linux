@@ -16,6 +16,10 @@ Ansible related examples: tasks, roles, playbooks, setup, etc.
 - [How to Use Ansible to Install Flatpak Packages](https://oneuptime.com/blog/post/2026-02-21-ansible-install-flatpak-packages/view)
 - [Setting up a Developer System with Ansible & dotfiles](https://sumit.me/posts/setting-up-developer-system-with-ansible-and-dotfiles)
 
+## Q/A
+
+- [Install GNOME Shell extensions from terminal](https://askubuntu.com/questions/1152583/install-gnome-shell-extensions-from-terminal)
+
 ## Youtube
 
 - [Ansible Project Structure: A Beginner's Guide to Inventory, Hosts, Roles, and Tasks - Part 3](https://www.youtube.com/watch?v=qsqpcvzLwf4)

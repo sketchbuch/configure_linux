@@ -26,9 +26,8 @@
 #         exts: "{{ gnome.add.user }}"
 #         group_name: user
 
-
-- name: extensions | Install AlphabeticalAppGrid@stuarthayhurst
-  become: true
-  become_user: "{{ user_username }}"
-  ansible.builtin.command:
-    cmd: gext install "AlphabeticalAppGrid@stuarthayhurst"
+# - name: extensions | Install AlphabeticalAppGrid@stuarthayhurst
+#   become: true
+#   become_user: "{{ user_username }}"
+#   ansible.builtin.command:
+#     cmd: gext install "AlphabeticalAppGrid@stuarthayhurst"

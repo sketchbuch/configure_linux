@@ -32,6 +32,18 @@
     is_ubuntu: '{{ ((ansible_distribution | lower) == "ubuntu") | ternary(true, false) }}'
     is_virtual: '{{ (ansible_virtualization_role == "guest") | ternary(true, false) }}'
 
+- name: Get gnome version
+  when: is_gnome
+  ansible.builtin.command:
+    cmd: gnome-shell --version
+  register: gnome_version_result
+
+- name: Debug gnome version
+  when: is_gnome
+  ansible.builtin.debug:
+    msg:
+      - "gnome version: {{ gnome_version_result }}"
+
 - name: Debug facts
   when: debug_vars
   ansible.builtin.debug:
