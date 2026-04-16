@@ -14,4 +14,4 @@
   ansible.builtin.debug:
     msg:
       - "ext_info: {{ ext_info }}"
-      - "test: {{  ext_info | to_json() }}"
+      - "test: {{ (ext_info | from_json).download_url }}"
