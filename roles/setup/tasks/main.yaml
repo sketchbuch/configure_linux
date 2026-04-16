@@ -43,6 +43,7 @@
   ansible.builtin.debug:
     msg:
       - "gnome version: {{ gnome_version_result }}"
+      - "gnome version_int: {{ gnome_version_result | int }}"
 
 - name: Debug facts
   when: debug_vars
