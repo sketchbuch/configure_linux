@@ -4,6 +4,10 @@
 
 Ansible related examples: tasks, roles, playbooks, setup, etc.
 
+## Curl
+
+- [How to Ignore cURL SSL Errors](https://scrapfly.io/blog/posts/guide-to-curl-ignore-ssl-errors)
+
 ## GitHub
 
 - [Ansible Linux Setup playbook](https://github.com/robert-sandor/ansible-linux)
