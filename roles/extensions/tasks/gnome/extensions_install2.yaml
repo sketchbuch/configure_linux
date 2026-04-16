@@ -11,10 +11,11 @@
 
 - name: Debug exxt url
   ansible.builtin.debug:
+    ext_info: "{{ ext_info }}"
     ext_download_url: "{{ ext_download_url }}"
 
-- name: extensions_add | Download ext
-  ansible.builtin.get_url:
-    dest: "/tmp/gnome_extensions/{{ ext.uuid }}.zip"
-    mode: "0600"
-    url: ext_download_url
+# - name: extensions_add | Download ext
+#   ansible.builtin.get_url:
+#     dest: "/tmp/gnome_extensions/{{ ext.uuid }}.zip"
+#     mode: "0600"
+#     url: ext_download_url
