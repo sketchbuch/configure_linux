@@ -24,7 +24,7 @@
 - name: Set facts
   ansible.builtin.set_fact:
     desktop: "{{ desktop_environment.stdout }}"
-    distro_version: "{{ ansible_distribution_major_version }}"
+    distro_version: "{{ ansible_distribution_major_version | int }}"
     distro: "{{ ansible_distribution | lower }}"
     is_fedora: '{{ ((ansible_distribution | lower) == "fedora") | ternary(true, false) }}'
     is_gnome: '{{ (desktop_environment.stdout == "gnome") | ternary(true, false) }}'
