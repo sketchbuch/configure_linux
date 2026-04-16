@@ -7,7 +7,7 @@
 - name: Create tmp folder
   ansible.builtin.tempfile:
     prefix: anisible_tmp
-    state: folder
+    state: directory
 
 - name: Get facts
   ansible.builtin.package_facts:
