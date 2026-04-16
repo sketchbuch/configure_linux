@@ -4,9 +4,10 @@
 
 Ansible related examples: tasks, roles, playbooks, setup, etc.
 
-## Curl
+## Curl/Lookup
 
 - [How to Ignore cURL SSL Errors](https://scrapfly.io/blog/posts/guide-to-curl-ignore-ssl-errors)
+- [Turn off ssl validation for ansible with_url](https://stackoverflow.com/questions/46927378/turn-off-ssl-validation-for-ansible-with-url)
 
 ## GitHub
 
