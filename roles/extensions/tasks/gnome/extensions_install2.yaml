@@ -14,3 +14,4 @@
   ansible.builtin.debug:
     msg:
       - "ext_info: {{ ext_info }}"
+      - "test: {{ ext_info['download_url'] }}"
