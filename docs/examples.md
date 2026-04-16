@@ -13,6 +13,7 @@ Ansible related examples: tasks, roles, playbooks, setup, etc.
 ## Tutorials
 
 - [Getting Started with Nested Variables](https://www.freekb.net/Article?id=2960)
+- [Help In Refactoring Soon-To-Be-Depreciated Statment](https://forum.ansible.com/t/help-in-refactoring-soon-to-be-depreciated-statment/44315) - "{{lookup('file','public_keys/{{ USER_NAME }}_ssh_key.public')}}"
 - [How to Use Ansible to Install Flatpak Packages](https://oneuptime.com/blog/post/2026-02-21-ansible-install-flatpak-packages/view)
 - [Setting up a Developer System with Ansible & dotfiles](https://sumit.me/posts/setting-up-developer-system-with-ansible-and-dotfiles)
 

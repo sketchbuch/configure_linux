@@ -2,7 +2,7 @@
 
 - name: extensions_add | Get extension information
   ansible.builtin.set_fact:
-    ext_info: "{{ lookup('url', 'https://extensions.gnome.org/extension-info/?uuid={{ ext.uuid }}&shell_version={{ desktop_version }}') }}"
+    ext_info: "{{ lookup('url', 'https://extensions.gnome.org/extension-info/?uuid=' ~ ext.uuid ~ '&shell_version=' ~ desktop_version) }}"
 
 - name: extensions_add | Debug info
   when: debug_vars
