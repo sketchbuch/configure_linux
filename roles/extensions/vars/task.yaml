@@ -24,5 +24,5 @@ gnome2:
 gnome:
   add:
     user:
-      - uuid: "AlphabeticalAppGrid@stuarthayhurst"
       - uuid: "color-picker@tuberry"
+      - uuid: "AlphabeticalAppGrid@stuarthayhurst"
