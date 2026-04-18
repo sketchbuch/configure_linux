@@ -13,13 +13,13 @@
       ansible.builtin.set_fact:
         ext_info: "{{ lookup('url', 'https://extensions.gnome.org/extension-info/?uuid=' ~ ext.uuid ~ '&shell_version=' ~ desktop_version,validate_certs=False) }}"
 
-    - name: extensions_install | Debug ext_info
-      ansible.builtin.debug:
-        var: ext_info
-
     - name: extensions_install | Get download url
       ansible.builtin.set_fact:
         ext_download_url: "{{ (ext_info | from_json).download_url }}"
+
+    - name: extensions_install | Debug ext_download_url
+      ansible.builtin.debug:
+        var: ext_download_url
 
     - name: extensions_install | Create download folder for
       ansible.builtin.file:
