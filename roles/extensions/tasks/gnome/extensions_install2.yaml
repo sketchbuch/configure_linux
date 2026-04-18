@@ -17,6 +17,14 @@
       - "ext: {{ ext }}"
       - "tmp_dir: {{ tmp_dir }}"
 
+- name: Create download folder
+  become: true
+  become_user: "{{ user_username }}"
+  ansible.builtin.file:
+    path: "{{ tmp_dir }/{{ ext.uuid }}"
+    state: directory
+    mode: 0666
+
 # validate_certs=False as extensions.gnome.org often has cert issues.
 - name: extensions_add | Download ext
   become: true
