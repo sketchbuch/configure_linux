@@ -14,6 +14,7 @@
     msg:
       - "ext_info: {{ ext_info }}"
       - "ext_download_url: {{ ext_download_url }}"
+      - "ext: {{ ext }}"
 
 # validate_certs=False as extensions.gnome.org often has cert issues.
 - name: extensions_add | Download ext
