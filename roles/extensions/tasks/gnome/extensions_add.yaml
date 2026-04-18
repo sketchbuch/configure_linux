@@ -1,7 +1,0 @@
----
-
-- name: extensions_add | Install extensions - {{ group_name }}
-  loop: "{{ exts }}"
-  loop_control:
-    loop_var: ext
-  ansible.builtin.include_tasks: ./extensions_install.yaml
