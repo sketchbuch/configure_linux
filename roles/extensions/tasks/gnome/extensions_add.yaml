@@ -1,6 +1,8 @@
 ---
 
 - name: extensions_add | Install {{ group_name }}"
+  become: true
+  become_user: "{{ user_username }}"
   loop: "{{ exts }}"
   loop_control:
     loop_var: ext
