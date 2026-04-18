@@ -8,6 +8,10 @@
   ansible.builtin.import_tasks:
     file: ./flatpak/flatpak_setup.yaml
 
+- name: Add/remove flatpaks
+  ansible.builtin.import_tasks:
+    file: ./flatpak/flatpak.yaml
+
 - name: Add/remove packages
   ansible.builtin.import_tasks:
     file: ./packages/packages.yaml
