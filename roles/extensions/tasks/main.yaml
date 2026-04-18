@@ -9,7 +9,7 @@
   ansible.builtin.file:
     path: "/tmp/anisible_tmp_{{ user_username }}"
     state: directory
-    mode: 0666
+    mode: 0644
 
 - name: Set tmp folder fact
   ansible.builtin.set_fact:

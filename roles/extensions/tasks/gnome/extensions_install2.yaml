@@ -23,7 +23,7 @@
   ansible.builtin.file:
     path: "{{ tmp_dir }}/{{ ext.uuid }}/"
     state: directory
-    mode: 0666
+    mode: 0644
 
 # validate_certs=False as extensions.gnome.org often has cert issues.
 - name: extensions_add | Download ext
@@ -31,6 +31,6 @@
   become_user: "{{ user_username }}"
   ansible.builtin.get_url:
     dest: "{{ tmp_dir }/{{ ext.uuid }}.zip"
-    mode: 0666
+    mode: 0644
     url: "https://extensions.gnome.org{{ ext_download_url }}"
     validate_certs: false
