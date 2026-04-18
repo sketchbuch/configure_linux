@@ -21,24 +21,20 @@
   become: true
   become_user: "{{ user_username }}"
   block:
-    - name: Add user extensions
-      ansible.builtin.include_tasks: ./gnome/extensions_add.yaml
-      vars:
-        exts: "{{ gnome.add.user }}"
-        group_name: user
+    - name: Install gnome extensions
+      loop: "{{ gnome.add.user }}"
+      loop_control:
+        loop_var: ext
+      ansible.builtin.include_tasks: ./extensions_install.yaml
 
-- name: Set dconf disabled extensions
-  become: true
-  become_user: "{{ user_username }}"
-  community.general.dconf:
-    key: /org/gnome/shell/disabled-extensions
-    state: present
-    value: "[{{ gnome.dconf.disabled }}]"
+    - name: Set dconf disabled extensions
+      community.general.dconf:
+        key: /org/gnome/shell/disabled-extensions
+        state: present
+        value: "[{{ gnome.dconf.disabled }}]"
 
-- name: Set dconf enabled extensions
-  become: true
-  become_user: "{{ user_username }}"
-  community.general.dconf:
-    key: /org/gnome/shell/enabled-extensions
-    state: present
-    value: "[{{ gnome.dconf.enabled }}]"
+    - name: Set dconf enabled extensions
+      community.general.dconf:
+        key: /org/gnome/shell/enabled-extensions
+        state: present
+        value: "[{{ gnome.dconf.enabled }}]"
