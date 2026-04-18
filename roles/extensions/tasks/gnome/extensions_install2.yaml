@@ -21,9 +21,10 @@
   become: true
   become_user: "{{ user_username }}"
   ansible.builtin.file:
+    group: "{{ user_username }}"
+    mode: "0644"
     path: "{{ tmp_dir }}/{{ ext.uuid }}/"
     state: directory
-    mode: "0644"
 
 # validate_certs=False as extensions.gnome.org often has cert issues.
 - name: extensions_install2 | Download ext
@@ -31,6 +32,7 @@
   become_user: "{{ user_username }}"
   ansible.builtin.get_url:
     dest: "{{ tmp_dir }}/{{ ext.uuid }}/{{ ext.uuid }}.zip"
+    group: "{{ user_username }}"
     mode: "0644"
     url: "https://extensions.gnome.org{{ ext_download_url }}"
     validate_certs: false
