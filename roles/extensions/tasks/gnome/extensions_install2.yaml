@@ -18,6 +18,8 @@
       - "tmp_dir: {{ tmp_dir }}"
 
 - name: extensions_install2 | Create download folder
+  become: true
+  become_user: "{{ user_username }}"
   ansible.builtin.file:
     path: "{{ tmp_dir }}/{{ ext.uuid }}/"
     state: directory
@@ -25,6 +27,8 @@
 
 # validate_certs=False as extensions.gnome.org often has cert issues.
 - name: extensions_install2 | Download ext
+  become: true
+  become_user: "{{ user_username }}"
   ansible.builtin.get_url:
     dest: "{{ tmp_dir }}/{{ ext.uuid }}/{{ ext.uuid }}.zip"
     mode: "0644"
