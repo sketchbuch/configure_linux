@@ -27,14 +27,14 @@
         state: present
         value: "'IBM Plex Sans Bold 11'"
 
-    - name: set_fonts | Set anti-aliasing
-      community.general.dconf:
-        key: /org/gnome/desktop/interface/font-antialiasing
-        state: present
-        value: "'rgba'"
+    # - name: set_fonts | Set anti-aliasing
+    #   community.general.dconf:
+    #     key: /org/gnome/desktop/interface/font-antialiasing
+    #     state: present
+    #     value: "'rgba'"
 
-    - name: set_fonts | Set hinting
-      community.general.dconf:
-        key: /org/gnome/desktop/interface/font-hinting
-        state: present
-        value: "'slight'"
+    # - name: set_fonts | Set hinting
+    #   community.general.dconf:
+    #     key: /org/gnome/desktop/interface/font-hinting
+    #     state: present
+    #     value: "'slight'"
