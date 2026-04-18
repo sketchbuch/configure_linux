@@ -36,3 +36,10 @@
     mode: "0754"
     url: "https://extensions.gnome.org{{ ext_download_url }}"
     validate_certs: false
+
+# validate_certs=False as extensions.gnome.org often has cert issues.
+- name: extensions_install2 | Install ext
+  become: true
+  become_user: "{{ user_username }}"
+  ansible.builtin.command:
+    cmd: "gnome-extensions install {{ tmp_dir }}/{{ ext.uuid }}/{{ ext.uuid }}.zip"
