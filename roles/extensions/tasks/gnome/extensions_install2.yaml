@@ -11,8 +11,7 @@
     # validate_certs=False as extensions.gnome.org often has cert issues.
     - name: extensions_install2 | Get extension info
       ansible.builtin.set_fact:
-        ext_info: >
-            "{{ lookup('url', 'https://extensions.gnome.org/extension-info/?uuid=' ~ ext.uuid ~ '&shell_version=' ~ desktop_version,validate_certs=False) }}"
+        ext_info: "{{ lookup('url', 'https://extensions.gnome.org/extension-info/?uuid=' ~ ext.uuid ~ '&shell_version=' ~ desktop_version,validate_certs=False) }}"
 
     - name: extensions_install2 | Get download url
       ansible.builtin.set_fact:
