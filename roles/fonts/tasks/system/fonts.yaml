@@ -3,25 +3,25 @@
   become: true
   become_user: "{{ user_username }}"
   block:
-    - name: set_fonts | Set system monospace font and size
+    - name: set_fonts | Set system monospace font and size (IBM Plex Mono 12)
       community.general.dconf:
         key: /org/gnome/desktop/interface/monospace-font-name
         state: present
         value: "'IBM Plex Mono 12'"
 
-    - name: set_fonts | Set system document font and size
+    - name: set_fonts | Set system document font and size (IBM Plex Sans 11)
       community.general.dconf:
         key: /org/gnome/desktop/interface/document-font-name
         state: present
         value: "'IBM Plex Sans 11'"
 
-    - name: set_fonts | Set system font and size
+    - name: set_fonts | Set system font and size (IBM Plex Sans 11)
       community.general.dconf:
         key: /org/gnome/desktop/interface/font-name
         state: present
         value: "'IBM Plex Sans 11'"
 
-    - name: set_fonts | Set classic window title font and size
+    - name: set_fonts | Set classic window title font and size (IBM Plex Sans Bold 11)
       community.general.dconf:
         key: /org/gnome/desktop/wm/preferences/titlebar-font
         state: present
