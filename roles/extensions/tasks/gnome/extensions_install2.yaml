@@ -30,7 +30,7 @@
   become: true
   become_user: "{{ user_username }}"
   ansible.builtin.get_url:
-    dest: "{{ tmp_dir }/{{ ext.uuid }}.zip"
+    dest: "{{ tmp_dir }/{{ ext.uuid }}/{{ ext.uuid }}.zip"
     mode: 0644
     url: "https://extensions.gnome.org{{ ext_download_url }}"
     validate_certs: false
