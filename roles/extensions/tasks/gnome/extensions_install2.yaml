@@ -1,6 +1,6 @@
 ---
 
-- name: extensions_install2 | Processing
+- name: extensions_install2 | Processing extension
   ansible.builtin.debug:
     msg: "Current extension: {{ ext.uuid }}"
 
