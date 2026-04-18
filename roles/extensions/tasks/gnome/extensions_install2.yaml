@@ -1,6 +1,8 @@
 ---
 
-- name: "extensions_install2 | Processing {{ ext.uuid }}"
+- name: extensions_install2 | Processing
+  ansible.builtin.debug:
+    msg: "Current extension: {{ ext.uuid }}"
 
 - name: extensions_install2 | Check if already installed
   ansible.builtin.stat:
@@ -19,14 +21,6 @@
       ansible.builtin.set_fact:
         ext_download_url: "{{ (ext_info | from_json).download_url }}"
 
-    - name: extensions_install2 | Debug ext url
-      ansible.builtin.debug:
-        msg:
-          - "ext_info: {{ ext_info }}"
-          - "ext_download_url: {{ ext_download_url }}"
-          - "ext: {{ ext }}"
-          - "tmp_dir: {{ tmp_dir }}"
-
     - name: extensions_install2 | Create download folder
       ansible.builtin.file:
         group: "{{ user_username }}"
@@ -42,11 +36,6 @@
         mode: "0754"
         url: "https://extensions.gnome.org{{ ext_download_url }}"
         validate_certs: false
-
-    - name: extensions_install2 | Debug file loc
-      ansible.builtin.debug:
-        msg:
-          - "{{ tmp_dir }}/{{ ext.uuid }}/{{ ext.uuid }}.zip"
 
     - name: extensions_install2 | Install ext
       ansible.builtin.command:
