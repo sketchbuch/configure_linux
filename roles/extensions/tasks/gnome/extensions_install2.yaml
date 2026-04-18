@@ -5,7 +5,7 @@
     path: "/home/{{ user_username }}/.local/share/gnome-shell/extensions/{{ ext.uuid }}"
   register: gnome_ext_exists
 
-- name: extensions_install2 | Install extension
+- name: extensions_install2 | Install extension {{ ext.uuid }}
   when: not gnome_ext_exists.stat.exists
   block:
     # validate_certs=False as extensions.gnome.org often has cert issues.
@@ -33,7 +33,7 @@
         url: "https://extensions.gnome.org{{ ext_download_url }}"
         validate_certs: false
 
-    - name: extensions_install2 | Install ext  {{ ext.uuid }}
+    - name: extensions_install2 | Install ext
       ansible.builtin.command:
         cmd: "gnome-extensions install {{ tmp_dir }}/{{ ext.uuid }}/{{ ext.uuid }}.zip"
 
