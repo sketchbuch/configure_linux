@@ -22,7 +22,7 @@
   become_user: "{{ user_username }}"
   ansible.builtin.file:
     group: "{{ user_username }}"
-    mode: "0644"
+    mode: "0754"
     path: "{{ tmp_dir }}/{{ ext.uuid }}/"
     state: directory
 
@@ -33,6 +33,6 @@
   ansible.builtin.get_url:
     dest: "{{ tmp_dir }}/{{ ext.uuid }}/{{ ext.uuid }}.zip"
     group: "{{ user_username }}"
-    mode: "0644"
+    mode: "0754"
     url: "https://extensions.gnome.org{{ ext_download_url }}"
     validate_certs: false
