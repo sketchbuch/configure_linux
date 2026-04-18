@@ -8,13 +8,13 @@
   become: true
   become_user: "{{ user_username }}"
   ansible.builtin.file:
-    path: "/tmp/anisible_tmp/{{ user_username }}"
+    path: "/tmp/anisible_tmp_{{ user_username }}/"
     state: directory
     mode: 0666
 
 - name: Set tmp folder fact
   ansible.builtin.set_fact:
-    tmp_dir: /tmp/anisible_tmp/{{ user_username }}
+    tmp_dir: "/tmp/anisible_tmp_{{ user_username }}/"
 
 - name: Debug extension facts
   ansible.builtin.debug:
