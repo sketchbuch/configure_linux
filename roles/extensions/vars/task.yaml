@@ -24,7 +24,5 @@ gnome2:
 gnome:
   add:
     user:
-      - url: "AlphabeticalAppGridstuarthayhurst.v40.shell-extension.zip"
-        uuid: "AlphabeticalAppGrid@stuarthayhurst"
-      - url: "color-pickertuberry.v44.shell-extension.zip"
-        uuid: "color-picker@tuberry"
+      - uuid: "AlphabeticalAppGrid@stuarthayhurst"
+      - uuid: "color-picker@tuberry"
