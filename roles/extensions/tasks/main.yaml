@@ -33,12 +33,16 @@
         group_name: user
 
 - name: extensions_install | Set dconf disabled extensions
+  become: true
+  become_user: "{{ user_username }}"
   community.general.dconf:
     key: /org/gnome/shell/disabled-extensions
     state: present
     value:  "[{{ gnome.dconf.disabled }}]"
 
 - name: extensions_install | Set dconf enabled extensions
+  become: true
+  become_user: "{{ user_username }}"
   community.general.dconf:
     key: /org/gnome/shell/enabled-extensions
     state: present
