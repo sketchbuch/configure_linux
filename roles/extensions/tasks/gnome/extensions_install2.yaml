@@ -1,8 +1,6 @@
 ---
 
 - name: extensions_install2 | Check if already installed
-  become: true
-  become_user: "{{ user_username }}"
   ansible.builtin.stat:
     path: "/home/{{ user_username }}/.local/share/gnome-shell/extensions/{{ ext.uuid }}"
   register: gnome_ext_exists
@@ -28,8 +26,6 @@
           - "tmp_dir: {{ tmp_dir }}"
 
     - name: extensions_install2 | Create download folder
-      become: true
-      become_user: "{{ user_username }}"
       ansible.builtin.file:
         group: "{{ user_username }}"
         mode: "0754"
@@ -38,8 +34,6 @@
 
     # validate_certs=False as extensions.gnome.org often has cert issues.
     - name: extensions_install2 | Download ext
-      become: true
-      become_user: "{{ user_username }}"
       ansible.builtin.get_url:
         dest: "{{ tmp_dir }}/{{ ext.uuid }}/{{ ext.uuid }}.zip"
         group: "{{ user_username }}"
@@ -53,13 +47,9 @@
           - "{{ tmp_dir }}/{{ ext.uuid }}/{{ ext.uuid }}.zip"
 
     - name: extensions_install2 | Install ext
-      become: true
-      become_user: "{{ user_username }}"
       ansible.builtin.command:
         cmd: "gnome-extensions install {{ tmp_dir }}/{{ ext.uuid }}/{{ ext.uuid }}.zip"
       
 - name: extensions_install2 | Enable ext
-  become: true
-  become_user: "{{ user_username }}"
   ansible.builtin.command:
     cmd: "gnome-extensions enable {{ ext.uuid }}"
