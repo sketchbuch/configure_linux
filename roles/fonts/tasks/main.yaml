@@ -6,3 +6,6 @@
     - ./fonts/*.yaml
   loop_control:
     loop_var: font_file
+
+- name: Set system fonts
+  ansible.builtin.include_tasks: ./system/fonts.yaml

@@ -1,0 +1,40 @@
+---
+- name: set_fonts | Set system fonts
+  become: true
+  become_user: "{{ user_username }}"
+  block:
+    - name: set_fonts | Set system monospace font and size
+      community.general.dconf:
+        key: /org/gnome/desktop/interface/monospace-font-name
+        state: present
+        value: "'IBM Plex Mono 12'"
+
+    - name: set_fonts | Set system document font and size
+      community.general.dconf:
+        key: /org/gnome/desktop/interface/document-font-name
+        state: present
+        value: "'IBM Plex Sans 11'"
+
+    - name: set_fonts | Set system font and size
+      community.general.dconf:
+        key: /org/gnome/desktop/interface/font-name
+        state: present
+        value: "'IBM Plex Sans 11'"
+
+    - name: set_fonts | Set classic window title font and size
+      community.general.dconf:
+        key: /org/gnome/desktop/wm/preferences/titlebar-font
+        state: present
+        value: "'IBM Plex Sans Bold 11'"
+
+    - name: set_fonts | Set anti-aliasing
+      community.general.dconf:
+        key: /org/gnome/desktop/interface/font-antialiasing
+        state: present
+        value: "'rgba'"
+
+    - name: set_fonts | Set hinting
+      community.general.dconf:
+        key: /org/gnome/desktop/interface/font-hinting
+        state: present
+        value: "'slight'"
