@@ -7,10 +7,6 @@
     path: "/home/{{ user_username }}/.local/share/gnome-shell/extensions/{{ ext.uuid }}"
   register: gnome_ext_exists
 
-- name: "extensions_install2 | Already installed: {{ ext.uuid }}"
-  when: gnome_ext_exists.stat.exists
-  meta: noop
-
 - name: extensions_install2 | Install extension
   when: not gnome_ext_exists.stat.exists
   block:
