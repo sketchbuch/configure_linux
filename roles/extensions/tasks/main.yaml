@@ -26,3 +26,15 @@
       vars:
         exts: "{{ gnome.add.user }}"
         group_name: user
+
+- name: extensions_install | Set dconf disabled extensions
+  community.general.dconf:
+    key: /org/gnome/shell/disabled-extensions
+    state: present
+    value: gnome.dconf.disabled
+
+- name: extensions_install | Set dconf enabled extensions
+  community.general.dconf:
+    key: /org/gnome/shell/enabled-extensions
+    state: present
+    value: gnome.dconf.enabled

@@ -43,7 +43,3 @@
     - name: extensions_install | Install ext
       ansible.builtin.command:
         cmd: "gnome-extensions install {{ tmp_dir }}/{{ ext.uuid }}/{{ ext.uuid }}.zip"
-
-- name: extensions_install | Enable ext {{ ext.uuid }}
-  ansible.builtin.command:
-    cmd: "gnome-extensions enable {{ ext.uuid }}"
