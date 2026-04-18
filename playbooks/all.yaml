@@ -6,11 +6,14 @@
 # - name: Run software_flatpak playbook
 #   ansible.builtin.import_playbook: software.yaml
 
-- name: Run fonts playbook
-  ansible.builtin.import_playbook: fonts.yaml
+# - name: Run fonts playbook
+#   ansible.builtin.import_playbook: fonts.yaml
 
-- name: Run filemanagers playbook
-  ansible.builtin.import_playbook: filemanagers.yaml
+# - name: Run filemanagers playbook
+#   ansible.builtin.import_playbook: filemanagers.yaml
 
-- name: Run extensions playbook
-  ansible.builtin.import_playbook: extensions.yaml
+# - name: Run extensions playbook
+#   ansible.builtin.import_playbook: extensions.yaml
+
+- name: Run extensions terminals
+  ansible.builtin.import_playbook: terminals.yaml

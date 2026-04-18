@@ -1,0 +1,8 @@
+---
+
+- name: Show stars when typing passwords
+  become: true
+  ansible.builtin.lineinfile:
+    insertafter: "^Defaults	env_reset"
+    line: "Defaults	pwfeedback"
+    path: "/etc/sudoers"
