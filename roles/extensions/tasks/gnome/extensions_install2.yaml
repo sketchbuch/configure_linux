@@ -47,3 +47,9 @@
   become_user: "{{ user_username }}"
   ansible.builtin.command:
     cmd: "gnome-extensions install {{ tmp_dir }}/{{ ext.uuid }}/{{ ext.uuid }}.zip"
+
+- name: extensions_install2 | Enable ext
+  become: true
+  become_user: "{{ user_username }}"
+  ansible.builtin.command:
+    cmd: "gnome-extensions enable {{ ext.uuid }}"
