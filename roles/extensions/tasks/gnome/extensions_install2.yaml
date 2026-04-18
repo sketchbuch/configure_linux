@@ -2,9 +2,9 @@
 
 - name: extensions_install2 | Check if already installed
   become: true
-  become_user: "{{ profileUsername }}"
+  become_user: "{{ user_username }}"
   ansible.builtin.stat:
-    path: "/home/{{ profileUsername }}/.local/share/gnome-shell/extensions/{{ ext.uuid }}"
+    path: "/home/{{ user_username }}/.local/share/gnome-shell/extensions/{{ ext.uuid }}"
   register: gnome_ext_exists
 
 - name: extensions_install2 | Install extension
