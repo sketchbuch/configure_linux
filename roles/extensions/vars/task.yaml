@@ -27,7 +27,7 @@ gnome:
       - uuid: AlphabeticalAppGrid@stuarthayhurst
       - uuid: color-picker@tuberry
       - uuid: display-configuration-switcher@knokelmaat.gitlab.com
-  
+
   dconf:
     disabled: >
       'apps-menu@gnome-shell-extensions.gcampax.github.com',
@@ -36,7 +36,7 @@ gnome:
       'places-menu@gnome-shell-extensions.gcampax.github.com',
       'tiling-assistant@ubuntu.com',
       'window-list@gnome-shell-extensions.gcampax.github.com'
-    
+
     enabled: >
       'AlphabeticalAppGrid@stuarthayhurst',
       'background-logo@fedorahosted.org',

@@ -17,7 +17,7 @@
   ansible.builtin.set_fact:
     tmp_dir: "/tmp/anisible_tmp_{{ user_username }}"
 
-- name: packages | Install python3-psutil
+- name: Install python3-psutil
   ansible.builtin.package:
     name: python3-psutil
     state: present
@@ -26,24 +26,24 @@
   become: true
   become_user: "{{ user_username }}"
   block:
-    - name: extensions | Add user extensions
+    - name: Add user extensions
       ansible.builtin.include_tasks: ./gnome/extensions_add.yaml
       vars:
         exts: "{{ gnome.add.user }}"
         group_name: user
 
-- name: extensions_install | Set dconf disabled extensions
+- name: Set dconf disabled extensions
   become: true
   become_user: "{{ user_username }}"
   community.general.dconf:
     key: /org/gnome/shell/disabled-extensions
     state: present
-    value:  "[{{ gnome.dconf.disabled }}]"
+    value: "[{{ gnome.dconf.disabled }}]"
 
-- name: extensions_install | Set dconf enabled extensions
+- name: Set dconf enabled extensions
   become: true
   become_user: "{{ user_username }}"
   community.general.dconf:
     key: /org/gnome/shell/enabled-extensions
     state: present
-    value:  "[{{ gnome.dconf.enabled }}]"
+    value: "[{{ gnome.dconf.enabled }}]"

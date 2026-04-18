@@ -23,7 +23,7 @@
       vars:
         apps: "{{ packages.add.gnome }}"
         group_name: gnome
-    
+
     - name: packages | Install python3-psutil
       ansible.builtin.package:
         name: python3-psutil
