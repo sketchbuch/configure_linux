@@ -10,12 +10,12 @@
   ansible.builtin.file:
     group: "{{ user_username }}"
     mode: "0644"
-    path: "/tmp/anisible_tmp_{{ user_username }}"
+    path: "/home/{{ user_username }}/.anisible_tmp"
     state: directory
 
 - name: Set tmp folder fact
   ansible.builtin.set_fact:
-    tmp_dir: "/tmp/anisible_tmp_{{ user_username }}"
+    tmp_dir: "/home/{{ user_username }}/.anisible_tmp"
 
 - name: Debug extension facts
   ansible.builtin.debug:
