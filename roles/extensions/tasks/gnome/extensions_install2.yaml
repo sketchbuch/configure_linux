@@ -1,7 +1,6 @@
 ---
 
 - name: "extensions_install2 | Processing {{ ext.uuid }}"
-  meta: noop
 
 - name: extensions_install2 | Check if already installed
   ansible.builtin.stat:
