@@ -17,6 +17,12 @@
   ansible.builtin.set_fact:
     tmp_dir: "/tmp/anisible_tmp_{{ user_username }}"
 
-- name: Add/remove gnome extension
-  ansible.builtin.import_tasks:
-    file: ./gnome/extensions.yaml
+- name: Add/remove gnome extensions
+  become: true
+  become_user: "{{ user_username }}"
+  block:
+    - name: extensions | Add user extensions
+      ansible.builtin.include_tasks: ./extensions_add.yaml
+      vars:
+        exts: "{{ gnome.add.user }}"
+        group_name: user
