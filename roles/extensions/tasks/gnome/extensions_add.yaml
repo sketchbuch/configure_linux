@@ -5,4 +5,3 @@
   loop_control:
     loop_var: ext
   ansible.builtin.include_tasks: ./extensions_install2.yaml
-

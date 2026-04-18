@@ -1,15 +1,15 @@
 ---
 
 # validate_certs=False as extensions.gnome.org often has cert issues.
-- name: extensions_add | Get extension info
+- name: extensions_install2 | Get extension info
   ansible.builtin.set_fact:
     ext_info: "{{ lookup('url', 'https://extensions.gnome.org/extension-info/?uuid=' ~ ext.uuid ~ '&shell_version=' ~ desktop_version,validate_certs=False) }}"
 
-- name: extensions_add | Get download url
+- name: extensions_install2 | Get download url
   ansible.builtin.set_fact:
     ext_download_url: "{{ (ext_info | from_json).download_url }}"
 
-- name: Debug exxt url
+- name: extensions_install2 | Debug exxt url
   ansible.builtin.debug:
     msg:
       - "ext_info: {{ ext_info }}"
@@ -17,20 +17,20 @@
       - "ext: {{ ext }}"
       - "tmp_dir: {{ tmp_dir }}"
 
-- name: Create download folder
+- name: extensions_install2 | Create download folder
   become: true
   become_user: "{{ user_username }}"
   ansible.builtin.file:
     path: "{{ tmp_dir }}/{{ ext.uuid }}/"
     state: directory
-    mode: 0644
+    mode: "0644"
 
 # validate_certs=False as extensions.gnome.org often has cert issues.
-- name: extensions_add | Download ext
+- name: extensions_install2 | Download ext
   become: true
   become_user: "{{ user_username }}"
   ansible.builtin.get_url:
-    dest: "{{ tmp_dir }/{{ ext.uuid }}/{{ ext.uuid }}.zip"
-    mode: 0644
+    dest: "{{ tmp_dir }}/{{ ext.uuid }}/{{ ext.uuid }}.zip"
+    mode: "0644"
     url: "https://extensions.gnome.org{{ ext_download_url }}"
     validate_certs: false

@@ -21,8 +21,6 @@ gnome2:
       - ding@rastersoft.com
       - tiling-assistant@ubuntu.com
 
-
-
 gnome:
   add:
     system:
