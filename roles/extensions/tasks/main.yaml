@@ -17,11 +17,6 @@
   ansible.builtin.set_fact:
     tmp_dir: "/tmp/anisible_tmp_{{ user_username }}"
 
-- name: Install python3-psutil
-  ansible.builtin.package:
-    name: python3-psutil
-    state: present
-
 - name: Add/remove gnome extensions
   become: true
   become_user: "{{ user_username }}"
