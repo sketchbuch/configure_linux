@@ -1,22 +1,22 @@
 ---
 
 
-# - name: extensions | Add/remove extensions
-#   become: true
-#   block:
-#     - name: extensions | Remove system extensions
-#       ansible.builtin.include_tasks: ./extensions_remove.yaml
-#       vars:
-#         exts: "{{ gnome.remove.system }}"
-#         group_name: system
+- name: extensions | Add/remove extensions
+  become: true
+  block:
+    # - name: extensions | Remove system extensions
+    #   ansible.builtin.include_tasks: ./extensions_remove.yaml
+    #   vars:
+    #     exts: "{{ gnome.remove.system }}"
+    #     group_name: system
 
-#     - name: extensions | Add system extensions
-#       ansible.builtin.include_tasks: ./extensions_add.yaml
-#       vars:
-#         exts: "{{ gnome.add.system }}"
-#         group_name: system
+    - name: extensions | Add system extensions
+      ansible.builtin.include_tasks: ./extensions_add.yaml
+      vars:
+        exts: "{{ gnome.add.system }}"
+        group_name: system
 
-- name: extensions | Add/remove user extensions
+- name: extensions | Add/remove gnome user extensions
   become: true
   become_user: "{{ user_username }}"
   block:
@@ -25,9 +25,3 @@
       vars:
         exts: "{{ gnome.add.user }}"
         group_name: user
-
-# - name: extensions | Install AlphabeticalAppGrid@stuarthayhurst
-#   become: true
-#   become_user: "{{ user_username }}"
-#   ansible.builtin.command:
-#     cmd: gext install "AlphabeticalAppGrid@stuarthayhurst"
