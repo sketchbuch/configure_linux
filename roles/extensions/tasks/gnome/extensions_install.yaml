@@ -1,5 +1,8 @@
 ---
 
+# Extensions can be installed but a shell restart is needed (logout/login is enough)
+# The Enable command doesn't seem to work.
+
 - name: extensions_install | Check if already installed - {{ ext.uuid }}
   ansible.builtin.stat:
     path: "/home/{{ user_username }}/.local/share/gnome-shell/extensions/{{ ext.uuid }}"
