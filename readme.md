@@ -6,6 +6,7 @@ My ansible setup to configure linux and install apps etc. in real and virtual en
 
 - [Ansible](./docs/ansible.md)
 - [Examples](./docs/examples.md)
+- [Examples](./docs/paths.md)
 - [Todo](./docs/todo.md)
 - [Tutorials](./docs/tutorials.md)
 
