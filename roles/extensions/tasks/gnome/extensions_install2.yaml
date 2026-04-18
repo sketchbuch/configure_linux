@@ -41,6 +41,7 @@
   ansible.builtin.debug:
     msg:
       - "{{ tmp_dir }}/{{ ext.uuid }}/{{ ext.uuid }}.zip"
+
 - name: extensions_install2 | Install ext
   become: true
   become_user: "{{ user_username }}"
