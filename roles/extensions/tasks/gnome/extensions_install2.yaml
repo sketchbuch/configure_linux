@@ -9,7 +9,7 @@
   ansible.builtin.set_fact:
     ext_download_url: "{{ (ext_info | from_json).download_url }}"
 
-- name: extensions_install2 | Debug exxt url
+- name: extensions_install2 | Debug ext url
   ansible.builtin.debug:
     msg:
       - "ext_info: {{ ext_info }}"
@@ -37,7 +37,10 @@
     url: "https://extensions.gnome.org{{ ext_download_url }}"
     validate_certs: false
 
-# validate_certs=False as extensions.gnome.org often has cert issues.
+- name: extensions_install2 | Debug file loc
+  ansible.builtin.debug:
+    msg:
+      - "{{ tmp_dir }}/{{ ext.uuid }}/{{ ext.uuid }}.zip"
 - name: extensions_install2 | Install ext
   become: true
   become_user: "{{ user_username }}"
