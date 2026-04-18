@@ -25,7 +25,7 @@
       loop: "{{ gnome.add.user }}"
       loop_control:
         loop_var: ext
-      ansible.builtin.include_tasks: ./extensions_install.yaml
+      ansible.builtin.include_tasks: ./gnome/extensions_install.yaml
 
     - name: Set dconf disabled extensions
       community.general.dconf:
