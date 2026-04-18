@@ -1,9 +1,0 @@
----
-
-- name: extensions_remove | Uninstall {{ group_name }}"
-  jaybeede.linux_desktop.gnome_extensions:
-    action: uninstall
-    url: "{{ ext }}"
-  loop: "{{ exts }}"
-  loop_control:
-    loop_var: ext
