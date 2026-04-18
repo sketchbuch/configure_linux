@@ -22,7 +22,7 @@
   become_user: "{{ user_username }}"
   block:
     - name: extensions | Add user extensions
-      ansible.builtin.include_tasks: ./extensions_add.yaml
+      ansible.builtin.include_tasks: ./gnome/extensions_add.yaml
       vars:
         exts: "{{ gnome.add.user }}"
         group_name: user
