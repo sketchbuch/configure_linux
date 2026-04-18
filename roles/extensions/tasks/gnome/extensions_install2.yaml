@@ -58,6 +58,12 @@
       ansible.builtin.command:
         cmd: "gnome-extensions install {{ tmp_dir }}/{{ ext.uuid }}/{{ ext.uuid }}.zip"
 
+- name: extensions_install2 | Already installed
+  when: gnome_ext_exists.stat.exists
+  ansible.builtin.debug:
+    msg:
+      - "{{ ext.uuid }} is already installed"
+      
 - name: extensions_install2 | Enable ext
   become: true
   become_user: "{{ user_username }}"
