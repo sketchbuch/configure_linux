@@ -1,6 +1,6 @@
 ---
 
-- name: extensions_add | Install {{ group_name }}"
+- name: extensions_add | Install {{ group_name }} extensions"
   loop: "{{ exts }}"
   loop_control:
     loop_var: ext
