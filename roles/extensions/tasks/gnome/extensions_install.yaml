@@ -1,23 +1,27 @@
 ---
 
-- name: extensions_install2 | Check if already installed - {{ ext.uuid }}
+- name: extensions_install | Check if already installed - {{ ext.uuid }}
   ansible.builtin.stat:
     path: "/home/{{ user_username }}/.local/share/gnome-shell/extensions/{{ ext.uuid }}"
   register: gnome_ext_exists
 
-- name: extensions_install2 | Install extension {{ ext.uuid }}
+- name: extensions_install | Install extension {{ ext.uuid }}
   when: not gnome_ext_exists.stat.exists
   block:
     # validate_certs=False as extensions.gnome.org often has cert issues.
-    - name: extensions_install2 | Get extension info
+    - name: extensions_install | Get extension info
       ansible.builtin.set_fact:
         ext_info: "{{ lookup('url', 'https://extensions.gnome.org/extension-info/?uuid=' ~ ext.uuid ~ '&shell_version=' ~ desktop_version,validate_certs=False) }}"
 
-    - name: extensions_install2 | Get download url
+    - name: extensions_install | Debug ext_info
+      ansible.builtin.debug:
+        var: ext_info
+
+    - name: extensions_install | Get download url
       ansible.builtin.set_fact:
         ext_download_url: "{{ (ext_info | from_json).download_url }}"
 
-    - name: extensions_install2 | Create download folder for
+    - name: extensions_install | Create download folder for
       ansible.builtin.file:
         group: "{{ user_username }}"
         mode: "0754"
@@ -25,7 +29,7 @@
         state: directory
 
     # validate_certs=False as extensions.gnome.org often has cert issues.
-    - name: extensions_install2 | Download ext
+    - name: extensions_install | Download ext
       ansible.builtin.get_url:
         dest: "{{ tmp_dir }}/{{ ext.uuid }}/{{ ext.uuid }}.zip"
         group: "{{ user_username }}"
@@ -33,10 +37,10 @@
         url: "https://extensions.gnome.org{{ ext_download_url }}"
         validate_certs: false
 
-    - name: extensions_install2 | Install ext
+    - name: extensions_install | Install ext
       ansible.builtin.command:
         cmd: "gnome-extensions install {{ tmp_dir }}/{{ ext.uuid }}/{{ ext.uuid }}.zip"
 
-- name: extensions_install2 | Enable ext {{ ext.uuid }}
+- name: extensions_install | Enable ext {{ ext.uuid }}
   ansible.builtin.command:
     cmd: "gnome-extensions enable {{ ext.uuid }}"
