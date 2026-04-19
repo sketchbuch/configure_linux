@@ -1,2 +1,12 @@
 ---
 
+- name: Include task vars
+  ansible.builtin.include_vars:
+    file: "task.yaml"
+
+- name: Configure gnome
+  loop_control:
+    loop_var: file
+  ansible.builtin.include_tasks: "{{ file }}"
+  with_fileglob:
+    - ./gnome/*.yaml

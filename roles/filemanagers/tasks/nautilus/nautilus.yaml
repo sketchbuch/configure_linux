@@ -1,6 +1,7 @@
 ---
 
 - name: nautilus | Instant changes
+  when: is_gnome
   become: true
   become_user: "{{ user_username }}"
   block:
@@ -29,6 +30,7 @@
         value: "true"
 
 - name: nautilus | Afect new window changes
+  when: is_gnome
   become: true
   become_user: "{{ user_username }}"
   block:

@@ -5,6 +5,6 @@
     file: "task.yaml"
 
 
-- name: Nautilus
+- name: Configure nautilus
   ansible.builtin.import_tasks:
     file: ./nautilus/nautilus.yaml
