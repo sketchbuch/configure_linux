@@ -1,5 +1,37 @@
 ---
 
-- name: nautilus | Import dconf settings
-  ansible.builtin.command:
-    cmd: dconf load /org/gnome/nautilus/ < ./files/nautilus.dconf
+- name: nautilus | Dirs sorted with files
+  community.general.dconf:
+    key: /org/gtk/gtk4/settings/file-chooser/sort-directories-first
+    state: present
+    value: "false"
+
+- name: nautilus | Hide hidden files
+  community.general.dconf:
+    key: "/org/gtk/gtk4/settings/file-chooser/show-hidden"
+    state: present
+    value: "false"
+
+- name: nautilus | Maximise window
+  community.general.dconf:
+    key: /org/gnome/nautilus/window-state/maximized
+    state: present
+    value: "true"
+
+- name: nautilus | Set icon view
+  community.general.dconf:
+    key: /org/gnome/nautilus/preferences/default-folder-viewer
+    state: present
+    value: "'icon-view'"
+
+- name: nautilus | Set single-click to open
+  community.general.dconf:
+    key: /org/gnome/nautilus/preferences/click-policy
+    state: present
+    value: "'single'"
+
+- name: nautilus | Show create link
+  community.general.dconf:
+    key: /org/gnome/nautilus/preferences/show-create-link
+    state: present
+    value: "true"
