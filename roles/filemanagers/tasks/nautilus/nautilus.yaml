@@ -8,7 +8,7 @@
 
 - name: nautilus | Hide hidden files
   community.general.dconf:
-    key: "/org.gtk.Settings.FileChooser/show-hidden"
+    key: "/org/gtk/Settings/FileChooser/show-hidden"
     state: present
     value: "false"
 
