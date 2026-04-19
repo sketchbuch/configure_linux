@@ -5,7 +5,7 @@
   become: true
   become_user: "{{ user_username }}"
   community.general.dconf:
-    key: /org/gnome/clocks/world-clocks
+    key: /org/gnome/shell/world-clocks
     state: present
     value: "[
       {'location': <(uint32 2, <('Leipzig', 'EDDP', true, [(0.89739012955151531, 0.21351193934287546)], [(0.89535390627309097, 0.21525726859486979)])>)>},
