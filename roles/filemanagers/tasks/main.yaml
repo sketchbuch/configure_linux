@@ -1,1 +1,5 @@
 ---
+
+- name: Nautilus
+  ansible.builtin.import_tasks:
+    file: ./nautilus/nautilus.yaml

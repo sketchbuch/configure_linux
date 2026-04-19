@@ -1,1 +1,5 @@
 ---
+
+- name: nautilus | Import dconf settings
+  ansible.builtin.command:
+    cmd: dconf load ../files/nautilus.dconf

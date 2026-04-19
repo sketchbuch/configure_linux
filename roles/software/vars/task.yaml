@@ -90,7 +90,7 @@ packages:
     gnome:
       - gnome-epub-thumbnailer
       - gnome-tweaks
-    
+
     utils:
       - python3-psutil
 
