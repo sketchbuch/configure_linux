@@ -1,9 +1,9 @@
-[org/gnome/nautilus/preferences]
+[org/gnome/nautilus/preferences/]
 click-policy='single'
 default-folder-viewer='icon-view'
 migrated-gtk-settings=true
 show-create-link=true
 
-[org/gnome/nautilus/window-state]
+[org/gnome/nautilus/window-state/]
 initial-size=(890, 550)
 maximized=true
