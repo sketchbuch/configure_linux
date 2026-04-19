@@ -17,3 +17,6 @@
 
 - name: Run extensions terminals
   ansible.builtin.import_playbook: terminals.yaml
+
+- name: Run desktop playbook
+  ansible.builtin.import_playbook: desktop.yaml

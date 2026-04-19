@@ -1,5 +1,10 @@
 ---
 
+- name: Include task vars
+  ansible.builtin.include_vars:
+    file: "task.yaml"
+
+
 - name: Nautilus
   ansible.builtin.import_tasks:
     file: ./nautilus/nautilus.yaml
