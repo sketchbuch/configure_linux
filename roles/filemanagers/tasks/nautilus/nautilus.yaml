@@ -52,7 +52,6 @@
 
 - name: nautilus | Add epub thumbnail support to nautilus
   become: true
-  become_user: "{{ user_username }}"
   ansible.builtin.package:
     name: gnome-epub-thumbnailer
     state: present
