@@ -13,6 +13,7 @@
 #   ansible.builtin.import_playbook: fonts.yaml
 
 - name: Run nautilus playbook
+  when: is_gnome
   ansible.builtin.import_playbook: nautilus.yaml
 
 # - name: Run extensions playbook

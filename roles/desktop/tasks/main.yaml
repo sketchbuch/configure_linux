@@ -5,6 +5,7 @@
     file: "task.yaml"
 
 - name: Configure gnome
+  when: is_gnome
   loop_control:
     loop_var: file
   ansible.builtin.include_tasks: "{{ file }}"
