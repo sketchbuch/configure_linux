@@ -10,4 +10,4 @@
     loop_var: file
   ansible.builtin.include_tasks: "{{ file }}"
   with_fileglob:
-    - ./gnome/*.yaml
+    - ./settings/*.yaml
