@@ -6,7 +6,7 @@
   become: true
   become_user: "{{ user_username }}"
   block:
-    - name: screensaver | Disable
+    - name: screensaver | Disable screen lock
       community.general.dconf:
         key: /org/gnome/desktop/screensaver/lock-enabled
         state: present
