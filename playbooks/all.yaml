@@ -12,8 +12,8 @@
 # - name: Run fonts playbook
 #   ansible.builtin.import_playbook: fonts.yaml
 
-# - name: Run filemanagers playbook
-#   ansible.builtin.import_playbook: filemanagers.yaml
+- name: Run nautilus playbook
+  ansible.builtin.import_playbook: nautilus.yaml
 
 # - name: Run extensions playbook
 #   ansible.builtin.import_playbook: extensions.yaml
