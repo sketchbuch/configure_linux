@@ -82,28 +82,28 @@
         remote: flathub
 
     - name: Install productivity
-      ansible.builtin.import_tasks: ../flatpak/flatpak_add.yaml
+      ansible.builtin.import_tasks: ./flatpak/flatpak_add.yaml
       vars:
         apps: "{{ flathub.add.productivity }}"
         group_name: productivity
         remote: flathub
 
     - name: Install system
-      ansible.builtin.import_tasks: ../flatpak/flatpak_add.yaml
+      ansible.builtin.import_tasks: ./flatpak/flatpak_add.yaml
       vars:
         apps: "{{ flathub.add.system }}"
         group_name: system
         remote: flathub
 
     - name: Install utils
-      ansible.builtin.import_tasks: ../flatpak/flatpak_add.yaml
+      ansible.builtin.import_tasks: ./flatpak/flatpak_add.yaml
       vars:
         apps: "{{ flathub.add.utils }}"
         group_name: utils
         remote: flathub
 
     - name: Install videos
-      ansible.builtin.import_tasks: ../flatpak/flatpak_add.yaml
+      ansible.builtin.import_tasks: ./flatpak/flatpak_add.yaml
       vars:
         apps: "{{ flathub.add.videos }}"
         group_name: videos
