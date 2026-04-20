@@ -1,3 +1,5 @@
+---
+
 - name: desktop | Configure desktop
   become: true
   become_user: "{{ user_username }}"
@@ -28,5 +30,32 @@
     - name: desktop | Center new windows
       community.general.dconf:
         key: /org/gnome/mutter/center-new-windows
+        state: present
+        value: "true"
+
+    - name: desktop | Always show A11y Menu
+      community.general.dconf:
+        key: /org/gnome/desktop/a11y/always-show-universal-access-status
+        state: present
+        value: "true"
+
+    - name: desktop | Enable Hot Corners
+      when: not is_virtual
+      community.general.dconf:
+        key: /org/gnome/desktop/interface/enable-hot-corners
+        state: present
+        value: "true"
+
+    - name: desktop | Disable Hot Corners
+      when: is_virtual
+      community.general.dconf:
+        key: /org/gnome/desktop/interface/enable-hot-corners
+        state: present
+        value: "false"
+
+    - name: desktop | Stop update notifications
+      when: is_ubuntu and is_virtual
+      community.general.dconf:
+        key: /com/ubuntu/update-notifier/no-show-notifications
         state: present
         value: "true"
