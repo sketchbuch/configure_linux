@@ -1,40 +1,44 @@
 ---
 
-- name: nautilus | Changes that take effect immediately
+- name: Include task vars
+  ansible.builtin.include_vars:
+    file: "task.yaml"
+
+- name: Changes that take effect immediately
   when: is_gnome
   become: true
   become_user: "{{ user_username }}"
   block:
-    - name: nautilus | Dirs sorted with files
+    - name: Dirs sorted with files
       community.general.dconf:
         key: /org/gtk/gtk4/settings/file-chooser/sort-directories-first
         state: present
         value: "false"
 
-    - name: nautilus | Hide hidden files
+    - name: Hide hidden files
       community.general.dconf:
         key: /org/gtk/gtk4/settings/file-chooser/show-hidden
         state: present
         value: "false"
 
-    - name: nautilus | Set single-click to open
+    - name: Set single-click to open
       community.general.dconf:
         key: /org/gnome/nautilus/preferences/click-policy
         state: present
         value: "'single'"
 
-    - name: nautilus | Show create link
+    - name: Show create link
       community.general.dconf:
         key: /org/gnome/nautilus/preferences/show-create-link
         state: present
         value: "true"
 
-- name: nautilus | Changes that take effect when nautilus is restarted
+- name: Changes that take effect when nautilus is restarted
   when: is_gnome
   become: true
   become_user: "{{ user_username }}"
   block:
-    - name: nautilus | Maximise window
+    - name: Maximise window
       become: true
       become_user: "{{ user_username }}"
       community.general.dconf:
@@ -42,7 +46,7 @@
         state: present
         value: "true"
 
-    - name: nautilus | Set icon view
+    - name: Set icon view
       become: true
       become_user: "{{ user_username }}"
       community.general.dconf:
@@ -50,7 +54,7 @@
         state: present
         value: "'icon-view'"
 
-- name: nautilus | Add epub thumbnail support
+- name: Add epub thumbnail support
   become: true
   ansible.builtin.package:
     name: gnome-epub-thumbnailer
