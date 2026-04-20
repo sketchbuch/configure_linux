@@ -1,80 +1,108 @@
 ---
 
-- name: flatpak | Add/remove flatpaks from flathub
+- name: Include task vars
+  ansible.builtin.include_vars:
+    file: "task.yaml"
+
+- name: Add flathub to flatpak remotes for user
+  become: true
+  become_user: "{{ user_username }}"
+  community.general.flatpak_remote:
+    flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+    method: user
+    name: flathub
+    state: present
+
+- name: Install gnome software flatpak plugin
+  when: is_ubuntu
+  become: true
+  ansible.builtin.package:
+    name: gnome-software-plugin-flatpak
+    state: present
+
+- name: Install flatseal
+  become: true
+  become_user: "{{ user_username }}"
+  community.general.flatpak:
+    method: user
+    name: com.github.tchx84.Flatseal
+    state: present
+
+- name: Add/remove flatpaks from flathub
   become: true
   become_user: "{{ user_username }}"
   block:
-    - name: flatpak | Install audio
-      ansible.builtin.import_tasks: ../flatpak/flatpak_add.yaml
+    - name: Install audio
+      ansible.builtin.import_tasks: ./flatpak/flatpak_add.yaml
       vars:
         apps: "{{ flathub.add.audio }}"
         group_name: audio
         remote: flathub
 
-    - name: flatpak | Install browsers
-      ansible.builtin.import_tasks: ../flatpak/flatpak_add.yaml
+    - name: Install browsers
+      ansible.builtin.import_tasks: ./flatpak/flatpak_add.yaml
       vars:
         apps: "{{ flathub.add.browsers }}"
         group_name: browsers
         remote: flathub
 
-    - name: flatpak | Install development
-      ansible.builtin.import_tasks: ../flatpak/flatpak_add.yaml
+    - name: Install development
+      ansible.builtin.import_tasks: ./flatpak/flatpak_add.yaml
       vars:
         apps: "{{ flathub.add.development }}"
         group_name: development
         remote: flathub
 
-    - name: flatpak | Install games
-      ansible.builtin.import_tasks: ../flatpak/flatpak_add.yaml
+    - name: Install games
+      ansible.builtin.import_tasks: ./flatpak/flatpak_add.yaml
       vars:
         apps: "{{ flathub.add.games }}"
         group_name: games
         remote: flathub
 
-    - name: flatpak | Install gnome
-      ansible.builtin.import_tasks: ../flatpak/flatpak_add.yaml
+    - name: Install gnome
+      ansible.builtin.import_tasks: ./flatpak/flatpak_add.yaml
       vars:
         apps: "{{ flathub.add.gnome }}"
         group_name: gnome
         remote: flathub
 
-    - name: flatpak | Install gnome circle
-      ansible.builtin.import_tasks: ../flatpak/flatpak_add.yaml
+    - name: Install gnome circle
+      ansible.builtin.import_tasks: ./flatpak/flatpak_add.yaml
       vars:
         apps: "{{ flathub.add.gnome_circle }}"
         group_name: gnome circle
         remote: flathub
 
-    - name: flatpak | Install imagery
-      ansible.builtin.import_tasks: ../flatpak/flatpak_add.yaml
+    - name: Install imagery
+      ansible.builtin.import_tasks: ./flatpak/flatpak_add.yaml
       vars:
         apps: "{{ flathub.add.imagery }}"
         group_name: imagery
         remote: flathub
 
-    - name: flatpak | Install productivity
+    - name: Install productivity
       ansible.builtin.import_tasks: ../flatpak/flatpak_add.yaml
       vars:
         apps: "{{ flathub.add.productivity }}"
         group_name: productivity
         remote: flathub
 
-    - name: flatpak | Install system
+    - name: Install system
       ansible.builtin.import_tasks: ../flatpak/flatpak_add.yaml
       vars:
         apps: "{{ flathub.add.system }}"
         group_name: system
         remote: flathub
 
-    - name: flatpak | Install utils
+    - name: Install utils
       ansible.builtin.import_tasks: ../flatpak/flatpak_add.yaml
       vars:
         apps: "{{ flathub.add.utils }}"
         group_name: utils
         remote: flathub
 
-    - name: flatpak | Install videos
+    - name: Install videos
       ansible.builtin.import_tasks: ../flatpak/flatpak_add.yaml
       vars:
         apps: "{{ flathub.add.videos }}"

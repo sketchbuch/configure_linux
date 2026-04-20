@@ -1,7 +1,7 @@
 ---
 
-- name: Install software
+- name: Add/remove apps
   hosts: all
   gather_facts: false
   roles:
-    - software
+    - packages
