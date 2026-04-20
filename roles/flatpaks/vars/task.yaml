@@ -68,6 +68,7 @@ flathub:
 
     system:
       - ca.desrt.dconf-editor
+      - com.github.tchx84.Flatseal
       - com.mattjakeman.ExtensionManager
       - org.gnome.Extensions
 
