@@ -1,0 +1,32 @@
+- name: desktop | Configure desktop
+  become: true
+  become_user: "{{ user_username }}"
+  block:
+    - name: desktop | Enable only close window button
+      community.general.dconf:
+        key: /org/gnome/desktop/wm/preferences/button-layout
+        state: present
+        value: "':close'"
+
+    - name: desktop | Prefer light mode
+      community.general.dconf:
+        key: /org/gnome/desktop/interface/color-scheme"
+        state: present
+        value: "'prefer-light'"
+
+    - name: desktop | Remove app grid folders
+      community.general.dconf:
+        key: /org/gnome/desktop/app-folders/folder-children
+        state: absent
+
+    - name: desktop | Set center window shortcut
+      community.general.dconf:
+        key: /org/gnome/desktop/wm/keybindings/move-to-center
+        state: present
+        value: "['<Super><Shift>c']"
+
+    - name: desktop | Center new windows
+      community.general.dconf:
+        key: /org/gnome/mutter/center-new-windows
+        state: present
+        value: "true"

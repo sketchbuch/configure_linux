@@ -1,6 +1,6 @@
 ---
 
-- name: nautilus | Instant changes
+- name: nautilus | Changes that take effect immediately
   when: is_gnome
   become: true
   become_user: "{{ user_username }}"
@@ -29,7 +29,7 @@
         state: present
         value: "true"
 
-- name: nautilus | Afect new window changes
+- name: nautilus | Changes that take effect when nautilus is restarted
   when: is_gnome
   become: true
   become_user: "{{ user_username }}"
@@ -49,3 +49,10 @@
         key: /org/gnome/nautilus/preferences/default-folder-viewer
         state: present
         value: "'icon-view'"
+
+- name: nautilus | Add epub thumbnail support to nautilus
+  become: true
+  become_user: "{{ user_username }}"
+  ansible.builtin.package:
+    name: gnome-epub-thumbnailer
+    state: present
