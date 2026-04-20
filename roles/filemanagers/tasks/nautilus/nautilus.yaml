@@ -50,7 +50,7 @@
         state: present
         value: "'icon-view'"
 
-- name: nautilus | Add epub thumbnail support to nautilus
+- name: nautilus | Add epub thumbnail support
   become: true
   ansible.builtin.package:
     name: gnome-epub-thumbnailer
