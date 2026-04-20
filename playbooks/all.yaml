@@ -22,5 +22,6 @@
 # - name: Run extensions terminals
 #   ansible.builtin.import_playbook: terminals.yaml
 
-# - name: Run desktop playbook
-#   ansible.builtin.import_playbook: desktop.yaml
+- name: Run gnome playbook
+  when: is_gnome
+  ansible.builtin.import_playbook: gnome.yaml

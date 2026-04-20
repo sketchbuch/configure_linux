@@ -1,6 +1,7 @@
 ---
 
 - name: Include task vars
+  when: is_gnome
   ansible.builtin.include_vars:
     file: "task.yaml"
 
@@ -55,6 +56,7 @@
         value: "'icon-view'"
 
 - name: Add epub thumbnail support
+  when: is_gnome
   become: true
   ansible.builtin.package:
     name: gnome-epub-thumbnailer
