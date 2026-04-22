@@ -1,0 +1,24 @@
+---
+
+# - name: settings_update | Create settings folder
+#   become: true
+#   become_user: "{{ user_username }}"
+#   ansible.builtin.file:
+#     mode: "0700"
+#     path: "/home/{{ profileUsername }}/.var/app/{{ app }}/config/glib-2.0/settings/"
+#     state: directory
+
+# - name: settings_update | Create settings file
+#   become: true
+#   become_user: "{{ user_username }}"
+#   ansible.builtin.copy:
+#     dest: "/home/{{ user_username }}/.var/app/{{ app }}/config/glib-2.0/settings/keyfile"
+#     group: "{{ user_username }}"
+#     mode: preserve
+#     owner: "{{ user_username }}"
+#     src: "{{ app }}.keyfile"
+
+- name: Debug app
+  ansible.builtin.debug:
+    msg:
+      - "app: {{ app }}"

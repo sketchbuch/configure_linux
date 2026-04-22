@@ -2,4 +2,4 @@
 
 [Back to home](../../readme.md)
 
-Add/remove software on the system.
+Add/remove flatpak apps on the system and restore their settings.
