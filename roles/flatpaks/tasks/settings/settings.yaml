@@ -3,6 +3,6 @@
 - name: Process setting files
   ansible.builtin.include_tasks: ./settings_update.yaml
   with_fileglob:
-    - "{{ ./files/* | basename }}"
+    - ./files/*
   loop_control:
     loop_var: app
