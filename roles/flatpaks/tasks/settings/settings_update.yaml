@@ -8,4 +8,4 @@
     group: "{{ user_username }}"
     mode: preserve
     owner: "{{ user_username }}"
-    src: "{{ app | basename }}.keyfile"
+    src: "{{ app | basename }}"
