@@ -1,6 +1,6 @@
 ---
 
-- name: settings_update | Create settings file for {{ app | basename }}
+- name: settings_update | Updating settings for {{ app | basename }}
   become: true
   become_user: "{{ user_username }}"
   ansible.builtin.copy:
