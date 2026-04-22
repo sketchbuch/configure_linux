@@ -21,4 +21,4 @@
 - name: Debug app
   ansible.builtin.debug:
     msg:
-      - "app: {{ app | basename }}"
+      - "app: {{ app }}"
