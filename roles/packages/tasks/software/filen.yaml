@@ -44,5 +44,6 @@
     - name: filen | Install desktop app
       become: true
       ansible.builtin.dnf:
+        disable_gpg_check: true
         name: "{{ tmp_dir }}/filen.rpm"
         state: present
