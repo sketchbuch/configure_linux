@@ -20,13 +20,13 @@
   block:
     - name: filen | Download filen app
       ansible.builtin.get_url:
-        dest: "{{ ansibleTmp }}/filen.deb"
+        dest: "{{ tmp_dir }}/filen.deb"
         mode: "0644"
         url: "{{ filen.deb }}/filen.rpm"
 
     - name: filen | Install desktop app
       ansible.builtin.apt:
-        deb: "{{ ansibleTmp }}/filen.deb"
+        deb: "{{ tmp_dir }}/filen.deb"
         state: present
 
 - name: filen | Install filen desktop client (fedora)
@@ -36,11 +36,11 @@
   block:
     - name: filen | Download filen app
       ansible.builtin.get_url:
-        dest: "{{ ansibleTmp }}/filen.rpm"
+        dest: "{{ tmp_dir }}/filen.rpm"
         mode: "0644"
         url: "{{ filen.rpm }}"
 
     - name: filen | Install desktop app
       ansible.builtin.dnf:
-        name: "{{ ansibleTmp }}/filen.rpm"
+        name: "{{ tmp_dir }}/filen.rpm"
         state: present
