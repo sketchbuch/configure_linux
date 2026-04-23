@@ -15,32 +15,34 @@
 
 - name: filen | Install filen desktop client (ubuntu)
   when: is_ubuntu
-  become: true
-  become_user: "{{ user_username }}"
   block:
     - name: filen | Download filen app
+      become: true
+      become_user: "{{ user_username }}"
       ansible.builtin.get_url:
         dest: "{{ tmp_dir }}/filen.deb"
         mode: "0644"
         url: "{{ filen.deb }}/filen.rpm"
 
     - name: filen | Install desktop app
+      become: true
       ansible.builtin.apt:
         deb: "{{ tmp_dir }}/filen.deb"
         state: present
 
 - name: filen | Install filen desktop client (fedora)
   when: is_fedora
-  become: true
-  become_user: "{{ user_username }}"
   block:
     - name: filen | Download filen app
+      become: true
+      become_user: "{{ user_username }}"
       ansible.builtin.get_url:
         dest: "{{ tmp_dir }}/filen.rpm"
         mode: "0644"
         url: "{{ filen.rpm }}"
 
     - name: filen | Install desktop app
+      become: true
       ansible.builtin.dnf:
         name: "{{ tmp_dir }}/filen.rpm"
         state: present
