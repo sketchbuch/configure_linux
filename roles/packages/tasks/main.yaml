@@ -34,3 +34,6 @@
       vars:
         apps: "{{ packages.add.utils }}"
         group_name: utils
+
+    - name: Install filen
+      ansible.builtin.import_tasks: ./software/filen.yaml

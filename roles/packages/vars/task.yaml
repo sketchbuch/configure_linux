@@ -26,3 +26,7 @@ packages:
 
     productivity:
       - libreoffice
+
+filen:
+  deb: https://cdn.filen.io/@filen/desktop/release/latest/Filen_linux_amd64.deb
+  rpm: https://cdn.filen.io/@filen/desktop/release/latest/Filen_linux_x86_64.rpm
