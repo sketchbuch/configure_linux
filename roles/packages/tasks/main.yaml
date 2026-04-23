@@ -4,36 +4,36 @@
   ansible.builtin.include_vars:
     file: "task.yaml"
 
-- name: Add/remove packages
-  become: true
-  block:
-    # These will be replaced with flatpak versions
-    - name: Uninstall gnome
-      when: is_gnome
-      ansible.builtin.import_tasks: ./packages/packages_remove.yaml
-      vars:
-        apps: "{{ packages.remove.gnome }}"
-        group_name: gnome
+# - name: Add/remove packages
+#   become: true
+#   block:
+#     # These will be replaced with flatpak versions
+#     - name: Uninstall gnome
+#       when: is_gnome
+#       ansible.builtin.import_tasks: ./packages/packages_remove.yaml
+#       vars:
+#         apps: "{{ packages.remove.gnome }}"
+#         group_name: gnome
 
-    - name: Uninstall productivity
-      ansible.builtin.import_tasks: ./packages/packages_remove.yaml
-      vars:
-        apps: "{{ packages.remove.productivity }}"
-        group_name: productivity
+#     - name: Uninstall productivity
+#       ansible.builtin.import_tasks: ./packages/packages_remove.yaml
+#       vars:
+#         apps: "{{ packages.remove.productivity }}"
+#         group_name: productivity
 
-    - name: Install gnome
-      when: is_gnome
-      ansible.builtin.import_tasks: ./packages/packages_add.yaml
-      vars:
-        apps: "{{ packages.add.gnome }}"
-        group_name: gnome
+#     - name: Install gnome
+#       when: is_gnome
+#       ansible.builtin.import_tasks: ./packages/packages_add.yaml
+#       vars:
+#         apps: "{{ packages.add.gnome }}"
+#         group_name: gnome
 
-    - name: Install utils
-      when: is_gnome
-      ansible.builtin.import_tasks: ./packages/packages_add.yaml
-      vars:
-        apps: "{{ packages.add.utils }}"
-        group_name: utils
+#     - name: Install utils
+#       when: is_gnome
+#       ansible.builtin.import_tasks: ./packages/packages_add.yaml
+#       vars:
+#         apps: "{{ packages.add.utils }}"
+#         group_name: utils
 
     - name: Install filen
       ansible.builtin.import_tasks: ./software/filen.yaml
