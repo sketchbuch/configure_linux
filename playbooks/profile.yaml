@@ -1,0 +1,7 @@
+---
+
+- name: Setup profile
+  hosts: all
+  gather_facts: false
+  roles:
+    - profile

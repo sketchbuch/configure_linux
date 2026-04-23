@@ -1,0 +1,33 @@
+---
+
+- name: Include task vars
+  ansible.builtin.include_vars:
+    file: "task.yaml"
+
+# Profile image will not be visible until session restarts
+- name: Copy virtual profile image
+  when: is_virtual
+  become: true
+  ansible.builtin.copy:
+    dest: "/var/lib/AccountsService/icons/{{ user_username }}"
+    group: "root"
+    mode: "0644"
+    owner: "root"
+    src: "profile_virtual.png"
+
+- name: Copy profile image
+  when: not is_virtual
+  become: true
+  ansible.builtin.copy:
+    dest: "/var/lib/AccountsService/icons/{{ user_username }}"
+    group: "root"
+    mode: "0644"
+    owner: "root"
+    src: "profile.png"
+
+- name: Set profile image
+  become: true
+  ansible.builtin.lineinfile:
+    line: "Icon=/var/lib/AccountsService/icons/{{ user_username }}"
+    path: "/var/lib/AccountsService/users/{{ user_username }}"
+    regexp: "^Icon="

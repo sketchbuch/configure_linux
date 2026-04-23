@@ -3,11 +3,14 @@
 - name: Run base playbook
   ansible.builtin.import_playbook: base.yaml
 
+- name: Run profile playbook
+  ansible.builtin.import_playbook: profile.yaml
+
 # - name: Run packages playbook
 #   ansible.builtin.import_playbook: packages.yaml
 
-- name: Run flatpaks playbook
-  ansible.builtin.import_playbook: flatpaks.yaml
+# - name: Run flatpaks playbook
+#   ansible.builtin.import_playbook: flatpaks.yaml
 
 # - name: Run fonts playbook
 #   ansible.builtin.import_playbook: fonts.yaml
