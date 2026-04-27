@@ -1,5 +1,11 @@
 ---
 
+- name: settings_update | Create folder for {{ app | basename }}
+  ansible.builtin.file:
+    path: "/home/{{ user_username }}/.var/app/{{ app | basename }}/config/glib-2.0/settings"
+    state: directory
+    mode: '0700'
+
 - name: settings_update | Updating settings for {{ app | basename }}
   become: true
   become_user: "{{ user_username }}"
