@@ -3,28 +3,28 @@
 - name: Run base playbook
   ansible.builtin.import_playbook: base.yaml
 
-- name: Run profile playbook
-  ansible.builtin.import_playbook: profile.yaml
+# - name: Run profile playbook
+#   ansible.builtin.import_playbook: profile.yaml
 
-- name: Run packages playbook
-  ansible.builtin.import_playbook: packages.yaml
+# - name: Run packages playbook
+#   ansible.builtin.import_playbook: packages.yaml
 
 - name: Run flatpaks playbook
   ansible.builtin.import_playbook: flatpaks.yaml
 
-- name: Run fonts playbook
-  ansible.builtin.import_playbook: fonts.yaml
+# - name: Run fonts playbook
+#   ansible.builtin.import_playbook: fonts.yaml
 
-- name: Run nautilus playbook
-  when: is_gnome
-  ansible.builtin.import_playbook: nautilus.yaml
+# - name: Run nautilus playbook
+#   when: is_gnome
+#   ansible.builtin.import_playbook: nautilus.yaml
 
-- name: Run extensions playbook
-  ansible.builtin.import_playbook: extensions.yaml
+# - name: Run extensions playbook
+#   ansible.builtin.import_playbook: extensions.yaml
 
-- name: Run extensions terminals
-  ansible.builtin.import_playbook: terminals.yaml
+# - name: Run extensions terminals
+#   ansible.builtin.import_playbook: terminals.yaml
 
-- name: Run gnome playbook
-  when: is_gnome
-  ansible.builtin.import_playbook: gnome.yaml
+# - name: Run gnome playbook
+#   when: is_gnome
+#   ansible.builtin.import_playbook: gnome.yaml
