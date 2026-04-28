@@ -15,6 +15,10 @@ Ansible related examples: tasks, roles, playbooks, setup, etc.
 - [Dot Files - TechDufus](https://github.com/TechDufus/dotfiles)
 - [Gnome Extensions](https://github.com/luizgavalda/gnome_extensions)
 
+## Tools
+
+- [Chmod Calculator](https://chmod-calculator.com/)
+
 ## Tutorials
 
 - [Getting Started with Nested Variables](https://www.freekb.net/Article?id=2960)

@@ -1,5 +1,21 @@
 ---
 
+- name: settings | Create .var folder
+  become: true
+  become_user: "{{ user_username }}"
+  ansible.builtin.file:
+    path: "/home/{{ user_username }}/.var"
+    state: directory
+    mode: '0755'
+
+- name: settings | Create app folder
+  become: true
+  become_user: "{{ user_username }}"
+  ansible.builtin.file:
+    path: "/home/{{ user_username }}/.var/app"
+    state: directory
+    mode: '0755'
+
 - name: settings | Process setting files
   ansible.builtin.include_tasks: ./settings_update.yaml
   with_fileglob:
