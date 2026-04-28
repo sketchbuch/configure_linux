@@ -20,8 +20,8 @@
     name: gnome-software-plugin-flatpak
     state: present
 
-# - name: Add/remove flatpaks
-#   ansible.builtin.import_tasks: ./flatpak/flatpak.yaml
+- name: Add/remove flatpaks
+  ansible.builtin.import_tasks: ./flatpak/flatpak.yaml
 
 - name: Restore flatpak app settings
   ansible.builtin.import_tasks: ./settings/settings.yaml

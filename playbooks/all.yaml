@@ -6,8 +6,8 @@
 # - name: Run profile playbook
 #   ansible.builtin.import_playbook: profile.yaml
 
-# - name: Run packages playbook
-#   ansible.builtin.import_playbook: packages.yaml
+- name: Run packages playbook
+  ansible.builtin.import_playbook: packages.yaml
 
 - name: Run flatpaks playbook
   ansible.builtin.import_playbook: flatpaks.yaml
