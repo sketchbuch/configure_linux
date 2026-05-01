@@ -47,27 +47,6 @@ ansible-lint -c ./.ansible-lint.yaml
   - `sudo apt install ansible` (Ubuntu)
   - `sudo dnf install ansible` (Fedora)
 
-- **Install Flatpak**
-
-  - See official guide, e.g. <https://flatpak.org/setup/Ubuntu>
-  - Although flatpak can be installed via ansible, a restart is required.
-  - Ubuntu:
-
-    - `sudo apt install flatpak`
-    - `sudo apt install gnome-software-plugin-flatpak`
-    - `flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo`
-    - `flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo`
-
-  - Fedora:
-
-    - Already setup on Fedora, but you can set remotes if needed:
-    - `flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo`
-    - `flatpak remote-add --if-not-exists --user flathub https://dl.flathub.org/repo/flathub.flatpakrepo`
-
-- **Install psutil**
-
-  - ~~`sudo apt-get install -y python3-psutil` (Ubuntu)~~ Now done via ansible
-
 ### Run
 
 ```bash
