@@ -21,7 +21,7 @@
 
     - name: "System > Fonts: Install MS Core Fonts"
       ansible.builtin.shell:
-        cmd: "sudo rpm -i https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm"
+        cmd: "sudo dnf install https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm"
       when: not fedoraMsCoreFontsInstalled.stat.exists
   tags: ["fedora", "system", "fonts"]
   when: isFedora

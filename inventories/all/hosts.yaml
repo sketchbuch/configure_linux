@@ -1,0 +1,7 @@
+---
+
+all:
+  hosts:
+    pulse:
+    atlas:
+    vbox:

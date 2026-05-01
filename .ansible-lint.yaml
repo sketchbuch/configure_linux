@@ -1,0 +1,40 @@
+---
+
+enable_list:
+  - args
+  - empty-string-compare
+  - no-log-password
+  - no-same-owner
+  - name[prefix]
+  - galaxy-version-incorrect
+  - yaml
+
+exclude_paths:
+  - .cache/
+  - .cache/
+  - .git/
+  - node_modules/
+  - old/
+  - test/
+
+extra_vars:
+  foo: bar
+  multiline_string_variable: |
+    line1c
+    line2
+  complex_variable: ":{;\t$()"
+
+offline: true
+profile: null # min, basic, moderate,safety, shared, production
+quiet: true
+
+strict: true
+task_name_prefix: "{stem} | "
+use_default_rules: true
+var_naming_pattern: "^[a-z_][a-z0-9_]*$"
+verbosity: 1
+
+warn_list:
+  - document-start
+  - experimental
+  - skip_this_tag

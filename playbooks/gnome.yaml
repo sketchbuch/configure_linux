@@ -1,0 +1,7 @@
+---
+
+- name: Configure gnome
+  hosts: all
+  gather_facts: false
+  roles:
+    - gnome

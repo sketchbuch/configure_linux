@@ -1,0 +1,63 @@
+---
+
+- name: Include task vars
+  when: is_gnome
+  ansible.builtin.include_vars:
+    file: "task.yaml"
+
+- name: Changes that take effect immediately
+  when: is_gnome
+  become: true
+  become_user: "{{ user_username }}"
+  block:
+    - name: Dirs sorted with files
+      community.general.dconf:
+        key: /org/gtk/gtk4/settings/file-chooser/sort-directories-first
+        state: present
+        value: "false"
+
+    - name: Hide hidden files
+      community.general.dconf:
+        key: /org/gtk/gtk4/settings/file-chooser/show-hidden
+        state: present
+        value: "false"
+
+    - name: Set single-click to open
+      community.general.dconf:
+        key: /org/gnome/nautilus/preferences/click-policy
+        state: present
+        value: "'single'"
+
+    - name: Show create link
+      community.general.dconf:
+        key: /org/gnome/nautilus/preferences/show-create-link
+        state: present
+        value: "true"
+
+- name: Changes that take effect when nautilus is restarted
+  when: is_gnome
+  become: true
+  become_user: "{{ user_username }}"
+  block:
+    - name: Maximise window
+      become: true
+      become_user: "{{ user_username }}"
+      community.general.dconf:
+        key: /org/gnome/nautilus/window-state/maximized
+        state: present
+        value: "true"
+
+    - name: Set icon view
+      become: true
+      become_user: "{{ user_username }}"
+      community.general.dconf:
+        key: /org/gnome/nautilus/preferences/default-folder-viewer
+        state: present
+        value: "'icon-view'"
+
+- name: Add epub thumbnail support
+  when: is_gnome
+  become: true
+  ansible.builtin.package:
+    name: gnome-epub-thumbnailer
+    state: present

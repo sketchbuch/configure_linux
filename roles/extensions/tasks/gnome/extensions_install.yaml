@@ -1,0 +1,45 @@
+---
+
+# Extensions can be installed but a shell restart is needed (logout/login is enough)
+# The Enable command doesn't seem to work.
+
+- name: extensions_install | Check if already installed - {{ ext.uuid }}
+  ansible.builtin.stat:
+    path: "/home/{{ user_username }}/.local/share/gnome-shell/extensions/{{ ext.uuid }}"
+  register: gnome_ext_exists
+
+- name: extensions_install | Install extension {{ ext.uuid }}
+  when: not gnome_ext_exists.stat.exists
+  block:
+    # validate_certs=False as extensions.gnome.org often has cert issues.
+    - name: extensions_install | Get extension info
+      ansible.builtin.set_fact:
+        ext_info: "{{ lookup('url', 'https://extensions.gnome.org/extension-info/?uuid=' ~ ext.uuid ~ '&shell_version=' ~ desktop_version,validate_certs=False) }}"
+
+    - name: extensions_install | Get download url
+      ansible.builtin.set_fact:
+        ext_download_url: "{{ (ext_info | from_json).download_url }}"
+
+    - name: extensions_install | Debug ext_download_url
+      ansible.builtin.debug:
+        var: ext_download_url
+
+    - name: extensions_install | Create download folder for
+      ansible.builtin.file:
+        group: "{{ user_username }}"
+        mode: "0754"
+        path: "{{ tmp_dir }}/{{ ext.uuid }}/"
+        state: directory
+
+    # validate_certs=False as extensions.gnome.org often has cert issues.
+    - name: extensions_install | Download ext
+      ansible.builtin.get_url:
+        dest: "{{ tmp_dir }}/{{ ext.uuid }}/{{ ext.uuid }}.zip"
+        group: "{{ user_username }}"
+        mode: "0754"
+        url: "https://extensions.gnome.org{{ ext_download_url }}"
+        validate_certs: false
+
+    - name: extensions_install | Install ext
+      ansible.builtin.command:
+        cmd: "gnome-extensions install {{ tmp_dir }}/{{ ext.uuid }}/{{ ext.uuid }}.zip"

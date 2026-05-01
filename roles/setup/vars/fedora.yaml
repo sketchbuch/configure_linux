@@ -1,0 +1,16 @@
+---
+
+font_droid_mono: google-droid-sans-mono-fonts
+font_fira_code: fira-code-fonts
+font_ibmplex: ibm-plex-fonts-all
+font_inconsolata: levien-inconsolata-fonts
+font_mscore: mscore-fonts-all
+
+gnome_extensions:
+  - name: "alphabetical-app-grid"
+    url: "AlphabeticalAppGridstuarthayhurst.v40.shell-extension.zip"
+    uuid: "AlphabeticalAppGrid@stuarthayhurst"
+
+  - name: "color-picker"
+    url: "color-pickertuberry.v44.shell-extension.zip"
+    uuid: "color-picker@tuberry"

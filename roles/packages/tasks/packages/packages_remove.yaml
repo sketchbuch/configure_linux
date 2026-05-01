@@ -1,0 +1,9 @@
+---
+
+- name: packages_remove | Uninstall {{ group_name }}
+  ansible.builtin.package:
+    name: "{{ app_name }}"
+    state: absent
+  loop: "{{ apps }}"
+  loop_control:
+    loop_var: app_name

@@ -1,0 +1,7 @@
+---
+
+- name: Add/remove apps
+  hosts: all
+  gather_facts: false
+  roles:
+    - packages

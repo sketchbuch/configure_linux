@@ -1,15 +1,78 @@
-- block:
-    - name: "Include vars for setup"
-      include_vars: "setup.yaml"
-      tags: ["always", "vars"]
+---
 
-    - import_tasks: "facts/package.yaml"
-    - import_tasks: "facts/checks.yaml"
+- name: Include task vars
+  ansible.builtin.include_vars:
+    file: "task.yaml"
 
-    - import_tasks: "variables/get.yaml"
-    - import_tasks: "variables/debug.yaml"
+- name: Get facts
+  ansible.builtin.package_facts:
+    manager: auto
 
-    - import_tasks: "software/psutils.yaml"
+- name: Get desktop environment
+  ansible.builtin.shell: |
+    if pgrep -x gnome-shell > /dev/null; then
+      echo "gnome"
+    elif pgrep -x kwin > /dev/null; then
+      echo "kde"
+    else
+      echo "unknown"
+    fi
+  register: desktop_environment
+  changed_when: false
+  tags: ['skip_ansible_lint']
 
-  rescue:
-    - set_fact: setup_task_failed=true
+- name: Set facts
+  ansible.builtin.set_fact:
+    desktop: "{{ desktop_environment.stdout }}"
+    distro_version: "{{ ansible_distribution_major_version | int }}"
+    distro: "{{ ansible_distribution | lower }}"
+    is_fedora: '{{ ((ansible_distribution | lower) == "fedora") | ternary(true, false) }}'
+    is_gnome: '{{ (desktop_environment.stdout == "gnome") | ternary(true, false) }}'
+    is_kde: '{{ (desktop_environment.stdout == "kde") | ternary(true, false) }}'
+    is_ubuntu: '{{ ((ansible_distribution | lower) == "ubuntu") | ternary(true, false) }}'
+    is_virtual: '{{ (ansible_virtualization_role == "guest") | ternary(true, false) }}'
+
+- name: Get gnome version
+  when: is_gnome
+  ansible.builtin.command:
+    cmd: gnome-shell --version
+  register: gnome_version_result
+
+- name: Debug gnome version
+  when: is_gnome
+  ansible.builtin.set_fact:
+    desktop_version: "{{ gnome_version_result.stdout | regex_search('\\d+') | int }}"
+
+- name: Debug facts
+  when: debug_vars
+  ansible.builtin.debug:
+    msg:
+      - "desktop: {{ desktop }}"
+      - "desktop_version: {{ desktop_version }}"
+      - "distro_version: {{ distro_version }}"
+      - "distro: {{ distro }}"
+      - "is_fedora: {{ is_fedora }}"
+      - "is_gnome: {{ is_gnome }}"
+      - "is_kde: {{ is_kde }}"
+      - "is_ubuntu: {{ is_ubuntu }}"
+      - "is_virtual: {{ is_virtual }}"
+
+- name: Debug facts
+  when: debug_facts
+  ansible.builtin.debug:
+    var: ansible_facts
+
+- name: Debug ansible_env
+  when: debug_env
+  ansible.builtin.debug:
+    var: ansible_env
+
+- name: Include fedora vars
+  when: is_fedora
+  ansible.builtin.include_vars:
+    file: "fedora.yaml"
+
+- name: Include ubuntu vars
+  when: is_ubuntu
+  ansible.builtin.include_vars:
+    file: "ubuntu.yaml"

@@ -1,0 +1,7 @@
+---
+
+- name: Add/remove flatpak apps
+  hosts: all
+  gather_facts: false
+  roles:
+    - flatpaks

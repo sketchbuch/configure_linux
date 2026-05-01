@@ -1,0 +1,7 @@
+---
+
+- name: Configure gnome files (nautilus)
+  hosts: all
+  gather_facts: false
+  roles:
+    - nautilus

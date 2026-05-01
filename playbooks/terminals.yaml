@@ -1,0 +1,7 @@
+---
+
+- name: Setup and configure terminals
+  hosts: all
+  gather_facts: false
+  roles:
+    - terminals

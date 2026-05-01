@@ -1,0 +1,32 @@
+---
+
+user_username: stephen
+
+# Packages to add/remove
+packages:
+  add:
+    gnome:
+      - gnome-epub-thumbnailer
+      - gnome-tweaks
+
+    utils:
+      - python3-psutil
+
+  # Some of these apps come with different distros by default but they need replacing with flatpak versions
+  remove:
+    gnome:
+      - gnome-boxes
+      - gnome-calendar
+      - gnome-clocks
+      - gnome-contacts
+      - gnome-maps
+      - gnome-text-editor
+      - gnome-weather
+      - loupe
+
+    productivity:
+      - libreoffice
+
+filen:
+  deb: https://cdn.filen.io/@filen/desktop/release/latest/Filen_linux_amd64.deb
+  rpm: https://cdn.filen.io/@filen/desktop/release/latest/Filen_linux_x86_64.rpm

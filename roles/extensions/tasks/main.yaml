@@ -1,0 +1,21 @@
+---
+
+- name: Include task vars
+  ansible.builtin.include_vars:
+    file: "task.yaml"
+
+- name: Create tmp folder
+  become: true
+  become_user: "{{ user_username }}"
+  ansible.builtin.file:
+    group: "{{ user_username }}"
+    mode: "0754"
+    path: "/tmp/anisible_tmp_{{ user_username }}"
+    state: directory
+
+- name: Set tmp folder fact
+  ansible.builtin.set_fact:
+    tmp_dir: "/tmp/anisible_tmp_{{ user_username }}"
+
+- name: Add/remove gnome extensions
+  ansible.builtin.include_tasks: ./gnome/extensions.yaml

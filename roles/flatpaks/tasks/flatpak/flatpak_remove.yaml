@@ -1,0 +1,11 @@
+---
+
+- name: "flatpak_remove | Uninstall {{ group_name }}"
+  community.general.flatpak:
+    method: user
+    name: "{{ app_name }}"
+    remote: "{{ remote }}"
+    state: absent
+  loop: "{{ apps }}"
+  loop_control:
+    loop_var: app_name

@@ -1,0 +1,45 @@
+---
+
+user_username: stephen
+
+# Gnome extensions to add/remove
+gnome2:
+  add:
+    system:
+      - https://github.com/stuarthayhurst/alphabetical-grid-extension
+      - https://gitlab.com/knokelmaat/display-configuration-switcher-gnome-extension
+
+    user:
+      - https://github.com/tuberry/color-picker
+
+  remove:
+    system:
+      - apps-menu@gnome-shell-extensions.gcampax.github.com
+      - launch-new-instance@gnome-shell-extensions.gcampax.github.com
+      - places-menu@gnome-shell-extensions.gcampax.github.com
+      - window-list@gnome-shell-extensions.gcampax.github.com
+      - ding@rastersoft.com
+      - tiling-assistant@ubuntu.com
+
+gnome:
+  add:
+    user:
+      - uuid: AlphabeticalAppGrid@stuarthayhurst
+      - uuid: color-picker@tuberry
+      - uuid: display-configuration-switcher@knokelmaat.gitlab.com
+
+  dconf:
+    disabled: >
+      'apps-menu@gnome-shell-extensions.gcampax.github.com',
+      'ding@rastersoft.com',
+      'launch-new-instance@gnome-shell-extensions.gcampax.github.com',
+      'places-menu@gnome-shell-extensions.gcampax.github.com',
+      'tiling-assistant@ubuntu.com',
+      'window-list@gnome-shell-extensions.gcampax.github.com'
+
+    enabled: >
+      'AlphabeticalAppGrid@stuarthayhurst',
+      'background-logo@fedorahosted.org',
+      'color-picker@tuberry',
+      'display-configuration-switcher@knokelmaat.gitlab.com',
+      'ubuntu-dock@ubuntu.com'

@@ -1,0 +1,27 @@
+---
+
+- name: Include task vars
+  ansible.builtin.include_vars:
+    file: "task.yaml"
+
+- name: Add flathub to flatpak remotes for user
+  become: true
+  become_user: "{{ user_username }}"
+  community.general.flatpak_remote:
+    flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+    method: user
+    name: flathub
+    state: present
+
+- name: Install gnome software flatpak plugin
+  when: is_ubuntu
+  become: true
+  ansible.builtin.package:
+    name: gnome-software-plugin-flatpak
+    state: present
+
+- name: Add/remove flatpaks
+  ansible.builtin.import_tasks: ./flatpak/flatpak.yaml
+
+- name: Restore flatpak app settings
+  ansible.builtin.import_tasks: ./settings/settings.yaml

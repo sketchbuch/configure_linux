@@ -1,0 +1,6 @@
+[org/gnome/TextEditor]
+tab-width=4
+show-line-numbers=true
+highlight-current-line=true
+show-map=false
+show-right-margin=false

@@ -1,0 +1,20 @@
+---
+
+- name: ibmplex | Install font
+  ansible.builtin.package:
+    name: "{{ font_ibmplex }}"
+    state: present
+
+
+- name: ibmplex | Remove unnecessary languages
+  ansible.builtin.file:
+    path: "/usr/share/fonts/{{ folder_to_delete }}"
+    state: absent
+  with_items:
+    - ibm-plex-sans-arabic-fonts
+    - ibm-plex-sans-devanagari-fonts
+    - ibm-plex-sans-hebrew-fonts
+    - ibm-plex-sans-thai-fonts
+    - ibm-plex-sans-thai-looped-fonts
+  loop_control:
+    loop_var: folder_to_delete

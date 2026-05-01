@@ -1,0 +1,23 @@
+---
+
+- name: extensions | Add/remove gnome extensions
+  become: true
+  become_user: "{{ user_username }}"
+  block:
+    - name: extensions | Install gnome extensions
+      loop: "{{ gnome.add.user }}"
+      loop_control:
+        loop_var: ext
+      ansible.builtin.include_tasks: ./gnome/extensions_install.yaml
+
+    - name: extensions | Set dconf disabled extensions
+      community.general.dconf:
+        key: /org/gnome/shell/disabled-extensions
+        state: present
+        value: "[{{ gnome.dconf.disabled }}]"
+
+    - name: extensions | Set dconf enabled extensions
+      community.general.dconf:
+        key: /org/gnome/shell/enabled-extensions
+        state: present
+        value: "[{{ gnome.dconf.enabled }}]"

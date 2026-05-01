@@ -1,0 +1,7 @@
+---
+
+- name: Initialise ansible and run common tasks
+  hosts: all
+  gather_facts: true
+  roles:
+    - setup
