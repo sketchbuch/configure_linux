@@ -12,8 +12,15 @@ My ansible setup to configure linux and install apps etc. in real and virtual en
 
 ## Roles
 
-- [Common](./roles/common/readme.md)
+- [Extensions](./roles/extensions/readme.md)
+- [Flatpaks](./roles/flatpaks/readme.md)
+- [Fonts](./roles/fonts/readme.md)
+- [Gnome](./roles/gnome/readme.md)
+- [Nautilus](./roles/nautilus/readme.md)
+- [Packages](./roles/packages/readme.md)
+- [Profile](./roles/profile/readme.md)
 - [Setup](./roles/setup/readme.md)
+- [Terminals](./roles/terminals/readme.md)
 
 ## Dev
 
