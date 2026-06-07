@@ -6,12 +6,12 @@
 
   tasks:
     - name: Setup
-      when: setup in rolesToRun
+      when: '"setup" in rolesToRun'
       ansible.builtin.include_role:
         name: setup
     
     - name: Profile
-      when: profile in rolesToRun
+      when: '"profile" in rolesToRun'
       ansible.builtin.include_role:
         name: profile
     
