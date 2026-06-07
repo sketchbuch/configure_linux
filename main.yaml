@@ -13,13 +13,13 @@
     #   ansible.builtin.include_role:
     #     name: profile
     
-    - name: Packages
-      ansible.builtin.include_role:
-        name: packages
-    
-    # - name: Flatpaks
+    # - name: Packages
     #   ansible.builtin.include_role:
-    #     name: flatpaks
+    #     name: packages
+    
+    - name: Flatpaks
+      ansible.builtin.include_role:
+        name: flatpaks
     
     # - name: Fonts
     #   ansible.builtin.include_role:
