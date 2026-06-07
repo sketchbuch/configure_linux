@@ -1,11 +1,11 @@
 ---
 
 rolesToRun:
-  # - extensions
+  - extensions
   # - flatpaks
-  # - fonts
-  # - gnome
-  # - nautilus
+  - fonts
+  - gnome
+  - nautilus
   # - packages
   - profile
   - setup
