@@ -49,6 +49,10 @@ ansible-lint -c ./.ansible-lint.yaml
 
 ### Run
 
+The following commands us `http.sslVerify=false`, this needs to be investigated and removed, use for now.
+
+Clone the repo:
+
 ```bash
 git -c http.sslVerify=false clone https://github.com/sketchbuch/configure_linux.git
 
@@ -57,7 +61,11 @@ cd configure_linux/
 git checkout feat/switch-to-ansible-playbook
 ```
 
-Look into how to avoid `http.sslVerify=false`.
+Run the playbook:
+
+```bash
+sudo ansible-playbook main.yaml
+```
 
 If needed after making changes to repo, pull:
 
