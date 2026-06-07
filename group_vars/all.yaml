@@ -7,7 +7,7 @@ rolesToRun:
   # - gnome
   # - nautilus
   # - packages
-  # - profile
+  - profile
   - setup
   # - terminals
 
