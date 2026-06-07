@@ -31,7 +31,7 @@
         name: fonts
     
     - name: Nautilus
-      when: is_gnome and '"nautilus" in rolesToRun'
+      when: 'is_gnome and "nautilus" in rolesToRun'
       ansible.builtin.include_role:
         name: nautilus
     
@@ -46,6 +46,6 @@
         name: terminals
     
     - name: Gnome
-      when: is_gnome and '"gnome" in rolesToRun'
+      when: 'is_gnome and "gnome" in rolesToRun'
       ansible.builtin.include_role:
         name: gnome  
