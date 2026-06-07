@@ -3,7 +3,7 @@
 # Don't appear in calendar topbar menu without new session
 - name: weather | Set locations
   become: true
-  become_user: "{{ user_username }}"
+  become_user: "{{ user.username }}"
   community.general.dconf:
     key: /org/gnome/shell/weather/locations
     state: present

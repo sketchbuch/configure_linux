@@ -2,7 +2,7 @@
 
 - name: touchpad | Configure touchpad
   become: true
-  become_user: "{{ user_username }}"
+  become_user: "{{ user.username }}"
   block:
     - name: touchpad | Disable natural scrolling
       community.general.dconf:

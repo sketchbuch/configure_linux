@@ -1,7 +1,7 @@
 ---
 - name: fonts | Set system fonts
   become: true
-  become_user: "{{ user_username }}"
+  become_user: "{{ user.username }}"
   block:
     - name: fonts | Document font (IBM Plex Sans 11)
       community.general.dconf:

@@ -5,7 +5,7 @@
 
 - name: extensions_install | Check if already installed - {{ ext.uuid }}
   ansible.builtin.stat:
-    path: "/home/{{ user_username }}/.local/share/gnome-shell/extensions/{{ ext.uuid }}"
+    path: "/home/{{ user.username }}/.local/share/gnome-shell/extensions/{{ ext.uuid }}"
   register: gnome_ext_exists
 
 - name: extensions_install | Install extension {{ ext.uuid }}
@@ -26,7 +26,7 @@
 
     - name: extensions_install | Create download folder for
       ansible.builtin.file:
-        group: "{{ user_username }}"
+        group: "{{ user.username }}"
         mode: "0754"
         path: "{{ tmp_dir }}/{{ ext.uuid }}/"
         state: directory
@@ -35,7 +35,7 @@
     - name: extensions_install | Download ext
       ansible.builtin.get_url:
         dest: "{{ tmp_dir }}/{{ ext.uuid }}/{{ ext.uuid }}.zip"
-        group: "{{ user_username }}"
+        group: "{{ user.username }}"
         mode: "0754"
         url: "https://extensions.gnome.org{{ ext_download_url }}"
         validate_certs: false

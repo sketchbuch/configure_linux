@@ -6,16 +6,16 @@
 
 - name: Create tmp folder
   become: true
-  become_user: "{{ user_username }}"
+  become_user: "{{ user.username }}"
   ansible.builtin.file:
-    group: "{{ user_username }}"
+    group: "{{ user.username }}"
     mode: "0754"
-    path: "/tmp/anisible_tmp_{{ user_username }}"
+    path: "/tmp/anisible_tmp_{{ user.username }}"
     state: directory
 
 - name: Set tmp folder fact
   ansible.builtin.set_fact:
-    tmp_dir: "/tmp/anisible_tmp_{{ user_username }}"
+    tmp_dir: "/tmp/anisible_tmp_{{ user.username }}"
 
 - name: Add/remove gnome extensions
   ansible.builtin.include_tasks: ./gnome/extensions.yaml

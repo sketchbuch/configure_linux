@@ -6,7 +6,7 @@
 - name: chrome | Install chrome (ubuntu)
   when: is_ubuntu
   become: true
-  become_user: "{{ user_username }}"
+  become_user: "{{ user.username }}"
   block:
     - name: chrome | Add Google signing key
       ansible.builtin.apt_key:
@@ -38,13 +38,13 @@
 
     - name: chrome | Enable chrome in DNF config manager
       become: true
-      become_user: "{{ user_username }}"
+      become_user: "{{ user.username }}"
       ansible.builtin.command:
         cmd: dnf config-manager --set-enabled google-chrome
 
     - name: chrome | Install software
       become: true
-      become_user: "{{ user_username }}"
+      become_user: "{{ user.username }}"
       ansible.builtin.dnf:
         name: google-chrome-stable
         state: latest

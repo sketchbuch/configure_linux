@@ -2,17 +2,17 @@
 
 - name: settings | Create .var folder
   become: true
-  become_user: "{{ user_username }}"
+  become_user: "{{ user.username }}"
   ansible.builtin.file:
-    path: "/home/{{ user_username }}/.var"
+    path: "/home/{{ user.username }}/.var"
     state: directory
     mode: '0755'
 
 - name: settings | Create app folder
   become: true
-  become_user: "{{ user_username }}"
+  become_user: "{{ user.username }}"
   ansible.builtin.file:
-    path: "/home/{{ user_username }}/.var/app"
+    path: "/home/{{ user.username }}/.var/app"
     state: directory
     mode: '0755'
 

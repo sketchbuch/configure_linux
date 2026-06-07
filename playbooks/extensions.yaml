@@ -1,7 +1,0 @@
----
-
-- name: Setup desktop extensions
-  hosts: all
-  gather_facts: false
-  roles:
-    - extensions

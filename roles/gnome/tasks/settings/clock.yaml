@@ -2,7 +2,7 @@
 
 - name: clock | Configure clock and datetime settings
   become: true
-  become_user: "{{ user_username }}"
+  become_user: "{{ user.username }}"
   block:
     - name: clock | Set time to use 24h Format
       community.general.dconf:

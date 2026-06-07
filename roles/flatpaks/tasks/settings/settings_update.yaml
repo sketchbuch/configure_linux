@@ -3,42 +3,42 @@
 
 - name: settings_update | Create folder for {{ app | basename }}
   become: true
-  become_user: "{{ user_username }}"
+  become_user: "{{ user.username }}"
   ansible.builtin.file:
-    path: "/home/{{ user_username }}/.var/app/{{ app | basename }}"
+    path: "/home/{{ user.username }}/.var/app/{{ app | basename }}"
     state: directory
     mode: '0755'
 
 - name: settings_update | Create config folder
   become: true
-  become_user: "{{ user_username }}"
+  become_user: "{{ user.username }}"
   ansible.builtin.file:
-    path: "/home/{{ user_username }}/.var/app/{{ app | basename }}/config"
+    path: "/home/{{ user.username }}/.var/app/{{ app | basename }}/config"
     state: directory
     mode: '0755'
 
 - name: settings_update | Create glib-2.0 folder
   become: true
-  become_user: "{{ user_username }}"
+  become_user: "{{ user.username }}"
   ansible.builtin.file:
-    path: "/home/{{ user_username }}/.var/app/{{ app | basename }}/config/glib-2.0"
+    path: "/home/{{ user.username }}/.var/app/{{ app | basename }}/config/glib-2.0"
     state: directory
     mode: '0700'
 
 - name: settings_update | Create settings folder
   become: true
-  become_user: "{{ user_username }}"
+  become_user: "{{ user.username }}"
   ansible.builtin.file:
-    path: "/home/{{ user_username }}/.var/app/{{ app | basename }}/config/glib-2.0/settings"
+    path: "/home/{{ user.username }}/.var/app/{{ app | basename }}/config/glib-2.0/settings"
     state: directory
     mode: '0700'
 
 - name: settings_update | Updating settings for {{ app | basename }}
   become: true
-  become_user: "{{ user_username }}"
+  become_user: "{{ user.username }}"
   ansible.builtin.copy:
-    dest: "/home/{{ user_username }}/.var/app/{{ app | basename }}/config/glib-2.0/settings/keyfile"
-    group: "{{ user_username }}"
+    dest: "/home/{{ user.username }}/.var/app/{{ app | basename }}/config/glib-2.0/settings/keyfile"
+    group: "{{ user.username }}"
     mode: preserve
-    owner: "{{ user_username }}"
+    owner: "{{ user.username }}"
     src: "{{ app | basename }}"

@@ -2,7 +2,7 @@
 
 - name: extensions | Add/remove gnome extensions
   become: true
-  become_user: "{{ user_username }}"
+  become_user: "{{ user.username }}"
   block:
     - name: extensions | Install gnome extensions
       loop: "{{ gnome.add.user }}"

@@ -2,7 +2,7 @@
 
 - name: desktop | Configure desktop
   become: true
-  become_user: "{{ user_username }}"
+  become_user: "{{ user.username }}"
   block:
     - name: desktop | Enable only close window button
       community.general.dconf:

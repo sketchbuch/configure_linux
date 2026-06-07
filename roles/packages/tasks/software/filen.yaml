@@ -2,23 +2,23 @@
 
 - name: filen | Create tmp folder
   become: true
-  become_user: "{{ user_username }}"
+  become_user: "{{ user.username }}"
   ansible.builtin.file:
-    group: "{{ user_username }}"
+    group: "{{ user.username }}"
     mode: "0754"
-    path: "/tmp/anisible_tmp_{{ user_username }}"
+    path: "/tmp/anisible_tmp_{{ user.username }}"
     state: directory
 
 - name: filen | Set tmp folder fact
   ansible.builtin.set_fact:
-    tmp_dir: "/tmp/anisible_tmp_{{ user_username }}"
+    tmp_dir: "/tmp/anisible_tmp_{{ user.username }}"
 
 - name: filen | Install filen desktop client (ubuntu)
   when: is_ubuntu
   block:
     - name: filen | Download filen app
       become: true
-      become_user: "{{ user_username }}"
+      become_user: "{{ user.username }}"
       ansible.builtin.get_url:
         dest: "{{ tmp_dir }}/filen.deb"
         mode: "0644"
@@ -35,7 +35,7 @@
   block:
     - name: filen | Download filen app
       become: true
-      become_user: "{{ user_username }}"
+      become_user: "{{ user.username }}"
       ansible.builtin.get_url:
         dest: "{{ tmp_dir }}/filen.rpm"
         mode: "0644"

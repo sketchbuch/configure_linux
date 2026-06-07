@@ -2,7 +2,7 @@
 
 - name: flatpak | Add/remove flatpaks from flathub
   become: true
-  become_user: "{{ user_username }}"
+  become_user: "{{ user.username }}"
   block:
     - name: flatpak | Install audio
       ansible.builtin.import_tasks: ./flatpak/flatpak_add.yaml

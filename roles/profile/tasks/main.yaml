@@ -9,7 +9,7 @@
   when: is_virtual
   become: true
   ansible.builtin.copy:
-    dest: "/var/lib/AccountsService/icons/{{ user_username }}"
+    dest: "/var/lib/AccountsService/icons/{{ user.username }}"
     group: "root"
     mode: "0644"
     owner: "root"
@@ -19,7 +19,7 @@
   when: not is_virtual
   become: true
   ansible.builtin.copy:
-    dest: "/var/lib/AccountsService/icons/{{ user_username }}"
+    dest: "/var/lib/AccountsService/icons/{{ user.username }}"
     group: "root"
     mode: "0644"
     owner: "root"
@@ -28,6 +28,6 @@
 - name: Set profile image
   become: true
   ansible.builtin.lineinfile:
-    line: "Icon=/var/lib/AccountsService/icons/{{ user_username }}"
-    path: "/var/lib/AccountsService/users/{{ user_username }}"
+    line: "Icon=/var/lib/AccountsService/icons/{{ user.username }}"
+    path: "/var/lib/AccountsService/users/{{ user.username }}"
     regexp: "^Icon="

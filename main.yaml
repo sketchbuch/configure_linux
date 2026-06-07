@@ -1,0 +1,6 @@
+---
+
+tasks:
+  - name: Setup
+    ansible.builtin.include_role:
+      name: setup
