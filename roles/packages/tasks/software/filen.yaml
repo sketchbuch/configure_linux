@@ -23,6 +23,7 @@
         dest: "{{ tmp_dir }}/filen.deb"
         mode: "0644"
         url: "{{ filen.deb }}/filen.rpm"
+        validate_certs: false
 
     - name: filen | Install desktop app
       become: true
@@ -40,6 +41,7 @@
         dest: "{{ tmp_dir }}/filen.rpm"
         mode: "0644"
         url: "{{ filen.rpm }}"
+        validate_certs: false
 
     - name: filen | Install desktop app
       become: true
