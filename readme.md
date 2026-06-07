@@ -50,5 +50,11 @@ ansible-lint -c ./.ansible-lint.yaml
 ### Run
 
 ```bash
-sudo ansible-pull -U https://github.com/sketchbuch/configure_linux.git ./playbooks/all.yaml
+git -c http.sslVerify=false clone https://github.com/sketchbuch/configure_linux.git
+
+cd configure_linux/
+
+git checkout feat/switch-to-ansible-playbook
 ```
+
+Look into how to avoid `http.sslVerify=false`.
