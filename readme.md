@@ -59,7 +59,7 @@ git checkout feat/switch-to-ansible-playbook
 
 Look into how to avoid `http.sslVerify=false`.
 
-If needed, pull:
+If needed after making changes to repo, pull:
 
 ```bash
 git -c http.sslVerify=false pull

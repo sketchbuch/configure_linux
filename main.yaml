@@ -8,3 +8,37 @@
     - name: Setup
       ansible.builtin.include_role:
         name: setup
+    
+    - name: Profile
+      ansible.builtin.include_role:
+        name: profile
+    
+    - name: Packages
+      ansible.builtin.include_role:
+        name: packages
+    
+    - name: Flatpaks
+      ansible.builtin.include_role:
+        name: flatpaks
+    
+    - name: Fonts
+      ansible.builtin.include_role:
+        name: fonts
+    
+    - name: Nautilus
+      when: is_gnome
+      ansible.builtin.include_role:
+        name: nautilus
+    
+    - name: Extensions
+      ansible.builtin.include_role:
+        name: extensions
+    
+    - name: Terminals
+      ansible.builtin.include_role:
+        name: terminals
+    
+    - name: Gnome
+      when: is_gnome
+      ansible.builtin.include_role:
+        name: gnome  
