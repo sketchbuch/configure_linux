@@ -1,4 +1,15 @@
 ---
 
+rolesToRun:
+  # - extensions
+  # - flatpaks
+  # - fonts
+  # - gnome
+  # - nautilus
+  # - packages
+  # - profile
+  - setup
+  # - terminals
+
 user:
   username: stephen

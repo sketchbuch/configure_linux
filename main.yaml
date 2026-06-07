@@ -6,20 +6,22 @@
 
   tasks:
     - name: Setup
+      when: setup in rolesToRun
       ansible.builtin.include_role:
         name: setup
     
-    # - name: Profile
-    #   ansible.builtin.include_role:
-    #     name: profile
+    - name: Profile
+      when: profile in rolesToRun
+      ansible.builtin.include_role:
+        name: profile
     
     # - name: Packages
     #   ansible.builtin.include_role:
     #     name: packages
     
-    - name: Flatpaks
-      ansible.builtin.include_role:
-        name: flatpaks
+    # - name: Flatpaks
+    #   ansible.builtin.include_role:
+    #     name: flatpaks
     
     # - name: Fonts
     #   ansible.builtin.include_role:
