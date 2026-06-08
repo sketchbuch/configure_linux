@@ -51,6 +51,8 @@ ansible-lint -c ./.ansible-lint.yaml
 
 The following commands us `http.sslVerify=false`, this needs to be investigated and removed, use for now.
 
+If running in a VM, make sure the time is correct or it will cause certificate errors. Restarting will fix this.
+
 Clone the repo:
 
 ```bash
