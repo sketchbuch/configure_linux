@@ -6,46 +6,46 @@
 
   tasks:
     - name: Setup
-      when: '"setup" in rolesToRun'
+      when: '"setup" in roles_to_run'
       ansible.builtin.include_role:
         name: setup
-    
+
     - name: Profile
-      when: '"profile" in rolesToRun'
+      when: '"profile" in roles_to_run'
       ansible.builtin.include_role:
         name: profile
-    
+
     - name: Packages
-      when: '"packages" in rolesToRun'
+      when: '"packages" in roles_to_run'
       ansible.builtin.include_role:
         name: packages
-    
+
     - name: Flatpaks
-      when: '"flatpaks" in rolesToRun'
+      when: '"flatpaks" in roles_to_run'
       ansible.builtin.include_role:
         name: flatpaks
-    
+
     - name: Fonts
-      when: '"fonts" in rolesToRun'
+      when: '"fonts" in roles_to_run'
       ansible.builtin.include_role:
         name: fonts
-    
+
     - name: Nautilus
-      when: 'is_gnome and "nautilus" in rolesToRun'
+      when: 'is_gnome and "nautilus" in roles_to_run'
       ansible.builtin.include_role:
         name: nautilus
-    
+
     - name: Extensions
-      when: '"extensions" in rolesToRun'
+      when: '"extensions" in roles_to_run'
       ansible.builtin.include_role:
         name: extensions
-    
+
     - name: Terminals
-      when: '"terminals" in rolesToRun'
+      when: '"terminals" in roles_to_run'
       ansible.builtin.include_role:
         name: terminals
-    
+
     - name: Gnome
-      when: 'is_gnome and "gnome" in rolesToRun'
+      when: 'is_gnome and "gnome" in roles_to_run'
       ansible.builtin.include_role:
-        name: gnome  
+        name: gnome

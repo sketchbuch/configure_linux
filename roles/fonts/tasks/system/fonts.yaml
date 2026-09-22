@@ -26,4 +26,3 @@
         key: /org/gnome/desktop/wm/preferences/titlebar-font
         state: present
         value: "'IBM Plex Sans Bold 11'"
-

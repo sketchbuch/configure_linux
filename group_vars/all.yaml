@@ -1,6 +1,6 @@
 ---
 
-rolesToRun:
+roles_to_run:
   - extensions
   - flatpaks
   - fonts
