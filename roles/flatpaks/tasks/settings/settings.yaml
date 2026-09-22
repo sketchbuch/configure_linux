@@ -19,6 +19,6 @@
 - name: settings | Process setting files
   ansible.builtin.include_tasks: ./settings_update.yaml
   with_fileglob:
-    - files/*
+    - files/settings/*
   loop_control:
     loop_var: app
