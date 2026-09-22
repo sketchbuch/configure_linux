@@ -6,9 +6,9 @@ rolesToRun:
   - fonts
   - gnome
   - nautilus
+  - packages
   - profile
   - setup
-  - software
   - terminals
 
 user:

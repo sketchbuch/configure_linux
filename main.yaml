@@ -15,10 +15,10 @@
       ansible.builtin.include_role:
         name: profile
     
-    - name: Software
-      when: '"software" in rolesToRun'
+    - name: Packages
+      when: '"packages" in rolesToRun'
       ansible.builtin.include_role:
-        name: software
+        name: packages
     
     - name: Flatpaks
       when: '"flatpaks" in rolesToRun'
