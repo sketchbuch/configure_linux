@@ -8,7 +8,7 @@ roles_to_run:
   # - nautilus
   # - packages
   # - profile
-  # - setup
+  - setup
   # - terminals
 
 user:
