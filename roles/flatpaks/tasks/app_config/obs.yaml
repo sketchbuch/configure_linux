@@ -24,8 +24,8 @@
   become: true
   become_user: "{{ user.username }}"
   ansible.builtin.copy:
-    dest: "/home/stephen/.var/app/com.obsproject.Studio/config/obs-studio/"
+    dest: "/home/stephen/.var/app/com.obsproject.Studio/config/obs-studio"
     group: "{{ user.username }}"
     mode: preserve
     owner: "{{ user.username }}"
-    src: "app_config/obs/settings"
+    src: "app_config/obs/settings/"
