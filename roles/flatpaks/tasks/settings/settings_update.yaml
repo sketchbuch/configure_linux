@@ -47,4 +47,4 @@
     group: "{{ user.username }}"
     mode: preserve
     owner: "{{ user.username }}"
-    src: "{{ app | basename }}"
+    src: "{{ app }}"
