@@ -4,8 +4,18 @@
   become: true
   become_user: "{{ user.username }}"
   ansible.builtin.copy:
-    dest: "/home/stephen/.var/app/com.obsproject.Studio/config/obs-studio/basic/profiles"
+    dest: "/home/stephen/.var/app/com.obsproject.Studio/config/obs-studio/basic"
     group: "{{ user.username }}"
     mode: preserve
     owner: "{{ user.username }}"
     src: "app_config/obs/profiles"
+
+- name: obs | Copy scenes
+  become: true
+  become_user: "{{ user.username }}"
+  ansible.builtin.copy:
+    dest: "/home/stephen/.var/app/com.obsproject.Studio/config/obs-studio/basic"
+    group: "{{ user.username }}"
+    mode: preserve
+    owner: "{{ user.username }}"
+    src: "app_config/obs/scenes"
