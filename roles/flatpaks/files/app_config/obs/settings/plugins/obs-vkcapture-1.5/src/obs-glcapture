@@ -1,0 +1,3 @@
+#!/bin/sh
+echo "WARNING: Please use obs-gamecapture instead."
+exec obs-gamecapture "$@"

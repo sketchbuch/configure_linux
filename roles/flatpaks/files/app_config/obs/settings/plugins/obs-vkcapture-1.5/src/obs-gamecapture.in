@@ -1,0 +1,15 @@
+#!/bin/sh
+
+if [ "$#" -eq 0 ]; then
+    programname=`basename "$0"`
+    echo "ERROR: No program supplied"
+    echo
+    echo "Usage: $programname <program>"
+    exit 1
+fi
+
+OBS_GLCAPTURE_LIB="@CMAKE_INSTALL_PREFIX@/\$LIB/obs_glcapture/libobs_glcapture.so"
+
+exec env LD_PRELOAD="${LD_PRELOAD}${LD_PRELOAD:+:}${OBS_GLCAPTURE_LIB}" \
+    OBS_VKCAPTURE=1 \
+    "$@"
