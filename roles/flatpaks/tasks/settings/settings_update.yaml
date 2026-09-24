@@ -1,6 +1,12 @@
 ---
 
 
+- name: settings_update | Debug
+  ansible.builtin.debug:
+    msg:
+      - "app: {{ app }}"
+      - "basename: {{ app | basename }}"
+
 - name: settings_update | Create folder for {{ app | basename }}
   become: true
   become_user: "{{ user.username }}"
