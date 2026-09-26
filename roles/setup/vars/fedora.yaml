@@ -5,6 +5,7 @@ font_fira_code: fira-code-fonts
 font_ibmplex: ibm-plex-fonts-all
 font_inconsolata: levien-inconsolata-fonts
 font_mscore: mscore-fonts-all
+font_mscore_location: /usr/share/fonts/msttcore/arial.ttf
 
 gnome_extensions:
   - name: "alphabetical-app-grid"
