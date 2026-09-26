@@ -11,7 +11,7 @@
 - name: extensions_install | Extension already installed ({{ ext.uuid }})
   when: gnome_ext_exists.stat.exists
   ansible.builtin.debug:
-    msg: "Extension already installed ({{ ext.uuid }})"
+    msg: Extension already installed
 
 - name: extensions_install | Install extension ({{ ext.uuid }})
   when: not gnome_ext_exists.stat.exists
