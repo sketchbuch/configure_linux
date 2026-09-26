@@ -3,10 +3,10 @@
 roles_to_run:
   # - extensions
   # - flatpaks
-  # - fonts
+  - fonts
   # - gnome
   # - nautilus
-  - packages
+  # - packages
   # - profile
   - setup
   # - terminals
