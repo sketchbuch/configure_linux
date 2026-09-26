@@ -8,21 +8,6 @@
   ansible.builtin.package_facts:
     manager: auto
 
-- name: Create a sorted list of installed packages
-  ansible.builtin.set_fact:
-    package_list: "{{ ansible_facts.packages | dict2items | map(attribute='key') | sort }}"
-
-- name: Write package list to file
-  ansible.builtin.copy:
-    content: |
-      # Installed packages on {{ inventory_hostname }}
-      # Generated: {{ ansible_date_time.iso8601 }}
-      {% for pkg in ansible_facts.packages | dict2items | sort(attribute='key') %}
-      {{ pkg.key }} {{ pkg.value[0].version }}
-      {% endfor %}
-    dest: /home/stephen/installed_packages.txt
-    mode: '0644'
-
 - name: Get desktop environment
   ansible.builtin.shell: |
     if pgrep -x gnome-shell > /dev/null; then

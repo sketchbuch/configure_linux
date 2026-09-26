@@ -1,7 +1,8 @@
 ---
 
+# Note the capital F in the package name!
 - name: filen | Check if installed
-  when: '"filen" not in ansible_facts.packages'
+  when: '"Filen" not in ansible_facts.packages'
   ansible.builtin.set_fact:
     filen_installed: false
 
