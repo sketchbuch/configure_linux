@@ -8,7 +8,7 @@
 - name: filen | Not installing
   when: filen_installed
   ansible.builtin.debug:
-    msg: filen is already instaleld
+    msg: filen is already installed
 
 - name: filen | Installing
   when: not filen_installed
