@@ -5,10 +5,10 @@
   ansible.builtin.set_fact:
     filen_installed: '{{ ("Filen" in ansible_facts.packages) | ternary(true, false) }}'
 
-- name: Debug facts
+- name: filen | Not installing
+  when: filen_installed
   ansible.builtin.debug:
-    msg:
-      - "filen installed: {{ filen_installed }}"
+    msg: filen is already instaleld
 
 - name: filen | Installing
   when: not filen_installed
