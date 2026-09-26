@@ -1,50 +1,58 @@
 ---
 
-- name: filen | Create tmp folder
-  become: true
-  become_user: "{{ user.username }}"
-  ansible.builtin.file:
-    group: "{{ user.username }}"
-    mode: "0754"
-    path: "/tmp/anisible_tmp_{{ user.username }}"
-    state: directory
-
-- name: filen | Set tmp folder fact
+- name: filen | Check if installed
+  when: '"filen" not in ansible_facts.packages'
   ansible.builtin.set_fact:
-    tmp_dir: "/tmp/anisible_tmp_{{ user.username }}"
+    filen_installed: "{{ false }}"
 
-- name: filen | Install filen desktop client (ubuntu)
-  when: is_ubuntu
+- name: filen | Installing
+  when: not filen_installed
   block:
-    - name: filen | Download filen app
+    - name: filen | Create tmp folder
       become: true
       become_user: "{{ user.username }}"
-      ansible.builtin.get_url:
-        dest: "{{ tmp_dir }}/filen.deb"
-        mode: "0644"
-        url: "{{ filen.deb }}/filen.rpm"
+      ansible.builtin.file:
+        group: "{{ user.username }}"
+        mode: "0754"
+        path: "/tmp/anisible_tmp_{{ user.username }}"
+        state: directory
 
-    - name: filen | Install desktop app
-      become: true
-      ansible.builtin.apt:
-        deb: "{{ tmp_dir }}/filen.deb"
-        state: present
+    - name: filen | Set tmp folder fact
+      ansible.builtin.set_fact:
+        tmp_dir: "/tmp/anisible_tmp_{{ user.username }}"
 
-- name: filen | Install filen desktop client (fedora)
-  when: is_fedora
-  block:
-    - name: filen | Download filen app
-      become: true
-      become_user: "{{ user.username }}"
-      ansible.builtin.get_url:
-        dest: "{{ tmp_dir }}/filen.rpm"
-        mode: "0644"
-        url: "{{ filen.rpm }}"
-        validate_certs: false
+    - name: filen | Install filen desktop client (ubuntu)
+      when: is_ubuntu
+      block:
+        - name: filen | Download filen app
+          become: true
+          become_user: "{{ user.username }}"
+          ansible.builtin.get_url:
+            dest: "{{ tmp_dir }}/filen.deb"
+            mode: "0644"
+            url: "{{ filen.deb }}/filen.rpm"
 
-    - name: filen | Install desktop app
-      become: true
-      ansible.builtin.dnf:
-        disable_gpg_check: true
-        name: "{{ tmp_dir }}/filen.rpm"
-        state: present
+        - name: filen | Install desktop app
+          become: true
+          ansible.builtin.apt:
+            deb: "{{ tmp_dir }}/filen.deb"
+            state: present
+
+    - name: filen | Install filen desktop client (fedora)
+      when: is_fedora
+      block:
+        - name: filen | Download filen app
+          become: true
+          become_user: "{{ user.username }}"
+          ansible.builtin.get_url:
+            dest: "{{ tmp_dir }}/filen.rpm"
+            mode: "0644"
+            url: "{{ filen.rpm }}"
+            validate_certs: false
+
+        - name: filen | Install desktop app
+          become: true
+          ansible.builtin.dnf:
+            disable_gpg_check: true
+            name: "{{ tmp_dir }}/filen.rpm"
+            state: present
