@@ -15,12 +15,12 @@
       register: sourcecodepro_fonts_installed
 
     - name: sourcecodepro | Not installing
-      when: sourcecodepro_fonts_installed
+      when: sourcecodepro_fonts_installed.stat.exists
       ansible.builtin.debug:
         msg: sourcecodepro fonts are already installed
 
     - name: sourcecodepro | Install font
-      when: not sourcecodepro_fonts_installed
+      when: not sourcecodepro_fonts_installed.stat.exists
       block:
         - name: sourcecodepro | Download archive
           ansible.builtin.get_url:
