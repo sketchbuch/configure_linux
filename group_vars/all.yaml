@@ -2,14 +2,14 @@
 
 roles_to_run:
   - setup
+  - packages
+  - flatpaks
+  - extensions
   - fonts
-  # - extensions
-  # - flatpaks
-  # - gnome
-  # - nautilus
-  # - packages
-  # - profile
-  # - terminals
+  - gnome
+  - nautilus
+  - profile
+  - terminals
 
 user:
   username: stephen
