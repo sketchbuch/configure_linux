@@ -10,12 +10,12 @@
     register: ubuntu_fonts_installed
 
   - name: ubuntu | Not installing
-    when: ubuntu_fonts_installed
+    when: ubuntu_fonts_installed.stat.exists
     ansible.builtin.debug:
       msg: ubuntu fonts are already installed
     
   - name: ubuntu | Install font
-    when: not ubuntu_fonts_installed
+    when: not ubuntu_fonts_installed.stat.exists
     block:
       - name: ubuntu | Add ubuntu font support
         ansible.builtin.command:
