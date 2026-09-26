@@ -6,6 +6,12 @@
   ansible.builtin.set_fact:
     filen_installed: "{{ false }}"
 
+- name: Debug facts
+  when: debug_vars
+  ansible.builtin.debug:
+    msg:
+      - "filen installed: {{ filen_installed }}"
+
 - name: filen | Installing
   when: not filen_installed
   block:
