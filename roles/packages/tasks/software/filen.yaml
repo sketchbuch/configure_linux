@@ -4,7 +4,7 @@
 - name: filen | Check if installed
   when: '"Filen" not in ansible_facts.packages'
   ansible.builtin.set_fact:
-    filen_installed: "{{ false }}"
+    filen_installed: '{{ "Filen" in ansible_facts.packages | ternary(true, false) }}'
 
 - name: Debug facts
   when: debug_vars
