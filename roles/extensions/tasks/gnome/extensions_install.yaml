@@ -3,12 +3,12 @@
 # Extensions can be installed but a shell restart is needed (logout/login is enough)
 # The Enable command doesn't seem to work.
 
-- name: extensions_install | Check if already installed - {{ ext.uuid }}
+- name: extensions_install | Check if already installed ({{ ext.uuid }})
   ansible.builtin.stat:
     path: "/home/{{ user.username }}/.local/share/gnome-shell/extensions/{{ ext.uuid }}"
   register: gnome_ext_exists
 
-- name: extensions_install | Install extension {{ ext.uuid }}
+- name: extensions_install | Install extension ({{ ext.uuid }})
   when: not gnome_ext_exists.stat.exists
   block:
     # validate_certs=False as extensions.gnome.org often has cert issues.
@@ -43,3 +43,6 @@
     - name: extensions_install | Install ext
       ansible.builtin.command:
         cmd: "gnome-extensions install {{ tmp_dir }}/{{ ext.uuid }}/{{ ext.uuid }}.zip"
+
+- name: extensions_install | Extension already installed ({{ ext.uuid }})
+  when: gnome_ext_exists.stat.exists
