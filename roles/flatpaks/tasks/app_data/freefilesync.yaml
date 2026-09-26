@@ -1,11 +1,11 @@
 ---
 
-- name: kdenlive | Copy settings
+- name: freefilesync | Copy sync configs
   become: true
   become_user: "{{ user.username }}"
   ansible.builtin.copy:
-    dest: "/home/stephen/.var/app/org.kde.kdenlive/config"
+    dest: "/home/stephen/Apps/FreeFileSync"
     group: "{{ user.username }}"
     mode: preserve
     owner: "{{ user.username }}"
-    src: "app_config/kdenlive/"
+    src: "app_data/freefilesync/"

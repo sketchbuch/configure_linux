@@ -26,8 +26,12 @@
 - name: Restore flatpak app settings
   ansible.builtin.import_tasks: ./settings/settings.yaml
 
-- name: Configure Kdenlive
-  ansible.builtin.import_tasks: ./app_config/kdenlive.yaml
+- name: Restore FreeFileSync data
+  ansible.builtin.import_tasks: ./app_data/freefilesync.yaml
 
-- name: Configure OBS
-  ansible.builtin.import_tasks: ./app_config/obs.yaml
+
+- name: Restore Kdenlive data
+  ansible.builtin.import_tasks: ./app_data/kdenlive.yaml
+
+- name: Restore OBS data
+  ansible.builtin.import_tasks: ./app_data/obs.yaml

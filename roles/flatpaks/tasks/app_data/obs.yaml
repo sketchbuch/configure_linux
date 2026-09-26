@@ -8,7 +8,7 @@
     group: "{{ user.username }}"
     mode: preserve
     owner: "{{ user.username }}"
-    src: "app_config/obs/profiles"
+    src: "app_data/obs/profiles"
 
 - name: obs | Copy scenes
   become: true
@@ -18,7 +18,7 @@
     group: "{{ user.username }}"
     mode: preserve
     owner: "{{ user.username }}"
-    src: "app_config/obs/scenes"
+    src: "app_data/obs/scenes"
 
 - name: obs | Copy settings
   become: true
@@ -28,4 +28,4 @@
     group: "{{ user.username }}"
     mode: preserve
     owner: "{{ user.username }}"
-    src: "app_config/obs/settings/"
+    src: "app_data/obs/settings/"
