@@ -36,11 +36,11 @@
         name: fedora-workstation-repositories
         state: present
 
-    # - name: chrome | Enable chrome in DNF config manager
-    #   become: true
-    #   become_user: "{{ user.username }}"
-    #   ansible.builtin.command:
-    #     cmd: dnf config-manager --set-enabled google-chrome
+    - name: chrome | Enable chrome in DNF config manager
+      become: true
+      become_user: "{{ user.username }}"
+      ansible.builtin.command:
+        cmd: dnf config-manager setopt google-chrome.enabled=1
 
     - name: chrome | Install software
       become: true
