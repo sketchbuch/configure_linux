@@ -1,6 +1,8 @@
 ---
 
-- name: settings_update | Create settings folder for {{ app | basename }}
+- name: settings_update | {{ app | basename }}
+
+- name: settings_update | Create settings folder
   become: true
   become_user: "{{ user.username }}"
   ansible.builtin.file:
@@ -8,7 +10,7 @@
     state: directory
     mode: '0700'
 
-- name: settings_update | Updating settings for {{ app | basename }}
+- name: settings_update | Updating settings
   become: true
   become_user: "{{ user.username }}"
   ansible.builtin.copy:
