@@ -14,10 +14,8 @@
         state: present
 
     - name: mscorefonts | Install font
-      ansible.builtin.dnf:
-        disable_gpg_check: true
-        name: https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
-        state: present
+      ansible.builtin.command:
+        cmd: sudo rpm -i --nodigest https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 
 - name: mscorefonts | Install font
   when: is_ubuntu
