@@ -1,13 +1,14 @@
 ---
 
 - name: settings_update | {{ app | basename }}
-  ansible.builtin.meta: noop
+  ansible.builtin.set_fact:
+    app_name: "{{ app | basename }}"
 
 - name: settings_update | Create settings folder
   become: true
   become_user: "{{ user.username }}"
   ansible.builtin.file:
-    path: "/home/{{ user.username }}/.var/app/{{ app | basename }}/config/glib-2.0/settings"
+    path: "/home/{{ user.username }}/.var/app/{{ app_name }}/config/glib-2.0/settings"
     state: directory
     mode: '0700'
 
@@ -15,7 +16,7 @@
   become: true
   become_user: "{{ user.username }}"
   ansible.builtin.copy:
-    dest: "/home/{{ user.username }}/.var/app/{{ app | basename }}/config/glib-2.0/settings/keyfile"
+    dest: "/home/{{ user.username }}/.var/app/{{ app_name }}/config/glib-2.0/settings/keyfile"
     group: "{{ user.username }}"
     mode: preserve
     owner: "{{ user.username }}"
