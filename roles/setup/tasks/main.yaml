@@ -4,6 +4,10 @@
   ansible.builtin.include_vars:
     file: "task.yaml"
 
+- name: Print the package facts
+  ansible.builtin.debug:
+    var: ansible_facts.packages
+
 - name: Get facts
   ansible.builtin.package_facts:
     manager: auto
