@@ -1,6 +1,7 @@
 ---
 
 - name: settings_update | {{ app | basename }}
+  ansible.builtin.meta: noop
 
 - name: settings_update | Create settings folder
   become: true
