@@ -1,0 +1,11 @@
+---
+
+- name: kdenlive | Copy settings
+  become: true
+  become_user: "{{ user.username }}"
+  ansible.builtin.copy:
+    dest: "/home/stephen/.var/app/org.kde.kdenlive/config"
+    group: "{{ user.username }}"
+    mode: preserve
+    owner: "{{ user.username }}"
+    src: "app_config/kdenlive/"

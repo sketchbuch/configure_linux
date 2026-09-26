@@ -26,5 +26,8 @@
 - name: Restore flatpak app settings
   ansible.builtin.import_tasks: ./settings/settings.yaml
 
+- name: Configure Kdenlive
+  ansible.builtin.import_tasks: ./app_config/kdenlive.yaml
+
 - name: Configure OBS
   ansible.builtin.import_tasks: ./app_config/obs.yaml
