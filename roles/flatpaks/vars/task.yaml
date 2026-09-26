@@ -80,5 +80,5 @@ flathub:
       - com.github.unrud.VideoDownloader
       - com.obsproject.Studio
       - no.mifi.losslesscut
-      - org.kde.kdenlive
+      # - org.kde.kdenlive
       - org.pitivi.Pitivi
