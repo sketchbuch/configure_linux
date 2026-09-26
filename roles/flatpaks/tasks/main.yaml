@@ -27,11 +27,13 @@
   ansible.builtin.import_tasks: ./settings/settings.yaml
 
 - name: Restore FreeFileSync data
+  when: org.freefilesync.FreeFileSync in flathub.add.utils
   ansible.builtin.import_tasks: ./app_data/freefilesync.yaml
 
-
 - name: Restore Kdenlive data
+  when: org.kde.kdenlive in flathub.add.videos
   ansible.builtin.import_tasks: ./app_data/kdenlive.yaml
 
 - name: Restore OBS data
+  when: com.obsproject.Studio in flathub.add.videos
   ansible.builtin.import_tasks: ./app_data/obs.yaml
