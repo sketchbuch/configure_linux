@@ -22,8 +22,8 @@
       {% for pkg in ansible_facts.packages | dict2items | sort(attribute='key') %}
       {{ pkg.key }} {{ pkg.value[0].version }}
       {% endfor %}
-      dest: "/home/{{ user.username }}/installed_packages.txt"
-      mode: 0644
+    dest: "/home/{{ user.username }}/installed_packages.txt"
+    mode: 0644
 
 - name: Get desktop environment
   ansible.builtin.shell: |
