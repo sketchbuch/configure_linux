@@ -11,11 +11,11 @@
     msg: mscorefonts fonts are already installed
   
 - name: mscorefonts | Install font
-  when: is_fedora
+  when: not mscorefonts_fonts_installed.stat.exists
   become: true
   block:
     - name: mscorefonts | Install font
-      when: not mscorefonts_fonts_installed.stat.exists
+      when: is_fedora
       block:
         - name: mscorefonts | Install deps
           ansible.builtin.dnf:
@@ -30,11 +30,8 @@
           ansible.builtin.command:
             cmd: sudo rpm -i --nodigest https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 
-- name: mscorefonts | Install font
-  when: is_ubuntu
-  block:
     - name: mscorefonts | Install font
-      when: not mscorefonts_fonts_installed.stat.exists
+      when: is_ubuntu
       block:
         - name: mscorefonts | Accept eula
           ansible.builtin.debconf:
