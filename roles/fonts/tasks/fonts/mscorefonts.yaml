@@ -2,16 +2,9 @@
 
 - name: mscorefonts | Install font
   when: is_fedora
-  block:
-    - name: mscorefonts | Install font
-      become: true
-      ansible.builtin.command:
-        cmd: sudo dnf install curl cabextract xorg-x11-font-utils fontconfig
-
-    - name: mscorefonts | Install font
-      ansible.builtin.dnf:
-        name: https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
-        state: present
+  ansible.builtin.dnf:
+    name: https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
+    state: present
 
 
 - name: mscorefonts | Install font
