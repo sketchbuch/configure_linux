@@ -28,22 +28,19 @@
 # https://docs.fedoraproject.org/en-US/quick-docs/installing-chromium-or-google-chrome-browsers/
 
 - name: chrome | Install chrome (fedora)
+  become: true
   when: is_fedora
   block:
     - name: chrome | Add workstation repos
-      become: true
       ansible.builtin.dnf:
         name: fedora-workstation-repositories
         state: present
 
     - name: chrome | Enable chrome in DNF config manager
-      become: true
       ansible.builtin.command:
         cmd: dnf config-manager setopt google-chrome.enabled=1
 
     - name: chrome | Install software
-      become: true
-      become_user: "{{ user.username }}"
       ansible.builtin.dnf:
         name: google-chrome-stable
         state: present
