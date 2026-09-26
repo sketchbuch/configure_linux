@@ -4,18 +4,31 @@
   when: is_fedora
   become: true
   block:
-    - name: mscorefonts | Install deps
-      ansible.builtin.dnf:
-        name:
-          - curl
-          - cabextract
-          - xorg-x11-font-utils
-          - fontconfig
-        state: present
+    - name: mscorefonts | Check if font already installed
+      ansible.builtin.stat:
+        path: "/usr/share/fonts/msttcore/arial.ttf"
+      register: mscorefonts_fonts_installed
+
+    - name: mscorefonts | Not installing
+      when: mscorefonts_fonts_installed.stat.exists
+      ansible.builtin.debug:
+        msg: mscorefonts fonts are already installed
 
     - name: mscorefonts | Install font
-      ansible.builtin.command:
-        cmd: sudo rpm -i --nodigest https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
+      when: not mscorefonts_fonts_installed.stat.exists
+      block:
+        - name: mscorefonts | Install deps
+          ansible.builtin.dnf:
+            name:
+              - curl
+              - cabextract
+              - xorg-x11-font-utils
+              - fontconfig
+            state: present
+
+        - name: mscorefonts | Install font
+          ansible.builtin.command:
+            cmd: sudo rpm -i --nodigest https://downloads.sourceforge.net/project/mscorefonts2/rpms/msttcore-fonts-installer-2.6-1.noarch.rpm
 
 - name: mscorefonts | Install font
   when: is_ubuntu
