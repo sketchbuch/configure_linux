@@ -24,7 +24,7 @@
 #     state: directory
 #     mode: '0700'
 
-- name: settings_update | Create settings folder
+- name: settings_update | Create settings folder for {{ app | basename }}
   become: true
   become_user: "{{ user.username }}"
   ansible.builtin.file:
